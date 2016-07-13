@@ -1,0 +1,482 @@
+\hypertarget{classprism_1_1geometry_1_1_matrix4}{}\section{prism\+:\+:geometry\+:\+:Matrix4 Class Reference}
+\label{classprism_1_1geometry_1_1_matrix4}\index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+
+
+{\ttfamily \#include $<$Matrix4.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4_a59e58127677eec56304135cae6beb531}{Matrix4} (void)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4_a4901303fd12c9356a7796b876f5bb66f}{Matrix4} (const float $\ast$values)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4_a03d3bd902689df5e7da131b9a12a5fcf}{Matrix4} (const float r1c1, const float r1c2, const float r1c3, const float r1c4, const float r2c1, const float r2c2, const float r2c3, const float r2c4, const float r3c1, const float r3c2, const float r3c3, const float r3c4, const float r4c1, const float r4c2, const float r4c3, const float r4c4)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4_a7503afdc5252c5d664fb1848126c4c72}{Matrix4} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&copy)
+\item 
+virtual \hyperlink{classprism_1_1geometry_1_1_matrix4_a8d2880084113509726be0ab7a3b60ee7}{$\sim$\+Matrix4} (void)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a8ad13bf4841dd97f0a49f9587c509845}{column} (const int index) const 
+\item 
+const float $\ast$ \hyperlink{classprism_1_1geometry_1_1_matrix4_ac6e44aa8ca27411a4d924a8daaffd5cb}{const\+Data} () const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_a23ecfb0202dcfbafdca5fb5dd067c487}{copy\+Data\+To} (float $\ast$dest\+Matrix)
+\item 
+float $\ast$ \hyperlink{classprism_1_1geometry_1_1_matrix4_a48a4d24318eea0510ae8b46888d335dd}{data} ()
+\item 
+const float \hyperlink{classprism_1_1geometry_1_1_matrix4_a7fcc3058850a6a412b2ee950bf972fe6}{determinant} () const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_ad3190f5200f03b0799c6a7e6ec7495ab}{fill} (const float value)
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_matrix4_abe27f85ed73f720845384d1c4f58a6ad}{has\+Inverse} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a6f5b787a096b2d7bf24201a9ad973373}{inverted} () const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_matrix4_af40d2f75c6cc7b76fc31f8b9b0a418c7}{is\+Identity} () const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_ab705bf4843e9966cf3825bce2c14c2f8}{rotate} (\hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&axis, const float degrees)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_a0ff6e10941c4da2f602c39fea1de1d1b}{rotate} (const float x\+Axis, const float y\+Axis, const float z\+Axis, const float degrees)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \hyperlink{classprism_1_1geometry_1_1_matrix4_ad86ea7ce40789f10cafa0ec56403f0fd}{row} (const int index) const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_a948f106919d3d4f36313065e476e5881}{scale} (const float factor)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_ab6ae470e439f1dac65b1dd959d57f0c5}{scale} (const float x, const float y, const float z=1)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_a69ba7264fbe5b126f0bd717502b42b87}{set\+Column} (const int col, const \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \&vec)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_a4ae5f6bd53f9165099b2fc1124c1fd8e}{set\+Row} (const int \hyperlink{classprism_1_1geometry_1_1_matrix4_ad86ea7ce40789f10cafa0ec56403f0fd}{row}, const \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \&vec)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_ab887190e2fe938bc38f3f269afb39a40}{set\+Identity} ()
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_matrix4_abcaa8435644688b260ff35c40e94e811}{translate} (const float x, const float y, const float z=0)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a866ecddb26c6e64e12aa826595a47fb2}{transposed} () const 
+\item 
+float \& \hyperlink{classprism_1_1geometry_1_1_matrix4_a1307c1b49b75509880af85ddcc8585dd}{operator()} (const int \hyperlink{classprism_1_1geometry_1_1_matrix4_ad86ea7ce40789f10cafa0ec56403f0fd}{row}, const int col)
+\item 
+const float \& \hyperlink{classprism_1_1geometry_1_1_matrix4_a3930862eadea631f7b501155b6342531}{operator()} (const int \hyperlink{classprism_1_1geometry_1_1_matrix4_ad86ea7ce40789f10cafa0ec56403f0fd}{row}, const int col) const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \& \hyperlink{classprism_1_1geometry_1_1_matrix4_a83d285e8458d7e9bfd4b952cf07388ab}{operator=} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&copy)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_afc2bce19b13471f0cac1a48c2932af60}{operator+} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m1, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a2e7720348e3d34cad4119b93c499971e}{operator-\/} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m1, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a9d189e964a989207c8489e80276dadd4}{operator-\/} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_af33d4af5371e50d645cd647e02912f28}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m1, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_aefe58d9157e2f7ac266b357a5db4e986}{operator$\ast$} (const float factor, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_aeec24c93fae98db6ade9c1dd738ef3e7}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m, const float factor)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a023b29b55ee669aa94f8bbc9131923ce}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m1, const float $\ast$m2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a26ce7e4aed9bc5780ebb8411acce6583}{operator$\ast$} (const float $\ast$m1, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \hyperlink{classprism_1_1geometry_1_1_matrix4_ada37b2462427325427c6503a1a370d40}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&v, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \hyperlink{classprism_1_1geometry_1_1_matrix4_acb4d5cf5c35ead4ac8d2713d32a3bb53}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m, const \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&v)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a8f72f1280f8f44f2f85c32e930ef95f1}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \&v, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a20a9788aba6ec37d10a0c04fa479b26e}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m, const \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \&v)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_point}{Point} \hyperlink{classprism_1_1geometry_1_1_matrix4_a00876fb2e95ed93d05c590a941d2c3a3}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&p, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_point}{Point} \hyperlink{classprism_1_1geometry_1_1_matrix4_a67263983148d3a3593ebc84eae31c87a}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m, const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&p)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \hyperlink{classprism_1_1geometry_1_1_matrix4_a9370aa111e71140fdd85f3e055a26cbd}{operator/} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m, const float divisor)
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_matrix4_a0cbf3c575d1951cc9ae4dfe79c3a3729}{operator==} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m1, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m2)
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_matrix4_aaedc2ff7fd572ebc03eec59fb11cd5a9}{operator!=} (const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m1, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&m2)
+\item 
+std\+::ostream \& \hyperlink{classprism_1_1geometry_1_1_matrix4_a4ccbb04098ce491412da339e07eb72d7}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} \&matrix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{Matrix4(void)}{Matrix4(void)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Matrix4\+::\+Matrix4 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a59e58127677eec56304135cae6beb531}{}\label{classprism_1_1geometry_1_1_matrix4_a59e58127677eec56304135cae6beb531}
+Inits with a \textquotesingle{}default\textquotesingle{} identity matrix.
+
+\mbox{[}1 0 0 0\mbox{]} \mbox{[}0 1 0 0\mbox{]} \mbox{[}0 0 1 0\mbox{]} \mbox{[}0 0 0 1\mbox{]} \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{Matrix4(const float $\ast$values)}{Matrix4(const float *values)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Matrix4\+::\+Matrix4 (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$}]{values}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a4901303fd12c9356a7796b876f5bb66f}{}\label{classprism_1_1geometry_1_1_matrix4_a4901303fd12c9356a7796b876f5bb66f}
+Constructs a matrix from the pointer to the sixteen floating-\/point values passed in. It is assumed that \textquotesingle{}values\textquotesingle{} is in a row-\/major order.
+
+\mbox{[}m1 m2 m3 m4 \mbox{]} \mbox{[}m5 m6 m7 m8 \mbox{]} \mbox{[}m9 m10 m11 m12\mbox{]} \mbox{[}m13 m14 m15 m16\mbox{]} \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{Matrix4(const float r1c1, const float r1c2, const float r1c3, const float r1c4, const float r2c1, const float r2c2, const float r2c3, const float r2c4, const float r3c1, const float r3c2, const float r3c3, const float r3c4, const float r4c1, const float r4c2, const float r4c3, const float r4c4)}{Matrix4(const float r1c1, const float r1c2, const float r1c3, const float r1c4, const float r2c1, const float r2c2, const float r2c3, const float r2c4, const float r3c1, const float r3c2, const float r3c3, const float r3c4, const float r4c1, const float r4c2, const float r4c3, const float r4c4)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Matrix4\+::\+Matrix4 (
+\begin{DoxyParamCaption}
+\item[{const float}]{r1c1, }
+\item[{const float}]{r1c2, }
+\item[{const float}]{r1c3, }
+\item[{const float}]{r1c4, }
+\item[{const float}]{r2c1, }
+\item[{const float}]{r2c2, }
+\item[{const float}]{r2c3, }
+\item[{const float}]{r2c4, }
+\item[{const float}]{r3c1, }
+\item[{const float}]{r3c2, }
+\item[{const float}]{r3c3, }
+\item[{const float}]{r3c4, }
+\item[{const float}]{r4c1, }
+\item[{const float}]{r4c2, }
+\item[{const float}]{r4c3, }
+\item[{const float}]{r4c4}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a03d3bd902689df5e7da131b9a12a5fcf}{}\label{classprism_1_1geometry_1_1_matrix4_a03d3bd902689df5e7da131b9a12a5fcf}
+Constructs a matrix from the sixteen floating-\/point values passed in. It is assumed that the values are in row-\/major order.
+
+\mbox{[}m1 m2 m3 m4 \mbox{]} \mbox{[}m5 m6 m7 m8 \mbox{]} \mbox{[}m9 m10 m11 m12\mbox{]} \mbox{[}m13 m14 m15 m16\mbox{]} \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{Matrix4(const Matrix4 \&copy)}{Matrix4(const Matrix4 &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Matrix4\+::\+Matrix4 (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{copy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a7503afdc5252c5d664fb1848126c4c72}{}\label{classprism_1_1geometry_1_1_matrix4_a7503afdc5252c5d664fb1848126c4c72}
+Copy constructor Simply copies the data array from copy to this matrix. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!````~Matrix4@{$\sim$\+Matrix4}}
+\index{````~Matrix4@{$\sim$\+Matrix4}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{$\sim$\+Matrix4(void)}{~Matrix4(void)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Matrix4\+::$\sim$\+Matrix4 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a8d2880084113509726be0ab7a3b60ee7}{}\label{classprism_1_1geometry_1_1_matrix4_a8d2880084113509726be0ab7a3b60ee7}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!column@{column}}
+\index{column@{column}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{column(const int index) const }{column(const int index) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector4} prism\+::geometry\+::\+Matrix4\+::column (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_a8ad13bf4841dd97f0a49f9587c509845}{}\label{classprism_1_1geometry_1_1_matrix4_a8ad13bf4841dd97f0a49f9587c509845}
+Returns a Vector 4 that is composed from the column specified by index from this matrix. The index is zero-\/based so an index of 0 retrieves the first column and an index of 3 retrieves the last column. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!const\+Data@{const\+Data}}
+\index{const\+Data@{const\+Data}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{const\+Data() const }{constData() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float $\ast$ prism\+::geometry\+::\+Matrix4\+::const\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_ac6e44aa8ca27411a4d924a8daaffd5cb}{}\label{classprism_1_1geometry_1_1_matrix4_ac6e44aa8ca27411a4d924a8daaffd5cb}
+Returns a constant pointer to the raw data of this matrix. The data is in column-\/major order. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!copy\+Data\+To@{copy\+Data\+To}}
+\index{copy\+Data\+To@{copy\+Data\+To}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{copy\+Data\+To(float $\ast$dest\+Matrix)}{copyDataTo(float *destMatrix)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::copy\+Data\+To (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{dest\+Matrix}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a23ecfb0202dcfbafdca5fb5dd067c487}{}\label{classprism_1_1geometry_1_1_matrix4_a23ecfb0202dcfbafdca5fb5dd067c487}
+Copies the raw data from this matrix and populates the supplied matrix with that data \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!data@{data}}
+\index{data@{data}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{data()}{data()}}]{\setlength{\rightskip}{0pt plus 5cm}float $\ast$ prism\+::geometry\+::\+Matrix4\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a48a4d24318eea0510ae8b46888d335dd}{}\label{classprism_1_1geometry_1_1_matrix4_a48a4d24318eea0510ae8b46888d335dd}
+Returns a pointer to the raw data of this matrix. The data is in column-\/major order. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!determinant@{determinant}}
+\index{determinant@{determinant}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{determinant() const }{determinant() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Matrix4\+::determinant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_a7fcc3058850a6a412b2ee950bf972fe6}{}\label{classprism_1_1geometry_1_1_matrix4_a7fcc3058850a6a412b2ee950bf972fe6}
+Returns a single number which is the determinant of this matrix. One use for the determinant is if the determinant is 0 then this matrix is not invertible i.\+e. \hyperlink{classprism_1_1geometry_1_1_matrix4_abe27f85ed73f720845384d1c4f58a6ad}{has\+Inverse()} is false whereas if it is non-\/zero then it is invertible. This implementation multiplies each element in the first row of the matrix by its corresponding cofactor and sums them together to produce the determinant. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!fill@{fill}}
+\index{fill@{fill}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{fill(const float value)}{fill(const float value)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::fill (
+\begin{DoxyParamCaption}
+\item[{const float}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_ad3190f5200f03b0799c6a7e6ec7495ab}{}\label{classprism_1_1geometry_1_1_matrix4_ad3190f5200f03b0799c6a7e6ec7495ab}
+Fills each element of the matrix with the specified value \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!has\+Inverse@{has\+Inverse}}
+\index{has\+Inverse@{has\+Inverse}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{has\+Inverse() const }{hasInverse() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Matrix4\+::has\+Inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_abe27f85ed73f720845384d1c4f58a6ad}{}\label{classprism_1_1geometry_1_1_matrix4_abe27f85ed73f720845384d1c4f58a6ad}
+Returns true if this matrix has an inverse and false if not. The method used is to calculate the determinant of the matrix first. If the determinant is 0 then the matrix does not have an inverse. If the determinant is non-\/zero then it does have an inverse. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!inverted@{inverted}}
+\index{inverted@{inverted}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{inverted() const }{inverted() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} prism\+::geometry\+::\+Matrix4\+::inverted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_a6f5b787a096b2d7bf24201a9ad973373}{}\label{classprism_1_1geometry_1_1_matrix4_a6f5b787a096b2d7bf24201a9ad973373}
+\index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{is\+Identity() const }{isIdentity() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Matrix4\+::is\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_af40d2f75c6cc7b76fc31f8b9b0a418c7}{}\label{classprism_1_1geometry_1_1_matrix4_af40d2f75c6cc7b76fc31f8b9b0a418c7}
+Checks if this matrix is in the identity form, returns true if it is and false if not. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator()@{operator()}}
+\index{operator()@{operator()}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator()(const int row, const int col)}{operator()(const int row, const int col)}}]{\setlength{\rightskip}{0pt plus 5cm}float \& prism\+::geometry\+::\+Matrix4\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{row, }
+\item[{const int}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a1307c1b49b75509880af85ddcc8585dd}{}\label{classprism_1_1geometry_1_1_matrix4_a1307c1b49b75509880af85ddcc8585dd}
+Returns a reference to the element located at (row, col) in the matrix. row and col are zero based so (0,0) is the first element and (3,3) is the last element. This just provides easy access to directly modify the internal matrix. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator()@{operator()}}
+\index{operator()@{operator()}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator()(const int row, const int col) const }{operator()(const int row, const int col) const }}]{\setlength{\rightskip}{0pt plus 5cm}const float \& prism\+::geometry\+::\+Matrix4\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const int}]{row, }
+\item[{const int}]{col}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_a3930862eadea631f7b501155b6342531}{}\label{classprism_1_1geometry_1_1_matrix4_a3930862eadea631f7b501155b6342531}
+Returns a constant reference to the element located at (row, col) in the matrix. row and col are zero based so (0,0) is the first element and (3,3) is the last element. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator=(const Matrix4 \&copy)}{operator=(const Matrix4 &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} \& prism\+::geometry\+::\+Matrix4\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{copy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a83d285e8458d7e9bfd4b952cf07388ab}{}\label{classprism_1_1geometry_1_1_matrix4_a83d285e8458d7e9bfd4b952cf07388ab}
+Overloaded assignment operator -\/ copies the data array from copy to this matrix. A quick check prevents a matrix being assigned to to itself which is dangerous if dynamic memory is involved. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!rotate@{rotate}}
+\index{rotate@{rotate}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{rotate(\+Vector3 \&axis, const float degrees)}{rotate(Vector3 &axis, const float degrees)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::rotate (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector3} \&}]{axis, }
+\item[{const float}]{degrees}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_ab705bf4843e9966cf3825bce2c14c2f8}{}\label{classprism_1_1geometry_1_1_matrix4_ab705bf4843e9966cf3825bce2c14c2f8}
+The \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} that represents the axis of rotation should be normalised but if it isn\textquotesingle{}t this method does it for you. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!rotate@{rotate}}
+\index{rotate@{rotate}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{rotate(const float x\+Axis, const float y\+Axis, const float z\+Axis, const float degrees)}{rotate(const float xAxis, const float yAxis, const float zAxis, const float degrees)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::rotate (
+\begin{DoxyParamCaption}
+\item[{const float}]{x\+Axis, }
+\item[{const float}]{y\+Axis, }
+\item[{const float}]{z\+Axis, }
+\item[{const float}]{degrees}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a0ff6e10941c4da2f602c39fea1de1d1b}{}\label{classprism_1_1geometry_1_1_matrix4_a0ff6e10941c4da2f602c39fea1de1d1b}
+\index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!row@{row}}
+\index{row@{row}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{row(const int index) const }{row(const int index) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector4} prism\+::geometry\+::\+Matrix4\+::row (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_ad86ea7ce40789f10cafa0ec56403f0fd}{}\label{classprism_1_1geometry_1_1_matrix4_ad86ea7ce40789f10cafa0ec56403f0fd}
+Returns a Vector 4 that is composed from the row specified by index from this matrix. The index is zero-\/based so an index of 0 retrieves the first row and an index of 3 retrieves the last row. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!scale@{scale}}
+\index{scale@{scale}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{scale(const float factor)}{scale(const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::scale (
+\begin{DoxyParamCaption}
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a948f106919d3d4f36313065e476e5881}{}\label{classprism_1_1geometry_1_1_matrix4_a948f106919d3d4f36313065e476e5881}
+Multiplies this matrix by another matrix that scales this matrix by factor. i.\+e. if this matrix is M and the scaling matrix is S, then the raw data of this matrix is set to MS. Note\+: each subsequent call to \hyperlink{classprism_1_1geometry_1_1_matrix4_a948f106919d3d4f36313065e476e5881}{scale()} builds on top of the last transformation. So, initially scale(2) scales the matrix to \mbox{[}2\mbox{]}, then if called again, say, scale(5) then the resulting scaling transformation becomes \mbox{[}10\mbox{]}. To actually scale a matrix to a given size call \hyperlink{classprism_1_1geometry_1_1_matrix4_ab887190e2fe938bc38f3f269afb39a40}{set\+Identity()} first which resets the matrix and then call scale($\ast$). \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!scale@{scale}}
+\index{scale@{scale}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{scale(const float x, const float y, const float z=1)}{scale(const float x, const float y, const float z=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::scale (
+\begin{DoxyParamCaption}
+\item[{const float}]{x, }
+\item[{const float}]{y, }
+\item[{const float}]{z = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_ab6ae470e439f1dac65b1dd959d57f0c5}{}\label{classprism_1_1geometry_1_1_matrix4_ab6ae470e439f1dac65b1dd959d57f0c5}
+Multiplies this matrix by another matrix that scales this matrix by x, y and z. i.\+e. if this matrix is M and the scaling matrix is S, then the raw data of this matrix is set to MS. Note\+: each subsequent call to \hyperlink{classprism_1_1geometry_1_1_matrix4_a948f106919d3d4f36313065e476e5881}{scale()} builds on top of the last transformation. So, initially scale(2,2) scales the matrix to \mbox{[}2,2\mbox{]}, then if called again, say, scale(5,5) then the resulting scaling transformation becomes \mbox{[}10,10\mbox{]}. To actually scale a matrix to a given size call \hyperlink{classprism_1_1geometry_1_1_matrix4_ab887190e2fe938bc38f3f269afb39a40}{set\+Identity()} first which resets the matrix and then call scale($\ast$,$\ast$). \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!set\+Column@{set\+Column}}
+\index{set\+Column@{set\+Column}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{set\+Column(const int col, const Vector4 \&vec)}{setColumn(const int col, const Vector4 &vec)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::set\+Column (
+\begin{DoxyParamCaption}
+\item[{const int}]{col, }
+\item[{const {\bf Vector4} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a69ba7264fbe5b126f0bd717502b42b87}{}\label{classprism_1_1geometry_1_1_matrix4_a69ba7264fbe5b126f0bd717502b42b87}
+Sets the specified column of this matrix using the values of vector v. The col is zero-\/based so col 0 is the first column and col 3 is the last column. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!set\+Identity@{set\+Identity}}
+\index{set\+Identity@{set\+Identity}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{set\+Identity()}{setIdentity()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::set\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_ab887190e2fe938bc38f3f269afb39a40}{}\label{classprism_1_1geometry_1_1_matrix4_ab887190e2fe938bc38f3f269afb39a40}
+Sets this matrix to the identity matrix. \mbox{[}1 0 0 0\mbox{]} \mbox{[}0 1 0 0\mbox{]} \mbox{[}0 0 1 0\mbox{]} \mbox{[}0 0 0 1\mbox{]} \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!set\+Row@{set\+Row}}
+\index{set\+Row@{set\+Row}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{set\+Row(const int row, const Vector4 \&vec)}{setRow(const int row, const Vector4 &vec)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::set\+Row (
+\begin{DoxyParamCaption}
+\item[{const int}]{row, }
+\item[{const {\bf Vector4} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_a4ae5f6bd53f9165099b2fc1124c1fd8e}{}\label{classprism_1_1geometry_1_1_matrix4_a4ae5f6bd53f9165099b2fc1124c1fd8e}
+Sets the specified row of this matrix using the values of vector v. The row is zero-\/based so row 0 is the first row and row 3 is the last row. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!translate@{translate}}
+\index{translate@{translate}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{translate(const float x, const float y, const float z=0)}{translate(const float x, const float y, const float z=0)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Matrix4\+::translate (
+\begin{DoxyParamCaption}
+\item[{const float}]{x, }
+\item[{const float}]{y, }
+\item[{const float}]{z = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_matrix4_abcaa8435644688b260ff35c40e94e811}{}\label{classprism_1_1geometry_1_1_matrix4_abcaa8435644688b260ff35c40e94e811}
+Multiplies this matrix by another matrix that translates this matrix by the floats x, y and z. i.\+e. if this matrix is M and the translation matrix is T, then the raw data of this matrix is set to MT. Note\+: each subsequent call to \hyperlink{classprism_1_1geometry_1_1_matrix4_abcaa8435644688b260ff35c40e94e811}{translate()} builds on top of the last transformation. So, initially translate(5,5,5) translates the matrix to \mbox{[}5,5,5\mbox{]}, then if called again, say, translate(15,15,15) then the resulting translating transformation becomes \mbox{[}20,20,20\mbox{]}. To actually place a matrix at a given location call \hyperlink{classprism_1_1geometry_1_1_matrix4_ab887190e2fe938bc38f3f269afb39a40}{set\+Identity()} first which resets the matrix and then call translate($\ast$,$\ast$,$\ast$). \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!transposed@{transposed}}
+\index{transposed@{transposed}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{transposed() const }{transposed() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} prism\+::geometry\+::\+Matrix4\+::transposed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_matrix4_a866ecddb26c6e64e12aa826595a47fb2}{}\label{classprism_1_1geometry_1_1_matrix4_a866ecddb26c6e64e12aa826595a47fb2}
+Returns a new matrix which is a copy of this matrix that has been transposed across its diagonal. This matrix remains unaltered, however. 
+
+\subsection{Friends And Related Function Documentation}
+\index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator"!=}{operator!=}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m1, }
+\item[{const {\bf Matrix4} \&}]{m2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_aaedc2ff7fd572ebc03eec59fb11cd5a9}{}\label{classprism_1_1geometry_1_1_matrix4_aaedc2ff7fd572ebc03eec59fb11cd5a9}
+Compares the elements of the two matrices and returns true if they don\textquotesingle{}t contain the same data, false otherwise. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m1, }
+\item[{const {\bf Matrix4} \&}]{m2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_af33d4af5371e50d645cd647e02912f28}{}\label{classprism_1_1geometry_1_1_matrix4_af33d4af5371e50d645cd647e02912f28}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} that is the product of m1 and m2 i.\+e. m1m2 \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const float}]{factor, }
+\item[{const {\bf Matrix4} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_aefe58d9157e2f7ac266b357a5db4e986}{}\label{classprism_1_1geometry_1_1_matrix4_aefe58d9157e2f7ac266b357a5db4e986}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} where each component of m is multiplied by factor. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m, }
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_aeec24c93fae98db6ade9c1dd738ef3e7}{}\label{classprism_1_1geometry_1_1_matrix4_aeec24c93fae98db6ade9c1dd738ef3e7}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} where each component of m is multiplied by factor. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m1, }
+\item[{const float $\ast$}]{m2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a023b29b55ee669aa94f8bbc9131923ce}{}\label{classprism_1_1geometry_1_1_matrix4_a023b29b55ee669aa94f8bbc9131923ce}
+Returns a \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} that is the result of multiplying a \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} with a float array. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$}]{m1, }
+\item[{const {\bf Matrix4} \&}]{m2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a26ce7e4aed9bc5780ebb8411acce6583}{}\label{classprism_1_1geometry_1_1_matrix4_a26ce7e4aed9bc5780ebb8411acce6583}
+Returns a \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} that is the result of multiplying a \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} with a float array. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v, }
+\item[{const {\bf Matrix4} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_ada37b2462427325427c6503a1a370d40}{}\label{classprism_1_1geometry_1_1_matrix4_ada37b2462427325427c6503a1a370d40}
+Returns a \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} which has been transformed by the matrix M in the order of vM. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m, }
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_acb4d5cf5c35ead4ac8d2713d32a3bb53}{}\label{classprism_1_1geometry_1_1_matrix4_acb4d5cf5c35ead4ac8d2713d32a3bb53}
+Returns a \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} which has been transformed by the matrix M in the order of Mv. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector4} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector4} \&}]{v, }
+\item[{const {\bf Matrix4} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a8f72f1280f8f44f2f85c32e930ef95f1}{}\label{classprism_1_1geometry_1_1_matrix4_a8f72f1280f8f44f2f85c32e930ef95f1}
+Returns a \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} which has been transformed by the matrix M in the order of vM. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector4} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m, }
+\item[{const {\bf Vector4} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a20a9788aba6ec37d10a0c04fa479b26e}{}\label{classprism_1_1geometry_1_1_matrix4_a20a9788aba6ec37d10a0c04fa479b26e}
+Returns a \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} which has been transformed by the matrix M in the order of Mv. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{p, }
+\item[{const {\bf Matrix4} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a00876fb2e95ed93d05c590a941d2c3a3}{}\label{classprism_1_1geometry_1_1_matrix4_a00876fb2e95ed93d05c590a941d2c3a3}
+Returns a \hyperlink{classprism_1_1geometry_1_1_point}{Point} which has been transformed by the matrix m in the order of pM \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m, }
+\item[{const {\bf Point} \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a67263983148d3a3593ebc84eae31c87a}{}\label{classprism_1_1geometry_1_1_matrix4_a67263983148d3a3593ebc84eae31c87a}
+Returns a \hyperlink{classprism_1_1geometry_1_1_point}{Point} which has been transformed by the matrix M in the order of Mp \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator+@{operator+}}
+\index{operator+@{operator+}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m1, }
+\item[{const {\bf Matrix4} \&}]{m2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_afc2bce19b13471f0cac1a48c2932af60}{}\label{classprism_1_1geometry_1_1_matrix4_afc2bce19b13471f0cac1a48c2932af60}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} which is the sum of m1 and m2. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m1, }
+\item[{const {\bf Matrix4} \&}]{m2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a2e7720348e3d34cad4119b93c499971e}{}\label{classprism_1_1geometry_1_1_matrix4_a2e7720348e3d34cad4119b93c499971e}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} which is the result of subtracting m2 from m1. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a9d189e964a989207c8489e80276dadd4}{}\label{classprism_1_1geometry_1_1_matrix4_a9d189e964a989207c8489e80276dadd4}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} where each component of matrix m has been negated (multiplyed by -\/1). \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator/@{operator/}}
+\index{operator/@{operator/}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator/}{operator/}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrix4} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m, }
+\item[{const float}]{divisor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a9370aa111e71140fdd85f3e055a26cbd}{}\label{classprism_1_1geometry_1_1_matrix4_a9370aa111e71140fdd85f3e055a26cbd}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} where each component of matrix m is divided by divisor. If divisor is 0 a new \hyperlink{classprism_1_1geometry_1_1_matrix4}{Matrix4} is returned set to the identity matrix instead. \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Matrix4} \&}]{matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a4ccbb04098ce491412da339e07eb72d7}{}\label{classprism_1_1geometry_1_1_matrix4_a4ccbb04098ce491412da339e07eb72d7}
+Allows an instance of Matrx4x4 to be written to the ostream out and returns a reference to the ostream. i.\+e. std\+::cout $<$$<$ matrix $<$$<$ std\+::endl; \index{prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::geometry\+::\+Matrix4@{prism\+::geometry\+::\+Matrix4}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m1, }
+\item[{const {\bf Matrix4} \&}]{m2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_matrix4_a0cbf3c575d1951cc9ae4dfe79c3a3729}{}\label{classprism_1_1geometry_1_1_matrix4_a0cbf3c575d1951cc9ae4dfe79c3a3729}
+Compares the elements of the two matrices and returns true if they contain the same data, false otherwise. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/geometry/\hyperlink{_matrix4_8h}{Matrix4.\+h}\item 
+src/geometry/\hyperlink{_matrix4_8cpp}{Matrix4.\+cpp}\end{DoxyCompactItemize}

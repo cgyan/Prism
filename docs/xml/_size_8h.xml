@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_size_8h" kind="file" language="C++">
+    <compoundname>Size.h</compoundname>
+    <includes local="no">ostream</includes>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="_rect_8cpp" local="yes">src/geometry/Rect.cpp</includedby>
+    <includedby refid="_size_8cpp" local="no">src/geometry/Size.cpp</includedby>
+    <incdepgraph>
+      <node id="188">
+        <label>ostream</label>
+      </node>
+      <node id="187">
+        <label>inc/geometry/Size.h</label>
+        <link refid="Size.h"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="190">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="191">
+        <label>src/geometry/Rect.cpp</label>
+        <link refid="_rect_8cpp"/>
+      </node>
+      <node id="192">
+        <label>src/geometry/Size.cpp</label>
+        <link refid="_size_8cpp"/>
+      </node>
+      <node id="189">
+        <label>inc/geometry/Size.h</label>
+        <link refid="Size.h"/>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classprism_1_1geometry_1_1_size" prot="public">prism::geometry::Size</innerclass>
+    <innernamespace refid="namespaceprism">prism</innernamespace>
+    <innernamespace refid="namespaceprism_1_1geometry">prism::geometry</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Size.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>v0.1</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Jul<sp/>1,<sp/>2016</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>iainhemstock</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SIZE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIZE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceprism" kindref="compound">prism</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">geometry<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classprism_1_1geometry_1_1_size" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_width;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_height;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a82ca178677fefa36453103441b0e16d1" kindref="member">Size</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a82ca178677fefa36453103441b0e16d1" kindref="member">Size</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size_1af52e54cbd5b29a1d9a2dfd3b56007d68" kindref="member">width</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size_1af4879e8eca4306cfe5d39b800ae191d1" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a82ca178677fefa36453103441b0e16d1" kindref="member">Size</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;copy);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size_1a537e42c6a73305321ce4b8b28c7e1c90" kindref="member">~Size</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1af4879e8eca4306cfe5d39b800ae191d1" kindref="member">height</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1aa9b519af8f5708939fbd20f1b52ec28f" kindref="member">isEmpty</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a2867491b5a8215c61e58ad943ddb2811" kindref="member">isNull</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1ae6c9cd08771cc878b32fa7ef21b808c1" kindref="member">isValid</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a415d717d5d4dc026be63fe0fecca3747" kindref="member">setHeight</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1ae0cec1e8ce5c2f4363e2d6f650d8949d" kindref="member">setWidth</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1ab53d9d0e247a8505a9e884cf26213e7d" kindref="member">scale</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>widthFactor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>heightFactor);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1ab53d9d0e247a8505a9e884cf26213e7d" kindref="member">scale</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a4ce86d68cae4723b7213b6bad0a09c0c" kindref="member">scaled</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>widthFactor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>heightFactor)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a4ce86d68cae4723b7213b6bad0a09c0c" kindref="member">scaled</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a39edd14856a71a0b3b2bbecb7d3745f9" kindref="member">transpose</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1a3aa4f38416f5276247ac75cab7c470f3" kindref="member">transposed</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size_1af52e54cbd5b29a1d9a2dfd3b56007d68" kindref="member">width</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;<sp/><ref refid="classprism_1_1geometry_1_1_size_1a924a15d97e1e8d262357ad7568b1d0b6" kindref="member">operator+=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;<sp/><ref refid="classprism_1_1geometry_1_1_size_1aa9222e44ac7745635d7903747fb962e5" kindref="member">operator-=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;<sp/><ref refid="classprism_1_1geometry_1_1_size_1adbf6070617ee8d49a66d4dbae5fe4cda" kindref="member">operator*=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;<sp/><ref refid="classprism_1_1geometry_1_1_size_1a40bc23d348aa442f5a5666f7d93ee7a9" kindref="member">operator/=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;<sp/><ref refid="classprism_1_1geometry_1_1_size_1a9de24c3d0a1ea307029e2a3fcc74f7a1" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>related<sp/>non-members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size_1a0ecba9b1ddf7508ab7d47f24fccc5b2c" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s2);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size_1a766b0bce48ef4987bde75192bc2703ee" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s2);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><ref refid="classprism_1_1geometry_1_1_size_1a8a42e08734218778f68f34d79f9c8130" kindref="member">operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s2);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><ref refid="classprism_1_1geometry_1_1_size_1ac19f7036b22c72ce81d89025af2510f0" kindref="member">operator-</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;s2);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><ref refid="classprism_1_1geometry_1_1_size_1a159c2e1e3dcb9ee6c1c681533f2c0d36" kindref="member">operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>factor);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><ref refid="classprism_1_1geometry_1_1_size_1a159c2e1e3dcb9ee6c1c681533f2c0d36" kindref="member">operator*</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>factor,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/><ref refid="classprism_1_1geometry_1_1_size_1a54c78dfe93394bb7069b0880a3183909" kindref="member">operator/</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;size,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>factor);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream<sp/>&amp;<sp/><ref refid="classprism_1_1geometry_1_1_size_1a8e7b189b7bed4a1acb084ff4cd0cf2a6" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;<sp/>out,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref><sp/>&amp;<sp/>size);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>namespace<sp/>geometry<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>namespace<sp/>prism<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SIZE_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="inc/geometry/Size.h"/>
+  </compounddef>
+</doxygen>

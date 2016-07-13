@@ -1,0 +1,1266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1geometry_1_1_circle" kind="class" language="C++" prot="public">
+    <compoundname>prism::geometry::Circle</compoundname>
+    <includes refid="_circle_8h" local="no">Circle.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074" prot="public" static="no">
+        <name>AngleMode</name>
+        <enumvalue id="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a129fdcf5e1cb41ce9c1b9a7614add31a" prot="public">
+          <name>DEGREES</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a505eab4762e08f35c8381febeb2fc11f" prot="public">
+          <name>RADIANS</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="80" column="1" bodyfile="inc/geometry/Circle.h" bodystart="80" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_circle_1a61796583129359e2a53830d4646a7c50" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Circle::m_radius</definition>
+        <argsstring></argsstring>
+        <name>m_radius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="84" column="1" bodyfile="inc/geometry/Circle.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_circle_1af15e636fab1610622667321e385c8a20" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Circle::m_x</definition>
+        <argsstring></argsstring>
+        <name>m_x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="85" column="1" bodyfile="inc/geometry/Circle.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_circle_1acd344ae7e4a97b254a1c740b3dc34ca1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Circle::m_y</definition>
+        <argsstring></argsstring>
+        <name>m_y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="86" column="1" bodyfile="inc/geometry/Circle.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_circle_1ae2a3f825c6fcb573cc019566bf701d51" prot="private" static="no" mutable="no">
+        <type><ref refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074" kindref="member">AngleMode</ref></type>
+        <definition>AngleMode prism::geometry::Circle::m_angleMode</definition>
+        <argsstring></argsstring>
+        <name>m_angleMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="87" column="1" bodyfile="inc/geometry/Circle.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_circle_1a6441c9309553df7a7783cdd32a0516c5" prot="private" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <initializer>= 3.14159</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="88" column="1" bodyfile="inc/geometry/Circle.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a7d9e34947cf139b50f5730ed7711b4a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Circle::Circle</definition>
+        <argsstring>()</argsstring>
+        <name>Circle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a unit circle i.e. a circle with a radius of 1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="91" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1af92464e3c8e28c5057092c241b6c6dfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Circle::Circle</definition>
+        <argsstring>(const float radius)</argsstring>
+        <name>Circle</name>
+        <param>
+          <type>const float</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a circle with a radius of <emphasis>radius</emphasis> and its centre (x,y) set to 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="92" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a7f9bb5688959d0ea323a88b5e287dd36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Circle::Circle</definition>
+        <argsstring>(const float x, const float y)</argsstring>
+        <name>Circle</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a unit circle with a radius of 1 and its centre point set to <emphasis></emphasis>(x,y). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="93" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ae9b063ea2b20cf9056ff0235f7c03fc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Circle::Circle</definition>
+        <argsstring>(const float radius, const float x, const float y)</argsstring>
+        <name>Circle</name>
+        <param>
+          <type>const float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a circle with a radius of <emphasis>radius</emphasis> and its centre point set to <emphasis></emphasis>(x,y). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="94" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a5163ce7077d3e55bf0208f4b85365bda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Circle::Circle</definition>
+        <argsstring>(const float radius, const Pointf &amp;position)</argsstring>
+        <name>Circle</name>
+        <param>
+          <type>const float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a circle with a radius of <emphasis>radius</emphasis> and its centre point set to <emphasis>position</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="95" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ac2d59157d370b6675066f17b53855b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Circle::Circle</definition>
+        <argsstring>(const Circle &amp;copy)</argsstring>
+        <name>Circle</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a copy of the circle <emphasis>copy</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="96" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1afc9d1b6ca5fff7749f06baacaf4e4a76" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>prism::geometry::Circle::~Circle</definition>
+        <argsstring>()</argsstring>
+        <name>~Circle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys this circle </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="97" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a48b7121373194162c3268247213e4dc4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::angle</definition>
+        <argsstring>(const float x, const float y) const </argsstring>
+        <name>angle</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the angle of the coordinate <emphasis></emphasis>(x,y).<linebreak/>
+The angle will be expressed either in degrees or radians depending on which mode is set in <ref refid="classprism_1_1geometry_1_1_circle_1a8a77497a3f3ba3283fd80c0b8830753f" kindref="member">setAngleMode()</ref>. By default DEGREES mode is set.</para><para><simplesect kind="return"><para>Returns the angle of the coordinate <emphasis></emphasis>(x,y). <image type="html" name="circle_angle.png"></image>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="99" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="78" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1abdc96ede803eb3a37d5a09559bcf3953" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::angle</definition>
+        <argsstring>(const Pointf &amp;position) const </argsstring>
+        <name>angle</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded function.<linebreak/>
+Returns the angle of the <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> <emphasis>position</emphasis>.<linebreak/>
+The angle will be expressed either in degrees or radians depending on which mode is set in <ref refid="classprism_1_1geometry_1_1_circle_1a8a77497a3f3ba3283fd80c0b8830753f" kindref="member">setAngleMode()</ref>. By default DEGREES mode is set.</para><para><simplesect kind="return"><para>Returns the angle of the <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> <emphasis>position</emphasis>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="100" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a3faa81cb65a95da1a8e31442d19beb94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074" kindref="member">Circle::AngleMode</ref></type>
+        <definition>Circle::AngleMode prism::geometry::Circle::angleMode</definition>
+        <argsstring>() const </argsstring>
+        <name>angleMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns <ref refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a129fdcf5e1cb41ce9c1b9a7614add31a" kindref="member">Circle::DEGREES</ref> or <ref refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a505eab4762e08f35c8381febeb2fc11f" kindref="member">Circle::RADIANS</ref> depending on which mode is set. By default a circle is set to DEGREES mode. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="101" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="101" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a5935fdad61c2fda37981723fe4e3a0a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::arcLength</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2) const </argsstring>
+        <name>arcLength</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An arc is the section of the circumference that sits between two points.<linebreak/>
+<simplesect kind="return"><para>Returns the length of the minor arc between the points <emphasis>p1</emphasis> and <emphasis>p2</emphasis>. <image type="html" name="circle_arclength.png"></image>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="102" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="110" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a7de6fb3380d1365d537a5c407cf3511e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::area</definition>
+        <argsstring>() const </argsstring>
+        <name>area</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the area of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="103" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aa7a9e06091ac1ae38b01d154b5a68f41" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::bottom</definition>
+        <argsstring>() const </argsstring>
+        <name>bottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the y-coordinate of the bottom edge of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="104" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aec4c8f61f3b7e3143da75fc2d42973c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::centralAngle</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2) const </argsstring>
+        <name>centralAngle</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A central angle is formed by two radii extending from the centre point of the circle to the circumference.<linebreak/>
+Note that the smallest angle will be returned and is always positive <linebreak/>
+i.e. if moving in one direction from point to point around the circle gives an angle of 270º and moving in the opposite direction gives an angle of 90º then 90º is returned.<linebreak/>
+The angle will be expressed either in degrees or radians depending on which mode is set in <ref refid="classprism_1_1geometry_1_1_circle_1a8a77497a3f3ba3283fd80c0b8830753f" kindref="member">setAngleMode()</ref>. By default DEGREES mode is set.</para><para><simplesect kind="return"><para>Returns the central angle formed by two points on the circumference. <image type="html" name="circle_centralangle.png"></image>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="105" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="186" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1afc772e00d2928c2da666ef43463d1b9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref></type>
+        <definition>Pointf prism::geometry::Circle::centre</definition>
+        <argsstring>() const </argsstring>
+        <name>centre</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns a <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> representing the centre point of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="106" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="207" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aa736377f605a821966da046a33146fc8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Circle::contains</definition>
+        <argsstring>(const float x, const float y) const </argsstring>
+        <name>contains</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if the circle contains (or is on the circumference) the point <emphasis></emphasis>(x,y), false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="107" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ab2a69b1dd2ebab4f4dc2becbde198438" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Circle::contains</definition>
+        <argsstring>(const Pointf &amp;position) const </argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded function.<linebreak/>
+<simplesect kind="return"><para>Returns true if the circle contains (or is on the circumference) the point <emphasis>position</emphasis>, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="108" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="146" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a454868801ddee380efbd9c76f9153b6f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Circle::contains</definition>
+        <argsstring>(const Circle &amp;otherCircle) const </argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>otherCircle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded function. <simplesect kind="return"><para>Returns true if the circle contains (or is on the circumference) the circle represented by <emphasis>otherCircle</emphasis>, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="109" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="160" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ae259eb1b25728019cc7b3525f20ea1c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::circumference</definition>
+        <argsstring>() const </argsstring>
+        <name>circumference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the circumference of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="110" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="170" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1adf30d4b56a2d060dfd5a44172a7e088e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::diameter</definition>
+        <argsstring>() const </argsstring>
+        <name>diameter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the diameter of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="111" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="214" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aa670497376488f555bbbde0692ea1333" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::getCircle</definition>
+        <argsstring>(float *radius, float *x, float *y)</argsstring>
+        <name>getCircle</name>
+        <param>
+          <type>float *</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Extracts the radius and centre x and y coordinates and assigns them to <emphasis>radius</emphasis>, <emphasis>x</emphasis> and <emphasis>y</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="112" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="222" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ac1b7633b8c79512d73fa8a9615d85e9f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Circle::intersects</definition>
+        <argsstring>(const Circle &amp;otherCircle) const </argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>otherCircle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if this circle intersects with <emphasis>otherCircle</emphasis>, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="113" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="231" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ae03e53948818ee2a81e94180bf74cb75" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Circle::isValid</definition>
+        <argsstring>() const </argsstring>
+        <name>isValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A valid circle is one which has a radius larger than 0. <simplesect kind="return"><para>Returns true if the circle is valid, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="114" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="242" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a10d1243c18b74798f1dd59793022ac83" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::left</definition>
+        <argsstring>() const </argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the x-coordinate of the left edge of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="115" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="249" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ad72079c73cfb8cf3426e23aa64c574e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::moveBottom</definition>
+        <argsstring>(const float y)</argsstring>
+        <name>moveBottom</name>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves the circle on the y-axis so that its bottom-most point sits at <emphasis>y</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="116" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="256" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a95e440e954c78f8e9e407c816948daac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::moveCentre</definition>
+        <argsstring>(const float x, const float y)</argsstring>
+        <name>moveCentre</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves the centre point of the circle to <emphasis></emphasis>(x,y). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="117" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="263" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ae4bad4394ccb5705894365335733267c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::moveCentre</definition>
+        <argsstring>(const Pointf &amp;position)</argsstring>
+        <name>moveCentre</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded function.<linebreak/>
+Moves the centre point of the circle to <emphasis>position</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="118" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="272" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a1e885c1237cbc61bfaece2f31b756a67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::moveLeft</definition>
+        <argsstring>(const float x)</argsstring>
+        <name>moveLeft</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves the circle on the x-axis so that its left-most point sits at <emphasis>x</emphasis>; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="119" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="279" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a8f51014f0b8c2dffcf0718fbd7d585f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::moveRight</definition>
+        <argsstring>(const float x)</argsstring>
+        <name>moveRight</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves the circle on the x-axis so that its right-most point sits at <emphasis>x</emphasis>; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="120" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="286" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ac95e8868af4ea96a7593d52a7357f2f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::moveTop</definition>
+        <argsstring>(const float y)</argsstring>
+        <name>moveTop</name>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Moves the circle so that its top-most point sits at <emphasis>y</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="121" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="293" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1adebf8895998188cfc637b6541121950b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref></type>
+        <definition>Circle prism::geometry::Circle::normalised</definition>
+        <argsstring>() const </argsstring>
+        <name>normalised</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If a circle has a negative value for a radius it can be normalised so that its radius is positive again by flipping the negative value to a positive one. For e.g. a radius of -5 will become 5 after normalisation. <simplesect kind="return"><para>Returns a normalised copy of this circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="122" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="303" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ac9f3831443459d81b0d0bc47bcfb0382" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref></type>
+        <definition>Pointf prism::geometry::Circle::point</definition>
+        <argsstring>(const float angle) const </argsstring>
+        <name>point</name>
+        <param>
+          <type>const float</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the (x,y) coordinate on the circumference at an angle of <emphasis>angle</emphasis>. The angle argument can either be in degrees or radians depending on which mode is set in <ref refid="classprism_1_1geometry_1_1_circle_1a8a77497a3f3ba3283fd80c0b8830753f" kindref="member">setAngleMode()</ref>.</para></simplesect>
+<image type="html" name="circle_point.png"></image>
+ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="123" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="319" bodyend="330"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a143bf607852529ec21a1aaaa9c34228f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1containers_1_1_vector" kindref="compound">Vector</ref>&lt; <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &gt;</type>
+        <definition>prism::containers::Vector&lt; Pointf &gt; prism::geometry::Circle::points</definition>
+        <argsstring>(const int divisions) const </argsstring>
+        <name>points</name>
+        <param>
+          <type>const int</type>
+          <declname>divisions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This calculates <emphasis>divisions</emphasis> amount of evenly spaced points around the circumference in a clockwise direction. <linebreak/>
+For example, passing in 12 as the argument means that the vector will contain 12 evenly spaced points exactly like the notches on a clock face.</para><para><simplesect kind="return"><para>A vector containing <emphasis>divisions</emphasis> amount of points. <image type="html" name="circle_points.png"></image>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="124" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="341" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aef97382c1f0b09dca59a0534ac03ed1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::radius</definition>
+        <argsstring>() const </argsstring>
+        <name>radius</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the radius of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="125" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="365" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a72e405496fec43913c26325f115755c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::right</definition>
+        <argsstring>() const </argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the x-coordinate of the right edge of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="126" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="372" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ac4151db62b33dc1f0eaaa0280f3334b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::sectorArea</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2) const </argsstring>
+        <name>sectorArea</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A sector visually is like a slice of pizza. Its base is the centre point of the circle with two radii extending from the centre to the circumference.<linebreak/>
+The major sector area can be found by subtracting the area of the minor sector from the total area of the circle.</para><para><simplesect kind="return"><para>Returns the area of the minor sector formed by the centre point of the circle and points <emphasis>p1</emphasis> and <emphasis>p2</emphasis> located on the circumference. <image type="html" name="circle_sectorarea.png"></image>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="127" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="386" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1af11d03eb5478214c8680c3f5447b268d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::segmentArea</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2) const </argsstring>
+        <name>segmentArea</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A segment is formed by drawing a line (known as a chord) from one point on the circumference to another point (effectively splitting the circle in two). <linebreak/>
+The area of the major segment can be found by subtracting the minor segment area from the total area of the circle.</para><para><simplesect kind="return"><para>Returns the area of the minor segment formed by the points <emphasis>p1</emphasis> and <emphasis>p2</emphasis>. <linebreak/>
+<image type="html" name="circle_segmentarea.png"></image>
+ </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="128" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="406" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a8a77497a3f3ba3283fd80c0b8830753f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::setAngleMode</definition>
+        <argsstring>(Circle::AngleMode mode)</argsstring>
+        <name>setAngleMode</name>
+        <param>
+          <type><ref refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074" kindref="member">Circle::AngleMode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the angle mode of the circle to work with degrees or radians. By default the circle is set to DEGREES mode. The mode can be changed by passing in <ref refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a129fdcf5e1cb41ce9c1b9a7614add31a" kindref="member">Circle::DEGREES</ref> or <ref refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a505eab4762e08f35c8381febeb2fc11f" kindref="member">Circle::RADIANS</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="129" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="420" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a2fd9a16d24f310e4dddbcd8ca2b93d60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::setCircle</definition>
+        <argsstring>(const float radius, const float x, const float y)</argsstring>
+        <name>setCircle</name>
+        <param>
+          <type>const float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the radius to <emphasis>radius</emphasis> and positions the centre of the circle at <emphasis></emphasis>(x,y). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="130" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="428" bodyend="432"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ac11c26d7c418f319f4848bbfc50af684" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::setCircle</definition>
+        <argsstring>(const float radius, const Pointf &amp;position)</argsstring>
+        <name>setCircle</name>
+        <param>
+          <type>const float</type>
+          <declname>radius</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded function.<linebreak/>
+Sets the radius to <emphasis>radius</emphasis> and positions the centre of the circle at <emphasis>position</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="131" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="439" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a2cccd7bd93d5522b95e9b61a615e5d5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::setDiameter</definition>
+        <argsstring>(const float diamter)</argsstring>
+        <name>setDiameter</name>
+        <param>
+          <type>const float</type>
+          <declname>diamter</declname>
+          <defname>diameter</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the diameter of the circle to <emphasis>diameter</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="132" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="448" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ac09a0b4d6b1603b8da53fb8c4b6968b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::setRadius</definition>
+        <argsstring>(const float radius)</argsstring>
+        <name>setRadius</name>
+        <param>
+          <type>const float</type>
+          <declname>radius</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the radius of the circle to <emphasis>radius</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="133" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="455" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a941a990726b98aad91d8a1e462919078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::setX</definition>
+        <argsstring>(const float x)</argsstring>
+        <name>setX</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the centre of the circle to <emphasis>x</emphasis> in the x-axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="134" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="462" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1adcd2f40040d78de715d3cb1f7cef3ce0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::setY</definition>
+        <argsstring>(const float y)</argsstring>
+        <name>setY</name>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the centre of the circle to <emphasis>y</emphasis> in the y-axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="135" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="469" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a52bda730f4f2b90a2f1817e4efaea158" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::top</definition>
+        <argsstring>() const </argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the y-coordinate of the top edge of the circle. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="136" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="476" bodyend="478"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a594995da05e613977b0c7bd85528753b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::translate</definition>
+        <argsstring>(const float dx, const float dy)</argsstring>
+        <name>translate</name>
+        <param>
+          <type>const float</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>dy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Translates the circle relative to its current position by <emphasis>dx</emphasis> on the x-axis and <emphasis>dy</emphasis> on the y-axis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="137" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="484" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aec90aaa751dfb33e0aa874dc68913489" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Circle::translate</definition>
+        <argsstring>(const Pointf &amp;offset)</argsstring>
+        <name>translate</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded function.<linebreak/>
+Translates the circle relative to its current position by the amount of <emphasis>offset</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="138" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="494" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a77cb41b6ca766b3871c352dd1cc33727" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref></type>
+        <definition>Circle prism::geometry::Circle::translated</definition>
+        <argsstring>(const float dx, const float dy) const </argsstring>
+        <name>translated</name>
+        <param>
+          <type>const float</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>dy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns a copy of this circle which has been translated relative to its current position by <emphasis>dx</emphasis> and <emphasis>dy</emphasis>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="139" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="502" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aa52624590986822687ed64d54dc1cc6e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref></type>
+        <definition>Circle prism::geometry::Circle::translated</definition>
+        <argsstring>(const Pointf &amp;offset) const </argsstring>
+        <name>translated</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded function.<linebreak/>
+<simplesect kind="return"><para>Returns a copy of this circle which has been translated relative to its current position by <emphasis>offset</emphasis>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="140" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="513" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a0e4d6c1aaec74c68e86054dbf835f30b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref></type>
+        <definition>Circle prism::geometry::Circle::unit</definition>
+        <argsstring>() const </argsstring>
+        <name>unit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A unit circle is one which has a radius of 1. <simplesect kind="return"><para>Returns a copy of this circle which has been converted to a unit circle. This does not affect the circle&apos;s position as it retains its (x,y) coordinates. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="141" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="524" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1ae7a4b0fb426bc2ab657f12f4e5e2321c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref></type>
+        <definition>Circle prism::geometry::Circle::united</definition>
+        <argsstring>(const Circle &amp;otherCircle) const </argsstring>
+        <name>united</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>otherCircle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns a new bounding circle that contains this circle and <emphasis>otherCircle</emphasis>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="142" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="538" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aeb38df0ed8d1b3b84c4eb42b50a05348" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::x</definition>
+        <argsstring>() const </argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the centre of the circle in the x-axis. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="143" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="555" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1aea5997071a76ee672b6b7ec0908ebe11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Circle::y</definition>
+        <argsstring>() const </argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns the centre of the circle in the y-axis. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="144" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="562" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_circle_1a3a77e4ec76dfcc5c826a99a2d97a9fca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+        <definition>Circle &amp; prism::geometry::Circle::operator=</definition>
+        <argsstring>(const Circle &amp;other)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assigns <emphasis>other</emphasis> to this circle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="147" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="569" bodyend="576"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_circle_1aea4bcef75428f13320f5c8148869d7ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator==</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if both circles have the same radius and (x,y) centre point, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="150" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="584" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_circle_1ac1093de6b8dac6c9df82db5b72148634" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator!=</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if both circles are not equal, false otherwsie. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="151" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="591" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_circle_1a3aaa7d08426b0e4aa5f51f1839eb3bb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&lt;</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if <emphasis>c1</emphasis> has a smaller radius than <emphasis>c2</emphasis>, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="152" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="598" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_circle_1a519af3a911c5ccd13d0c711d0adfef79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&gt;</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if <emphasis>c1</emphasis> has a greater radius than <emphasis>c2</emphasis>, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="153" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="605" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_circle_1a4deb656103c2fc1ea9258fc37bfdcc6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Circle &amp;c)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Circle.h" line="154" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="612" bodyend="615"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This class represents the data model of a circle. It does not have a visual side. </para>    </detaileddescription>
+    <location file="inc/geometry/Circle.h" line="78" column="1" bodyfile="inc/geometry/Circle.h" bodystart="78" bodyend="155"/>
+    <listofallmembers>
+      <member refid="classprism_1_1geometry_1_1_circle_1a48b7121373194162c3268247213e4dc4" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>angle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1abdc96ede803eb3a37d5a09559bcf3953" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>angle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>AngleMode</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a3faa81cb65a95da1a8e31442d19beb94" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>angleMode</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a5935fdad61c2fda37981723fe4e3a0a7" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>arcLength</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a7de6fb3380d1365d537a5c407cf3511e" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>area</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aa7a9e06091ac1ae38b01d154b5a68f41" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>bottom</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aec4c8f61f3b7e3143da75fc2d42973c4" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>centralAngle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1afc772e00d2928c2da666ef43463d1b9d" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>centre</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a7d9e34947cf139b50f5730ed7711b4a4" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>Circle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1af92464e3c8e28c5057092c241b6c6dfe" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>Circle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a7f9bb5688959d0ea323a88b5e287dd36" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>Circle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ae9b063ea2b20cf9056ff0235f7c03fc1" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>Circle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a5163ce7077d3e55bf0208f4b85365bda" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>Circle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac2d59157d370b6675066f17b53855b64" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>Circle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ae259eb1b25728019cc7b3525f20ea1c8" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>circumference</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aa736377f605a821966da046a33146fc8" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>contains</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ab2a69b1dd2ebab4f4dc2becbde198438" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>contains</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a454868801ddee380efbd9c76f9153b6f" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>contains</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a129fdcf5e1cb41ce9c1b9a7614add31a" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>DEGREES</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1adf30d4b56a2d060dfd5a44172a7e088e" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>diameter</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aa670497376488f555bbbde0692ea1333" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>getCircle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac1b7633b8c79512d73fa8a9615d85e9f" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>intersects</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ae03e53948818ee2a81e94180bf74cb75" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>isValid</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a10d1243c18b74798f1dd59793022ac83" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>left</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ae2a3f825c6fcb573cc019566bf701d51" prot="private" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>m_angleMode</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a61796583129359e2a53830d4646a7c50" prot="private" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>m_radius</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1af15e636fab1610622667321e385c8a20" prot="private" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>m_x</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1acd344ae7e4a97b254a1c740b3dc34ca1" prot="private" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>m_y</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ad72079c73cfb8cf3426e23aa64c574e4" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>moveBottom</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a95e440e954c78f8e9e407c816948daac" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>moveCentre</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ae4bad4394ccb5705894365335733267c" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>moveCentre</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a1e885c1237cbc61bfaece2f31b756a67" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>moveLeft</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a8f51014f0b8c2dffcf0718fbd7d585f0" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>moveRight</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac95e8868af4ea96a7593d52a7357f2f9" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>moveTop</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1adebf8895998188cfc637b6541121950b" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>normalised</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac1093de6b8dac6c9df82db5b72148634" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a3aaa7d08426b0e4aa5f51f1839eb3bb1" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>operator&lt;</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a4deb656103c2fc1ea9258fc37bfdcc6c" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a3a77e4ec76dfcc5c826a99a2d97a9fca" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>operator=</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aea4bcef75428f13320f5c8148869d7ac" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>operator==</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a519af3a911c5ccd13d0c711d0adfef79" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>operator&gt;</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a6441c9309553df7a7783cdd32a0516c5" prot="private" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>PI</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac9f3831443459d81b0d0bc47bcfb0382" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>point</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a143bf607852529ec21a1aaaa9c34228f" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>points</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1abf09b3319057626836fd7446ee1ac074a505eab4762e08f35c8381febeb2fc11f" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>RADIANS</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aef97382c1f0b09dca59a0534ac03ed1b" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>radius</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a72e405496fec43913c26325f115755c0" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>right</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac4151db62b33dc1f0eaaa0280f3334b7" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>sectorArea</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1af11d03eb5478214c8680c3f5447b268d" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>segmentArea</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a8a77497a3f3ba3283fd80c0b8830753f" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>setAngleMode</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a2fd9a16d24f310e4dddbcd8ca2b93d60" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>setCircle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac11c26d7c418f319f4848bbfc50af684" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>setCircle</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a2cccd7bd93d5522b95e9b61a615e5d5b" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>setDiameter</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ac09a0b4d6b1603b8da53fb8c4b6968b2" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>setRadius</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a941a990726b98aad91d8a1e462919078" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>setX</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1adcd2f40040d78de715d3cb1f7cef3ce0" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>setY</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a52bda730f4f2b90a2f1817e4efaea158" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>top</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a594995da05e613977b0c7bd85528753b" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>translate</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aec90aaa751dfb33e0aa874dc68913489" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>translate</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a77cb41b6ca766b3871c352dd1cc33727" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>translated</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aa52624590986822687ed64d54dc1cc6e" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>translated</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1a0e4d6c1aaec74c68e86054dbf835f30b" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>unit</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1ae7a4b0fb426bc2ab657f12f4e5e2321c" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>united</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aeb38df0ed8d1b3b84c4eb42b50a05348" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>x</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1aea5997071a76ee672b6b7ec0908ebe11" prot="public" virt="non-virtual"><scope>prism::geometry::Circle</scope><name>y</name></member>
+      <member refid="classprism_1_1geometry_1_1_circle_1afc9d1b6ca5fff7749f06baacaf4e4a76" prot="public" virt="virtual"><scope>prism::geometry::Circle</scope><name>~Circle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

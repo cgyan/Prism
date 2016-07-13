@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_8f46c503ad4a32bd125d4189308369db" kind="dir">
+    <compoundname>inc/utils</compoundname>
+    <innerfile refid="_flags_8h">Flags.h</innerfile>
+    <innerfile refid="_fraction_8h">Fraction.h</innerfile>
+    <innerfile refid="_mathf_8h">Mathf.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/utils/"/>
+  </compounddef>
+</doxygen>

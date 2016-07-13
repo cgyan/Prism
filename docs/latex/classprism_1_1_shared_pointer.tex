@@ -1,0 +1,222 @@
+\hypertarget{classprism_1_1_shared_pointer}{}\section{prism\+:\+:Shared\+Pointer$<$ T $>$ Class Template Reference}
+\label{classprism_1_1_shared_pointer}\index{prism\+::\+Shared\+Pointer$<$ T $>$@{prism\+::\+Shared\+Pointer$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Shared\+Pointer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1_shared_pointer_a076711618f299e5a5d04261d7d806aff}{Shared\+Pointer} ()
+\item 
+\hyperlink{classprism_1_1_shared_pointer_a0b8d1327178383b39bd6bb2826d384b4}{Shared\+Pointer} (T $\ast$\hyperlink{classprism_1_1_shared_pointer_aecf5f8614d4c5683e6c0207436ed8900}{data})
+\item 
+\hyperlink{classprism_1_1_shared_pointer_a7346c06b6c0e7c80236472c4d085460c}{Shared\+Pointer} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ T $>$ \&copy)
+\item 
+\hyperlink{classprism_1_1_shared_pointer_a9892f1a766b66491af8a7356cb574ac3}{$\sim$\+Shared\+Pointer} ()
+\item 
+void \hyperlink{classprism_1_1_shared_pointer_a70f571a23e5c800d43f309cea9857360}{clear} ()
+\item 
+T $\ast$ \hyperlink{classprism_1_1_shared_pointer_aecf5f8614d4c5683e6c0207436ed8900}{data} () const 
+\item 
+const bool \hyperlink{classprism_1_1_shared_pointer_a011b5c5b151717cfcc45bce7eb969254}{is\+Null} () const 
+\item 
+const bool \hyperlink{classprism_1_1_shared_pointer_ad0eef18b3e5c37274f22cff8b88f7d66}{is\+Unique} () const 
+\item 
+const int \hyperlink{classprism_1_1_shared_pointer_a6b122ff924644d334ae0ff9f184af047}{ref\+Count} () const 
+\item 
+T $\ast$ \hyperlink{classprism_1_1_shared_pointer_a46555958394709490c4e7378c7bd2a39}{operator-\/$>$} () const 
+\item 
+T \& \hyperlink{classprism_1_1_shared_pointer_aef4f7418cd76f2a7b0cb20ad83e44720}{operator$\ast$} () const 
+\item 
+\hyperlink{classprism_1_1_shared_pointer_a1d05fe8cac7da2ea12fc321c45f59391}{operator bool} () const 
+\item 
+const bool \hyperlink{classprism_1_1_shared_pointer_a6a9e94b71b5ead6c0edbc836e3babb74}{operator!} () const 
+\item 
+\hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} \& \hyperlink{classprism_1_1_shared_pointer_a1cc6ec5d911e2f86c2bfe07be115cd1e}{operator=} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{classprism_1_1_shared_pointer_a497bc2f2bc9e68da0cd9a80dc5b3b99a}{operator!=} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{classprism_1_1_shared_pointer_afa1e95ed17f645ed02ee12494d006a7b}{operator!=} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{classprism_1_1_shared_pointer_a6e788a3f86ea0f744f7f58ff0d1a6365}{operator!=} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{classprism_1_1_shared_pointer_ae1688caf7bd4dc08f775cbe830ecd6cd}{operator==} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{classprism_1_1_shared_pointer_ac396e2d37f10207b0e4da099d03ef759}{operator==} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{classprism_1_1_shared_pointer_a4001c70f47a8e58a039f8f657f8334b5}{operator==} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+std\+::ostream \& \hyperlink{classprism_1_1_shared_pointer_a59120dbc6c4aab96755e65df06ba2963}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} \&p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!Shared\+Pointer@{Shared\+Pointer}}
+\index{Shared\+Pointer@{Shared\+Pointer}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{Shared\+Pointer()}{SharedPointer()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::{\bf Shared\+Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_shared_pointer_a076711618f299e5a5d04261d7d806aff}{}\label{classprism_1_1_shared_pointer_a076711618f299e5a5d04261d7d806aff}
+Constructs an empty null shared pointer instance. The managed pointer is set to 0. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!Shared\+Pointer@{Shared\+Pointer}}
+\index{Shared\+Pointer@{Shared\+Pointer}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{Shared\+Pointer(\+T $\ast$data)}{SharedPointer(T *data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::{\bf Shared\+Pointer} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_shared_pointer_a0b8d1327178383b39bd6bb2826d384b4}{}\label{classprism_1_1_shared_pointer_a0b8d1327178383b39bd6bb2826d384b4}
+Constructs a shared pointer that points to the data pointer. The data pointer becomes managed by this shared pointer and so must not be passed to another \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance or deleted outside of this object. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!Shared\+Pointer@{Shared\+Pointer}}
+\index{Shared\+Pointer@{Shared\+Pointer}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{Shared\+Pointer(const Shared\+Pointer$<$ T $>$ \&copy)}{SharedPointer(const SharedPointer< T > &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::{\bf Shared\+Pointer} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ T $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_shared_pointer_a7346c06b6c0e7c80236472c4d085460c}{}\label{classprism_1_1_shared_pointer_a7346c06b6c0e7c80236472c4d085460c}
+Constructs a shared pointer that is a copy of copy. The new \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance will point to the pointer that copy points to and the internal reference counter is incremented. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!````~Shared\+Pointer@{$\sim$\+Shared\+Pointer}}
+\index{````~Shared\+Pointer@{$\sim$\+Shared\+Pointer}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{$\sim$\+Shared\+Pointer()}{~SharedPointer()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::$\sim${\bf Shared\+Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_shared_pointer_a9892f1a766b66491af8a7356cb574ac3}{}\label{classprism_1_1_shared_pointer_a9892f1a766b66491af8a7356cb574ac3}
+Destroys this \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance. The internal reference count for the managed pointer is decremented and if this \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance held the last reference to the managed pointer then the managed pointer is also deleted. 
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!clear@{clear}}
+\index{clear@{clear}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_shared_pointer_a70f571a23e5c800d43f309cea9857360}{}\label{classprism_1_1_shared_pointer_a70f571a23e5c800d43f309cea9857360}
+Resets this \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance (i.\+e. \hyperlink{classprism_1_1_shared_pointer_a011b5c5b151717cfcc45bce7eb969254}{is\+Null()} == true). The managed pointer is set to 0. The internal reference count for the managed pointer is decremented and if this \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance held the last reference to the managed pointer then the managed pointer is also deleted. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!data@{data}}
+\index{data@{data}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{data() const }{data() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T $\ast$ {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_aecf5f8614d4c5683e6c0207436ed8900}{}\label{classprism_1_1_shared_pointer_aecf5f8614d4c5683e6c0207436ed8900}
+Returns the managed pointer. Note\+: do not delete or pass this pointer to another \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} as the \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instances will become corrupt. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{is\+Null() const }{isNull() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_a011b5c5b151717cfcc45bce7eb969254}{}\label{classprism_1_1_shared_pointer_a011b5c5b151717cfcc45bce7eb969254}
+Returns true if the managed pointer is set to 0, false if otherwise it points to a valid object. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!is\+Unique@{is\+Unique}}
+\index{is\+Unique@{is\+Unique}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{is\+Unique() const }{isUnique() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::is\+Unique (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_ad0eef18b3e5c37274f22cff8b88f7d66}{}\label{classprism_1_1_shared_pointer_ad0eef18b3e5c37274f22cff8b88f7d66}
+Returns true if this \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance is the only object that holds a reference to the managed pointer, false otherwise. Note\+: null pointers are never unique as they don\textquotesingle{}t point to anything. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator bool() const }{operator bool() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_a1d05fe8cac7da2ea12fc321c45f59391}{}\label{classprism_1_1_shared_pointer_a1d05fe8cac7da2ea12fc321c45f59391}
+Returns true if this \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance is not null, false otherwise. It can be used in if statements\+: if (shared\+\_\+pointer) \{ ... \} \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator"!() const }{operator!() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::operator! (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_a6a9e94b71b5ead6c0edbc836e3babb74}{}\label{classprism_1_1_shared_pointer_a6a9e94b71b5ead6c0edbc836e3babb74}
+Returns true if this \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance is null, false otherwise. It can be used in if statements\+: if (!shared\+\_\+pointer) \{ ... \} \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator$\ast$() const }{operator*() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_aef4f7418cd76f2a7b0cb20ad83e44720}{}\label{classprism_1_1_shared_pointer_aef4f7418cd76f2a7b0cb20ad83e44720}
+Overloads the $\ast$ operator so that it returns a reference to the value that the managed pointer points to. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator-\/$>$() const }{operator->() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T $\ast$ {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_a46555958394709490c4e7378c7bd2a39}{}\label{classprism_1_1_shared_pointer_a46555958394709490c4e7378c7bd2a39}
+Overloads the -\/$>$ operator so that it returns the managed pointer. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator=(const Shared\+Pointer \&rhs)}{operator=(const SharedPointer &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Shared\+Pointer}$<$ T $>$ \& {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_shared_pointer_a1cc6ec5d911e2f86c2bfe07be115cd1e}{}\label{classprism_1_1_shared_pointer_a1cc6ec5d911e2f86c2bfe07be115cd1e}
+This \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} instance takes ownership of the managed pointer in rhs and the internal reference counter is incremented. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!ref\+Count@{ref\+Count}}
+\index{ref\+Count@{ref\+Count}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{ref\+Count() const }{refCount() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Shared\+Pointer}$<$ T $>$\+::ref\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_shared_pointer_a6b122ff924644d334ae0ff9f184af047}{}\label{classprism_1_1_shared_pointer_a6b122ff924644d334ae0ff9f184af047}
+Returns the number of \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer} objects that have ownership of the managed pointer. 
+
+\subsection{Friends And Related Function Documentation}
+\index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator"!=}{operator!=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ const bool {\bf operator!}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_shared_pointer_a497bc2f2bc9e68da0cd9a80dc5b3b99a}{}\label{classprism_1_1_shared_pointer_a497bc2f2bc9e68da0cd9a80dc5b3b99a}
+Returns true if the managed pointers of p1 and p2 do not point to the same data, false otherwise. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator"!=}{operator!=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ const bool {\bf operator!}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const U $\ast$}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_shared_pointer_afa1e95ed17f645ed02ee12494d006a7b}{}\label{classprism_1_1_shared_pointer_afa1e95ed17f645ed02ee12494d006a7b}
+Returns true if the managed pointer of p1 and the raw pointer p2 do not point to the same data, false otherwise. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator"!=}{operator!=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ const bool {\bf operator!}= (
+\begin{DoxyParamCaption}
+\item[{const U $\ast$}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_shared_pointer_a6e788a3f86ea0f744f7f58ff0d1a6365}{}\label{classprism_1_1_shared_pointer_a6e788a3f86ea0f744f7f58ff0d1a6365}
+Returns true if the raw pointer p1 and the managed pointer of p2 do not point to the same data, false otherwise. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{{\bf Shared\+Pointer}$<$ T $>$ \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_shared_pointer_a59120dbc6c4aab96755e65df06ba2963}{}\label{classprism_1_1_shared_pointer_a59120dbc6c4aab96755e65df06ba2963}
+\index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ const bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_shared_pointer_ae1688caf7bd4dc08f775cbe830ecd6cd}{}\label{classprism_1_1_shared_pointer_ae1688caf7bd4dc08f775cbe830ecd6cd}
+Returns true if the managed pointers of p1 and p2 point to the same data, false otherwise. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ const bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const U $\ast$}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_shared_pointer_ac396e2d37f10207b0e4da099d03ef759}{}\label{classprism_1_1_shared_pointer_ac396e2d37f10207b0e4da099d03ef759}
+Returns true if the managed pointer of p1 and the raw pointer p2 point to the same data, false otherwise. \index{prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+Shared\+Pointer@{prism\+::\+Shared\+Pointer}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ const bool operator== (
+\begin{DoxyParamCaption}
+\item[{const U $\ast$}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_shared_pointer_a4001c70f47a8e58a039f8f657f8334b5}{}\label{classprism_1_1_shared_pointer_a4001c70f47a8e58a039f8f657f8334b5}
+Returns true if the raw pointer p1 and the managed pointer of p2 point to the same data, false otherwise. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\+Prism/memory/\hyperlink{_shared_pointer_8h}{Shared\+Pointer.\+h}\end{DoxyCompactItemize}

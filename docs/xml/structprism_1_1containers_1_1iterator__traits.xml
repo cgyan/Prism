@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structprism_1_1containers_1_1iterator__traits" kind="struct" language="C++" prot="public">
+    <compoundname>prism::containers::iterator_traits</compoundname>
+    <includes refid="_iterator_8h" local="no">Iterator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class IterType</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1iterator__traits_1a05456cbad2153f8d17c1095e38ddb476" prot="public" static="no">
+        <type>IterType::value_type</type>
+        <definition>typedef IterType::value_type prism::containers::iterator_traits&lt; IterType &gt;::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="32" column="1" bodyfile="inc/containers/Iterator.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1iterator__traits_1a14cf6094269409269b901919b936af65" prot="public" static="no">
+        <type>IterType::difference_type</type>
+        <definition>typedef IterType::difference_type prism::containers::iterator_traits&lt; IterType &gt;::difference_type</definition>
+        <argsstring></argsstring>
+        <name>difference_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="33" column="1" bodyfile="inc/containers/Iterator.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1iterator__traits_1abfff3c9f89cb0bfaa226dddbd5c834ea" prot="public" static="no">
+        <type>IterType::iterator_category</type>
+        <definition>typedef IterType::iterator_category prism::containers::iterator_traits&lt; IterType &gt;::iterator_category</definition>
+        <argsstring></argsstring>
+        <name>iterator_category</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="34" column="1" bodyfile="inc/containers/Iterator.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1iterator__traits_1a1e0e2fe3c13aa8ce3059b58b4aa2bbc0" prot="public" static="no">
+        <type>IterType::pointer</type>
+        <definition>typedef IterType::pointer prism::containers::iterator_traits&lt; IterType &gt;::pointer</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="35" column="1" bodyfile="inc/containers/Iterator.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1iterator__traits_1ad9d4fc80745a324d716f2fb95b8f5f80" prot="public" static="no">
+        <type>IterType::reference</type>
+        <definition>typedef IterType::reference prism::containers::iterator_traits&lt; IterType &gt;::reference</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="36" column="1" bodyfile="inc/containers/Iterator.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/containers/Iterator.h" line="31" column="1" bodyfile="inc/containers/Iterator.h" bodystart="31" bodyend="37"/>
+    <listofallmembers>
+      <member refid="structprism_1_1containers_1_1iterator__traits_1a14cf6094269409269b901919b936af65" prot="public" virt="non-virtual"><scope>prism::containers::iterator_traits</scope><name>difference_type</name></member>
+      <member refid="structprism_1_1containers_1_1iterator__traits_1abfff3c9f89cb0bfaa226dddbd5c834ea" prot="public" virt="non-virtual"><scope>prism::containers::iterator_traits</scope><name>iterator_category</name></member>
+      <member refid="structprism_1_1containers_1_1iterator__traits_1a1e0e2fe3c13aa8ce3059b58b4aa2bbc0" prot="public" virt="non-virtual"><scope>prism::containers::iterator_traits</scope><name>pointer</name></member>
+      <member refid="structprism_1_1containers_1_1iterator__traits_1ad9d4fc80745a324d716f2fb95b8f5f80" prot="public" virt="non-virtual"><scope>prism::containers::iterator_traits</scope><name>reference</name></member>
+      <member refid="structprism_1_1containers_1_1iterator__traits_1a05456cbad2153f8d17c1095e38ddb476" prot="public" virt="non-virtual"><scope>prism::containers::iterator_traits</scope><name>value_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

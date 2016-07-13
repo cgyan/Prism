@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_4240e928369d612625334e961f26b666" kind="dir">
+    <compoundname>inc/containers/aux</compoundname>
+    <innerfile refid="___deque_data_8h">_DequeData.h</innerfile>
+    <innerfile refid="___deque_impl_8h">_DequeImpl.h</innerfile>
+    <innerfile refid="___deque_iterator_8h">_DequeIterator.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/containers/aux/"/>
+  </compounddef>
+</doxygen>

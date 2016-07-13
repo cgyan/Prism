@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structprism_1_1containers_1_1input__iterator__tag" kind="struct" language="C++" prot="public">
+    <compoundname>prism::containers::input_iterator_tag</compoundname>
+    <derivedcompoundref refid="structprism_1_1containers_1_1forward__iterator__tag" prot="public" virt="non-virtual">prism::containers::forward_iterator_tag</derivedcompoundref>
+    <includes refid="_iterator_8h" local="no">Iterator.h</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="57">
+        <label>prism::containers::random_access_iterator_tag</label>
+        <link refid="structprism_1_1containers_1_1random__access__iterator__tag"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>prism::containers::bidirectional_iterator_tag</label>
+        <link refid="structprism_1_1containers_1_1bidirectional__iterator__tag"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>prism::containers::input_iterator_tag</label>
+        <link refid="structprism_1_1containers_1_1input__iterator__tag"/>
+      </node>
+      <node id="55">
+        <label>prism::containers::forward_iterator_tag</label>
+        <link refid="structprism_1_1containers_1_1forward__iterator__tag"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="inc/containers/Iterator.h" line="21" column="1" bodyfile="inc/containers/Iterator.h" bodystart="21" bodyend="21"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

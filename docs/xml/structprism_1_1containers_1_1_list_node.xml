@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structprism_1_1containers_1_1_list_node" kind="struct" language="C++" prot="public">
+    <compoundname>prism::containers::ListNode</compoundname>
+    <includes refid="_list_8h" local="no">List.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structprism_1_1containers_1_1_list_node_1ad70036170ade67ad68b76f150f6ee0e2" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T prism::containers::ListNode&lt; T &gt;::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/List.h" line="32" column="1" bodyfile="inc/containers/List.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structprism_1_1containers_1_1_list_node_1ae613dd0cacc977ae45210e3dde6462d7" prot="public" static="no" mutable="no">
+        <type><ref refid="structprism_1_1containers_1_1_list_node" kindref="compound">ListNode</ref> *</type>
+        <definition>ListNode* prism::containers::ListNode&lt; T &gt;::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/List.h" line="33" column="1" bodyfile="inc/containers/List.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structprism_1_1containers_1_1_list_node_1a0d72aa4b4c00a685aa89ea546ba81c24" prot="public" static="no" mutable="no">
+        <type><ref refid="structprism_1_1containers_1_1_list_node" kindref="compound">ListNode</ref> *</type>
+        <definition>ListNode* prism::containers::ListNode&lt; T &gt;::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/List.h" line="34" column="1" bodyfile="inc/containers/List.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_node_1aa9557886655b2dc2f3df2127c2680708" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::ListNode&lt; T &gt;::ListNode</definition>
+        <argsstring>(const T &amp;value=T())</argsstring>
+        <name>ListNode</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+          <defval>T()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/List.h" line="35" column="1" bodyfile="inc/containers/List.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="71">
+        <label>prism::containers::ListNode&lt; T &gt;</label>
+        <link refid="structprism_1_1containers_1_1_list_node"/>
+        <childnode refid="71" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="inc/containers/List.h" line="31" column="1" bodyfile="inc/containers/List.h" bodystart="31" bodyend="36"/>
+    <listofallmembers>
+      <member refid="structprism_1_1containers_1_1_list_node_1aa9557886655b2dc2f3df2127c2680708" prot="public" virt="non-virtual"><scope>prism::containers::ListNode</scope><name>ListNode</name></member>
+      <member refid="structprism_1_1containers_1_1_list_node_1ae613dd0cacc977ae45210e3dde6462d7" prot="public" virt="non-virtual"><scope>prism::containers::ListNode</scope><name>next</name></member>
+      <member refid="structprism_1_1containers_1_1_list_node_1a0d72aa4b4c00a685aa89ea546ba81c24" prot="public" virt="non-virtual"><scope>prism::containers::ListNode</scope><name>prev</name></member>
+      <member refid="structprism_1_1containers_1_1_list_node_1ad70036170ade67ad68b76f150f6ee0e2" prot="public" virt="non-virtual"><scope>prism::containers::ListNode</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

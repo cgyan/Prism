@@ -1,0 +1,537 @@
+\hypertarget{classprism_1_1_list}{}\section{prism\+:\+:List$<$ T $>$ Class Template Reference}
+\label{classprism_1_1_list}\index{prism\+::\+List$<$ T $>$@{prism\+::\+List$<$ T $>$}}
+
+
+{\ttfamily \#include $<$List.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structprism_1_1_list_iterator}{List\+Iterator}$<$ Node, T $>$ \hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator}
+\item 
+typedef \hyperlink{structprism_1_1_list_const_iterator}{List\+Const\+Iterator}$<$ Node, T $>$ \hyperlink{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{const\+\_\+iterator}
+\item 
+typedef \hyperlink{structprism_1_1_list_iterator_a8102dfe3c26bb09d44c54ce276debf69}{iterator\+::reference} \hyperlink{classprism_1_1_list_aace7abca3cacb471bba9f04bba680fc3}{reference}
+\item 
+typedef \hyperlink{structprism_1_1_list_const_iterator_ad35238dd195319f3f07c12769b52b472}{const\+\_\+iterator\+::reference} \hyperlink{classprism_1_1_list_a908620eac035bd6d020d69919aeffcbe}{const\+\_\+reference}
+\item 
+typedef \hyperlink{structprism_1_1_list_iterator_a7df7f6f08916f0bbe2e0b0ce675e0cee}{iterator\+::pointer} \hyperlink{classprism_1_1_list_aed257df5c1db1015841de21318b6c5c2}{pointer}
+\item 
+typedef \hyperlink{structprism_1_1_list_const_iterator_a1c92e5a7b7d0a92c744027ca421cb651}{const\+\_\+iterator\+::pointer} \hyperlink{classprism_1_1_list_ab7be76433c8a90f198e268a0918e8a6b}{const\+\_\+pointer}
+\item 
+typedef \hyperlink{structprism_1_1_list_iterator_a9df2822c03b49086c3ddf55ac4816321}{iterator\+::value\+\_\+type} \hyperlink{classprism_1_1_list_a7f20672ea7b8f748420548308e07dbc1}{value\+\_\+type}
+\item 
+typedef \hyperlink{structprism_1_1_list_iterator_a1353d7adf61676d3913acaa1b00fed94}{iterator\+::difference\+\_\+type} \hyperlink{classprism_1_1_list_a98f5a94db7ed98f032ee32ee34bbc8c8}{difference\+\_\+type}
+\item 
+typedef int \hyperlink{classprism_1_1_list_a1d3fe26a6fe0ec8f6a63e70bb59979bd}{size\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1_list_af81334fa20cb34b36a40d0ac4c36e2a5}{List} ()
+\item 
+\hyperlink{classprism_1_1_list_a8f2ff5a39c10ca4f57b5d3794e72cf93}{List} (const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&copy)
+\item 
+virtual \hyperlink{classprism_1_1_list_aaa8567cc4eb408e62117f1a9782629ba}{$\sim$\+List} ()
+\item 
+\hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} \hyperlink{classprism_1_1_list_a5e6584f87eee4371e308e1aa9c3da6c8}{append} (const T \&value)
+\item 
+T \& \hyperlink{classprism_1_1_list_a557466129db60dc92eaa68b18012900e}{back} ()
+\item 
+const T \& \hyperlink{classprism_1_1_list_a6031d94f7c8a88224364523d10a2eff4}{back} () const 
+\item 
+\hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} \hyperlink{classprism_1_1_list_ac86cc19f89e9913ea93f3b212d531954}{begin} ()
+\item 
+\hyperlink{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{const\+\_\+iterator} \hyperlink{classprism_1_1_list_a9d4e4d463be411b27307dcf3cdc49422}{begin} () const 
+\item 
+\hyperlink{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{const\+\_\+iterator} \hyperlink{classprism_1_1_list_a55b460a5a5e00aeee87df83e8559349c}{cbegin} () const 
+\item 
+\hyperlink{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{const\+\_\+iterator} \hyperlink{classprism_1_1_list_a1b526719a7f63a47482ff0b293d36ad1}{cend} () const 
+\item 
+\hyperlink{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{const\+\_\+iterator} \hyperlink{classprism_1_1_list_a19923a3ef18676b387972dcb78f5a131}{const\+Begin} () const 
+\item 
+\hyperlink{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{const\+\_\+iterator} \hyperlink{classprism_1_1_list_af8f11fb293ac9961acf72e76c4128473}{const\+End} () const 
+\item 
+const bool \hyperlink{classprism_1_1_list_a3b6d05cd9d1911861c7a440c291ccc26}{contains} (const T \&value) const 
+\item 
+const int \hyperlink{classprism_1_1_list_a3e274e926be4ac7664e8b1ba79cf3db9}{count} (const T \&value) const 
+\item 
+void \hyperlink{classprism_1_1_list_af51ed8f35ae20cc4639962a2dead76d3}{clear} ()
+\item 
+const bool \hyperlink{classprism_1_1_list_a8d58db1d27cc01ce3036d448f232ced4}{empty} () const 
+\item 
+\hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} \hyperlink{classprism_1_1_list_a47ef0b3d04fa49bd05f00a13bdfb2b93}{end} ()
+\item 
+\hyperlink{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{const\+\_\+iterator} \hyperlink{classprism_1_1_list_acaa7fffb63e4f955b0f77cf9899c924c}{end} () const 
+\item 
+const bool \hyperlink{classprism_1_1_list_a8575a0221bf51275ac186406d656a4f3}{ends\+With} (const T \&value) const 
+\item 
+\hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} \hyperlink{classprism_1_1_list_ab6440bbb53502f6e689c1c9274ffa6f8}{erase} (\hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} pos)
+\item 
+T \& \hyperlink{classprism_1_1_list_a5c20cbafe00fff084b1c48016a0b04f8}{first} ()
+\item 
+const T \& \hyperlink{classprism_1_1_list_a2ff7747c0784e8f8f71a9365a241601e}{first} () const 
+\item 
+T \& \hyperlink{classprism_1_1_list_a64abe6201e00a727d55299242b0f5aee}{front} ()
+\item 
+const T \& \hyperlink{classprism_1_1_list_a5319d6f066eaa794399d36177275f800}{front} () const 
+\item 
+\hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} \hyperlink{classprism_1_1_list_a94237ea84df5f1e804ab6ff2717a5634}{insert} (const \hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} \&pos, const T \&value)
+\item 
+const bool \hyperlink{classprism_1_1_list_ac0f60893564ab12f9c9974ba685db2b0}{is\+Empty} () const 
+\item 
+T \& \hyperlink{classprism_1_1_list_a16681bef913b82d9951330c7526cdb3f}{last} ()
+\item 
+const T \& \hyperlink{classprism_1_1_list_acf84da5c22f8fe60c182de1f29171ea1}{last} () const 
+\item 
+void \hyperlink{classprism_1_1_list_aac8b29572cd691890a82846b35799e36}{pop\+\_\+back} ()
+\item 
+void \hyperlink{classprism_1_1_list_ab8a836a10bc37479fbbc458299d68569}{pop\+\_\+front} ()
+\item 
+void \hyperlink{classprism_1_1_list_aabc7020d0f04bc29412d2ff2cb632958}{push\+\_\+back} (const T \&value)
+\item 
+void \hyperlink{classprism_1_1_list_a9af267cdacc311662e39630da33f4431}{push\+\_\+front} (const T \&value)
+\item 
+\hyperlink{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{iterator} \hyperlink{classprism_1_1_list_a01773efbec8bef23c7a37edb9ea7a93f}{prepend} (const T \&value)
+\item 
+void \hyperlink{classprism_1_1_list_a85937bf298db8c1c8f8017fff492b374}{remove\+All} (const T \&value)
+\item 
+void \hyperlink{classprism_1_1_list_a3e19c548f9f8205bea45d394ddcb9ccb}{remove\+First} ()
+\item 
+void \hyperlink{classprism_1_1_list_a8ee7eadb17120e6fa267278d0d58c13f}{remove\+First\+Of} (const T \&value)
+\item 
+void \hyperlink{classprism_1_1_list_ab6b68a4de2134c159b8e35a2f4bb935d}{remove\+Last} ()
+\item 
+const int \hyperlink{classprism_1_1_list_a90855d0c971c394fabf612c02dce4d3a}{size} () const 
+\item 
+const bool \hyperlink{classprism_1_1_list_ac129dafdb80ae13cfc914dc0668e6b39}{starts\+With} (const T \&value) const 
+\item 
+std\+::forward\+\_\+list$<$ T $>$ \hyperlink{classprism_1_1_list_ab628c77e4598e1055a8b832367a31997}{to\+Std\+Forward\+List} () const 
+\item 
+\hyperlink{classprism_1_1_list}{List}$<$ T $>$ \& \hyperlink{classprism_1_1_list_a86dfdf909c7151a54d231d15315acca1}{operator$<$$<$} (const T \&value)
+\item 
+\hyperlink{classprism_1_1_list}{List}$<$ T $>$ \& \hyperlink{classprism_1_1_list_aed7d35e45035b24e4a684f0b1c228086}{operator$<$$<$} (const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&list)
+\item 
+const bool \hyperlink{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}{operator==} (const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&rhs) const 
+\item 
+const bool \hyperlink{classprism_1_1_list_a026cc068bceff4e74fd991e3940b76d7}{operator!=} (const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&rhs) const 
+\item 
+\hyperlink{classprism_1_1_list}{List}$<$ T $>$ \& \hyperlink{classprism_1_1_list_abb977e2c0b880c7a381ea14f25417e4f}{operator=} (const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&rhs)
+\item 
+\hyperlink{classprism_1_1_list}{List}$<$ T $>$ \hyperlink{classprism_1_1_list_ad578cb4c80ff86d9edb989ade883c18f}{operator+} (const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&rhs) const 
+\item 
+\hyperlink{classprism_1_1_list}{List}$<$ T $>$ \& \hyperlink{classprism_1_1_list_a84972c1e847fdf2c2ca197d7812af3a0}{operator+=} (const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&rhs)
+\item 
+\hyperlink{classprism_1_1_list}{List}$<$ T $>$ \& \hyperlink{classprism_1_1_list_a5e68dad596d72d1c00f9d12bb21479d6}{operator+=} (const T \&value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \hyperlink{classprism_1_1_list_a5dd072cd1d777dd751fc2d0deee00e31}{from\+Std\+Forward\+List} (const std\+::forward\+\_\+list$<$ T $>$ \&fl)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Node $\ast$ \hyperlink{classprism_1_1_list_ade9dd1234d468fdcbcddb16eb490d296}{m\+\_\+header}
+\item 
+Node $\ast$ \hyperlink{classprism_1_1_list_a0740989f0d5af2bad19850fac850947e}{m\+\_\+tailer}
+\item 
+int \hyperlink{classprism_1_1_list_ae86f48e50ec12239597de98deb36b4a4}{m\+\_\+size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::\+List@{prism\+::\+List}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{const\+\_\+iterator}{const_iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf List\+Const\+Iterator}$<$Node, T$>$ {\bf prism\+::\+List}$<$ T $>$\+::{\bf const\+\_\+iterator}}\hypertarget{classprism_1_1_list_a038bd36af263a85110467528db8305d5}{}\label{classprism_1_1_list_a038bd36af263a85110467528db8305d5}
+\index{prism\+::\+List@{prism\+::\+List}!const\+\_\+pointer@{const\+\_\+pointer}}
+\index{const\+\_\+pointer@{const\+\_\+pointer}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf const\+\_\+iterator\+::pointer} {\bf prism\+::\+List}$<$ T $>$\+::{\bf const\+\_\+pointer}}\hypertarget{classprism_1_1_list_ab7be76433c8a90f198e268a0918e8a6b}{}\label{classprism_1_1_list_ab7be76433c8a90f198e268a0918e8a6b}
+\index{prism\+::\+List@{prism\+::\+List}!const\+\_\+reference@{const\+\_\+reference}}
+\index{const\+\_\+reference@{const\+\_\+reference}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf const\+\_\+iterator\+::reference} {\bf prism\+::\+List}$<$ T $>$\+::{\bf const\+\_\+reference}}\hypertarget{classprism_1_1_list_a908620eac035bd6d020d69919aeffcbe}{}\label{classprism_1_1_list_a908620eac035bd6d020d69919aeffcbe}
+\index{prism\+::\+List@{prism\+::\+List}!difference\+\_\+type@{difference\+\_\+type}}
+\index{difference\+\_\+type@{difference\+\_\+type}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::difference\+\_\+type} {\bf prism\+::\+List}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1_list_a98f5a94db7ed98f032ee32ee34bbc8c8}{}\label{classprism_1_1_list_a98f5a94db7ed98f032ee32ee34bbc8c8}
+\index{prism\+::\+List@{prism\+::\+List}!iterator@{iterator}}
+\index{iterator@{iterator}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf List\+Iterator}$<$Node, T$>$ {\bf prism\+::\+List}$<$ T $>$\+::{\bf iterator}}\hypertarget{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}{}\label{classprism_1_1_list_a6cf00c98a428ed325fe9ccc60d7ef95a}
+\index{prism\+::\+List@{prism\+::\+List}!pointer@{pointer}}
+\index{pointer@{pointer}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::pointer} {\bf prism\+::\+List}$<$ T $>$\+::{\bf pointer}}\hypertarget{classprism_1_1_list_aed257df5c1db1015841de21318b6c5c2}{}\label{classprism_1_1_list_aed257df5c1db1015841de21318b6c5c2}
+\index{prism\+::\+List@{prism\+::\+List}!reference@{reference}}
+\index{reference@{reference}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::reference} {\bf prism\+::\+List}$<$ T $>$\+::{\bf reference}}\hypertarget{classprism_1_1_list_aace7abca3cacb471bba9f04bba680fc3}{}\label{classprism_1_1_list_aace7abca3cacb471bba9f04bba680fc3}
+\index{prism\+::\+List@{prism\+::\+List}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef int {\bf prism\+::\+List}$<$ T $>$\+::{\bf size\+\_\+type}}\hypertarget{classprism_1_1_list_a1d3fe26a6fe0ec8f6a63e70bb59979bd}{}\label{classprism_1_1_list_a1d3fe26a6fe0ec8f6a63e70bb59979bd}
+\index{prism\+::\+List@{prism\+::\+List}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::value\+\_\+type} {\bf prism\+::\+List}$<$ T $>$\+::{\bf value\+\_\+type}}\hypertarget{classprism_1_1_list_a7f20672ea7b8f748420548308e07dbc1}{}\label{classprism_1_1_list_a7f20672ea7b8f748420548308e07dbc1}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+List@{prism\+::\+List}!List@{List}}
+\index{List@{List}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{List()}{List()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+List}$<$ T $>$\+::{\bf List} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_af81334fa20cb34b36a40d0ac4c36e2a5}{}\label{classprism_1_1_list_af81334fa20cb34b36a40d0ac4c36e2a5}
+Constructs an empty list. \index{prism\+::\+List@{prism\+::\+List}!List@{List}}
+\index{List@{List}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{List(const List$<$ T $>$ \&copy)}{List(const List< T > &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+List}$<$ T $>$\+::{\bf List} (
+\begin{DoxyParamCaption}
+\item[{const {\bf List}$<$ T $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a8f2ff5a39c10ca4f57b5d3794e72cf93}{}\label{classprism_1_1_list_a8f2ff5a39c10ca4f57b5d3794e72cf93}
+Copy-\/constructs a new list from {\itshape copy}. \index{prism\+::\+List@{prism\+::\+List}!````~List@{$\sim$\+List}}
+\index{````~List@{$\sim$\+List}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{$\sim$\+List()}{~List()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+List}$<$ T $>$\+::$\sim${\bf List}$<$ T $>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1_list_aaa8567cc4eb408e62117f1a9782629ba}{}\label{classprism_1_1_list_aaa8567cc4eb408e62117f1a9782629ba}
+Destroys this list. 
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+List@{prism\+::\+List}!append@{append}}
+\index{append@{append}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{append(const T \&value)}{append(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+List}$<$ T $>$\+::append (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a5e6584f87eee4371e308e1aa9c3da6c8}{}\label{classprism_1_1_list_a5e6584f87eee4371e308e1aa9c3da6c8}
+Appends {\itshape value} at the end of this list. Returns an iterator pointing to the item just inserted. \index{prism\+::\+List@{prism\+::\+List}!back@{back}}
+\index{back@{back}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{back()}{back()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+List}$<$ T $>$\+::back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a557466129db60dc92eaa68b18012900e}{}\label{classprism_1_1_list_a557466129db60dc92eaa68b18012900e}
+Returns a reference to the last item in the list. Added for S\+T\+L-\/compatibility. \index{prism\+::\+List@{prism\+::\+List}!back@{back}}
+\index{back@{back}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{back() const }{back() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+List}$<$ T $>$\+::back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a6031d94f7c8a88224364523d10a2eff4}{}\label{classprism_1_1_list_a6031d94f7c8a88224364523d10a2eff4}
+Returns a const reference to the last item in the list. Added for S\+T\+L-\/compatibility. \index{prism\+::\+List@{prism\+::\+List}!begin@{begin}}
+\index{begin@{begin}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{begin()}{begin()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+List}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_ac86cc19f89e9913ea93f3b212d531954}{}\label{classprism_1_1_list_ac86cc19f89e9913ea93f3b212d531954}
+Returns an iterator to the first item in the list. If the list is empty then the returned iterator is equal to \hyperlink{classprism_1_1_list_a47ef0b3d04fa49bd05f00a13bdfb2b93}{end()}. \index{prism\+::\+List@{prism\+::\+List}!begin@{begin}}
+\index{begin@{begin}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{begin() const }{begin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+List}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a9d4e4d463be411b27307dcf3cdc49422}{}\label{classprism_1_1_list_a9d4e4d463be411b27307dcf3cdc49422}
+Returns an iterator to the first item in the list. If the list is empty then the returned iterator is equal to \hyperlink{classprism_1_1_list_a47ef0b3d04fa49bd05f00a13bdfb2b93}{end()}. \index{prism\+::\+List@{prism\+::\+List}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{cbegin() const }{cbegin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+List}$<$ T $>$\+::cbegin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a55b460a5a5e00aeee87df83e8559349c}{}\label{classprism_1_1_list_a55b460a5a5e00aeee87df83e8559349c}
+Returns a const\+\_\+iterator that points to the first item in the list. \index{prism\+::\+List@{prism\+::\+List}!cend@{cend}}
+\index{cend@{cend}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{cend() const }{cend() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+List}$<$ T $>$\+::cend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a1b526719a7f63a47482ff0b293d36ad1}{}\label{classprism_1_1_list_a1b526719a7f63a47482ff0b293d36ad1}
+Returns an iterator to the imaginary position one past the last item. This iterator should not be dereferenced. \index{prism\+::\+List@{prism\+::\+List}!clear@{clear}}
+\index{clear@{clear}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_af51ed8f35ae20cc4639962a2dead76d3}{}\label{classprism_1_1_list_af51ed8f35ae20cc4639962a2dead76d3}
+Removes every item from this list. \index{prism\+::\+List@{prism\+::\+List}!const\+Begin@{const\+Begin}}
+\index{const\+Begin@{const\+Begin}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{const\+Begin() const }{constBegin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+List}$<$ T $>$\+::const\+Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a19923a3ef18676b387972dcb78f5a131}{}\label{classprism_1_1_list_a19923a3ef18676b387972dcb78f5a131}
+Returns a const\+\_\+iterator that points to the first item in the list. \index{prism\+::\+List@{prism\+::\+List}!const\+End@{const\+End}}
+\index{const\+End@{const\+End}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{const\+End() const }{constEnd() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+List}$<$ T $>$\+::const\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_af8f11fb293ac9961acf72e76c4128473}{}\label{classprism_1_1_list_af8f11fb293ac9961acf72e76c4128473}
+Returns an iterator to the imaginary position one past the last item. This iterator should not be dereferenced. \index{prism\+::\+List@{prism\+::\+List}!contains@{contains}}
+\index{contains@{contains}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{contains(const T \&value) const }{contains(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+List}$<$ T $>$\+::contains (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a3b6d05cd9d1911861c7a440c291ccc26}{}\label{classprism_1_1_list_a3b6d05cd9d1911861c7a440c291ccc26}
+Returns true if this list contains {\itshape value}, false otherwise. The value type should have an implementation of \hyperlink{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}{operator==()}. \index{prism\+::\+List@{prism\+::\+List}!count@{count}}
+\index{count@{count}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{count(const T \&value) const }{count(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+List}$<$ T $>$\+::count (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a3e274e926be4ac7664e8b1ba79cf3db9}{}\label{classprism_1_1_list_a3e274e926be4ac7664e8b1ba79cf3db9}
+Counts and returns the number of occurrences of {\itshape value} in this list. The value type should have an implementation of \hyperlink{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}{operator==()}. \index{prism\+::\+List@{prism\+::\+List}!empty@{empty}}
+\index{empty@{empty}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{empty() const }{empty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+List}$<$ T $>$\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a8d58db1d27cc01ce3036d448f232ced4}{}\label{classprism_1_1_list_a8d58db1d27cc01ce3036d448f232ced4}
+Returns true if the list contains no items, false otherwise. Equivalent to \hyperlink{classprism_1_1_list_ac0f60893564ab12f9c9974ba685db2b0}{is\+Empty()}. Added for S\+T\+L-\/compatibility. \index{prism\+::\+List@{prism\+::\+List}!end@{end}}
+\index{end@{end}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{end()}{end()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+List}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a47ef0b3d04fa49bd05f00a13bdfb2b93}{}\label{classprism_1_1_list_a47ef0b3d04fa49bd05f00a13bdfb2b93}
+Returns an iterator to the imaginary position one past the last item. This iterator should not be dereferenced. \index{prism\+::\+List@{prism\+::\+List}!end@{end}}
+\index{end@{end}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{end() const }{end() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+List}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_acaa7fffb63e4f955b0f77cf9899c924c}{}\label{classprism_1_1_list_acaa7fffb63e4f955b0f77cf9899c924c}
+Returns a const\+\_\+iterator to the imaginary item one past the last item. \index{prism\+::\+List@{prism\+::\+List}!ends\+With@{ends\+With}}
+\index{ends\+With@{ends\+With}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{ends\+With(const T \&value) const }{endsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+List}$<$ T $>$\+::ends\+With (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a8575a0221bf51275ac186406d656a4f3}{}\label{classprism_1_1_list_a8575a0221bf51275ac186406d656a4f3}
+Returns true if the list is not empty and the last item is equal to {\itshape value}, false otherwise. The value type should have an implementation of \hyperlink{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}{operator==()}. \index{prism\+::\+List@{prism\+::\+List}!erase@{erase}}
+\index{erase@{erase}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{erase(iterator pos)}{erase(iterator pos)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+List}$<$ T $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator}}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_ab6440bbb53502f6e689c1c9274ffa6f8}{}\label{classprism_1_1_list_ab6440bbb53502f6e689c1c9274ffa6f8}
+Removes the item from the list pointed to by {\itshape pos}. If {\itshape pos} is equal to \hyperlink{classprism_1_1_list_a47ef0b3d04fa49bd05f00a13bdfb2b93}{end()} then nothing is removed and {\itshape pos} is returned. Otherwise an iterator to the item after the one just removed is returned instead which could be equal to \hyperlink{classprism_1_1_list_a47ef0b3d04fa49bd05f00a13bdfb2b93}{end()} if the list is now empty. \index{prism\+::\+List@{prism\+::\+List}!first@{first}}
+\index{first@{first}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{first()}{first()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+List}$<$ T $>$\+::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a5c20cbafe00fff084b1c48016a0b04f8}{}\label{classprism_1_1_list_a5c20cbafe00fff084b1c48016a0b04f8}
+Returns a reference to the first item in the list. Equivalent to \hyperlink{classprism_1_1_list_a64abe6201e00a727d55299242b0f5aee}{front()}. \index{prism\+::\+List@{prism\+::\+List}!first@{first}}
+\index{first@{first}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{first() const }{first() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+List}$<$ T $>$\+::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a2ff7747c0784e8f8f71a9365a241601e}{}\label{classprism_1_1_list_a2ff7747c0784e8f8f71a9365a241601e}
+Returns a const reference to the first item in the list. Equivalent to \hyperlink{classprism_1_1_list_a64abe6201e00a727d55299242b0f5aee}{front()}. \index{prism\+::\+List@{prism\+::\+List}!from\+Std\+Forward\+List@{from\+Std\+Forward\+List}}
+\index{from\+Std\+Forward\+List@{from\+Std\+Forward\+List}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{from\+Std\+Forward\+List(const std\+::forward\+\_\+list$<$ T $>$ \&fl)}{fromStdForwardList(const std::forward_list< T > &fl)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$ {\bf prism\+::\+List}$<$ T $>$\+::from\+Std\+Forward\+List (
+\begin{DoxyParamCaption}
+\item[{const std\+::forward\+\_\+list$<$ T $>$ \&}]{fl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_list_a5dd072cd1d777dd751fc2d0deee00e31}{}\label{classprism_1_1_list_a5dd072cd1d777dd751fc2d0deee00e31}
+Static method that creates and returns a new list from a std\+::forward\+\_\+list. \index{prism\+::\+List@{prism\+::\+List}!front@{front}}
+\index{front@{front}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{front()}{front()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+List}$<$ T $>$\+::front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a64abe6201e00a727d55299242b0f5aee}{}\label{classprism_1_1_list_a64abe6201e00a727d55299242b0f5aee}
+Returns a reference to the first item in the list. Added for S\+T\+L-\/compatibility. Equivalent to \hyperlink{classprism_1_1_list_a5c20cbafe00fff084b1c48016a0b04f8}{first()}. \index{prism\+::\+List@{prism\+::\+List}!front@{front}}
+\index{front@{front}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{front() const }{front() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+List}$<$ T $>$\+::front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a5319d6f066eaa794399d36177275f800}{}\label{classprism_1_1_list_a5319d6f066eaa794399d36177275f800}
+Returns a const reference to the first item in the list. Added for S\+T\+L-\/compatibility. Equivalent to \hyperlink{classprism_1_1_list_a5c20cbafe00fff084b1c48016a0b04f8}{first()}. \index{prism\+::\+List@{prism\+::\+List}!insert@{insert}}
+\index{insert@{insert}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{insert(const iterator \&pos, const T \&value)}{insert(const iterator &pos, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+List}$<$ T $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator} \&}]{pos, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a94237ea84df5f1e804ab6ff2717a5634}{}\label{classprism_1_1_list_a94237ea84df5f1e804ab6ff2717a5634}
+Inserts {\itshape value} at one position after the item at {\itshape pos}. Returns an iterator to the item just inserted. \index{prism\+::\+List@{prism\+::\+List}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+List}$<$ T $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_ac0f60893564ab12f9c9974ba685db2b0}{}\label{classprism_1_1_list_ac0f60893564ab12f9c9974ba685db2b0}
+Returns true if the list contains no items, false otherwise. \index{prism\+::\+List@{prism\+::\+List}!last@{last}}
+\index{last@{last}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{last()}{last()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+List}$<$ T $>$\+::last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a16681bef913b82d9951330c7526cdb3f}{}\label{classprism_1_1_list_a16681bef913b82d9951330c7526cdb3f}
+Returns a reference to the last item in the list. Equivalent to \hyperlink{classprism_1_1_list_a557466129db60dc92eaa68b18012900e}{back()}; \index{prism\+::\+List@{prism\+::\+List}!last@{last}}
+\index{last@{last}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{last() const }{last() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+List}$<$ T $>$\+::last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_acf84da5c22f8fe60c182de1f29171ea1}{}\label{classprism_1_1_list_acf84da5c22f8fe60c182de1f29171ea1}
+Returns a const reference to the last item in the list. Equivalent to \hyperlink{classprism_1_1_list_a557466129db60dc92eaa68b18012900e}{back()}; \index{prism\+::\+List@{prism\+::\+List}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator"!=(const List$<$ T $>$ \&rhs) const }{operator!=(const List< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+List}$<$ T $>$\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf List}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a026cc068bceff4e74fd991e3940b76d7}{}\label{classprism_1_1_list_a026cc068bceff4e74fd991e3940b76d7}
+Returns true if this list is equal to the other list {\itshape rhs}. They are considered equal if they are the same size and have the same values in the same order. \index{prism\+::\+List@{prism\+::\+List}!operator+@{operator+}}
+\index{operator+@{operator+}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator+(const List$<$ T $>$ \&rhs) const }{operator+(const List< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$ {\bf prism\+::\+List}$<$ T $>$\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf List}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_ad578cb4c80ff86d9edb989ade883c18f}{}\label{classprism_1_1_list_ad578cb4c80ff86d9edb989ade883c18f}
+Creates and returns a new list that starts with this list followed by the list {\itshape rhs}. \index{prism\+::\+List@{prism\+::\+List}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator+=(const List$<$ T $>$ \&rhs)}{operator+=(const List< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$ \& {\bf prism\+::\+List}$<$ T $>$\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf List}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a84972c1e847fdf2c2ca197d7812af3a0}{}\label{classprism_1_1_list_a84972c1e847fdf2c2ca197d7812af3a0}
+Appends the contents of the list {\itshape rhs} to the end of this list. Returns a reference to this list. \index{prism\+::\+List@{prism\+::\+List}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator+=(const T \&value)}{operator+=(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$ \& {\bf prism\+::\+List}$<$ T $>$\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a5e68dad596d72d1c00f9d12bb21479d6}{}\label{classprism_1_1_list_a5e68dad596d72d1c00f9d12bb21479d6}
+Appends {\itshape value} to the end of the list. Returns a reference to this list. \index{prism\+::\+List@{prism\+::\+List}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(const List$<$ T $>$ \&list)}{operator<<(const List< T > &list)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$ \& {\bf prism\+::\+List}$<$ T $>$\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf List}$<$ T $>$ \&}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_aed7d35e45035b24e4a684f0b1c228086}{}\label{classprism_1_1_list_aed7d35e45035b24e4a684f0b1c228086}
+Appends the items in {\itshape list} to the end of this list. Returns a reference to this list. \index{prism\+::\+List@{prism\+::\+List}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(const T \&value)}{operator<<(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$ \& {\bf prism\+::\+List}$<$ T $>$\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a86dfdf909c7151a54d231d15315acca1}{}\label{classprism_1_1_list_a86dfdf909c7151a54d231d15315acca1}
+Appends {\itshape value} to the end of the list. Equivalent to \hyperlink{classprism_1_1_list_a5e6584f87eee4371e308e1aa9c3da6c8}{append()} and is useful to chain appends together i.\+e. list $<$$<$ 1 $<$$<$ 2 $<$$<$ 3 etc. \index{prism\+::\+List@{prism\+::\+List}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator=(const List$<$ T $>$ \&rhs)}{operator=(const List< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$ \& {\bf prism\+::\+List}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf List}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_abb977e2c0b880c7a381ea14f25417e4f}{}\label{classprism_1_1_list_abb977e2c0b880c7a381ea14f25417e4f}
+Assigns the list {\itshape rhs} to this list. Returns a reference to this list. \index{prism\+::\+List@{prism\+::\+List}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{operator==(const List$<$ T $>$ \&rhs) const }{operator==(const List< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+List}$<$ T $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf List}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}{}\label{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}
+Returns true if this list is equal to the other list {\itshape rhs}. They are considered equal if they are the same size and have the same values in the same order. \index{prism\+::\+List@{prism\+::\+List}!pop\+\_\+back@{pop\+\_\+back}}
+\index{pop\+\_\+back@{pop\+\_\+back}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{pop\+\_\+back()}{pop_back()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::pop\+\_\+back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_aac8b29572cd691890a82846b35799e36}{}\label{classprism_1_1_list_aac8b29572cd691890a82846b35799e36}
+Removes the last item in the list. Equivalent to \hyperlink{classprism_1_1_list_ab6b68a4de2134c159b8e35a2f4bb935d}{remove\+Last()}. Added for S\+T\+L-\/compatibility. \index{prism\+::\+List@{prism\+::\+List}!pop\+\_\+front@{pop\+\_\+front}}
+\index{pop\+\_\+front@{pop\+\_\+front}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{pop\+\_\+front()}{pop_front()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::pop\+\_\+front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_ab8a836a10bc37479fbbc458299d68569}{}\label{classprism_1_1_list_ab8a836a10bc37479fbbc458299d68569}
+Removes the first item in the list. Equivalent to \hyperlink{classprism_1_1_list_a3e19c548f9f8205bea45d394ddcb9ccb}{remove\+First()}. Added for S\+T\+L-\/compatibility. \index{prism\+::\+List@{prism\+::\+List}!prepend@{prepend}}
+\index{prepend@{prepend}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{prepend(const T \&value)}{prepend(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf List}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+List}$<$ T $>$\+::prepend (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a01773efbec8bef23c7a37edb9ea7a93f}{}\label{classprism_1_1_list_a01773efbec8bef23c7a37edb9ea7a93f}
+Adds {\itshape value} to the start of the list. Returns an iterator to the item just inserted. \index{prism\+::\+List@{prism\+::\+List}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{push\+\_\+back(const T \&value)}{push_back(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::push\+\_\+back (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_aabc7020d0f04bc29412d2ff2cb632958}{}\label{classprism_1_1_list_aabc7020d0f04bc29412d2ff2cb632958}
+Appends {\itshape value} to the end of the list and is equivalent to \hyperlink{classprism_1_1_list_a5e6584f87eee4371e308e1aa9c3da6c8}{append()}. Added for S\+T\+L-\/compatibility. \index{prism\+::\+List@{prism\+::\+List}!push\+\_\+front@{push\+\_\+front}}
+\index{push\+\_\+front@{push\+\_\+front}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{push\+\_\+front(const T \&value)}{push_front(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::push\+\_\+front (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a9af267cdacc311662e39630da33f4431}{}\label{classprism_1_1_list_a9af267cdacc311662e39630da33f4431}
+Prepends {\itshape value} at the beginning of the list and is equivalent to \hyperlink{classprism_1_1_list_a01773efbec8bef23c7a37edb9ea7a93f}{prepend()}. Added for S\+T\+L-\/compatibility. \index{prism\+::\+List@{prism\+::\+List}!remove\+All@{remove\+All}}
+\index{remove\+All@{remove\+All}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{remove\+All(const T \&value)}{removeAll(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::remove\+All (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a85937bf298db8c1c8f8017fff492b374}{}\label{classprism_1_1_list_a85937bf298db8c1c8f8017fff492b374}
+Removes all occurrences of {\itshape value} from the list. To remove all items from the list use \hyperlink{classprism_1_1_list_af51ed8f35ae20cc4639962a2dead76d3}{clear()}. The value type should have an implementation of \hyperlink{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}{operator==()}. \index{prism\+::\+List@{prism\+::\+List}!remove\+First@{remove\+First}}
+\index{remove\+First@{remove\+First}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{remove\+First()}{removeFirst()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::remove\+First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a3e19c548f9f8205bea45d394ddcb9ccb}{}\label{classprism_1_1_list_a3e19c548f9f8205bea45d394ddcb9ccb}
+Removes the first item in the list. Equivalent to \hyperlink{classprism_1_1_list_ab8a836a10bc37479fbbc458299d68569}{pop\+\_\+front()}. \index{prism\+::\+List@{prism\+::\+List}!remove\+First\+Of@{remove\+First\+Of}}
+\index{remove\+First\+Of@{remove\+First\+Of}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{remove\+First\+Of(const T \&value)}{removeFirstOf(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::remove\+First\+Of (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_a8ee7eadb17120e6fa267278d0d58c13f}{}\label{classprism_1_1_list_a8ee7eadb17120e6fa267278d0d58c13f}
+Removes the first occurrence of {\itshape value} from the list. The value type should have an implementation of \hyperlink{classprism_1_1_list_a4c14c11fdcb43c27a1035fccbe0f7b4d}{operator==()}. \index{prism\+::\+List@{prism\+::\+List}!remove\+Last@{remove\+Last}}
+\index{remove\+Last@{remove\+Last}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{remove\+Last()}{removeLast()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+List}$<$ T $>$\+::remove\+Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_list_ab6b68a4de2134c159b8e35a2f4bb935d}{}\label{classprism_1_1_list_ab6b68a4de2134c159b8e35a2f4bb935d}
+Removes the last item in the list. Equivalent to \hyperlink{classprism_1_1_list_aac8b29572cd691890a82846b35799e36}{pop\+\_\+back()}. \index{prism\+::\+List@{prism\+::\+List}!size@{size}}
+\index{size@{size}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+List}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_a90855d0c971c394fabf612c02dce4d3a}{}\label{classprism_1_1_list_a90855d0c971c394fabf612c02dce4d3a}
+Returns the number of items contained in the list. \index{prism\+::\+List@{prism\+::\+List}!starts\+With@{starts\+With}}
+\index{starts\+With@{starts\+With}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{starts\+With(const T \&value) const }{startsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+List}$<$ T $>$\+::starts\+With (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_ac129dafdb80ae13cfc914dc0668e6b39}{}\label{classprism_1_1_list_ac129dafdb80ae13cfc914dc0668e6b39}
+Returns true if the list is not empty and the first item equals {\itshape value}. \index{prism\+::\+List@{prism\+::\+List}!to\+Std\+Forward\+List@{to\+Std\+Forward\+List}}
+\index{to\+Std\+Forward\+List@{to\+Std\+Forward\+List}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{to\+Std\+Forward\+List() const }{toStdForwardList() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::forward\+\_\+list$<$ T $>$ {\bf prism\+::\+List}$<$ T $>$\+::to\+Std\+Forward\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_list_ab628c77e4598e1055a8b832367a31997}{}\label{classprism_1_1_list_ab628c77e4598e1055a8b832367a31997}
+Creates and returns a std\+::forward\+\_\+list containing the items from this list. 
+
+\subsection{Member Data Documentation}
+\index{prism\+::\+List@{prism\+::\+List}!m\+\_\+header@{m\+\_\+header}}
+\index{m\+\_\+header@{m\+\_\+header}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{m\+\_\+header}{m_header}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ Node$\ast$ {\bf prism\+::\+List}$<$ T $>$\+::m\+\_\+header\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classprism_1_1_list_ade9dd1234d468fdcbcddb16eb490d296}{}\label{classprism_1_1_list_ade9dd1234d468fdcbcddb16eb490d296}
+\index{prism\+::\+List@{prism\+::\+List}!m\+\_\+size@{m\+\_\+size}}
+\index{m\+\_\+size@{m\+\_\+size}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{m\+\_\+size}{m_size}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf prism\+::\+List}$<$ T $>$\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classprism_1_1_list_ae86f48e50ec12239597de98deb36b4a4}{}\label{classprism_1_1_list_ae86f48e50ec12239597de98deb36b4a4}
+\index{prism\+::\+List@{prism\+::\+List}!m\+\_\+tailer@{m\+\_\+tailer}}
+\index{m\+\_\+tailer@{m\+\_\+tailer}!prism\+::\+List@{prism\+::\+List}}
+\subsubsection[{\texorpdfstring{m\+\_\+tailer}{m_tailer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ Node$\ast$ {\bf prism\+::\+List}$<$ T $>$\+::m\+\_\+tailer\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classprism_1_1_list_a0740989f0d5af2bad19850fac850947e}{}\label{classprism_1_1_list_a0740989f0d5af2bad19850fac850947e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\+Prism/containers/\hyperlink{_list_8h}{List.\+h}\end{DoxyCompactItemize}

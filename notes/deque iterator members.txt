@@ -1,0 +1,36 @@
+DequeIterator
+-------------
+T *current
+T *first
+T *last
+T **node
+
+DequeIterator() : current(0), first(0), last(0), node(0) {}
+DequeIterator(T* cur, T** node) : current(cur), first(*node), last(*node+nodeSize), node(node) {}
+DequeIterator(const iterator& copy) : current(copy.current), first(copy.first) .... 
+
+void set_node(T** newNode)
+
+T& 			operator*()
+pointer 	operator->()
+iterator& 	operator++()
+iterator 	operator++(const int)
+iterator& 	operator--()
+iterator 	operator--(const int)
+iterator& 	operator+=(const int)
+iterator	operator+(const int)
+iterator&	operator-=(const int)
+iterator	operator-(const int)
+reference	operator[](const int)
+bool		operator==(iterator, iterator)
+bool		operator!=(iterator, iterator)
+bool		operator<(iterator, iterator)
+bool		operator>(iterator, iterator)
+bool		operator<=(iterator, iterator)
+bool		operator>=(iterator, iterator)
+difference	operator-(iterator, iterator)
+
+void 		fill(iterator, iterator, T&)
+iterator	copy(iterator, iterator, iterator)
+iterator	copy(iterator first, iterator last, iterator result)
+iterator	copy_backward(iterator, iterator, iterator)

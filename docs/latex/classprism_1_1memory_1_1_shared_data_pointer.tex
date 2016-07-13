@@ -1,0 +1,209 @@
+\hypertarget{classprism_1_1memory_1_1_shared_data_pointer}{}\section{prism\+:\+:memory\+:\+:Shared\+Data\+Pointer$<$ Shared\+Data\+Type $>$ Class Template Reference}
+\label{classprism_1_1memory_1_1_shared_data_pointer}\index{prism\+::memory\+::\+Shared\+Data\+Pointer$<$ Shared\+Data\+Type $>$@{prism\+::memory\+::\+Shared\+Data\+Pointer$<$ Shared\+Data\+Type $>$}}
+
+
+{\ttfamily \#include $<$Shared\+Data\+Pointer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a4be66e91be3996b6785dd6b4587103dc}{Shared\+Data\+Pointer} ()
+\item 
+\hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a91e65371f722c076c077d41092e54bb1}{Shared\+Data\+Pointer} (Shared\+Data\+Type $\ast$p)
+\item 
+\hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a07819ac3e0d0c5e2b6adeb16c9943f26}{Shared\+Data\+Pointer} (const \hyperlink{classprism_1_1memory_1_1_shared_data_pointer}{Shared\+Data\+Pointer} \&copy)
+\item 
+\hyperlink{classprism_1_1memory_1_1_shared_data_pointer}{Shared\+Data\+Pointer} \& \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a5c82d7c3cb1d102108b05d00d4bf6f12}{operator=} (const \hyperlink{classprism_1_1memory_1_1_shared_data_pointer}{Shared\+Data\+Pointer} \&rhs)
+\item 
+\hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a3520c2c51a47ae016a2376a358263287}{$\sim$\+Shared\+Data\+Pointer} ()
+\item 
+const Shared\+Data\+Type $\ast$ \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_acf60fd3e1235f7243d0fb7d64baf8084}{const\+Data} () const 
+\item 
+Shared\+Data\+Type $\ast$ \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a8a94b4e03abe792472af878bdfc00711}{data} ()
+\item 
+const Shared\+Data\+Type $\ast$ \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_addecd32c104c87376237ab2b70274d0a}{data} () const 
+\item 
+void \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_ae678a22d7837d6e157a482684ccd768e}{detach} ()
+\item 
+const bool \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_aa150c9177ff76a8177924f21510058e6}{is\+Null} () const 
+\item 
+const bool \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a0104cb618a402a38728f7292308fff76}{is\+Shareable} () const 
+\item 
+const bool \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a236a58e95a8bba5538947d1e739456a3}{is\+Shared} () const 
+\item 
+const int \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a66e6434630987a02ca1d697948b929b1}{ref\+Count} () const 
+\item 
+void \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a59b2451c98fcff84520d47fa3f537960}{set\+Unshareable} ()
+\item 
+Shared\+Data\+Type $\ast$ \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a4c4f94391d8dc2bba3eb8ac57120645c}{operator-\/$>$} ()
+\item 
+const Shared\+Data\+Type $\ast$ \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a926ef0ea9279bdaf8d7064b30f8ba998}{operator-\/$>$} () const 
+\item 
+Shared\+Data\+Type \& \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_acd5200018cf4264c8ecbab16af41399a}{operator$\ast$} ()
+\item 
+const Shared\+Data\+Type \& \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a9900da85919847f3139221fea27783d7}{operator$\ast$} () const 
+\item 
+const bool \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a8f3230148b77d4529a243d44b62e27b1}{operator!} () const 
+\item 
+const bool \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_a671a8143dd36a55bd64f989c85310902}{operator!=} (const \hyperlink{classprism_1_1memory_1_1_shared_data_pointer}{Shared\+Data\+Pointer} \&rhs) const 
+\item 
+const bool \hyperlink{classprism_1_1memory_1_1_shared_data_pointer_ab074ff7fe192e814f1efd521a3d6b67d}{operator==} (const \hyperlink{classprism_1_1memory_1_1_shared_data_pointer}{Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$ \&rhs) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!Shared\+Data\+Pointer@{Shared\+Data\+Pointer}}
+\index{Shared\+Data\+Pointer@{Shared\+Data\+Pointer}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{Shared\+Data\+Pointer()}{SharedDataPointer()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::{\bf Shared\+Data\+Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a4be66e91be3996b6785dd6b4587103dc}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a4be66e91be3996b6785dd6b4587103dc}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!Shared\+Data\+Pointer@{Shared\+Data\+Pointer}}
+\index{Shared\+Data\+Pointer@{Shared\+Data\+Pointer}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{Shared\+Data\+Pointer(\+Shared\+Data\+Type $\ast$p)}{SharedDataPointer(SharedDataType *p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::{\bf Shared\+Data\+Pointer} (
+\begin{DoxyParamCaption}
+\item[{Shared\+Data\+Type $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a91e65371f722c076c077d41092e54bb1}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a91e65371f722c076c077d41092e54bb1}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!Shared\+Data\+Pointer@{Shared\+Data\+Pointer}}
+\index{Shared\+Data\+Pointer@{Shared\+Data\+Pointer}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{Shared\+Data\+Pointer(const Shared\+Data\+Pointer \&copy)}{SharedDataPointer(const SharedDataPointer &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::{\bf Shared\+Data\+Pointer} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a07819ac3e0d0c5e2b6adeb16c9943f26}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a07819ac3e0d0c5e2b6adeb16c9943f26}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!````~Shared\+Data\+Pointer@{$\sim$\+Shared\+Data\+Pointer}}
+\index{````~Shared\+Data\+Pointer@{$\sim$\+Shared\+Data\+Pointer}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{$\sim$\+Shared\+Data\+Pointer()}{~SharedDataPointer()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::$\sim${\bf Shared\+Data\+Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a3520c2c51a47ae016a2376a358263287}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a3520c2c51a47ae016a2376a358263287}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!const\+Data@{const\+Data}}
+\index{const\+Data@{const\+Data}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{const\+Data() const }{constData() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const Shared\+Data\+Type $\ast$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::const\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_acf60fd3e1235f7243d0fb7d64baf8084}{}\label{classprism_1_1memory_1_1_shared_data_pointer_acf60fd3e1235f7243d0fb7d64baf8084}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!data@{data}}
+\index{data@{data}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{data()}{data()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ Shared\+Data\+Type $\ast$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a8a94b4e03abe792472af878bdfc00711}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a8a94b4e03abe792472af878bdfc00711}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!data@{data}}
+\index{data@{data}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{data() const }{data() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const Shared\+Data\+Type $\ast$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_addecd32c104c87376237ab2b70274d0a}{}\label{classprism_1_1memory_1_1_shared_data_pointer_addecd32c104c87376237ab2b70274d0a}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!detach@{detach}}
+\index{detach@{detach}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{detach()}{detach()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Shared\+Data\+Type $>$ void {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_ae678a22d7837d6e157a482684ccd768e}{}\label{classprism_1_1memory_1_1_shared_data_pointer_ae678a22d7837d6e157a482684ccd768e}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{is\+Null() const }{isNull() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const bool {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_aa150c9177ff76a8177924f21510058e6}{}\label{classprism_1_1memory_1_1_shared_data_pointer_aa150c9177ff76a8177924f21510058e6}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!is\+Shareable@{is\+Shareable}}
+\index{is\+Shareable@{is\+Shareable}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{is\+Shareable() const }{isShareable() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Shared\+Data\+Type $>$ const bool {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::is\+Shareable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a0104cb618a402a38728f7292308fff76}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a0104cb618a402a38728f7292308fff76}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!is\+Shared@{is\+Shared}}
+\index{is\+Shared@{is\+Shared}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{is\+Shared() const }{isShared() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Shared\+Data\+Type $>$ const bool {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::is\+Shared (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a236a58e95a8bba5538947d1e739456a3}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a236a58e95a8bba5538947d1e739456a3}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator"!() const }{operator!() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const bool {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::operator! (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a8f3230148b77d4529a243d44b62e27b1}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a8f3230148b77d4529a243d44b62e27b1}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator"!=(const Shared\+Data\+Pointer \&rhs) const }{operator!=(const SharedDataPointer &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const bool {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::{\bf operator!}= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a671a8143dd36a55bd64f989c85310902}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a671a8143dd36a55bd64f989c85310902}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator$\ast$()}{operator*()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ Shared\+Data\+Type \& {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_acd5200018cf4264c8ecbab16af41399a}{}\label{classprism_1_1memory_1_1_shared_data_pointer_acd5200018cf4264c8ecbab16af41399a}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator$\ast$() const }{operator*() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const Shared\+Data\+Type \& {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a9900da85919847f3139221fea27783d7}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a9900da85919847f3139221fea27783d7}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator-\/$>$()}{operator->()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ Shared\+Data\+Type $\ast$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a4c4f94391d8dc2bba3eb8ac57120645c}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a4c4f94391d8dc2bba3eb8ac57120645c}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator-\/$>$() const }{operator->() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const Shared\+Data\+Type $\ast$ {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a926ef0ea9279bdaf8d7064b30f8ba998}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a926ef0ea9279bdaf8d7064b30f8ba998}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator=(const Shared\+Data\+Pointer \&rhs)}{operator=(const SharedDataPointer &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ {\bf Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$ \& {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a5c82d7c3cb1d102108b05d00d4bf6f12}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a5c82d7c3cb1d102108b05d00d4bf6f12}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{operator==(const Shared\+Data\+Pointer$<$ Shared\+Data\+Type $>$ \&rhs) const }{operator==(const SharedDataPointer< SharedDataType > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const bool {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_ab074ff7fe192e814f1efd521a3d6b67d}{}\label{classprism_1_1memory_1_1_shared_data_pointer_ab074ff7fe192e814f1efd521a3d6b67d}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!ref\+Count@{ref\+Count}}
+\index{ref\+Count@{ref\+Count}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{ref\+Count() const }{refCount() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Shared\+Data\+Type $>$ const int {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::ref\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a66e6434630987a02ca1d697948b929b1}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a66e6434630987a02ca1d697948b929b1}
+\index{prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}!set\+Unshareable@{set\+Unshareable}}
+\index{set\+Unshareable@{set\+Unshareable}!prism\+::memory\+::\+Shared\+Data\+Pointer@{prism\+::memory\+::\+Shared\+Data\+Pointer}}
+\subsubsection[{\texorpdfstring{set\+Unshareable()}{setUnshareable()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Shared\+Data\+Type $>$ void {\bf prism\+::memory\+::\+Shared\+Data\+Pointer}$<$ Shared\+Data\+Type $>$\+::set\+Unshareable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1memory_1_1_shared_data_pointer_a59b2451c98fcff84520d47fa3f537960}{}\label{classprism_1_1memory_1_1_shared_data_pointer_a59b2451c98fcff84520d47fa3f537960}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/memory/\hyperlink{_shared_data_pointer_8h}{Shared\+Data\+Pointer.\+h}\end{DoxyCompactItemize}

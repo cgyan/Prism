@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_2223514900ca7ca9ce4a3afbe11409ff" kind="dir">
+    <compoundname>inc/exceptions</compoundname>
+    <innerfile refid="_exception_8h">Exception.h</innerfile>
+    <innerfile refid="_out_of_bounds_exception_8h">OutOfBoundsException.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/exceptions/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1memory_1_1_shared_data" kind="class" language="C++" prot="public">
+    <compoundname>prism::memory::SharedData</compoundname>
+    <includes refid="_shared_data_8h" local="no">SharedData.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprism_1_1memory_1_1_shared_data_1aa7ed259ad6d96349f95e2da15427d78e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int prism::memory::SharedData::m_refCount</definition>
+        <argsstring></argsstring>
+        <name>m_refCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="21" column="1" bodyfile="inc/memory/SharedData.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1memory_1_1_shared_data_1a48e4c93e364a6efc39eebd26ffae6a26" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool prism::memory::SharedData::m_shareable</definition>
+        <argsstring></argsstring>
+        <name>m_shareable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="22" column="1" bodyfile="inc/memory/SharedData.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1ac79d17d38937b630c07ff1a228269e5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::memory::SharedData::SharedData</definition>
+        <argsstring>()</argsstring>
+        <name>SharedData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="28" column="1" bodyfile="inc/memory/SharedData.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1ad473b3111b5da23be5e8e0edda370fef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::memory::SharedData::SharedData</definition>
+        <argsstring>(const SharedData &amp;copy)</argsstring>
+        <name>SharedData</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_data" kindref="compound">SharedData</ref> &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="33" column="1" bodyfile="inc/memory/SharedData.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1a43ef2a146c9788b27e7deea9ea9515f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classprism_1_1memory_1_1_shared_data" kindref="compound">SharedData</ref> &amp;</type>
+        <definition>SharedData&amp; prism::memory::SharedData::operator=</definition>
+        <argsstring>(const SharedData &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_data" kindref="compound">SharedData</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="38" column="1" bodyfile="inc/memory/SharedData.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1a65f0be2eead2e5b90047a22ddef65b65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual prism::memory::SharedData::~SharedData</definition>
+        <argsstring>()</argsstring>
+        <name>~SharedData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="43" column="1" bodyfile="inc/memory/SharedData.h" bodystart="43" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1aa16c5289dd21c5f46bdfc4adeed4512f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::memory::SharedData::incRef</definition>
+        <argsstring>()</argsstring>
+        <name>incRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="48" column="1" bodyfile="inc/memory/SharedData.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1a0a34ad897850178207793ccc8561d492" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::memory::SharedData::decRef</definition>
+        <argsstring>()</argsstring>
+        <name>decRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="53" column="1" bodyfile="inc/memory/SharedData.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1a128ea9aca3cbbb9f823be07177459cd2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int prism::memory::SharedData::refCount</definition>
+        <argsstring>() const </argsstring>
+        <name>refCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="58" column="1" bodyfile="inc/memory/SharedData.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1a09dd9370e7f370f1306677b16acb3405" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::memory::SharedData::setUnshareable</definition>
+        <argsstring>()</argsstring>
+        <name>setUnshareable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="63" column="1" bodyfile="inc/memory/SharedData.h" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1a89f4514948434fa071e3e35dff75fe1c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::memory::SharedData::isShareable</definition>
+        <argsstring>() const </argsstring>
+        <name>isShareable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="68" column="1" bodyfile="inc/memory/SharedData.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_data_1a756a791e1cba19f476fdc00bf892fbe6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::memory::SharedData::isShared</definition>
+        <argsstring>() const </argsstring>
+        <name>isShared</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedData.h" line="73" column="1" bodyfile="inc/memory/SharedData.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/memory/SharedData.h" line="19" column="1" bodyfile="inc/memory/SharedData.h" bodystart="19" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a0a34ad897850178207793ccc8561d492" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>decRef</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1aa16c5289dd21c5f46bdfc4adeed4512f" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>incRef</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a89f4514948434fa071e3e35dff75fe1c" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>isShareable</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a756a791e1cba19f476fdc00bf892fbe6" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>isShared</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1aa7ed259ad6d96349f95e2da15427d78e" prot="private" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>m_refCount</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a48e4c93e364a6efc39eebd26ffae6a26" prot="private" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>m_shareable</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a43ef2a146c9788b27e7deea9ea9515f0" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>operator=</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a128ea9aca3cbbb9f823be07177459cd2" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>refCount</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a09dd9370e7f370f1306677b16acb3405" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>setUnshareable</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1ac79d17d38937b630c07ff1a228269e5d" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>SharedData</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1ad473b3111b5da23be5e8e0edda370fef" prot="public" virt="non-virtual"><scope>prism::memory::SharedData</scope><name>SharedData</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_data_1a65f0be2eead2e5b90047a22ddef65b65" prot="public" virt="virtual"><scope>prism::memory::SharedData</scope><name>~SharedData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,8 @@
+C String Initialization
+----------------------------
+char name[5]; 
+char name[] = { 'e', 'l', 'a', 'n', '\0' }; 	// individual chars
+char name[] = { "elan" }; 						// a string literal
+char *name = { "elan" }; 						// a string literal
+char *name = new char[5];
+

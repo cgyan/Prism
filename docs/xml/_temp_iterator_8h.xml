@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_temp_iterator_8h" kind="file" language="C++">
+    <compoundname>TempIterator.h</compoundname>
+    <includes local="no">ostream</includes>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="97">
+        <label>ostream</label>
+      </node>
+      <node id="96">
+        <label>inc/containers/TempIterator.h</label>
+        <link refid="TempIterator.h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="99">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="98">
+        <label>inc/containers/TempIterator.h</label>
+        <link refid="TempIterator.h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_iterator" prot="public">Iterator</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_temp_iterator_8h_1a20a9f93d2eefaf87b7978894b0a39f8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(Iterator&lt; T &gt; &amp;lhs, Iterator&lt; T &gt; &amp;rhs)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; T &gt; &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; T &gt; &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="61" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="_temp_iterator_8h_1afc87952e4ce019029ddd752ae53b4ccd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(Iterator&lt; T &gt; &amp;lhs, Iterator&lt; T &gt; &amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; T &gt; &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; T &gt; &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="66" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="66" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>TempIterator.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>v0.*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Feb<sp/>22,<sp/>2015</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>iainhemstock</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TEMPITERATOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TEMPITERATOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="16" refid="class_iterator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_iterator" kindref="compound">Iterator</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/>p;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_iterator" kindref="compound">Iterator</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_iterator" kindref="compound">Iterator</ref>(T*<sp/>p);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>T&amp;<sp/><ref refid="namespaceprism_1_1geometry_1a088357a2f0b61232578a4f1a269c50a6" kindref="member">operator*</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>T*<sp/>operator&amp;();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_iterator" kindref="compound">Iterator&lt;T&gt;</ref>&amp;<sp/>operator++();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>_T&gt;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_temp_iterator_8h_1a20a9f93d2eefaf87b7978894b0a39f8e" kindref="member">operator==</ref>(<ref refid="class_iterator" kindref="compound">Iterator&lt;_T&gt;</ref>&amp;<sp/>lhs,<sp/><ref refid="class_iterator" kindref="compound">Iterator&lt;_T&gt;</ref>&amp;<sp/>rhs);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>_T&gt;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_temp_iterator_8h_1afc87952e4ce019029ddd752ae53b4ccd" kindref="member">operator!=</ref>(<ref refid="class_iterator" kindref="compound">Iterator&lt;_T&gt;</ref>&amp;<sp/>lhs,<sp/><ref refid="class_iterator" kindref="compound">Iterator&lt;_T&gt;</ref>&amp;<sp/>rhs);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="33" refid="class_iterator_1a87d4af70ba6312e91e1ab6a7c9e2ec6d" refkind="member"><highlight class="normal"><ref refid="class_iterator_1a87d4af70ba6312e91e1ab6a7c9e2ec6d" kindref="member">Iterator&lt;T&gt;::Iterator</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">:<sp/>p(0)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="39" refid="class_iterator_1a9c3353bb547e0577a7e0db347c0b10e1" refkind="member"><highlight class="normal"><ref refid="class_iterator_1a87d4af70ba6312e91e1ab6a7c9e2ec6d" kindref="member">Iterator&lt;T&gt;::Iterator</ref>(T*<sp/>p)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">:<sp/>p(p)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="45" refid="class_iterator_1a31a9915829a895b5e28707671acbc94a" refkind="member"><highlight class="normal">T&amp;<sp/><ref refid="class_iterator_1a31a9915829a895b5e28707671acbc94a" kindref="member">Iterator&lt;T&gt;::operator *</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*p;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="50" refid="class_iterator_1a841ce211854aa73a95fcfc0716099290" refkind="member"><highlight class="normal">T*<sp/><ref refid="class_iterator_1a841ce211854aa73a95fcfc0716099290" kindref="member">Iterator&lt;T&gt;::operator &amp;</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="55" refid="class_iterator_1aeb34c80997916ed2561271a7ed56014f" refkind="member"><highlight class="normal"><ref refid="class_iterator" kindref="compound">Iterator&lt;T&gt;</ref>&amp;<sp/><ref refid="class_iterator_1aeb34c80997916ed2561271a7ed56014f" kindref="member">Iterator&lt;T&gt;::operator ++</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>p++;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="61" refid="_temp_iterator_8h_1a20a9f93d2eefaf87b7978894b0a39f8e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_iterator_1a039f78c73b5c74cf9a70df1df979345e" kindref="member">operator==</ref>(<ref refid="class_iterator" kindref="compound">Iterator&lt;T&gt;</ref>&amp;<sp/>lhs,<sp/><ref refid="class_iterator" kindref="compound">Iterator&lt;T&gt;</ref>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs.p<sp/>==<sp/>rhs.p;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="66" refid="_temp_iterator_8h_1afc87952e4ce019029ddd752ae53b4ccd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_iterator_1abfe7f47698f961015253c76cda143f1e" kindref="member">operator!=</ref>(<ref refid="class_iterator" kindref="compound">Iterator&lt;T&gt;</ref>&amp;<sp/>lhs,<sp/><ref refid="class_iterator" kindref="compound">Iterator&lt;T&gt;</ref>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!(lhs<sp/>==<sp/>rhs);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TEMPITERATOR_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="inc/containers/TempIterator.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,173 @@
+\hypertarget{classprism_1_1containers_1_1_deque_data}{}\section{prism\+:\+:containers\+:\+:Deque\+Data$<$ T $>$ Class Template Reference}
+\label{classprism_1_1containers_1_1_deque_data}\index{prism\+::containers\+::\+Deque\+Data$<$ T $>$@{prism\+::containers\+::\+Deque\+Data$<$ T $>$}}
+
+
+{\ttfamily \#include $<$\+\_\+\+Deque\+Data.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classprism_1_1containers_1_1_deque_data_aed08082decb29717e0d968fabb1f1ea4a772861c6d49ff3131a0f2acd7e4b588b}{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE} = 8
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_data_a6df573bc442a362759d91e5422134fe2}{Deque\+Data} ()
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_data_acfca954633c170f1a7fa7faacb013d6d}{Deque\+Data} (const int num\+Elements)
+\item 
+T $\ast$ \hyperlink{classprism_1_1containers_1_1_deque_data_a0ada47425797d68443f27823bfa08cea}{allocate\+Chunk} () const 
+\item 
+T $\ast$$\ast$ \hyperlink{classprism_1_1containers_1_1_deque_data_a269638b0bd962c93931c5898482b4f44}{allocate\+Map} (const int size) const 
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_a850f8ec25965cf841dd64a97d2e77f40}{create\+Chunks} (T $\ast$$\ast$begin, T $\ast$$\ast$end)
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_a6fdfcbf7075005a085405b7ec0ae210e}{deallocate\+Chunk} (T $\ast$chunk)
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_aaae5b68eaa8045c9a299daf457fe2a1f}{deallocate\+Map} ()
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_a688c8749c8ccab76a351192743c1d557}{destroy\+Chunks} (T $\ast$$\ast$begin, T $\ast$$\ast$end)
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_ae17c6cb94116e58431aab0ca0d94b41e}{initialize\+Map} (const int num\+Elements)
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_ab27311b60cdca11069661aa4a5233958}{reallocate\+Map} (const int num\+Chunks)
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_a134621784e64e855754d187c4babd03c}{reserve\+Map\+At\+Front} (const int num\+Chunks)
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_data_a66b8f37117266f764d5ea3f60ee4a948}{debug\+Map} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$$\ast$ \hyperlink{classprism_1_1containers_1_1_deque_data_a1760fab65f72a59bf121f84042409462}{map}
+\item 
+int \hyperlink{classprism_1_1containers_1_1_deque_data_a0fff90781042b14137e69017dc0d6479}{map\+Size}
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator}{iterator} \hyperlink{classprism_1_1containers_1_1_deque_data_a20b372c923c7c2597f4a497435d34b42}{first\+Chunk}
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator}{iterator} \hyperlink{classprism_1_1containers_1_1_deque_data_a8f635e8ceaa6bca00bec0f54079abea4}{last\+Chunk}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{\texorpdfstring{anonymous enum}{anonymous enum}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ anonymous enum}\hypertarget{classprism_1_1containers_1_1_deque_data_aed08082decb29717e0d968fabb1f1ea4}{}\label{classprism_1_1containers_1_1_deque_data_aed08082decb29717e0d968fabb1f1ea4}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE@{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE@{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE}}\item[{\em 
+C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE\hypertarget{classprism_1_1containers_1_1_deque_data_aed08082decb29717e0d968fabb1f1ea4a772861c6d49ff3131a0f2acd7e4b588b}{}\label{classprism_1_1containers_1_1_deque_data_aed08082decb29717e0d968fabb1f1ea4a772861c6d49ff3131a0f2acd7e4b588b}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!Deque\+Data@{Deque\+Data}}
+\index{Deque\+Data@{Deque\+Data}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{Deque\+Data()}{DequeData()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::{\bf Deque\+Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_a6df573bc442a362759d91e5422134fe2}{}\label{classprism_1_1containers_1_1_deque_data_a6df573bc442a362759d91e5422134fe2}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!Deque\+Data@{Deque\+Data}}
+\index{Deque\+Data@{Deque\+Data}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{Deque\+Data(const int num\+Elements)}{DequeData(const int numElements)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::{\bf Deque\+Data} (
+\begin{DoxyParamCaption}
+\item[{const int}]{num\+Elements}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_acfca954633c170f1a7fa7faacb013d6d}{}\label{classprism_1_1containers_1_1_deque_data_acfca954633c170f1a7fa7faacb013d6d}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!allocate\+Chunk@{allocate\+Chunk}}
+\index{allocate\+Chunk@{allocate\+Chunk}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{allocate\+Chunk() const }{allocateChunk() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T $\ast$ {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::allocate\+Chunk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_deque_data_a0ada47425797d68443f27823bfa08cea}{}\label{classprism_1_1containers_1_1_deque_data_a0ada47425797d68443f27823bfa08cea}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!allocate\+Map@{allocate\+Map}}
+\index{allocate\+Map@{allocate\+Map}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{allocate\+Map(const int size) const }{allocateMap(const int size) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T $\ast$$\ast$ {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::allocate\+Map (
+\begin{DoxyParamCaption}
+\item[{const int}]{size}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_deque_data_a269638b0bd962c93931c5898482b4f44}{}\label{classprism_1_1containers_1_1_deque_data_a269638b0bd962c93931c5898482b4f44}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!create\+Chunks@{create\+Chunks}}
+\index{create\+Chunks@{create\+Chunks}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{create\+Chunks(\+T $\ast$$\ast$begin, T $\ast$$\ast$end)}{createChunks(T **begin, T **end)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::create\+Chunks (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{begin, }
+\item[{T $\ast$$\ast$}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_a850f8ec25965cf841dd64a97d2e77f40}{}\label{classprism_1_1containers_1_1_deque_data_a850f8ec25965cf841dd64a97d2e77f40}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!deallocate\+Chunk@{deallocate\+Chunk}}
+\index{deallocate\+Chunk@{deallocate\+Chunk}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{deallocate\+Chunk(\+T $\ast$chunk)}{deallocateChunk(T *chunk)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::deallocate\+Chunk (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{chunk}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_a6fdfcbf7075005a085405b7ec0ae210e}{}\label{classprism_1_1containers_1_1_deque_data_a6fdfcbf7075005a085405b7ec0ae210e}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!deallocate\+Map@{deallocate\+Map}}
+\index{deallocate\+Map@{deallocate\+Map}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{deallocate\+Map()}{deallocateMap()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::deallocate\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_aaae5b68eaa8045c9a299daf457fe2a1f}{}\label{classprism_1_1containers_1_1_deque_data_aaae5b68eaa8045c9a299daf457fe2a1f}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!debug\+Map@{debug\+Map}}
+\index{debug\+Map@{debug\+Map}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{debug\+Map() const }{debugMap() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::debug\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_deque_data_a66b8f37117266f764d5ea3f60ee4a948}{}\label{classprism_1_1containers_1_1_deque_data_a66b8f37117266f764d5ea3f60ee4a948}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!destroy\+Chunks@{destroy\+Chunks}}
+\index{destroy\+Chunks@{destroy\+Chunks}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{destroy\+Chunks(\+T $\ast$$\ast$begin, T $\ast$$\ast$end)}{destroyChunks(T **begin, T **end)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::destroy\+Chunks (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{begin, }
+\item[{T $\ast$$\ast$}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_a688c8749c8ccab76a351192743c1d557}{}\label{classprism_1_1containers_1_1_deque_data_a688c8749c8ccab76a351192743c1d557}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!initialize\+Map@{initialize\+Map}}
+\index{initialize\+Map@{initialize\+Map}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{initialize\+Map(const int num\+Elements)}{initializeMap(const int numElements)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::initialize\+Map (
+\begin{DoxyParamCaption}
+\item[{const int}]{num\+Elements}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_ae17c6cb94116e58431aab0ca0d94b41e}{}\label{classprism_1_1containers_1_1_deque_data_ae17c6cb94116e58431aab0ca0d94b41e}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!reallocate\+Map@{reallocate\+Map}}
+\index{reallocate\+Map@{reallocate\+Map}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{reallocate\+Map(const int num\+Chunks)}{reallocateMap(const int numChunks)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::reallocate\+Map (
+\begin{DoxyParamCaption}
+\item[{const int}]{num\+Chunks}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_ab27311b60cdca11069661aa4a5233958}{}\label{classprism_1_1containers_1_1_deque_data_ab27311b60cdca11069661aa4a5233958}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!reserve\+Map\+At\+Front@{reserve\+Map\+At\+Front}}
+\index{reserve\+Map\+At\+Front@{reserve\+Map\+At\+Front}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{reserve\+Map\+At\+Front(const int num\+Chunks)}{reserveMapAtFront(const int numChunks)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::reserve\+Map\+At\+Front (
+\begin{DoxyParamCaption}
+\item[{const int}]{num\+Chunks}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_data_a134621784e64e855754d187c4babd03c}{}\label{classprism_1_1containers_1_1_deque_data_a134621784e64e855754d187c4babd03c}
+
+
+\subsection{Member Data Documentation}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!first\+Chunk@{first\+Chunk}}
+\index{first\+Chunk@{first\+Chunk}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{first\+Chunk}{firstChunk}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf iterator} {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::first\+Chunk}\hypertarget{classprism_1_1containers_1_1_deque_data_a20b372c923c7c2597f4a497435d34b42}{}\label{classprism_1_1containers_1_1_deque_data_a20b372c923c7c2597f4a497435d34b42}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!last\+Chunk@{last\+Chunk}}
+\index{last\+Chunk@{last\+Chunk}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{last\+Chunk}{lastChunk}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf iterator} {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::last\+Chunk}\hypertarget{classprism_1_1containers_1_1_deque_data_a8f635e8ceaa6bca00bec0f54079abea4}{}\label{classprism_1_1containers_1_1_deque_data_a8f635e8ceaa6bca00bec0f54079abea4}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!map@{map}}
+\index{map@{map}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{map}{map}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$$\ast$ {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::map}\hypertarget{classprism_1_1containers_1_1_deque_data_a1760fab65f72a59bf121f84042409462}{}\label{classprism_1_1containers_1_1_deque_data_a1760fab65f72a59bf121f84042409462}
+\index{prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}!map\+Size@{map\+Size}}
+\index{map\+Size@{map\+Size}!prism\+::containers\+::\+Deque\+Data@{prism\+::containers\+::\+Deque\+Data}}
+\subsubsection[{\texorpdfstring{map\+Size}{mapSize}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf prism\+::containers\+::\+Deque\+Data}$<$ T $>$\+::map\+Size}\hypertarget{classprism_1_1containers_1_1_deque_data_a0fff90781042b14137e69017dc0d6479}{}\label{classprism_1_1containers_1_1_deque_data_a0fff90781042b14137e69017dc0d6479}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/containers/aux/\hyperlink{___deque_data_8h}{\+\_\+\+Deque\+Data.\+h}\end{DoxyCompactItemize}

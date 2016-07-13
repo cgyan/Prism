@@ -1,0 +1,610 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1geometry_1_1_point" kind="class" language="C++" prot="public">
+    <compoundname>prism::geometry::Point</compoundname>
+    <includes refid="_point_8h" local="no">Point.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_point_1a15acff0d1312e7929c866a9d5152b9fe" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int prism::geometry::Point::m_x</definition>
+        <argsstring></argsstring>
+        <name>m_x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="11" column="1" bodyfile="inc/geometry/Point.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_point_1a7b407c97d44e0fac4078f1ebb3c22730" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int prism::geometry::Point::m_y</definition>
+        <argsstring></argsstring>
+        <name>m_y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="12" column="1" bodyfile="inc/geometry/Point.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a416c0202ee56cd8a3d7ef03584aef07a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Point::Point</definition>
+        <argsstring>(void)</argsstring>
+        <name>Point</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Default constructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="15" column="1" bodyfile="src/geometry/Point.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a0fe5c1de85299f47a1893ee342a9d212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Point::Point</definition>
+        <argsstring>(const int x, const int y)</argsstring>
+        <name>Point</name>
+        <param>
+          <type>const int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor override </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="16" column="1" bodyfile="src/geometry/Point.cpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1ae305fa105b84a09a5975bcd4efbbb72a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Point::Point</definition>
+        <argsstring>(const Point &amp;copy)</argsstring>
+        <name>Point</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="17" column="1" bodyfile="src/geometry/Point.cpp" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a79e9ad9436503b1329c0f079c9bd44d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Point::~Point</definition>
+        <argsstring>(void)</argsstring>
+        <name>~Point</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Virtual destructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="18" column="1" bodyfile="src/geometry/Point.cpp" bodystart="32" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a22ddfdc970d4a49687e790b9440070b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Point::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resets this point back to x=y=0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="20" column="1" bodyfile="src/geometry/Point.cpp" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1ac44fa2c611a2a8a6d06674179237d341" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Point::isReset</definition>
+        <argsstring>() const </argsstring>
+        <name>isReset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if x=0 and y=0, false if not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="21" column="1" bodyfile="src/geometry/Point.cpp" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a6289b4fb0a97cf5dc9b794d140462d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Point::set</definition>
+        <argsstring>(const int x, const int y)</argsstring>
+        <name>set</name>
+        <param>
+          <type>const int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Convenience method that sets x and y simultaineously </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="22" column="1" bodyfile="src/geometry/Point.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1acee13a061255a7af58899969619cdca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Point::setX</definition>
+        <argsstring>(const int x)</argsstring>
+        <name>setX</name>
+        <param>
+          <type>const int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the x component </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="23" column="1" bodyfile="src/geometry/Point.cpp" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1af180b7029f080d56272273eb9f8e8ab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Point::setY</definition>
+        <argsstring>(const int y)</argsstring>
+        <name>setY</name>
+        <param>
+          <type>const int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the y component </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="24" column="1" bodyfile="src/geometry/Point.cpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1ae96742a93b0912b2472afded04ec9321" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int prism::geometry::Point::x</definition>
+        <argsstring>() const </argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the x component </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="25" column="1" bodyfile="src/geometry/Point.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a17446c41c039a445a82ef662f7d26312" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int prism::geometry::Point::y</definition>
+        <argsstring>() const </argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the y component </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="26" column="1" bodyfile="src/geometry/Point.cpp" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a26c672efa1143b0d23502e54f1432ffa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int &amp;</type>
+        <definition>int &amp; prism::geometry::Point::rx</definition>
+        <argsstring>()</argsstring>
+        <name>rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to the x component allowing direct manipulation i.e. point.rx() += 5 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="27" column="1" bodyfile="src/geometry/Point.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1af169459b3bba7d3b002c75c9431065f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int &amp;</type>
+        <definition>int &amp; prism::geometry::Point::ry</definition>
+        <argsstring>()</argsstring>
+        <name>ry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to the y component allowing direct manipulation i.e. point.ry() += 5 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="28" column="1" bodyfile="src/geometry/Point.cpp" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1ac1962913c14564f07a103be17c73413b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>Point &amp; prism::geometry::Point::operator=</definition>
+        <argsstring>(const Point &amp;p)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="30" column="1" bodyfile="src/geometry/Point.cpp" bodystart="104" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a27ced364b5786d535d5ae5db52227fdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>Point &amp; prism::geometry::Point::operator+=</definition>
+        <argsstring>(const Point &amp;p)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to this point after adding p to it </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="31" column="1" bodyfile="src/geometry/Point.cpp" bodystart="115" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a3d5162efdf56a89798062cdb1ec3abc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>Point &amp; prism::geometry::Point::operator-=</definition>
+        <argsstring>(const Point &amp;p)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to this point after subtracting p from it </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="32" column="1" bodyfile="src/geometry/Point.cpp" bodystart="124" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a86c49b593444cf4451aeba117426c3af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>Point &amp; prism::geometry::Point::operator*=</definition>
+        <argsstring>(const float factor)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies this point&apos;s components by the given factor and returns a reference to this point. Note: the x and y components are rounded to the nearest integer as they are stored as ints internally. Use <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> for floating point accuracy instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="33" column="1" bodyfile="src/geometry/Point.cpp" bodystart="136" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a61549bbc69b8c5205e0e3a927a4b3553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>Point &amp; prism::geometry::Point::operator*=</definition>
+        <argsstring>(const int factor)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies this point&apos;s coordinates by the given factor and returns a reference to this point. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="34" column="1" bodyfile="src/geometry/Point.cpp" bodystart="146" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1a4e2abc39c7f70ae9067af50d19d7a755" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>Point &amp; prism::geometry::Point::operator/=</definition>
+        <argsstring>(const float divisor)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies this point&apos;s coordinates by the given factor and returns a reference to this point Note: the x and y components are rounded to the nearest integer as they are stored as ints internally. Use <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> for floating point accuracy instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="35" column="1" bodyfile="src/geometry/Point.cpp" bodystart="158" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_point_1acc8d86edf696b00a62e644c5feb1ba54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>Point &amp; prism::geometry::Point::operator/=</definition>
+        <argsstring>(const int divisor)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const int</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Divides this point&apos;s coordinates by the given factor and returns a reference to this point. Note: the x and y components are rounded to the nearest integer as they are stored as ints internally. Use <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> for floating point accuracy instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="36" column="1" bodyfile="src/geometry/Point.cpp" bodystart="175" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1aa818efa680e0d94ce91173ccb4b7aa08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Point &amp;p)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an ostream object that allows this object to printed with std::cout </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="39" column="1" bodyfile="src/geometry/Point.cpp" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1af9fd2d27c54f694ce11ba1e9df0b58f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point operator+</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is the sum of the components of p1 and p2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="40" column="1" bodyfile="src/geometry/Point.cpp" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1aff59dfb837229858286c1652bd9a8e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point operator-</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by subtracting the components of p2 from p1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="41" column="1" bodyfile="src/geometry/Point.cpp" bodystart="207" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1a3fff687aebd2165ff57e237363953f36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point operator*</definition>
+        <argsstring>(const Point &amp;p, const int factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the int factor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="42" column="1" bodyfile="src/geometry/Point.cpp" bodystart="214" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1a6a69d67bbbf8aa38b38c71440a8341cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point operator*</definition>
+        <argsstring>(const Point &amp;p, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the float factor Note: the x and y components are rounded to the nearest integer as they are stored as ints internally. Use <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> for floating point accuracy instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="43" column="1" bodyfile="src/geometry/Point.cpp" bodystart="223" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1ab4cfccba8d1b3c1d29dedb1d729ecaaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point operator*</definition>
+        <argsstring>(const int factor, const Point &amp;p)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the int factor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="44" column="1" bodyfile="src/geometry/Point.cpp" bodystart="230" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1a3141285de569d8565c2ae20e3155de14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point operator*</definition>
+        <argsstring>(const float factor, const Point &amp;p)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the float factor Note: the x and y components are rounded to the nearest integer as they are stored as ints internally. Use <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> for floating point accuracy instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="45" column="1" bodyfile="src/geometry/Point.cpp" bodystart="239" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1adeafa81d7b8a890cbe28b9159aad4eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point operator/</definition>
+        <argsstring>(const Point &amp;p, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by dividing the components of p1 by the components of p2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="46" column="1" bodyfile="src/geometry/Point.cpp" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1a2c5b474dd81e3ce9b80b206ea32deaae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if x and y of p1 and p2 are equal, false if not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="47" column="1" bodyfile="src/geometry/Point.cpp" bodystart="254" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_point_1a694df69725e33fcd64fd0942c6bb5e82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if x or y of p1 and p2 are not equal, false if not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Point.h" line="48" column="1" bodyfile="src/geometry/Point.cpp" bodystart="261" bodyend="263"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/geometry/Point.h" line="9" column="1" bodyfile="inc/geometry/Point.h" bodystart="8" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classprism_1_1geometry_1_1_point_1ac44fa2c611a2a8a6d06674179237d341" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>isReset</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a15acff0d1312e7929c866a9d5152b9fe" prot="private" virt="non-virtual"><scope>prism::geometry::Point</scope><name>m_x</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a7b407c97d44e0fac4078f1ebb3c22730" prot="private" virt="non-virtual"><scope>prism::geometry::Point</scope><name>m_y</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a694df69725e33fcd64fd0942c6bb5e82" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a3fff687aebd2165ff57e237363953f36" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a6a69d67bbbf8aa38b38c71440a8341cc" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1ab4cfccba8d1b3c1d29dedb1d729ecaaf" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a3141285de569d8565c2ae20e3155de14" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a86c49b593444cf4451aeba117426c3af" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator*=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a61549bbc69b8c5205e0e3a927a4b3553" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator*=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1af9fd2d27c54f694ce11ba1e9df0b58f1" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator+</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a27ced364b5786d535d5ae5db52227fdb" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator+=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1aff59dfb837229858286c1652bd9a8e40" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator-</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a3d5162efdf56a89798062cdb1ec3abc2" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator-=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1adeafa81d7b8a890cbe28b9159aad4eb4" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator/</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a4e2abc39c7f70ae9067af50d19d7a755" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator/=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1acc8d86edf696b00a62e644c5feb1ba54" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator/=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1aa818efa680e0d94ce91173ccb4b7aa08" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1ac1962913c14564f07a103be17c73413b" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator=</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a2c5b474dd81e3ce9b80b206ea32deaae" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>operator==</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a416c0202ee56cd8a3d7ef03584aef07a" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>Point</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a0fe5c1de85299f47a1893ee342a9d212" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>Point</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1ae305fa105b84a09a5975bcd4efbbb72a" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>Point</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a22ddfdc970d4a49687e790b9440070b6" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>reset</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a26c672efa1143b0d23502e54f1432ffa" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>rx</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1af169459b3bba7d3b002c75c9431065f5" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>ry</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a6289b4fb0a97cf5dc9b794d140462d2f" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>set</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1acee13a061255a7af58899969619cdca1" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>setX</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1af180b7029f080d56272273eb9f8e8ab9" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>setY</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1ae96742a93b0912b2472afded04ec9321" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>x</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a17446c41c039a445a82ef662f7d26312" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>y</name></member>
+      <member refid="classprism_1_1geometry_1_1_point_1a79e9ad9436503b1329c0f079c9bd44d3" prot="public" virt="non-virtual"><scope>prism::geometry::Point</scope><name>~Point</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

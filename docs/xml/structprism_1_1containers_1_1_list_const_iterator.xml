@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structprism_1_1containers_1_1_list_const_iterator" kind="struct" language="C++" prot="public">
+    <compoundname>prism::containers::ListConstIterator</compoundname>
+    <includes refid="_iterator_8h" local="no">Iterator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Node</type>
+      </param>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1_list_const_iterator_1ac5195b8e18a3e7b6175610c8a578457f" prot="public" static="no">
+        <type>const T</type>
+        <definition>typedef const T prism::containers::ListConstIterator&lt; Node, T &gt;::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="219" column="1" bodyfile="inc/containers/Iterator.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1_list_const_iterator_1a75f67a8dc204310a4ec2ad3104b85c3c" prot="public" static="no">
+        <type>const T &amp;</type>
+        <definition>typedef const T&amp; prism::containers::ListConstIterator&lt; Node, T &gt;::reference</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="220" column="1" bodyfile="inc/containers/Iterator.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1_list_const_iterator_1a14b03b825ec014eaf85130739c0fa35d" prot="public" static="no">
+        <type>const T *</type>
+        <definition>typedef const T* prism::containers::ListConstIterator&lt; Node, T &gt;::pointer</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="221" column="1" bodyfile="inc/containers/Iterator.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1_list_const_iterator_1ada7ce709fc59b146b1568a18a4a100c5" prot="public" static="no">
+        <type><ref refid="structprism_1_1containers_1_1bidirectional__iterator__tag" kindref="compound">bidirectional_iterator_tag</ref></type>
+        <definition>typedef bidirectional_iterator_tag prism::containers::ListConstIterator&lt; Node, T &gt;::iterator_category</definition>
+        <argsstring></argsstring>
+        <name>iterator_category</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="222" column="1" bodyfile="inc/containers/Iterator.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="structprism_1_1containers_1_1_list_const_iterator_1a64a29291c0139f4087a7c79690ed1e9e" prot="public" static="no">
+        <type>std::ptrdiff_t</type>
+        <definition>typedef std::ptrdiff_t prism::containers::ListConstIterator&lt; Node, T &gt;::difference_type</definition>
+        <argsstring></argsstring>
+        <name>difference_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="223" column="1" bodyfile="inc/containers/Iterator.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structprism_1_1containers_1_1_list_const_iterator_1ab430437e0a8fb4c69e208a2033c3ac3d" prot="public" static="no" mutable="no">
+        <type>Node *</type>
+        <definition>Node* prism::containers::ListConstIterator&lt; Node, T &gt;::node</definition>
+        <argsstring></argsstring>
+        <name>node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="225" column="1" bodyfile="inc/containers/Iterator.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1afe621fa6aa058b8c2b371294bd198ae7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::ListConstIterator&lt; Node, T &gt;::ListConstIterator</definition>
+        <argsstring>()</argsstring>
+        <name>ListConstIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="226" column="1" bodyfile="inc/containers/Iterator.h" bodystart="226" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a6400836e853410f83c958528827db7fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::ListConstIterator&lt; Node, T &gt;::ListConstIterator</definition>
+        <argsstring>(Node *node)</argsstring>
+        <name>ListConstIterator</name>
+        <param>
+          <type>Node *</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="227" column="1" bodyfile="inc/containers/Iterator.h" bodystart="227" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a71db1768a039489c58ac0f91bf5bf5f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::ListConstIterator&lt; Node, T &gt;::ListConstIterator</definition>
+        <argsstring>(const ListConstIterator &amp;copy)</argsstring>
+        <name>ListConstIterator</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="228" column="1" bodyfile="inc/containers/Iterator.h" bodystart="228" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a5fbda7e10bb6c4f5a80f426b5ae4ef4e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structprism_1_1containers_1_1_list_const_iterator_1a75f67a8dc204310a4ec2ad3104b85c3c" kindref="member">reference</ref></type>
+        <definition>reference prism::containers::ListConstIterator&lt; Node, T &gt;::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="229" column="1" bodyfile="inc/containers/Iterator.h" bodystart="229" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1aeac056d276b6f590d137f8ce2aa39f8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structprism_1_1containers_1_1_list_const_iterator_1a14b03b825ec014eaf85130739c0fa35d" kindref="member">pointer</ref></type>
+        <definition>pointer prism::containers::ListConstIterator&lt; Node, T &gt;::operator-&gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="230" column="1" bodyfile="inc/containers/Iterator.h" bodystart="230" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a57031bea5249085ed1bac74851fd06a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+        <definition>ListConstIterator&amp; prism::containers::ListConstIterator&lt; Node, T &gt;::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="231" column="1" bodyfile="inc/containers/Iterator.h" bodystart="231" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a7504cf17004473b3528f9d05b392d92f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref></type>
+        <definition>ListConstIterator prism::containers::ListConstIterator&lt; Node, T &gt;::operator++</definition>
+        <argsstring>(int junk)</argsstring>
+        <name>operator++</name>
+        <param>
+          <type>int</type>
+          <declname>junk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="232" column="1" bodyfile="inc/containers/Iterator.h" bodystart="232" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a7a7ef6172c73609c136052422e5d429e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+        <definition>ListConstIterator&amp; prism::containers::ListConstIterator&lt; Node, T &gt;::operator--</definition>
+        <argsstring>()</argsstring>
+        <name>operator--</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="233" column="1" bodyfile="inc/containers/Iterator.h" bodystart="233" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a2e5472cbf810687ee566b1340c29dd64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref></type>
+        <definition>ListConstIterator prism::containers::ListConstIterator&lt; Node, T &gt;::operator--</definition>
+        <argsstring>(int junk)</argsstring>
+        <name>operator--</name>
+        <param>
+          <type>int</type>
+          <declname>junk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="234" column="1" bodyfile="inc/containers/Iterator.h" bodystart="234" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1aa326252aa9e41c5dc8fef336b2efc3c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+        <definition>ListConstIterator&amp; prism::containers::ListConstIterator&lt; Node, T &gt;::operator=</definition>
+        <argsstring>(const ListConstIterator &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="235" column="1" bodyfile="inc/containers/Iterator.h" bodystart="235" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a16a8c6644cbdedc5173c5a02971379a0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool prism::containers::ListConstIterator&lt; Node, T &gt;::operator!=</definition>
+        <argsstring>(const ListConstIterator &amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="236" column="1" bodyfile="inc/containers/Iterator.h" bodystart="236" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="structprism_1_1containers_1_1_list_const_iterator_1a1e424bc437a30ed8895fca8c4dd9934d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool prism::containers::ListConstIterator&lt; Node, T &gt;::operator==</definition>
+        <argsstring>(const ListConstIterator &amp;rhs) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="237" column="1" bodyfile="inc/containers/Iterator.h" bodystart="237" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="structprism_1_1containers_1_1_list_const_iterator_1af2aaffc284b1e7cfc6cd27ca7f6a04cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend <ref refid="structprism_1_1containers_1_1_list_const_iterator_1a64a29291c0139f4087a7c79690ed1e9e" kindref="member">difference_type</ref></type>
+        <definition>difference_type operator-</definition>
+        <argsstring>(const ListConstIterator &amp;lhs, const ListConstIterator &amp;rhs)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="240" column="1" bodyfile="inc/containers/Iterator.h" bodystart="240" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="friend" id="structprism_1_1containers_1_1_list_const_iterator_1a06e7f8ea77c503503dca203a503a7c6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&lt;</definition>
+        <argsstring>(const ListConstIterator &amp;lhs, const ListConstIterator &amp;rhs)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="241" column="1" bodyfile="inc/containers/Iterator.h" bodystart="241" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="friend" id="structprism_1_1containers_1_1_list_const_iterator_1a3743f555c1c2f03a44ac2833f7ecaf54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&gt;</definition>
+        <argsstring>(const ListConstIterator &amp;lhs, const ListConstIterator &amp;rhs)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="242" column="1" bodyfile="inc/containers/Iterator.h" bodystart="242" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="friend" id="structprism_1_1containers_1_1_list_const_iterator_1a853099a440737dfdd77b683e5f5e27bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&lt;=</definition>
+        <argsstring>(const ListConstIterator &amp;lhs, const ListConstIterator &amp;rhs)</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="243" column="1" bodyfile="inc/containers/Iterator.h" bodystart="243" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="friend" id="structprism_1_1containers_1_1_list_const_iterator_1ad7f9f76ffafeb4f4893edd8ff4e6ddcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&gt;=</definition>
+        <argsstring>(const ListConstIterator &amp;lhs, const ListConstIterator &amp;rhs)</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structprism_1_1containers_1_1_list_const_iterator" kindref="compound">ListConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="244" column="1" bodyfile="inc/containers/Iterator.h" bodystart="244" bodyend="244"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/containers/Iterator.h" line="218" column="1" bodyfile="inc/containers/Iterator.h" bodystart="218" bodyend="245"/>
+    <listofallmembers>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a64a29291c0139f4087a7c79690ed1e9e" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>difference_type</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1ada7ce709fc59b146b1568a18a4a100c5" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>iterator_category</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1afe621fa6aa058b8c2b371294bd198ae7" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>ListConstIterator</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a6400836e853410f83c958528827db7fe" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>ListConstIterator</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a71db1768a039489c58ac0f91bf5bf5f8" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>ListConstIterator</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1ab430437e0a8fb4c69e208a2033c3ac3d" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>node</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a16a8c6644cbdedc5173c5a02971379a0" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator!=</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a5fbda7e10bb6c4f5a80f426b5ae4ef4e" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator*</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a57031bea5249085ed1bac74851fd06a4" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator++</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a7504cf17004473b3528f9d05b392d92f" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator++</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1af2aaffc284b1e7cfc6cd27ca7f6a04cb" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator-</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a7a7ef6172c73609c136052422e5d429e" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator--</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a2e5472cbf810687ee566b1340c29dd64" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator--</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1aeac056d276b6f590d137f8ce2aa39f8f" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator-&gt;</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a06e7f8ea77c503503dca203a503a7c6d" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator&lt;</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a853099a440737dfdd77b683e5f5e27bd" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator&lt;=</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1aa326252aa9e41c5dc8fef336b2efc3c7" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator=</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a1e424bc437a30ed8895fca8c4dd9934d" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator==</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a3743f555c1c2f03a44ac2833f7ecaf54" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator&gt;</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1ad7f9f76ffafeb4f4893edd8ff4e6ddcf" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>operator&gt;=</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a14b03b825ec014eaf85130739c0fa35d" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>pointer</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1a75f67a8dc204310a4ec2ad3104b85c3c" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>reference</name></member>
+      <member refid="structprism_1_1containers_1_1_list_const_iterator_1ac5195b8e18a3e7b6175610c8a578457f" prot="public" virt="non-virtual"><scope>prism::containers::ListConstIterator</scope><name>value_type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

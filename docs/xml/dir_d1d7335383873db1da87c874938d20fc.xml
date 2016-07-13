@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_d1d7335383873db1da87c874938d20fc" kind="dir">
+    <compoundname>inc/containers</compoundname>
+    <innerdir refid="dir_4240e928369d612625334e961f26b666">inc/containers/aux</innerdir>
+    <innerfile refid="_array_8h">Array.h</innerfile>
+    <innerfile refid="_deque_8h">Deque.h</innerfile>
+    <innerfile refid="_iterator_8h">Iterator.h</innerfile>
+    <innerfile refid="_list_8h">List.h</innerfile>
+    <innerfile refid="_queue_8h">Queue.h</innerfile>
+    <innerfile refid="_stack_8h">Stack.h</innerfile>
+    <innerfile refid="_temp_iterator_8h">TempIterator.h</innerfile>
+    <innerfile refid="_vector_8h">Vector.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/containers/"/>
+  </compounddef>
+</doxygen>

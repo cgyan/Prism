@@ -1,0 +1,475 @@
+\hypertarget{classprism_1_1geometry_1_1_quaternion}{}\section{prism\+:\+:geometry\+:\+:Quaternion Class Reference}
+\label{classprism_1_1geometry_1_1_quaternion}\index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+
+
+{\ttfamily \#include $<$Quaternion.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion_a91ccc5fc76c77fb1bae3206a60ffc714}{Quaternion} (void)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion_accd6baeae33e6dc4958cee822d42206e}{Quaternion} (const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a04d1be00d79966209148fc9e0dcd8d29}{w}, const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a64b19a3673ae2d7a103ad4edfb70874f}{x}, const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a1eb758ab66dc23e282d8d9c1d891db25}{y}, const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a0555ec659f2dff30070bfa05c129aa1b}{z})
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion_a6be1a9247ec273e11e573b64ebe7fcd0}{Quaternion} (const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a04d1be00d79966209148fc9e0dcd8d29}{w}, const \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&v)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion_a873db343286dfa36e742e62c076e70a7}{Quaternion} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q)
+\item 
+virtual \hyperlink{classprism_1_1geometry_1_1_quaternion_a27853f52b0907a630dd3b8a8a86f89f8}{$\sim$\+Quaternion} (void)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a934ba4c328d18803576fd07f2cd390ba}{conjugate} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a9ae7c21e6161e2bbb4b9fd07ae8ac9a8}{inverse} () const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_quaternion_a1e44ba58366ca6ceb78437695ba38d17}{is\+Identity} () const 
+\item 
+const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a5150e7b2ccdd075359aa53c4b0ddd8c8}{length} () const 
+\item 
+const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a112cb39325c21f9d2178016af08d0731}{length\+Squared} () const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_a31290c70e27365d6b97f72ce8156e43d}{normalise} ()
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_abb08eb769ccd4e41c84810c9265e183d}{normalised} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \hyperlink{classprism_1_1geometry_1_1_quaternion_a263e6e4bb45373b8c040fc6bb86e4df4}{rotated\+Vector} (const \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&v)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_a5dd73aef20a6cf30ab612c34e3fc63ed}{setW} (const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a04d1be00d79966209148fc9e0dcd8d29}{w})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_a6a9812603f54502ef167c4998586507b}{setX} (const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a64b19a3673ae2d7a103ad4edfb70874f}{x})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_abae324d0c7ecdf5c712ed250c14c0443}{setY} (const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a1eb758ab66dc23e282d8d9c1d891db25}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_a14a92ab9e9eb9ae065ba888bb1afcb94}{setZ} (const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a0555ec659f2dff30070bfa05c129aa1b}{z})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_ae65c8cba45afa9c55f4f50b58d1faeb3}{set\+Vector} (const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a64b19a3673ae2d7a103ad4edfb70874f}{x}, const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a1eb758ab66dc23e282d8d9c1d891db25}{y}, const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a0555ec659f2dff30070bfa05c129aa1b}{z})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_af4fc8ac6fcf8863ff950e86f0fa3818c}{set\+Vector} (const \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&v)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_quaternion_a3d252bf3af1c5b47a751b1dd2f1a41db}{set\+To\+Identity} ()
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \hyperlink{classprism_1_1geometry_1_1_quaternion_a30c6e8a2b8e29c614c648d9a39bdcdb5}{vector3} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \hyperlink{classprism_1_1geometry_1_1_quaternion_a48b3332d56095978d7fec1d36b92ac1c}{vector4} () const 
+\item 
+const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a04d1be00d79966209148fc9e0dcd8d29}{w} () const 
+\item 
+const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a64b19a3673ae2d7a103ad4edfb70874f}{x} () const 
+\item 
+const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a1eb758ab66dc23e282d8d9c1d891db25}{y} () const 
+\item 
+const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a0555ec659f2dff30070bfa05c129aa1b}{z} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \& \hyperlink{classprism_1_1geometry_1_1_quaternion_af05bb28c35f48d15ac7b3eec49b2a7ff}{operator+=} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \& \hyperlink{classprism_1_1geometry_1_1_quaternion_adea1af08c2b429ce660f1c99c6c662a9}{operator-\/=} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \& \hyperlink{classprism_1_1geometry_1_1_quaternion_a226f4860803f811bf8e0d43f5c61e2e7}{operator$\ast$=} (const float factor)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \& \hyperlink{classprism_1_1geometry_1_1_quaternion_a635087bcba716782643b2f880c07668b}{operator/=} (const float divisor)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \& \hyperlink{classprism_1_1geometry_1_1_quaternion_a3d9cef9f68af77b97fe71157a1fd1591}{operator=} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const float \hyperlink{classprism_1_1geometry_1_1_quaternion_a128b73113354b13a07ffa745947c7813}{dot\+Product} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q1, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q2)
+\item 
+static \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a1e2bdf5339aa69325bd572505941fae7}{from\+Axis\+And\+Angle} (const \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&axis, const float angle)
+\item 
+static \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_aec2514a7f861f2ed329606a197db1678}{from\+Axis\+And\+Angle} (const float x\+Axis, const float y\+Axis, const float z\+Axis, const float angle)
+\item 
+static \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_ac8648074982947ef4815340ab2ca357e}{identity} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a55c89dc55cca66b19679705c566a165a}{operator+} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q1, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a3a5605ba3f0bb654c528d2f7beb34147}{operator-\/} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q1, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a82faed3b53a20e9c2acf7fa2406263c8}{operator-\/} (\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a02f988d3aef50bac26fc6fed8429d6a2}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q1, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a7a69f073f287d3e5e614995aa588dfba}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q, const float factor)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a103d9036740a77394440b39eb4bf3c0b}{operator$\ast$} (const float factor, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a3ae869a94a277b595456e7a0d8cf0730}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q, const \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} \&v)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a9156a92837fec8bf13994dddc21afacf}{operator$\ast$} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q, const \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} \&v)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \hyperlink{classprism_1_1geometry_1_1_quaternion_a6e207c938a23f83d2bb574d9eb92a56d}{operator/} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q, const float divisor)
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_quaternion_a9c72bd1e471ac599aaee1d3dfe729075}{operator==} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q1, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q2)
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_quaternion_adc2df640ae236b94e01951d891d59e85}{operator!=} (const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q1, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q2)
+\item 
+std\+::ostream \& \hyperlink{classprism_1_1geometry_1_1_quaternion_a9d6837ef4f759aa5ecd417adcea2e908}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} \&q)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{Quaternion(void)}{Quaternion(void)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Quaternion\+::\+Quaternion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a91ccc5fc76c77fb1bae3206a60ffc714}{}\label{classprism_1_1geometry_1_1_quaternion_a91ccc5fc76c77fb1bae3206a60ffc714}
+Constructs a quaternion set to the identity state (1,0,0,0). \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{Quaternion(const float w, const float x, const float y, const float z)}{Quaternion(const float w, const float x, const float y, const float z)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Quaternion\+::\+Quaternion (
+\begin{DoxyParamCaption}
+\item[{const float}]{w, }
+\item[{const float}]{x, }
+\item[{const float}]{y, }
+\item[{const float}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_accd6baeae33e6dc4958cee822d42206e}{}\label{classprism_1_1geometry_1_1_quaternion_accd6baeae33e6dc4958cee822d42206e}
+Constructs a quaternion setting the w, x, y and z components to the values passed in. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{Quaternion(const float w, const Vector3 \&v)}{Quaternion(const float w, const Vector3 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Quaternion\+::\+Quaternion (
+\begin{DoxyParamCaption}
+\item[{const float}]{w, }
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a6be1a9247ec273e11e573b64ebe7fcd0}{}\label{classprism_1_1geometry_1_1_quaternion_a6be1a9247ec273e11e573b64ebe7fcd0}
+Constructs a quaternion from the passed in w and vector. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{Quaternion(const Quaternion \&q)}{Quaternion(const Quaternion &q)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Quaternion\+::\+Quaternion (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a873db343286dfa36e742e62c076e70a7}{}\label{classprism_1_1geometry_1_1_quaternion_a873db343286dfa36e742e62c076e70a7}
+Constructs a quaternion which is a copy of q. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!````~Quaternion@{$\sim$\+Quaternion}}
+\index{````~Quaternion@{$\sim$\+Quaternion}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{$\sim$\+Quaternion(void)}{~Quaternion(void)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Quaternion\+::$\sim$\+Quaternion (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a27853f52b0907a630dd3b8a8a86f89f8}{}\label{classprism_1_1geometry_1_1_quaternion_a27853f52b0907a630dd3b8a8a86f89f8}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{conjugate() const }{conjugate() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::geometry\+::\+Quaternion\+::conjugate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a934ba4c328d18803576fd07f2cd390ba}{}\label{classprism_1_1geometry_1_1_quaternion_a934ba4c328d18803576fd07f2cd390ba}
+Returns a new \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} which is the result of negating the vector component of this quaternion. This quaternion remains unaltered. Note\+: when a quaternion has been normalised (has unit length of 1) the conjugate and inverse are identical. The quaternion needs to be of unit length in order to perform rotations correctly. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!dot\+Product@{dot\+Product}}
+\index{dot\+Product@{dot\+Product}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{dot\+Product(const Quaternion \&q1, const Quaternion \&q2)}{dotProduct(const Quaternion &q1, const Quaternion &q2)}}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Quaternion\+::dot\+Product (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q1, }
+\item[{const {\bf Quaternion} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a128b73113354b13a07ffa745947c7813}{}\label{classprism_1_1geometry_1_1_quaternion_a128b73113354b13a07ffa745947c7813}
+Returns a scalar which is the dot product of the two quaternions in the range \mbox{[}-\/1, 1\mbox{]}. The dot product of two quaternions represents the cosine of half of the angle needed to rotate one quaternion into the other. The larger the absolute value the result is (the closer it is to 1) means the closer the two quaternions are in orientation. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!from\+Axis\+And\+Angle@{from\+Axis\+And\+Angle}}
+\index{from\+Axis\+And\+Angle@{from\+Axis\+And\+Angle}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{from\+Axis\+And\+Angle(const Vector3 \&axis, const float angle)}{fromAxisAndAngle(const Vector3 &axis, const float angle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::geometry\+::\+Quaternion\+::from\+Axis\+And\+Angle (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{axis, }
+\item[{const float}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a1e2bdf5339aa69325bd572505941fae7}{}\label{classprism_1_1geometry_1_1_quaternion_a1e2bdf5339aa69325bd572505941fae7}
+Returns a normalised quaternion that represents a rotation of angle degrees around the specified axis. If axis is not normalised then this method normalises it. Also, angle is in degrees. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!from\+Axis\+And\+Angle@{from\+Axis\+And\+Angle}}
+\index{from\+Axis\+And\+Angle@{from\+Axis\+And\+Angle}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{from\+Axis\+And\+Angle(const float x\+Axis, const float y\+Axis, const float z\+Axis, const float angle)}{fromAxisAndAngle(const float xAxis, const float yAxis, const float zAxis, const float angle)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::geometry\+::\+Quaternion\+::from\+Axis\+And\+Angle (
+\begin{DoxyParamCaption}
+\item[{const float}]{x\+Axis, }
+\item[{const float}]{y\+Axis, }
+\item[{const float}]{z\+Axis, }
+\item[{const float}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_aec2514a7f861f2ed329606a197db1678}{}\label{classprism_1_1geometry_1_1_quaternion_aec2514a7f861f2ed329606a197db1678}
+Returns a normalised quaternion that represents a rotation of angle degrees around the specified axis. If the axis specified by x\+Axis, y\+Axis and z\+Axis is not normalised then this method normalises it. Also, angle is in degrees. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!identity@{identity}}
+\index{identity@{identity}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{identity()}{identity()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::geometry\+::\+Quaternion\+::identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_ac8648074982947ef4815340ab2ca357e}{}\label{classprism_1_1geometry_1_1_quaternion_ac8648074982947ef4815340ab2ca357e}
+\index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!inverse@{inverse}}
+\index{inverse@{inverse}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{inverse() const }{inverse() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::geometry\+::\+Quaternion\+::inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a9ae7c21e6161e2bbb4b9fd07ae8ac9a8}{}\label{classprism_1_1geometry_1_1_quaternion_a9ae7c21e6161e2bbb4b9fd07ae8ac9a8}
+Returns the inverse of this quaternion. The inverse is defined as dividing the conjugate by the magnitude. Note\+: when a quaternion has been normalised (has unit length of 1) the conjugate and inverse are identical. The quaternion needs to be of unit length in order to perform rotations correctly. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{is\+Identity() const }{isIdentity() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Quaternion\+::is\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a1e44ba58366ca6ceb78437695ba38d17}{}\label{classprism_1_1geometry_1_1_quaternion_a1e44ba58366ca6ceb78437695ba38d17}
+Returns true if w=1 and x=y=z=0, false otherwise. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!length@{length}}
+\index{length@{length}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{length() const }{length() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Quaternion\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a5150e7b2ccdd075359aa53c4b0ddd8c8}{}\label{classprism_1_1geometry_1_1_quaternion_a5150e7b2ccdd075359aa53c4b0ddd8c8}
+Returns the length (magnitude) of the quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!length\+Squared@{length\+Squared}}
+\index{length\+Squared@{length\+Squared}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{length\+Squared() const }{lengthSquared() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Quaternion\+::length\+Squared (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a112cb39325c21f9d2178016af08d0731}{}\label{classprism_1_1geometry_1_1_quaternion_a112cb39325c21f9d2178016af08d0731}
+Returns the squared length of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!normalise@{normalise}}
+\index{normalise@{normalise}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{normalise()}{normalise()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::normalise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a31290c70e27365d6b97f72ce8156e43d}{}\label{classprism_1_1geometry_1_1_quaternion_a31290c70e27365d6b97f72ce8156e43d}
+Normalises this quaternion which sets its length to 1. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!normalised@{normalised}}
+\index{normalised@{normalised}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{normalised() const }{normalised() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::geometry\+::\+Quaternion\+::normalised (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_abb08eb769ccd4e41c84810c9265e183d}{}\label{classprism_1_1geometry_1_1_quaternion_abb08eb769ccd4e41c84810c9265e183d}
+Returns a copy of this quaternion that has been normalised. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator$\ast$=(const float factor)}{operator*=(const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} \& prism\+::geometry\+::\+Quaternion\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a226f4860803f811bf8e0d43f5c61e2e7}{}\label{classprism_1_1geometry_1_1_quaternion_a226f4860803f811bf8e0d43f5c61e2e7}
+Returns a reference to this \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} which has had each component multiplied by factor. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator+=(const Quaternion \&q)}{operator+=(const Quaternion &q)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} \& prism\+::geometry\+::\+Quaternion\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_af05bb28c35f48d15ac7b3eec49b2a7ff}{}\label{classprism_1_1geometry_1_1_quaternion_af05bb28c35f48d15ac7b3eec49b2a7ff}
+Returns a reference to this \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} which has had q added to it. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator-\/=(const Quaternion \&q)}{operator-=(const Quaternion &q)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} \& prism\+::geometry\+::\+Quaternion\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_adea1af08c2b429ce660f1c99c6c662a9}{}\label{classprism_1_1geometry_1_1_quaternion_adea1af08c2b429ce660f1c99c6c662a9}
+Returns a reference to this \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} which has had q subtracted from it. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator/=(const float divisor)}{operator/=(const float divisor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} \& prism\+::geometry\+::\+Quaternion\+::operator/= (
+\begin{DoxyParamCaption}
+\item[{const float}]{divisor}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a635087bcba716782643b2f880c07668b}{}\label{classprism_1_1geometry_1_1_quaternion_a635087bcba716782643b2f880c07668b}
+Returns a reference to this \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} which has had each component divided by divisor. If divisor is 0 then nothing happens. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator=(const Quaternion \&q)}{operator=(const Quaternion &q)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} \& prism\+::geometry\+::\+Quaternion\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a3d9cef9f68af77b97fe71157a1fd1591}{}\label{classprism_1_1geometry_1_1_quaternion_a3d9cef9f68af77b97fe71157a1fd1591}
+Assignment operator assigns the component values of q to this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!rotated\+Vector@{rotated\+Vector}}
+\index{rotated\+Vector@{rotated\+Vector}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{rotated\+Vector(const Vector3 \&v)}{rotatedVector(const Vector3 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} prism\+::geometry\+::\+Quaternion\+::rotated\+Vector (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a263e6e4bb45373b8c040fc6bb86e4df4}{}\label{classprism_1_1geometry_1_1_quaternion_a263e6e4bb45373b8c040fc6bb86e4df4}
+Rotates vector v with this quaternion and returns a new \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} with the result. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!set\+To\+Identity@{set\+To\+Identity}}
+\index{set\+To\+Identity@{set\+To\+Identity}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{set\+To\+Identity()}{setToIdentity()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::set\+To\+Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a3d252bf3af1c5b47a751b1dd2f1a41db}{}\label{classprism_1_1geometry_1_1_quaternion_a3d252bf3af1c5b47a751b1dd2f1a41db}
+Sets the quaternion to its identity state which sets w=1 and x=y=z=0 i.\+e. zero vector \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!set\+Vector@{set\+Vector}}
+\index{set\+Vector@{set\+Vector}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{set\+Vector(const float x, const float y, const float z)}{setVector(const float x, const float y, const float z)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::set\+Vector (
+\begin{DoxyParamCaption}
+\item[{const float}]{x, }
+\item[{const float}]{y, }
+\item[{const float}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_ae65c8cba45afa9c55f4f50b58d1faeb3}{}\label{classprism_1_1geometry_1_1_quaternion_ae65c8cba45afa9c55f4f50b58d1faeb3}
+Sets the vector component of this quaternion to the values passed in. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!set\+Vector@{set\+Vector}}
+\index{set\+Vector@{set\+Vector}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{set\+Vector(const Vector3 \&v)}{setVector(const Vector3 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::set\+Vector (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_af4fc8ac6fcf8863ff950e86f0fa3818c}{}\label{classprism_1_1geometry_1_1_quaternion_af4fc8ac6fcf8863ff950e86f0fa3818c}
+Sets the vector component of this quaternion to the specified vector passed in. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!setW@{setW}}
+\index{setW@{setW}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{set\+W(const float w)}{setW(const float w)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::setW (
+\begin{DoxyParamCaption}
+\item[{const float}]{w}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a5dd73aef20a6cf30ab612c34e3fc63ed}{}\label{classprism_1_1geometry_1_1_quaternion_a5dd73aef20a6cf30ab612c34e3fc63ed}
+Sets the w component of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!setX@{setX}}
+\index{setX@{setX}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{set\+X(const float x)}{setX(const float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::setX (
+\begin{DoxyParamCaption}
+\item[{const float}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a6a9812603f54502ef167c4998586507b}{}\label{classprism_1_1geometry_1_1_quaternion_a6a9812603f54502ef167c4998586507b}
+Sets the x component of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!setY@{setY}}
+\index{setY@{setY}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{set\+Y(const float y)}{setY(const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::setY (
+\begin{DoxyParamCaption}
+\item[{const float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_abae324d0c7ecdf5c712ed250c14c0443}{}\label{classprism_1_1geometry_1_1_quaternion_abae324d0c7ecdf5c712ed250c14c0443}
+Sets the y component of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!setZ@{setZ}}
+\index{setZ@{setZ}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{set\+Z(const float z)}{setZ(const float z)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Quaternion\+::setZ (
+\begin{DoxyParamCaption}
+\item[{const float}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_quaternion_a14a92ab9e9eb9ae065ba888bb1afcb94}{}\label{classprism_1_1geometry_1_1_quaternion_a14a92ab9e9eb9ae065ba888bb1afcb94}
+Sets the z component of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!vector3@{vector3}}
+\index{vector3@{vector3}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{vector3() const }{vector3() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} prism\+::geometry\+::\+Quaternion\+::vector3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a30c6e8a2b8e29c614c648d9a39bdcdb5}{}\label{classprism_1_1geometry_1_1_quaternion_a30c6e8a2b8e29c614c648d9a39bdcdb5}
+Returns a \hyperlink{classprism_1_1geometry_1_1_vector3}{Vector3} which is the vector component of this quaternion i.\+e. x, y and z \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!vector4@{vector4}}
+\index{vector4@{vector4}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{vector4() const }{vector4() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector4} prism\+::geometry\+::\+Quaternion\+::vector4 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a48b3332d56095978d7fec1d36b92ac1c}{}\label{classprism_1_1geometry_1_1_quaternion_a48b3332d56095978d7fec1d36b92ac1c}
+Returns a \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} which is the vector component of this quaternion, i.\+e. x, y and z, additionally with the w component set to 1. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!w@{w}}
+\index{w@{w}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{w() const }{w() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Quaternion\+::w (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a04d1be00d79966209148fc9e0dcd8d29}{}\label{classprism_1_1geometry_1_1_quaternion_a04d1be00d79966209148fc9e0dcd8d29}
+Returns the w component of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!x@{x}}
+\index{x@{x}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{x() const }{x() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Quaternion\+::x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a64b19a3673ae2d7a103ad4edfb70874f}{}\label{classprism_1_1geometry_1_1_quaternion_a64b19a3673ae2d7a103ad4edfb70874f}
+Returns the x component of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!y@{y}}
+\index{y@{y}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{y() const }{y() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Quaternion\+::y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a1eb758ab66dc23e282d8d9c1d891db25}{}\label{classprism_1_1geometry_1_1_quaternion_a1eb758ab66dc23e282d8d9c1d891db25}
+Returns the y component of this quaternion. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!z@{z}}
+\index{z@{z}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{z() const }{z() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::geometry\+::\+Quaternion\+::z (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_quaternion_a0555ec659f2dff30070bfa05c129aa1b}{}\label{classprism_1_1geometry_1_1_quaternion_a0555ec659f2dff30070bfa05c129aa1b}
+Returns the z component of this quaternion. 
+
+\subsection{Friends And Related Function Documentation}
+\index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator"!=}{operator!=}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q1, }
+\item[{const {\bf Quaternion} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_adc2df640ae236b94e01951d891d59e85}{}\label{classprism_1_1geometry_1_1_quaternion_adc2df640ae236b94e01951d891d59e85}
+Compares q1 and q2 and returns true if they are not equal, false otherwise. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q1, }
+\item[{const {\bf Quaternion} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a02f988d3aef50bac26fc6fed8429d6a2}{}\label{classprism_1_1geometry_1_1_quaternion_a02f988d3aef50bac26fc6fed8429d6a2}
+Returns a \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} that is the product of q1 and q2. Note\+: quaternion multiplication is associative so a(bc) = (ab)c but is not commutitive so q1q2 does not always equal q2q1. Order matters! \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q, }
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a7a69f073f287d3e5e614995aa588dfba}{}\label{classprism_1_1geometry_1_1_quaternion_a7a69f073f287d3e5e614995aa588dfba}
+Returns a \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} that is the result of multiplying each component of q by factor. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const float}]{factor, }
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a103d9036740a77394440b39eb4bf3c0b}{}\label{classprism_1_1geometry_1_1_quaternion_a103d9036740a77394440b39eb4bf3c0b}
+Returns a \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} that is the result of multiplying each component of q by factor. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q, }
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a3ae869a94a277b595456e7a0d8cf0730}{}\label{classprism_1_1geometry_1_1_quaternion_a3ae869a94a277b595456e7a0d8cf0730}
+Multiplies a quaternion and vector3 together and returns a quaternion as a result. The vector is just transformed into a quaternion (setting w = 0) and then the two quaternions are multiplied. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q, }
+\item[{const {\bf Vector4} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a9156a92837fec8bf13994dddc21afacf}{}\label{classprism_1_1geometry_1_1_quaternion_a9156a92837fec8bf13994dddc21afacf}
+Multiplies a quaternion and \hyperlink{classprism_1_1geometry_1_1_vector4}{Vector4} together and returns a quaternion as a result. The vector is just transformed into a quaternion and then the two quaternions are multiplied. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator+@{operator+}}
+\index{operator+@{operator+}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q1, }
+\item[{const {\bf Quaternion} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a55c89dc55cca66b19679705c566a165a}{}\label{classprism_1_1geometry_1_1_quaternion_a55c89dc55cca66b19679705c566a165a}
+Returns a \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} that is the sum of q1 and q2 i.\+e. each component of q1 is added to the corresponding component of q2. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q1, }
+\item[{const {\bf Quaternion} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a3a5605ba3f0bb654c528d2f7beb34147}{}\label{classprism_1_1geometry_1_1_quaternion_a3a5605ba3f0bb654c528d2f7beb34147}
+Returns a \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} that is the result of subtracting q2 from q1 i.\+e. each component of q2 is subtracted from the corresponding component of q1. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a82faed3b53a20e9c2acf7fa2406263c8}{}\label{classprism_1_1geometry_1_1_quaternion_a82faed3b53a20e9c2acf7fa2406263c8}
+Returns a \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} which has had each component of q negated. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator/@{operator/}}
+\index{operator/@{operator/}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator/}{operator/}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q, }
+\item[{const float}]{divisor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a6e207c938a23f83d2bb574d9eb92a56d}{}\label{classprism_1_1geometry_1_1_quaternion_a6e207c938a23f83d2bb574d9eb92a56d}
+Returns a \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} that is the result of dividing each component of q by divisor. If divisor is 0 then a identity quaternion is returned instead. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a9d6837ef4f759aa5ecd417adcea2e908}{}\label{classprism_1_1geometry_1_1_quaternion_a9d6837ef4f759aa5ecd417adcea2e908}
+Returns a reference to a stream which allows an instance of \hyperlink{classprism_1_1geometry_1_1_quaternion}{Quaternion} to be written to the stream. \index{prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::geometry\+::\+Quaternion@{prism\+::geometry\+::\+Quaternion}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q1, }
+\item[{const {\bf Quaternion} \&}]{q2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_quaternion_a9c72bd1e471ac599aaee1d3dfe729075}{}\label{classprism_1_1geometry_1_1_quaternion_a9c72bd1e471ac599aaee1d3dfe729075}
+Compares q1 and q2 and returns true if they are equal, false otherwise. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/geometry/\hyperlink{_quaternion_8h}{Quaternion.\+h}\item 
+src/geometry/\hyperlink{_quaternion_8cpp}{Quaternion.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,980 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1geometry_1_1_vector3" kind="class" language="C++" prot="public">
+    <compoundname>prism::geometry::Vector3</compoundname>
+    <includes refid="_vector3_8h" local="no">Vector3.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_vector3_1a29dfb481aa2979d8f2cc7bc39cc0447f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Vector3::m_x</definition>
+        <argsstring></argsstring>
+        <name>m_x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="13" column="1" bodyfile="inc/geometry/Vector3.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_vector3_1a0c37e0db2c5219ce07c6f9a3ad358880" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Vector3::m_y</definition>
+        <argsstring></argsstring>
+        <name>m_y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="13" column="1" bodyfile="inc/geometry/Vector3.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_vector3_1a640b57eb3e6e7cd92ac9f19aa7a3cd65" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Vector3::m_z</definition>
+        <argsstring></argsstring>
+        <name>m_z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="13" column="1" bodyfile="inc/geometry/Vector3.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ab8d2113bc4e2a85970bf3833ab5af2ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::Vector3</definition>
+        <argsstring>(void)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a default <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> setting it to a zero vector i.e. x=y=z=0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="16" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a161de9c8f3d271600fd2351b9236efcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::Vector3</definition>
+        <argsstring>(const float x, const float y, const float z)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> from the x, y and z floats passed in. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="17" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1aa0f674a2e41c89f176651b2a23097b34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::Vector3</definition>
+        <argsstring>(const Vector2 &amp;v)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> from the vector2 additionally setting the z component of this vector to 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="18" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a664d659ec06cb82f8c2ead0ac2d6db11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::Vector3</definition>
+        <argsstring>(const Vector2 &amp;v, const float z)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> from the <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> addionally setting the z component to z. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="19" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a2af480eaee00aa6915c784d68288ccfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::Vector3</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="20" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a59538c51b0e76f2a06fcce3f17eade3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::Vector3</definition>
+        <argsstring>(const Vector4 &amp;v)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> from the <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> dropping the w component of the <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="21" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ac3c40c86dab1faf60308aed3b5fde545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::Vector3</definition>
+        <argsstring>(const Point &amp;p)</argsstring>
+        <name>Vector3</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> from a 2d <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> setting z=0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="22" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a3756b77b75ea81b67a3956a76acf1524" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>prism::geometry::Vector3::~Vector3</definition>
+        <argsstring>(void)</argsstring>
+        <name>~Vector3</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>todo in game loop <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> is constantly allocating and detroying each frame .... ? </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="23" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ad697a4c76c1c852f3b84dfc10a64d74e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::crossProduct</definition>
+        <argsstring>(const Vector3 &amp;otherVector) const </argsstring>
+        <name>crossProduct</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>otherVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that is the cross product of this vector and otherVector i.e. this x otherVector. Note: The cross product is anticommutitive so a x b is not always equal to b x a. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="25" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1afbc9f1d2c6c3ec69d8808cafb64f2fa5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::dotProduct</definition>
+        <argsstring>(const Vector3 &amp;otherVector) const </argsstring>
+        <name>dotProduct</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>otherVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the dot product (a scalar value) of this vector and otherVector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="26" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1aa95df074a3d45845019451394af6a648" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::distance</definition>
+        <argsstring>(const Vector3 &amp;otherVector) const </argsstring>
+        <name>distance</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>otherVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the distance between two points represented by this vector and otherVector. The distance is defined as the length of the line segment between two points represented here with the vectors. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="27" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="98" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a7a9442d1932c5ebf0860583066bafe3a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Vector3::isZero</definition>
+        <argsstring>() const </argsstring>
+        <name>isZero</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tests whether this <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> is x=y=z=0. If so, true is returned and false if not. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="28" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ab8c5741ae62feae4ee73caea3db763de" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::length</definition>
+        <argsstring>() const </argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the calculation of this vector&apos;s length (also known as the magnitude). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="29" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="112" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a1f5e94a19d0537b9234814c1b6c3263d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::normal</definition>
+        <argsstring>(const Vector3 &amp;otherVector) const </argsstring>
+        <name>normal</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>otherVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a normalised vector (has length of 1) that is perpendicular to this vector and vector b when the two vectors are placed tail to tail. i.e. a normalised version of the cross product of a and b. Note: if the vector does not need to be normalised then the cross product is sufficient enough and is slightly quicker. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="30" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a4ef1c2e0f166ef2058232857191e34f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Vector3::normalise</definition>
+        <argsstring>()</argsstring>
+        <name>normalise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method normalises this vector. If this vector is a zero vector (i.e. where each component is 0) then it cannot be normalised and so nothing happens. A normlised vector (also called a unit vector) is one which still points in the same direction but has been scaled to have a length or magnitude of 1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="31" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ab24c5f1dc1a678ac0641549ee3f081c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::normalised</definition>
+        <argsstring>() const </argsstring>
+        <name>normalised</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that is a normalised version of this vector. This vector remains unchanged. If this vector is a zero vector (i.e. where each component is 0) then it cannot be normalised and a zero vector is returned instead. A normlised vector (also called a unit vector) is one which still points in the same direction but has been scaled to have a length or magnitude of 1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="32" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a36a1687cb1e4c60238db9ad2721c7584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Vector3::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resets this <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> back to x=y=z=0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="33" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="152" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ad834c174d4fb3b3f504905b6842e063d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Vector3::setX</definition>
+        <argsstring>(const float x)</argsstring>
+        <name>setX</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the x component of this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="34" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="159" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a83cfc7282c797f7f43a4040613d69212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Vector3::setY</definition>
+        <argsstring>(const float y)</argsstring>
+        <name>setY</name>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the y component of this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="35" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="166" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a22d17255293032faf9aa29cccae269a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Vector3::setZ</definition>
+        <argsstring>(const float z)</argsstring>
+        <name>setZ</name>
+        <param>
+          <type>const float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the z component of this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="36" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="173" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a626b13c89f5ba60b85f8e0b7898efddb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::x</definition>
+        <argsstring>() const </argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the x component of this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="37" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="180" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1aee1ad3f7afd357faa521832508fd1611" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::y</definition>
+        <argsstring>() const </argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the y component of this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="38" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="187" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1aed8ff88f798babae79a5ccb706d0b761" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::z</definition>
+        <argsstring>() const </argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the z component of this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="39" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="194" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a37d60b4061540116a98bbe0bc0b7c6e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::Vector3::toPoint</definition>
+        <argsstring>() const </argsstring>
+        <name>toPoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object containing the x and y components of this vector while the z component is dropped. Note: <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> uses integer precision so non-integer x and y coordinates will be rounded. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="40" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="202" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a75eaa46272b3f6fe77db8542d806127a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 prism::geometry::Vector3::toVector2</definition>
+        <argsstring>() const </argsstring>
+        <name>toVector2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> version of this vector dropping the z component. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="41" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="209" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ae40a599d8815aacd7434cc168b5a9ff7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::Vector3::toVector4</definition>
+        <argsstring>() const </argsstring>
+        <name>toVector4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> version of this vector dropping the z component. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="42" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="216" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a44114d8dfa05dc64aba3ba42a411efdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; prism::geometry::Vector3::operator+=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds the corresponding components of this vector and vector v together. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="44" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="223" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ac9678cdf810d7b6e4df907760e475ea6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; prism::geometry::Vector3::operator-=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtracts the components of vector v from the corresponding components of this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="45" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="233" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a1c317ce297e54b1d4f2c932b42deb6df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; prism::geometry::Vector3::operator*=</definition>
+        <argsstring>(const float factor)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies each component of this vector by factor and returns a reference to this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="46" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="243" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a06b98390ae9142546875d1677b6e5b47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; prism::geometry::Vector3::operator*=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies the components of this vector by the corresponding components of vector v. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="47" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="253" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1aed079a91c5a9fc8920703b90a6109b73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; prism::geometry::Vector3::operator/=</definition>
+        <argsstring>(const float divisor)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If divisor is not 0 then each component of this vector is divided by divisor, otherwise nothing happens. Either way a reference to this vector is returned. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="48" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="264" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a3cad552160c4977b02110fdac74dfcd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+        <definition>Vector3 &amp; prism::geometry::Vector3::operator=</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assignment operator assigns the component values of v to this vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="49" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="276" bodyend="281"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ac076d5b670adc03cf682212dbe11c0bc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::forward</definition>
+        <argsstring>()</argsstring>
+        <name>forward</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a basic vector that represents the forward axis (0,0,1). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="52" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="303" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1aa81775907d4153364d3215ae49dbb298" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::up</definition>
+        <argsstring>()</argsstring>
+        <name>up</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a basic vector that represents the up axis (0,1,0). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="53" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="289" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a4975a180070c6e87b7e76bb92b5973ec" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::right</definition>
+        <argsstring>()</argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a basix vector that represents the right axis (1,0,0). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="54" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="296" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a50feeb96b3e13410afa358c839cf0974" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::crossProduct</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>crossProduct</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that is the cross product of a and b i.e. a x b. The cross product of two vectors yields a vector that is perpendicular to the two vectors when the two vectors are placed tail to tail. Note: The cross product is anticommutitive so a x b is not always equal to b x a. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="55" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="313" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a3959d05da4b8fab05051135353e8b790" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::dotProduct</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>dotProduct</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the dot product of vectors a and b (the length of the projection of b onto a, multiplied by the length of a). The dot product of the two vectors is the sum of the products of corresponding components which results in a scalar. The dot product of two vectors a and b is also equal to the cosine of angle theta between the two vectors placed tail to tail multiplied by the lengths of the vectors i.e. a.b = ||a||||b||cos(theta) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="56" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="326" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ae9a697faeab5814efe2e578df7868d5a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Vector3::distance</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>distance</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the distance between two points. The distance is defined as the length of the line segment between two points represented here with the vectors. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="57" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="334" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a529920bd252cce927cfbdb17eb975048" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::normal</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>normal</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a normalised vector (has length of 1) that is perpendicular to the vectors a and b when they are placed tail to tail. i.e. a normalised version of the cross product of a and b. Note: if the vector does not need to be normalised then the cross product is sufficient enough and is slightly quicker. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="58" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="347" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1a6178e5dc10e044fe22d6c806798392f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Vector3::normal</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b, const Vector3 &amp;c)</argsstring>
+        <name>normal</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a normalised vector that is perpendicular to the plane defined by the vectors b-a and c-a. It will have unit length i.e. 1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="59" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="355" bodyend="359"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1a2f3fba6fd08b1a9ee79193581edead97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator+</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that is the result of adding the components of vector a and vector b. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="62" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="367" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1a4f0726718533ef9da9956faccc4eb5b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator-</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that is the result of subtracting the components of vector b from vector a. Note: vector subtraction is not commutitive so a-b does not always equal b-a </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="63" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="375" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1a0b83b76136fcd64d3d12f50db5db223f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator-</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> object where each vector component of v has been negated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="64" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="382" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1abc31e90d1677fde0ca1ff3e23daae851" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator*</definition>
+        <argsstring>(const float factor, const Vector3 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="65" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="389" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1ae7fd15d5dffc5c611e611998321df833" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator*</definition>
+        <argsstring>(const Vector3 &amp;v, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="66" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="396" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1a9f4ae4eea6c149a0cd72a692d737327d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 operator/</definition>
+        <argsstring>(const Vector3 &amp;v, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> where each component of vector v has been divided by divisor. If divisor is 0 then a zero vector is returned instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="67" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="404" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1a71b0a5a5af557f64264c6e48949a8435" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator==</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the two vectors and if each of the corresponding components are equal in value then true is returned, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="68" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="413" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1ace6e7ad2bf23c3246652c9b115b8e7fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator!=</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the vectors and returns true if a and b are not equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="69" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="424" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_vector3_1a6b8025c0424ba8db565d3153d8dc9c0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Vector3 &amp;v)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="70" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="431" bodyend="434"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_vector3_1ab10e35cda312e20d8ef001796c76486e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Vector3::copyDataFromSourceToDestination</definition>
+        <argsstring>(const Vector3 &amp;source, Vector3 &amp;destination)</argsstring>
+        <name>copyDataFromSourceToDestination</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>destination</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Simply copiesthe components values from the source vector to the detination vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Vector3.h" line="73" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="442" bodyend="446"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/geometry/Vector3.h" line="11" column="1" bodyfile="inc/geometry/Vector3.h" bodystart="10" bodyend="75"/>
+    <listofallmembers>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ab10e35cda312e20d8ef001796c76486e" prot="private" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>copyDataFromSourceToDestination</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ad697a4c76c1c852f3b84dfc10a64d74e" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>crossProduct</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a50feeb96b3e13410afa358c839cf0974" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>crossProduct</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1aa95df074a3d45845019451394af6a648" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>distance</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ae9a697faeab5814efe2e578df7868d5a" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>distance</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1afbc9f1d2c6c3ec69d8808cafb64f2fa5" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>dotProduct</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a3959d05da4b8fab05051135353e8b790" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>dotProduct</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ac076d5b670adc03cf682212dbe11c0bc" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>forward</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a7a9442d1932c5ebf0860583066bafe3a" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>isZero</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ab8c5741ae62feae4ee73caea3db763de" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>length</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a29dfb481aa2979d8f2cc7bc39cc0447f" prot="private" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>m_x</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a0c37e0db2c5219ce07c6f9a3ad358880" prot="private" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>m_y</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a640b57eb3e6e7cd92ac9f19aa7a3cd65" prot="private" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>m_z</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a1f5e94a19d0537b9234814c1b6c3263d" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>normal</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a529920bd252cce927cfbdb17eb975048" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>normal</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a6178e5dc10e044fe22d6c806798392f6" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>normal</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a4ef1c2e0f166ef2058232857191e34f1" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>normalise</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ab24c5f1dc1a678ac0641549ee3f081c4" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>normalised</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ace6e7ad2bf23c3246652c9b115b8e7fc" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1abc31e90d1677fde0ca1ff3e23daae851" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ae7fd15d5dffc5c611e611998321df833" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a1c317ce297e54b1d4f2c932b42deb6df" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator*=</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a06b98390ae9142546875d1677b6e5b47" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator*=</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a2f3fba6fd08b1a9ee79193581edead97" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator+</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a44114d8dfa05dc64aba3ba42a411efdc" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator+=</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a4f0726718533ef9da9956faccc4eb5b5" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator-</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a0b83b76136fcd64d3d12f50db5db223f" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator-</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ac9678cdf810d7b6e4df907760e475ea6" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator-=</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a9f4ae4eea6c149a0cd72a692d737327d" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator/</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1aed079a91c5a9fc8920703b90a6109b73" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator/=</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a6b8025c0424ba8db565d3153d8dc9c0e" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a3cad552160c4977b02110fdac74dfcd8" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator=</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a71b0a5a5af557f64264c6e48949a8435" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>operator==</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a36a1687cb1e4c60238db9ad2721c7584" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>reset</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a4975a180070c6e87b7e76bb92b5973ec" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>right</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ad834c174d4fb3b3f504905b6842e063d" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>setX</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a83cfc7282c797f7f43a4040613d69212" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>setY</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a22d17255293032faf9aa29cccae269a6" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>setZ</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a37d60b4061540116a98bbe0bc0b7c6e0" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>toPoint</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a75eaa46272b3f6fe77db8542d806127a" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>toVector2</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ae40a599d8815aacd7434cc168b5a9ff7" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>toVector4</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1aa81775907d4153364d3215ae49dbb298" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>up</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ab8d2113bc4e2a85970bf3833ab5af2ee" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>Vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a161de9c8f3d271600fd2351b9236efcc" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>Vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1aa0f674a2e41c89f176651b2a23097b34" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>Vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a664d659ec06cb82f8c2ead0ac2d6db11" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>Vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a2af480eaee00aa6915c784d68288ccfb" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>Vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a59538c51b0e76f2a06fcce3f17eade3b" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>Vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1ac3c40c86dab1faf60308aed3b5fde545" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>Vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a626b13c89f5ba60b85f8e0b7898efddb" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>x</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1aee1ad3f7afd357faa521832508fd1611" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>y</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1aed8ff88f798babae79a5ccb706d0b761" prot="public" virt="non-virtual"><scope>prism::geometry::Vector3</scope><name>z</name></member>
+      <member refid="classprism_1_1geometry_1_1_vector3_1a3756b77b75ea81b67a3956a76acf1524" prot="public" virt="virtual"><scope>prism::geometry::Vector3</scope><name>~Vector3</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

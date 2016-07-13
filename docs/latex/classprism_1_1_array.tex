@@ -1,0 +1,380 @@
+\hypertarget{classprism_1_1_array}{}\section{prism\+:\+:Array$<$ T $>$ Class Template Reference}
+\label{classprism_1_1_array}\index{prism\+::\+Array$<$ T $>$@{prism\+::\+Array$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Array.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classprism_1_1_random_access_iterator}{Random\+Access\+Iterator}$<$ T $>$ \hyperlink{classprism_1_1_array_a6814c2af67e8b3fc48b02319f5e63d50}{iterator}
+\item 
+typedef \hyperlink{classprism_1_1_random_access_const_iterator}{Random\+Access\+Const\+Iterator}$<$ T $>$ \hyperlink{classprism_1_1_array_ab78c83a88959a72d59e5f930540be94a}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1_array_aab128f1ed5a4547a04812b921dc75897}{Array} (const int \hyperlink{classprism_1_1_array_a83c88f0f351ac35798f40ed4e922e187}{size})
+\item 
+\hyperlink{classprism_1_1_array_ac696e19a99b7a601f013352617689098}{Array} (const int \hyperlink{classprism_1_1_array_a83c88f0f351ac35798f40ed4e922e187}{size}, const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value})
+\item 
+\hyperlink{classprism_1_1_array_a15f0a0b32b4d95975fd15f0c1321d144}{Array} (const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&copy)
+\item 
+virtual \hyperlink{classprism_1_1_array_ad8787402f15054e257a7b407f07f469e}{$\sim$\+Array} ()
+\item 
+T \& \hyperlink{classprism_1_1_array_a669341733bb97105adcedc9a9e159dcd}{at} (const int index)
+\item 
+const T \& \hyperlink{classprism_1_1_array_ae88b7be661d69a754c1a9a49adb7e9b7}{at} (const int index) const 
+\item 
+T \& \hyperlink{classprism_1_1_array_a23345041d2c537ad6cffc7e2a3afcfe4}{back} ()
+\item 
+const T \& \hyperlink{classprism_1_1_array_a4efee82c9091e2656d65ea5a9a2c2fd8}{back} () const 
+\item 
+\hyperlink{classprism_1_1_array_a6814c2af67e8b3fc48b02319f5e63d50}{iterator} \hyperlink{classprism_1_1_array_a2458620d3d5270c7ce2cb6413b65e731}{begin} ()
+\item 
+\hyperlink{classprism_1_1_array_ab78c83a88959a72d59e5f930540be94a}{const\+\_\+iterator} \hyperlink{classprism_1_1_array_a37f88fd8b0776145a47e7d14b7681d28}{begin} () const 
+\item 
+\hyperlink{classprism_1_1_array_ab78c83a88959a72d59e5f930540be94a}{const\+\_\+iterator} \hyperlink{classprism_1_1_array_a08b8bf28cf5ee167e240792923c90415}{const\+Begin} () const 
+\item 
+const T $\ast$ \hyperlink{classprism_1_1_array_af6e860868e38d2779f0839e1815ea0bd}{const\+Data} () const 
+\item 
+\hyperlink{classprism_1_1_array_ab78c83a88959a72d59e5f930540be94a}{const\+\_\+iterator} \hyperlink{classprism_1_1_array_a275ef3df386f5f8c3c785a0eba0f15a0}{const\+End} () const 
+\item 
+const bool \hyperlink{classprism_1_1_array_ab1dbaaa25fdd52114ecf83764d07dd32}{contains} (const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value}) const 
+\item 
+const int \hyperlink{classprism_1_1_array_a17090694f8652c186aef26882a387c05}{count} (const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value}) const 
+\item 
+T $\ast$ \hyperlink{classprism_1_1_array_a6d53be4d71c511149f3639a7f14863b8}{data} ()
+\item 
+const T $\ast$ \hyperlink{classprism_1_1_array_a5b28a077a7db27fc8c2c4fed1f20c3a9}{data} () const 
+\item 
+\hyperlink{classprism_1_1_array_a6814c2af67e8b3fc48b02319f5e63d50}{iterator} \hyperlink{classprism_1_1_array_afca59b5cf554b93d97b3e4d131d7d964}{end} ()
+\item 
+\hyperlink{classprism_1_1_array_ab78c83a88959a72d59e5f930540be94a}{const\+\_\+iterator} \hyperlink{classprism_1_1_array_a630f7f0c9e70d7bd86b093723c068b1f}{end} () const 
+\item 
+const bool \hyperlink{classprism_1_1_array_a8f8ecd4d34589f7cbc28d6f14fd3de9a}{ends\+With} (const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value}) const 
+\item 
+void \hyperlink{classprism_1_1_array_a366f1c9b89d2133171a0ed2bb54534ce}{fill} (const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value})
+\item 
+T \& \hyperlink{classprism_1_1_array_a342f29ffb8147cca71c204777bca5b2e}{first} ()
+\item 
+const T \& \hyperlink{classprism_1_1_array_abf7cb06917a0bea41a0c260da91227a5}{first} () const 
+\item 
+const int \hyperlink{classprism_1_1_array_aa3eca6ff8f386eed2ddfcf615e1f4bc1}{index\+Of} (const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value}, const int from=0) const 
+\item 
+T \& \hyperlink{classprism_1_1_array_ae3d2272f0b2fec20a3a59746454871e6}{last} ()
+\item 
+const T \& \hyperlink{classprism_1_1_array_ab651f9c888450cc836e8b9586bbe2776}{last} () const 
+\item 
+const int \hyperlink{classprism_1_1_array_ae9d7ba407484ba1d2beea39c300a48de}{last\+Index\+Of} (const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value}, const int index=-\/1) const 
+\item 
+const int \hyperlink{classprism_1_1_array_a7075e469a15ddfa81059842598fa9e89}{length} () const 
+\item 
+\hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \hyperlink{classprism_1_1_array_a184d0853ea009fb9d156c1302d46a87d}{mid} (const int index, const int \hyperlink{classprism_1_1_array_a7075e469a15ddfa81059842598fa9e89}{length}=-\/1) const 
+\item 
+void \hyperlink{classprism_1_1_array_aa0aff831c9d2c94fd834d8abbbe94d2b}{replace} (const int index, const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value})
+\item 
+const int \hyperlink{classprism_1_1_array_a83c88f0f351ac35798f40ed4e922e187}{size} () const 
+\item 
+const bool \hyperlink{classprism_1_1_array_aa80d5944d464d8de5f7b991b355e10b2}{starts\+With} (const T \&\hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value}) const 
+\item 
+T \hyperlink{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{value} (const int index) const 
+\item 
+T \& \hyperlink{classprism_1_1_array_aa8807977580f48dfd2cd7b6dd85dfebf}{operator\mbox{[}$\,$\mbox{]}} (const int index)
+\item 
+const T \& \hyperlink{classprism_1_1_array_a7a1278dfc1ae6ba4860787e3fd40c429}{operator\mbox{[}$\,$\mbox{]}} (const int index) const 
+\item 
+const bool \hyperlink{classprism_1_1_array_a17fded803080c4eed55773ad07ed8740}{operator==} (const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&rhs) const 
+\item 
+const bool \hyperlink{classprism_1_1_array_a8ec48eaa032005ff6141481ac18e6e9f}{operator!=} (const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&rhs) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\\*
+class prism\+::\+Array$<$ T $>$}
+
+Arrays are fixed-\/size sequence containers\+: they hold a specific number of elements ordered in a strict linear sequence. 
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::\+Array@{prism\+::\+Array}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{const\+\_\+iterator}{const_iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf Random\+Access\+Const\+Iterator}$<$T$>$ {\bf prism\+::\+Array}$<$ T $>$\+::{\bf const\+\_\+iterator}}\hypertarget{classprism_1_1_array_ab78c83a88959a72d59e5f930540be94a}{}\label{classprism_1_1_array_ab78c83a88959a72d59e5f930540be94a}
+\index{prism\+::\+Array@{prism\+::\+Array}!iterator@{iterator}}
+\index{iterator@{iterator}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf Random\+Access\+Iterator}$<$T$>$ {\bf prism\+::\+Array}$<$ T $>$\+::{\bf iterator}}\hypertarget{classprism_1_1_array_a6814c2af67e8b3fc48b02319f5e63d50}{}\label{classprism_1_1_array_a6814c2af67e8b3fc48b02319f5e63d50}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+Array@{prism\+::\+Array}!Array@{Array}}
+\index{Array@{Array}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{Array(const int size)}{Array(const int size)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Array}$<$ T $>$\+::{\bf Array} (
+\begin{DoxyParamCaption}
+\item[{const int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_aab128f1ed5a4547a04812b921dc75897}{}\label{classprism_1_1_array_aab128f1ed5a4547a04812b921dc75897}
+Creates an array of size {\itshape size} and fills each element with default-\/constructed values. \index{prism\+::\+Array@{prism\+::\+Array}!Array@{Array}}
+\index{Array@{Array}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{Array(const int size, const T \&value)}{Array(const int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Array}$<$ T $>$\+::{\bf Array} (
+\begin{DoxyParamCaption}
+\item[{const int}]{size, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_ac696e19a99b7a601f013352617689098}{}\label{classprism_1_1_array_ac696e19a99b7a601f013352617689098}
+Creates an array of size {\itshape size} and fills each element with {\itshape value}. \index{prism\+::\+Array@{prism\+::\+Array}!Array@{Array}}
+\index{Array@{Array}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{Array(const Array$<$ T $>$ \&copy)}{Array(const Array< T > &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Array}$<$ T $>$\+::{\bf Array} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Array}$<$ T $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_a15f0a0b32b4d95975fd15f0c1321d144}{}\label{classprism_1_1_array_a15f0a0b32b4d95975fd15f0c1321d144}
+Copy-\/constructs this array from {\itshape copy}. \index{prism\+::\+Array@{prism\+::\+Array}!````~Array@{$\sim$\+Array}}
+\index{````~Array@{$\sim$\+Array}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{$\sim$\+Array()}{~Array()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Array}$<$ T $>$\+::$\sim${\bf Array} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1_array_ad8787402f15054e257a7b407f07f469e}{}\label{classprism_1_1_array_ad8787402f15054e257a7b407f07f469e}
+Deletes this array. User is responsible for memory pointed to by pointers if applicable. 
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+Array@{prism\+::\+Array}!at@{at}}
+\index{at@{at}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{at(const int index)}{at(const int index)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+Array}$<$ T $>$\+::at (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_a669341733bb97105adcedc9a9e159dcd}{}\label{classprism_1_1_array_a669341733bb97105adcedc9a9e159dcd}
+Returns a reference to the value stored in the array at the index {\itshape i}. This method performs bounds checking on {\itshape i}. \index{prism\+::\+Array@{prism\+::\+Array}!at@{at}}
+\index{at@{at}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{at(const int index) const }{at(const int index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+Array}$<$ T $>$\+::at (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_ae88b7be661d69a754c1a9a49adb7e9b7}{}\label{classprism_1_1_array_ae88b7be661d69a754c1a9a49adb7e9b7}
+Returns a const reference to the value stored in the array at the index {\itshape i}. This method performs bounds checking on {\itshape i}. \index{prism\+::\+Array@{prism\+::\+Array}!back@{back}}
+\index{back@{back}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{back()}{back()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+Array}$<$ T $>$\+::back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_a23345041d2c537ad6cffc7e2a3afcfe4}{}\label{classprism_1_1_array_a23345041d2c537ad6cffc7e2a3afcfe4}
+Returns a reference to the last element in the array. Equivalent to \hyperlink{classprism_1_1_array_ae3d2272f0b2fec20a3a59746454871e6}{last()}. \index{prism\+::\+Array@{prism\+::\+Array}!back@{back}}
+\index{back@{back}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{back() const }{back() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+Array}$<$ T $>$\+::back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a4efee82c9091e2656d65ea5a9a2c2fd8}{}\label{classprism_1_1_array_a4efee82c9091e2656d65ea5a9a2c2fd8}
+Returns a const reference to the last element in the array. Equivalent to \hyperlink{classprism_1_1_array_ae3d2272f0b2fec20a3a59746454871e6}{last()}. \index{prism\+::\+Array@{prism\+::\+Array}!begin@{begin}}
+\index{begin@{begin}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{begin()}{begin()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Array}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+Array}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_a2458620d3d5270c7ce2cb6413b65e731}{}\label{classprism_1_1_array_a2458620d3d5270c7ce2cb6413b65e731}
+Returns an iterator which points to the first element in the array. \index{prism\+::\+Array@{prism\+::\+Array}!begin@{begin}}
+\index{begin@{begin}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{begin() const }{begin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Array}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+Array}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a37f88fd8b0776145a47e7d14b7681d28}{}\label{classprism_1_1_array_a37f88fd8b0776145a47e7d14b7681d28}
+Returns a const\+\_\+iterator to the first element in the array. \index{prism\+::\+Array@{prism\+::\+Array}!const\+Begin@{const\+Begin}}
+\index{const\+Begin@{const\+Begin}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{const\+Begin() const }{constBegin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Array}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+Array}$<$ T $>$\+::const\+Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a08b8bf28cf5ee167e240792923c90415}{}\label{classprism_1_1_array_a08b8bf28cf5ee167e240792923c90415}
+Returns a const\+\_\+iterator to the first element in the array. \index{prism\+::\+Array@{prism\+::\+Array}!const\+Data@{const\+Data}}
+\index{const\+Data@{const\+Data}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{const\+Data() const }{constData() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T $\ast$ {\bf prism\+::\+Array}$<$ T $>$\+::const\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_af6e860868e38d2779f0839e1815ea0bd}{}\label{classprism_1_1_array_af6e860868e38d2779f0839e1815ea0bd}
+Returns a const pointer to the internal array data. \index{prism\+::\+Array@{prism\+::\+Array}!const\+End@{const\+End}}
+\index{const\+End@{const\+End}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{const\+End() const }{constEnd() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Array}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+Array}$<$ T $>$\+::const\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a275ef3df386f5f8c3c785a0eba0f15a0}{}\label{classprism_1_1_array_a275ef3df386f5f8c3c785a0eba0f15a0}
+Returns a const\+\_\+iterator to the imaginary element that follows the last element in the array. As such this should never be dereferenced. \index{prism\+::\+Array@{prism\+::\+Array}!contains@{contains}}
+\index{contains@{contains}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{contains(const T \&value) const }{contains(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Array}$<$ T $>$\+::contains (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_ab1dbaaa25fdd52114ecf83764d07dd32}{}\label{classprism_1_1_array_ab1dbaaa25fdd52114ecf83764d07dd32}
+Returns true if the array contains {\itshape value}, false otherwise. \index{prism\+::\+Array@{prism\+::\+Array}!count@{count}}
+\index{count@{count}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{count(const T \&value) const }{count(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Array}$<$ T $>$\+::count (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a17090694f8652c186aef26882a387c05}{}\label{classprism_1_1_array_a17090694f8652c186aef26882a387c05}
+Returns the number of times that {\itshape value} appears in the array. \index{prism\+::\+Array@{prism\+::\+Array}!data@{data}}
+\index{data@{data}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{data()}{data()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T $\ast$ {\bf prism\+::\+Array}$<$ T $>$\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_a6d53be4d71c511149f3639a7f14863b8}{}\label{classprism_1_1_array_a6d53be4d71c511149f3639a7f14863b8}
+Returns a pointer to the internal array data. \index{prism\+::\+Array@{prism\+::\+Array}!data@{data}}
+\index{data@{data}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{data() const }{data() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T $\ast$ {\bf prism\+::\+Array}$<$ T $>$\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a5b28a077a7db27fc8c2c4fed1f20c3a9}{}\label{classprism_1_1_array_a5b28a077a7db27fc8c2c4fed1f20c3a9}
+Returns a const\+\_\+pointer to the internal array data. \index{prism\+::\+Array@{prism\+::\+Array}!end@{end}}
+\index{end@{end}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{end()}{end()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Array}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+Array}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_afca59b5cf554b93d97b3e4d131d7d964}{}\label{classprism_1_1_array_afca59b5cf554b93d97b3e4d131d7d964}
+Returns an iterator to the imaginary element that follows the last element in the array. As such this should never be dereferenced. \index{prism\+::\+Array@{prism\+::\+Array}!end@{end}}
+\index{end@{end}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{end() const }{end() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Array}$<$ T $>$\+::{\bf const\+\_\+iterator} {\bf prism\+::\+Array}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a630f7f0c9e70d7bd86b093723c068b1f}{}\label{classprism_1_1_array_a630f7f0c9e70d7bd86b093723c068b1f}
+Returns a const\+\_\+iterator to the imaginary element that follows the last element in the array. As such this should never be dereferenced. \index{prism\+::\+Array@{prism\+::\+Array}!ends\+With@{ends\+With}}
+\index{ends\+With@{ends\+With}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{ends\+With(const T \&value) const }{endsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Array}$<$ T $>$\+::ends\+With (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a8f8ecd4d34589f7cbc28d6f14fd3de9a}{}\label{classprism_1_1_array_a8f8ecd4d34589f7cbc28d6f14fd3de9a}
+Returns true if the last element in the array is equal to {\itshape value}. The element in the array must implement \hyperlink{classprism_1_1_array_a17fded803080c4eed55773ad07ed8740}{operator==()}. \index{prism\+::\+Array@{prism\+::\+Array}!fill@{fill}}
+\index{fill@{fill}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{fill(const T \&value)}{fill(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Array}$<$ T $>$\+::fill (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_a366f1c9b89d2133171a0ed2bb54534ce}{}\label{classprism_1_1_array_a366f1c9b89d2133171a0ed2bb54534ce}
+Fills each element in the array with {\itshape value}. User is responsible for memory of original elements if applicable. \index{prism\+::\+Array@{prism\+::\+Array}!first@{first}}
+\index{first@{first}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{first()}{first()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+Array}$<$ T $>$\+::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_a342f29ffb8147cca71c204777bca5b2e}{}\label{classprism_1_1_array_a342f29ffb8147cca71c204777bca5b2e}
+Returns a reference to the first element in the array. \index{prism\+::\+Array@{prism\+::\+Array}!first@{first}}
+\index{first@{first}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{first() const }{first() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+Array}$<$ T $>$\+::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_abf7cb06917a0bea41a0c260da91227a5}{}\label{classprism_1_1_array_abf7cb06917a0bea41a0c260da91227a5}
+Returns a const reference to the first element in the array. \index{prism\+::\+Array@{prism\+::\+Array}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{index\+Of(const T \&value, const int from=0) const }{indexOf(const T &value, const int from=0) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Array}$<$ T $>$\+::index\+Of (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value, }
+\item[{const int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_aa3eca6ff8f386eed2ddfcf615e1f4bc1}{}\label{classprism_1_1_array_aa3eca6ff8f386eed2ddfcf615e1f4bc1}
+Returns the index of the first occurrence of {\itshape value} starting the search from {\itshape index}. If no occurrence is found, -\/1 is returned instead. \index{prism\+::\+Array@{prism\+::\+Array}!last@{last}}
+\index{last@{last}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{last()}{last()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+Array}$<$ T $>$\+::last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_ae3d2272f0b2fec20a3a59746454871e6}{}\label{classprism_1_1_array_ae3d2272f0b2fec20a3a59746454871e6}
+Returns a reference to the last element in the array. Equivalent to {\itshape \hyperlink{classprism_1_1_array_a23345041d2c537ad6cffc7e2a3afcfe4}{back()}}. \index{prism\+::\+Array@{prism\+::\+Array}!last@{last}}
+\index{last@{last}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{last() const }{last() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+Array}$<$ T $>$\+::last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_ab651f9c888450cc836e8b9586bbe2776}{}\label{classprism_1_1_array_ab651f9c888450cc836e8b9586bbe2776}
+Returns a const reference to the last element in the array. Equivalent to {\itshape \hyperlink{classprism_1_1_array_a23345041d2c537ad6cffc7e2a3afcfe4}{back()}}. \index{prism\+::\+Array@{prism\+::\+Array}!last\+Index\+Of@{last\+Index\+Of}}
+\index{last\+Index\+Of@{last\+Index\+Of}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{last\+Index\+Of(const T \&value, const int index=-\/1) const }{lastIndexOf(const T &value, const int index=-1) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Array}$<$ T $>$\+::last\+Index\+Of (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value, }
+\item[{const int}]{index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_ae9d7ba407484ba1d2beea39c300a48de}{}\label{classprism_1_1_array_ae9d7ba407484ba1d2beea39c300a48de}
+Returns the index of the last occurrence of {\itshape value} searching backwards from {\itshape index}. If no occurrence is found then -\/1 is returned instead. \index{prism\+::\+Array@{prism\+::\+Array}!length@{length}}
+\index{length@{length}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{length() const }{length() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Array}$<$ T $>$\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a7075e469a15ddfa81059842598fa9e89}{}\label{classprism_1_1_array_a7075e469a15ddfa81059842598fa9e89}
+Returns the number of elements in the array. Equivalent to \hyperlink{classprism_1_1_array_a83c88f0f351ac35798f40ed4e922e187}{size()}. \index{prism\+::\+Array@{prism\+::\+Array}!mid@{mid}}
+\index{mid@{mid}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{mid(const int index, const int length=-\/1) const }{mid(const int index, const int length=-1) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Array}$<$ T $>$ {\bf prism\+::\+Array}$<$ T $>$\+::mid (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const int}]{length = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a184d0853ea009fb9d156c1302d46a87d}{}\label{classprism_1_1_array_a184d0853ea009fb9d156c1302d46a87d}
+Returns a new array that is a subsection of this array. The new array starts from {\itshape index} in this array. If {\itshape length} is -\/1 then all elements after {\itshape index} are copied over otherwise {\itshape length} elements are copied instead. \index{prism\+::\+Array@{prism\+::\+Array}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{operator"!=(const Array$<$ T $>$ \&rhs) const }{operator!=(const Array< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Array}$<$ T $>$\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Array}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a8ec48eaa032005ff6141481ac18e6e9f}{}\label{classprism_1_1_array_a8ec48eaa032005ff6141481ac18e6e9f}
+Compares this array with {\itshape rhs} to see if they are not equal to each other. They are considered equal if they have the same length and the same values in the same order. \index{prism\+::\+Array@{prism\+::\+Array}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{operator==(const Array$<$ T $>$ \&rhs) const }{operator==(const Array< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Array}$<$ T $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Array}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a17fded803080c4eed55773ad07ed8740}{}\label{classprism_1_1_array_a17fded803080c4eed55773ad07ed8740}
+Compares this array with {\itshape rhs} to see if they are equal to each other. They are considered equal if they have the same length and the same values in the same order. \index{prism\+::\+Array@{prism\+::\+Array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{operator[](const int index)}{operator[](const int index)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::\+Array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_aa8807977580f48dfd2cd7b6dd85dfebf}{}\label{classprism_1_1_array_aa8807977580f48dfd2cd7b6dd85dfebf}
+Returns a reference to the element stored at {\itshape index}. \index{prism\+::\+Array@{prism\+::\+Array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{operator[](const int index) const }{operator[](const int index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T \& {\bf prism\+::\+Array}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a7a1278dfc1ae6ba4860787e3fd40c429}{}\label{classprism_1_1_array_a7a1278dfc1ae6ba4860787e3fd40c429}
+Returns a const reference to the element stored at {\itshape index}. \index{prism\+::\+Array@{prism\+::\+Array}!replace@{replace}}
+\index{replace@{replace}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{replace(const int index, const T \&value)}{replace(const int index, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Array}$<$ T $>$\+::replace (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_array_aa0aff831c9d2c94fd834d8abbbe94d2b}{}\label{classprism_1_1_array_aa0aff831c9d2c94fd834d8abbbe94d2b}
+Replaces the value of the element currently stored at {\itshape index} with {\itshape value}. The user is responsible for memory deallocation if necessary of the element being replaced. \index{prism\+::\+Array@{prism\+::\+Array}!size@{size}}
+\index{size@{size}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Array}$<$ T $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a83c88f0f351ac35798f40ed4e922e187}{}\label{classprism_1_1_array_a83c88f0f351ac35798f40ed4e922e187}
+Returns the number of elements in the array. Equivalent to \hyperlink{classprism_1_1_array_a7075e469a15ddfa81059842598fa9e89}{length()}. \index{prism\+::\+Array@{prism\+::\+Array}!starts\+With@{starts\+With}}
+\index{starts\+With@{starts\+With}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{starts\+With(const T \&value) const }{startsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Array}$<$ T $>$\+::starts\+With (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_aa80d5944d464d8de5f7b991b355e10b2}{}\label{classprism_1_1_array_aa80d5944d464d8de5f7b991b355e10b2}
+Returns true if the first element in the array is equal to {\itshape value}. The element in the array must implement \hyperlink{classprism_1_1_array_a17fded803080c4eed55773ad07ed8740}{operator==()}. \index{prism\+::\+Array@{prism\+::\+Array}!value@{value}}
+\index{value@{value}!prism\+::\+Array@{prism\+::\+Array}}
+\subsubsection[{\texorpdfstring{value(const int index) const }{value(const int index) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T {\bf prism\+::\+Array}$<$ T $>$\+::value (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}{}\label{classprism_1_1_array_a2c5690996975510eed7112066b936d8f}
+Returns the value stored at {\itshape index} in the array. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\+Prism/containers/\hyperlink{_array_8h}{Array.\+h}\end{DoxyCompactItemize}

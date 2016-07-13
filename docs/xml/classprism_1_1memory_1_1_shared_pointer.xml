@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1memory_1_1_shared_pointer" kind="class" language="C++" prot="public">
+    <compoundname>prism::memory::SharedPointer</compoundname>
+    <includes refid="_shared_pointer_8h" local="no">SharedPointer.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprism_1_1memory_1_1_shared_pointer_1ab2113a3b060ab3622e305db787afcb4f" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* prism::memory::SharedPointer&lt; T &gt;::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="21" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1memory_1_1_shared_pointer_1aeaa89b19c52c28ec1213749652f40257" prot="private" static="no" mutable="no">
+        <type><ref refid="classprism_1_1memory_1_1_reference_counter" kindref="compound">ReferenceCounter</ref> *</type>
+        <definition>ReferenceCounter* prism::memory::SharedPointer&lt; T &gt;::m_ref</definition>
+        <argsstring></argsstring>
+        <name>m_ref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="22" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a5b10beef934782caeac380b48cd57474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::memory::SharedPointer&lt; T &gt;::SharedPointer</definition>
+        <argsstring>()</argsstring>
+        <name>SharedPointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs an empty null shared pointer instance. The managed pointer is set to 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="25" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a7ce4fcda36f445a2e4871400cf2fbe30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::memory::SharedPointer&lt; T &gt;::SharedPointer</definition>
+        <argsstring>(T *data)</argsstring>
+        <name>SharedPointer</name>
+        <param>
+          <type>T *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a shared pointer that points to the data pointer. The data pointer becomes managed by this shared pointer and so must not be passed to another <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance or deleted outside of this object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="26" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1ab52d35481022308d755e614289283ee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::memory::SharedPointer&lt; T &gt;::SharedPointer</definition>
+        <argsstring>(const SharedPointer&lt; T &gt; &amp;copy)</argsstring>
+        <name>SharedPointer</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; T &gt; &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a shared pointer that is a copy of copy. The new <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance will point to the pointer that copy points to and the internal reference counter is incremented. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="27" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="89" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a882cd1705b0f199d7aa5b4e4bce59b9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::memory::SharedPointer&lt; T &gt;::~SharedPointer</definition>
+        <argsstring>()</argsstring>
+        <name>~SharedPointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys this <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance. The internal reference count for the managed pointer is decremented and if this <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance held the last reference to the managed pointer then the managed pointer is also deleted. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="28" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a12ef6d4a50d8b382ed17d736c4f12704" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::memory::SharedPointer&lt; T &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resets this <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance (i.e. <ref refid="classprism_1_1memory_1_1_shared_pointer_1ada1547c6f8784a400638a3952d047679" kindref="member">isNull()</ref> == true). The managed pointer is set to 0. The internal reference count for the managed pointer is decremented and if this <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance held the last reference to the managed pointer then the managed pointer is also deleted. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="30" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a5babf4e115829dc654f8736c7ea229bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * prism::memory::SharedPointer&lt; T &gt;::data</definition>
+        <argsstring>() const </argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the managed pointer. Note: do not delete or pass this pointer to another <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> as the <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instances will become corrupt. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="31" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="122" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1ada1547c6f8784a400638a3952d047679" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::memory::SharedPointer&lt; T &gt;::isNull</definition>
+        <argsstring>() const </argsstring>
+        <name>isNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the managed pointer is set to 0, false if otherwise it points to a valid object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="32" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="128" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1af2fb73533c3eebd94e88835436df53cb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::memory::SharedPointer&lt; T &gt;::isUnique</definition>
+        <argsstring>() const </argsstring>
+        <name>isUnique</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if this <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance is the only object that holds a reference to the managed pointer, false otherwise. Note: null pointers are never unique as they don&apos;t point to anything. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="33" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="135" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a9d6e7c2643ed7ec55a63742b64af9ed9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int prism::memory::SharedPointer&lt; T &gt;::refCount</definition>
+        <argsstring>() const </argsstring>
+        <name>refCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> objects that have ownership of the managed pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="34" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a87791b2d58b4fc9ea375bbc8d8016982" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * prism::memory::SharedPointer&lt; T &gt;::operator-&gt;</definition>
+        <argsstring>() const </argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overloads the -&gt; operator so that it returns the managed pointer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="36" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1adf943a2f6f6a11cc995297a10214c6c1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; prism::memory::SharedPointer&lt; T &gt;::operator*</definition>
+        <argsstring>() const </argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Overloads the * operator so that it returns a reference to the value that the managed pointer points to. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="37" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="153" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a212f5f8d8a4580e2f8c2491e976f76df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::memory::SharedPointer&lt; T &gt;::operator bool</definition>
+        <argsstring>() const </argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if this <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance is not null, false otherwise. It can be used in if statements: if (shared_pointer) { ... } </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="38" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="161" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a8d90b48e776bacc5b6bc0a55f9a1d0bc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::memory::SharedPointer&lt; T &gt;::operator!</definition>
+        <argsstring>() const </argsstring>
+        <name>operator!</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if this <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance is null, false otherwise. It can be used in if statements: if (!shared_pointer) { ... } </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="39" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="169" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1memory_1_1_shared_pointer_1a79d197f806002c7d11da1009f47df7ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> &amp;</type>
+        <definition>SharedPointer&lt; T &gt; &amp; prism::memory::SharedPointer&lt; T &gt;::operator=</definition>
+        <argsstring>(const SharedPointer &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> instance takes ownership of the managed pointer in rhs and the internal reference counter is incremented. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="40" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="176" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classprism_1_1memory_1_1_shared_pointer_1a497bc2f2bc9e68da0cd9a80dc5b3b99a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend const bool</type>
+        <definition>const bool operator!=</definition>
+        <argsstring>(const SharedPointer&lt; U &gt; &amp;p1, const SharedPointer&lt; U &gt; &amp;p2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the managed pointers of p1 and p2 do not point to the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="45" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="193" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1memory_1_1_shared_pointer_1afa1e95ed17f645ed02ee12494d006a7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend const bool</type>
+        <definition>const bool operator!=</definition>
+        <argsstring>(const SharedPointer&lt; U &gt; &amp;p1, const U *p2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const U *</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the managed pointer of p1 and the raw pointer p2 do not point to the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="46" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="201" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1memory_1_1_shared_pointer_1a6e788a3f86ea0f744f7f58ff0d1a6365" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend const bool</type>
+        <definition>const bool operator!=</definition>
+        <argsstring>(const U *p1, const SharedPointer&lt; U &gt; &amp;p2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const U *</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the raw pointer p1 and the managed pointer of p2 do not point to the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="47" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="209" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1memory_1_1_shared_pointer_1ae1688caf7bd4dc08f775cbe830ecd6cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend const bool</type>
+        <definition>const bool operator==</definition>
+        <argsstring>(const SharedPointer&lt; U &gt; &amp;p1, const SharedPointer&lt; U &gt; &amp;p2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the managed pointers of p1 and p2 point to the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="48" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="217" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1memory_1_1_shared_pointer_1ac396e2d37f10207b0e4da099d03ef759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend const bool</type>
+        <definition>const bool operator==</definition>
+        <argsstring>(const SharedPointer&lt; U &gt; &amp;p1, const U *p2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const U *</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the managed pointer of p1 and the raw pointer p2 point to the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="49" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="225" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1memory_1_1_shared_pointer_1a4001c70f47a8e58a039f8f657f8334b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend const bool</type>
+        <definition>const bool operator==</definition>
+        <argsstring>(const U *p1, const SharedPointer&lt; U &gt; &amp;p2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const U *</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref>&lt; U &gt; &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the raw pointer p1 and the managed pointer of p2 point to the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="50" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="233" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1memory_1_1_shared_pointer_1a59120dbc6c4aab96755e65df06ba2963" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, SharedPointer &amp;p)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type><ref refid="classprism_1_1memory_1_1_shared_pointer" kindref="compound">SharedPointer</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/memory/SharedPointer.h" line="52" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="52" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/memory/SharedPointer.h" line="19" column="1" bodyfile="inc/memory/SharedPointer.h" bodystart="19" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a12ef6d4a50d8b382ed17d736c4f12704" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>clear</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1ab2113a3b060ab3622e305db787afcb4f" prot="private" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>d</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a5babf4e115829dc654f8736c7ea229bf" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>data</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1ada1547c6f8784a400638a3952d047679" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>isNull</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1af2fb73533c3eebd94e88835436df53cb" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>isUnique</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1aeaa89b19c52c28ec1213749652f40257" prot="private" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>m_ref</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a212f5f8d8a4580e2f8c2491e976f76df" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator bool</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a8d90b48e776bacc5b6bc0a55f9a1d0bc" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator!</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a497bc2f2bc9e68da0cd9a80dc5b3b99a" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1afa1e95ed17f645ed02ee12494d006a7b" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a6e788a3f86ea0f744f7f58ff0d1a6365" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1adf943a2f6f6a11cc995297a10214c6c1" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator*</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a87791b2d58b4fc9ea375bbc8d8016982" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator-&gt;</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a59120dbc6c4aab96755e65df06ba2963" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a79d197f806002c7d11da1009f47df7ca" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator=</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1ae1688caf7bd4dc08f775cbe830ecd6cd" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator==</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1ac396e2d37f10207b0e4da099d03ef759" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator==</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a4001c70f47a8e58a039f8f657f8334b5" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>operator==</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a9d6e7c2643ed7ec55a63742b64af9ed9" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>refCount</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a5b10beef934782caeac380b48cd57474" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>SharedPointer</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a7ce4fcda36f445a2e4871400cf2fbe30" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>SharedPointer</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1ab52d35481022308d755e614289283ee8" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>SharedPointer</name></member>
+      <member refid="classprism_1_1memory_1_1_shared_pointer_1a882cd1705b0f199d7aa5b4e4bce59b9f" prot="public" virt="non-virtual"><scope>prism::memory::SharedPointer</scope><name>~SharedPointer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

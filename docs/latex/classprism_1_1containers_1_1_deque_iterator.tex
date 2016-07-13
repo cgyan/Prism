@@ -1,0 +1,294 @@
+\hypertarget{classprism_1_1containers_1_1_deque_iterator}{}\section{prism\+:\+:containers\+:\+:Deque\+Iterator$<$ T $>$ Class Template Reference}
+\label{classprism_1_1containers_1_1_deque_iterator}\index{prism\+::containers\+::\+Deque\+Iterator$<$ T $>$@{prism\+::containers\+::\+Deque\+Iterator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$\+\_\+\+Deque\+Iterator.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classprism_1_1containers_1_1_deque_iterator_a8d329a4cffd98b8e54cb549d11790596a67b1ecf27d74afe920e8b0d01953df39}{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE} = 8
+ \}
+\item 
+typedef std\+::random\+\_\+access\+\_\+iterator\+\_\+tag \hyperlink{classprism_1_1containers_1_1_deque_iterator_ada6e48b4bf97d304a24d65c1ec7df374}{iterator\+\_\+category}
+\item 
+typedef T \hyperlink{classprism_1_1containers_1_1_deque_iterator_ac1b7df42a33124023e6251c457fb0f08}{value\+\_\+type}
+\item 
+typedef T \& \hyperlink{classprism_1_1containers_1_1_deque_iterator_a72100e9ee4840ecadaa96245732147d2}{reference}
+\item 
+typedef T $\ast$ \hyperlink{classprism_1_1containers_1_1_deque_iterator_ab8852d168fc77cd5368dca9ab14e456a}{pointer}
+\item 
+typedef size\+\_\+t \hyperlink{classprism_1_1containers_1_1_deque_iterator_ab0c68bd1da836f6372247f4ba053e2ac}{size\+\_\+type}
+\item 
+typedef ptrdiff\+\_\+t \hyperlink{classprism_1_1containers_1_1_deque_iterator_a03df377d025d668229049bc0f696d291}{difference\+\_\+type}
+\item 
+typedef \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator} \hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_a79ae1f83d2fae60eae9fde5f51f4830d}{Deque\+Iterator} ()
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_a53d65b1b05a00c68b9b4c37abf7b5974}{Deque\+Iterator} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \&copy)
+\item 
+void \hyperlink{classprism_1_1containers_1_1_deque_iterator_a453d1c796a47bc7a58fee6763266c077}{set\+Chunk} (T $\ast$$\ast$new\+Chunk)
+\item 
+T \& \hyperlink{classprism_1_1containers_1_1_deque_iterator_a9a87c5f2723352455db43fbf383b1318}{operator$\ast$} () const 
+\item 
+T $\ast$ \hyperlink{classprism_1_1containers_1_1_deque_iterator_a1badb21e3e1a355ba95d1095042fd746}{operator-\/$>$} () const 
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \& \hyperlink{classprism_1_1containers_1_1_deque_iterator_a4c0ad238fa13814960f334f38808b7be}{operator++} ()
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \hyperlink{classprism_1_1containers_1_1_deque_iterator_a6c8cef00860a7792e9431fcd99c19585}{operator++} (const int junk)
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \hyperlink{classprism_1_1containers_1_1_deque_iterator_a472e9dcc8c2147671c0f99ec0577d7cc}{operator+} (const int i)
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \& \hyperlink{classprism_1_1containers_1_1_deque_iterator_a94169129adc47db90de14758a32993f3}{operator-\/-\/} ()
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \hyperlink{classprism_1_1containers_1_1_deque_iterator_a52832d2423bd714ee323e2cebc9ad51f}{operator-\/-\/} (const int junk)
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \hyperlink{classprism_1_1containers_1_1_deque_iterator_a4d6669874e4ac73c4fcb57e420507ceb}{operator-\/} (const int i)
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \& \hyperlink{classprism_1_1containers_1_1_deque_iterator_a507534044f2121a08dd78e772eda708a}{operator+=} (const int i)
+\item 
+\hyperlink{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{\+\_\+\+Self} \& \hyperlink{classprism_1_1containers_1_1_deque_iterator_a0194a296f332cf961af5a25e3751238f}{operator-\/=} (const int i)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$$\ast$ \hyperlink{classprism_1_1containers_1_1_deque_iterator_abcea24c7a08e5ccb4b29234a1415a1ef}{chunk}
+\item 
+T $\ast$ \hyperlink{classprism_1_1containers_1_1_deque_iterator_a3a039e4ee4509c1fd26242d198b0050d}{current}
+\item 
+T $\ast$ \hyperlink{classprism_1_1containers_1_1_deque_iterator_a283d11ff20dac1e0ea519a467214b14f}{begin}
+\item 
+T $\ast$ \hyperlink{classprism_1_1containers_1_1_deque_iterator_a7666f12e4942b4775b0861a4515f7f0e}{end}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class \+\_\+T $>$ }\\const int \hyperlink{classprism_1_1containers_1_1_deque_iterator_a18261ed6566d556f0c93c8bb014b42ab}{operator-\/} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&lhs, const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&rhs)
+\item 
+{\footnotesize template$<$class \+\_\+T $>$ }\\const bool \hyperlink{classprism_1_1containers_1_1_deque_iterator_a522cd7451923ab14887bc7fb3852900b}{operator==} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&lhs, const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&rhs)
+\item 
+{\footnotesize template$<$class \+\_\+T $>$ }\\const bool \hyperlink{classprism_1_1containers_1_1_deque_iterator_a0f6f2e5bcabc70c70738cd87223fe33f}{operator!=} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&lhs, const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&rhs)
+\item 
+{\footnotesize template$<$class \+\_\+T $>$ }\\const bool \hyperlink{classprism_1_1containers_1_1_deque_iterator_a994fd8746a39f56be113488806c8f802}{operator$<$} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&lhs, const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&rhs)
+\item 
+{\footnotesize template$<$class \+\_\+T $>$ }\\const bool \hyperlink{classprism_1_1containers_1_1_deque_iterator_ac4a837da18f5f6441c35a661e5698959}{operator$>$} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&lhs, const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&rhs)
+\item 
+{\footnotesize template$<$class \+\_\+T $>$ }\\const bool \hyperlink{classprism_1_1containers_1_1_deque_iterator_a55611a2a7410f770d3ce880dc308ebfa}{operator$<$=} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&lhs, const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&rhs)
+\item 
+{\footnotesize template$<$class \+\_\+T $>$ }\\const bool \hyperlink{classprism_1_1containers_1_1_deque_iterator_a3beabc9a189a7a45bdc6aa72f4f7b5c4}{operator$>$=} (const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&lhs, const \hyperlink{classprism_1_1containers_1_1_deque_iterator}{Deque\+Iterator}$<$ \+\_\+T $>$ \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!\+\_\+\+Self@{\+\_\+\+Self}}
+\index{\+\_\+\+Self@{\+\_\+\+Self}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Self}{_Self}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf Deque\+Iterator} {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}{}\label{classprism_1_1containers_1_1_deque_iterator_ad27f6d3d6d64495652855cd194f624fc}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!difference\+\_\+type@{difference\+\_\+type}}
+\index{difference\+\_\+type@{difference\+\_\+type}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef ptrdiff\+\_\+t {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a03df377d025d668229049bc0f696d291}{}\label{classprism_1_1containers_1_1_deque_iterator_a03df377d025d668229049bc0f696d291}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!iterator\+\_\+category@{iterator\+\_\+category}}
+\index{iterator\+\_\+category@{iterator\+\_\+category}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{iterator\+\_\+category}{iterator_category}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef std\+::random\+\_\+access\+\_\+iterator\+\_\+tag {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf iterator\+\_\+category}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_ada6e48b4bf97d304a24d65c1ec7df374}{}\label{classprism_1_1containers_1_1_deque_iterator_ada6e48b4bf97d304a24d65c1ec7df374}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!pointer@{pointer}}
+\index{pointer@{pointer}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T$\ast$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf pointer}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_ab8852d168fc77cd5368dca9ab14e456a}{}\label{classprism_1_1containers_1_1_deque_iterator_ab8852d168fc77cd5368dca9ab14e456a}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!reference@{reference}}
+\index{reference@{reference}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T\& {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf reference}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a72100e9ee4840ecadaa96245732147d2}{}\label{classprism_1_1containers_1_1_deque_iterator_a72100e9ee4840ecadaa96245732147d2}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef size\+\_\+t {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf size\+\_\+type}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_ab0c68bd1da836f6372247f4ba053e2ac}{}\label{classprism_1_1containers_1_1_deque_iterator_ab0c68bd1da836f6372247f4ba053e2ac}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf value\+\_\+type}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_ac1b7df42a33124023e6251c457fb0f08}{}\label{classprism_1_1containers_1_1_deque_iterator_ac1b7df42a33124023e6251c457fb0f08}
+
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{\texorpdfstring{anonymous enum}{anonymous enum}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ anonymous enum}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a8d329a4cffd98b8e54cb549d11790596}{}\label{classprism_1_1containers_1_1_deque_iterator_a8d329a4cffd98b8e54cb549d11790596}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE@{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE@{C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE}}\item[{\em 
+C\+H\+U\+N\+K\+\_\+\+S\+I\+ZE\hypertarget{classprism_1_1containers_1_1_deque_iterator_a8d329a4cffd98b8e54cb549d11790596a67b1ecf27d74afe920e8b0d01953df39}{}\label{classprism_1_1containers_1_1_deque_iterator_a8d329a4cffd98b8e54cb549d11790596a67b1ecf27d74afe920e8b0d01953df39}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!Deque\+Iterator@{Deque\+Iterator}}
+\index{Deque\+Iterator@{Deque\+Iterator}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{Deque\+Iterator()}{DequeIterator()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf Deque\+Iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a79ae1f83d2fae60eae9fde5f51f4830d}{}\label{classprism_1_1containers_1_1_deque_iterator_a79ae1f83d2fae60eae9fde5f51f4830d}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!Deque\+Iterator@{Deque\+Iterator}}
+\index{Deque\+Iterator@{Deque\+Iterator}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{Deque\+Iterator(const \+\_\+\+Self \&copy)}{DequeIterator(const _Self &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::{\bf Deque\+Iterator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf \+\_\+\+Self} \&}]{copy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a53d65b1b05a00c68b9b4c37abf7b5974}{}\label{classprism_1_1containers_1_1_deque_iterator_a53d65b1b05a00c68b9b4c37abf7b5974}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$\ast$() const }{operator*() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a9a87c5f2723352455db43fbf383b1318}{}\label{classprism_1_1containers_1_1_deque_iterator_a9a87c5f2723352455db43fbf383b1318}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator+@{operator+}}
+\index{operator+@{operator+}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator+(const int i)}{operator+(const int i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a472e9dcc8c2147671c0f99ec0577d7cc}{}\label{classprism_1_1containers_1_1_deque_iterator_a472e9dcc8c2147671c0f99ec0577d7cc}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator++()}{operator++()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} \& {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a4c0ad238fa13814960f334f38808b7be}{}\label{classprism_1_1containers_1_1_deque_iterator_a4c0ad238fa13814960f334f38808b7be}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator++(const int junk)}{operator++(const int junk)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator++ (
+\begin{DoxyParamCaption}
+\item[{const int}]{junk}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a6c8cef00860a7792e9431fcd99c19585}{}\label{classprism_1_1containers_1_1_deque_iterator_a6c8cef00860a7792e9431fcd99c19585}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator+=(const int i)}{operator+=(const int i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} \& {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a507534044f2121a08dd78e772eda708a}{}\label{classprism_1_1containers_1_1_deque_iterator_a507534044f2121a08dd78e772eda708a}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/(const int i)}{operator-(const int i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a4d6669874e4ac73c4fcb57e420507ceb}{}\label{classprism_1_1containers_1_1_deque_iterator_a4d6669874e4ac73c4fcb57e420507ceb}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/-\/()}{operator--()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} \& {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a94169129adc47db90de14758a32993f3}{}\label{classprism_1_1containers_1_1_deque_iterator_a94169129adc47db90de14758a32993f3}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/-\/(const int junk)}{operator--(const int junk)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator-\/-\/ (
+\begin{DoxyParamCaption}
+\item[{const int}]{junk}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a52832d2423bd714ee323e2cebc9ad51f}{}\label{classprism_1_1containers_1_1_deque_iterator_a52832d2423bd714ee323e2cebc9ad51f}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/=(const int i)}{operator-=(const int i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque\+Iterator}$<$ T $>$\+::{\bf \+\_\+\+Self} \& {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a0194a296f332cf961af5a25e3751238f}{}\label{classprism_1_1containers_1_1_deque_iterator_a0194a296f332cf961af5a25e3751238f}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/$>$() const }{operator->() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T $\ast$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a1badb21e3e1a355ba95d1095042fd746}{}\label{classprism_1_1containers_1_1_deque_iterator_a1badb21e3e1a355ba95d1095042fd746}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!set\+Chunk@{set\+Chunk}}
+\index{set\+Chunk@{set\+Chunk}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{set\+Chunk(\+T $\ast$$\ast$new\+Chunk)}{setChunk(T **newChunk)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::set\+Chunk (
+\begin{DoxyParamCaption}
+\item[{T $\ast$$\ast$}]{new\+Chunk}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a453d1c796a47bc7a58fee6763266c077}{}\label{classprism_1_1containers_1_1_deque_iterator_a453d1c796a47bc7a58fee6763266c077}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator"!=}{operator!=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class \+\_\+T $>$ const bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{lhs, }
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a0f6f2e5bcabc70c70738cd87223fe33f}{}\label{classprism_1_1containers_1_1_deque_iterator_a0f6f2e5bcabc70c70738cd87223fe33f}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class \+\_\+T $>$ const int operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{lhs, }
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a18261ed6566d556f0c93c8bb014b42ab}{}\label{classprism_1_1containers_1_1_deque_iterator_a18261ed6566d556f0c93c8bb014b42ab}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$<$}{operator<}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class \+\_\+T $>$ const bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{lhs, }
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a994fd8746a39f56be113488806c8f802}{}\label{classprism_1_1containers_1_1_deque_iterator_a994fd8746a39f56be113488806c8f802}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$<$=}{operator<=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class \+\_\+T $>$ const bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{lhs, }
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a55611a2a7410f770d3ce880dc308ebfa}{}\label{classprism_1_1containers_1_1_deque_iterator_a55611a2a7410f770d3ce880dc308ebfa}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class \+\_\+T $>$ const bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{lhs, }
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a522cd7451923ab14887bc7fb3852900b}{}\label{classprism_1_1containers_1_1_deque_iterator_a522cd7451923ab14887bc7fb3852900b}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$>$}{operator>}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class \+\_\+T $>$ const bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{lhs, }
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_ac4a837da18f5f6441c35a661e5698959}{}\label{classprism_1_1containers_1_1_deque_iterator_ac4a837da18f5f6441c35a661e5698959}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$>$=}{operator>=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class \+\_\+T $>$ const bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{lhs, }
+\item[{const {\bf Deque\+Iterator}$<$ \+\_\+T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a3beabc9a189a7a45bdc6aa72f4f7b5c4}{}\label{classprism_1_1containers_1_1_deque_iterator_a3beabc9a189a7a45bdc6aa72f4f7b5c4}
+
+
+\subsection{Member Data Documentation}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!begin@{begin}}
+\index{begin@{begin}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{begin}{begin}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::begin}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a283d11ff20dac1e0ea519a467214b14f}{}\label{classprism_1_1containers_1_1_deque_iterator_a283d11ff20dac1e0ea519a467214b14f}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!chunk@{chunk}}
+\index{chunk@{chunk}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{chunk}{chunk}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$$\ast$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::chunk}\hypertarget{classprism_1_1containers_1_1_deque_iterator_abcea24c7a08e5ccb4b29234a1415a1ef}{}\label{classprism_1_1containers_1_1_deque_iterator_abcea24c7a08e5ccb4b29234a1415a1ef}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!current@{current}}
+\index{current@{current}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{current}{current}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::current}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a3a039e4ee4509c1fd26242d198b0050d}{}\label{classprism_1_1containers_1_1_deque_iterator_a3a039e4ee4509c1fd26242d198b0050d}
+\index{prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}!end@{end}}
+\index{end@{end}!prism\+::containers\+::\+Deque\+Iterator@{prism\+::containers\+::\+Deque\+Iterator}}
+\subsubsection[{\texorpdfstring{end}{end}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf prism\+::containers\+::\+Deque\+Iterator}$<$ T $>$\+::end}\hypertarget{classprism_1_1containers_1_1_deque_iterator_a7666f12e4942b4775b0861a4515f7f0e}{}\label{classprism_1_1containers_1_1_deque_iterator_a7666f12e4942b4775b0861a4515f7f0e}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/containers/aux/\hyperlink{___deque_iterator_8h}{\+\_\+\+Deque\+Iterator.\+h}\end{DoxyCompactItemize}

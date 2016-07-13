@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1exceptions_1_1_exception" kind="class" language="C++" prot="public">
+    <compoundname>prism::exceptions::Exception</compoundname>
+    <derivedcompoundref refid="classprism_1_1exceptions_1_1_out_of_bounds_exception" prot="public" virt="non-virtual">prism::exceptions::OutOfBoundsException</derivedcompoundref>
+    <includes refid="_exception_8h" local="no">Exception.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classprism_1_1exceptions_1_1_exception_1a46b99086173d8f609064dc3974703573" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string prism::exceptions::Exception::msg</definition>
+        <argsstring></argsstring>
+        <name>msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/exceptions/Exception.h" line="19" column="1" bodyfile="inc/exceptions/Exception.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classprism_1_1exceptions_1_1_exception_1a51db0a29e9fc7b5b9702752753aa7cee" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::exceptions::Exception::Exception</definition>
+        <argsstring>()</argsstring>
+        <name>Exception</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/exceptions/Exception.h" line="20" column="1" bodyfile="inc/exceptions/Exception.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1exceptions_1_1_exception_1ad87f4f668b4536a76d0ea13658915102" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::exceptions::Exception::Exception</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>Exception</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/exceptions/Exception.h" line="22" column="1" bodyfile="inc/exceptions/Exception.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1exceptions_1_1_exception_1ab0681204c1a8d3327bbddc401c83e006" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; prism::exceptions::Exception::errorMsg</definition>
+        <argsstring>() const </argsstring>
+        <name>errorMsg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/exceptions/Exception.h" line="23" column="1" bodyfile="inc/exceptions/Exception.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="32">
+        <label>prism::exceptions::OutOfBoundsException</label>
+        <link refid="classprism_1_1exceptions_1_1_out_of_bounds_exception"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>prism::exceptions::Exception</label>
+        <link refid="classprism_1_1exceptions_1_1_exception"/>
+      </node>
+    </inheritancegraph>
+    <location file="inc/exceptions/Exception.h" line="17" column="1" bodyfile="inc/exceptions/Exception.h" bodystart="17" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classprism_1_1exceptions_1_1_exception_1ab0681204c1a8d3327bbddc401c83e006" prot="public" virt="non-virtual"><scope>prism::exceptions::Exception</scope><name>errorMsg</name></member>
+      <member refid="classprism_1_1exceptions_1_1_exception_1a51db0a29e9fc7b5b9702752753aa7cee" prot="protected" virt="non-virtual"><scope>prism::exceptions::Exception</scope><name>Exception</name></member>
+      <member refid="classprism_1_1exceptions_1_1_exception_1ad87f4f668b4536a76d0ea13658915102" prot="public" virt="non-virtual"><scope>prism::exceptions::Exception</scope><name>Exception</name></member>
+      <member refid="classprism_1_1exceptions_1_1_exception_1a46b99086173d8f609064dc3974703573" prot="protected" virt="non-virtual"><scope>prism::exceptions::Exception</scope><name>msg</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

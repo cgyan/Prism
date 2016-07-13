@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_iterator" kind="class" language="C++" prot="public">
+    <compoundname>Iterator</compoundname>
+    <includes refid="_temp_iterator_8h" local="no">TempIterator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_iterator_1ad0ef593ca697d376b0b4a79f3f50a348" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* Iterator&lt; T &gt;::p</definition>
+        <argsstring></argsstring>
+        <name>p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="18" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_iterator_1a87d4af70ba6312e91e1ab6a7c9e2ec6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Iterator&lt; T &gt;::Iterator</definition>
+        <argsstring>()</argsstring>
+        <name>Iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="20" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_iterator_1a9c3353bb547e0577a7e0db347c0b10e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Iterator&lt; T &gt;::Iterator</definition>
+        <argsstring>(T *p)</argsstring>
+        <name>Iterator</name>
+        <param>
+          <type>T *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="21" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_iterator_1a31a9915829a895b5e28707671acbc94a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T &amp; Iterator&lt; T &gt;::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="22" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_iterator_1a841ce211854aa73a95fcfc0716099290" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * Iterator&lt; T &gt;::operator&amp;</definition>
+        <argsstring>()</argsstring>
+        <name>operator&amp;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="23" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_iterator_1aeb34c80997916ed2561271a7ed56014f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; T &gt; &amp;</type>
+        <definition>Iterator&lt; T &gt; &amp; Iterator&lt; T &gt;::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="24" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="55" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_iterator_1a039f78c73b5c74cf9a70df1df979345e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class _T</type>
+          </param>
+        </templateparamlist>
+        <type>friend bool</type>
+        <definition>bool operator==</definition>
+        <argsstring>(Iterator&lt; _T &gt; &amp;lhs, Iterator&lt; _T &gt; &amp;rhs)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; _T &gt; &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; _T &gt; &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_iterator_1abfe7f47698f961015253c76cda143f1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class _T</type>
+          </param>
+        </templateparamlist>
+        <type>friend bool</type>
+        <definition>bool operator!=</definition>
+        <argsstring>(Iterator&lt; _T &gt; &amp;lhs, Iterator&lt; _T &gt; &amp;rhs)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; _T &gt; &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="class_iterator" kindref="compound">Iterator</ref>&lt; _T &gt; &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/TempIterator.h" line="28" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/containers/TempIterator.h" line="16" column="1" bodyfile="inc/containers/TempIterator.h" bodystart="16" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_iterator_1a87d4af70ba6312e91e1ab6a7c9e2ec6d" prot="public" virt="non-virtual"><scope>Iterator</scope><name>Iterator</name></member>
+      <member refid="class_iterator_1a9c3353bb547e0577a7e0db347c0b10e1" prot="public" virt="non-virtual"><scope>Iterator</scope><name>Iterator</name></member>
+      <member refid="class_iterator_1abfe7f47698f961015253c76cda143f1e" prot="public" virt="non-virtual"><scope>Iterator</scope><name>operator!=</name></member>
+      <member refid="class_iterator_1a841ce211854aa73a95fcfc0716099290" prot="public" virt="non-virtual"><scope>Iterator</scope><name>operator&amp;</name></member>
+      <member refid="class_iterator_1a31a9915829a895b5e28707671acbc94a" prot="public" virt="non-virtual"><scope>Iterator</scope><name>operator*</name></member>
+      <member refid="class_iterator_1aeb34c80997916ed2561271a7ed56014f" prot="public" virt="non-virtual"><scope>Iterator</scope><name>operator++</name></member>
+      <member refid="class_iterator_1a039f78c73b5c74cf9a70df1df979345e" prot="public" virt="non-virtual"><scope>Iterator</scope><name>operator==</name></member>
+      <member refid="class_iterator_1ad0ef593ca697d376b0b4a79f3f50a348" prot="private" virt="non-virtual"><scope>Iterator</scope><name>p</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

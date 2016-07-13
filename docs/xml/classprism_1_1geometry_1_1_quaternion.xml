@@ -1,0 +1,974 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1geometry_1_1_quaternion" kind="class" language="C++" prot="public">
+    <compoundname>prism::geometry::Quaternion</compoundname>
+    <includes refid="_quaternion_8h" local="no">Quaternion.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_quaternion_1af983379326875a86b751cc6bff3e6022" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Quaternion::m_w</definition>
+        <argsstring></argsstring>
+        <name>m_w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="48" column="1" bodyfile="inc/geometry/Quaternion.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_quaternion_1a9d22e487291c2d46ecc656ea0aad7fee" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Quaternion::m_x</definition>
+        <argsstring></argsstring>
+        <name>m_x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="48" column="1" bodyfile="inc/geometry/Quaternion.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_quaternion_1ace7b7bbd4cf0e9643149ec65fc5860ef" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Quaternion::m_y</definition>
+        <argsstring></argsstring>
+        <name>m_y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="48" column="1" bodyfile="inc/geometry/Quaternion.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_quaternion_1a9e4e776b9eb5a30adf0ffce29a69afaf" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float prism::geometry::Quaternion::m_z</definition>
+        <argsstring></argsstring>
+        <name>m_z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="48" column="1" bodyfile="inc/geometry/Quaternion.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a91ccc5fc76c77fb1bae3206a60ffc714" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Quaternion::Quaternion</definition>
+        <argsstring>(void)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a quaternion set to the identity state (1,0,0,0). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="51" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1accd6baeae33e6dc4958cee822d42206e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Quaternion::Quaternion</definition>
+        <argsstring>(const float w, const float x, const float y, const float z)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const float</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a quaternion setting the w, x, y and z components to the values passed in. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="52" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a6be1a9247ec273e11e573b64ebe7fcd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Quaternion::Quaternion</definition>
+        <argsstring>(const float w, const Vector3 &amp;v)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const float</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a quaternion from the passed in w and vector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="53" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a873db343286dfa36e742e62c076e70a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Quaternion::Quaternion</definition>
+        <argsstring>(const Quaternion &amp;q)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a quaternion which is a copy of q. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="54" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a27853f52b0907a630dd3b8a8a86f89f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>prism::geometry::Quaternion::~Quaternion</definition>
+        <argsstring>(void)</argsstring>
+        <name>~Quaternion</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="55" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a934ba4c328d18803576fd07f2cd390ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::Quaternion::conjugate</definition>
+        <argsstring>() const </argsstring>
+        <name>conjugate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> which is the result of negating the vector component of this quaternion. This quaternion remains unaltered. Note: when a quaternion has been normalised (has unit length of 1) the conjugate and inverse are identical. The quaternion needs to be of unit length in order to perform rotations correctly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="57" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a9ae7c21e6161e2bbb4b9fd07ae8ac9a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::Quaternion::inverse</definition>
+        <argsstring>() const </argsstring>
+        <name>inverse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the inverse of this quaternion. The inverse is defined as dividing the conjugate by the magnitude. Note: when a quaternion has been normalised (has unit length of 1) the conjugate and inverse are identical. The quaternion needs to be of unit length in order to perform rotations correctly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="58" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a1e44ba58366ca6ceb78437695ba38d17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Quaternion::isIdentity</definition>
+        <argsstring>() const </argsstring>
+        <name>isIdentity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if w=1 and x=y=z=0, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="59" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a5150e7b2ccdd075359aa53c4b0ddd8c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Quaternion::length</definition>
+        <argsstring>() const </argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the length (magnitude) of the quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="60" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a112cb39325c21f9d2178016af08d0731" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Quaternion::lengthSquared</definition>
+        <argsstring>() const </argsstring>
+        <name>lengthSquared</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the squared length of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="61" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a31290c70e27365d6b97f72ce8156e43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::normalise</definition>
+        <argsstring>()</argsstring>
+        <name>normalise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Normalises this quaternion which sets its length to 1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="62" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1abb08eb769ccd4e41c84810c9265e183d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::Quaternion::normalised</definition>
+        <argsstring>() const </argsstring>
+        <name>normalised</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a copy of this quaternion that has been normalised. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="63" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a263e6e4bb45373b8c040fc6bb86e4df4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Quaternion::rotatedVector</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>rotatedVector</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rotates vector v with this quaternion and returns a new <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> with the result. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="64" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a5dd73aef20a6cf30ab612c34e3fc63ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::setW</definition>
+        <argsstring>(const float w)</argsstring>
+        <name>setW</name>
+        <param>
+          <type>const float</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the w component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="65" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="115" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a6a9812603f54502ef167c4998586507b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::setX</definition>
+        <argsstring>(const float x)</argsstring>
+        <name>setX</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the x component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="66" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1abae324d0c7ecdf5c712ed250c14c0443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::setY</definition>
+        <argsstring>(const float y)</argsstring>
+        <name>setY</name>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the y component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="67" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a14a92ab9e9eb9ae065ba888bb1afcb94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::setZ</definition>
+        <argsstring>(const float z)</argsstring>
+        <name>setZ</name>
+        <param>
+          <type>const float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the z component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="68" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="136" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1ae65c8cba45afa9c55f4f50b58d1faeb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::setVector</definition>
+        <argsstring>(const float x, const float y, const float z)</argsstring>
+        <name>setVector</name>
+        <param>
+          <type>const float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the vector component of this quaternion to the values passed in. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="69" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="143" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1af4fc8ac6fcf8863ff950e86f0fa3818c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::setVector</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>setVector</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the vector component of this quaternion to the specified vector passed in. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="70" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="152" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a3d252bf3af1c5b47a751b1dd2f1a41db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::setToIdentity</definition>
+        <argsstring>()</argsstring>
+        <name>setToIdentity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the quaternion to its identity state which sets w=1 and x=y=z=0 i.e. zero vector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="71" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a30c6e8a2b8e29c614c648d9a39bdcdb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::Quaternion::vector3</definition>
+        <argsstring>() const </argsstring>
+        <name>vector3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> which is the vector component of this quaternion i.e. x, y and z </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="72" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="167" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a48b3332d56095978d7fec1d36b92ac1c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::Quaternion::vector4</definition>
+        <argsstring>() const </argsstring>
+        <name>vector4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> which is the vector component of this quaternion, i.e. x, y and z, additionally with the w component set to 1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="73" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="175" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a04d1be00d79966209148fc9e0dcd8d29" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Quaternion::w</definition>
+        <argsstring>() const </argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the w component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="74" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="182" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a64b19a3673ae2d7a103ad4edfb70874f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Quaternion::x</definition>
+        <argsstring>() const </argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the x component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="75" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="189" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a1eb758ab66dc23e282d8d9c1d891db25" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Quaternion::y</definition>
+        <argsstring>() const </argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the y component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="76" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="196" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a0555ec659f2dff30070bfa05c129aa1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Quaternion::z</definition>
+        <argsstring>() const </argsstring>
+        <name>z</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the z component of this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="77" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="203" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1af05bb28c35f48d15ac7b3eec49b2a7ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; prism::geometry::Quaternion::operator+=</definition>
+        <argsstring>(const Quaternion &amp;q)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to this <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> which has had q added to it. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="84" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="210" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1adea1af08c2b429ce660f1c99c6c662a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; prism::geometry::Quaternion::operator-=</definition>
+        <argsstring>(const Quaternion &amp;q)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to this <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> which has had q subtracted from it. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="85" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="222" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a226f4860803f811bf8e0d43f5c61e2e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; prism::geometry::Quaternion::operator*=</definition>
+        <argsstring>(const float factor)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to this <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> which has had each component multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="86" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="234" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a635087bcba716782643b2f880c07668b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; prism::geometry::Quaternion::operator/=</definition>
+        <argsstring>(const float divisor)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to this <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> which has had each component divided by divisor. If divisor is 0 then nothing happens. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="87" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="247" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a3d9cef9f68af77b97fe71157a1fd1591" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; prism::geometry::Quaternion::operator=</definition>
+        <argsstring>(const Quaternion &amp;q)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Assignment operator assigns the component values of q to this quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="88" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="260" bodyend="266"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a128b73113354b13a07ffa745947c7813" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::geometry::Quaternion::dotProduct</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>dotProduct</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a scalar which is the dot product of the two quaternions in the range [-1, 1]. The dot product of two quaternions represents the cosine of half of the angle needed to rotate one quaternion into the other. The larger the absolute value the result is (the closer it is to 1) means the closer the two quaternions are in orientation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="79" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="306" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1a1e2bdf5339aa69325bd572505941fae7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::Quaternion::fromAxisAndAngle</definition>
+        <argsstring>(const Vector3 &amp;axis, const float angle)</argsstring>
+        <name>fromAxisAndAngle</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>axis</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a normalised quaternion that represents a rotation of angle degrees around the specified axis. If axis is not normalised then this method normalises it. Also, angle is in degrees. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="80" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="286" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1aec2514a7f861f2ed329606a197db1678" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::Quaternion::fromAxisAndAngle</definition>
+        <argsstring>(const float xAxis, const float yAxis, const float zAxis, const float angle)</argsstring>
+        <name>fromAxisAndAngle</name>
+        <param>
+          <type>const float</type>
+          <declname>xAxis</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>yAxis</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>zAxis</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a normalised quaternion that represents a rotation of angle degrees around the specified axis. If the axis specified by xAxis, yAxis and zAxis is not normalised then this method normalises it. Also, angle is in degrees. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="81" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="276" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1ac8648074982947ef4815340ab2ca357e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::Quaternion::identity</definition>
+        <argsstring>()</argsstring>
+        <name>identity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="82" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="316" bodyend="318"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a55c89dc55cca66b19679705c566a165a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator+</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the sum of q1 and q2 i.e. each component of q1 is added to the corresponding component of q2. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="91" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="327" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a3a5605ba3f0bb654c528d2f7beb34147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator-</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of subtracting q2 from q1 i.e. each component of q2 is subtracted from the corresponding component of q1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="92" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="335" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a82faed3b53a20e9c2acf7fa2406263c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator-</definition>
+        <argsstring>(Quaternion &amp;q)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> which has had each component of q negated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="93" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="342" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a02f988d3aef50bac26fc6fed8429d6a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator*</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the product of q1 and q2. Note: quaternion multiplication is associative so a(bc) = (ab)c but is not commutitive so q1q2 does not always equal q2q1. Order matters! </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="94" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="351" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a7a69f073f287d3e5e614995aa588dfba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator*</definition>
+        <argsstring>(const Quaternion &amp;q, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of multiplying each component of q by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="95" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="396" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a103d9036740a77394440b39eb4bf3c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator*</definition>
+        <argsstring>(const float factor, const Quaternion &amp;q)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of multiplying each component of q by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="96" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="403" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a3ae869a94a277b595456e7a0d8cf0730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator*</definition>
+        <argsstring>(const Quaternion &amp;q, const Vector3 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies a quaternion and vector3 together and returns a quaternion as a result. The vector is just transformed into a quaternion (setting w = 0) and then the two quaternions are multiplied. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="97" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="411" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a9156a92837fec8bf13994dddc21afacf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator*</definition>
+        <argsstring>(const Quaternion &amp;q, const Vector4 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies a quaternion and <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> together and returns a quaternion as a result. The vector is just transformed into a quaternion and then the two quaternions are multiplied. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="98" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="420" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a6e207c938a23f83d2bb574d9eb92a56d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator/</definition>
+        <argsstring>(const Quaternion &amp;q, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of dividing each component of q by divisor. If divisor is 0 then a identity quaternion is returned instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="99" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="429" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a9c72bd1e471ac599aaee1d3dfe729075" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator==</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares q1 and q2 and returns true if they are equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="100" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="438" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1adc2df640ae236b94e01951d891d59e85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator!=</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares q1 and q2 and returns true if they are not equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="101" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="447" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_quaternion_1a9d6837ef4f759aa5ecd417adcea2e908" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Quaternion &amp;q)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to a stream which allows an instance of <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> to be written to the stream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="102" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="454" bodyend="457"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_quaternion_1afa492956a8c521e532ad41b9d0418375" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Quaternion::copyDataFromSourceToDestination</definition>
+        <argsstring>(const Quaternion &amp;source, Quaternion &amp;destination)</argsstring>
+        <name>copyDataFromSourceToDestination</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>destination</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>: Simply copies the data from the source quaternion into the destination quaternion. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Quaternion.h" line="105" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="463" bodyend="468"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/geometry/Quaternion.h" line="46" column="1" bodyfile="inc/geometry/Quaternion.h" bodystart="45" bodyend="106"/>
+    <listofallmembers>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a934ba4c328d18803576fd07f2cd390ba" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>conjugate</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1afa492956a8c521e532ad41b9d0418375" prot="private" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>copyDataFromSourceToDestination</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a128b73113354b13a07ffa745947c7813" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>dotProduct</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a1e2bdf5339aa69325bd572505941fae7" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>fromAxisAndAngle</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1aec2514a7f861f2ed329606a197db1678" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>fromAxisAndAngle</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1ac8648074982947ef4815340ab2ca357e" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>identity</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a9ae7c21e6161e2bbb4b9fd07ae8ac9a8" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>inverse</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a1e44ba58366ca6ceb78437695ba38d17" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>isIdentity</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a5150e7b2ccdd075359aa53c4b0ddd8c8" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>length</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a112cb39325c21f9d2178016af08d0731" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>lengthSquared</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1af983379326875a86b751cc6bff3e6022" prot="private" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>m_w</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a9d22e487291c2d46ecc656ea0aad7fee" prot="private" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>m_x</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1ace7b7bbd4cf0e9643149ec65fc5860ef" prot="private" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>m_y</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a9e4e776b9eb5a30adf0ffce29a69afaf" prot="private" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>m_z</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a31290c70e27365d6b97f72ce8156e43d" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>normalise</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1abb08eb769ccd4e41c84810c9265e183d" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>normalised</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1adc2df640ae236b94e01951d891d59e85" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a02f988d3aef50bac26fc6fed8429d6a2" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a7a69f073f287d3e5e614995aa588dfba" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a103d9036740a77394440b39eb4bf3c0b" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a3ae869a94a277b595456e7a0d8cf0730" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a9156a92837fec8bf13994dddc21afacf" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a226f4860803f811bf8e0d43f5c61e2e7" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator*=</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a55c89dc55cca66b19679705c566a165a" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator+</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1af05bb28c35f48d15ac7b3eec49b2a7ff" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator+=</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a3a5605ba3f0bb654c528d2f7beb34147" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator-</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a82faed3b53a20e9c2acf7fa2406263c8" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator-</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1adea1af08c2b429ce660f1c99c6c662a9" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator-=</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a6e207c938a23f83d2bb574d9eb92a56d" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator/</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a635087bcba716782643b2f880c07668b" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator/=</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a9d6837ef4f759aa5ecd417adcea2e908" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a3d9cef9f68af77b97fe71157a1fd1591" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator=</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a9c72bd1e471ac599aaee1d3dfe729075" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>operator==</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a91ccc5fc76c77fb1bae3206a60ffc714" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1accd6baeae33e6dc4958cee822d42206e" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a6be1a9247ec273e11e573b64ebe7fcd0" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a873db343286dfa36e742e62c076e70a7" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a263e6e4bb45373b8c040fc6bb86e4df4" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>rotatedVector</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a3d252bf3af1c5b47a751b1dd2f1a41db" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>setToIdentity</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1ae65c8cba45afa9c55f4f50b58d1faeb3" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>setVector</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1af4fc8ac6fcf8863ff950e86f0fa3818c" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>setVector</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a5dd73aef20a6cf30ab612c34e3fc63ed" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>setW</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a6a9812603f54502ef167c4998586507b" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>setX</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1abae324d0c7ecdf5c712ed250c14c0443" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>setY</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a14a92ab9e9eb9ae065ba888bb1afcb94" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>setZ</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a30c6e8a2b8e29c614c648d9a39bdcdb5" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>vector3</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a48b3332d56095978d7fec1d36b92ac1c" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>vector4</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a04d1be00d79966209148fc9e0dcd8d29" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>w</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a64b19a3673ae2d7a103ad4edfb70874f" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>x</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a1eb758ab66dc23e282d8d9c1d891db25" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>y</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a0555ec659f2dff30070bfa05c129aa1b" prot="public" virt="non-virtual"><scope>prism::geometry::Quaternion</scope><name>z</name></member>
+      <member refid="classprism_1_1geometry_1_1_quaternion_1a27853f52b0907a630dd3b8a8a86f89f8" prot="public" virt="virtual"><scope>prism::geometry::Quaternion</scope><name>~Quaternion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

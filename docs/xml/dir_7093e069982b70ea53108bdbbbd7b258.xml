@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_7093e069982b70ea53108bdbbbd7b258" kind="dir">
+    <compoundname>inc/geometry</compoundname>
+    <innerfile refid="_circle_8h">Circle.h</innerfile>
+    <innerfile refid="_matrix4_8h">Matrix4.h</innerfile>
+    <innerfile refid="_point_8h">Point.h</innerfile>
+    <innerfile refid="_pointf_8h">Pointf.h</innerfile>
+    <innerfile refid="_quaternion_8h">Quaternion.h</innerfile>
+    <innerfile refid="_rect_8h">Rect.h</innerfile>
+    <innerfile refid="_size_8h">Size.h</innerfile>
+    <innerfile refid="_vector2_8h">Vector2.h</innerfile>
+    <innerfile refid="_vector3_8h">Vector3.h</innerfile>
+    <innerfile refid="_vector4_8h">Vector4.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/geometry/"/>
+  </compounddef>
+</doxygen>

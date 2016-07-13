@@ -1,0 +1,597 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1geometry_1_1_size" kind="class" language="C++" prot="public">
+    <compoundname>prism::geometry::Size</compoundname>
+    <includes refid="_size_8h" local="no">Size.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_size_1a7b93feca928e76b42a1063b3d6639b79" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int prism::geometry::Size::m_width</definition>
+        <argsstring></argsstring>
+        <name>m_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="19" column="1" bodyfile="inc/geometry/Size.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1geometry_1_1_size_1a9f89af30bd863a96e77caa46dd2e82b9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int prism::geometry::Size::m_height</definition>
+        <argsstring></argsstring>
+        <name>m_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="20" column="1" bodyfile="inc/geometry/Size.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a82ca178677fefa36453103441b0e16d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Size::Size</definition>
+        <argsstring>()</argsstring>
+        <name>Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object with a width and height of 0. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="23" column="1" bodyfile="src/geometry/Size.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a3df901a89d7ba9222266e45eea14aa80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Size::Size</definition>
+        <argsstring>(const int width, const int height)</argsstring>
+        <name>Size</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object setting the width and height to <emphasis><bold>width</bold> and</emphasis> <emphasis><bold>height</bold> respectively</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="24" column="1" bodyfile="src/geometry/Size.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a7a5a003c2ed1e52fc3c95e2abdeddee5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::geometry::Size::Size</definition>
+        <argsstring>(const Size &amp;copy)</argsstring>
+        <name>Size</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy constructor makes a copy of the <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object passed in. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="25" column="1" bodyfile="src/geometry/Size.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a537e42c6a73305321ce4b8b28c7e1c90" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>prism::geometry::Size::~Size</definition>
+        <argsstring>()</argsstring>
+        <name>~Size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="26" column="1" bodyfile="src/geometry/Size.cpp" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1af4879e8eca4306cfe5d39b800ae191d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int prism::geometry::Size::height</definition>
+        <argsstring>() const </argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the height of this <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="28" column="1" bodyfile="src/geometry/Size.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1aa9b519af8f5708939fbd20f1b52ec28f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Size::isEmpty</definition>
+        <argsstring>() const </argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if either the width or the height is less than 1, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="29" column="1" bodyfile="src/geometry/Size.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a2867491b5a8215c61e58ad943ddb2811" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Size::isNull</definition>
+        <argsstring>() const </argsstring>
+        <name>isNull</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if both the width and height are 0, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="30" column="1" bodyfile="src/geometry/Size.cpp" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1ae6c9cd08771cc878b32fa7ef21b808c1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::Size::isValid</definition>
+        <argsstring>() const </argsstring>
+        <name>isValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if both the width and height are greater than 0, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="31" column="1" bodyfile="src/geometry/Size.cpp" bodystart="68" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a415d717d5d4dc026be63fe0fecca3747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Size::setHeight</definition>
+        <argsstring>(const int height)</argsstring>
+        <name>setHeight</name>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the height to <emphasis>height</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="32" column="1" bodyfile="src/geometry/Size.cpp" bodystart="75" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1ae0cec1e8ce5c2f4363e2d6f650d8949d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Size::setWidth</definition>
+        <argsstring>(const int width)</argsstring>
+        <name>setWidth</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the width to <emphasis>width</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="33" column="1" bodyfile="src/geometry/Size.cpp" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1ab53d9d0e247a8505a9e884cf26213e7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Size::scale</definition>
+        <argsstring>(const int widthFactor, const int heightFactor)</argsstring>
+        <name>scale</name>
+        <param>
+          <type>const int</type>
+          <declname>widthFactor</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>heightFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Scales the dimension of the <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object by multiplying the width by <emphasis>widthFactor</emphasis> and multiplying the height by <emphasis>heightFactor</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="34" column="1" bodyfile="src/geometry/Size.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1ac1ac0d2a905e60962f2123e3ffcc5dbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Size::scale</definition>
+        <argsstring>(const Size &amp;size)</argsstring>
+        <name>scale</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Scales the dimension of this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object using <emphasis>size</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="35" column="1" bodyfile="src/geometry/Size.cpp" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a4ce86d68cae4723b7213b6bad0a09c0c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::Size::scaled</definition>
+        <argsstring>(const int widthFactor, const int heightFactor) const </argsstring>
+        <name>scaled</name>
+        <param>
+          <type>const int</type>
+          <declname>widthFactor</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>heightFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object which has the dimensions of this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object scaled by the <emphasis>widthFactor</emphasis> and <emphasis>heightFactor</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="36" column="1" bodyfile="src/geometry/Size.cpp" bodystart="107" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1af66c230981ee22a00ed281d623ca9d1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::Size::scaled</definition>
+        <argsstring>(const Size &amp;size) const </argsstring>
+        <name>scaled</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object that has the dimensions of this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object scaled by <emphasis>size</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="37" column="1" bodyfile="src/geometry/Size.cpp" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a39edd14856a71a0b3b2bbecb7d3745f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::geometry::Size::transpose</definition>
+        <argsstring>()</argsstring>
+        <name>transpose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Swaps the width and height. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="38" column="1" bodyfile="src/geometry/Size.cpp" bodystart="128" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a3aa4f38416f5276247ac75cab7c470f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::Size::transposed</definition>
+        <argsstring>() const </argsstring>
+        <name>transposed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object with the width and height swapped. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="39" column="1" bodyfile="src/geometry/Size.cpp" bodystart="137" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1af52e54cbd5b29a1d9a2dfd3b56007d68" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int</type>
+        <definition>const int prism::geometry::Size::width</definition>
+        <argsstring>() const </argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the width of this <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="40" column="1" bodyfile="src/geometry/Size.cpp" bodystart="147" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a924a15d97e1e8d262357ad7568b1d0b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+        <definition>Size &amp; prism::geometry::Size::operator+=</definition>
+        <argsstring>(const Size &amp;size)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds <emphasis>size</emphasis> to this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object and returns this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="42" column="1" bodyfile="src/geometry/Size.cpp" bodystart="154" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1aa9222e44ac7745635d7903747fb962e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+        <definition>Size &amp; prism::geometry::Size::operator-=</definition>
+        <argsstring>(const Size &amp;size)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtracts <emphasis>size</emphasis> from this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object and returns this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="43" column="1" bodyfile="src/geometry/Size.cpp" bodystart="164" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1adbf6070617ee8d49a66d4dbae5fe4cda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+        <definition>Size &amp; prism::geometry::Size::operator*=</definition>
+        <argsstring>(const Size &amp;size)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies <emphasis>size</emphasis> by this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object and returns this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="44" column="1" bodyfile="src/geometry/Size.cpp" bodystart="174" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a40bc23d348aa442f5a5666f7d93ee7a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+        <definition>Size &amp; prism::geometry::Size::operator/=</definition>
+        <argsstring>(const Size &amp;size)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Divides this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> by <emphasis>size</emphasis> rounding to integer precision and returns this <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="45" column="1" bodyfile="src/geometry/Size.cpp" bodystart="185" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1geometry_1_1_size_1a9de24c3d0a1ea307029e2a3fcc74f7a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+        <definition>Size &amp; prism::geometry::Size::operator=</definition>
+        <argsstring>(const Size &amp;size)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="46" column="1" bodyfile="src/geometry/Size.cpp" bodystart="195" bodyend="200"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1a0ecba9b1ddf7508ab7d47f24fccc5b2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator==</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>========================================================== <heading level="1">Related non-members </heading>
+</para><para>Returns true if the widths are equal and the heights are equal of both <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="49" column="1" bodyfile="src/geometry/Size.cpp" bodystart="211" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1a766b0bce48ef4987bde75192bc2703ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator!=</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the widths are equal and the heights are not equal of both <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="50" column="1" bodyfile="src/geometry/Size.cpp" bodystart="218" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1a8a42e08734218778f68f34d79f9c8130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size operator+</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds <emphasis>s1</emphasis> and <emphasis>s2</emphasis> together and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="51" column="1" bodyfile="src/geometry/Size.cpp" bodystart="225" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1ac19f7036b22c72ce81d89025af2510f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size operator-</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtracts <emphasis>s2</emphasis> from <emphasis>s1</emphasis> and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="52" column="1" bodyfile="src/geometry/Size.cpp" bodystart="236" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1a159c2e1e3dcb9ee6c1c681533f2c0d36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size operator*</definition>
+        <argsstring>(const Size &amp;size, const int factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies <emphasis>size</emphasis> by <emphasis>factor</emphasis> and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="53" column="1" bodyfile="src/geometry/Size.cpp" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1a9e8c3a611d6cff45b435eb6439cf5e2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size operator*</definition>
+        <argsstring>(const int factor, const Size &amp;size)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies <emphasis>size</emphasis> by <emphasis>factor</emphasis> and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="54" column="1" bodyfile="src/geometry/Size.cpp" bodystart="257" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1a54c78dfe93394bb7069b0880a3183909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size operator/</definition>
+        <argsstring>(const Size &amp;size, const int factor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Divides <emphasis>size</emphasis> by <emphasis>factor</emphasis> rounding to integer precision and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="55" column="1" bodyfile="src/geometry/Size.cpp" bodystart="264" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1geometry_1_1_size_1a8e7b189b7bed4a1acb084ff4cd0cf2a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Size &amp;size)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/geometry/Size.h" line="56" column="1" bodyfile="src/geometry/Size.cpp" bodystart="275" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/geometry/Size.h" line="17" column="1" bodyfile="inc/geometry/Size.h" bodystart="17" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classprism_1_1geometry_1_1_size_1af4879e8eca4306cfe5d39b800ae191d1" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>height</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1aa9b519af8f5708939fbd20f1b52ec28f" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>isEmpty</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a2867491b5a8215c61e58ad943ddb2811" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>isNull</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1ae6c9cd08771cc878b32fa7ef21b808c1" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>isValid</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a9f89af30bd863a96e77caa46dd2e82b9" prot="private" virt="non-virtual"><scope>prism::geometry::Size</scope><name>m_height</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a7b93feca928e76b42a1063b3d6639b79" prot="private" virt="non-virtual"><scope>prism::geometry::Size</scope><name>m_width</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a766b0bce48ef4987bde75192bc2703ee" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a159c2e1e3dcb9ee6c1c681533f2c0d36" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a9e8c3a611d6cff45b435eb6439cf5e2e" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator*</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1adbf6070617ee8d49a66d4dbae5fe4cda" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator*=</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a8a42e08734218778f68f34d79f9c8130" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator+</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a924a15d97e1e8d262357ad7568b1d0b6" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator+=</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1ac19f7036b22c72ce81d89025af2510f0" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator-</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1aa9222e44ac7745635d7903747fb962e5" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator-=</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a54c78dfe93394bb7069b0880a3183909" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator/</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a40bc23d348aa442f5a5666f7d93ee7a9" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator/=</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a8e7b189b7bed4a1acb084ff4cd0cf2a6" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a9de24c3d0a1ea307029e2a3fcc74f7a1" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator=</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a0ecba9b1ddf7508ab7d47f24fccc5b2c" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>operator==</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1ab53d9d0e247a8505a9e884cf26213e7d" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>scale</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1ac1ac0d2a905e60962f2123e3ffcc5dbc" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>scale</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a4ce86d68cae4723b7213b6bad0a09c0c" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>scaled</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1af66c230981ee22a00ed281d623ca9d1a" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>scaled</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a415d717d5d4dc026be63fe0fecca3747" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>setHeight</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1ae0cec1e8ce5c2f4363e2d6f650d8949d" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>setWidth</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a82ca178677fefa36453103441b0e16d1" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>Size</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a3df901a89d7ba9222266e45eea14aa80" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>Size</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a7a5a003c2ed1e52fc3c95e2abdeddee5" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>Size</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a39edd14856a71a0b3b2bbecb7d3745f9" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>transpose</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a3aa4f38416f5276247ac75cab7c470f3" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>transposed</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1af52e54cbd5b29a1d9a2dfd3b56007d68" prot="public" virt="non-virtual"><scope>prism::geometry::Size</scope><name>width</name></member>
+      <member refid="classprism_1_1geometry_1_1_size_1a537e42c6a73305321ce4b8b28c7e1c90" prot="public" virt="virtual"><scope>prism::geometry::Size</scope><name>~Size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

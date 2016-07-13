@@ -1,0 +1,1920 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceprism_1_1geometry" kind="namespace" language="C++">
+    <compoundname>prism::geometry</compoundname>
+    <innerclass refid="classprism_1_1geometry_1_1_circle" prot="public">prism::geometry::Circle</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_matrix4" prot="public">prism::geometry::Matrix4</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_point" prot="public">prism::geometry::Point</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_pointf" prot="public">prism::geometry::Pointf</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_quaternion" prot="public">prism::geometry::Quaternion</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_rect" prot="public">prism::geometry::Rect</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_size" prot="public">prism::geometry::Size</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_vector2" prot="public">prism::geometry::Vector2</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_vector3" prot="public">prism::geometry::Vector3</innerclass>
+    <innerclass refid="classprism_1_1geometry_1_1_vector4" prot="public">prism::geometry::Vector4</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ac67ac136adcae1060ebfdfe1f435f5d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if both circles have the same radius and (x,y) centre point, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Circle.cpp" line="584" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="584" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1abf328df6552ac8239e51be0d4f1f1321" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if both circles are not equal, false otherwsie. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Circle.cpp" line="591" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="591" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1af3150660cd5ee7e4505f84ecced7e92f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator&lt;</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if <emphasis>c1</emphasis> has a smaller radius than <emphasis>c2</emphasis>, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Circle.cpp" line="598" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="598" bodyend="600"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a02413cdec14bfc4955d81920c45d49f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator&gt;</definition>
+        <argsstring>(const Circle &amp;c1, const Circle &amp;c2)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if <emphasis>c1</emphasis> has a greater radius than <emphasis>c2</emphasis>, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Circle.cpp" line="605" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="605" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aff6452600b2cfbd82c418a356b5ac776" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Circle &amp;c)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> &amp;</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_circle" kindref="compound">Circle</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Circle.cpp" line="612" column="1" bodyfile="src/geometry/Circle.cpp" bodystart="612" bodyend="615"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a2fedfb159ab9b651b8fc309e41b507db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator+</definition>
+        <argsstring>(const Matrix4 &amp;m1, const Matrix4 &amp;m2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> which is the sum of m1 and m2. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="561" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="561" bodyend="570"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aa88d3484d2ee19a8db3ac436e5638325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator-</definition>
+        <argsstring>(const Matrix4 &amp;m1, const Matrix4 &amp;m2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> which is the result of subtracting m2 from m1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="575" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="575" bodyend="584"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1acebff1db0d70564af715fbf9818aa1bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator-</definition>
+        <argsstring>(const Matrix4 &amp;m)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> where each component of matrix m has been negated (multiplyed by -1). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="589" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="589" bodyend="598"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a088357a2f0b61232578a4f1a269c50a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator*</definition>
+        <argsstring>(const Matrix4 &amp;m1, const Matrix4 &amp;m2)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> that is the product of m1 and m2 i.e. m1m2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="602" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="602" bodyend="609"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a0c2f0db2ae03ec3592fd571953877841" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator*</definition>
+        <argsstring>(const float factor, const Matrix4 &amp;m)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> where each component of m is multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="614" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="614" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a0367974155d8a9ee56d51947430a9502" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator*</definition>
+        <argsstring>(const Matrix4 &amp;m, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> where each component of m is multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="628" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="628" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a08780ab7c28d794bc90961b82b6b6d80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator*</definition>
+        <argsstring>(const Matrix4 &amp;m1, const float *m2)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const float *</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> that is the result of multiplying a <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> with a float array. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="642" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="642" bodyend="649"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a4aaf60dfacf9dd007f3e4b58a20624d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator*</definition>
+        <argsstring>(const float *m1, const Matrix4 &amp;m2)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float *</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> that is the result of multiplying a <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> with a float array. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="654" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="654" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ae32a15a9414c37d6c497cc97ef159a9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator*</definition>
+        <argsstring>(const Vector3 &amp;v, const Matrix4 &amp;m)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> which has been transformed by the matrix M in the order of vM. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="661" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="661" bodyend="664"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aeac0d1303ce844ebdef6b5e9b182ba36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator*</definition>
+        <argsstring>(const Matrix4 &amp;m, const Vector3 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> which has been transformed by the matrix M in the order of Mv. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="669" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="669" bodyend="672"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ae4fe7805ab7cffc7687e15560f9c9bb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator*</definition>
+        <argsstring>(const Vector4 &amp;v, const Matrix4 &amp;m)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> which has been transformed by the matrix M in the order of vM. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="677" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="677" bodyend="687"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a090f2b8a77211ee0ac652f10a833bc6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator*</definition>
+        <argsstring>(const Matrix4 &amp;m, const Vector4 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> which has been transformed by the matrix M in the order of Mv. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="692" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="692" bodyend="701"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a0ef17bab1277f84f2e5465488a1a611f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator*</definition>
+        <argsstring>(const Point &amp;p, const Matrix4 &amp;m)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> which has been transformed by the matrix m in the order of pM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="706" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="706" bodyend="710"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a0d26abe68011b0b8c1925d9270fcef56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator*</definition>
+        <argsstring>(const Matrix4 &amp;m, const Point &amp;p)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> which has been transformed by the matrix M in the order of Mp </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="715" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="715" bodyend="719"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a8de43a2fb517ad7601c70bee4a676c65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref></type>
+        <definition>Matrix4 prism::geometry::operator/</definition>
+        <argsstring>(const Matrix4 &amp;m, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> where each component of matrix m is divided by divisor. If divisor is 0 a new <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> is returned set to the identity matrix instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="725" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="725" bodyend="735"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1adf8b4ec4a2ee785886ced77784913517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Matrix4 &amp;m1, const Matrix4 &amp;m2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the elements of the two matrices and returns true if they contain the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="741" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="741" bodyend="751"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ab7fe0e740d96d5e34a6a12fcf6de8055" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Matrix4 &amp;m1, const Matrix4 &amp;m2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>m2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the elements of the two matrices and returns true if they don&apos;t contain the same data, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="757" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="757" bodyend="767"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ade311cd95b7038c8773dd6b851b4d4be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Matrix4 &amp;matrix)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_matrix4" kindref="compound">Matrix4</ref> &amp;</type>
+          <declname>matrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of Matrx4x4 to be written to the ostream out and returns a reference to the ostream. i.e. std::cout &lt;&lt; matrix &lt;&lt; std::endl; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Matrix4.cpp" line="773" column="1" bodyfile="src/geometry/Matrix4.cpp" bodystart="773" bodyend="782"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ac26df253741dfc5f5d320f3eabeca8a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Point &amp;p)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an ostream object that allows this object to printed with std::cout </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="192" column="1" bodyfile="src/geometry/Point.cpp" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aaa53ebb1c7c8bc1376634d207b5200ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator+</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is the sum of the components of p1 and p2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="200" column="1" bodyfile="src/geometry/Point.cpp" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aba6734396128b05c446f9b6c941f7d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator-</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by subtracting the components of p2 from p1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="207" column="1" bodyfile="src/geometry/Point.cpp" bodystart="207" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a26ad30abc76b71837537f47ef973dc08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator*</definition>
+        <argsstring>(const Point &amp;p, const int factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the int factor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="214" column="1" bodyfile="src/geometry/Point.cpp" bodystart="214" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a7e064d50d45d2c5eee262216b52c3161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator*</definition>
+        <argsstring>(const Point &amp;p, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the float factor Note: the x and y components are rounded to the nearest integer as they are stored as ints internally. Use <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> for floating point accuracy instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="223" column="1" bodyfile="src/geometry/Point.cpp" bodystart="223" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a08df2c2279edb7ca715fa0edf3470222" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator*</definition>
+        <argsstring>(const int factor, const Point &amp;p)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the int factor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="230" column="1" bodyfile="src/geometry/Point.cpp" bodystart="230" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a46982118b6e674be47b32b679b2c5163" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator*</definition>
+        <argsstring>(const float factor, const Point &amp;p)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by multiplying the components of p by the float factor Note: the x and y components are rounded to the nearest integer as they are stored as ints internally. Use <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> for floating point accuracy instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="239" column="1" bodyfile="src/geometry/Point.cpp" bodystart="239" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1af0842ada9ec34acdae02fa7f5661be4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point prism::geometry::operator/</definition>
+        <argsstring>(const Point &amp;p, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> object that is formed by dividing the components of p1 by the components of p2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="246" column="1" bodyfile="src/geometry/Point.cpp" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1afcf58c103c45cbc3efe1f27ab1a6ce5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool prism::geometry::operator==</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if x and y of p1 and p2 are equal, false if not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="254" column="1" bodyfile="src/geometry/Point.cpp" bodystart="254" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ad5082e6b1ddbb8b35e2d2956682458b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool prism::geometry::operator!=</definition>
+        <argsstring>(const Point &amp;p1, const Point &amp;p2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if x or y of p1 and p2 are not equal, false if not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Point.cpp" line="261" column="1" bodyfile="src/geometry/Point.cpp" bodystart="261" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a2eb1fc2955860f637c80d1d54fe61ced" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Pointf &amp;p)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an ostream object that allows this object to printed with std::cout </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="160" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="160" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a215cdbb09b1432a2bca98fefe655f0d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref></type>
+        <definition>Pointf prism::geometry::operator+</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> object that is the sum of the components of p1 and p2 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="170" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="170" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a0e48ef6a6a3d9b6a14cce34167b9da0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref></type>
+        <definition>Pointf prism::geometry::operator-</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> object that is formed by subtracting the components of p2 from p1 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="177" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="177" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1abb59a6831ade3bb2f471b8e8d56c37a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref></type>
+        <definition>Pointf prism::geometry::operator*</definition>
+        <argsstring>(const Pointf &amp;p, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> object that is formed by multiplying the components of p by the float factor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="184" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="184" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a83b73ec76a36ddd4a983b1831b27d538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref></type>
+        <definition>Pointf prism::geometry::operator*</definition>
+        <argsstring>(const float factor, const Pointf &amp;p)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="191" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="191" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a92840138c9489a1289e4bc62260c8688" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref></type>
+        <definition>Pointf prism::geometry::operator/</definition>
+        <argsstring>(const Pointf &amp;p, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> object that is formed by dividing the components of p by divisor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="198" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="198" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ac04261b226cf18be37becdd7dd3e4614" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool prism::geometry::operator==</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if x and y of p1 and p2 are equal, false if not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="206" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="206" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aab1eafe7676f511287407189ece847c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool prism::geometry::operator!=</definition>
+        <argsstring>(const Pointf &amp;p1, const Pointf &amp;p2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_pointf" kindref="compound">Pointf</ref> &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if x or y of p1 and p2 are not equal, false if not </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Pointf.cpp" line="213" column="1" bodyfile="src/geometry/Pointf.cpp" bodystart="213" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a47ca3e65ed51c70eed1343fc1b8738ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator+</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the sum of q1 and q2 i.e. each component of q1 is added to the corresponding component of q2. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="327" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="327" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a47b430d42b2e7721f63c1cdd24d3971c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator-</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of subtracting q2 from q1 i.e. each component of q2 is subtracted from the corresponding component of q1. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="335" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="335" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a0a3b3454cd9d95c78cd8a488593d34ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator-</definition>
+        <argsstring>(Quaternion &amp;q)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> which has had each component of q negated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="342" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="342" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a2ce6e5fb2b4e43c6eceebf44965fca53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator*</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the product of q1 and q2. Note: quaternion multiplication is associative so a(bc) = (ab)c but is not commutitive so q1q2 does not always equal q2q1. Order matters! </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="351" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="351" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a2fcdc12a9980dab1f3ba9d984aa8de3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator*</definition>
+        <argsstring>(const Quaternion &amp;q, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of multiplying each component of q by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="396" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="396" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1abbdf9ffa77d2b8e0b2cfe8344685c622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator*</definition>
+        <argsstring>(const float factor, const Quaternion &amp;q)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of multiplying each component of q by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="403" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="403" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a70ee00be58df7ba1affaddd24b152ba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator*</definition>
+        <argsstring>(const Quaternion &amp;q, const Vector3 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies a quaternion and vector3 together and returns a quaternion as a result. The vector is just transformed into a quaternion (setting w = 0) and then the two quaternions are multiplied. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="411" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="411" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a43a01bf4cbc175aac2e375f493c4c386" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator*</definition>
+        <argsstring>(const Quaternion &amp;q, const Vector4 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies a quaternion and <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> together and returns a quaternion as a result. The vector is just transformed into a quaternion and then the two quaternions are multiplied. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="420" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="420" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1adcf94fa1d43e1e955eeaafd6216fe97a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion prism::geometry::operator/</definition>
+        <argsstring>(const Quaternion &amp;q, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> that is the result of dividing each component of q by divisor. If divisor is 0 then a identity quaternion is returned instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="429" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="429" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a8721427f146110a653c991ac8d286849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares q1 and q2 and returns true if they are equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="438" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="438" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a1e5590575e7198fb69d0e95b4c3d3ef5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Quaternion &amp;q1, const Quaternion &amp;q2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares q1 and q2 and returns true if they are not equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="447" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="447" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a5fbbd24939244132cb8a758f2e867b9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Quaternion &amp;q)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>q</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to a stream which allows an instance of <ref refid="classprism_1_1geometry_1_1_quaternion" kindref="compound">Quaternion</ref> to be written to the stream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Quaternion.cpp" line="454" column="1" bodyfile="src/geometry/Quaternion.cpp" bodystart="454" bodyend="457"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a8671e7db673dd0282ec03ef56780fd96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Rect &amp;r1, const Rect &amp;r2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>===================================================================== <heading level="1">Related non-members </heading>
+</para><para>Returns true if the rectangles <emphasis>r1</emphasis> and <emphasis>r2</emphasis> are equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Rect.cpp" line="666" column="1" bodyfile="src/geometry/Rect.cpp" bodystart="666" bodyend="668"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aab57687dd4b538325b7eb1caf5f0dc95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Rect &amp;r1, const Rect &amp;r2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the rectangles <emphasis>r1</emphasis> and <emphasis>r2</emphasis> are not equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Rect.cpp" line="673" column="1" bodyfile="src/geometry/Rect.cpp" bodystart="673" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a6ad3cf60bcf7d264fdbf0ab16e1b9603" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Rect &amp;rect)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref> &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_rect" kindref="compound">Rect</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Rect.cpp" line="680" column="1" bodyfile="src/geometry/Rect.cpp" bodystart="680" bodyend="685"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1af53e74df9eddb7d73ec539fb15c46dde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>========================================================== <heading level="1">Related non-members </heading>
+</para><para>Returns true if the widths are equal and the heights are equal of both <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="211" column="1" bodyfile="src/geometry/Size.cpp" bodystart="211" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a2ef633daa7d7bbe9cb4fe70ab770cf39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the widths are equal and the heights are not equal of both <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="218" column="1" bodyfile="src/geometry/Size.cpp" bodystart="218" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a34fd6c95375eb8c409cebf1d15a05927" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::operator+</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds <emphasis>s1</emphasis> and <emphasis>s2</emphasis> together and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="225" column="1" bodyfile="src/geometry/Size.cpp" bodystart="225" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ac2e9de798c8cbdc4e5f73da2b036282a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::operator-</definition>
+        <argsstring>(const Size &amp;s1, const Size &amp;s2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtracts <emphasis>s2</emphasis> from <emphasis>s1</emphasis> and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="236" column="1" bodyfile="src/geometry/Size.cpp" bodystart="236" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a9fa80bd81f2cd9e7d38703575ef5449e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::operator*</definition>
+        <argsstring>(const Size &amp;size, const int factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies <emphasis>size</emphasis> by <emphasis>factor</emphasis> and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="247" column="1" bodyfile="src/geometry/Size.cpp" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aa57c88aee9ae82d739964fb777d46fa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::operator*</definition>
+        <argsstring>(const int factor, const Size &amp;size)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies <emphasis>size</emphasis> by <emphasis>factor</emphasis> and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="257" column="1" bodyfile="src/geometry/Size.cpp" bodystart="257" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a45e511c531810fe58e367ee790d27e93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref></type>
+        <definition>Size prism::geometry::operator/</definition>
+        <argsstring>(const Size &amp;size, const int factor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Divides <emphasis>size</emphasis> by <emphasis>factor</emphasis> rounding to integer precision and returns a new <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="264" column="1" bodyfile="src/geometry/Size.cpp" bodystart="264" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a8897a618775f0d23046ec67381ed1f71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Size &amp;size)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_size" kindref="compound">Size</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Size.cpp" line="275" column="1" bodyfile="src/geometry/Size.cpp" bodystart="275" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a27096c3f5e812cfe360abe97520be336" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 prism::geometry::operator+</definition>
+        <argsstring>(const Vector2 &amp;a, const Vector2 &amp;b)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> that is the result of adding the components of vector a and vector b. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="267" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="267" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a3631c45068f5df482e2d1b2ed6f59b11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 prism::geometry::operator-</definition>
+        <argsstring>(const Vector2 &amp;a, const Vector2 &amp;b)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> that is the result of subtracting the components of vector b from vector a. Note: vector subtraction is not commutitive so a-b does not always equal b-a </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="275" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="275" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a70ec37efd504039e6ba83e90f8d8292e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 prism::geometry::operator-</definition>
+        <argsstring>(const Vector2 &amp;v)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> object where each vector component of v has been negated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="282" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="282" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a9d7f5ae000f246c7b48455c06cacba43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 prism::geometry::operator*</definition>
+        <argsstring>(const float factor, const Vector2 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="289" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="289" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a3eecf4078f447dac2c077bb5ff38d833" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 prism::geometry::operator*</definition>
+        <argsstring>(const Vector2 &amp;v, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="296" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="296" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aac4e2dab314d5c9dd56879419917c6f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref></type>
+        <definition>Vector2 prism::geometry::operator/</definition>
+        <argsstring>(const Vector2 &amp;v, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> where each component of vector v has been divided by divisor. If divisor is 0 then a zero vector is returned instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="304" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="304" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a041aab500771782ce0182b1caa6ef7bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Vector2 &amp;a, const Vector2 &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the two vectors and if each of the corresponding components are equal in value then true is returned, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="314" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="314" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aabb5dc364671e4082770a87a21c02bf2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Vector2 &amp;a, const Vector2 &amp;b)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the vectors and returns true if a and b are not equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="325" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="325" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ae7358c89d3dd3f8b933b57355b1e7df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Vector2 &amp;v)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_vector2" kindref="compound">Vector2</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector2.cpp" line="332" column="1" bodyfile="src/geometry/Vector2.cpp" bodystart="332" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a8f5912c117e59e151c8d66571e3c23c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator+</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that is the result of adding the components of vector a and vector b. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="367" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="367" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a5d3f9692484ba5caa22a4d0e33a88054" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator-</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that is the result of subtracting the components of vector b from vector a. Note: vector subtraction is not commutitive so a-b does not always equal b-a </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="375" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="375" bodyend="377"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ab38dadbffa2ced0c6a7789c08249de36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator-</definition>
+        <argsstring>(const Vector3 &amp;v)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> object where each vector component of v has been negated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="382" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="382" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aa51af06dd0e6b94f88a5279fbc0aaabf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator*</definition>
+        <argsstring>(const float factor, const Vector3 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="389" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="389" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aad92d074dda405d1018cfbdead0cb482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator*</definition>
+        <argsstring>(const Vector3 &amp;v, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="396" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="396" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ad02dc8b031ae8dbb60a2a296d42e1076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref></type>
+        <definition>Vector3 prism::geometry::operator/</definition>
+        <argsstring>(const Vector3 &amp;v, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> where each component of vector v has been divided by divisor. If divisor is 0 then a zero vector is returned instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="404" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="404" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a9e81df586be8ba87611ec1ce1c986c25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the two vectors and if each of the corresponding components are equal in value then true is returned, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="413" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="413" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a87f7b46d030f78614322cd46292b7d1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Vector3 &amp;a, const Vector3 &amp;b)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the vectors and returns true if a and b are not equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="424" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="424" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1aa399ba3127f6f0926120f2b0225f080e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Vector3 &amp;v)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_vector3" kindref="compound">Vector3</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector3.cpp" line="431" column="1" bodyfile="src/geometry/Vector3.cpp" bodystart="431" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a517ae80d290f5003ca27b3e409009c6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator+</definition>
+        <argsstring>(const Vector4 &amp;a, const Vector4 &amp;b)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> that is the result of adding the components of vector a and vector b. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="333" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="333" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ad78caaf605c536f6edbc35c74c642f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator-</definition>
+        <argsstring>(const Vector4 &amp;a, const Vector4 &amp;b)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> that is the result of subtracting the components of vector b from vector a. Note: vector subtraction is not commutitive so a-b does not always equal b-a </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="341" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="341" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1ab50ea80e85571fdcbaaff4b07fc1c872" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator-</definition>
+        <argsstring>(const Vector4 &amp;v)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> object where each vector component of v has been negated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="348" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="348" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a4c06f5239ea45456a85667f086e1d8a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator*</definition>
+        <argsstring>(const float factor, const Vector4 &amp;v)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="355" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="355" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a941ba79ed37da4bb6353acf25e5008f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator*</definition>
+        <argsstring>(const Vector4 &amp;v, const float factor)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> that has had each vector component of v multiplied by factor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="362" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="362" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a4690a02157a60e3cb9488f92abb6ee33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref></type>
+        <definition>Vector4 prism::geometry::operator/</definition>
+        <argsstring>(const Vector4 &amp;v, const float divisor)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>divisor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> where each component of vector v has been divided by divisor. If divisor is 0 then a zero vector is returned instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="370" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="370" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a57760799a704c61a1b7d2777a11bc2ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator==</definition>
+        <argsstring>(const Vector4 &amp;a, const Vector4 &amp;b)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the two vectors and if each of the corresponding components are equal in value then true is returned, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="379" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="379" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a997a6f3b234be3c2e397a2d544423f5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::geometry::operator!=</definition>
+        <argsstring>(const Vector4 &amp;a, const Vector4 &amp;b)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compares the vectors and returns true if a and b are not equal, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="390" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="390" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1geometry_1a6075946dc64ce67b7f460d68c01b79ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Vector4 &amp;v)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> &amp;</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1geometry_1_1_vector4" kindref="compound">Vector4</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/geometry/Vector4.cpp" line="397" column="1" bodyfile="src/geometry/Vector4.cpp" bodystart="397" bodyend="400"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/geometry/Circle.h" line="69" column="1"/>
+  </compounddef>
+</doxygen>

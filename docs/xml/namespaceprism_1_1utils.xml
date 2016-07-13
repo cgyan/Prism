@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceprism_1_1utils" kind="namespace" language="C++">
+    <compoundname>prism::utils</compoundname>
+    <innerclass refid="classprism_1_1utils_1_1_flag" prot="public">prism::utils::Flag</innerclass>
+    <innerclass refid="classprism_1_1utils_1_1_flags" prot="public">prism::utils::Flags</innerclass>
+    <innerclass refid="classprism_1_1utils_1_1_fraction" prot="public">prism::utils::Fraction</innerclass>
+    <innerclass refid="classprism_1_1utils_1_1_mathf" prot="public">prism::utils::Mathf</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a474442ddaf983033fbb719c771f7493a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction prism::utils::operator+</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds the fractions /em f1 and /em f2 together and returns a new <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref>. If the two denominators are the same then the two numerators are added together to form the new numerator and the original denominator is kept the same. e.g. 1 1 2 <mdash/> + <mdash/> = <mdash/> 4 4 4 If the denominators are different then we alter the fractions in order to make both denominators the same value. We make a whole fraction out of the second fraction&apos;s denominator and multiply it by the first fraction. Then make a whole fraction from the first fraction&apos;s denominator and multiply it by the second fraction. Now we can simply add together the two numerators and keep the denominator the same. 1 1 | 4 1 | | 1 2 | 4 2 6 3 <mdash/> + <mdash/> = |<mdash/> x <mdash/>| + |<mdash/> x <mdash/>| = <mdash/> + <mdash/> = <mdash/> = <mdash/> 2 4 | 4 2 | | 4 2 | 8 8 8 4 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="135" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="135" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a4d4185ebe9da8aa4a143e5fd9216fc97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction prism::utils::operator-</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtracts the fractions /em f1 and /em f2 and returns a new <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref>. If the two denominators are the same then the two numerators are subtracted to form the new numerator and the original denominator is kept the same. e.g. 3 1 2 <mdash/> - <mdash/> = <mdash/> 4 4 4 If the denominators are different then we alter the fractions in order to make both denominators the same value. We make a whole fraction out of the second fraction&apos;s denominator and multiply it by the first fraction. Then make a whole fraction from the first fraction&apos;s denominator and multiply it by the second fraction. Now we can simply subtract the two numerators and keep the denominator the same. 3 1 | 2 3 | | 1 4 | 6 4 2 1 <mdash/> - <mdash/> = |<mdash/> x <mdash/>| - |<mdash/> x <mdash/>| = <mdash/> - <mdash/> = <mdash/> = <mdash/> 4 2 | 2 4 | | 2 4 | 8 8 8 4 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="159" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="159" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a5455803455c03518b8d1b05529bc7aa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction prism::utils::operator*</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies /em f1 and /em f2 together and returns a new <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref>. <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> multiplication is the easiest arithmetical operation. Simply multiply the two numerators together to form the new numerator and multiply the two denominators together to form the new denominator. e.g. 2 8 2x8 16 4 <mdash/> x <mdash/> = <mdash/> = <mdash/> = <mdash/> 5 4 5x4 20 5 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="176" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a3107b28878719ceb099524879db3d904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction prism::utils::operator*</definition>
+        <argsstring>(const Fraction &amp;fraction, const int i)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>fraction</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies the <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> /em fraction by the whole number /em i. Returns a new <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="184" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="184" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1af8263539b5b9ca4f07994be859985909" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction prism::utils::operator*</definition>
+        <argsstring>(const int i, const Fraction &amp;fraction)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>fraction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies the whole number /em i by the <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> /em fraction. Returns a new <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="194" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="194" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a93a5518c800c0cb4cf9ba915dbe1304f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction prism::utils::operator/</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Divides /em f1 by /em f2 and returns a new <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref>. <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> division is achieved by taking the reciprocal of the second fraction and multiplying it against the first fraction. See /em <ref refid="classprism_1_1utils_1_1_fraction_1a6351fa05c821e6f4c1cd2f5332d179e7" kindref="member">Fraction::reciprocal()</ref> for more information. 3 2 3 7 21 <mdash/> / <mdash/> = <mdash/> * <mdash/> = <mdash/> 4 7 4 2 8 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="207" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="207" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a97fec2143478c69e0f17ad608a407c5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::utils::operator&lt;</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if /em f1 is less than /em f2, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="214" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="214" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1af66837bba390f22aa37847be3927d456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::utils::operator&gt;</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if /em f1 is less than /em f2, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="229" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="229" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a49e9b84b95ddb3cc9f319c8a3e0af0f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::utils::operator==</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if /em f1 and /em f2 are equal in value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="236" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="236" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a49cb8943e4686a77f8de82356cd8b690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::utils::operator!=</definition>
+        <argsstring>(const Fraction &amp;f1, const Fraction &amp;f2)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if /em f1 does not equal /em f2 in value, false otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="249" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="249" bodyend="251"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1_1utils_1a287c9f298fa6902d2fbb26814aa57012" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; prism::utils::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, const Fraction &amp;f)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows an instance of <ref refid="classprism_1_1utils_1_1_fraction" kindref="compound">Fraction</ref> to be written to the ostream and returns a reference to the ostream. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/utils/Fraction.cpp" line="256" column="1" bodyfile="src/utils/Fraction.cpp" bodystart="256" bodyend="259"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/utils/Flags.h" line="33" column="1"/>
+  </compounddef>
+</doxygen>

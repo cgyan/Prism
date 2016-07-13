@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_flags_8h" kind="file" language="C++">
+    <compoundname>Flags.h</compoundname>
+    <includedby refid="_circle_8h" local="yes">inc/geometry/Circle.h</includedby>
+    <invincdepgraph>
+      <node id="235">
+        <label>inc/geometry/Circle.h</label>
+        <link refid="_circle_8h"/>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="237" relation="include">
+        </childnode>
+      </node>
+      <node id="236">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="237">
+        <label>src/geometry/Circle.cpp</label>
+        <link refid="_circle_8cpp"/>
+      </node>
+      <node id="234">
+        <label>inc/utils/Flags.h</label>
+        <link refid="Flags.h"/>
+        <childnode refid="235" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classprism_1_1utils_1_1_flag" prot="public">prism::utils::Flag</innerclass>
+    <innerclass refid="classprism_1_1utils_1_1_flags" prot="public">prism::utils::Flags</innerclass>
+    <innernamespace refid="namespaceprism">prism</innernamespace>
+    <innernamespace refid="namespaceprism_1_1utils">prism::utils</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_flags_8h_1aa5aa2c9827ab949836e20999b9a068ec" prot="public" static="no">
+        <name>PRISM_DECLARE_FLAGS</name>
+        <param><defname>Flgs</defname></param>
+        <param><defname>Enum</defname></param>
+        <initializer>typedef <ref refid="classprism_1_1utils_1_1_flags" kindref="compound">prism::utils::Flags</ref>&lt;Enum&gt; Flgs;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Flags.h" line="81" column="9" bodyfile="inc/utils/Flags.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_flags_8h_1ae8aabb683a18b872a4449769b82e8e15" prot="public" static="no">
+        <name>PRISM_DECLARE_OPERATORS_FOR_FLAGS</name>
+        <param><defname>Flgs</defname></param>
+        <initializer>inline <ref refid="classprism_1_1utils_1_1_flags" kindref="compound">prism::utils::Flags</ref>&lt;Flgs::enum_type&gt; operator|(Flgs::enum_type f1, Flgs::enum_type f2) \
+{ return <ref refid="classprism_1_1utils_1_1_flags" kindref="compound">prism::utils::Flags</ref>&lt;Flgs::enum_type&gt;(f1) | f2; } \
+inline <ref refid="classprism_1_1utils_1_1_flags" kindref="compound">prism::utils::Flags</ref>&lt;Flgs::enum_type&gt; operator|(Flgs::enum_type f1, <ref refid="classprism_1_1utils_1_1_flags" kindref="compound">prism::utils::Flags</ref>&lt;Flgs::enum_type&gt; f2) \
+{ return f2 | f1; }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Flags.h" line="84" column="9" bodyfile="inc/utils/Flags.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="29"><highlight class="preprocessor">#ifndef<sp/>FLAGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLAGS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceprism" kindref="compound">prism</ref><sp/>{</highlight></codeline>
+<codeline lineno="33" refid="namespaceprism_1_1utils" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">utils<sp/>{</highlight></codeline>
+<codeline lineno="34" refid="classprism_1_1utils_1_1_flag" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classprism_1_1utils_1_1_flag" kindref="compound">Flag</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flag_1ad819f844e560400f038364beed5be21a" kindref="member">Flag</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="39" refid="classprism_1_1utils_1_1_flag_1a890efb87e0e168379fbec18bc0e52016" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>int()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i;<sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="classprism_1_1utils_1_1_flag_1ad819f844e560400f038364beed5be21a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flag_1ad819f844e560400f038364beed5be21a" kindref="member">prism::utils::Flag::Flag</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ai)<sp/>:<sp/>i(ai)<sp/>{}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Enum&gt;</highlight></codeline>
+<codeline lineno="45" refid="classprism_1_1utils_1_1_flags" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**Zero;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50" refid="classprism_1_1utils_1_1_flags_1a516bc733417fe76000ad526e1fc525e6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Enum<sp/><ref refid="classprism_1_1utils_1_1_flags_1a516bc733417fe76000ad526e1fc525e6" kindref="member">enum_type</ref>;</highlight></codeline>
+<codeline lineno="51" refid="classprism_1_1utils_1_1_flags_1a3fafb8acbd195066172ebd1d77994da1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags_1a3fafb8acbd195066172ebd1d77994da1" kindref="member">Flags</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;f)<sp/>:<sp/>i(f.i)<sp/>{}</highlight></codeline>
+<codeline lineno="52" refid="classprism_1_1utils_1_1_flags_1a1cf2c9a4de2ffe4fe6f21efc01a31d31" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags_1a1cf2c9a4de2ffe4fe6f21efc01a31d31" kindref="member">Flags</ref>(Enum<sp/>f)<sp/>:<sp/>i(f)<sp/>{}</highlight></codeline>
+<codeline lineno="53" refid="classprism_1_1utils_1_1_flags_1a1da07ee76e339720a0df2a3f29902c3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags_1a1da07ee76e339720a0df2a3f29902c3e" kindref="member">Flags</ref>(Zero<sp/>=<sp/>0)<sp/>:<sp/>i(0)<sp/>{}</highlight></codeline>
+<codeline lineno="54" refid="classprism_1_1utils_1_1_flags_1ae0d86a57d3ed16407ae92de22f246eb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags_1ae0d86a57d3ed16407ae92de22f246eb4" kindref="member">Flags</ref>(<ref refid="classprism_1_1utils_1_1_flag" kindref="compound">Flag</ref><sp/>f)<sp/>:<sp/>i(f)<sp/>{}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classprism_1_1utils_1_1_flags_1a0f912e256f4e552c5bb59444c2b18ef5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;<ref refid="classprism_1_1utils_1_1_flags_1a0f912e256f4e552c5bb59444c2b18ef5" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;f)<sp/>{<sp/>i<sp/>=<sp/>f.i;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="57" refid="classprism_1_1utils_1_1_flags_1a82f1bad45e06f130fefc7bfcf94c597f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;<ref refid="classprism_1_1utils_1_1_flags_1a82f1bad45e06f130fefc7bfcf94c597f" kindref="member">operator&amp;=</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask)<sp/>{<sp/>i<sp/>&amp;=<sp/>mask;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="58" refid="classprism_1_1utils_1_1_flags_1a55c97993c6a3a0fdaad1d4883c65d968" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;<ref refid="classprism_1_1utils_1_1_flags_1a55c97993c6a3a0fdaad1d4883c65d968" kindref="member">operator&amp;=</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask)<sp/>{<sp/>i<sp/>&amp;=<sp/>mask;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="59" refid="classprism_1_1utils_1_1_flags_1acd806486124bf28982a72e3bbebd554a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;<ref refid="classprism_1_1utils_1_1_flags_1acd806486124bf28982a72e3bbebd554a" kindref="member">operator|=</ref>(<ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>f)<sp/>{<sp/>i<sp/>|=<sp/>f.i;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="60" refid="classprism_1_1utils_1_1_flags_1a5511bcaf57aa1e07d804e5492312769a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;<ref refid="classprism_1_1utils_1_1_flags_1a5511bcaf57aa1e07d804e5492312769a" kindref="member">operator|=</ref>(Enum<sp/>f)<sp/>{<sp/>i<sp/>|=<sp/>f;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="61" refid="classprism_1_1utils_1_1_flags_1ac88df39eb6f933e0be935c0e4f789995" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;<ref refid="classprism_1_1utils_1_1_flags_1ac88df39eb6f933e0be935c0e4f789995" kindref="member">operator^=</ref>(<ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>f)<sp/>{<sp/>i<sp/>^=<sp/>f.i;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="62" refid="classprism_1_1utils_1_1_flags_1a101b0466587350dccfdd5f20b865c764" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>&amp;<ref refid="classprism_1_1utils_1_1_flags_1a101b0466587350dccfdd5f20b865c764" kindref="member">operator^=</ref>(Enum<sp/>f)<sp/>{<sp/>i<sp/>^=<sp/>f;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classprism_1_1utils_1_1_flags_1af1a90419fc3644502efbb01d92bfea05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">operator</highlight><highlight class="normal"><sp/>int()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i;<sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classprism_1_1utils_1_1_flags_1ab26cc87260ffb1377c61268842233f4c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1ab26cc87260ffb1377c61268842233f4c" kindref="member">operator|</ref>(<ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>f)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>i<sp/>|<sp/>f.i;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="67" refid="classprism_1_1utils_1_1_flags_1ae7ec359806232516ae304e56c7d1bca0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1ae7ec359806232516ae304e56c7d1bca0" kindref="member">operator|</ref>(Enum<sp/>f)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>i<sp/>|<sp/>f;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="68" refid="classprism_1_1utils_1_1_flags_1a5aab9653abe6fed5ed9e172c2fa4358d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1a5aab9653abe6fed5ed9e172c2fa4358d" kindref="member">operator^</ref>(<ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>f)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>i<sp/>^<sp/>f.i;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="69" refid="classprism_1_1utils_1_1_flags_1a2c346ecb80fc04db4d5b17992c457591" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1a2c346ecb80fc04db4d5b17992c457591" kindref="member">operator^</ref>(Enum<sp/>f)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>i<sp/>^<sp/>f;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="70" refid="classprism_1_1utils_1_1_flags_1a415ee3884fd6481877d7ceef7ac93fe0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1a415ee3884fd6481877d7ceef7ac93fe0" kindref="member">operator&amp;</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>i<sp/>&amp;<sp/>mask;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="71" refid="classprism_1_1utils_1_1_flags_1a38c4ea30d721dbc1b8fa4629e17898dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1a38c4ea30d721dbc1b8fa4629e17898dd" kindref="member">operator&amp;</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mask)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>i<sp/>&amp;<sp/>mask;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="72" refid="classprism_1_1utils_1_1_flags_1a5c213514567b22fb9693602101f0a006" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1a5c213514567b22fb9693602101f0a006" kindref="member">operator&amp;</ref>(Enum<sp/>f)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>i<sp/>&amp;<sp/>f;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="73" refid="classprism_1_1utils_1_1_flags_1a49670b087661a316acd4994ee3cd8499" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/><ref refid="classprism_1_1utils_1_1_flags_1a49670b087661a316acd4994ee3cd8499" kindref="member">operator~</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/><ref refid="classprism_1_1utils_1_1_flags" kindref="compound">Flags</ref><sp/>g;<sp/>g.i<sp/>=<sp/>~i;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>g;<sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classprism_1_1utils_1_1_flags_1a73397d689c2e6c77fa01126af1096a5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags_1a73397d689c2e6c77fa01126af1096a5b" kindref="member">operator!</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!i;<sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classprism_1_1utils_1_1_flags_1abd249b9a27d17cc1a038da073dd735c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1utils_1_1_flags_1abd249b9a27d17cc1a038da073dd735c8" kindref="member">testFlag</ref>(Enum<sp/>f)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(i<sp/>&amp;<sp/>f)<sp/>==<sp/>f<sp/>&amp;&amp;<sp/>(f<sp/>!=<sp/>0<sp/>||<sp/>i<sp/>==<sp/>int(f)<sp/>);<sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="_flags_8h_1aa5aa2c9827ab949836e20999b9a068ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PRISM_DECLARE_FLAGS(Flgs,<sp/>Enum)\</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor">typedef<sp/>prism::utils::Flags&lt;Enum&gt;<sp/>Flgs;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="_flags_8h_1ae8aabb683a18b872a4449769b82e8e15" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PRISM_DECLARE_OPERATORS_FOR_FLAGS(Flgs)\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor">inline<sp/>prism::utils::Flags&lt;Flgs::enum_type&gt;<sp/>operator|(Flgs::enum_type<sp/>f1,<sp/>Flgs::enum_type<sp/>f2)<sp/>\</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor">{<sp/>return<sp/>prism::utils::Flags&lt;Flgs::enum_type&gt;(f1)<sp/>|<sp/>f2;<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor">inline<sp/>prism::utils::Flags&lt;Flgs::enum_type&gt;<sp/>operator|(Flgs::enum_type<sp/>f1,<sp/>prism::utils::Flags&lt;Flgs::enum_type&gt;<sp/>f2)<sp/>\</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor">{<sp/>return<sp/>f2<sp/>|<sp/>f1;<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>FLAGS_H</highlight></codeline>
+    </programlisting>
+    <location file="inc/utils/Flags.h"/>
+  </compounddef>
+</doxygen>

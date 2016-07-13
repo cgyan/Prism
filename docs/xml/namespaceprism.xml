@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceprism" kind="namespace" language="C++">
+    <compoundname>prism</compoundname>
+    <innernamespace refid="namespaceprism_1_1containers">prism::containers</innernamespace>
+    <innernamespace refid="namespaceprism_1_1exceptions">prism::exceptions</innernamespace>
+    <innernamespace refid="namespaceprism_1_1geometry">prism::geometry</innernamespace>
+    <innernamespace refid="namespaceprism_1_1memory">prism::memory</innernamespace>
+    <innernamespace refid="namespaceprism_1_1utils">prism::utils</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceprism_1a812456273adfa37979e79f07e731d412" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>const T &amp;</type>
+        <definition>const T&amp; prism::max</definition>
+        <argsstring>(const T &amp;a, const T &amp;b)</argsstring>
+        <name>max</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/prism_global.h" line="15" column="1" bodyfile="inc/prism_global.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceprism_1a10aff0aca673fb1837069dd8967e4738" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>const T &amp;</type>
+        <definition>const T&amp; prism::min</definition>
+        <argsstring>(const T &amp;a, const T &amp;b)</argsstring>
+        <name>min</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/prism_global.h" line="17" column="1" bodyfile="inc/prism_global.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The Quaternion class represents an orientation in 3d space. </para>    </briefdescription>
+    <detaileddescription>
+<para>Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence.</para><para><heading level="2">USEFUL FORMULAS: </heading>
+</para><para><heading level="2"><ndash/> circle area </heading>
+</para><para><heading level="2">π r^2 </heading>
+</para><para><heading level="2"><ndash/> sector area (radians) </heading>
+</para><para>θ --<mdash/> r^2 <heading level="2">2 </heading>
+</para><para><heading level="2"><ndash/> sector area (degrees) </heading>
+</para><para>θ --<mdash/> π r^2 <heading level="2">360 </heading>
+</para><para><heading level="2"><ndash/> segment area (radians) </heading>
+</para><para>θ - sin θ -------<mdash/> r^2 <heading level="2">2 </heading>
+</para><para><heading level="2"><ndash/> segment area (degrees) </heading>
+</para><para>r^2 | π | <mdash/> times |θ <mdash/> minus sin θ| <heading level="2">2 | 180 | </heading>
+</para><para><heading level="2"><ndash/> circumference </heading>
+</para><para><heading level="2">2 π r </heading>
+</para><para><heading level="2"><ndash/> arc length (radians) </heading>
+</para><para><heading level="2">θ r </heading>
+</para><para><heading level="2"><ndash/> arc length (degrees) </heading>
+</para><para>π θ -<mdash/> r <heading level="2">180 </heading>
+</para><para><heading level="2"><ndash/> Law of Cosines </heading>
+</para><para><heading level="2">c^2 = a^2 + b^2 - 2ab cos θ </heading>
+</para><para>A Quaternion is made up of four components (w, x, y and z) which are a scalar (w) and a 3d vector (x, y and z). It does not suffer from gimbal lock and yet can represent any orientation possible.</para><para>Some interesting properties of quaternion multiplication: a) it is associative but not commutitive - (ab)c = a(bc) ab != ba</para><para>b) the magnitude of a quaternion product equals the product of the individual magnitudes. This is an important concept because when quaternions are of unit length and are multiplied, this guarentees us that the result will itself be a unit quaternion - ||ab|| = ||a||||b||</para><para>c) the inverse of a quaternion product is equal to the product of the individual quaternion inverses in reverse order - (ab).inverse = (b.inverse) * (a.inverse)</para><para>Rotating vectors: When rotating with a quaternion it is important that the quaternion be normalised i.e. be of unit length. This is because otherwise scaling will occur and since we only require rotations from our quaternions this won&apos;t do. Rotating a vector using quaternions is done with the following equation: v&apos; = q * v * q.inverse where vector v is represented as a quaternion.</para><para>Concatenating rotational transforms together: Multiple quaternion rotations can be applied to a vector in one single action by concatenating the rotational quaternions together and then applying them to the vector using the above equation. For example, to rotate the vector v by quaternion a and then rotating that result by quaternion b would be as follows: v&apos; = b * (a * v * a.inverse) * b.inverse = (b * a) * v * (b.inverse * a.inverse) = (b * a) * v * (b * a).inverse So, rotating by a and then by b is equivalent to the single rotation of the product of ba.</para><para>Completely and shamelessly lifted from Qt&apos;s QFlag/QFlags classes and macros and just renamed without the prepended &apos;Q&apos;. These classes allow enums to be treated as datatypes when passed to methods. They are also type-safe so that the receiving method is expecting the enum and not the basic int equivalent. So printFlag(Label::AlignLeft) works whilst printFlag(2) doesn&apos;t.</para><para>For example,</para><para>class Label { private: enum Alignment { AlignLeft = 0x1, AlignRight = 0x2 } <ref refid="_flags_8h_1aa5aa2c9827ab949836e20999b9a068ec" kindref="member">PRISM_DECLARE_FLAGS(AlignFlags, Alignment)</ref> }</para><para>// outside class def <ref refid="_flags_8h_1ae8aabb683a18b872a4449769b82e8e15" kindref="member">PRISM_DECLARE_OPERATORS_FOR_FLAGS(Label::AlignFlags)</ref></para><para>void printFlag(Label::AlignFlags f) { if (f == Label::AlignLeft) std::cout &lt;&lt; &quot;AlignLeft&quot; &lt;&lt; std::endl; else if (f == Label::AlignRight) std::cout &lt;&lt; &quot;AlignRight&quot; &lt;&lt; std::endl; else std::cout &lt;&lt; f &lt;&lt; std::endl; }</para><para>int main(int argc, char** argv) { printFlag(Label::AlignLeft); } </para>    </detaileddescription>
+    <location file="inc/containers/Array.h" line="24" column="1"/>
+  </compounddef>
+</doxygen>

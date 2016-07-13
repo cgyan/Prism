@@ -1,0 +1,80 @@
+\hypertarget{namespaceprism_1_1memory}{}\section{prism\+:\+:memory Namespace Reference}
+\label{namespaceprism_1_1memory}\index{prism\+::memory@{prism\+::memory}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classprism_1_1memory_1_1_reference_counter}{Reference\+Counter}
+\item 
+class \hyperlink{classprism_1_1memory_1_1_shared_data}{Shared\+Data}
+\item 
+class \hyperlink{classprism_1_1memory_1_1_shared_data_pointer}{Shared\+Data\+Pointer}
+\item 
+class \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_1_1memory_ad36b37a525404c17827d12d0bf94bafd}{operator!=} (const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_1_1memory_a96fb8161e2fb235063aad1597f1e9308}{operator!=} (const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_1_1memory_aa8bd4c5e7758c889a6d5bf59bceacd7b}{operator!=} (const U $\ast$p1, const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_1_1memory_a5c9e5536158a5a55c58650ee25b579e7}{operator==} (const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_1_1memory_aa56d131347659ff3d6740a577a838051}{operator==} (const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_1_1memory_a202ce193aab3b8867cffa74dd76abd7c}{operator==} (const U $\ast$p1, const \hyperlink{classprism_1_1memory_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{prism\+::memory@{prism\+::memory}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::memory@{prism\+::memory}}
+\subsubsection[{\texorpdfstring{operator"!=(const Shared\+Pointer$<$ U $>$ \&p1, const Shared\+Pointer$<$ U $>$ \&p2)}{operator!=(const SharedPointer< U > &p1, const SharedPointer< U > &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::memory\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_1_1memory_ad36b37a525404c17827d12d0bf94bafd}{}\label{namespaceprism_1_1memory_ad36b37a525404c17827d12d0bf94bafd}
+Returns true if the managed pointers of p1 and p2 do not point to the same data, false otherwise. \index{prism\+::memory@{prism\+::memory}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::memory@{prism\+::memory}}
+\subsubsection[{\texorpdfstring{operator"!=(const Shared\+Pointer$<$ U $>$ \&p1, const U $\ast$p2)}{operator!=(const SharedPointer< U > &p1, const U *p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::memory\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const U $\ast$}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_1_1memory_a96fb8161e2fb235063aad1597f1e9308}{}\label{namespaceprism_1_1memory_a96fb8161e2fb235063aad1597f1e9308}
+Returns true if the managed pointer of p1 and the raw pointer p2 do not point to the same data, false otherwise. \index{prism\+::memory@{prism\+::memory}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::memory@{prism\+::memory}}
+\subsubsection[{\texorpdfstring{operator"!=(const U $\ast$p1, const Shared\+Pointer$<$ U $>$ \&p2)}{operator!=(const U *p1, const SharedPointer< U > &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::memory\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const U $\ast$}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_1_1memory_aa8bd4c5e7758c889a6d5bf59bceacd7b}{}\label{namespaceprism_1_1memory_aa8bd4c5e7758c889a6d5bf59bceacd7b}
+Returns true if the raw pointer p1 and the managed pointer of p2 do not point to the same data, false otherwise. \index{prism\+::memory@{prism\+::memory}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::memory@{prism\+::memory}}
+\subsubsection[{\texorpdfstring{operator==(const Shared\+Pointer$<$ U $>$ \&p1, const Shared\+Pointer$<$ U $>$ \&p2)}{operator==(const SharedPointer< U > &p1, const SharedPointer< U > &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::memory\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_1_1memory_a5c9e5536158a5a55c58650ee25b579e7}{}\label{namespaceprism_1_1memory_a5c9e5536158a5a55c58650ee25b579e7}
+Returns true if the managed pointers of p1 and p2 point to the same data, false otherwise. \index{prism\+::memory@{prism\+::memory}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::memory@{prism\+::memory}}
+\subsubsection[{\texorpdfstring{operator==(const Shared\+Pointer$<$ U $>$ \&p1, const U $\ast$p2)}{operator==(const SharedPointer< U > &p1, const U *p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::memory\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p1, }
+\item[{const U $\ast$}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_1_1memory_aa56d131347659ff3d6740a577a838051}{}\label{namespaceprism_1_1memory_aa56d131347659ff3d6740a577a838051}
+Returns true if the managed pointer of p1 and the raw pointer p2 point to the same data, false otherwise. \index{prism\+::memory@{prism\+::memory}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::memory@{prism\+::memory}}
+\subsubsection[{\texorpdfstring{operator==(const U $\ast$p1, const Shared\+Pointer$<$ U $>$ \&p2)}{operator==(const U *p1, const SharedPointer< U > &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::memory\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const U $\ast$}]{p1, }
+\item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_1_1memory_a202ce193aab3b8867cffa74dd76abd7c}{}\label{namespaceprism_1_1memory_a202ce193aab3b8867cffa74dd76abd7c}
+Returns true if the raw pointer p1 and the managed pointer of p2 point to the same data, false otherwise. 

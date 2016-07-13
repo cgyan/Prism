@@ -1,0 +1,128 @@
+\hypertarget{classprism_1_1_stack}{}\section{prism\+:\+:Stack$<$ T, Container\+Type $>$ Class Template Reference}
+\label{classprism_1_1_stack}\index{prism\+::\+Stack$<$ T, Container\+Type $>$@{prism\+::\+Stack$<$ T, Container\+Type $>$}}
+
+
+{\ttfamily \#include $<$Stack.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1_stack_a4da568aa6d3ca0042123fdbe4ec131df}{Stack} ()
+\item 
+const bool \hyperlink{classprism_1_1_stack_a186c8700a2150e20ccd3c44c5a233f57}{empty} () const 
+\item 
+const bool \hyperlink{classprism_1_1_stack_a4a3ffd6921356ad4bb7b5980c913d3b3}{is\+Empty} () const 
+\item 
+void \hyperlink{classprism_1_1_stack_ada448478a035c703d738d025370f0ad1}{pop} ()
+\item 
+void \hyperlink{classprism_1_1_stack_a7477a66874bfcc5cfc7e16d7f0e8a3c1}{push} (const T \&value)
+\item 
+const int \hyperlink{classprism_1_1_stack_ad8805f421b46c591bde99520edfa5f28}{size} () const 
+\item 
+T \& \hyperlink{classprism_1_1_stack_af33699fcb4ad2b0b3b20c39debe0d72a}{top} ()
+\item 
+const T \& \hyperlink{classprism_1_1_stack_a33d812475def65e53b13ab5aa171e146}{top} () const 
+\item 
+const bool \hyperlink{classprism_1_1_stack_afc17fcd9588a6d9f95af0bef309f8425}{operator==} (const \hyperlink{classprism_1_1_stack}{Stack}$<$ T, Container\+Type $>$ \&rhs)
+\item 
+const bool \hyperlink{classprism_1_1_stack_af12831daa5d4ba74a77d09fbf43250db}{operator!=} (const \hyperlink{classprism_1_1_stack}{Stack}$<$ T, Container\+Type $>$ \&rhs)
+\item 
+\hyperlink{classprism_1_1_stack}{Stack}$<$ T, Container\+Type $>$ \& \hyperlink{classprism_1_1_stack_aaf33f28fe48772fdf5f50cb32e04ff4f}{operator+=} (const T \&value)
+\item 
+\hyperlink{classprism_1_1_stack}{Stack}$<$ T, Container\+Type $>$ \& \hyperlink{classprism_1_1_stack_a246b7ed1175426ba782e6d07d5cc4813}{operator$<$$<$} (const T \&value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+Stack@{prism\+::\+Stack}!Stack@{Stack}}
+\index{Stack@{Stack}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{Stack()}{Stack()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::{\bf Stack} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_a4da568aa6d3ca0042123fdbe4ec131df}{}\label{classprism_1_1_stack_a4da568aa6d3ca0042123fdbe4ec131df}
+Constructs an empty stack. 
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+Stack@{prism\+::\+Stack}!empty@{empty}}
+\index{empty@{empty}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{empty() const }{empty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const bool {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_stack_a186c8700a2150e20ccd3c44c5a233f57}{}\label{classprism_1_1_stack_a186c8700a2150e20ccd3c44c5a233f57}
+Returns true if the stack containers no elements and false otherwise. Added for S\+T\+L-\/compatibility. Equivalent to \hyperlink{classprism_1_1_stack_a4a3ffd6921356ad4bb7b5980c913d3b3}{is\+Empty()}. \index{prism\+::\+Stack@{prism\+::\+Stack}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const bool {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_stack_a4a3ffd6921356ad4bb7b5980c913d3b3}{}\label{classprism_1_1_stack_a4a3ffd6921356ad4bb7b5980c913d3b3}
+Returns true if the stack containers no elements and false otherwise. Equivalent to \hyperlink{classprism_1_1_stack_a186c8700a2150e20ccd3c44c5a233f57}{empty()}. \index{prism\+::\+Stack@{prism\+::\+Stack}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{operator"!=(const Stack$<$ T, Container\+Type $>$ \&rhs)}{operator!=(const Stack< T, ContainerType > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const bool {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Stack}$<$ T, Container\+Type $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_af12831daa5d4ba74a77d09fbf43250db}{}\label{classprism_1_1_stack_af12831daa5d4ba74a77d09fbf43250db}
+Compares this stack with {\itshape rhs} for equality. They are considered equal if they have the same number of elements in the same order. \index{prism\+::\+Stack@{prism\+::\+Stack}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{operator+=(const T \&value)}{operator+=(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ {\bf Stack}$<$ T, Container\+Type $>$ \& {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_aaf33f28fe48772fdf5f50cb32e04ff4f}{}\label{classprism_1_1_stack_aaf33f28fe48772fdf5f50cb32e04ff4f}
+Adds {\itshape value} to the end (top) of the stack. \index{prism\+::\+Stack@{prism\+::\+Stack}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(const T \&value)}{operator<<(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ {\bf Stack}$<$ T, Container\+Type $>$ \& {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_a246b7ed1175426ba782e6d07d5cc4813}{}\label{classprism_1_1_stack_a246b7ed1175426ba782e6d07d5cc4813}
+Adds {\itshape value} to the end (top) of the stack. \index{prism\+::\+Stack@{prism\+::\+Stack}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{operator==(const Stack$<$ T, Container\+Type $>$ \&rhs)}{operator==(const Stack< T, ContainerType > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const bool {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Stack}$<$ T, Container\+Type $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_afc17fcd9588a6d9f95af0bef309f8425}{}\label{classprism_1_1_stack_afc17fcd9588a6d9f95af0bef309f8425}
+Compares this stack with {\itshape rhs} for equality. They are considered equal if they have the same number of elements in the same order. \index{prism\+::\+Stack@{prism\+::\+Stack}!pop@{pop}}
+\index{pop@{pop}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{pop()}{pop()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ void {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_ada448478a035c703d738d025370f0ad1}{}\label{classprism_1_1_stack_ada448478a035c703d738d025370f0ad1}
+Removes the last (top) element in the stack. \index{prism\+::\+Stack@{prism\+::\+Stack}!push@{push}}
+\index{push@{push}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{push(const T \&value)}{push(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ void {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::push (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_a7477a66874bfcc5cfc7e16d7f0e8a3c1}{}\label{classprism_1_1_stack_a7477a66874bfcc5cfc7e16d7f0e8a3c1}
+Adds {\itshape value} to the end (top) of the stack. \index{prism\+::\+Stack@{prism\+::\+Stack}!size@{size}}
+\index{size@{size}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const int {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_stack_ad8805f421b46c591bde99520edfa5f28}{}\label{classprism_1_1_stack_ad8805f421b46c591bde99520edfa5f28}
+Returns the number of elements currently in the stack. \index{prism\+::\+Stack@{prism\+::\+Stack}!top@{top}}
+\index{top@{top}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{top()}{top()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ T \& {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_af33699fcb4ad2b0b3b20c39debe0d72a}{}\label{classprism_1_1_stack_af33699fcb4ad2b0b3b20c39debe0d72a}
+Returns a reference to the last (top) element in the stack. \index{prism\+::\+Stack@{prism\+::\+Stack}!top@{top}}
+\index{top@{top}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{top() const }{top() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const T \& {\bf prism\+::\+Stack}$<$ T, Container\+Type $>$\+::top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_stack_a33d812475def65e53b13ab5aa171e146}{}\label{classprism_1_1_stack_a33d812475def65e53b13ab5aa171e146}
+Returns a const reference to the last (top) element in the stack. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/\+Prism/containers/\hyperlink{_stack_8h}{Stack.\+h}\end{DoxyCompactItemize}

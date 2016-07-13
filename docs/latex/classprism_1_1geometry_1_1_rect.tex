@@ -1,0 +1,690 @@
+\hypertarget{classprism_1_1geometry_1_1_rect}{}\section{prism\+:\+:geometry\+:\+:Rect Class Reference}
+\label{classprism_1_1geometry_1_1_rect}\index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+
+
+{\ttfamily \#include $<$Rect.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect_af5f00aa1b738402869b2e5a50680dbf0}{Rect} ()
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect_a4aa4330e221ec6d07932ecd08f56406a}{Rect} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x}, const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y}, const int \hyperlink{classprism_1_1geometry_1_1_rect_afe228be73477fba4bb5865c23d2761f2}{width}, const int \hyperlink{classprism_1_1geometry_1_1_rect_afe44f3f138f24808dba2bd807dbbe832}{height})
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect_a5b15bd9dbd9e4ab7ef96e3df75e93f98}{Rect} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&\hyperlink{classprism_1_1geometry_1_1_rect_ae1286050e3e1d841e065170e6fa213d2}{top\+Left}, const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&\hyperlink{classprism_1_1geometry_1_1_rect_a16a9088be2bfd87437286a23aed2094c}{bottom\+Right})
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect_a9cbd754e99927217fd508b3365fe7498}{Rect} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&\hyperlink{classprism_1_1geometry_1_1_rect_ae1286050e3e1d841e065170e6fa213d2}{top\+Left}, const \hyperlink{classprism_1_1geometry_1_1_size}{Size} \&\hyperlink{classprism_1_1geometry_1_1_rect_a5f848db57909f09943fc21fd45a41da2}{size})
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect_aaf42c3ce8864789cc9bf28ac49e7242c}{Rect} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&copy)
+\item 
+virtual \hyperlink{classprism_1_1geometry_1_1_rect_a454fcbd614d4aab447d91e84d023a394}{$\sim$\+Rect} ()
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a1083c95584849792cba377c873e64b4e}{adjust} (const int dx1, const int dy1, const int dx2, const int dy2)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \hyperlink{classprism_1_1geometry_1_1_rect_ac79b187d7ae4b8530755b62902f1a9e3}{adjusted} (const int dx1, const int dy1, const int dx2, const int dy2) const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_aadf2911d76976a6f773acc9a0c6f6b82}{bottom} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_point}{Point} \hyperlink{classprism_1_1geometry_1_1_rect_a0dfdb07cd5b41a228f9a0857d89d3053}{bottom\+Left} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_point}{Point} \hyperlink{classprism_1_1geometry_1_1_rect_a16a9088be2bfd87437286a23aed2094c}{bottom\+Right} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_point}{Point} \hyperlink{classprism_1_1geometry_1_1_rect_a54b2322f49843c991054006fabe2f693}{centre} () const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a914016ca0b12a9aa21e77527746454cc}{contains} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&point) const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a06118ba60a892201ab16fbfefefb60ee}{contains} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x}, const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y}) const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a1fce0ff592c8bc5c0f9e69eeb0278f2b}{contains} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&rect) const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a4c039f77c79ddf46ee0e1141368cd835}{get\+Coordinates} (int $\ast$x1, int $\ast$y1, int $\ast$x2, int $\ast$y2) const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a85e1ea516a78da51ba82ce845c2c45bd}{get\+Rect} (int $\ast$\hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x}, int $\ast$\hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y}, int $\ast$\hyperlink{classprism_1_1geometry_1_1_rect_afe228be73477fba4bb5865c23d2761f2}{width}, int $\ast$\hyperlink{classprism_1_1geometry_1_1_rect_afe44f3f138f24808dba2bd807dbbe832}{height}) const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_afe44f3f138f24808dba2bd807dbbe832}{height} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \hyperlink{classprism_1_1geometry_1_1_rect_ad5637ecd9044e1aba9a2b20edfe64b0c}{intersected} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&rect) const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a9ed407bdc1433493f8353e4e99a4802d}{intersects} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&rect) const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a96fbe8d518599871cf914b2cdc2d84bc}{is\+Empty} () const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a87f8a960d0e47a12d39f3631b8448bb7}{is\+Null} () const 
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a448754593112b31dea56afd404007dea}{is\+Valid} () const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_ae423bd72347e4d5363ee2679a7e28a5c}{left} () const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a26169eca1c3bd117aee5529ecabdeab3}{move\+Bottom} (const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a6c93e7aa0cf76e483dd9844ea0c0ae92}{move\+Bottom\+Left} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a7f1e4141d8879ce54fc45e6005146a97}{move\+Bottom\+Right} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_af5a0e47f3771365467b596d069b1137f}{move\+Centre} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x}, const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_ad26400adfe91b53bc35eb808555e17d2}{move\+Centre} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a69e1fde9419a8aa4924cf301eca10a2a}{move\+Left} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_ac19e6cdd500aa51993012cd0b49e8754}{move\+Right} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a8b9e6ed6ee5275599efa469c827c0fbc}{move\+To} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x}, const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a9feb882f94b8e0610a393fcf255374b3}{move\+To} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_aa19b2e99776eac3a751e678672124d19}{move\+Top} (const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a611fc63e8429a6eeb4677ee58e157972}{move\+Top\+Left} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a75ef65067f2f99ea0d91074cda481e16}{move\+Top\+Right} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \hyperlink{classprism_1_1geometry_1_1_rect_ab3e98aad0d5e86a221bf7582de29492a}{normalised} () const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_a01f98f870b9dc5eff36c5c2e0ba477b4}{right} () const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_aa488d5deee04a94e9a3e2c4fa3ecda8b}{set\+Bottom} (const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_aa35fb4766ed7e61c8a44ecacb60321ee}{set\+Bottom\+Left} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a07edad0ec9c4fac6fe6e9e5fd2f80b6c}{set\+Bottom\+Right} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a8525f68d4771bf68be7f105d36fdbac7}{set\+Coordinates} (const int x1, const int y1, const int x2, const int y2)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a18b0fde32981043ec08f863589e0f8d8}{set\+Height} (const int \hyperlink{classprism_1_1geometry_1_1_rect_afe44f3f138f24808dba2bd807dbbe832}{height})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_ac97b8d2c15064a26b6f26833e7001fbe}{set\+Left} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a8ae3b5005957a66f52cc3a2809572c62}{set\+Rect} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x}, const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y}, const int \hyperlink{classprism_1_1geometry_1_1_rect_afe228be73477fba4bb5865c23d2761f2}{width}, const int \hyperlink{classprism_1_1geometry_1_1_rect_afe44f3f138f24808dba2bd807dbbe832}{height})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_af077efaa0e61445eca6a832dd54daacc}{set\+Right} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a21d8240b960c0940dc9bed90466b8bdc}{set\+Size} (const \hyperlink{classprism_1_1geometry_1_1_size}{Size} \&\hyperlink{classprism_1_1geometry_1_1_rect_a5f848db57909f09943fc21fd45a41da2}{size})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a126bf4bdf0581056cc5152c1ad394019}{set\+Top} (const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a5667e4527098948cb8bc597f43a46b59}{set\+Top\+Left} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_ab9a9908492adcd4fc489ba3c28dfc4ae}{set\+Top\+Right} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&position)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a42106f226ff5487937030da6781dcd4c}{setX} (const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a22ed3d78f25ddef614872e5f39ee102d}{setY} (const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y})
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a2b418c3a8bfa81d1dfcdff62f532f7f5}{set\+Width} (const int \hyperlink{classprism_1_1geometry_1_1_rect_afe228be73477fba4bb5865c23d2761f2}{width})
+\item 
+\hyperlink{classprism_1_1geometry_1_1_size}{Size} \hyperlink{classprism_1_1geometry_1_1_rect_a5f848db57909f09943fc21fd45a41da2}{size} () const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_ae05c3819e7cbbe4e3438ed477b927251}{top} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_point}{Point} \hyperlink{classprism_1_1geometry_1_1_rect_ae1286050e3e1d841e065170e6fa213d2}{top\+Left} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_point}{Point} \hyperlink{classprism_1_1geometry_1_1_rect_a7220a37ad32137c12b1f1e29343f60bd}{top\+Right} () const 
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a204cfa6f9844054c19845cd6fb70148c}{translate} (const int dx, const int dy)
+\item 
+void \hyperlink{classprism_1_1geometry_1_1_rect_a9cc62fffe094f07d175e97cd392dd69b}{translate} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&offset)
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \hyperlink{classprism_1_1geometry_1_1_rect_a6705b147640d1170b3b8bd95b8291b86}{translated} (const int dx, const int dy) const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \hyperlink{classprism_1_1geometry_1_1_rect_a6caba9800b45624e4e365e90ee3e1c76}{translated} (const \hyperlink{classprism_1_1geometry_1_1_point}{Point} \&offset) const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \hyperlink{classprism_1_1geometry_1_1_rect_ac8f4756c021ee21a653433b91d9ec959}{transposed} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \hyperlink{classprism_1_1geometry_1_1_rect_abf31fd9bcc26fa264dc91db7ec3f87bf}{united} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&rect) const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_afe228be73477fba4bb5865c23d2761f2}{width} () const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{x} () const 
+\item 
+const int \hyperlink{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{y} () const 
+\item 
+\hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \& \hyperlink{classprism_1_1geometry_1_1_rect_ab5ff8b854d944cf0dcaa7fed8321246e}{operator=} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&rect)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_ab32eafa53d6e2fedc5c4f4beeb10d12a}{operator==} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&r1, const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&r2)
+\item 
+const bool \hyperlink{classprism_1_1geometry_1_1_rect_a649643043218228aae2b7d95e1a95dba}{operator!=} (const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&r1, const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&r2)
+\item 
+std\+::ostream \& \hyperlink{classprism_1_1geometry_1_1_rect_a729ddc4e5633a601a2813d124209056f}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} \&rect)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!Rect@{Rect}}
+\index{Rect@{Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{Rect()}{Rect()}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Rect\+::\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_af5f00aa1b738402869b2e5a50680dbf0}{}\label{classprism_1_1geometry_1_1_rect_af5f00aa1b738402869b2e5a50680dbf0}
+Creates a rectangle with x=y=width=height=0. {\itshape \hyperlink{classprism_1_1geometry_1_1_rect_a96fbe8d518599871cf914b2cdc2d84bc}{is\+Empty()}} and {\itshape \hyperlink{classprism_1_1geometry_1_1_rect_a87f8a960d0e47a12d39f3631b8448bb7}{is\+Null()}} will return true in this state whilst {\itshape \hyperlink{classprism_1_1geometry_1_1_rect_a448754593112b31dea56afd404007dea}{is\+Valid()}} will return false. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!Rect@{Rect}}
+\index{Rect@{Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{Rect(const int x, const int y, const int width, const int height)}{Rect(const int x, const int y, const int width, const int height)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Rect\+::\+Rect (
+\begin{DoxyParamCaption}
+\item[{const int}]{x, }
+\item[{const int}]{y, }
+\item[{const int}]{width, }
+\item[{const int}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a4aa4330e221ec6d07932ecd08f56406a}{}\label{classprism_1_1geometry_1_1_rect_a4aa4330e221ec6d07932ecd08f56406a}
+Creates a rectangle positioning the top left corner at (x,y) and having {\itshape width} and {\itshape height}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!Rect@{Rect}}
+\index{Rect@{Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{Rect(const Point \&top\+Left, const Point \&bottom\+Right)}{Rect(const Point &topLeft, const Point &bottomRight)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Rect\+::\+Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{top\+Left, }
+\item[{const {\bf Point} \&}]{bottom\+Right}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a5b15bd9dbd9e4ab7ef96e3df75e93f98}{}\label{classprism_1_1geometry_1_1_rect_a5b15bd9dbd9e4ab7ef96e3df75e93f98}
+Creates a rectangle positioning its top left corner at {\itshape top\+Left} and its bottom right corner positioned at {\itshape bottom\+Right}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!Rect@{Rect}}
+\index{Rect@{Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{Rect(const Point \&top\+Left, const Size \&size)}{Rect(const Point &topLeft, const Size &size)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Rect\+::\+Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{top\+Left, }
+\item[{const {\bf Size} \&}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a9cbd754e99927217fd508b3365fe7498}{}\label{classprism_1_1geometry_1_1_rect_a9cbd754e99927217fd508b3365fe7498}
+Creates a rectangle positioning its top left corner at {\itshape top\+Left} and its width and height set to {\itshape size}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!Rect@{Rect}}
+\index{Rect@{Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{Rect(const Rect \&copy)}{Rect(const Rect &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Rect\+::\+Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{copy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_aaf42c3ce8864789cc9bf28ac49e7242c}{}\label{classprism_1_1geometry_1_1_rect_aaf42c3ce8864789cc9bf28ac49e7242c}
+Copy constructor makes a copy of {\itshape copy}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!````~Rect@{$\sim$\+Rect}}
+\index{````~Rect@{$\sim$\+Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{$\sim$\+Rect()}{~Rect()}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::geometry\+::\+Rect\+::$\sim$\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1geometry_1_1_rect_a454fcbd614d4aab447d91e84d023a394}{}\label{classprism_1_1geometry_1_1_rect_a454fcbd614d4aab447d91e84d023a394}
+Destroys the rectangle. 
+
+\subsection{Member Function Documentation}
+\index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!adjust@{adjust}}
+\index{adjust@{adjust}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{adjust(const int dx1, const int dy1, const int dx2, const int dy2)}{adjust(const int dx1, const int dy1, const int dx2, const int dy2)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::adjust (
+\begin{DoxyParamCaption}
+\item[{const int}]{dx1, }
+\item[{const int}]{dy1, }
+\item[{const int}]{dx2, }
+\item[{const int}]{dy2}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a1083c95584849792cba377c873e64b4e}{}\label{classprism_1_1geometry_1_1_rect_a1083c95584849792cba377c873e64b4e}
+Adds dx1, dy1, dx2 and dy2 to the existing coordinates of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!adjusted@{adjusted}}
+\index{adjusted@{adjusted}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{adjusted(const int dx1, const int dy1, const int dx2, const int dy2) const }{adjusted(const int dx1, const int dy1, const int dx2, const int dy2) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} prism\+::geometry\+::\+Rect\+::adjusted (
+\begin{DoxyParamCaption}
+\item[{const int}]{dx1, }
+\item[{const int}]{dy1, }
+\item[{const int}]{dx2, }
+\item[{const int}]{dy2}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_ac79b187d7ae4b8530755b62902f1a9e3}{}\label{classprism_1_1geometry_1_1_rect_ac79b187d7ae4b8530755b62902f1a9e3}
+Returns a copy of this rectangle which has added dx1, dy1, dx2 and dy2 to the existing coordinates of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!bottom@{bottom}}
+\index{bottom@{bottom}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{bottom() const }{bottom() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::bottom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_aadf2911d76976a6f773acc9a0c6f6b82}{}\label{classprism_1_1geometry_1_1_rect_aadf2911d76976a6f773acc9a0c6f6b82}
+Returns the y-\/coordinate of the rectangle\textquotesingle{}s bottom edge. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!bottom\+Left@{bottom\+Left}}
+\index{bottom\+Left@{bottom\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{bottom\+Left() const }{bottomLeft() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} prism\+::geometry\+::\+Rect\+::bottom\+Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a0dfdb07cd5b41a228f9a0857d89d3053}{}\label{classprism_1_1geometry_1_1_rect_a0dfdb07cd5b41a228f9a0857d89d3053}
+Returns the coordinate of the bottom left of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!bottom\+Right@{bottom\+Right}}
+\index{bottom\+Right@{bottom\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{bottom\+Right() const }{bottomRight() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} prism\+::geometry\+::\+Rect\+::bottom\+Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a16a9088be2bfd87437286a23aed2094c}{}\label{classprism_1_1geometry_1_1_rect_a16a9088be2bfd87437286a23aed2094c}
+Returns the coordinate of the bottom right of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!centre@{centre}}
+\index{centre@{centre}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{centre() const }{centre() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} prism\+::geometry\+::\+Rect\+::centre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a54b2322f49843c991054006fabe2f693}{}\label{classprism_1_1geometry_1_1_rect_a54b2322f49843c991054006fabe2f693}
+Returns the coordinate of the centre point of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!contains@{contains}}
+\index{contains@{contains}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{contains(const Point \&point) const }{contains(const Point &point) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Rect\+::contains (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{point}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a914016ca0b12a9aa21e77527746454cc}{}\label{classprism_1_1geometry_1_1_rect_a914016ca0b12a9aa21e77527746454cc}
+Returns true if {\itshape point} is within or on the rectangle\textquotesingle{}s boundary, false otherwise. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!contains@{contains}}
+\index{contains@{contains}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{contains(const int x, const int y) const }{contains(const int x, const int y) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Rect\+::contains (
+\begin{DoxyParamCaption}
+\item[{const int}]{x, }
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a06118ba60a892201ab16fbfefefb60ee}{}\label{classprism_1_1geometry_1_1_rect_a06118ba60a892201ab16fbfefefb60ee}
+Returns true if (x,y) is within or on the rectangle\textquotesingle{}s boundary, false otherwise. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!contains@{contains}}
+\index{contains@{contains}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{contains(const Rect \&rect) const }{contains(const Rect &rect) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Rect\+::contains (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{rect}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a1fce0ff592c8bc5c0f9e69eeb0278f2b}{}\label{classprism_1_1geometry_1_1_rect_a1fce0ff592c8bc5c0f9e69eeb0278f2b}
+Returns true if {\itshape rect} is contained within or on the rectangle\textquotesingle{}s boundary, false otherwise. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!get\+Coordinates@{get\+Coordinates}}
+\index{get\+Coordinates@{get\+Coordinates}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{get\+Coordinates(int $\ast$x1, int $\ast$y1, int $\ast$x2, int $\ast$y2) const }{getCoordinates(int *x1, int *y1, int *x2, int *y2) const }}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::get\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{x1, }
+\item[{int $\ast$}]{y1, }
+\item[{int $\ast$}]{x2, }
+\item[{int $\ast$}]{y2}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a4c039f77c79ddf46ee0e1141368cd835}{}\label{classprism_1_1geometry_1_1_rect_a4c039f77c79ddf46ee0e1141368cd835}
+Extracts the coordinates of the rectangle and assigns them to (x1,y1)(x2,y2). \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!get\+Rect@{get\+Rect}}
+\index{get\+Rect@{get\+Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{get\+Rect(int $\ast$x, int $\ast$y, int $\ast$width, int $\ast$height) const }{getRect(int *x, int *y, int *width, int *height) const }}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::get\+Rect (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{x, }
+\item[{int $\ast$}]{y, }
+\item[{int $\ast$}]{width, }
+\item[{int $\ast$}]{height}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a85e1ea516a78da51ba82ce845c2c45bd}{}\label{classprism_1_1geometry_1_1_rect_a85e1ea516a78da51ba82ce845c2c45bd}
+Extracts the top left corner coordinates and width and height of this rectangle and assigns them to (x,y) and {\itshape width} and {\itshape height}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!height@{height}}
+\index{height@{height}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{height() const }{height() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_afe44f3f138f24808dba2bd807dbbe832}{}\label{classprism_1_1geometry_1_1_rect_afe44f3f138f24808dba2bd807dbbe832}
+Returns the height of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!intersected@{intersected}}
+\index{intersected@{intersected}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{intersected(const Rect \&rect) const }{intersected(const Rect &rect) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} prism\+::geometry\+::\+Rect\+::intersected (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{rect}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_ad5637ecd9044e1aba9a2b20edfe64b0c}{}\label{classprism_1_1geometry_1_1_rect_ad5637ecd9044e1aba9a2b20edfe64b0c}
+Returns a rectangle that represents the overlapping portion of this rectangle and {\itshape rect}. If the two rectangles are not intersected then this rectangle is returned instead. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!intersects@{intersects}}
+\index{intersects@{intersects}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{intersects(const Rect \&rect) const }{intersects(const Rect &rect) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Rect\+::intersects (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{rect}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a9ed407bdc1433493f8353e4e99a4802d}{}\label{classprism_1_1geometry_1_1_rect_a9ed407bdc1433493f8353e4e99a4802d}
+Returns true if {\itshape rect} intersects this rectangle, false otherwise. Note that a rectangle must intersect by at least 1 pixel in order for it to be considered intersecting. Edges that sit on top of each are not considered to be intersecting. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Rect\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a96fbe8d518599871cf914b2cdc2d84bc}{}\label{classprism_1_1geometry_1_1_rect_a96fbe8d518599871cf914b2cdc2d84bc}
+An empty rectangle is one where its width or height (or both) are zero or less. Returns true if it is an empy rectangle, false otherwise. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!is\+Null@{is\+Null}}
+\index{is\+Null@{is\+Null}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{is\+Null() const }{isNull() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Rect\+::is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a87f8a960d0e47a12d39f3631b8448bb7}{}\label{classprism_1_1geometry_1_1_rect_a87f8a960d0e47a12d39f3631b8448bb7}
+A null rectangle is one where the width and height are both equal to zero. Returns true if it is a null rectangle, false otherwise. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{is\+Valid() const }{isValid() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::geometry\+::\+Rect\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a448754593112b31dea56afd404007dea}{}\label{classprism_1_1geometry_1_1_rect_a448754593112b31dea56afd404007dea}
+A valid rectangle is one where its width and height are at least 1 or greater. Returns true if this is a valid rectangle, false otherwise. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!left@{left}}
+\index{left@{left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{left() const }{left() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_ae423bd72347e4d5363ee2679a7e28a5c}{}\label{classprism_1_1geometry_1_1_rect_ae423bd72347e4d5363ee2679a7e28a5c}
+Returns the x-\/coordinate of the rectangle\textquotesingle{}s left edge. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Bottom@{move\+Bottom}}
+\index{move\+Bottom@{move\+Bottom}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Bottom(const int y)}{moveBottom(const int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Bottom (
+\begin{DoxyParamCaption}
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a26169eca1c3bd117aee5529ecabdeab3}{}\label{classprism_1_1geometry_1_1_rect_a26169eca1c3bd117aee5529ecabdeab3}
+Moves the rectangle downwards so that its bottom edge is positioned at {\itshape y}. This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Bottom\+Left@{move\+Bottom\+Left}}
+\index{move\+Bottom\+Left@{move\+Bottom\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Bottom\+Left(const Point \&position)}{moveBottomLeft(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Bottom\+Left (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a6c93e7aa0cf76e483dd9844ea0c0ae92}{}\label{classprism_1_1geometry_1_1_rect_a6c93e7aa0cf76e483dd9844ea0c0ae92}
+\index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Bottom\+Right@{move\+Bottom\+Right}}
+\index{move\+Bottom\+Right@{move\+Bottom\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Bottom\+Right(const Point \&position)}{moveBottomRight(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Bottom\+Right (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a7f1e4141d8879ce54fc45e6005146a97}{}\label{classprism_1_1geometry_1_1_rect_a7f1e4141d8879ce54fc45e6005146a97}
+\index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Centre@{move\+Centre}}
+\index{move\+Centre@{move\+Centre}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Centre(const int x, const int y)}{moveCentre(const int x, const int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Centre (
+\begin{DoxyParamCaption}
+\item[{const int}]{x, }
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_af5a0e47f3771365467b596d069b1137f}{}\label{classprism_1_1geometry_1_1_rect_af5a0e47f3771365467b596d069b1137f}
+Moves the rectangle placing its centre at (x,y). This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Centre@{move\+Centre}}
+\index{move\+Centre@{move\+Centre}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Centre(const Point \&position)}{moveCentre(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Centre (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_ad26400adfe91b53bc35eb808555e17d2}{}\label{classprism_1_1geometry_1_1_rect_ad26400adfe91b53bc35eb808555e17d2}
+Moves the rectangle placing its centre point at {\itshape position}. This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Left@{move\+Left}}
+\index{move\+Left@{move\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Left(const int x)}{moveLeft(const int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Left (
+\begin{DoxyParamCaption}
+\item[{const int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a69e1fde9419a8aa4924cf301eca10a2a}{}\label{classprism_1_1geometry_1_1_rect_a69e1fde9419a8aa4924cf301eca10a2a}
+Moves the rectangle to the left so that its left edge is positioned at {\itshape x}. This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Right@{move\+Right}}
+\index{move\+Right@{move\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Right(const int x)}{moveRight(const int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Right (
+\begin{DoxyParamCaption}
+\item[{const int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_ac19e6cdd500aa51993012cd0b49e8754}{}\label{classprism_1_1geometry_1_1_rect_ac19e6cdd500aa51993012cd0b49e8754}
+Moves the rectangle to the right so that its right edge is positioned at {\itshape x}. This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+To@{move\+To}}
+\index{move\+To@{move\+To}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+To(const int x, const int y)}{moveTo(const int x, const int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+To (
+\begin{DoxyParamCaption}
+\item[{const int}]{x, }
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a8b9e6ed6ee5275599efa469c827c0fbc}{}\label{classprism_1_1geometry_1_1_rect_a8b9e6ed6ee5275599efa469c827c0fbc}
+Moves the rectangle so that its top left corner will be located at (x,y). The width and height will still be the same as before the rectangle was moved. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+To@{move\+To}}
+\index{move\+To@{move\+To}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+To(const Point \&position)}{moveTo(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a9feb882f94b8e0610a393fcf255374b3}{}\label{classprism_1_1geometry_1_1_rect_a9feb882f94b8e0610a393fcf255374b3}
+Moves the rectangle so that its top left corner will be located at {\itshape position}. The width and height will still be the same as before the rectangle was moved. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Top@{move\+Top}}
+\index{move\+Top@{move\+Top}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Top(const int y)}{moveTop(const int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Top (
+\begin{DoxyParamCaption}
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_aa19b2e99776eac3a751e678672124d19}{}\label{classprism_1_1geometry_1_1_rect_aa19b2e99776eac3a751e678672124d19}
+Moves the rectangle upwards so that its top edge is positioned at {\itshape y}. This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Top\+Left@{move\+Top\+Left}}
+\index{move\+Top\+Left@{move\+Top\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Top\+Left(const Point \&position)}{moveTopLeft(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Top\+Left (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a611fc63e8429a6eeb4677ee58e157972}{}\label{classprism_1_1geometry_1_1_rect_a611fc63e8429a6eeb4677ee58e157972}
+Moves the rectangle so that its top left corner is positioned at {\itshape position}. This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!move\+Top\+Right@{move\+Top\+Right}}
+\index{move\+Top\+Right@{move\+Top\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{move\+Top\+Right(const Point \&position)}{moveTopRight(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::move\+Top\+Right (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a75ef65067f2f99ea0d91074cda481e16}{}\label{classprism_1_1geometry_1_1_rect_a75ef65067f2f99ea0d91074cda481e16}
+Moves the rectangle so that its top right corner is positioned at {\itshape position}. This does not affect the width and height. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!normalised@{normalised}}
+\index{normalised@{normalised}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{normalised() const }{normalised() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} prism\+::geometry\+::\+Rect\+::normalised (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_ab3e98aad0d5e86a221bf7582de29492a}{}\label{classprism_1_1geometry_1_1_rect_ab3e98aad0d5e86a221bf7582de29492a}
+If a rectangle has a negative width or height it can normalised by swapping the left and right edges around and/or the top and bottom edges around as necessary. Returns a new normalised rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{operator=(const Rect \&rect)}{operator=(const Rect &rect)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} \& prism\+::geometry\+::\+Rect\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_ab5ff8b854d944cf0dcaa7fed8321246e}{}\label{classprism_1_1geometry_1_1_rect_ab5ff8b854d944cf0dcaa7fed8321246e}
+Assignment constructor \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!right@{right}}
+\index{right@{right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{right() const }{right() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a01f98f870b9dc5eff36c5c2e0ba477b4}{}\label{classprism_1_1geometry_1_1_rect_a01f98f870b9dc5eff36c5c2e0ba477b4}
+Returns the x-\/coordinate of the rectangle\textquotesingle{}s right edge. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Bottom@{set\+Bottom}}
+\index{set\+Bottom@{set\+Bottom}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Bottom(const int y)}{setBottom(const int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Bottom (
+\begin{DoxyParamCaption}
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_aa488d5deee04a94e9a3e2c4fa3ecda8b}{}\label{classprism_1_1geometry_1_1_rect_aa488d5deee04a94e9a3e2c4fa3ecda8b}
+Sets the bottom edge of the rectangle to {\itshape y} which will potentially affect the overall height but will not effect the top edge in any way. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Bottom\+Left@{set\+Bottom\+Left}}
+\index{set\+Bottom\+Left@{set\+Bottom\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Bottom\+Left(const Point \&position)}{setBottomLeft(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Bottom\+Left (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_aa35fb4766ed7e61c8a44ecacb60321ee}{}\label{classprism_1_1geometry_1_1_rect_aa35fb4766ed7e61c8a44ecacb60321ee}
+Sets the bottom left corner of the rectangle to {\itshape bottom\+Left}. It may change the width and height of the rectangle but the top right corner will not move. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Bottom\+Right@{set\+Bottom\+Right}}
+\index{set\+Bottom\+Right@{set\+Bottom\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Bottom\+Right(const Point \&position)}{setBottomRight(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Bottom\+Right (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a07edad0ec9c4fac6fe6e9e5fd2f80b6c}{}\label{classprism_1_1geometry_1_1_rect_a07edad0ec9c4fac6fe6e9e5fd2f80b6c}
+Sets the bottom right corner of the rectangle to {\itshape bottom\+Right}. It may change the width and height of the rectangle but the top left corner will not move. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Coordinates@{set\+Coordinates}}
+\index{set\+Coordinates@{set\+Coordinates}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Coordinates(const int x1, const int y1, const int x2, const int y2)}{setCoordinates(const int x1, const int y1, const int x2, const int y2)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Coordinates (
+\begin{DoxyParamCaption}
+\item[{const int}]{x1, }
+\item[{const int}]{y1, }
+\item[{const int}]{x2, }
+\item[{const int}]{y2}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a8525f68d4771bf68be7f105d36fdbac7}{}\label{classprism_1_1geometry_1_1_rect_a8525f68d4771bf68be7f105d36fdbac7}
+Sets the coordinates of this rectangle\textquotesingle{}s top left corner to (x1,y1) and the bottom right corner to (x2,y2). \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Height@{set\+Height}}
+\index{set\+Height@{set\+Height}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Height(const int height)}{setHeight(const int height)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Height (
+\begin{DoxyParamCaption}
+\item[{const int}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a18b0fde32981043ec08f863589e0f8d8}{}\label{classprism_1_1geometry_1_1_rect_a18b0fde32981043ec08f863589e0f8d8}
+Sets the height of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Left@{set\+Left}}
+\index{set\+Left@{set\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Left(const int x)}{setLeft(const int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Left (
+\begin{DoxyParamCaption}
+\item[{const int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_ac97b8d2c15064a26b6f26833e7001fbe}{}\label{classprism_1_1geometry_1_1_rect_ac97b8d2c15064a26b6f26833e7001fbe}
+Sets the left side of the rectangle to {\itshape x} which will potentially alter the width of the rectangle but will not affect the right edge in any way. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Rect@{set\+Rect}}
+\index{set\+Rect@{set\+Rect}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Rect(const int x, const int y, const int width, const int height)}{setRect(const int x, const int y, const int width, const int height)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Rect (
+\begin{DoxyParamCaption}
+\item[{const int}]{x, }
+\item[{const int}]{y, }
+\item[{const int}]{width, }
+\item[{const int}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a8ae3b5005957a66f52cc3a2809572c62}{}\label{classprism_1_1geometry_1_1_rect_a8ae3b5005957a66f52cc3a2809572c62}
+\index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Right@{set\+Right}}
+\index{set\+Right@{set\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Right(const int x)}{setRight(const int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Right (
+\begin{DoxyParamCaption}
+\item[{const int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_af077efaa0e61445eca6a832dd54daacc}{}\label{classprism_1_1geometry_1_1_rect_af077efaa0e61445eca6a832dd54daacc}
+Sets the right side of the rectangle to {\itshape x} which will potentially alter the width of the rectangle but will not affect the left edge in any way. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Size(const Size \&size)}{setSize(const Size &size)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Size} \&}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a21d8240b960c0940dc9bed90466b8bdc}{}\label{classprism_1_1geometry_1_1_rect_a21d8240b960c0940dc9bed90466b8bdc}
+Sets the rectangle\textquotesingle{}s size to {\itshape size}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Top@{set\+Top}}
+\index{set\+Top@{set\+Top}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Top(const int y)}{setTop(const int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Top (
+\begin{DoxyParamCaption}
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a126bf4bdf0581056cc5152c1ad394019}{}\label{classprism_1_1geometry_1_1_rect_a126bf4bdf0581056cc5152c1ad394019}
+Sets the top edge of the rectangle to {\itshape y} which will potentially affect the height of the rectangle but will not affect the bottom edge in any way. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Top\+Left@{set\+Top\+Left}}
+\index{set\+Top\+Left@{set\+Top\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Top\+Left(const Point \&position)}{setTopLeft(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Top\+Left (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a5667e4527098948cb8bc597f43a46b59}{}\label{classprism_1_1geometry_1_1_rect_a5667e4527098948cb8bc597f43a46b59}
+Sets the top left corner of the rectangle to {\itshape top\+Left}. It may change the width and height of the rectangle but the bottom right corner will not move. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Top\+Right@{set\+Top\+Right}}
+\index{set\+Top\+Right@{set\+Top\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Top\+Right(const Point \&position)}{setTopRight(const Point &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Top\+Right (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{position}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_ab9a9908492adcd4fc489ba3c28dfc4ae}{}\label{classprism_1_1geometry_1_1_rect_ab9a9908492adcd4fc489ba3c28dfc4ae}
+Sets the top right corner of the rectangle to {\itshape top\+Right}. It may change the width and height of the rectangle but the bottom left corner will not move. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Width(const int width)}{setWidth(const int width)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::set\+Width (
+\begin{DoxyParamCaption}
+\item[{const int}]{width}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a2b418c3a8bfa81d1dfcdff62f532f7f5}{}\label{classprism_1_1geometry_1_1_rect_a2b418c3a8bfa81d1dfcdff62f532f7f5}
+Sets the width of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!setX@{setX}}
+\index{setX@{setX}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+X(const int x)}{setX(const int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::setX (
+\begin{DoxyParamCaption}
+\item[{const int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a42106f226ff5487937030da6781dcd4c}{}\label{classprism_1_1geometry_1_1_rect_a42106f226ff5487937030da6781dcd4c}
+Sets the x-\/coordinate of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!setY@{setY}}
+\index{setY@{setY}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{set\+Y(const int y)}{setY(const int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::setY (
+\begin{DoxyParamCaption}
+\item[{const int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a22ed3d78f25ddef614872e5f39ee102d}{}\label{classprism_1_1geometry_1_1_rect_a22ed3d78f25ddef614872e5f39ee102d}
+Sets the y-\/coordinate of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!size@{size}}
+\index{size@{size}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Size} prism\+::geometry\+::\+Rect\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a5f848db57909f09943fc21fd45a41da2}{}\label{classprism_1_1geometry_1_1_rect_a5f848db57909f09943fc21fd45a41da2}
+Returns a \hyperlink{classprism_1_1geometry_1_1_size}{Size} object representing the size of this rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!top@{top}}
+\index{top@{top}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{top() const }{top() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::top (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_ae05c3819e7cbbe4e3438ed477b927251}{}\label{classprism_1_1geometry_1_1_rect_ae05c3819e7cbbe4e3438ed477b927251}
+Returns the y-\/coordinate of the rectangle\textquotesingle{}s top edge. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!top\+Left@{top\+Left}}
+\index{top\+Left@{top\+Left}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{top\+Left() const }{topLeft() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} prism\+::geometry\+::\+Rect\+::top\+Left (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_ae1286050e3e1d841e065170e6fa213d2}{}\label{classprism_1_1geometry_1_1_rect_ae1286050e3e1d841e065170e6fa213d2}
+Returns the top left coordinate of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!top\+Right@{top\+Right}}
+\index{top\+Right@{top\+Right}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{top\+Right() const }{topRight() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Point} prism\+::geometry\+::\+Rect\+::top\+Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a7220a37ad32137c12b1f1e29343f60bd}{}\label{classprism_1_1geometry_1_1_rect_a7220a37ad32137c12b1f1e29343f60bd}
+Returns the coordinate of the top right of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!translate@{translate}}
+\index{translate@{translate}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{translate(const int dx, const int dy)}{translate(const int dx, const int dy)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::translate (
+\begin{DoxyParamCaption}
+\item[{const int}]{dx, }
+\item[{const int}]{dy}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a204cfa6f9844054c19845cd6fb70148c}{}\label{classprism_1_1geometry_1_1_rect_a204cfa6f9844054c19845cd6fb70148c}
+Translates the rectangle relative to its current position by the amount of {\itshape dx} on the x-\/axis and by the amount of {\itshape dy} on the y-\/axis. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!translate@{translate}}
+\index{translate@{translate}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{translate(const Point \&offset)}{translate(const Point &offset)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::geometry\+::\+Rect\+::translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{offset}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1geometry_1_1_rect_a9cc62fffe094f07d175e97cd392dd69b}{}\label{classprism_1_1geometry_1_1_rect_a9cc62fffe094f07d175e97cd392dd69b}
+Translates the rectangle relative to its current position by the amount of {\itshape offset}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!translated@{translated}}
+\index{translated@{translated}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{translated(const int dx, const int dy) const }{translated(const int dx, const int dy) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} prism\+::geometry\+::\+Rect\+::translated (
+\begin{DoxyParamCaption}
+\item[{const int}]{dx, }
+\item[{const int}]{dy}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a6705b147640d1170b3b8bd95b8291b86}{}\label{classprism_1_1geometry_1_1_rect_a6705b147640d1170b3b8bd95b8291b86}
+Returns a copy of this rectangle that has been translated relative to its current position by the amount of {\itshape dx} on the x-\/axis and by the amount of dy on the y-\/axis. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!translated@{translated}}
+\index{translated@{translated}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{translated(const Point \&offset) const }{translated(const Point &offset) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} prism\+::geometry\+::\+Rect\+::translated (
+\begin{DoxyParamCaption}
+\item[{const {\bf Point} \&}]{offset}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a6caba9800b45624e4e365e90ee3e1c76}{}\label{classprism_1_1geometry_1_1_rect_a6caba9800b45624e4e365e90ee3e1c76}
+Returns a copy of this rectangle that has been translated relative to its current position by the amount of {\itshape offset}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!transposed@{transposed}}
+\index{transposed@{transposed}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{transposed() const }{transposed() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} prism\+::geometry\+::\+Rect\+::transposed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_ac8f4756c021ee21a653433b91d9ec959}{}\label{classprism_1_1geometry_1_1_rect_ac8f4756c021ee21a653433b91d9ec959}
+Returns a new rectangle with the same top left corner but with the width and height swapped around. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!united@{united}}
+\index{united@{united}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{united(const Rect \&rect) const }{united(const Rect &rect) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rect} prism\+::geometry\+::\+Rect\+::united (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{rect}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_abf31fd9bcc26fa264dc91db7ec3f87bf}{}\label{classprism_1_1geometry_1_1_rect_abf31fd9bcc26fa264dc91db7ec3f87bf}
+Returns a new bounding rectangle that contains both this rectangle and {\itshape rect}. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!width@{width}}
+\index{width@{width}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{width() const }{width() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_afe228be73477fba4bb5865c23d2761f2}{}\label{classprism_1_1geometry_1_1_rect_afe228be73477fba4bb5865c23d2761f2}
+Returns the width of the rectangle. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!x@{x}}
+\index{x@{x}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{x() const }{x() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::x (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}{}\label{classprism_1_1geometry_1_1_rect_a7ecf0e30c1485b8b6ed1c83625e0ce4c}
+Returns the x-\/coordinate of the rectangle\textquotesingle{}s left edge. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!y@{y}}
+\index{y@{y}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{y() const }{y() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::geometry\+::\+Rect\+::y (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}{}\label{classprism_1_1geometry_1_1_rect_aae87aa965538d7d9ba24050d111fbd0f}
+Returns the y-\/coordinate of the rectangle\textquotesingle{}s top edge. 
+
+\subsection{Friends And Related Function Documentation}
+\index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{operator"!=}{operator!=}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{r1, }
+\item[{const {\bf Rect} \&}]{r2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_rect_a649643043218228aae2b7d95e1a95dba}{}\label{classprism_1_1geometry_1_1_rect_a649643043218228aae2b7d95e1a95dba}
+Returns true if the rectangles {\itshape r1} and {\itshape r2} are not equal, false otherwise. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_rect_a729ddc4e5633a601a2813d124209056f}{}\label{classprism_1_1geometry_1_1_rect_a729ddc4e5633a601a2813d124209056f}
+Allows an instance of \hyperlink{classprism_1_1geometry_1_1_rect}{Rect} to be written to the ostream and returns a reference to the ostream. \index{prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::geometry\+::\+Rect@{prism\+::geometry\+::\+Rect}}
+\subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rect} \&}]{r1, }
+\item[{const {\bf Rect} \&}]{r2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1geometry_1_1_rect_ab32eafa53d6e2fedc5c4f4beeb10d12a}{}\label{classprism_1_1geometry_1_1_rect_ab32eafa53d6e2fedc5c4f4beeb10d12a}
+===================================================================== \subsection*{Related non-\/members }
+
+Returns true if the rectangles {\itshape r1} and {\itshape r2} are equal, false otherwise. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/geometry/\hyperlink{_rect_8h}{Rect.\+h}\item 
+src/geometry/\hyperlink{_rect_8cpp}{Rect.\+cpp}\end{DoxyCompactItemize}

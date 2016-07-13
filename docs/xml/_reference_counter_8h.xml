@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_reference_counter_8h" kind="file" language="C++">
+    <compoundname>ReferenceCounter.h</compoundname>
+    <includes local="no">ostream</includes>
+    <includedby refid="_shared_pointer_8h" local="yes">inc/memory/SharedPointer.h</includedby>
+    <incdepgraph>
+      <node id="215">
+        <label>inc/memory/ReferenceCounter.h</label>
+        <link refid="ReferenceCounter.h"/>
+        <childnode refid="216" relation="include">
+        </childnode>
+      </node>
+      <node id="216">
+        <label>ostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="217">
+        <label>inc/memory/ReferenceCounter.h</label>
+        <link refid="ReferenceCounter.h"/>
+        <childnode refid="218" relation="include">
+        </childnode>
+      </node>
+      <node id="219">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="218">
+        <label>inc/memory/SharedPointer.h</label>
+        <link refid="_shared_pointer_8h"/>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classprism_1_1memory_1_1_reference_counter" prot="public">prism::memory::ReferenceCounter</innerclass>
+    <innernamespace refid="namespaceprism">prism</innernamespace>
+    <innernamespace refid="namespaceprism_1_1memory">prism::memory</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>ReferenceCounter.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Jul<sp/>10,<sp/>2013</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>iainhemstock</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>REFERENCECOUNTER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REFERENCECOUNTER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceprism" kindref="compound">prism</ref><sp/>{</highlight></codeline>
+<codeline lineno="13" refid="namespaceprism_1_1memory" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">memory<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classprism_1_1memory_1_1_reference_counter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classprism_1_1memory_1_1_reference_counter" kindref="compound">ReferenceCounter</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17" refid="classprism_1_1memory_1_1_reference_counter_1af8c1c26521313d6de262c10baec32074" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1memory_1_1_reference_counter_1af8c1c26521313d6de262c10baec32074" kindref="member">count</ref>;</highlight></codeline>
+<codeline lineno="18" refid="classprism_1_1memory_1_1_reference_counter_1a579cbef71872c532ad83002be75a23d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1memory_1_1_reference_counter_1a579cbef71872c532ad83002be75a23d8" kindref="member">ReferenceCounter</ref>()<sp/>:<sp/>count(0)<sp/>{}</highlight></codeline>
+<codeline lineno="19" refid="classprism_1_1memory_1_1_reference_counter_1ac52f643a00b93db43d70a34082d64a7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classprism_1_1memory_1_1_reference_counter_1ac52f643a00b93db43d70a34082d64a7f" kindref="member">~ReferenceCounter</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="20" refid="classprism_1_1memory_1_1_reference_counter_1a085a910db4335fc4ed0fa0da1ebe0795" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1memory_1_1_reference_counter_1a085a910db4335fc4ed0fa0da1ebe0795" kindref="member">ref</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>++<ref refid="classprism_1_1memory_1_1_reference_counter_1af8c1c26521313d6de262c10baec32074" kindref="member">count</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="21" refid="classprism_1_1memory_1_1_reference_counter_1abb6c180c28342f1f72fa114f44f2e618" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classprism_1_1memory_1_1_reference_counter_1abb6c180c28342f1f72fa114f44f2e618" kindref="member">deref</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>--<ref refid="classprism_1_1memory_1_1_reference_counter_1af8c1c26521313d6de262c10baec32074" kindref="member">count</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>REFERENCECOUNTER_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="inc/memory/ReferenceCounter.h"/>
+  </compounddef>
+</doxygen>

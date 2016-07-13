@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1utils_1_1_mathf" kind="class" language="C++" prot="public">
+    <compoundname>prism::utils::Mathf</compoundname>
+    <includes refid="_mathf_8h" local="no">Mathf.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classprism_1_1utils_1_1_mathf_1adf864feded39d563bcf0c5735592a314" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float prism::utils::Mathf::PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <initializer>= 3.141592f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Mathf.h" line="11" column="1" bodyfile="inc/utils/Mathf.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classprism_1_1utils_1_1_mathf_1a6fe512675f5290ab6c7bad4a43d3b167" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::utils::Mathf::correctFloatingPointError</definition>
+        <argsstring>(float &amp;num)</argsstring>
+        <name>correctFloatingPointError</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Mathf.h" line="14" column="1" bodyfile="src/utils/Mathf.cpp" bodystart="12" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1utils_1_1_mathf_1a2283a2b424cc860e5c17e8c522c0420d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::utils::Mathf::degreeToRadian</definition>
+        <argsstring>(float &amp;angle)</argsstring>
+        <name>degreeToRadian</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts the angle from degrees to radians and stores it in the reference angle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Mathf.h" line="15" column="1" bodyfile="src/utils/Mathf.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1utils_1_1_mathf_1a1e40227f5e8ead6e69e2ef22e9b4b58a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const bool</type>
+        <definition>const bool prism::utils::Mathf::isPrime</definition>
+        <argsstring>(const int n)</argsstring>
+        <name>isPrime</name>
+        <param>
+          <type>const int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if /em n is a prime number, false otherwise. A prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Mathf.h" line="16" column="1" bodyfile="src/utils/Mathf.cpp" bodystart="41" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1utils_1_1_mathf_1a41202cd8a2b4137f64318ef6e39d6e9b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::utils::Mathf::radianToDegree</definition>
+        <argsstring>(float &amp;angle)</argsstring>
+        <name>radianToDegree</name>
+        <param>
+          <type>float &amp;</type>
+          <declname>angle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts the angle from radians to degrees and stores it in the reference angle. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Mathf.h" line="17" column="1" bodyfile="src/utils/Mathf.cpp" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1utils_1_1_mathf_1a7dfe7f182ab93f0768b83e628f590d75" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float prism::utils::Mathf::roundTo</definition>
+        <argsstring>(const float f, const int decimalPlaces)</argsstring>
+        <name>roundTo</name>
+        <param>
+          <type>const float</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>decimalPlaces</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Rounds a float to the number of decimal places specified. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/utils/Mathf.h" line="18" column="1" bodyfile="src/utils/Mathf.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/utils/Mathf.h" line="9" column="1" bodyfile="inc/utils/Mathf.h" bodystart="9" bodyend="20"/>
+    <listofallmembers>
+      <member refid="classprism_1_1utils_1_1_mathf_1a6fe512675f5290ab6c7bad4a43d3b167" prot="public" virt="non-virtual"><scope>prism::utils::Mathf</scope><name>correctFloatingPointError</name></member>
+      <member refid="classprism_1_1utils_1_1_mathf_1a2283a2b424cc860e5c17e8c522c0420d" prot="public" virt="non-virtual"><scope>prism::utils::Mathf</scope><name>degreeToRadian</name></member>
+      <member refid="classprism_1_1utils_1_1_mathf_1a1e40227f5e8ead6e69e2ef22e9b4b58a" prot="public" virt="non-virtual"><scope>prism::utils::Mathf</scope><name>isPrime</name></member>
+      <member refid="classprism_1_1utils_1_1_mathf_1adf864feded39d563bcf0c5735592a314" prot="public" virt="non-virtual"><scope>prism::utils::Mathf</scope><name>PI</name></member>
+      <member refid="classprism_1_1utils_1_1_mathf_1a41202cd8a2b4137f64318ef6e39d6e9b" prot="public" virt="non-virtual"><scope>prism::utils::Mathf</scope><name>radianToDegree</name></member>
+      <member refid="classprism_1_1utils_1_1_mathf_1a7dfe7f182ab93f0768b83e628f590d75" prot="public" virt="non-virtual"><scope>prism::utils::Mathf</scope><name>roundTo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

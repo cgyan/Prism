@@ -1,0 +1,16 @@
+Deque Base
+----------
+
+DequeImpl impl;
+const int map_size = 8;
+
+DequeBase() : impl();
+DequeBase(const int num_elements);
+
+T* 		allocateNode()
+void 	deallocateNode(T* node)
+T** 	allocateMap()
+void 	deallocateMap(T** map)
+void	initialiseMap(const int)
+void 	createNodes(T** start, T** finish)
+void	destroyNodes(T** start, T** finish)

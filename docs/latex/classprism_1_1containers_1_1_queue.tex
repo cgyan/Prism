@@ -1,0 +1,119 @@
+\hypertarget{classprism_1_1containers_1_1_queue}{}\section{prism\+:\+:containers\+:\+:Queue$<$ T, Container\+Type $>$ Class Template Reference}
+\label{classprism_1_1containers_1_1_queue}\index{prism\+::containers\+::\+Queue$<$ T, Container\+Type $>$@{prism\+::containers\+::\+Queue$<$ T, Container\+Type $>$}}
+
+
+{\ttfamily \#include $<$Queue.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1containers_1_1_queue_ac348377c8390c51d48125dc2e498f366}{Queue} ()
+\item 
+T \& \hyperlink{classprism_1_1containers_1_1_queue_aa37c9828a25ff8fa7dd27282b9167aad}{back} ()
+\item 
+const T \& \hyperlink{classprism_1_1containers_1_1_queue_aade9e9e56498bdabc1486ce6851f9766}{back} () const 
+\item 
+T \hyperlink{classprism_1_1containers_1_1_queue_ab03e296b078e60e13fb14aae9f659578}{dequeue} ()
+\item 
+void \hyperlink{classprism_1_1containers_1_1_queue_ac402c1b555ff8740d22739d43d95e840}{enqueue} (const T \&value)
+\item 
+T \& \hyperlink{classprism_1_1containers_1_1_queue_a6100bdc1429ccc3e0d6b94aaa16cb080}{front} ()
+\item 
+const T \& \hyperlink{classprism_1_1containers_1_1_queue_a6b341ec9d503fdf9b1815d2e515af8f9}{front} () const 
+\item 
+const bool \hyperlink{classprism_1_1containers_1_1_queue_a03c2642fd93ae3082a8fe2b69b9e7b1f}{is\+Empty} () const 
+\item 
+T \hyperlink{classprism_1_1containers_1_1_queue_a721a807abc3cc08a6cba3de3640a1a7d}{pop} ()
+\item 
+void \hyperlink{classprism_1_1containers_1_1_queue_a15cdb3cdc14f7491b6cad6f6cc62d330}{push} (const T \&value)
+\item 
+const int \hyperlink{classprism_1_1containers_1_1_queue_a9eb85b27bc0d969d1cd76a971ff433fc}{size} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!Queue@{Queue}}
+\index{Queue@{Queue}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{Queue()}{Queue()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::{\bf Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_queue_ac348377c8390c51d48125dc2e498f366}{}\label{classprism_1_1containers_1_1_queue_ac348377c8390c51d48125dc2e498f366}
+Creates an empty queue. 
+
+\subsection{Member Function Documentation}
+\index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!back@{back}}
+\index{back@{back}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{back()}{back()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ T \& {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_queue_aa37c9828a25ff8fa7dd27282b9167aad}{}\label{classprism_1_1containers_1_1_queue_aa37c9828a25ff8fa7dd27282b9167aad}
+Returns a reference to the last item in the queue. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!back@{back}}
+\index{back@{back}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{back() const }{back() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const T \& {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_queue_aade9e9e56498bdabc1486ce6851f9766}{}\label{classprism_1_1containers_1_1_queue_aade9e9e56498bdabc1486ce6851f9766}
+Returns a const reference to the last item in the queue. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{dequeue()}{dequeue()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ T {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::dequeue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_queue_ab03e296b078e60e13fb14aae9f659578}{}\label{classprism_1_1containers_1_1_queue_ab03e296b078e60e13fb14aae9f659578}
+Removes and returns the item at the front of the queue. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{enqueue(const T \&value)}{enqueue(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ void {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::enqueue (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_queue_ac402c1b555ff8740d22739d43d95e840}{}\label{classprism_1_1containers_1_1_queue_ac402c1b555ff8740d22739d43d95e840}
+Adds {\itshape value} at the end of the queue. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!front@{front}}
+\index{front@{front}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{front()}{front()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ T \& {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_queue_a6100bdc1429ccc3e0d6b94aaa16cb080}{}\label{classprism_1_1containers_1_1_queue_a6100bdc1429ccc3e0d6b94aaa16cb080}
+Returns a reference to the item at the front of the queue. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!front@{front}}
+\index{front@{front}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{front() const }{front() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const T \& {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_queue_a6b341ec9d503fdf9b1815d2e515af8f9}{}\label{classprism_1_1containers_1_1_queue_a6b341ec9d503fdf9b1815d2e515af8f9}
+Returns a const reference to the item at the front of the queue. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{is\+Empty() const }{isEmpty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const bool {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_queue_a03c2642fd93ae3082a8fe2b69b9e7b1f}{}\label{classprism_1_1containers_1_1_queue_a03c2642fd93ae3082a8fe2b69b9e7b1f}
+Returns true if the queue is empty, false otherwise. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!pop@{pop}}
+\index{pop@{pop}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{pop()}{pop()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ T {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_queue_a721a807abc3cc08a6cba3de3640a1a7d}{}\label{classprism_1_1containers_1_1_queue_a721a807abc3cc08a6cba3de3640a1a7d}
+Removes and returns the first item in the queue. Equivalent to \hyperlink{classprism_1_1containers_1_1_queue_ab03e296b078e60e13fb14aae9f659578}{dequeue()}. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!push@{push}}
+\index{push@{push}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{push(const T \&value)}{push(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ void {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::push (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1containers_1_1_queue_a15cdb3cdc14f7491b6cad6f6cc62d330}{}\label{classprism_1_1containers_1_1_queue_a15cdb3cdc14f7491b6cad6f6cc62d330}
+Adds {\itshape value} at the end of the queue. Equivalent to \hyperlink{classprism_1_1containers_1_1_queue_ac402c1b555ff8740d22739d43d95e840}{enqueue()}. \index{prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}!size@{size}}
+\index{size@{size}!prism\+::containers\+::\+Queue@{prism\+::containers\+::\+Queue}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Container\+Type $>$ const int {\bf prism\+::containers\+::\+Queue}$<$ T, Container\+Type $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1containers_1_1_queue_a9eb85b27bc0d969d1cd76a971ff433fc}{}\label{classprism_1_1containers_1_1_queue_a9eb85b27bc0d969d1cd76a971ff433fc}
+Returns how many items are in the queue. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/containers/\hyperlink{_queue_8h}{Queue.\+h}\end{DoxyCompactItemize}

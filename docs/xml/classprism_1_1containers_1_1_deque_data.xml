@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1containers_1_1_deque_data" kind="class" language="C++" prot="public">
+    <compoundname>prism::containers::DequeData</compoundname>
+    <includes refid="___deque_data_8h" local="no">_DequeData.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classprism_1_1containers_1_1_deque_data_1aed08082decb29717e0d968fabb1f1ea4" prot="public" static="no">
+        <name>@0</name>
+        <enumvalue id="classprism_1_1containers_1_1_deque_data_1aed08082decb29717e0d968fabb1f1ea4a772861c6d49ff3131a0f2acd7e4b588b" prot="public">
+          <name>CHUNK_SIZE</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="33" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classprism_1_1containers_1_1_deque_data_1a4678831c6b38fda4c47a197aceba0553" prot="private" static="no">
+        <type><ref refid="classprism_1_1containers_1_1_deque_iterator" kindref="compound">DequeIterator</ref>&lt; T &gt;</type>
+        <definition>typedef DequeIterator&lt;T&gt; prism::containers::DequeData&lt; T &gt;::iterator</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="27" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classprism_1_1containers_1_1_deque_data_1a1760fab65f72a59bf121f84042409462" prot="public" static="no" mutable="no">
+        <type>T **</type>
+        <definition>T** prism::containers::DequeData&lt; T &gt;::map</definition>
+        <argsstring></argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="29" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1containers_1_1_deque_data_1a0fff90781042b14137e69017dc0d6479" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int prism::containers::DequeData&lt; T &gt;::mapSize</definition>
+        <argsstring></argsstring>
+        <name>mapSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="30" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1containers_1_1_deque_data_1a20b372c923c7c2597f4a497435d34b42" prot="public" static="no" mutable="no">
+        <type><ref refid="classprism_1_1containers_1_1_deque_iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator prism::containers::DequeData&lt; T &gt;::firstChunk</definition>
+        <argsstring></argsstring>
+        <name>firstChunk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="31" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classprism_1_1containers_1_1_deque_data_1a8f635e8ceaa6bca00bec0f54079abea4" prot="public" static="no" mutable="no">
+        <type><ref refid="classprism_1_1containers_1_1_deque_iterator" kindref="compound">iterator</ref></type>
+        <definition>iterator prism::containers::DequeData&lt; T &gt;::lastChunk</definition>
+        <argsstring></argsstring>
+        <name>lastChunk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="32" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a6df573bc442a362759d91e5422134fe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::DequeData&lt; T &gt;::DequeData</definition>
+        <argsstring>()</argsstring>
+        <name>DequeData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="35" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1acfca954633c170f1a7fa7faacb013d6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::DequeData&lt; T &gt;::DequeData</definition>
+        <argsstring>(const int numElements)</argsstring>
+        <name>DequeData</name>
+        <param>
+          <type>const int</type>
+          <declname>numElements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="36" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a0ada47425797d68443f27823bfa08cea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T *</type>
+        <definition>T * prism::containers::DequeData&lt; T &gt;::allocateChunk</definition>
+        <argsstring>() const </argsstring>
+        <name>allocateChunk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="37" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a269638b0bd962c93931c5898482b4f44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>T **</type>
+        <definition>T ** prism::containers::DequeData&lt; T &gt;::allocateMap</definition>
+        <argsstring>(const int size) const </argsstring>
+        <name>allocateMap</name>
+        <param>
+          <type>const int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="38" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a850f8ec25965cf841dd64a97d2e77f40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::createChunks</definition>
+        <argsstring>(T **begin, T **end)</argsstring>
+        <name>createChunks</name>
+        <param>
+          <type>T **</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>T **</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="39" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="87" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a6fdfcbf7075005a085405b7ec0ae210e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::deallocateChunk</definition>
+        <argsstring>(T *chunk)</argsstring>
+        <name>deallocateChunk</name>
+        <param>
+          <type>T *</type>
+          <declname>chunk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="40" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1aaae5b68eaa8045c9a299daf457fe2a1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::deallocateMap</definition>
+        <argsstring>()</argsstring>
+        <name>deallocateMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="41" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="105" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a688c8749c8ccab76a351192743c1d557" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::destroyChunks</definition>
+        <argsstring>(T **begin, T **end)</argsstring>
+        <name>destroyChunks</name>
+        <param>
+          <type>T **</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>T **</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="42" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="116" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1ae17c6cb94116e58431aab0ca0d94b41e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::initializeMap</definition>
+        <argsstring>(const int numElements)</argsstring>
+        <name>initializeMap</name>
+        <param>
+          <type>const int</type>
+          <declname>numElements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="43" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="125" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1ab27311b60cdca11069661aa4a5233958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::reallocateMap</definition>
+        <argsstring>(const int numChunks)</argsstring>
+        <name>reallocateMap</name>
+        <param>
+          <type>const int</type>
+          <declname>numChunks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="44" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="145" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a134621784e64e855754d187c4babd03c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::reserveMapAtFront</definition>
+        <argsstring>(const int numChunks)</argsstring>
+        <name>reserveMapAtFront</name>
+        <param>
+          <type>const int</type>
+          <declname>numChunks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="45" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="163" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_deque_data_1a66b8f37117266f764d5ea3f60ee4a948" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void prism::containers::DequeData&lt; T &gt;::debugMap</definition>
+        <argsstring>() const </argsstring>
+        <name>debugMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/aux/_DequeData.h" line="47" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="171" bodyend="178"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/containers/aux/_DequeData.h" line="26" column="1" bodyfile="inc/containers/aux/_DequeData.h" bodystart="26" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a0ada47425797d68443f27823bfa08cea" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>allocateChunk</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a269638b0bd962c93931c5898482b4f44" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>allocateMap</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1aed08082decb29717e0d968fabb1f1ea4a772861c6d49ff3131a0f2acd7e4b588b" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>CHUNK_SIZE</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a850f8ec25965cf841dd64a97d2e77f40" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>createChunks</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a6fdfcbf7075005a085405b7ec0ae210e" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>deallocateChunk</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1aaae5b68eaa8045c9a299daf457fe2a1f" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>deallocateMap</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a66b8f37117266f764d5ea3f60ee4a948" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>debugMap</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a6df573bc442a362759d91e5422134fe2" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>DequeData</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1acfca954633c170f1a7fa7faacb013d6d" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>DequeData</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a688c8749c8ccab76a351192743c1d557" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>destroyChunks</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a20b372c923c7c2597f4a497435d34b42" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>firstChunk</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1ae17c6cb94116e58431aab0ca0d94b41e" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>initializeMap</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a4678831c6b38fda4c47a197aceba0553" prot="private" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>iterator</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a8f635e8ceaa6bca00bec0f54079abea4" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>lastChunk</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a1760fab65f72a59bf121f84042409462" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>map</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a0fff90781042b14137e69017dc0d6479" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>mapSize</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1ab27311b60cdca11069661aa4a5233958" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>reallocateMap</name></member>
+      <member refid="classprism_1_1containers_1_1_deque_data_1a134621784e64e855754d187c4babd03c" prot="public" virt="non-virtual"><scope>prism::containers::DequeData</scope><name>reserveMapAtFront</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

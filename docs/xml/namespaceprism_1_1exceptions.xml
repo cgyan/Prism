@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceprism_1_1exceptions" kind="namespace" language="C++">
+    <compoundname>prism::exceptions</compoundname>
+    <innerclass refid="classprism_1_1exceptions_1_1_exception" prot="public">prism::exceptions::Exception</innerclass>
+    <innerclass refid="classprism_1_1exceptions_1_1_out_of_bounds_exception" prot="public">prism::exceptions::OutOfBoundsException</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="inc/exceptions/Exception.h" line="15" column="1"/>
+  </compounddef>
+</doxygen>

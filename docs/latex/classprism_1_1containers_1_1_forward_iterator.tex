@@ -1,0 +1,223 @@
+\hypertarget{classprism_1_1containers_1_1_forward_iterator}{}\section{prism\+:\+:containers\+:\+:Forward\+Iterator$<$ T $>$ Class Template Reference}
+\label{classprism_1_1containers_1_1_forward_iterator}\index{prism\+::containers\+::\+Forward\+Iterator$<$ T $>$@{prism\+::containers\+::\+Forward\+Iterator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Iterator.\+h$>$}
+
+Inheritance diagram for prism\+:\+:containers\+:\+:Forward\+Iterator$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classprism_1_1containers_1_1_forward_iterator}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{classprism_1_1containers_1_1_forward_iterator_a1543170bc355e16a500f376e748f3031}{value\+\_\+type}
+\item 
+typedef std\+::ptrdiff\+\_\+t \hyperlink{classprism_1_1containers_1_1_forward_iterator_a79680986bd39e3c2f0ab1e008b1150e5}{difference\+\_\+type}
+\item 
+typedef \hyperlink{structprism_1_1containers_1_1forward__iterator__tag}{forward\+\_\+iterator\+\_\+tag} \hyperlink{classprism_1_1containers_1_1_forward_iterator_aaa8389de2916ab8609f1c92e789d0b92}{iterator\+\_\+category}
+\item 
+typedef T \& \hyperlink{classprism_1_1containers_1_1_forward_iterator_a4e3141e23f97c87d787c42e5e25cfdf8}{reference}
+\item 
+typedef T $\ast$ \hyperlink{classprism_1_1containers_1_1_forward_iterator_ad4bc81f412acc7a2d12e592078ed51aa}{pointer}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1containers_1_1_forward_iterator_a7852817d50449b2ab5fc73f071c10c8d}{Forward\+Iterator} ()
+\item 
+\hyperlink{classprism_1_1containers_1_1_forward_iterator_a469936218cb7f00b04d13340afeff943}{Forward\+Iterator} (T $\ast$\hyperlink{classprism_1_1containers_1_1_forward_iterator_afae3bf32acc98ab535b9bdb8156ba58f}{p})
+\item 
+\hyperlink{classprism_1_1containers_1_1_forward_iterator_a6b7c7a4d1ff9c119826689fd75f8037e}{Forward\+Iterator} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator}$<$ T $>$ \&copy)
+\item 
+virtual \hyperlink{classprism_1_1containers_1_1_forward_iterator_afb9d08367d5a03fcaca4524f799b702c}{$\sim$\+Forward\+Iterator} ()
+\item 
+virtual \hyperlink{classprism_1_1containers_1_1_forward_iterator_a4e3141e23f97c87d787c42e5e25cfdf8}{reference} \hyperlink{classprism_1_1containers_1_1_forward_iterator_a4bb697c101c3430ab83380e93984c834}{operator$\ast$} ()
+\item 
+virtual \hyperlink{classprism_1_1containers_1_1_forward_iterator_ad4bc81f412acc7a2d12e592078ed51aa}{pointer} \hyperlink{classprism_1_1containers_1_1_forward_iterator_a6de6139a20b187db48db7eda3e137d22}{operator-\/$>$} ()
+\item 
+virtual \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \& \hyperlink{classprism_1_1containers_1_1_forward_iterator_a650b575bab2dd1f9b20e2a0feb3b8b52}{operator++} ()
+\item 
+virtual \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \hyperlink{classprism_1_1containers_1_1_forward_iterator_a52c1a971cf72b2a085defacd771e6c6e}{operator++} (int junk)
+\item 
+virtual \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \& \hyperlink{classprism_1_1containers_1_1_forward_iterator_a21a1aaeb388a2d31a750629c3dec4f5c}{operator=} (\hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} rhs)
+\item 
+virtual bool \hyperlink{classprism_1_1containers_1_1_forward_iterator_a4f58dc3e4905d6ac25b5c4c02ab1477e}{operator!=} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} rhs)
+\item 
+virtual bool \hyperlink{classprism_1_1containers_1_1_forward_iterator_a6b9425598a719eb264beffe220acbfc8}{operator==} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} rhs)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classprism_1_1containers_1_1_forward_iterator_afae3bf32acc98ab535b9bdb8156ba58f}{p}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1containers_1_1_forward_iterator_a79680986bd39e3c2f0ab1e008b1150e5}{difference\+\_\+type} \hyperlink{classprism_1_1containers_1_1_forward_iterator_aaad8cb3873bc75101e6aec86fda597b0}{operator-\/} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&lhs, const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&rhs)
+\item 
+const bool \hyperlink{classprism_1_1containers_1_1_forward_iterator_a6b30659c53f42b141d66d983aa919acd}{operator$<$} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&lhs, const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&rhs)
+\item 
+const bool \hyperlink{classprism_1_1containers_1_1_forward_iterator_a99354852714dd199e60ce045023c2573}{operator$>$} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&lhs, const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&rhs)
+\item 
+const bool \hyperlink{classprism_1_1containers_1_1_forward_iterator_a0587c766ccabd72167e87461c8637cc1}{operator$<$=} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&lhs, const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&rhs)
+\item 
+const bool \hyperlink{classprism_1_1containers_1_1_forward_iterator_ab9192c8005124b4eee6a698a74d71e01}{operator$>$=} (const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&lhs, const \hyperlink{classprism_1_1containers_1_1_forward_iterator}{Forward\+Iterator} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!difference\+\_\+type@{difference\+\_\+type}}
+\index{difference\+\_\+type@{difference\+\_\+type}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef std\+::ptrdiff\+\_\+t {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a79680986bd39e3c2f0ab1e008b1150e5}{}\label{classprism_1_1containers_1_1_forward_iterator_a79680986bd39e3c2f0ab1e008b1150e5}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!iterator\+\_\+category@{iterator\+\_\+category}}
+\index{iterator\+\_\+category@{iterator\+\_\+category}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{iterator\+\_\+category}{iterator_category}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf forward\+\_\+iterator\+\_\+tag} {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf iterator\+\_\+category}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_aaa8389de2916ab8609f1c92e789d0b92}{}\label{classprism_1_1containers_1_1_forward_iterator_aaa8389de2916ab8609f1c92e789d0b92}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!pointer@{pointer}}
+\index{pointer@{pointer}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T$\ast$ {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf pointer}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_ad4bc81f412acc7a2d12e592078ed51aa}{}\label{classprism_1_1containers_1_1_forward_iterator_ad4bc81f412acc7a2d12e592078ed51aa}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!reference@{reference}}
+\index{reference@{reference}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T\& {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf reference}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a4e3141e23f97c87d787c42e5e25cfdf8}{}\label{classprism_1_1containers_1_1_forward_iterator_a4e3141e23f97c87d787c42e5e25cfdf8}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf value\+\_\+type}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a1543170bc355e16a500f376e748f3031}{}\label{classprism_1_1containers_1_1_forward_iterator_a1543170bc355e16a500f376e748f3031}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!Forward\+Iterator@{Forward\+Iterator}}
+\index{Forward\+Iterator@{Forward\+Iterator}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{Forward\+Iterator()}{ForwardIterator()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf Forward\+Iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a7852817d50449b2ab5fc73f071c10c8d}{}\label{classprism_1_1containers_1_1_forward_iterator_a7852817d50449b2ab5fc73f071c10c8d}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!Forward\+Iterator@{Forward\+Iterator}}
+\index{Forward\+Iterator@{Forward\+Iterator}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{Forward\+Iterator(\+T $\ast$p)}{ForwardIterator(T *p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf Forward\+Iterator} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a469936218cb7f00b04d13340afeff943}{}\label{classprism_1_1containers_1_1_forward_iterator_a469936218cb7f00b04d13340afeff943}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!Forward\+Iterator@{Forward\+Iterator}}
+\index{Forward\+Iterator@{Forward\+Iterator}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{Forward\+Iterator(const Forward\+Iterator$<$ T $>$ \&copy)}{ForwardIterator(const ForwardIterator< T > &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::{\bf Forward\+Iterator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a6b7c7a4d1ff9c119826689fd75f8037e}{}\label{classprism_1_1containers_1_1_forward_iterator_a6b7c7a4d1ff9c119826689fd75f8037e}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!````~Forward\+Iterator@{$\sim$\+Forward\+Iterator}}
+\index{````~Forward\+Iterator@{$\sim$\+Forward\+Iterator}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{$\sim$\+Forward\+Iterator()}{~ForwardIterator()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::$\sim${\bf Forward\+Iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_afb9d08367d5a03fcaca4524f799b702c}{}\label{classprism_1_1containers_1_1_forward_iterator_afb9d08367d5a03fcaca4524f799b702c}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator"!=(const Forward\+Iterator rhs)}{operator!=(const ForwardIterator rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual bool {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a4f58dc3e4905d6ac25b5c4c02ab1477e}{}\label{classprism_1_1containers_1_1_forward_iterator_a4f58dc3e4905d6ac25b5c4c02ab1477e}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$\ast$()}{operator*()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf reference} {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a4bb697c101c3430ab83380e93984c834}{}\label{classprism_1_1containers_1_1_forward_iterator_a4bb697c101c3430ab83380e93984c834}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator++()}{operator++()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf Forward\+Iterator}\& {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a650b575bab2dd1f9b20e2a0feb3b8b52}{}\label{classprism_1_1containers_1_1_forward_iterator_a650b575bab2dd1f9b20e2a0feb3b8b52}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator++(int junk)}{operator++(int junk)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf Forward\+Iterator} {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{junk}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a52c1a971cf72b2a085defacd771e6c6e}{}\label{classprism_1_1containers_1_1_forward_iterator_a52c1a971cf72b2a085defacd771e6c6e}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/$>$()}{operator->()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf pointer} {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a6de6139a20b187db48db7eda3e137d22}{}\label{classprism_1_1containers_1_1_forward_iterator_a6de6139a20b187db48db7eda3e137d22}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator=(\+Forward\+Iterator rhs)}{operator=(ForwardIterator rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf Forward\+Iterator}\& {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf Forward\+Iterator}$<$ T $>$}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a21a1aaeb388a2d31a750629c3dec4f5c}{}\label{classprism_1_1containers_1_1_forward_iterator_a21a1aaeb388a2d31a750629c3dec4f5c}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator==(const Forward\+Iterator rhs)}{operator==(const ForwardIterator rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual bool {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a6b9425598a719eb264beffe220acbfc8}{}\label{classprism_1_1containers_1_1_forward_iterator_a6b9425598a719eb264beffe220acbfc8}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf difference\+\_\+type} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{lhs, }
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_aaad8cb3873bc75101e6aec86fda597b0}{}\label{classprism_1_1containers_1_1_forward_iterator_aaad8cb3873bc75101e6aec86fda597b0}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$<$}{operator<}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{lhs, }
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a6b30659c53f42b141d66d983aa919acd}{}\label{classprism_1_1containers_1_1_forward_iterator_a6b30659c53f42b141d66d983aa919acd}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$<$=}{operator<=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{lhs, }
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a0587c766ccabd72167e87461c8637cc1}{}\label{classprism_1_1containers_1_1_forward_iterator_a0587c766ccabd72167e87461c8637cc1}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$>$}{operator>}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{lhs, }
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_a99354852714dd199e60ce045023c2573}{}\label{classprism_1_1containers_1_1_forward_iterator_a99354852714dd199e60ce045023c2573}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$>$=}{operator>=}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{lhs, }
+\item[{const {\bf Forward\+Iterator}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1containers_1_1_forward_iterator_ab9192c8005124b4eee6a698a74d71e01}{}\label{classprism_1_1containers_1_1_forward_iterator_ab9192c8005124b4eee6a698a74d71e01}
+
+
+\subsection{Member Data Documentation}
+\index{prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}!p@{p}}
+\index{p@{p}!prism\+::containers\+::\+Forward\+Iterator@{prism\+::containers\+::\+Forward\+Iterator}}
+\subsubsection[{\texorpdfstring{p}{p}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf prism\+::containers\+::\+Forward\+Iterator}$<$ T $>$\+::p}\hypertarget{classprism_1_1containers_1_1_forward_iterator_afae3bf32acc98ab535b9bdb8156ba58f}{}\label{classprism_1_1containers_1_1_forward_iterator_afae3bf32acc98ab535b9bdb8156ba58f}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/containers/\hyperlink{_iterator_8h}{Iterator.\+h}\end{DoxyCompactItemize}

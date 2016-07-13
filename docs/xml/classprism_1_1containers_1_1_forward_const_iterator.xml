@@ -1,0 +1,420 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classprism_1_1containers_1_1_forward_const_iterator" kind="class" language="C++" prot="public">
+    <compoundname>prism::containers::ForwardConstIterator</compoundname>
+    <derivedcompoundref refid="classprism_1_1containers_1_1_bidirectional_const_iterator" prot="public" virt="non-virtual">prism::containers::BidirectionalConstIterator&lt; T &gt;</derivedcompoundref>
+    <includes refid="_iterator_8h" local="no">Iterator.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classprism_1_1containers_1_1_forward_const_iterator_1a2916b21d808304bd4f1ae3de17f65d06" prot="public" static="no">
+        <type>T</type>
+        <definition>typedef T prism::containers::ForwardConstIterator&lt; T &gt;::value_type</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="78" column="1" bodyfile="inc/containers/Iterator.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classprism_1_1containers_1_1_forward_const_iterator_1ad3dab41615afe9dba6b9a2e88721b1da" prot="public" static="no">
+        <type>std::ptrdiff_t</type>
+        <definition>typedef std::ptrdiff_t prism::containers::ForwardConstIterator&lt; T &gt;::difference_type</definition>
+        <argsstring></argsstring>
+        <name>difference_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="79" column="1" bodyfile="inc/containers/Iterator.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classprism_1_1containers_1_1_forward_const_iterator_1a9409b1e2a779ce14a469e25944753dbe" prot="public" static="no">
+        <type><ref refid="structprism_1_1containers_1_1forward__iterator__tag" kindref="compound">forward_iterator_tag</ref></type>
+        <definition>typedef forward_iterator_tag prism::containers::ForwardConstIterator&lt; T &gt;::iterator_category</definition>
+        <argsstring></argsstring>
+        <name>iterator_category</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="80" column="1" bodyfile="inc/containers/Iterator.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classprism_1_1containers_1_1_forward_const_iterator_1a9580e2fada8484b568a7fc3e104dbf1e" prot="public" static="no">
+        <type>T &amp;</type>
+        <definition>typedef T&amp; prism::containers::ForwardConstIterator&lt; T &gt;::reference</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="81" column="1" bodyfile="inc/containers/Iterator.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classprism_1_1containers_1_1_forward_const_iterator_1a947740c6995919fd5e772a553dda7735" prot="public" static="no">
+        <type>T *</type>
+        <definition>typedef T* prism::containers::ForwardConstIterator&lt; T &gt;::pointer</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="82" column="1" bodyfile="inc/containers/Iterator.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classprism_1_1containers_1_1_forward_const_iterator_1a26647b955a51f4fb4d29d1b06dd75cd9" prot="public" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* prism::containers::ForwardConstIterator&lt; T &gt;::p</definition>
+        <argsstring></argsstring>
+        <name>p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="84" column="1" bodyfile="inc/containers/Iterator.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1adebebdcc533deec96fb62210519c18e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::ForwardConstIterator&lt; T &gt;::ForwardConstIterator</definition>
+        <argsstring>()</argsstring>
+        <name>ForwardConstIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="85" column="1" bodyfile="inc/containers/Iterator.h" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a121a3a6ddbd269636b51c76ad8489776" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::ForwardConstIterator&lt; T &gt;::ForwardConstIterator</definition>
+        <argsstring>(T *p)</argsstring>
+        <name>ForwardConstIterator</name>
+        <param>
+          <type>T *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="86" column="1" bodyfile="inc/containers/Iterator.h" bodystart="86" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a7eeb175f2ab278b95d2a984cd397981c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>prism::containers::ForwardConstIterator&lt; T &gt;::ForwardConstIterator</definition>
+        <argsstring>(const ForwardConstIterator&lt; T &gt; &amp;copy)</argsstring>
+        <name>ForwardConstIterator</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref>&lt; T &gt; &amp;</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="87" column="1" bodyfile="inc/containers/Iterator.h" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a0662ca3885a3f894565bd1a58e77c0db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual prism::containers::ForwardConstIterator&lt; T &gt;::~ForwardConstIterator</definition>
+        <argsstring>()</argsstring>
+        <name>~ForwardConstIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="88" column="1" bodyfile="inc/containers/Iterator.h" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a233a1b30831a752f03e09416535bb019" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classprism_1_1containers_1_1_forward_const_iterator_1a9580e2fada8484b568a7fc3e104dbf1e" kindref="member">reference</ref></type>
+        <definition>virtual reference prism::containers::ForwardConstIterator&lt; T &gt;::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="89" column="1" bodyfile="inc/containers/Iterator.h" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a133d0e5e974fa740134b56004849c941" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classprism_1_1containers_1_1_forward_const_iterator_1a947740c6995919fd5e772a553dda7735" kindref="member">pointer</ref></type>
+        <definition>virtual pointer prism::containers::ForwardConstIterator&lt; T &gt;::operator-&gt;</definition>
+        <argsstring>()</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="90" column="1" bodyfile="inc/containers/Iterator.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a9cfb8faab73fa3dea41ef85d7f786a6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+        <definition>virtual ForwardConstIterator&amp; prism::containers::ForwardConstIterator&lt; T &gt;::operator++</definition>
+        <argsstring>()</argsstring>
+        <name>operator++</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="91" column="1" bodyfile="inc/containers/Iterator.h" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1afc1c6e98493dbd36d5ab2a93299aa850" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref></type>
+        <definition>virtual ForwardConstIterator prism::containers::ForwardConstIterator&lt; T &gt;::operator++</definition>
+        <argsstring>(int junk)</argsstring>
+        <name>operator++</name>
+        <param>
+          <type>int</type>
+          <declname>junk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="92" column="1" bodyfile="inc/containers/Iterator.h" bodystart="92" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a2b0e0e305e998211b654d38f67e8ac2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+        <definition>virtual ForwardConstIterator&amp; prism::containers::ForwardConstIterator&lt; T &gt;::operator=</definition>
+        <argsstring>(ForwardConstIterator rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref></type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="93" column="1" bodyfile="inc/containers/Iterator.h" bodystart="93" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a9d5b5c260a43e7e2944655734ef76af1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool prism::containers::ForwardConstIterator&lt; T &gt;::operator!=</definition>
+        <argsstring>(const ForwardConstIterator rhs)</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref></type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="94" column="1" bodyfile="inc/containers/Iterator.h" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classprism_1_1containers_1_1_forward_const_iterator_1a90504dc9f3f224ab29c113a2f6ee05ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool prism::containers::ForwardConstIterator&lt; T &gt;::operator==</definition>
+        <argsstring>(const ForwardConstIterator rhs)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref></type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="95" column="1" bodyfile="inc/containers/Iterator.h" bodystart="95" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classprism_1_1containers_1_1_forward_const_iterator_1ae77905649fbc553b53ac49c23262d818" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend <ref refid="classprism_1_1containers_1_1_forward_const_iterator_1ad3dab41615afe9dba6b9a2e88721b1da" kindref="member">difference_type</ref></type>
+        <definition>difference_type operator-</definition>
+        <argsstring>(const ForwardConstIterator &amp;lhs, const ForwardConstIterator &amp;rhs)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="98" column="1" bodyfile="inc/containers/Iterator.h" bodystart="98" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1containers_1_1_forward_const_iterator_1a9eb40ce48ff747c184f7ac37ada4dcf2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&lt;</definition>
+        <argsstring>(const ForwardConstIterator &amp;lhs, const ForwardConstIterator &amp;rhs)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="99" column="1" bodyfile="inc/containers/Iterator.h" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1containers_1_1_forward_const_iterator_1a46cd17a5b9f20b1594ea9c3cdb2662f1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&gt;</definition>
+        <argsstring>(const ForwardConstIterator &amp;lhs, const ForwardConstIterator &amp;rhs)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="100" column="1" bodyfile="inc/containers/Iterator.h" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1containers_1_1_forward_const_iterator_1a82457c042ee5a0d20f1b2efa9452717f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&lt;=</definition>
+        <argsstring>(const ForwardConstIterator &amp;lhs, const ForwardConstIterator &amp;rhs)</argsstring>
+        <name>operator&lt;=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="101" column="1" bodyfile="inc/containers/Iterator.h" bodystart="101" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="friend" id="classprism_1_1containers_1_1_forward_const_iterator_1a34fc2d898f75bd850e25c645ebb05336" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const bool</type>
+        <definition>const bool operator&gt;=</definition>
+        <argsstring>(const ForwardConstIterator &amp;lhs, const ForwardConstIterator &amp;rhs)</argsstring>
+        <name>operator&gt;=</name>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classprism_1_1containers_1_1_forward_const_iterator" kindref="compound">ForwardConstIterator</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="inc/containers/Iterator.h" line="102" column="1" bodyfile="inc/containers/Iterator.h" bodystart="102" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="45">
+        <label>prism::containers::BidirectionalConstIterator&lt; T &gt;</label>
+        <link refid="classprism_1_1containers_1_1_bidirectional_const_iterator"/>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>prism::containers::ForwardConstIterator&lt; T &gt;</label>
+        <link refid="classprism_1_1containers_1_1_forward_const_iterator"/>
+      </node>
+      <node id="46">
+        <label>prism::containers::RandomAccessConstIterator&lt; T &gt;</label>
+        <link refid="classprism_1_1containers_1_1_random_access_const_iterator"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="inc/containers/Iterator.h" line="76" column="1" bodyfile="inc/containers/Iterator.h" bodystart="76" bodyend="103"/>
+    <listofallmembers>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1ad3dab41615afe9dba6b9a2e88721b1da" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>difference_type</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1adebebdcc533deec96fb62210519c18e9" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>ForwardConstIterator</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a121a3a6ddbd269636b51c76ad8489776" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>ForwardConstIterator</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a7eeb175f2ab278b95d2a984cd397981c" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>ForwardConstIterator</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a9409b1e2a779ce14a469e25944753dbe" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>iterator_category</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a9d5b5c260a43e7e2944655734ef76af1" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator!=</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a233a1b30831a752f03e09416535bb019" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator*</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a9cfb8faab73fa3dea41ef85d7f786a6e" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator++</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1afc1c6e98493dbd36d5ab2a93299aa850" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator++</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1ae77905649fbc553b53ac49c23262d818" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator-</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a133d0e5e974fa740134b56004849c941" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator-&gt;</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a9eb40ce48ff747c184f7ac37ada4dcf2" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator&lt;</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a82457c042ee5a0d20f1b2efa9452717f" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator&lt;=</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a2b0e0e305e998211b654d38f67e8ac2a" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator=</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a90504dc9f3f224ab29c113a2f6ee05ff" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator==</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a46cd17a5b9f20b1594ea9c3cdb2662f1" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator&gt;</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a34fc2d898f75bd850e25c645ebb05336" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>operator&gt;=</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a26647b955a51f4fb4d29d1b06dd75cd9" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>p</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a947740c6995919fd5e772a553dda7735" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>pointer</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a9580e2fada8484b568a7fc3e104dbf1e" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>reference</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a2916b21d808304bd4f1ae3de17f65d06" prot="public" virt="non-virtual"><scope>prism::containers::ForwardConstIterator</scope><name>value_type</name></member>
+      <member refid="classprism_1_1containers_1_1_forward_const_iterator_1a0662ca3885a3f894565bd1a58e77c0db" prot="public" virt="virtual"><scope>prism::containers::ForwardConstIterator</scope><name>~ForwardConstIterator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
