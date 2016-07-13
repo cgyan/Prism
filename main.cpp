@@ -39,9 +39,7 @@ using namespace std;
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
-
-	Vector<int> v;
-	v << 1 << 2 << 3;
+	Vector<int> v = {1,2,3,4};
 	cout << v;
 
 //	return RUN_ALL_TESTS();

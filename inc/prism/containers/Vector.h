@@ -14,7 +14,7 @@
 #ifndef PRISM_VECTOR_H_
 #define PRISM_VECTOR_H_
 
-#include <ostream>
+#include <iostream>
 #include <vector>
 #include <initializer_list>
 #include <prism/Iterator>
