@@ -1,22 +1,6 @@
 var searchData=
 [
-  ['_7earray',['~Array',['../classprism_1_1containers_1_1_array.html#a7baa8d313f0d531a6bfb644069380c6b',1,'prism::containers::Array']]],
-  ['_7ecircle',['~Circle',['../classprism_1_1geometry_1_1_circle.html#afc9d1b6ca5fff7749f06baacaf4e4a76',1,'prism::geometry::Circle']]],
-  ['_7edeque',['~Deque',['../classprism_1_1containers_1_1_deque.html#a976bc3256dcc9baf18343387e5f395c1',1,'prism::containers::Deque']]],
-  ['_7efraction',['~Fraction',['../classprism_1_1utils_1_1_fraction.html#aeeee544b74bd5c7fcebf2d3031e6af54',1,'prism::utils::Fraction']]],
-  ['_7elist',['~List',['../classprism_1_1containers_1_1_list.html#ade258bf5c3a96946012a3e938aa0183a',1,'prism::containers::List']]],
-  ['_7ematrix4',['~Matrix4',['../classprism_1_1geometry_1_1_matrix4.html#a8d2880084113509726be0ab7a3b60ee7',1,'prism::geometry::Matrix4']]],
-  ['_7epoint',['~Point',['../classprism_1_1geometry_1_1_point.html#a79e9ad9436503b1329c0f079c9bd44d3',1,'prism::geometry::Point']]],
-  ['_7epointf',['~Pointf',['../classprism_1_1geometry_1_1_pointf.html#ab5ab09dd41e203a47c7457f79a6a05f5',1,'prism::geometry::Pointf']]],
-  ['_7equaternion',['~Quaternion',['../classprism_1_1geometry_1_1_quaternion.html#a27853f52b0907a630dd3b8a8a86f89f8',1,'prism::geometry::Quaternion']]],
-  ['_7erect',['~Rect',['../classprism_1_1geometry_1_1_rect.html#a454fcbd614d4aab447d91e84d023a394',1,'prism::geometry::Rect']]],
-  ['_7ereferencecounter',['~ReferenceCounter',['../classprism_1_1memory_1_1_reference_counter.html#ac52f643a00b93db43d70a34082d64a7f',1,'prism::memory::ReferenceCounter']]],
-  ['_7eshareddata',['~SharedData',['../classprism_1_1memory_1_1_shared_data.html#a65f0be2eead2e5b90047a22ddef65b65',1,'prism::memory::SharedData']]],
-  ['_7eshareddatapointer',['~SharedDataPointer',['../classprism_1_1memory_1_1_shared_data_pointer.html#a3520c2c51a47ae016a2376a358263287',1,'prism::memory::SharedDataPointer']]],
-  ['_7esharedpointer',['~SharedPointer',['../classprism_1_1memory_1_1_shared_pointer.html#a882cd1705b0f199d7aa5b4e4bce59b9f',1,'prism::memory::SharedPointer']]],
-  ['_7esize',['~Size',['../classprism_1_1geometry_1_1_size.html#a537e42c6a73305321ce4b8b28c7e1c90',1,'prism::geometry::Size']]],
-  ['_7evector',['~Vector',['../classprism_1_1containers_1_1_vector.html#a58e4ef79be6d926803af6a47c61e4b30',1,'prism::containers::Vector']]],
-  ['_7evector2',['~Vector2',['../classprism_1_1geometry_1_1_vector2.html#ab8bd01e24bdbb8aec757ea92ae6b8577',1,'prism::geometry::Vector2']]],
-  ['_7evector3',['~Vector3',['../classprism_1_1geometry_1_1_vector3.html#a3756b77b75ea81b67a3956a76acf1524',1,'prism::geometry::Vector3']]],
-  ['_7evector4',['~Vector4',['../classprism_1_1geometry_1_1_vector4.html#acad8f507c7119e61cfb80d691c5f5ad0',1,'prism::geometry::Vector4']]]
+  ['x',['x',['../classprism_1_1_circle.html#ae1f729f8fa34605123628e67b230b6be',1,'prism::Circle::x()'],['../classprism_1_1_point.html#a725d8721ccf4e59ce9a912490e9487f9',1,'prism::Point::x()'],['../classprism_1_1_pointf.html#af55252d2e1d5ba4d2358538aadeaf6a8',1,'prism::Pointf::x()'],['../classprism_1_1_quaternion.html#ab3f80fc41a933a371b2861363997ce22',1,'prism::Quaternion::x()'],['../classprism_1_1_rect.html#a202fa9a56964c9111a968fb9b420f5f4',1,'prism::Rect::x()'],['../classprism_1_1_vector2.html#a03a3e6c084d4fda83cc688d22ffcf5bb',1,'prism::Vector2::x()'],['../classprism_1_1_vector3.html#a6cd6b0776fc0eae2068f2610b882bb9f',1,'prism::Vector3::x()'],['../classprism_1_1_vector4.html#a8fabd6d4da0effcc6073f7ae67cb1c1c',1,'prism::Vector4::x()']]],
+  ['xmlunittestresultprinter',['XmlUnitTestResultPrinter',['../classtesting_1_1internal_1_1_xml_unit_test_result_printer.html#afdaf88e6764c18ce0dcc3733d7a06e31',1,'testing::internal::XmlUnitTestResultPrinter']]],
+  ['xmlunittestresultprinter',['XmlUnitTestResultPrinter',['../classtesting_1_1internal_1_1_xml_unit_test_result_printer.html',1,'testing::internal']]]
 ];

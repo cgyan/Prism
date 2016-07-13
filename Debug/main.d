@@ -1,7 +1,7 @@
 main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Array \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/containers/Array.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Array.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/containers/Iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Stack \
@@ -44,7 +44,7 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Array:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/containers/Array.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/Array.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator:
 

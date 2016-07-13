@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['p',['p',['../classprism_1_1_forward_iterator.html#a44e23472687df2dcf68780ba6173557a',1,'prism::ForwardIterator::p()'],['../classprism_1_1_forward_const_iterator.html#ad4e0c824b923c399c6ee381a03e66df2',1,'prism::ForwardConstIterator::p()']]],
+  ['prism',['Prism',['../md_README.html',1,'']]],
   ['pi',['PI',['../classprism_1_1_mathf.html#a96de371e5c5fe1eb981b6045c3148f3e',1,'prism::Mathf']]],
   ['point',['Point',['../classprism_1_1_point.html',1,'prism']]],
   ['point',['point',['../classprism_1_1_circle.html#a42e70e1d37414bf4c22500b80b168c9d',1,'prism::Circle::point()'],['../classprism_1_1_point.html#a505a19bd681a9e195f8bf9dbd3c445c7',1,'prism::Point::Point(void)'],['../classprism_1_1_point.html#a93bfdd8fa48253786030802190577129',1,'prism::Point::Point(const int x, const int y)'],['../classprism_1_1_point.html#af09a25c46be47b8c4566b15ddac632b0',1,'prism::Point::Point(const Point &amp;copy)']]],
   ['point_2ecpp',['Point.cpp',['../_point_8cpp.html',1,'']]],
   ['point_2eh',['Point.h',['../_point_8h.html',1,'']]],
-  ['pointer',['pointer',['../structprism_1_1iterator__traits.html#a5ec4c84886d15b5efa1bb3fd0984dd71',1,'prism::iterator_traits::pointer()'],['../classprism_1_1_forward_iterator.html#af50dd6e13f3cea3ee3b2332e48996502',1,'prism::ForwardIterator::pointer()'],['../classprism_1_1_forward_const_iterator.html#a6e4e245d3ab99d6e9b237abe2c0c06d8',1,'prism::ForwardConstIterator::pointer()'],['../structprism_1_1_list_iterator.html#a7df7f6f08916f0bbe2e0b0ce675e0cee',1,'prism::ListIterator::pointer()'],['../structprism_1_1_list_const_iterator.html#a1c92e5a7b7d0a92c744027ca421cb651',1,'prism::ListConstIterator::pointer()'],['../classprism_1_1_list.html#aed257df5c1db1015841de21318b6c5c2',1,'prism::List::pointer()'],['../classprism_1_1_vector.html#a9823d64f361cdff3fcc5043e8b4bd882',1,'prism::Vector::pointer()'],['../classprism_1_1_string.html#ac7944d9212ad675ba05280657ce14d12',1,'prism::String::pointer()']]],
+  ['pointer',['pointer',['../classprism_1_1_list.html#aed257df5c1db1015841de21318b6c5c2',1,'prism::List::pointer()'],['../classprism_1_1_vector.html#a9823d64f361cdff3fcc5043e8b4bd882',1,'prism::Vector::pointer()'],['../classprism_1_1_string.html#ac7944d9212ad675ba05280657ce14d12',1,'prism::String::pointer()']]],
   ['pointf',['Pointf',['../classprism_1_1_pointf.html',1,'prism']]],
   ['pointf',['Pointf',['../classprism_1_1_pointf.html#a214778342e0ac8ca95ebee01e196af20',1,'prism::Pointf::Pointf(void)'],['../classprism_1_1_pointf.html#a8c069c8a342d043475661270d19e6579',1,'prism::Pointf::Pointf(const float x, const float y)'],['../classprism_1_1_pointf.html#a8888306775c8851d1808881025d547df',1,'prism::Pointf::Pointf(const Pointf &amp;p)']]],
   ['pointf_2ecpp',['Pointf.cpp',['../_pointf_8cpp.html',1,'']]],

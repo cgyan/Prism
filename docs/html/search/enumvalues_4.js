@@ -1,14 +1,6 @@
 var searchData=
 [
-  ['kasis',['kAsIs',['../namespacetesting_1_1internal.html#ae2ef98247c76a50cdc80ceb4a6c81793af7038866be92e9978360b831e376ffaa',1,'testing::internal']]],
-  ['kconvertibletointeger',['kConvertibleToInteger',['../namespacetesting_1_1internal2.html#aeb8161b0b3ee503347b0662d7028fd57a9bdcf3f1548f498b2b7f097306ea0224',1,'testing::internal2']]],
-  ['kcopy',['kCopy',['../namespacetesting_1_1internal.html#aec4f0eeb60b6b8af8dcf979578bbf3bba272b78aee8068aa2392dbdcf69dfe3a4',1,'testing::internal']]],
-  ['kfatalfailure',['kFatalFailure',['../classtesting_1_1_test_part_result.html#a65ae656b33fdfdfffaf34858778a52d5ae1bf0b610b697a43fee97628cdab4ea1',1,'testing::TestPartResult']]],
-  ['khexescape',['kHexEscape',['../namespacetesting_1_1internal.html#ae2ef98247c76a50cdc80ceb4a6c81793aebfa5293302338a8e8678744c103f113',1,'testing::internal']]],
-  ['knonfatalfailure',['kNonFatalFailure',['../classtesting_1_1_test_part_result.html#a65ae656b33fdfdfffaf34858778a52d5a00a755614f8ec3f78b2e951f8c91cd92',1,'testing::TestPartResult']]],
-  ['kothertype',['kOtherType',['../namespacetesting_1_1internal2.html#aeb8161b0b3ee503347b0662d7028fd57abe8aaea44751d6ebd0cdf5bd94451db1',1,'testing::internal2']]],
-  ['kprotobuf',['kProtobuf',['../namespacetesting_1_1internal2.html#aeb8161b0b3ee503347b0662d7028fd57a14aaf98a2547ecf43eef0868d54b1383',1,'testing::internal2']]],
-  ['kreference',['kReference',['../namespacetesting_1_1internal.html#aec4f0eeb60b6b8af8dcf979578bbf3bba75535e620e7496a433bf008ea81358a1',1,'testing::internal']]],
-  ['kspecialescape',['kSpecialEscape',['../namespacetesting_1_1internal.html#ae2ef98247c76a50cdc80ceb4a6c81793ae1211108e9f35f891d9951da64794d03',1,'testing::internal']]],
-  ['ksuccess',['kSuccess',['../classtesting_1_1_test_part_result.html#a65ae656b33fdfdfffaf34858778a52d5a8fa3d06b2baad8bf7c1f17dea314983e',1,'testing::TestPartResult']]]
+  ['ignore_5fsharding_5fprotocol',['IGNORE_SHARDING_PROTOCOL',['../classtesting_1_1internal_1_1_unit_test_impl.html#acc5ffd3f9bc2e87bb3dba4218f58af43a68bd0b7e6a7bead14c93d1a42144095a',1,'testing::internal::UnitTestImpl']]],
+  ['intercept_5fall_5fthreads',['INTERCEPT_ALL_THREADS',['../classtesting_1_1_scoped_fake_test_part_result_reporter.html#a82f6209b3cf5c4b15ec8bd8041dbc2d5a187f4164aad7fbb9414b263c68a693cd',1,'testing::ScopedFakeTestPartResultReporter']]],
+  ['intercept_5fonly_5fcurrent_5fthread',['INTERCEPT_ONLY_CURRENT_THREAD',['../classtesting_1_1_scoped_fake_test_part_result_reporter.html#a82f6209b3cf5c4b15ec8bd8041dbc2d5aed6c5f87d33207768db503526e6a1e8a',1,'testing::ScopedFakeTestPartResultReporter']]]
 ];

@@ -3,7 +3,6 @@
 
 #include <ostream>
 
-//! The Quaternion class represents an orientation in 3d space.
 /*!
 A Quaternion is made up of four components (w, x, y and z) which are a scalar (w) and a 3d vector (x, y and z).
 It does not suffer from gimbal lock and yet can represent any orientation possible.

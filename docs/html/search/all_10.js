@@ -44,14 +44,14 @@ var searchData=
   ['sharedpointer',['SharedPointer',['../classprism_1_1_shared_pointer.html',1,'prism']]],
   ['sharedpointer_2eh',['SharedPointer.h',['../_shared_pointer_8h.html',1,'']]],
   ['simplify',['simplify',['../classprism_1_1_fraction.html#ab30164e43aa9ce13ad3dc364b8711473',1,'prism::Fraction']]],
+  ['size',['Size',['../classprism_1_1_size.html#a61acf22a770bbca569b56d860bb95d0b',1,'prism::Size::Size()'],['../classprism_1_1_size.html#a115a8c5c7fcd709f2eaaff6e7a6c833a',1,'prism::Size::Size(const int width, const int height)'],['../classprism_1_1_size.html#a3eea778ebcf91dab6b8723fc5b7695e8',1,'prism::Size::Size(const Size &amp;copy)'],['../classprism_1_1_array.html#a83c88f0f351ac35798f40ed4e922e187',1,'prism::Array::size()'],['../classprism_1_1_list.html#a90855d0c971c394fabf612c02dce4d3a',1,'prism::List::size()'],['../classprism_1_1_queue.html#a1c868feb72c566af4756593f2b5747d9',1,'prism::Queue::size()'],['../classprism_1_1_stack.html#ad8805f421b46c591bde99520edfa5f28',1,'prism::Stack::size()'],['../classprism_1_1_vector.html#ac6ff3296683e76da61d48bcc15e4f175',1,'prism::Vector::size()'],['../classprism_1_1_string.html#a603b5a90681d43adf7c6c29018e0300c',1,'prism::String::size()'],['../classprism_1_1_rect.html#adcbe6d279ad57294c88d287057867a2b',1,'prism::Rect::size()']]],
   ['size',['Size',['../classprism_1_1_size.html',1,'prism']]],
-  ['size',['size',['../classprism_1_1_array.html#a83c88f0f351ac35798f40ed4e922e187',1,'prism::Array::size()'],['../classprism_1_1_list.html#a90855d0c971c394fabf612c02dce4d3a',1,'prism::List::size()'],['../classprism_1_1_queue.html#a1c868feb72c566af4756593f2b5747d9',1,'prism::Queue::size()'],['../classprism_1_1_stack.html#ad8805f421b46c591bde99520edfa5f28',1,'prism::Stack::size()'],['../classprism_1_1_vector.html#ac6ff3296683e76da61d48bcc15e4f175',1,'prism::Vector::size()'],['../classprism_1_1_string.html#a603b5a90681d43adf7c6c29018e0300c',1,'prism::String::size()'],['../classprism_1_1_rect.html#adcbe6d279ad57294c88d287057867a2b',1,'prism::Rect::size()'],['../classprism_1_1_size.html#a61acf22a770bbca569b56d860bb95d0b',1,'prism::Size::Size()'],['../classprism_1_1_size.html#a115a8c5c7fcd709f2eaaff6e7a6c833a',1,'prism::Size::Size(const int width, const int height)'],['../classprism_1_1_size.html#a3eea778ebcf91dab6b8723fc5b7695e8',1,'prism::Size::Size(const Size &amp;copy)']]],
   ['size_2ecpp',['Size.cpp',['../_size_8cpp.html',1,'']]],
   ['size_2eh',['Size.h',['../_size_8h.html',1,'']]],
   ['size_5ftype',['size_type',['../classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd',1,'prism::List::size_type()'],['../classprism_1_1_vector.html#a14c909f500f13b8b7a276bb97ae746e8',1,'prism::Vector::size_type()'],['../classprism_1_1_string.html#a33d0fff8e7a3f85f43487c6975e3e766',1,'prism::String::size_type()']]],
   ['squeeze',['squeeze',['../classprism_1_1_vector.html#ab2491ac6ff73d372ed8f080adef78208',1,'prism::Vector']]],
-  ['stack',['Stack',['../classprism_1_1_stack.html#a4da568aa6d3ca0042123fdbe4ec131df',1,'prism::Stack']]],
   ['stack',['Stack',['../classprism_1_1_stack.html',1,'prism']]],
+  ['stack',['Stack',['../classprism_1_1_stack.html#a4da568aa6d3ca0042123fdbe4ec131df',1,'prism::Stack']]],
   ['stack_2eh',['Stack.h',['../_stack_8h.html',1,'']]],
   ['start',['start',['../structprism_1_1_string_data_1_1memory.html#acb8564230189b60e891a5f86de755507',1,'prism::StringData::memory']]],
   ['startswith',['startsWith',['../classprism_1_1_array.html#aa80d5944d464d8de5f7b991b355e10b2',1,'prism::Array::startsWith()'],['../classprism_1_1_list.html#ac129dafdb80ae13cfc914dc0668e6b39',1,'prism::List::startsWith()'],['../classprism_1_1_vector.html#a7562a7e62555ee5cc35b309799cbfb05',1,'prism::Vector::startsWith()']]],
@@ -60,5 +60,6 @@ var searchData=
   ['string',['String',['../classprism_1_1_string.html',1,'prism']]],
   ['string_2ecpp',['String.cpp',['../_string_8cpp.html',1,'']]],
   ['string_2eh',['String.h',['../_string_8h.html',1,'']]],
-  ['stringdata',['StringData',['../structprism_1_1_string_data.html',1,'prism']]]
+  ['stringdata',['StringData',['../structprism_1_1_string_data.html',1,'prism']]],
+  ['swap',['swap',['../namespaceprism.html#a6430516ab4f2e2a7f43323acb6b559d8',1,'prism']]]
 ];

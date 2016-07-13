@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Prism", "index.html", [
+    [ "Prism", "md_README.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -35,11 +36,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_array_8h.html",
-"classprism_1_1_circle.html#a255dcfc157fc52c83e0cbd9e54a65b89",
-"classprism_1_1_matrix4.html#acb4d5cf5c35ead4ac8d2713d32a3bb53",
-"classprism_1_1_shared_data_pointer.html#ab9603e8d447ca8968d06b29f056110f9",
-"classprism_1_1_vector3.html#a8ce2bae07d8ac9f088fed29ed036cbd1"
+"_algorithms_8h.html",
+"classprism_1_1_circle.html#a4deb656103c2fc1ea9258fc37bfdcc6c",
+"classprism_1_1_pointf.html#a62e830d342930885456f2f0c291cced9",
+"classprism_1_1_string.html#a2bbac16806974edd5c6d0d1d19ac7d5a",
+"functions_c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

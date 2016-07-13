@@ -43,9 +43,11 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 	Vector<int> v;
-	v << 1 << 2 << 3 << 2 << 4 << 5 << 2 << 2 << 9;
+	v << 1 << 7 << 3 << 7 << 7 << 8 << 7 << 7 << 9;
 
-	cout << prism::count_if(v.begin(), v.end(), isOdd);
+	prism::fill_n(v.begin(), 4, 39);
+
+	cout << v;
 
 //	return RUN_ALL_TESTS();
 	return 0;

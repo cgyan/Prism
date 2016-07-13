@@ -13,14 +13,16 @@ var searchData=
   ['scopedfaketestpartresultreporter',['ScopedFakeTestPartResultReporter',['../classtesting_1_1_scoped_fake_test_part_result_reporter.html',1,'testing']]],
   ['scopedprematureexitfile',['ScopedPrematureExitFile',['../classtesting_1_1internal_1_1_scoped_premature_exit_file.html',1,'testing::internal']]],
   ['scopedtrace',['ScopedTrace',['../classtesting_1_1internal_1_1_scoped_trace.html',1,'testing::internal']]],
-  ['shareddata',['SharedData',['../classprism_1_1memory_1_1_shared_data.html',1,'prism::memory']]],
-  ['shareddatapointer',['SharedDataPointer',['../classprism_1_1memory_1_1_shared_data_pointer.html',1,'prism::memory']]],
-  ['sharedpointer',['SharedPointer',['../classprism_1_1memory_1_1_shared_pointer.html',1,'prism::memory']]],
+  ['shareddata',['SharedData',['../classprism_1_1_shared_data.html',1,'prism']]],
+  ['shareddatapointer',['SharedDataPointer',['../classprism_1_1_shared_data_pointer.html',1,'prism']]],
+  ['sharedpointer',['SharedPointer',['../classprism_1_1_shared_pointer.html',1,'prism']]],
   ['singlefailurechecker',['SingleFailureChecker',['../classtesting_1_1internal_1_1_single_failure_checker.html',1,'testing::internal']]],
-  ['size',['Size',['../classprism_1_1geometry_1_1_size.html',1,'prism::geometry']]],
+  ['size',['Size',['../classprism_1_1_size.html',1,'prism']]],
   ['stack',['Stack',['../classprism_1_1containers_1_1_stack.html',1,'prism::containers']]],
-  ['stacktest',['StackTest',['../class_stack_test.html',1,'']]],
+  ['stack',['Stack',['../classprism_1_1_stack.html',1,'prism']]],
   ['staticasserttypeeqhelper',['StaticAssertTypeEqHelper',['../structtesting_1_1internal_1_1_static_assert_type_eq_helper.html',1,'testing::internal']]],
   ['staticasserttypeeqhelper_3c_20t_2c_20t_20_3e',['StaticAssertTypeEqHelper&lt; T, T &gt;',['../structtesting_1_1internal_1_1_static_assert_type_eq_helper_3_01_t_00_01_t_01_4.html',1,'testing::internal']]],
-  ['string',['String',['../classtesting_1_1internal_1_1_string.html',1,'testing::internal']]]
+  ['string',['String',['../classtesting_1_1internal_1_1_string.html',1,'testing::internal']]],
+  ['string',['String',['../classprism_1_1_string.html',1,'prism']]],
+  ['stringdata',['StringData',['../structprism_1_1_string_data.html',1,'prism']]]
 ];

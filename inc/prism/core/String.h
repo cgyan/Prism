@@ -12,6 +12,7 @@
 #include <ostream>
 #include <string>
 #include <prism/Iterator>
+#include <prism/Algorithms>
 
 namespace prism {
 

@@ -9,9 +9,16 @@
 #ifndef PRISM_ALGORITHMS_H_
 #define PRISM_ALGORITHMS_H_
 
-#include <prism/Iterator>
-
 namespace prism {
+
+template <class InputIterator, class Predicate>
+bool all_of(InputIterator first, InputIterator last, Predicate pred) {
+	while (first != last) {
+		if (!pred(*first)) return false;
+		first++;
+	}
+	return true;
+}
 
 template <class InputIterator, class T>
 int count(InputIterator first, InputIterator last, const T& value) {
@@ -30,6 +37,23 @@ int count_if(InputIterator first, InputIterator last, Predicate pred) {
 		first++;
 	}
 	return c;
+}
+
+template <class ForwardIterator, class T>
+void fill(ForwardIterator first, ForwardIterator last, const T& value) {
+	while (first != last) {
+		*first = value;
+		first++;
+	}
+}
+
+template <class ForwardIterator, class T>
+void fill_n(ForwardIterator first, int size, const T& value) {
+	while (size > 0) {
+		*first = value;
+		size--;
+		first++;
+	}
 }
 
 template <class T>
