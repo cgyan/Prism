@@ -1,0 +1,16 @@
+git status
+Tells us which files have been modified and are not in sync with the online repo
+
+git add main.cpp
+git add -A
+Adds a single file to the list of files for committing
+Can also add all files by using the flag -A
+
+git commit -m "commit comment"
+Commits the files with the required comment on what has changed
+
+git push
+Pushes the commited files up to the repo
+
+git pull
+Pulls any new changes from the repo down to the local computer
