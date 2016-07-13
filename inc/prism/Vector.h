@@ -19,8 +19,7 @@
 #include <initializer_list>
 #include <prism/Iterator>
 #include <prism/List>
-// todo fix this path
-#include "../exceptions/OutOfBoundsException.h"
+#include <prism/OutOfBoundsException>
 
 namespace prism {
 

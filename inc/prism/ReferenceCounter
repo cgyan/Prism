@@ -1,1 +1,1 @@
-#include <prism/memory/ReferenceCounter.h>
+#include <prism/ReferenceCounter.h>

@@ -1,1 +1,1 @@
-#include <prism/memory/SharedPointer.h>
+#include <prism/SharedPointer.h>

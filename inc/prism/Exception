@@ -1,1 +1,1 @@
-#include <prism/exceptions/Exception.h>
+#include <prism/Exception.h>

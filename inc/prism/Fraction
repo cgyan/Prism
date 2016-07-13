@@ -1,1 +1,1 @@
-#include <prism/utils/Fraction.h>
+#include <prism/Fraction.h>

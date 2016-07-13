@@ -1,1 +1,1 @@
-#include <prism/geometry/Matrix4.h>
+#include <prism/Matrix4.h>

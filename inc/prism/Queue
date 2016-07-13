@@ -1,1 +1,1 @@
-#include <prism/containers/Queue.h>
+#include <prism/Queue.h>

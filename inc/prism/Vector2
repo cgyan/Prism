@@ -1,1 +1,1 @@
-#include <prism/geometry/Vector2.h>
+#include <prism/Vector2.h>

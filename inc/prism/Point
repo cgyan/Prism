@@ -1,1 +1,1 @@
-#include <prism/geometry/Point.h>
+#include <prism/Point.h>

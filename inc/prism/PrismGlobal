@@ -1,1 +1,1 @@
-#include <prism/core/PrismGlobal.h>
+#include <prism/PrismGlobal.h>
