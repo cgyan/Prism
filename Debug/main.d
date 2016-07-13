@@ -36,7 +36,9 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Flags \
   /Users/iainhemstock/GitHub/Prism/inc/prism/utils/Flags.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/core/String.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/core/String.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/core/Algorithms.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -113,3 +115,7 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/String:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/core/String.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/core/Algorithms.h:

@@ -15,7 +15,7 @@
 #include <queue>
 #include <deque>
 #include <forward_list>
-#include <algorithm>
+//#include <algorithm>
 #include <prism/Array>
 #include <prism/Stack>
 #include <prism/List>
@@ -32,15 +32,20 @@
 #include <prism/Rect>
 #include <prism/Circle>
 #include <prism/String>
+#include <prism/Algorithms>
 
 using namespace prism;
 using namespace std;
 
+bool isOdd(int n) { return n%2 == 1; }
+
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
-	Vector<int> v = {1,2,3,4};
-	cout << v;
+	Vector<int> v;
+	v << 1 << 2 << 3 << 2 << 4 << 5 << 2 << 2 << 9;
+
+	cout << prism::count_if(v.begin(), v.end(), isOdd);
 
 //	return RUN_ALL_TESTS();
 	return 0;
