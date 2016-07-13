@@ -7,6 +7,7 @@
  */
 
 #include <prism/String>
+#include <prism/Algorithms>
 #include <prism/OutOfBoundsException>
 #include <iostream>
 
@@ -41,6 +42,17 @@ String::String(const std::string & string)
 		d->storage.start[i] = string.at(i);
 
 	d->storage.end = d->storage.start + s;
+}
+
+/**
+ *
+ */
+String::String(const String &copy)
+	: d(new StringData)
+{
+	reserve(copy.size());
+	prism::copy(copy.begin(), copy.end(), this->begin());
+	this->d->storage.end = this->d->storage.start + copy.size();
 }
 
 /**

@@ -9,6 +9,9 @@
 #ifndef PRISM_ALGORITHMS_H_
 #define PRISM_ALGORITHMS_H_
 
+// todo remove this
+#include <iostream>
+
 namespace prism {
 
 template <class InputIterator, class Predicate>
@@ -18,6 +21,29 @@ bool all_of(InputIterator first, InputIterator last, Predicate pred) {
 		first++;
 	}
 	return true;
+}
+
+template <class InputIterator, class OutputIterator>
+OutputIterator copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
+	while (first != last) {
+		*otherFirst = *first;
+		first++;
+		otherFirst++;
+	}
+	return otherFirst;
+}
+
+template <class InputIterator, class OutputIterator, class Predicate>
+OutputIterator copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred) {
+	while (first != last) {
+		if (pred(*first)) {
+			*otherFirst = *first;
+			otherFirst++;
+		}
+		first++;
+
+	}
+	return otherFirst;
 }
 
 template <class InputIterator, class T>

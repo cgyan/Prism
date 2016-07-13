@@ -20,6 +20,7 @@
 #include <prism/Iterator>
 #include <prism/List>
 #include <prism/OutOfBoundsException>
+#include <prism/Algorithms.h>
 
 namespace prism {
 
@@ -112,6 +113,7 @@ public:
 	void			removeLast();
 	void			replace(const int index, const T& value);
 	void 			reserve(const int newCapacity);
+	void			resize(const int newSize);
 	const int		size() const;
 	void			squeeze();
 	const bool		startsWith(const T& value) const;
@@ -740,6 +742,29 @@ void Vector<T>::reserve(const int newCapacity) {
 	d->storage.start = newStorage;
 	d->storage.end = d->storage.start + s;
 	d->storage.finish = d->storage.start + newCapacity;
+}
+
+/**
+ * Resizes the vector to \em newSize. \n
+ * If \em newSize is less than the current size then those
+ * elements are removed from the end. If \em newSize is greater than
+ * the current size then those new elements will be initialised to
+ * default constructed values i.e. T().
+ */
+template <class T>
+void Vector<T>::resize(const int newSize) {
+	if (newSize < size()) {
+		d->storage.end = d->storage.start + newSize;
+		return;
+	}
+
+	int oldSize = size();
+
+	if (newSize > capacity())
+		reserve(newSize);
+
+	prism::fill(begin()+oldSize, begin()+newSize, T());
+	d->storage.end = d->storage.start + newSize;
 }
 
 /**

@@ -11,8 +11,8 @@
 
 #include <ostream>
 #include <string>
+#include <initializer_list>
 #include <prism/Iterator>
-#include <prism/Algorithms>
 
 namespace prism {
 
@@ -56,6 +56,7 @@ public:
 	String();
 //	String(const char * string);
 	String(const std::string & string);
+	String(const String &copy);
 	virtual ~String();
 
 	char &			at(const int index);
