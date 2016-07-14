@@ -5,8 +5,8 @@ src/prism/geometry/Rect.d: ../src/prism/geometry/Rect.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Size.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Point \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Point.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Rect:
 
@@ -20,6 +20,6 @@ src/prism/geometry/Rect.d: ../src/prism/geometry/Rect.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Point.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal:
+/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h:

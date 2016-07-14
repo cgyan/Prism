@@ -11,6 +11,7 @@ var classprism_1_1_string =
     [ "value_type", "classprism_1_1_string.html#a9808c1cb8dbe4ec046174c3318e577b7", null ],
     [ "String", "classprism_1_1_string.html#a3a9df9dd5d297b91d2eec1ef7c4db8d3", null ],
     [ "String", "classprism_1_1_string.html#ae87a7b495eeacf104410649c0669c89a", null ],
+    [ "String", "classprism_1_1_string.html#a6734cae1e3f2165a4a5d1f48cb56d0fe", null ],
     [ "~String", "classprism_1_1_string.html#ab0114c8ba868b0facea3286d2764f010", null ],
     [ "at", "classprism_1_1_string.html#a2bbac16806974edd5c6d0d1d19ac7d5a", null ],
     [ "at", "classprism_1_1_string.html#a55e86af07823ab80c1b6b0849231312b", null ],

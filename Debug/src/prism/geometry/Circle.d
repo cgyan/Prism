@@ -18,8 +18,7 @@ src/prism/geometry/Circle.d: ../src/prism/geometry/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pointf.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Circle:
 
@@ -59,6 +58,4 @@ src/prism/geometry/Circle.d: ../src/prism/geometry/Circle.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/PrismGlobal.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms:

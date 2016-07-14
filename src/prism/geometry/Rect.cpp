@@ -11,7 +11,7 @@
 #include <prism/Point>
 #include <iostream>
 #include <cmath>
-#include <prism/PrismGlobal>
+#include <prism/Algorithms>
 
 namespace prism {
 

@@ -7,21 +7,21 @@
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef Random\+Access\+Iterator$<$ T $>$ \hyperlink{classprism_1_1_vector_aa547779173a63f6f8c9b2887498d10eb}{iterator}
+typedef \hyperlink{classprism_1_1_random_access_iterator}{Random\+Access\+Iterator}$<$ T $>$ \hyperlink{classprism_1_1_vector_aa547779173a63f6f8c9b2887498d10eb}{iterator}
 \item 
-typedef Random\+Access\+Const\+Iterator$<$ T $>$ \hyperlink{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}{const\+\_\+iterator}
+typedef \hyperlink{classprism_1_1_random_access_const_iterator}{Random\+Access\+Const\+Iterator}$<$ T $>$ \hyperlink{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}{const\+\_\+iterator}
 \item 
-typedef iterator\+::reference \hyperlink{classprism_1_1_vector_a8ccf98342707efbed82918a44be97438}{reference}
+typedef \hyperlink{classprism_1_1_forward_iterator_a4f7bff2c238f447c1537c74fe09f8935}{iterator\+::reference} \hyperlink{classprism_1_1_vector_a8ccf98342707efbed82918a44be97438}{reference}
 \item 
-typedef const\+\_\+iterator\+::reference \hyperlink{classprism_1_1_vector_a75325487acaa0f63496c110e5a5632bb}{const\+\_\+reference}
+typedef \hyperlink{classprism_1_1_forward_const_iterator_a839eeb121503b031260ad21ef844dd9a}{const\+\_\+iterator\+::reference} \hyperlink{classprism_1_1_vector_a75325487acaa0f63496c110e5a5632bb}{const\+\_\+reference}
 \item 
-typedef iterator\+::pointer \hyperlink{classprism_1_1_vector_a9823d64f361cdff3fcc5043e8b4bd882}{pointer}
+typedef \hyperlink{classprism_1_1_forward_iterator_af50dd6e13f3cea3ee3b2332e48996502}{iterator\+::pointer} \hyperlink{classprism_1_1_vector_a9823d64f361cdff3fcc5043e8b4bd882}{pointer}
 \item 
-typedef const\+\_\+iterator\+::pointer \hyperlink{classprism_1_1_vector_a0bf16322f83f0ad9103815a1cac16156}{const\+\_\+pointer}
+typedef \hyperlink{classprism_1_1_forward_const_iterator_a6e4e245d3ab99d6e9b237abe2c0c06d8}{const\+\_\+iterator\+::pointer} \hyperlink{classprism_1_1_vector_a0bf16322f83f0ad9103815a1cac16156}{const\+\_\+pointer}
 \item 
-typedef iterator\+::value\+\_\+type \hyperlink{classprism_1_1_vector_a12f8585af6daa44e7732880b3f725ee3}{value\+\_\+type}
+typedef \hyperlink{classprism_1_1_forward_iterator_a7a28958d2cf2ea2613c6f0f011759781}{iterator\+::value\+\_\+type} \hyperlink{classprism_1_1_vector_a12f8585af6daa44e7732880b3f725ee3}{value\+\_\+type}
 \item 
-typedef iterator\+::difference\+\_\+type \hyperlink{classprism_1_1_vector_a5fe3b74bfb30d75aa74d4d896e6b7227}{difference\+\_\+type}
+typedef \hyperlink{classprism_1_1_forward_iterator_a8c90486e85c02351c2e957ba3247ab10}{iterator\+::difference\+\_\+type} \hyperlink{classprism_1_1_vector_a5fe3b74bfb30d75aa74d4d896e6b7227}{difference\+\_\+type}
 \item 
 typedef int \hyperlink{classprism_1_1_vector_a14c909f500f13b8b7a276bb97ae746e8}{size\+\_\+type}
 \end{DoxyCompactItemize}
@@ -32,7 +32,7 @@ typedef int \hyperlink{classprism_1_1_vector_a14c909f500f13b8b7a276bb97ae746e8}{
 \item 
 \hyperlink{classprism_1_1_vector_a61d37ac01e42fca59cdf320804a2a7ed}{Vector} (const int \hyperlink{classprism_1_1_vector_ac6ff3296683e76da61d48bcc15e4f175}{size}, const T \&value=T())
 \item 
-\hyperlink{classprism_1_1_vector_a6df8c0a101ff496b688f4937ec1f13e6}{Vector} (const \hyperlink{classprism_1_1_vector}{Vector}$<$ T $>$ \&copy)
+\hyperlink{classprism_1_1_vector_a6df8c0a101ff496b688f4937ec1f13e6}{Vector} (const \hyperlink{classprism_1_1_vector}{Vector}$<$ T $>$ \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
 \item 
 \hyperlink{classprism_1_1_vector_a80f2790bb6011dd40739bff844fd3154}{$\sim$\+Vector} ()
 \item 
@@ -138,6 +138,8 @@ void \hyperlink{classprism_1_1_vector_a6efd18c9c21f2a98f59ccea0ae2b694c}{replace
 \item 
 void \hyperlink{classprism_1_1_vector_a617fa4a86aca478131d33984c01118ae}{reserve} (const int new\+Capacity)
 \item 
+void \hyperlink{classprism_1_1_vector_a13675c55c77df670075a9f80057d1d2e}{resize} (const int new\+Size)
+\item 
 const int \hyperlink{classprism_1_1_vector_ac6ff3296683e76da61d48bcc15e4f175}{size} () const 
 \item 
 void \hyperlink{classprism_1_1_vector_ab2491ac6ff73d372ed8f080adef78208}{squeeze} ()
@@ -183,31 +185,31 @@ std\+::ostream \& \hyperlink{classprism_1_1_vector_adea1a7e2e26629669d11a49d8899
 \subsection{Member Typedef Documentation}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!const\+\_\+iterator@{const\+\_\+iterator}}
 \index{const\+\_\+iterator@{const\+\_\+iterator}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{const\+\_\+iterator}{const_iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef Random\+Access\+Const\+Iterator$<$T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf const\+\_\+iterator}}\hypertarget{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}{}\label{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}
+\subsubsection[{\texorpdfstring{const\+\_\+iterator}{const_iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf Random\+Access\+Const\+Iterator}$<$T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf const\+\_\+iterator}}\hypertarget{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}{}\label{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!const\+\_\+pointer@{const\+\_\+pointer}}
 \index{const\+\_\+pointer@{const\+\_\+pointer}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef const\+\_\+iterator\+::pointer {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf const\+\_\+pointer}}\hypertarget{classprism_1_1_vector_a0bf16322f83f0ad9103815a1cac16156}{}\label{classprism_1_1_vector_a0bf16322f83f0ad9103815a1cac16156}
+\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf const\+\_\+iterator\+::pointer} {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf const\+\_\+pointer}}\hypertarget{classprism_1_1_vector_a0bf16322f83f0ad9103815a1cac16156}{}\label{classprism_1_1_vector_a0bf16322f83f0ad9103815a1cac16156}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!const\+\_\+reference@{const\+\_\+reference}}
 \index{const\+\_\+reference@{const\+\_\+reference}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef const\+\_\+iterator\+::reference {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf const\+\_\+reference}}\hypertarget{classprism_1_1_vector_a75325487acaa0f63496c110e5a5632bb}{}\label{classprism_1_1_vector_a75325487acaa0f63496c110e5a5632bb}
+\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf const\+\_\+iterator\+::reference} {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf const\+\_\+reference}}\hypertarget{classprism_1_1_vector_a75325487acaa0f63496c110e5a5632bb}{}\label{classprism_1_1_vector_a75325487acaa0f63496c110e5a5632bb}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!difference\+\_\+type@{difference\+\_\+type}}
 \index{difference\+\_\+type@{difference\+\_\+type}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef iterator\+::difference\+\_\+type {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1_vector_a5fe3b74bfb30d75aa74d4d896e6b7227}{}\label{classprism_1_1_vector_a5fe3b74bfb30d75aa74d4d896e6b7227}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::difference\+\_\+type} {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1_vector_a5fe3b74bfb30d75aa74d4d896e6b7227}{}\label{classprism_1_1_vector_a5fe3b74bfb30d75aa74d4d896e6b7227}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!iterator@{iterator}}
 \index{iterator@{iterator}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef Random\+Access\+Iterator$<$T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf iterator}}\hypertarget{classprism_1_1_vector_aa547779173a63f6f8c9b2887498d10eb}{}\label{classprism_1_1_vector_aa547779173a63f6f8c9b2887498d10eb}
+\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf Random\+Access\+Iterator}$<$T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf iterator}}\hypertarget{classprism_1_1_vector_aa547779173a63f6f8c9b2887498d10eb}{}\label{classprism_1_1_vector_aa547779173a63f6f8c9b2887498d10eb}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!pointer@{pointer}}
 \index{pointer@{pointer}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef iterator\+::pointer {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf pointer}}\hypertarget{classprism_1_1_vector_a9823d64f361cdff3fcc5043e8b4bd882}{}\label{classprism_1_1_vector_a9823d64f361cdff3fcc5043e8b4bd882}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::pointer} {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf pointer}}\hypertarget{classprism_1_1_vector_a9823d64f361cdff3fcc5043e8b4bd882}{}\label{classprism_1_1_vector_a9823d64f361cdff3fcc5043e8b4bd882}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!reference@{reference}}
 \index{reference@{reference}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef iterator\+::reference {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf reference}}\hypertarget{classprism_1_1_vector_a8ccf98342707efbed82918a44be97438}{}\label{classprism_1_1_vector_a8ccf98342707efbed82918a44be97438}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::reference} {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf reference}}\hypertarget{classprism_1_1_vector_a8ccf98342707efbed82918a44be97438}{}\label{classprism_1_1_vector_a8ccf98342707efbed82918a44be97438}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!size\+\_\+type@{size\+\_\+type}}
 \index{size\+\_\+type@{size\+\_\+type}!prism\+::\+Vector@{prism\+::\+Vector}}
 \subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef int {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf size\+\_\+type}}\hypertarget{classprism_1_1_vector_a14c909f500f13b8b7a276bb97ae746e8}{}\label{classprism_1_1_vector_a14c909f500f13b8b7a276bb97ae746e8}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!value\+\_\+type@{value\+\_\+type}}
 \index{value\+\_\+type@{value\+\_\+type}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef iterator\+::value\+\_\+type {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf value\+\_\+type}}\hypertarget{classprism_1_1_vector_a12f8585af6daa44e7732880b3f725ee3}{}\label{classprism_1_1_vector_a12f8585af6daa44e7732880b3f725ee3}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef {\bf iterator\+::value\+\_\+type} {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf value\+\_\+type}}\hypertarget{classprism_1_1_vector_a12f8585af6daa44e7732880b3f725ee3}{}\label{classprism_1_1_vector_a12f8585af6daa44e7732880b3f725ee3}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -689,7 +691,15 @@ Replaces the value at {\itshape index} with {\itshape value}. {\itshape index} m
 \item[{const int}]{new\+Capacity}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_vector_a617fa4a86aca478131d33984c01118ae}{}\label{classprism_1_1_vector_a617fa4a86aca478131d33984c01118ae}
-Reserves enough memory for the vector to contain {\itshape new\+Capacity} elements i.\+e. new\+Capacity $\ast$ sizeof(\+T). The capacity can only grow and will not lessen even if \hyperlink{classprism_1_1_vector_acb8a681b958856d257b145930014c6fa}{clear()} or \hyperlink{classprism_1_1_vector_a540d12132c9a971d469c9d53a954f322}{erase()} is called. Only \hyperlink{classprism_1_1_vector_ab2491ac6ff73d372ed8f080adef78208}{squeeze()} can alter the capacity to a lower amount. If {\itshape new\+Capacity} is less than or equal to the current capacity then nothing changes. Any existing elements in the vector are not affected by this function. \index{prism\+::\+Vector@{prism\+::\+Vector}!size@{size}}
+Reserves enough memory for the vector to contain {\itshape new\+Capacity} elements i.\+e. new\+Capacity $\ast$ sizeof(\+T). The capacity can only grow and will not lessen even if \hyperlink{classprism_1_1_vector_acb8a681b958856d257b145930014c6fa}{clear()} or \hyperlink{classprism_1_1_vector_a540d12132c9a971d469c9d53a954f322}{erase()} is called. Only \hyperlink{classprism_1_1_vector_ab2491ac6ff73d372ed8f080adef78208}{squeeze()} can alter the capacity to a lower amount. If {\itshape new\+Capacity} is less than or equal to the current capacity then nothing changes. Any existing elements in the vector are not affected by this function. \index{prism\+::\+Vector@{prism\+::\+Vector}!resize@{resize}}
+\index{resize@{resize}!prism\+::\+Vector@{prism\+::\+Vector}}
+\subsubsection[{\texorpdfstring{resize(const int new\+Size)}{resize(const int newSize)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::resize (
+\begin{DoxyParamCaption}
+\item[{const int}]{new\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_vector_a13675c55c77df670075a9f80057d1d2e}{}\label{classprism_1_1_vector_a13675c55c77df670075a9f80057d1d2e}
+Resizes the vector to {\itshape new\+Size}. ~\newline
+If {\itshape new\+Size} is less than the current size then those elements are removed from the end. If {\itshape new\+Size} is greater than the current size then those new elements will be initialised to default constructed values i.\+e. T(). \index{prism\+::\+Vector@{prism\+::\+Vector}!size@{size}}
 \index{size@{size}!prism\+::\+Vector@{prism\+::\+Vector}}
 \subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Vector}$<$ T $>$\+::size (
 \begin{DoxyParamCaption}
@@ -739,4 +749,4 @@ Creates an returns a std\+::vector containing all the elements from this vector.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-inc/prism/containers/\hyperlink{_vector_8h}{Vector.\+h}\end{DoxyCompactItemize}
+inc/prism/\hyperlink{_vector_8h}{Vector.\+h}\end{DoxyCompactItemize}

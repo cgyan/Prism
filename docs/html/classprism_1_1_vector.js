@@ -73,6 +73,7 @@ var classprism_1_1_vector =
     [ "removeLast", "classprism_1_1_vector.html#a0d2d2724f9ba5a520159ddce1c9b4681", null ],
     [ "replace", "classprism_1_1_vector.html#a6efd18c9c21f2a98f59ccea0ae2b694c", null ],
     [ "reserve", "classprism_1_1_vector.html#a617fa4a86aca478131d33984c01118ae", null ],
+    [ "resize", "classprism_1_1_vector.html#a13675c55c77df670075a9f80057d1d2e", null ],
     [ "size", "classprism_1_1_vector.html#ac6ff3296683e76da61d48bcc15e4f175", null ],
     [ "squeeze", "classprism_1_1_vector.html#ab2491ac6ff73d372ed8f080adef78208", null ],
     [ "startsWith", "classprism_1_1_vector.html#a7562a7e62555ee5cc35b309799cbfb05", null ],

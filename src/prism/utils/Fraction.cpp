@@ -7,7 +7,7 @@
  */
 
 #include <prism/Fraction>
-#include <prism/PrismGlobal>
+#include <prism/Algorithms>
 
 namespace prism {
 

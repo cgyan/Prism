@@ -1,14 +1,15 @@
 \hypertarget{namespaceprism}{}\section{prism Namespace Reference}
 \label{namespaceprism}\index{prism@{prism}}
-
-
-The \hyperlink{classprism_1_1_quaternion}{Quaternion} class represents an orientation in 3d space.  
-
-
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classprism_1_1_array}{Array}
+\item 
+struct \hyperlink{structprism_1_1bidirectional__iterator__tag}{bidirectional\+\_\+iterator\+\_\+tag}
+\item 
+class \hyperlink{classprism_1_1_bidirectional_const_iterator}{Bidirectional\+Const\+Iterator}
+\item 
+class \hyperlink{classprism_1_1_bidirectional_iterator}{Bidirectional\+Iterator}
 \item 
 class \hyperlink{classprism_1_1_circle}{Circle}
 \item 
@@ -18,15 +19,31 @@ class \hyperlink{classprism_1_1_flag}{Flag}
 \item 
 class \hyperlink{classprism_1_1_flags}{Flags}
 \item 
+struct \hyperlink{structprism_1_1forward__iterator__tag}{forward\+\_\+iterator\+\_\+tag}
+\item 
+class \hyperlink{classprism_1_1_forward_const_iterator}{Forward\+Const\+Iterator}
+\item 
+class \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator}
+\item 
 class \hyperlink{classprism_1_1_fraction}{Fraction}
 \item 
+struct \hyperlink{structprism_1_1input__iterator__tag}{input\+\_\+iterator\+\_\+tag}
+\item 
+struct \hyperlink{structprism_1_1iterator__traits}{iterator\+\_\+traits}
+\item 
 class \hyperlink{classprism_1_1_list}{List}
+\item 
+struct \hyperlink{structprism_1_1_list_const_iterator}{List\+Const\+Iterator}
+\item 
+struct \hyperlink{structprism_1_1_list_iterator}{List\+Iterator}
 \item 
 class \hyperlink{classprism_1_1_mathf}{Mathf}
 \item 
 class \hyperlink{classprism_1_1_matrix4}{Matrix4}
 \item 
 class \hyperlink{classprism_1_1_out_of_bounds_exception}{Out\+Of\+Bounds\+Exception}
+\item 
+struct \hyperlink{structprism_1_1output__iterator__tag}{output\+\_\+iterator\+\_\+tag}
 \item 
 class \hyperlink{classprism_1_1_point}{Point}
 \item 
@@ -35,6 +52,12 @@ class \hyperlink{classprism_1_1_pointf}{Pointf}
 class \hyperlink{classprism_1_1_quaternion}{Quaternion}
 \item 
 class \hyperlink{classprism_1_1_queue}{Queue}
+\item 
+struct \hyperlink{structprism_1_1random__access__iterator__tag}{random\+\_\+access\+\_\+iterator\+\_\+tag}
+\item 
+class \hyperlink{classprism_1_1_random_access_const_iterator}{Random\+Access\+Const\+Iterator}
+\item 
+class \hyperlink{classprism_1_1_random_access_iterator}{Random\+Access\+Iterator}
 \item 
 class \hyperlink{classprism_1_1_rect}{Rect}
 \item 
@@ -65,19 +88,31 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&array)
-\item 
-{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a50da64555d454821545fe0311fde6a62}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&list)
-\item 
 {\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\bool \hyperlink{namespaceprism_aba366b328f3b6161e6115c16b7153c6d}{all\+\_\+of} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\bool \hyperlink{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}{any\+\_\+of} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator $>$ }\\Output\+Iterator \hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class Predicate $>$ }\\Output\+Iterator \hyperlink{namespaceprism_afbed55ae6769c2d88c125aedc2f3846e}{copy\+\_\+if} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class T $>$ }\\int \hyperlink{namespaceprism_a024117fc3639cdf6598509edf22f034a}{count} (Input\+Iterator first, Input\+Iterator last, const T \&value)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\int \hyperlink{namespaceprism_af0007d361beae18a930b6249752e509e}{count\+\_\+if} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
 \item 
-{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{fill} (Forward\+Iterator first, Forward\+Iterator last, const T \&value)
+{\footnotesize template$<$class Input\+Iterator1 , class Input\+Iterator2 $>$ }\\bool \hyperlink{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}{equal} (Input\+Iterator1 first, Input\+Iterator1 last, Input\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{fill} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last, const T \&value)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_aceb4b9c511a5edb706296b457427b226}{fill\+\_\+n} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, int size, const T \&value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class T $>$ }\\Input\+Iterator \hyperlink{namespaceprism_a1b543d9c2862a539cc8b770abda87561}{find} (Input\+Iterator first, Input\+Iterator last, const T \&value)
 \item 
 {\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{swap} (T \&a, T \&b)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&array)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a50da64555d454821545fe0311fde6a62}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&list)
 \item 
 {\footnotesize template$<$typename T $>$ }\\const T \& \hyperlink{namespaceprism_a812456273adfa37979e79f07e731d412}{max} (const T \&a, const T \&b)
 \item 
@@ -304,7 +339,17 @@ std\+::ostream \& \hyperlink{namespaceprism_a9c2d182a77a92e6cba7917dbd58f9d87}{o
 
 
 \subsection{Detailed Description}
-The \hyperlink{classprism_1_1_quaternion}{Quaternion} class represents an orientation in 3d space. 
+Completely and shamelessly lifted from Qt\textquotesingle{}s Q\+Flag/\+Q\+Flags classes and macros and just renamed without the prepended \textquotesingle{}Q\textquotesingle{}. These classes allow enums to be treated as datatypes when passed to methods. They are also type-\/safe so that the receiving method is expecting the enum and not the basic int equivalent. So print\+Flag(\+Label\+::\+Align\+Left) works whilst print\+Flag(2) doesn\textquotesingle{}t.
+
+For example,
+
+class Label \{ private\+: enum Alignment \{ Align\+Left = 0x1, Align\+Right = 0x2 \} \hyperlink{_flags_8h_aa5aa2c9827ab949836e20999b9a068ec}{P\+R\+I\+S\+M\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+F\+L\+A\+G\+S(\+Align\+Flags, Alignment)} \}
+
+// outside class def \hyperlink{_flags_8h_ae8aabb683a18b872a4449769b82e8e15}{P\+R\+I\+S\+M\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+S\+\_\+\+F\+O\+R\+\_\+\+F\+L\+A\+G\+S(\+Label\+::\+Align\+Flags)}
+
+void print\+Flag(\+Label\+::\+Align\+Flags f) \{ if (f == Label\+::\+Align\+Left) std\+::cout $<$$<$ \char`\"{}\+Align\+Left\char`\"{} $<$$<$ std\+::endl; else if (f == Label\+::\+Align\+Right) std\+::cout $<$$<$ \char`\"{}\+Align\+Right\char`\"{} $<$$<$ std\+::endl; else std\+::cout $<$$<$ f $<$$<$ std\+::endl; \}
+
+int main(int argc, char$\ast$$\ast$ argv) \{ print\+Flag(\+Label\+::\+Align\+Left); \}
 
 A \hyperlink{classprism_1_1_quaternion}{Quaternion} is made up of four components (w, x, y and z) which are a scalar (w) and a 3d vector (x, y and z). It does not suffer from gimbal lock and yet can represent any orientation possible.
 
@@ -316,19 +361,7 @@ c) the inverse of a quaternion product is equal to the product of the individual
 
 Rotating vectors\+: When rotating with a quaternion it is important that the quaternion be normalised i.\+e. be of unit length. This is because otherwise scaling will occur and since we only require rotations from our quaternions this won\textquotesingle{}t do. Rotating a vector using quaternions is done with the following equation\+: v\textquotesingle{} = q $\ast$ v $\ast$ q.\+inverse where vector v is represented as a quaternion.
 
-Concatenating rotational transforms together\+: Multiple quaternion rotations can be applied to a vector in one single action by concatenating the rotational quaternions together and then applying them to the vector using the above equation. For example, to rotate the vector v by quaternion a and then rotating that result by quaternion b would be as follows\+: v\textquotesingle{} = b $\ast$ (a $\ast$ v $\ast$ a.\+inverse) $\ast$ b.\+inverse = (b $\ast$ a) $\ast$ v $\ast$ (b.\+inverse $\ast$ a.\+inverse) = (b $\ast$ a) $\ast$ v $\ast$ (b $\ast$ a).inverse So, rotating by a and then by b is equivalent to the single rotation of the product of ba.
-
-Completely and shamelessly lifted from Qt\textquotesingle{}s Q\+Flag/\+Q\+Flags classes and macros and just renamed without the prepended \textquotesingle{}Q\textquotesingle{}. These classes allow enums to be treated as datatypes when passed to methods. They are also type-\/safe so that the receiving method is expecting the enum and not the basic int equivalent. So print\+Flag(\+Label\+::\+Align\+Left) works whilst print\+Flag(2) doesn\textquotesingle{}t.
-
-For example,
-
-class Label \{ private\+: enum Alignment \{ Align\+Left = 0x1, Align\+Right = 0x2 \} \hyperlink{_flags_8h_aa5aa2c9827ab949836e20999b9a068ec}{P\+R\+I\+S\+M\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+F\+L\+A\+G\+S(\+Align\+Flags, Alignment)} \}
-
-// outside class def \hyperlink{_flags_8h_ae8aabb683a18b872a4449769b82e8e15}{P\+R\+I\+S\+M\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+S\+\_\+\+F\+O\+R\+\_\+\+F\+L\+A\+G\+S(\+Label\+::\+Align\+Flags)}
-
-void print\+Flag(\+Label\+::\+Align\+Flags f) \{ if (f == Label\+::\+Align\+Left) std\+::cout $<$$<$ \char`\"{}\+Align\+Left\char`\"{} $<$$<$ std\+::endl; else if (f == Label\+::\+Align\+Right) std\+::cout $<$$<$ \char`\"{}\+Align\+Right\char`\"{} $<$$<$ std\+::endl; else std\+::cout $<$$<$ f $<$$<$ std\+::endl; \}
-
-int main(int argc, char$\ast$$\ast$ argv) \{ print\+Flag(\+Label\+::\+Align\+Left); \} 
+Concatenating rotational transforms together\+: Multiple quaternion rotations can be applied to a vector in one single action by concatenating the rotational quaternions together and then applying them to the vector using the above equation. For example, to rotate the vector v by quaternion a and then rotating that result by quaternion b would be as follows\+: v\textquotesingle{} = b $\ast$ (a $\ast$ v $\ast$ a.\+inverse) $\ast$ b.\+inverse = (b $\ast$ a) $\ast$ v $\ast$ (b.\+inverse $\ast$ a.\+inverse) = (b $\ast$ a) $\ast$ v $\ast$ (b $\ast$ a).inverse So, rotating by a and then by b is equivalent to the single rotation of the product of ba. 
 
 \subsection{Function Documentation}
 \index{prism@{prism}!all\+\_\+of@{all\+\_\+of}}
@@ -340,7 +373,35 @@ int main(int argc, char$\ast$$\ast$ argv) \{ print\+Flag(\+Label\+::\+Align\+Lef
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aba366b328f3b6161e6115c16b7153c6d}{}\label{namespaceprism_aba366b328f3b6161e6115c16b7153c6d}
-\index{prism@{prism}!count@{count}}
+Returns true if {\itshape pred} returns true for all the elements in the range {\itshape }\mbox{[}first,last) or if the range is empty, and false otherwise. \index{prism@{prism}!any\+\_\+of@{any\+\_\+of}}
+\index{any\+\_\+of@{any\+\_\+of}!prism@{prism}}
+\subsubsection[{\texorpdfstring{any\+\_\+of(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{any_of(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ bool prism\+::any\+\_\+of (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}{}\label{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}
+Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!copy@{copy}}
+\index{copy@{copy}!prism@{prism}}
+\subsubsection[{\texorpdfstring{copy(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First)}{copy(InputIterator first, InputIterator last, OutputIterator otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator $>$ Output\+Iterator prism\+::copy (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{}\label{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}
+Copies the elements in the range {\itshape }\mbox{[}first,last) into the range beginning at {\itshape other\+First}. \index{prism@{prism}!copy\+\_\+if@{copy\+\_\+if}}
+\index{copy\+\_\+if@{copy\+\_\+if}!prism@{prism}}
+\subsubsection[{\texorpdfstring{copy\+\_\+if(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred)}{copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class Predicate $>$ Output\+Iterator prism\+::copy\+\_\+if (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_afbed55ae6769c2d88c125aedc2f3846e}{}\label{namespaceprism_afbed55ae6769c2d88c125aedc2f3846e}
+Copies the elements in the range {\itshape }\mbox{[}first,last) for which {\itshape pred} returns true to the range beginning at {\itshape other\+First}. \index{prism@{prism}!count@{count}}
 \index{count@{count}!prism@{prism}}
 \subsubsection[{\texorpdfstring{count(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{count(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ int prism\+::count (
 \begin{DoxyParamCaption}
@@ -349,7 +410,7 @@ int main(int argc, char$\ast$$\ast$ argv) \{ print\+Flag(\+Label\+::\+Align\+Lef
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a024117fc3639cdf6598509edf22f034a}{}\label{namespaceprism_a024117fc3639cdf6598509edf22f034a}
-\index{prism@{prism}!count\+\_\+if@{count\+\_\+if}}
+Returns the number of elements in the range {\itshape }\mbox{[}first,last) that compare equal to {\itshape value}. \index{prism@{prism}!count\+\_\+if@{count\+\_\+if}}
 \index{count\+\_\+if@{count\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{count\+\_\+if(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{count_if(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ int prism\+::count\+\_\+if (
 \begin{DoxyParamCaption}
@@ -358,16 +419,44 @@ int main(int argc, char$\ast$$\ast$ argv) \{ print\+Flag(\+Label\+::\+Align\+Lef
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_af0007d361beae18a930b6249752e509e}{}\label{namespaceprism_af0007d361beae18a930b6249752e509e}
-\index{prism@{prism}!fill@{fill}}
+Returns the number of elements in the range {\itshape }\mbox{[}first,last) for which {\itshape pred} is true. \index{prism@{prism}!equal@{equal}}
+\index{equal@{equal}!prism@{prism}}
+\subsubsection[{\texorpdfstring{equal(\+Input\+Iterator1 first, Input\+Iterator1 last, Input\+Iterator2 other\+First)}{equal(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator1 , class Input\+Iterator2 $>$ bool prism\+::equal (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator1}]{first, }
+\item[{Input\+Iterator1}]{last, }
+\item[{Input\+Iterator2}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}{}\label{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}
+Compares the elements in the range {\itshape }\mbox{[}first1,last1) with those in the range beginning at {\itshape first2}, and returns true if all of the elements in both ranges match. ~\newline
+The elements are compared using operator==. \index{prism@{prism}!fill@{fill}}
 \index{fill@{fill}!prism@{prism}}
 \subsubsection[{\texorpdfstring{fill(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{fill(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::fill (
 \begin{DoxyParamCaption}
-\item[{Forward\+Iterator}]{first, }
-\item[{Forward\+Iterator}]{last, }
+\item[{{\bf Forward\+Iterator}}]{first, }
+\item[{{\bf Forward\+Iterator}}]{last, }
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{}\label{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}
-\index{prism@{prism}!max@{max}}
+Assigns {\itshape value} to all the elements in the range {\itshape }\mbox{[}first,last). \index{prism@{prism}!fill\+\_\+n@{fill\+\_\+n}}
+\index{fill\+\_\+n@{fill\+\_\+n}!prism@{prism}}
+\subsubsection[{\texorpdfstring{fill\+\_\+n(\+Forward\+Iterator first, int size, const T \&value)}{fill_n(ForwardIterator first, int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::fill\+\_\+n (
+\begin{DoxyParamCaption}
+\item[{{\bf Forward\+Iterator}}]{first, }
+\item[{int}]{size, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aceb4b9c511a5edb706296b457427b226}{}\label{namespaceprism_aceb4b9c511a5edb706296b457427b226}
+Assigns {\itshape value} to the first {\itshape n} elements of the sequence pointed by {\itshape first}. \index{prism@{prism}!find@{find}}
+\index{find@{find}!prism@{prism}}
+\subsubsection[{\texorpdfstring{find(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{find(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ Input\+Iterator prism\+::find (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a1b543d9c2862a539cc8b770abda87561}{}\label{namespaceprism_a1b543d9c2862a539cc8b770abda87561}
+Returns an iterator to the first element in the range {\itshape }\mbox{[}first,last) that compares equal to {\itshape value}. If no such element is found, the function returns {\itshape last}. \index{prism@{prism}!max@{max}}
 \index{max@{max}!prism@{prism}}
 \subsubsection[{\texorpdfstring{max(const T \&a, const T \&b)}{max(const T &a, const T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T\& prism\+::max (
 \begin{DoxyParamCaption}
@@ -636,14 +725,6 @@ Returns a \hyperlink{classprism_1_1_vector4}{Vector4} that has had each vector c
 )}\hypertarget{namespaceprism_a429cccc5eee454ba019045afb4a01e93}{}\label{namespaceprism_a429cccc5eee454ba019045afb4a01e93}
 Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$\ast$(const Vector3 \&v, const float factor)}{operator*(const Vector3 &v, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} prism\+::operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{const {\bf Vector3} \&}]{v, }
-\item[{const float}]{factor}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}{}\label{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}
-Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$\ast$(const Quaternion \&q, const float factor)}{operator*(const Quaternion &q, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Quaternion} \&}]{q, }
@@ -651,6 +732,14 @@ Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector c
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}{}\label{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}
 Returns a \hyperlink{classprism_1_1_quaternion}{Quaternion} that is the result of multiplying each component of q by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Vector3 \&v, const float factor)}{operator*(const Vector3 &v, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} prism\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v, }
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}{}\label{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}
+Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$\ast$(const float factor, const Quaternion \&q)}{operator*(const float factor, const Quaternion &q)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -1290,3 +1379,4 @@ Returns true if {\itshape c1} has a greater radius than {\itshape c2}, false oth
 \item[{T \&}]{b}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{}\label{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}
+Exchanges the values of {\itshape a} and {\itshape b}. 

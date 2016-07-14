@@ -10,7 +10,7 @@
 #include <prism/Circle>
 #include <prism/Pointf>
 #include <prism/Mathf>
-#include <prism/PrismGlobal>
+#include <prism/Algorithms>
 #include <cmath>
 #include <iostream>
 

@@ -38,29 +38,18 @@ using namespace prism;
 using namespace std;
 
 bool isOdd(int n) { return n%2 == 1; }
+bool isEven(int n) { return n%2 == 0; }
+bool isNegative(int n) { return n<0; }
+void print(int n) { cout << n << endl; }
 
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 	Vector<int> v;
-//	v << 1 << 2 << 3 << 4 << 5 << 6 << 7;
-	v.push_back(1);
-	v.push_back(2);
-	v.push_back(3);
-	v.push_back(4);
-	v.push_back(5);
+	v << 1 << 2 << 3 << 4 << 5 << 6 << 7 << -4;
 
+	cout << prism::max(2,2);
 
-	Vector<int> vv;
-	int count = prism::count_if(v.begin(), v.end(), isOdd);
-	vv.resize(count);
-	prism::copy_if(v.begin(), v.end(), vv.begin(), isOdd);
-
-//	vector<int>::iterator first = v.begin();
-//	while (first != v.end())
-//		cout << *(first++) << endl;
-
-	cout << vv;
 
 //	return RUN_ALL_TESTS();
 	return 0;
