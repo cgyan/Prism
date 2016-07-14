@@ -45,12 +45,9 @@ void print(int n) { cout << n << endl; }
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
-	Vector<int> v;
-	v << 34 << 85 << 45 << 12 << 90 << 65;
+	String s("Helolo");
 
-	prism::sort(v.begin(), v.end());
-
-	cout << v;
+	cout << s.lastIndexOf('o', s.size()-5);
 
 //	return RUN_ALL_TESTS();
 	return 0;

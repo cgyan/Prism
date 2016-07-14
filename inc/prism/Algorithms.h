@@ -14,6 +14,7 @@
 
 namespace prism {
 
+// forward declaration
 template <class T>
 void swap(T& a, T& b);
 
@@ -383,7 +384,6 @@ void sort(RandomAccessIterator first, RandomAccessIterator last) {
 
 	int i,j;
 	int n = last - first;
-
 
 	bool swapped = false;
 

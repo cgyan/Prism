@@ -55,7 +55,8 @@ public:
 public:
 	String();
 //	String(const char * string);
-	String(const std::string & string);
+	String(const std::string & str);
+	String(const int size, const char c);
 	String(const String &copy);
 	virtual ~String();
 
@@ -65,20 +66,26 @@ public:
 	const_iterator	begin() const;
 	const int 		capacity() const;
 	const_iterator	cbegin() const;
+	const int		count(const char c) const;
 	void			clear();
 	char *			data();
 	const char *	data() const;
 	iterator		end();
 	const_iterator	end() const;
+	const bool		endsWith(const char c) const;
+	String &		fill(const char c, const int size=-1);
+	const int		indexOf(const char c, const int from=0) const;
 	const bool		isEmpty() const;
 	const int 		length() const;
 	void 			reserve(const int newCapacity);
+	void			resize(const int newSize);
 	const int 		size() const;
 	std::string		toStdString() const;
 
 	// related non-members
 	char & 			operator[](const int index);
 	const char &	operator[](const int index) const;
+	String &		operator=(const String &other);
 
 	friend std::ostream & operator<<(std::ostream & out, const String &s);
 
