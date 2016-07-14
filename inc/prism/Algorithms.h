@@ -14,6 +14,23 @@
 
 namespace prism {
 
+template <class T>
+void swap(T& a, T& b);
+
+/**
+ * Searches the range \em [first,last) for the first occurrence of two consecutive elements
+ * that match, and returns an iterator to the first of these two elements, or \em last if no such pair is found.
+ */
+template <class ForwardIterator>
+ForwardIterator adjacent_find(ForwardIterator first, ForwardIterator last) {
+	while (first != last) {
+		if (*first == *(first+1))
+			return first;
+		first++;
+	}
+	return last;
+}
+
 /**
  * Returns true if \em pred returns true for all the elements in the range \em [first,last)
  * or if the range is empty, and false otherwise.
@@ -70,6 +87,20 @@ OutputIterator copy_if(InputIterator first, InputIterator last, OutputIterator o
 }
 
 /**
+ * Copies the first \em n elements from the range beginning at \em first into the range beginning at \em otherFirst.
+ */
+template <class InputIterator, class Size, class OutputIterator>
+OutputIterator copy_n(InputIterator first, Size n, OutputIterator otherFirst) {
+	while (n>0) {
+	    *otherFirst = *first;
+	    ++otherFirst;
+	    ++first;
+	    --n;
+	  }
+	return otherFirst;
+}
+
+/**
  * Returns the number of elements in the range \em [first,last) that compare equal to \em value.
  */
 template <class InputIterator, class T>
@@ -95,6 +126,18 @@ int count_if(InputIterator first, InputIterator last, Predicate pred) {
 }
 
 /**
+ * Deletes the elements in the range \em [first, last] by using the c++ delete operator.
+ * The element that the iterator points to therefore must be a pointer.
+ */
+template <class ForwardIterator>
+void delete_range(ForwardIterator first, ForwardIterator last) {
+	while (first != last) {
+		delete *first;
+		first++;
+	}
+}
+
+/**
  * Compares the elements in the range \em [first1,last1) with those in the
  * range beginning at \em first2, and returns true if all of the
  * elements in both ranges match. \n
@@ -117,7 +160,6 @@ template <class ForwardIterator, class T>
 void fill(ForwardIterator first, ForwardIterator last, const T& value) {
 	while (first != last) {
 		*first = value;
-		std::cout << *first << std::endl;
 		first++;
 	}
 }
@@ -173,7 +215,8 @@ Function for_each(InputIterator first, InputIterator last, Function func) {
 }
 
 /**
- *
+ * Returns the largest of \em a and \em b.
+ * If they are equivalent then \em a is returned.
  */
 template <class T>
 const T& max(const T& a, const T& b) {
@@ -182,12 +225,188 @@ const T& max(const T& a, const T& b) {
 }
 
 /**
- *
+ * Returns the smallest of \em a and \em b.
+ * If they are equivalent then \em a is returned.
  */
 template <class T>
 const T& min(const T& a, const T& b) {
 	if (b > a) return a;
 	return b;
+}
+
+/**
+ * Returns true if \em pred returns false for all the elements in the range \em [first,last)
+ * or if the range is empty, and false otherwise.
+ */
+template <class InputIterator, class Predicate>
+bool none_of(InputIterator first, InputIterator last, Predicate pred) {
+	while (first != last) {
+		if (pred(*first)) return false;
+		first++;
+	}
+	return true;
+}
+
+/**
+ * Transforms the range \em [first,last) into a range with all the elements that
+ * compare equal to \em value removed, and returns an iterator to the new end of that range.
+ */
+template <class ForwardIterator, class T>
+ForwardIterator remove (ForwardIterator first, ForwardIterator last, const T& value) {
+  ForwardIterator result = first;
+  while (first!=last) {
+    if (!(*first == value)) {
+      *result = *first;
+      ++result;
+    }
+    ++first;
+  }
+  return result;
+}
+
+/**
+ * Copies the elements in the range \em [first,last) to the range beginning at \em otherFirst,
+ * except those elements that compare equal to \em value.
+ */
+template <class InputIterator, class OutputIterator, class T>
+OutputIterator remove_copy (InputIterator first, InputIterator last, OutputIterator otherFirst, const T& value)
+{
+  while (first!=last) {
+    if (!(*first == value)) {
+      *otherFirst = *first;
+      ++otherFirst;
+    }
+    ++first;
+  }
+  return otherFirst;
+}
+
+/**
+ * Copies the elements in the range \em [first,last) to the range beginning at \em otherFirst,
+ * except those elements for which \em pred returns true.
+ */
+template <class InputIterator, class OutputIterator, class UnaryPredicate>
+OutputIterator remove_copy_if (InputIterator first, InputIterator last, OutputIterator otherFirst, UnaryPredicate pred)
+{
+  while (first!=last) {
+    if (!pred(*first)) {
+      *otherFirst = *first;
+      ++otherFirst;
+    }
+    ++first;
+  }
+  return otherFirst;
+}
+
+/**
+ * Transforms the range \em [first,last) into a range with all the elements for which
+ * \em pred returns true removed, and returns an iterator to the new end of that range.
+ */
+template <class ForwardIterator, class Predicate>
+ForwardIterator remove_if(ForwardIterator first, ForwardIterator last, Predicate pred) {
+	ForwardIterator result = first;
+	while (first != last) {
+		if (!pred(*first)) {
+			*result = *first;
+			++result;
+		}
+		++first;
+	}
+	return result;
+}
+
+/**
+ * Assigns \em newValue to all the elements in the range \em [first,last) that compare equal to \em oldValue.
+ */
+template <class ForwardIterator, class T>
+void replace(ForwardIterator first, ForwardIterator last, const T& oldValue, const T& newValue) {
+	while (first != last) {
+		if (*first == oldValue)
+			*first = newValue;
+		first++;
+	}
+}
+
+/**
+ * Copies the elements in the range \em [first,last) to the range beginning
+ * at \em otherFirst, replacing the appearances of \em oldValue by \em newValue.
+ */
+template <class InputIterator, class OutputIterator, class T>
+OutputIterator replace_copy(InputIterator first, InputIterator last, OutputIterator otherFirst,
+		const T& oldValue, const T& newValue)
+{
+	while (first != last) {
+		if (*first == oldValue)
+			*otherFirst = newValue;
+		else
+			*otherFirst = *first;
+		first++;
+		otherFirst++;
+	}
+	return otherFirst;
+}
+
+/**
+ * Copies the elements in the range \em [first,last) to the range beginning at \em otherFirst,
+ * replacing those for which \em pred returns true by newValue.
+ */
+template <class InputIterator, class OutputIterator, class Predicate, class T>
+OutputIterator replace_copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst,
+		Predicate pred, const T& newValue)
+{
+	while (first != last) {
+		if (pred(*first)) *otherFirst = newValue;
+		else *otherFirst = *first;
+		first++;
+		otherFirst++;
+	}
+	return otherFirst;
+}
+
+/**
+ * Assigns \em newValue to all the elements in the range \em [first,last) for which \em pred returns true.
+ */
+template <class ForwardIterator, class Predicate, class T>
+void replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, const T& newValue) {
+	while (first != last) {
+		if (pred(*first))
+			*first = newValue;
+		first++;
+	}
+}
+
+/**
+ * Sorts the elements in the range \em [first, last] in ascending order using bubble sort.
+ */
+template <class RandomAccessIterator>
+void sort(RandomAccessIterator first, RandomAccessIterator last) {
+
+	int i,j;
+	int n = last - first;
+
+
+	bool swapped = false;
+
+	for(i = 0; i < n-1; i++) {
+		swapped = false;
+		RandomAccessIterator thisElement = first;
+
+		for(j = 0; j < n-1-i; j++) {
+			RandomAccessIterator nextElement = thisElement + 1;
+
+			if(*thisElement > *nextElement) {
+				prism::swap(*thisElement, *nextElement);
+				swapped = true;
+			}
+			thisElement++;
+		}
+
+		if(!swapped) {
+			break;
+		}
+
+	}
+
 }
 
 /**
@@ -198,6 +417,20 @@ void swap(T& a, T& b) {
 	T temp = a;
 	a = b;
 	b = temp;
+}
+
+/**
+ * Exchanges the values of each of the elements in the range \em [first1,last1)
+ * with those of their respective elements in the range beginning at \em otherFirst.
+ */
+template <class ForwardIterator1, class ForwardIterator2>
+ForwardIterator2 swap_ranges(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
+	while (first != last) {
+		prism::swap(*first, *otherFirst);
+		first++;
+		otherFirst++;
+	}
+	return otherFirst;
 }
 
 }

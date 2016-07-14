@@ -45,7 +45,7 @@ String::String(const std::string & string)
 }
 
 /**
- *
+ * Creates a copy of this string.
  */
 String::String(const String &copy)
 	: d(new StringData)

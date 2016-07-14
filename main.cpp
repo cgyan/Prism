@@ -46,10 +46,11 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 	Vector<int> v;
-	v << 1 << 2 << 3 << 4 << 5 << 6 << 7 << -4;
+	v << 34 << 85 << 45 << 12 << 90 << 65;
 
-	cout << prism::max(2,2);
+	prism::sort(v.begin(), v.end());
 
+	cout << v;
 
 //	return RUN_ALL_TESTS();
 	return 0;
