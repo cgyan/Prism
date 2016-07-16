@@ -61,12 +61,16 @@ public:
 	String(const String &copy);
 	virtual ~String();
 
+	String &		append(const String & str);
+	String & 		append(const char c);
+	String & 		append(const char *str);
 	char &			at(const int index);
 	const char &	at(const int index) const;
 	iterator		begin();
 	const_iterator	begin() const;
 	const int 		capacity() const;
 	const_iterator	cbegin() const;
+	void			chop(const int num);
 	const int		count(const char c) const;
 	void			clear();
 	char *			data();
@@ -76,21 +80,37 @@ public:
 	const bool		endsWith(const char c) const;
 	String &		fill(const char c, const int size=-1);
 	const int		firstIndexOf(const char c, const int from=0) const;
-	String &		insert(iterator insertBefore, const String & str);
+	String &		insert(const int position, const String & str);
+	String &		insert(const int position, const char c);
+	String &		insert(String::iterator insertBefore, const String & str);
+	String &		insert(String::iterator insertBefore, const char c);
 	const bool		isEmpty() const;
 	const int		lastIndexOf(const char c, const int from=-1) const;
 	const int 		length() const;
+	String &		prepend(const String & str);
+	String & 		prepend(const char c);
+	String & 		prepend(const char *str);
+	void			push_back(const String & str);
+	void			push_back(const char c);
+	void			push_front(const String & str);
+	void			push_front(const char c);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	const int 		size() const;
 	String			sub(const int startChar, int size=-1) const;
 	String			sub(iterator first, iterator last) const;
+	const int		toInt() const;
 	std::string		toStdString() const;
 
 	// related non-members
 	char & 			operator[](const int index);
 	const char &	operator[](const int index) const;
 	String &		operator=(const String &other);
+
+	// static
+	static String	fromCharArray(const char * str);
+	static String	fromStdString(const std::string & str);
+//	static String	number(const int n);
 
 	friend std::ostream & operator<<(std::ostream & out, const String &s);
 

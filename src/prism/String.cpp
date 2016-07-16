@@ -10,6 +10,7 @@
 #include <prism/Algorithms>
 #include <prism/OutOfBoundsException>
 #include <iostream>
+#include <cctype>
 
 namespace prism {
 
@@ -98,6 +99,27 @@ String::~String() {
 }
 
 /**
+ * @return Returns a reference to this string with \em str appended to the end.
+ */
+String & String::append(const String & str) {
+	return insert(end(), str);
+}
+
+/**
+ * @return Returns a reference to this string with \em c appended to the end.
+ */
+String & String::append(const char c) {
+	return insert(end(), String(c));
+}
+
+/**
+ * @return Returns a reference to this string with \em str appended to the end.
+ */
+String & String::append(const char * str) {
+	return insert(end(), String(str));
+}
+
+/**
  * @return Returns a reference to the char at \em index.
  * @throw Throws an OutOfBoundsException if \em index is out of bounds.
  */
@@ -145,6 +167,13 @@ const int String::capacity() const {
  */
 typename String::const_iterator String::cbegin() const {
 	return const_iterator(d->storage.start);
+}
+
+/**
+ * Chops off (i.e. removes) \em num amount of characters from the end of the string.
+ */
+void String::chop(const int num) {
+	d->storage.end -= num;
 }
 
 /**
@@ -225,9 +254,27 @@ const int String::firstIndexOf(const char c, const int from) const {
 }
 
 /**
- * Inserts a copy of \em str one character before the position represented by \em insertAfter.
+ * Inserts a copy of \em str starting at the \em position index.
+ * @return Returns a reference to this string.
  */
-String & String::insert(iterator insertBefore, const String & str) {
+String & String::insert(const int position, const String & str) {
+	iterator it = begin() + position;
+	return insert(it, str);
+}
+
+/**
+ *
+ */
+String & String::insert(const int position, const char c) {
+	iterator it = begin() + position;
+	return insert(it, String(c));
+}
+
+/**
+ * Inserts a copy of \em str one character before the position represented by \em insertBefore.
+ * @return Returns a reference to this string.
+ */
+String & String::insert(String::iterator insertBefore, const String & str) {
 	// ===========================================================================================
 	// Currently this method copies all the characters after the insertion point into
 	// a temp buffer, inserts the new string and then copies the temp buffer
@@ -263,6 +310,14 @@ String & String::insert(iterator insertBefore, const String & str) {
 }
 
 /**
+ * Inserts a copy of \em c one character before the position represented by \em insertBefore.
+ * @return Returns a reference to this string.
+ */
+String & String::insert(String::iterator insertBefore, const char c) {
+	return insert(insertBefore, String(c));
+}
+
+/**
  * @return Returns true if the string has no content, false otherwise.
  */
 const bool String::isEmpty() const {
@@ -289,6 +344,55 @@ const int String::lastIndexOf(const char c, const int from) const {
  */
 const int String::length() const {
 	return d->storage.end - d->storage.start;
+}
+
+/**
+ * @return Returns a reference to this string with \em str prepended to the beginning.
+ */
+String & String::prepend(const String & str) {
+	return insert(begin(), str);
+}
+
+/**
+ * @return Returns a reference to this string with \em c prepended to the beginning.
+ */
+String & String::prepend(const char c) {
+	return insert(begin(), String(c));
+}
+
+/**
+ * @return Returns a reference to this string with \em str prepended to the beginning.
+ */
+String & String::prepend(const char * str) {
+	return insert(begin(), String(str));
+}
+
+/**
+ *
+ */
+void String::push_back(const String & str) {
+	append(str);
+}
+
+/**
+ *
+ */
+void String::push_back(const char c) {
+	append(c);
+}
+
+/**
+ *
+ */
+void String::push_front(const String & str) {
+	prepend(str);
+}
+
+/**
+ *
+ */
+void String::push_front(const char c) {
+	prepend(c);
 }
 
 /**
@@ -382,6 +486,22 @@ String String::sub(iterator first, iterator last) const {
 }
 
 /**
+ * @return Returns the string converted to an \em int.
+ */
+const int String::toInt() const {
+	int ret = 0;
+	const_iterator bit = begin();
+
+	while (isdigit(*bit)) {
+		ret *= 10;
+		ret += (int)(*bit-'0');
+		++bit;
+	}
+
+	return ret;
+}
+
+/**
  * @return Returns a copy of this string as a std::string.
  */
 std::string String::toStdString() const {
@@ -413,6 +533,33 @@ String & String::operator =(const String & other) {
 
 	return *this;
 }
+// ========================================================================
+// Static
+// ========================================================================
+/**
+ *
+ */
+String String::fromCharArray(const char * str) {
+	return String(str);
+}
+/**
+ *
+ */
+String String::fromStdString(const std::string & str) {
+	return String(str);
+}
+
+/**
+ *
+ */
+//String String::number(const int n) {
+//	char c = n;
+//	return String(c);
+//}
+
+/**
+ *
+ */
 
 /**
  * Allows an instance of String to be written to the ostream and returns a reference to the ostream.
@@ -421,7 +568,7 @@ std::ostream & operator<<(std::ostream & out, const String &s) {
 	out << "String [" << &s << "] \"";
 	for (int i=0; i<s.size(); i++) out << s.d->storage.start[i];
 	std::cout << "\"\n";
-	std::cout << "String -- size=" << s.size() << ", capacity=" << s.capacity() << " ";
+	std::cout << "------ size=" << s.size() << ", capacity=" << s.capacity() << " ";
 
 	return out;
 }

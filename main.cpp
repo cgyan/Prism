@@ -46,13 +46,11 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
+	String s("123 Cherry Tree Lane");
+	String sub = s.sub(s.begin(), s.begin()+3);
+	int nextDoor = sub.toInt() + 1;
 
-	String s("This is great");
-	String ss(" really ");
-
-	s.insert(s.end(), ss);
-
-	cout << s;
+	cout << nextDoor;
 
 //	return RUN_ALL_TESTS();
 	return 0;
