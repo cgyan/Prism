@@ -1,4 +1,4 @@
-src/prism/geometry/Rect.d: ../src/prism/geometry/Rect.cpp \
+src/prism/Rect.d: ../src/prism/Rect.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Rect \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Rect.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Size \

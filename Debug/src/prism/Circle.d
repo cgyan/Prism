@@ -1,4 +1,4 @@
-src/prism/geometry/Circle.d: ../src/prism/geometry/Circle.cpp \
+src/prism/Circle.d: ../src/prism/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Circle \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Circle.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Vector \

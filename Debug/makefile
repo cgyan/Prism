@@ -9,9 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include test/containers/subdir.mk
--include src/prism/utils/subdir.mk
--include src/prism/geometry/subdir.mk
--include src/prism/core/subdir.mk
+-include src/prism/subdir.mk
 -include external/gtest/subdir.mk
 -include subdir.mk
 -include objects.mk

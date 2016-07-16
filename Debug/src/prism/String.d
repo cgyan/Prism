@@ -1,4 +1,4 @@
-src/prism/core/String.d: ../src/prism/core/String.cpp \
+src/prism/String.d: ../src/prism/String.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \

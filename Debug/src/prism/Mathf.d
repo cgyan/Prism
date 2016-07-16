@@ -1,4 +1,4 @@
-src/prism/core/Mathf.d: ../src/prism/core/Mathf.cpp \
+src/prism/Mathf.d: ../src/prism/Mathf.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf.h
 

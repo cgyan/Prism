@@ -1,4 +1,4 @@
-src/prism/geometry/Pointf.d: ../src/prism/geometry/Pointf.cpp \
+src/prism/Pointf.d: ../src/prism/Pointf.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pointf \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pointf.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Point \

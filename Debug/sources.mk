@@ -24,9 +24,7 @@ C_UPPER_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 test/containers \
-src/prism/utils \
-src/prism/geometry \
-src/prism/core \
+src/prism \
 . \
 external/gtest \
 

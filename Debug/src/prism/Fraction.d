@@ -1,4 +1,4 @@
-src/prism/utils/Fraction.d: ../src/prism/utils/Fraction.cpp \
+src/prism/Fraction.d: ../src/prism/Fraction.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Fraction \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Fraction.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms \
