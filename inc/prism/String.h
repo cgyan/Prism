@@ -54,8 +54,9 @@ public:
 
 public:
 	String();
-//	String(const char * string);
+	String(const char * str);
 	String(const std::string & str);
+	String(const char c);
 	String(const int size, const char c);
 	String(const String &copy);
 	virtual ~String();
@@ -74,12 +75,16 @@ public:
 	const_iterator	end() const;
 	const bool		endsWith(const char c) const;
 	String &		fill(const char c, const int size=-1);
-	const int		indexOf(const char c, const int from=0) const;
+	const int		firstIndexOf(const char c, const int from=0) const;
+	String &		insert(iterator insertBefore, const String & str);
 	const bool		isEmpty() const;
+	const int		lastIndexOf(const char c, const int from=-1) const;
 	const int 		length() const;
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	const int 		size() const;
+	String			sub(const int startChar, int size=-1) const;
+	String			sub(iterator first, iterator last) const;
 	std::string		toStdString() const;
 
 	// related non-members

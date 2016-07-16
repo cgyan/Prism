@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['adjacent_5ffind',['adjacent_find',['../namespaceprism.html#a82052418345794a13044c15d8e32dd89',1,'prism']]],
   ['adjust',['adjust',['../classprism_1_1_rect.html#a8bbcfbe99d39f7350dc7801ed5cf6d48',1,'prism::Rect']]],
   ['adjusted',['adjusted',['../classprism_1_1_rect.html#aa0101c79f105eb2b988d3814e00be511',1,'prism::Rect']]],
   ['algorithms_2eh',['Algorithms.h',['../_algorithms_8h.html',1,'']]],

@@ -204,6 +204,21 @@ InputIterator find_if(InputIterator first, InputIterator last, Predicate pred) {
 }
 
 /**
+ * Returns an iterator to the last element in the range \em [first,last] that compares equal to \em value.
+ * The range searched is \em [first,last), which contains all the elements between \em first and \em last,
+ * including the element pointed by \em first but not the element pointed by \em last.
+ * If no match is found then a null pointer is returned instead i.e. p=0;
+ */
+template <class InputIterator, class T>
+InputIterator find_last(InputIterator first, InputIterator last, const T& value) {
+	while (--last >= first) {
+		if (*last == value)
+			return last;
+	}
+	return InputIterator(0);
+}
+
+/**
  * Applies function \em func to each of the elements in the range \em [first,last).
  */
 template <class InputIterator, class Function>

@@ -44,7 +44,6 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
     [ "Pointf.h", "_pointf_8h.html", [
       [ "Pointf", "classprism_1_1_pointf.html", "classprism_1_1_pointf" ]
     ] ],
-    [ "PrismGlobal.h", "_prism_global_8h.html", "_prism_global_8h" ],
     [ "Quaternion.h", "_quaternion_8h.html", [
       [ "Quaternion", "classprism_1_1_quaternion.html", "classprism_1_1_quaternion" ]
     ] ],

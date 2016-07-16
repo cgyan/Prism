@@ -45,9 +45,14 @@ void print(int n) { cout << n << endl; }
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
-	String s("Helolo");
 
-	cout << s.lastIndexOf('o', s.size()-5);
+
+	String s("This is great");
+	String ss(" really ");
+
+	s.insert(s.end(), ss);
+
+	cout << s;
 
 //	return RUN_ALL_TESTS();
 	return 0;

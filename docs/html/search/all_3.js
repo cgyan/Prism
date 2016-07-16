@@ -4,6 +4,7 @@ var searchData=
   ['decref',['decRef',['../classprism_1_1_shared_data.html#a270cf0cca02293714175d70acd92f049',1,'prism::SharedData']]],
   ['degrees',['DEGREES',['../classprism_1_1_circle.html#a74c7c532b4eb120b9227b7fabeffe6aca38d734252b9b86d558359698434cf5d4',1,'prism::Circle']]],
   ['degreetoradian',['degreeToRadian',['../classprism_1_1_mathf.html#ac72a5e8e138a66e62f191215468e394f',1,'prism::Mathf']]],
+  ['delete_5frange',['delete_range',['../namespaceprism.html#a83e62e5b148c55f949e5ea843d53ad67',1,'prism']]],
   ['denominator',['denominator',['../classprism_1_1_fraction.html#af0f39f599394258c248f375c88e9c9d4',1,'prism::Fraction']]],
   ['dequeue',['dequeue',['../classprism_1_1_queue.html#a94b089c9e56c3dee7628c8c63ee9cc5f',1,'prism::Queue']]],
   ['deref',['deref',['../classprism_1_1_reference_counter.html#ad892b209b9e5d7e5afacdba654af2dd6',1,'prism::ReferenceCounter']]],
