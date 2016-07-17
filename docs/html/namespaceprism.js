@@ -36,7 +36,6 @@ var namespaceprism =
     [ "Size", "classprism_1_1_size.html", "classprism_1_1_size" ],
     [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ],
     [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ],
-    [ "StringData", "structprism_1_1_string_data.html", "structprism_1_1_string_data" ],
     [ "Vector", "classprism_1_1_vector.html", "classprism_1_1_vector" ],
     [ "Vector2", "classprism_1_1_vector2.html", "classprism_1_1_vector2" ],
     [ "Vector3", "classprism_1_1_vector3.html", "classprism_1_1_vector3" ],

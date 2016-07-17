@@ -75,8 +75,6 @@ class \hyperlink{classprism_1_1_stack}{Stack}
 \item 
 class \hyperlink{classprism_1_1_string}{String}
 \item 
-struct \hyperlink{structprism_1_1_string_data}{String\+Data}
-\item 
 class \hyperlink{classprism_1_1_vector}{Vector}
 \item 
 class \hyperlink{classprism_1_1_vector2}{Vector2}
@@ -164,8 +162,6 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a1f29b22985dc0ec1fc548a551ce313ed}{operator==} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
 \item 
-std\+::ostream \& \hyperlink{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_string}{String} \&s)
-\item 
 const bool \hyperlink{namespaceprism_a0ce1ad6e6392618212d5ab3bebb8e585}{operator==} (const \hyperlink{classprism_1_1_circle}{Circle} \&c1, const \hyperlink{classprism_1_1_circle}{Circle} \&c2)
 \item 
 const bool \hyperlink{namespaceprism_a58cbf7ef406800002b446a0f1e917745}{operator!=} (const \hyperlink{classprism_1_1_circle}{Circle} \&c1, const \hyperlink{classprism_1_1_circle}{Circle} \&c2)
@@ -175,6 +171,28 @@ const bool \hyperlink{namespaceprism_a8e662d15b162ca76912c491798caefd3}{operator
 const bool \hyperlink{namespaceprism_a671739ac8567654dba563c34af92213f}{operator$>$} (const \hyperlink{classprism_1_1_circle}{Circle} \&c1, const \hyperlink{classprism_1_1_circle}{Circle} \&c2)
 \item 
 std\+::ostream \& \hyperlink{namespaceprism_aa63d3d39d3fad8fa5c5966cc4f306324}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_circle}{Circle} \&c)
+\item 
+\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_ac1b5b2765c314b2baa2dba5c57419829}{operator+} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_a2daf470e5f35f8450447deb2634c22c1}{operator-\/} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_ac4f48e3429a86bafcc7c21a2bd6a7ae1}{operator$\ast$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_a1f5007702b28b447f62c3b9df62f2aa4}{operator$\ast$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&fraction, const int i)
+\item 
+\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_af1ff5871f65565a84b886c5013bcd50a}{operator$\ast$} (const int i, const \hyperlink{classprism_1_1_fraction}{Fraction} \&fraction)
+\item 
+\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_a7ba7b5cc9750f0d6cda50f0cb874da6f}{operator/} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+const bool \hyperlink{namespaceprism_a105ac9995ade66ebb2a039ef90751c7a}{operator$<$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+const bool \hyperlink{namespaceprism_a7122a7ff43fc6aba9cef9d31fe8c7559}{operator$>$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+const bool \hyperlink{namespaceprism_a5b9e84008b9eaa99d29d4b74cd150cd8}{operator==} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+const bool \hyperlink{namespaceprism_aea72179b12983e614f72acd2b3cbf0e0}{operator!=} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
+\item 
+std\+::ostream \& \hyperlink{namespaceprism_a9c2d182a77a92e6cba7917dbd58f9d87}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f)
 \item 
 \hyperlink{classprism_1_1_matrix4}{Matrix4} \hyperlink{namespaceprism_a33537d30f01f996f8a05fc5b1b49ba3b}{operator+} (const \hyperlink{classprism_1_1_matrix4}{Matrix4} \&m1, const \hyperlink{classprism_1_1_matrix4}{Matrix4} \&m2)
 \item 
@@ -294,6 +312,8 @@ const bool \hyperlink{namespaceprism_a63ab3c18ecc73e21e7281dbe180e07e8}{operator
 \item 
 std\+::ostream \& \hyperlink{namespaceprism_ad6335168e27f481d86ae42da444006d1}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_size}{Size} \&size)
 \item 
+std\+::ostream \& \hyperlink{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_string}{String} \&s)
+\item 
 \hyperlink{classprism_1_1_vector2}{Vector2} \hyperlink{namespaceprism_ae482804c32b466401a9ecdf26bc1e6de}{operator+} (const \hyperlink{classprism_1_1_vector2}{Vector2} \&a, const \hyperlink{classprism_1_1_vector2}{Vector2} \&b)
 \item 
 \hyperlink{classprism_1_1_vector2}{Vector2} \hyperlink{namespaceprism_a86359a88dc5245847de48575a1f969e8}{operator-\/} (const \hyperlink{classprism_1_1_vector2}{Vector2} \&a, const \hyperlink{classprism_1_1_vector2}{Vector2} \&b)
@@ -347,28 +367,6 @@ const bool \hyperlink{namespaceprism_a80bdef743a64c754bf1a2b217c82f60a}{operator
 const bool \hyperlink{namespaceprism_a1ffa413af039c2bff07202dcfce55f05}{operator!=} (const \hyperlink{classprism_1_1_vector4}{Vector4} \&a, const \hyperlink{classprism_1_1_vector4}{Vector4} \&b)
 \item 
 std\+::ostream \& \hyperlink{namespaceprism_aeb86919d9ba71747d21fbd6e28671692}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_vector4}{Vector4} \&v)
-\item 
-\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_ac1b5b2765c314b2baa2dba5c57419829}{operator+} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_a2daf470e5f35f8450447deb2634c22c1}{operator-\/} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_ac4f48e3429a86bafcc7c21a2bd6a7ae1}{operator$\ast$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_a1f5007702b28b447f62c3b9df62f2aa4}{operator$\ast$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&fraction, const int i)
-\item 
-\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_af1ff5871f65565a84b886c5013bcd50a}{operator$\ast$} (const int i, const \hyperlink{classprism_1_1_fraction}{Fraction} \&fraction)
-\item 
-\hyperlink{classprism_1_1_fraction}{Fraction} \hyperlink{namespaceprism_a7ba7b5cc9750f0d6cda50f0cb874da6f}{operator/} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-const bool \hyperlink{namespaceprism_a105ac9995ade66ebb2a039ef90751c7a}{operator$<$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-const bool \hyperlink{namespaceprism_a7122a7ff43fc6aba9cef9d31fe8c7559}{operator$>$} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-const bool \hyperlink{namespaceprism_a5b9e84008b9eaa99d29d4b74cd150cd8}{operator==} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-const bool \hyperlink{namespaceprism_aea72179b12983e614f72acd2b3cbf0e0}{operator!=} (const \hyperlink{classprism_1_1_fraction}{Fraction} \&f1, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f2)
-\item 
-std\+::ostream \& \hyperlink{namespaceprism_a9c2d182a77a92e6cba7917dbd58f9d87}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_fraction}{Fraction} \&f)
 \end{DoxyCompactItemize}
 
 
@@ -820,14 +818,6 @@ Returns a \hyperlink{classprism_1_1_vector4}{Vector4} that has had each vector c
 )}\hypertarget{namespaceprism_a429cccc5eee454ba019045afb4a01e93}{}\label{namespaceprism_a429cccc5eee454ba019045afb4a01e93}
 Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$\ast$(const Quaternion \&q, const float factor)}{operator*(const Quaternion &q, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{const {\bf Quaternion} \&}]{q, }
-\item[{const float}]{factor}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}{}\label{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}
-Returns a \hyperlink{classprism_1_1_quaternion}{Quaternion} that is the result of multiplying each component of q by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$\ast$(const Vector3 \&v, const float factor)}{operator*(const Vector3 &v, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} prism\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector3} \&}]{v, }
@@ -835,6 +825,14 @@ Returns a \hyperlink{classprism_1_1_quaternion}{Quaternion} that is the result o
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}{}\label{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}
 Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Quaternion \&q, const float factor)}{operator*(const Quaternion &q, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q, }
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}{}\label{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}
+Returns a \hyperlink{classprism_1_1_quaternion}{Quaternion} that is the result of multiplying each component of q by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$\ast$(const float factor, const Quaternion \&q)}{operator*(const float factor, const Quaternion &q)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -1258,14 +1256,6 @@ Allows an instance of \hyperlink{classprism_1_1_size}{Size} to be written to the
 )}\hypertarget{namespaceprism_a4616180b97f4288a3b3e28304efee020}{}\label{namespaceprism_a4616180b97f4288a3b3e28304efee020}
 Allows an instance of \hyperlink{classprism_1_1_vector2}{Vector2} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const String \&s)}{operator<<(std::ostream &out, const String &s)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{std\+::ostream \&}]{out, }
-\item[{const {\bf String} \&}]{s}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{}\label{namespaceprism_a0a166bbf645cc854542cc0fc50324670}
-Allows an instance of \hyperlink{classprism_1_1_string}{String} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Vector4 \&v)}{operator<<(std::ostream &out, const Vector4 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{std\+::ostream \&}]{out, }
@@ -1297,6 +1287,14 @@ Returns a reference to a stream which allows an instance of \hyperlink{classpris
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{}\label{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}
 \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const String \&s)}{operator<<(std::ostream &out, const String &s)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf String} \&}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{}\label{namespaceprism_a0a166bbf645cc854542cc0fc50324670}
+Allows an instance of \hyperlink{classprism_1_1_string}{String} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Circle \&c)}{operator<<(std::ostream &out, const Circle &c)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}

@@ -70,8 +70,6 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
       [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ]
     ] ],
     [ "String.h", "_string_8h.html", [
-      [ "StringData", "structprism_1_1_string_data.html", "structprism_1_1_string_data" ],
-      [ "memory", "structprism_1_1_string_data_1_1memory.html", "structprism_1_1_string_data_1_1memory" ],
       [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ]
     ] ],
     [ "Vector.h", "_vector_8h.html", [

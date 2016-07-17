@@ -441,7 +441,8 @@ void String::resize(const int newSize) {
 	int oldSize = size();
 
 	if (newSize > capacity()) {
-		reserve(newSize);
+		int s = (capacity() + newSize) * d->storage.exponent;
+		reserve(s);
 	}
 
 	prism::fill(d->storage.start+oldSize, d->storage.start+newSize, char(' '));
@@ -532,6 +533,13 @@ String & String::operator =(const String & other) {
 	d->storage.end = d->storage.start + size;
 
 	return *this;
+}
+
+/**
+ *
+ */
+String & String::operator +=(const String & other) {
+	return insert(end(), other);
 }
 // ========================================================================
 // Static

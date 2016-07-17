@@ -19,7 +19,7 @@ namespace prism {
 /******************************************************************************
  * StringData
  *****************************************************************************/
-/*! \ifcond DO_NOT_DOCUMENT */
+/*! \cond DO_NOT_DOCUMENT */
 struct StringData {
 	struct memory {
 		char * start; 	// the start of the memory
@@ -106,6 +106,7 @@ public:
 	char & 			operator[](const int index);
 	const char &	operator[](const int index) const;
 	String &		operator=(const String &other);
+	String &		operator+=(const String & other);
 
 	// static
 	static String	fromCharArray(const char * str);
