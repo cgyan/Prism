@@ -71,14 +71,18 @@ public:
 	const int 		capacity() const;
 	const_iterator	cbegin() const;
 	void			chop(const int num);
+	const bool		contains(const String & str) const;
+	const bool		contains(const char c) const;
 	const int		count(const char c) const;
 	void			clear();
 	char *			data();
 	const char *	data() const;
 	iterator		end();
 	const_iterator	end() const;
+	const bool		endsWith(const String & str) const;
 	const bool		endsWith(const char c) const;
 	String &		fill(const char c, const int size=-1);
+//	const int		firstIndexOf(const String & str, const int from=0) const;
 	const int		firstIndexOf(const char c, const int from=0) const;
 	String &		insert(const int position, const String & str);
 	String &		insert(const int position, const char c);
@@ -87,6 +91,10 @@ public:
 	const bool		isEmpty() const;
 	const int		lastIndexOf(const char c, const int from=-1) const;
 	const int 		length() const;
+	char & 			operator[](const int index);
+	const char &	operator[](const int index) const;
+	String &		operator=(const String &other);
+	String &		operator+=(const String & other);
 	String &		prepend(const String & str);
 	String & 		prepend(const char c);
 	String & 		prepend(const char *str);
@@ -97,23 +105,27 @@ public:
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	const int 		size() const;
+	const bool		startsWith(const String & str) const;
+	const bool		startsWith(const char c) const;
 	String			sub(const int startChar, int size=-1) const;
 	String			sub(iterator first, iterator last) const;
 	const int		toInt() const;
 	std::string		toStdString() const;
-
-	// related non-members
-	char & 			operator[](const int index);
-	const char &	operator[](const int index) const;
-	String &		operator=(const String &other);
-	String &		operator+=(const String & other);
 
 	// static
 	static String	fromCharArray(const char * str);
 	static String	fromStdString(const std::string & str);
 //	static String	number(const int n);
 
-	friend std::ostream & operator<<(std::ostream & out, const String &s);
+	// related non-members
+	friend const bool		operator==(const String & str1, const String & str2);
+	friend const bool		operator!=(const String & str1, const String & str2);
+	friend String			operator+(const String & str1, const String & str2);
+	friend String			operator+(const String & str1, const char * str2);
+	friend String			operator+(const char * str1, const String & str2);
+	friend String			operator+(const char c, const String & str);
+	friend String			operator+(const String & str, const char c);
+	friend std::ostream & 	operator<<(std::ostream & out, const String &s);
 
 private:
 	const bool rangeCheck(const int index) const;

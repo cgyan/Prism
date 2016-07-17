@@ -46,10 +46,8 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
-	String s("Ab");
-	String ss = s.repeated(3);
-
-	cout << ss;
+	String s("Cherry");
+	cout << s.endsWith("herry");
 
 //	return RUN_ALL_TESTS();
 	return 0;

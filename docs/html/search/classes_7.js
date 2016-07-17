@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mathf',['Mathf',['../classprism_1_1_mathf.html',1,'prism']]],
-  ['matrix4',['Matrix4',['../classprism_1_1_matrix4.html',1,'prism']]]
+  ['point',['Point',['../classprism_1_1_point.html',1,'prism']]],
+  ['pointf',['Pointf',['../classprism_1_1_pointf.html',1,'prism']]]
 ];

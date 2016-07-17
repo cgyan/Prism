@@ -177,6 +177,22 @@ void String::chop(const int num) {
 }
 
 /**
+ * @return Returns true if this string contains an occurrence of the String \em str.
+ */
+const bool String::contains(const String & str) const {
+	const_iterator it = prism::search(begin(), end(), str.begin(), str.end());
+	return (it == end()) ? false : true;
+}
+
+/**
+ * @return Returns true if this string contains an occurrence of the char \em c.
+ */
+const bool String::contains(const char c) const {
+	const_iterator it = prism::find(begin(), end(), c);
+	return (it == end()) ? false : true;
+}
+
+/**
  * @return Returns the number of occurrences of the char \em c.
  */
 const int String::count(const char c) const {
@@ -219,10 +235,21 @@ typename String::const_iterator String::end() const {
 }
 
 /**
+ *
+ */
+const bool String::endsWith(const String & str) const {
+	const_iterator bit = end() - str.size();
+	const_iterator it = prism::search(bit, end(), str.begin(), str.end());
+
+	if (it == end()) return false;
+	else return true;
+}
+
+/**
  * @return Returns true if the string's last character is \em c, false otherwise.
  */
 const bool String::endsWith(const char c) const {
-	return *(d->storage.end-1) == c;
+	return at(size()-1) == c;
 }
 
 /**
@@ -237,6 +264,13 @@ String & String::fill(const char c, const int size) {
 
 	return *this;
 }
+
+/**
+ *
+ */
+//const int String::firstIndexOf(const String & str, const int from) const {
+//
+//}
 
 /**
  * @return Returns the position of the first occurrence of the char \em c in the string searching forwards
@@ -457,6 +491,24 @@ const int String::size() const {
 }
 
 /**
+ *
+ */
+const bool String::startsWith(const String & str) const {
+	const_iterator eit = begin() + str.size();
+	const_iterator it = prism::search(begin(), eit, str.begin(), str.end());
+
+	if (it == eit) return false;
+	else return true;
+}
+
+/**
+ *
+ */
+const bool String::startsWith(const char c) const {
+	return at(0) == c;
+}
+
+/**
  * @return Returns a new string copied from this string starting at the character
  * at \em startChar for \em size characters.
  */
@@ -488,6 +540,13 @@ String String::sub(iterator first, iterator last) const {
 
 /**
  * @return Returns the string converted to an \em int.
+ * \code
+ * String s("123 Cherry Tree Lane");
+ * String sub = s.sub(0,3); // sub == "123"
+ * int nextDoor = sub.toInt() + 1;
+ *
+ * cout << nextDoor; // outputs: 124
+ * \endcode
  */
 const int String::toInt() const {
 	int ret = 0;
@@ -568,6 +627,58 @@ String String::fromStdString(const std::string & str) {
 /**
  *
  */
+const bool operator==(const String & str1, const String & str2) {
+	if (str1.length() != str2.length())
+		return false;
+
+	return prism::equal(str1.begin(), str1.end(), str2.begin());
+}
+
+/**
+ *
+ */
+const bool operator!=(const String & str1, const String & str2) {
+	return !(str1==str2);
+}
+
+/**
+ *
+ */
+String operator+(const String & str1, const String & str2) {
+	String s(str1);
+	return s.insert(s.end(), str2);
+}
+
+/**
+ *
+ */
+String operator+(const String & str1, const char * str2) {
+	String s(str1);
+	return s.insert(s.end(), str2);
+}
+
+/**
+ *
+ */
+String operator+(const char * str1, const String & str2) {
+	String s(str1);
+	return s.append(str2);
+}
+
+/**
+ *
+ */
+String operator+(const char c, const String & str) {
+	String s(c);
+	return s+str;
+}
+
+/**
+ *
+ */
+String operator+(const String & str, const char c) {
+	return str + String(c);
+}
 
 /**
  * Allows an instance of String to be written to the ostream and returns a reference to the ostream.

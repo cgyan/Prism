@@ -1,11 +1,7 @@
 var searchData=
 [
   ['_7earray',['~Array',['../classprism_1_1_array.html#ad8787402f15054e257a7b407f07f469e',1,'prism::Array']]],
-  ['_7ebidirectionalconstiterator',['~BidirectionalConstIterator',['../classprism_1_1_bidirectional_const_iterator.html#af102c28eb4cfb7abe7536b2b3cf6a8a2',1,'prism::BidirectionalConstIterator']]],
-  ['_7ebidirectionaliterator',['~BidirectionalIterator',['../classprism_1_1_bidirectional_iterator.html#a949f84e373e2631cc694ebc5d81423f9',1,'prism::BidirectionalIterator']]],
   ['_7ecircle',['~Circle',['../classprism_1_1_circle.html#aff162a19ac60d0cefc5e5cc2ea397de7',1,'prism::Circle']]],
-  ['_7eforwardconstiterator',['~ForwardConstIterator',['../classprism_1_1_forward_const_iterator.html#a67b8cd8e6c8929b8ef88fddac62f2058',1,'prism::ForwardConstIterator']]],
-  ['_7eforwarditerator',['~ForwardIterator',['../classprism_1_1_forward_iterator.html#acf0522ade2f87fca58f009036a906bcc',1,'prism::ForwardIterator']]],
   ['_7efraction',['~Fraction',['../classprism_1_1_fraction.html#a1a7170988796417122c670c2139dc933',1,'prism::Fraction']]],
   ['_7elist',['~List',['../classprism_1_1_list.html#aaa8567cc4eb408e62117f1a9782629ba',1,'prism::List']]],
   ['_7ematrix4',['~Matrix4',['../classprism_1_1_matrix4.html#aa2117a89fa9caa8dc2b412edca5e0dd5',1,'prism::Matrix4']]],

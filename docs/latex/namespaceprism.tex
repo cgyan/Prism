@@ -5,12 +5,6 @@
 \item 
 class \hyperlink{classprism_1_1_array}{Array}
 \item 
-struct \hyperlink{structprism_1_1bidirectional__iterator__tag}{bidirectional\+\_\+iterator\+\_\+tag}
-\item 
-class \hyperlink{classprism_1_1_bidirectional_const_iterator}{Bidirectional\+Const\+Iterator}
-\item 
-class \hyperlink{classprism_1_1_bidirectional_iterator}{Bidirectional\+Iterator}
-\item 
 class \hyperlink{classprism_1_1_circle}{Circle}
 \item 
 class \hyperlink{classprism_1_1_exception}{Exception}
@@ -19,31 +13,15 @@ class \hyperlink{classprism_1_1_flag}{Flag}
 \item 
 class \hyperlink{classprism_1_1_flags}{Flags}
 \item 
-struct \hyperlink{structprism_1_1forward__iterator__tag}{forward\+\_\+iterator\+\_\+tag}
-\item 
-class \hyperlink{classprism_1_1_forward_const_iterator}{Forward\+Const\+Iterator}
-\item 
-class \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator}
-\item 
 class \hyperlink{classprism_1_1_fraction}{Fraction}
 \item 
-struct \hyperlink{structprism_1_1input__iterator__tag}{input\+\_\+iterator\+\_\+tag}
-\item 
-struct \hyperlink{structprism_1_1iterator__traits}{iterator\+\_\+traits}
-\item 
 class \hyperlink{classprism_1_1_list}{List}
-\item 
-struct \hyperlink{structprism_1_1_list_const_iterator}{List\+Const\+Iterator}
-\item 
-struct \hyperlink{structprism_1_1_list_iterator}{List\+Iterator}
 \item 
 class \hyperlink{classprism_1_1_mathf}{Mathf}
 \item 
 class \hyperlink{classprism_1_1_matrix4}{Matrix4}
 \item 
 class \hyperlink{classprism_1_1_out_of_bounds_exception}{Out\+Of\+Bounds\+Exception}
-\item 
-struct \hyperlink{structprism_1_1output__iterator__tag}{output\+\_\+iterator\+\_\+tag}
 \item 
 class \hyperlink{classprism_1_1_point}{Point}
 \item 
@@ -52,12 +30,6 @@ class \hyperlink{classprism_1_1_pointf}{Pointf}
 class \hyperlink{classprism_1_1_quaternion}{Quaternion}
 \item 
 class \hyperlink{classprism_1_1_queue}{Queue}
-\item 
-struct \hyperlink{structprism_1_1random__access__iterator__tag}{random\+\_\+access\+\_\+iterator\+\_\+tag}
-\item 
-class \hyperlink{classprism_1_1_random_access_const_iterator}{Random\+Access\+Const\+Iterator}
-\item 
-class \hyperlink{classprism_1_1_random_access_iterator}{Random\+Access\+Iterator}
 \item 
 class \hyperlink{classprism_1_1_rect}{Rect}
 \item 
@@ -88,7 +60,7 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{swap} (T \&a, T \&b)
 \item 
-{\footnotesize template$<$class Forward\+Iterator $>$ }\\\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} \hyperlink{namespaceprism_a82052418345794a13044c15d8e32dd89}{adjacent\+\_\+find} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last)
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_a82052418345794a13044c15d8e32dd89}{adjacent\+\_\+find} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\bool \hyperlink{namespaceprism_aba366b328f3b6161e6115c16b7153c6d}{all\+\_\+of} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
 \item 
@@ -104,13 +76,13 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\int \hyperlink{namespaceprism_af0007d361beae18a930b6249752e509e}{count\+\_\+if} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
 \item 
-{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a83e62e5b148c55f949e5ea843d53ad67}{delete\+\_\+range} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last)
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a83e62e5b148c55f949e5ea843d53ad67}{delete\+\_\+range} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
 {\footnotesize template$<$class Input\+Iterator1 , class Input\+Iterator2 $>$ }\\bool \hyperlink{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}{equal} (Input\+Iterator1 first, Input\+Iterator1 last, Input\+Iterator2 other\+First)
 \item 
-{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{fill} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last, const T \&value)
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{fill} (Forward\+Iterator first, Forward\+Iterator last, const T \&value)
 \item 
-{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_aceb4b9c511a5edb706296b457427b226}{fill\+\_\+n} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, int size, const T \&value)
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_aceb4b9c511a5edb706296b457427b226}{fill\+\_\+n} (Forward\+Iterator first, int size, const T \&value)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class T $>$ }\\Input\+Iterator \hyperlink{namespaceprism_a1b543d9c2862a539cc8b770abda87561}{find} (Input\+Iterator first, Input\+Iterator last, const T \&value)
 \item 
@@ -126,23 +98,23 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\bool \hyperlink{namespaceprism_a10c83b433c7f98fd4513f1b68c6db594}{none\+\_\+of} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
 \item 
-{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} \hyperlink{namespaceprism_aeddd21943bcf811c56f7d9d1bd4784f6}{remove} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last, const T \&value)
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_aeddd21943bcf811c56f7d9d1bd4784f6}{remove} (Forward\+Iterator first, Forward\+Iterator last, const T \&value)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ }\\Output\+Iterator \hyperlink{namespaceprism_ab7b6fb407340e51749169560b48fb20c}{remove\+\_\+copy} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&value)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class Unary\+Predicate $>$ }\\Output\+Iterator \hyperlink{namespaceprism_abfc7da1f951e480a26d58fc098b78844}{remove\+\_\+copy\+\_\+if} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Unary\+Predicate pred)
 \item 
-{\footnotesize template$<$class Forward\+Iterator , class Predicate $>$ }\\\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} \hyperlink{namespaceprism_a2e9d25191ed83ea0a193f16d9c0a00b7}{remove\+\_\+if} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last, Predicate pred)
+{\footnotesize template$<$class Forward\+Iterator , class Predicate $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_a2e9d25191ed83ea0a193f16d9c0a00b7}{remove\+\_\+if} (Forward\+Iterator first, Forward\+Iterator last, Predicate pred)
 \item 
-{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a6156070b98de7130b8c912ae3a6d333f}{replace} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last, const T \&old\+Value, const T \&new\+Value)
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a6156070b98de7130b8c912ae3a6d333f}{replace} (Forward\+Iterator first, Forward\+Iterator last, const T \&old\+Value, const T \&new\+Value)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a16d85ecb70d2f216714a0146a057a105}{replace\+\_\+copy} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&old\+Value, const T \&new\+Value)
 \item 
 {\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class Predicate , class T $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a55d702599739f7137516dcd095119f15}{replace\+\_\+copy\+\_\+if} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred, const T \&new\+Value)
 \item 
-{\footnotesize template$<$class Forward\+Iterator , class Predicate , class T $>$ }\\void \hyperlink{namespaceprism_af118c19f6b5448319eb3aaf2d556ac54}{replace\+\_\+if} (\hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} first, \hyperlink{classprism_1_1_forward_iterator}{Forward\+Iterator} last, Predicate pred, const T \&new\+Value)
+{\footnotesize template$<$class Forward\+Iterator , class Predicate , class T $>$ }\\void \hyperlink{namespaceprism_af118c19f6b5448319eb3aaf2d556ac54}{replace\+\_\+if} (Forward\+Iterator first, Forward\+Iterator last, Predicate pred, const T \&new\+Value)
 \item 
-{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_af8ceeac6329dade75da361abe8b15c5f}{sort} (\hyperlink{classprism_1_1_random_access_iterator}{Random\+Access\+Iterator} first, \hyperlink{classprism_1_1_random_access_iterator}{Random\+Access\+Iterator} last)
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_af8ceeac6329dade75da361abe8b15c5f}{sort} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
 \item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{swap\+\_\+ranges} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
 \item 
@@ -398,10 +370,10 @@ Concatenating rotational transforms together\+: Multiple quaternion rotations ca
 \subsection{Function Documentation}
 \index{prism@{prism}!adjacent\+\_\+find@{adjacent\+\_\+find}}
 \index{adjacent\+\_\+find@{adjacent\+\_\+find}!prism@{prism}}
-\subsubsection[{\texorpdfstring{adjacent\+\_\+find(\+Forward\+Iterator first, Forward\+Iterator last)}{adjacent_find(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ {\bf Forward\+Iterator} prism\+::adjacent\+\_\+find (
+\subsubsection[{\texorpdfstring{adjacent\+\_\+find(\+Forward\+Iterator first, Forward\+Iterator last)}{adjacent_find(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ Forward\+Iterator prism\+::adjacent\+\_\+find (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
-\item[{{\bf Forward\+Iterator}}]{last}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a82052418345794a13044c15d8e32dd89}{}\label{namespaceprism_a82052418345794a13044c15d8e32dd89}
 Searches the range {\itshape }\mbox{[}first,last) for the first occurrence of two consecutive elements that match, and returns an iterator to the first of these two elements, or {\itshape last} if no such pair is found. \index{prism@{prism}!all\+\_\+of@{all\+\_\+of}}
@@ -472,8 +444,8 @@ Returns the number of elements in the range {\itshape }\mbox{[}first,last) for w
 \index{delete\+\_\+range@{delete\+\_\+range}!prism@{prism}}
 \subsubsection[{\texorpdfstring{delete\+\_\+range(\+Forward\+Iterator first, Forward\+Iterator last)}{delete_range(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ void prism\+::delete\+\_\+range (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
-\item[{{\bf Forward\+Iterator}}]{last}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a83e62e5b148c55f949e5ea843d53ad67}{}\label{namespaceprism_a83e62e5b148c55f949e5ea843d53ad67}
 Deletes the elements in the range {\itshape }\mbox{[}first, last\mbox{]} by using the c++ delete operator. The element that the iterator points to therefore must be a pointer. \index{prism@{prism}!equal@{equal}}
@@ -490,8 +462,8 @@ The elements are compared using operator==. \index{prism@{prism}!fill@{fill}}
 \index{fill@{fill}!prism@{prism}}
 \subsubsection[{\texorpdfstring{fill(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{fill(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::fill (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
-\item[{{\bf Forward\+Iterator}}]{last, }
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{}\label{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}
@@ -499,7 +471,7 @@ Assigns {\itshape value} to all the elements in the range {\itshape }\mbox{[}fir
 \index{fill\+\_\+n@{fill\+\_\+n}!prism@{prism}}
 \subsubsection[{\texorpdfstring{fill\+\_\+n(\+Forward\+Iterator first, int size, const T \&value)}{fill_n(ForwardIterator first, int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::fill\+\_\+n (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
+\item[{Forward\+Iterator}]{first, }
 \item[{int}]{size, }
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -1466,10 +1438,10 @@ Returns true if {\itshape c1} has a greater radius than {\itshape c2}, false oth
 \end{DoxyReturn}
 \index{prism@{prism}!remove@{remove}}
 \index{remove@{remove}!prism@{prism}}
-\subsubsection[{\texorpdfstring{remove(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{remove(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ {\bf Forward\+Iterator} prism\+::remove (
+\subsubsection[{\texorpdfstring{remove(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{remove(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ Forward\+Iterator prism\+::remove (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
-\item[{{\bf Forward\+Iterator}}]{last, }
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aeddd21943bcf811c56f7d9d1bd4784f6}{}\label{namespaceprism_aeddd21943bcf811c56f7d9d1bd4784f6}
@@ -1495,10 +1467,10 @@ Copies the elements in the range {\itshape }\mbox{[}first,last) to the range beg
 )}\hypertarget{namespaceprism_abfc7da1f951e480a26d58fc098b78844}{}\label{namespaceprism_abfc7da1f951e480a26d58fc098b78844}
 Copies the elements in the range {\itshape }\mbox{[}first,last) to the range beginning at {\itshape other\+First}, except those elements for which {\itshape pred} returns true. \index{prism@{prism}!remove\+\_\+if@{remove\+\_\+if}}
 \index{remove\+\_\+if@{remove\+\_\+if}!prism@{prism}}
-\subsubsection[{\texorpdfstring{remove\+\_\+if(\+Forward\+Iterator first, Forward\+Iterator last, Predicate pred)}{remove_if(ForwardIterator first, ForwardIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class Predicate $>$ {\bf Forward\+Iterator} prism\+::remove\+\_\+if (
+\subsubsection[{\texorpdfstring{remove\+\_\+if(\+Forward\+Iterator first, Forward\+Iterator last, Predicate pred)}{remove_if(ForwardIterator first, ForwardIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class Predicate $>$ Forward\+Iterator prism\+::remove\+\_\+if (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
-\item[{{\bf Forward\+Iterator}}]{last, }
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a2e9d25191ed83ea0a193f16d9c0a00b7}{}\label{namespaceprism_a2e9d25191ed83ea0a193f16d9c0a00b7}
@@ -1506,8 +1478,8 @@ Transforms the range {\itshape }\mbox{[}first,last) into a range with all the el
 \index{replace@{replace}!prism@{prism}}
 \subsubsection[{\texorpdfstring{replace(\+Forward\+Iterator first, Forward\+Iterator last, const T \&old\+Value, const T \&new\+Value)}{replace(ForwardIterator first, ForwardIterator last, const T &oldValue, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::replace (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
-\item[{{\bf Forward\+Iterator}}]{last, }
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
 \item[{const T \&}]{old\+Value, }
 \item[{const T \&}]{new\+Value}
 \end{DoxyParamCaption}
@@ -1538,8 +1510,8 @@ Copies the elements in the range {\itshape }\mbox{[}first,last) to the range beg
 \index{replace\+\_\+if@{replace\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{replace\+\_\+if(\+Forward\+Iterator first, Forward\+Iterator last, Predicate pred, const T \&new\+Value)}{replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class Predicate , class T $>$ void prism\+::replace\+\_\+if (
 \begin{DoxyParamCaption}
-\item[{{\bf Forward\+Iterator}}]{first, }
-\item[{{\bf Forward\+Iterator}}]{last, }
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
 \item[{Predicate}]{pred, }
 \item[{const T \&}]{new\+Value}
 \end{DoxyParamCaption}
@@ -1548,8 +1520,8 @@ Assigns {\itshape new\+Value} to all the elements in the range {\itshape }\mbox{
 \index{sort@{sort}!prism@{prism}}
 \subsubsection[{\texorpdfstring{sort(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{sort(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::sort (
 \begin{DoxyParamCaption}
-\item[{{\bf Random\+Access\+Iterator}}]{first, }
-\item[{{\bf Random\+Access\+Iterator}}]{last}
+\item[{Random\+Access\+Iterator}]{first, }
+\item[{Random\+Access\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_af8ceeac6329dade75da361abe8b15c5f}{}\label{namespaceprism_af8ceeac6329dade75da361abe8b15c5f}
 Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascending order using bubble sort. \index{prism@{prism}!swap@{swap}}

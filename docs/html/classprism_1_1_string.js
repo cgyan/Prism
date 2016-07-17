@@ -42,6 +42,7 @@ var classprism_1_1_string =
     [ "isEmpty", "classprism_1_1_string.html#a2f2960f59d644b2d0f390a090fa7a4ef", null ],
     [ "lastIndexOf", "classprism_1_1_string.html#a94a9059dc86dcfcbf409ffc83f3da2a8", null ],
     [ "length", "classprism_1_1_string.html#a7dfc72427863cefb9fe883599272ca7d", null ],
+    [ "operator+=", "classprism_1_1_string.html#a8d509ab7982bc6176c58f5fbce1da15c", null ],
     [ "operator=", "classprism_1_1_string.html#ad2c84ac36bccdb26c446d32a1615f321", null ],
     [ "operator[]", "classprism_1_1_string.html#a2aa545085262fc28c9199a5790bfbd0a", null ],
     [ "operator[]", "classprism_1_1_string.html#ad519fe1a0696fe5c4b77808d605bc68e", null ],
