@@ -7,7 +7,6 @@
  */
 
 #include <prism/String>
-#include <prism/Char>
 #include <prism/Algorithms>
 #include <prism/OutOfBoundsException>
 #include <iostream>
@@ -68,6 +67,16 @@ String::String(const char c)
 {
 	resize(1);
 	prism::fill_n(d->storage.start, 1, c);
+}
+
+/**
+ *
+ */
+String::String(const Char & c)
+	: d(new StringData)
+{
+	resize(1);
+	prism::fill_n(d->storage.start, 1, c.tochar());
 }
 
 /**
@@ -456,6 +465,14 @@ const bool String::rangeCheck(const int index) const {
 }
 
 /**
+ * Replaces \em nChars of characters starting at \em position with \em str.
+ * @return Returns a reference to this string.
+ */
+String & String::replace(const int position, const int nChars, const String & str) {
+
+}
+
+/**
  * Reserves enough memory for the string to contain \em newCapacity characters i.e. newCapacity * sizeof(char).
  * The capacity can only grow and will not lessen even if clear() or remove() is called. Only squeeze() can
  * alter the capacity to a lower amount. If \em newCapacity is less than or equal to the current capacity then
@@ -587,7 +604,7 @@ String String::toLower() const {
 
 	while (cit != s.cend()) {
 		Char c(*cit);
-		if (c.isAlpha() && c.isUpper()) {
+		if (c.isLetter() && c.isUpper()) {
 			c += 32;
 			*cit = c.tochar();
 		}
@@ -612,7 +629,7 @@ String String::toUpper() const {
 
 	while (cit != s.cend()) {
 		Char c(*cit);
-		if (c.isAlpha() && c.isLower()) {
+		if (c.isLetter() && c.isLower()) {
 			c -= 32;
 			*cit = c.tochar();
 		}

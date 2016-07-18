@@ -47,8 +47,9 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
-	Char c;
-	cout << c.isNull();
+	Char c('6');
+
+	cout << c.toAscii();
 
 
 //	return RUN_ALL_TESTS();

@@ -9,6 +9,7 @@
 #ifndef PRISM_STRING_H_
 #define PRISM_STRING_H_
 
+#include <prism/Char>
 #include <ostream>
 #include <string>
 #include <initializer_list>
@@ -57,6 +58,7 @@ public:
 	String(const char * str);
 	String(const std::string & str);
 	String(const char c);
+	String(const Char & c);
 	String(const int size, const char c);
 	String(const String &copy);
 	virtual ~String();
@@ -103,13 +105,14 @@ public:
 	void			push_back(const char c);
 	void			push_front(const String & str);
 	void			push_front(const char c);
+	String &		replace(const int position, const int nChars, const String & str);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	const int 		size() const;
 	const bool		startsWith(const String & str) const;
 	const bool		startsWith(const char c) const;
 	String			sub(const int startChar, int size=-1) const;
-	String			sub(iterator first, iterator last) const;
+	String			sub(String::iterator first, String::iterator last) const;
 	const int		toInt() const;
 	String			toLower() const;
 	std::string		toStdString() const;

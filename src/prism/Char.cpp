@@ -30,9 +30,19 @@ Char::Char(const char c)
 Char::~Char() {}
 
 /**
+ * @return Returns true if this character is a digit in the range [0-9], false otherwise.
+ */
+const bool Char::isNumber() const { return c_ >= 48 && c_ <= 57; }
+
+/**
  * @return Returns true if this character is in the range [a-z] or [A-Z], false otherwise.
  */
-const bool Char::isAlpha() const { return isLower() || isUpper(); }
+const bool Char::isLetter() const { return isLower() || isUpper(); }
+
+/**
+ *
+ */
+const bool Char::isLetterOrNumber() const { return isLetter() || isNumber(); }
 
 /**
  * @return Returns true if this character is in the range [A-Z], false otherwise.
@@ -48,6 +58,11 @@ const bool Char::isNull() const { return c_ == '\0'; }
  * @return Returns true if this character is the range [a-z], false otherwise.
  */
 const bool Char::isUpper() const { return c_ >=65 && c_ <= 90; }
+
+/**
+ * @return Returns the Ascii value of the character.
+ */
+const int Char::toAscii() const { return (int)c_; }
 
 /**
  * @return Returns this Char as a standard char.

@@ -24,11 +24,15 @@ public:
 	Char(const char c);
 	virtual ~Char();
 
-	const bool isAlpha() const;
+	const bool isLetter() const;
+	const bool isLetterOrNumber() const;
 	const bool isLower() const;
 	const bool isNull() const;
+	const bool isNumber() const;
 	const bool isUpper() const;
+	const int toAscii() const;
 	const char tochar() const;
+
 
 	Char & operator+=(const int i);
 	Char & operator-=(const int i);
