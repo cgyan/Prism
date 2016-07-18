@@ -32,6 +32,7 @@
 #include <prism/Rect>
 #include <prism/Circle>
 #include <prism/String>
+#include <prism/Char>
 #include <prism/Algorithms>
 
 using namespace prism;
@@ -46,8 +47,9 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
-	String s("Cherry");
-	cout << s.endsWith("herry");
+	Char c;
+	cout << c.isNull();
+
 
 //	return RUN_ALL_TESTS();
 	return 0;

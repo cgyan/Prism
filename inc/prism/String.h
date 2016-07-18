@@ -70,6 +70,7 @@ public:
 	const_iterator	begin() const;
 	const int 		capacity() const;
 	const_iterator	cbegin() const;
+	const_iterator	cend() const;
 	void			chop(const int num);
 	const bool		contains(const String & str) const;
 	const bool		contains(const char c) const;
@@ -110,7 +111,9 @@ public:
 	String			sub(const int startChar, int size=-1) const;
 	String			sub(iterator first, iterator last) const;
 	const int		toInt() const;
+	String			toLower() const;
 	std::string		toStdString() const;
+	String			toUpper() const;
 
 	// static
 	static String	fromCharArray(const char * str);
@@ -128,7 +131,8 @@ public:
 	friend std::ostream & 	operator<<(std::ostream & out, const String &s);
 
 private:
-	const bool rangeCheck(const int index) const;
+	const bool 	rangeCheck(const int index) const;
+	void		convertCharToUpper(char &c);
 };
 
 } /* namespace prism */

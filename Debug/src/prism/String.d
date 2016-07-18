@@ -3,6 +3,8 @@ src/prism/String.d: ../src/prism/String.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Char \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Char.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
@@ -17,6 +19,10 @@ src/prism/String.d: ../src/prism/String.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Char:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Char.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms:
 

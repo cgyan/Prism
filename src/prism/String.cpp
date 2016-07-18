@@ -7,10 +7,12 @@
  */
 
 #include <prism/String>
+#include <prism/Char>
 #include <prism/Algorithms>
 #include <prism/OutOfBoundsException>
 #include <iostream>
 #include <cctype>
+#include <functional>
 
 namespace prism {
 
@@ -170,6 +172,13 @@ typename String::const_iterator String::cbegin() const {
 }
 
 /**
+ * @return Returns a const iterator to the imaginary position one after the last character.
+ */
+typename String::const_iterator String::cend() const {
+	return const_iterator(d->storage.end);
+}
+
+/**
  * Chops off (i.e. removes) \em num amount of characters from the end of the string.
  */
 void String::chop(const int num) {
@@ -190,6 +199,14 @@ const bool String::contains(const String & str) const {
 const bool String::contains(const char c) const {
 	const_iterator it = prism::find(begin(), end(), c);
 	return (it == end()) ? false : true;
+}
+
+/**
+ *
+ */
+void String::convertCharToUpper(char &c) {
+	if (c >= 97 && c <= 122)
+		c -= 32;
 }
 
 /**
@@ -562,10 +579,46 @@ const int String::toInt() const {
 }
 
 /**
+ * @return Returns a copy of this string where each character is lowercase.
+ */
+String String::toLower() const {
+	String s(*this);
+	const_iterator cit = s.cbegin();
+
+	while (cit != s.cend()) {
+		Char c(*cit);
+		if (c.isAlpha() && c.isUpper()) {
+			c += 32;
+			*cit = c.tochar();
+		}
+		++cit;
+	}
+	return s;
+}
+
+/**
  * @return Returns a copy of this string as a std::string.
  */
 std::string String::toStdString() const {
 	return std::string(d->storage.start);
+}
+
+/**
+ * @return Returns a copy of this string where each character is uppercase.
+ */
+String String::toUpper() const {
+	String s(*this);
+	const_iterator cit = s.cbegin();
+
+	while (cit != s.cend()) {
+		Char c(*cit);
+		if (c.isAlpha() && c.isLower()) {
+			c -= 32;
+			*cit = c.tochar();
+		}
+		++cit;
+	}
+	return s;
 }
 
 /**

@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/prism/Char.cpp \
 ../src/prism/Circle.cpp \
 ../src/prism/Fraction.cpp \
 ../src/prism/Mathf.cpp \
@@ -19,6 +20,7 @@ CPP_SRCS += \
 ../src/prism/Vector4.cpp 
 
 OBJS += \
+./src/prism/Char.o \
 ./src/prism/Circle.o \
 ./src/prism/Fraction.o \
 ./src/prism/Mathf.o \
@@ -34,6 +36,7 @@ OBJS += \
 ./src/prism/Vector4.o 
 
 CPP_DEPS += \
+./src/prism/Char.d \
 ./src/prism/Circle.d \
 ./src/prism/Fraction.d \
 ./src/prism/Mathf.d \
