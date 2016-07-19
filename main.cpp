@@ -52,11 +52,11 @@ int main(int argc, char * argv[]) {
 //
 //	cout << s;
 
-	Char c('s');
 	String s("I see sea ships on the sea shore");
-	s.replace("sea", '*');
+	cout << s << endl;
 
-	cout << s; // outputs: "I see ocean ships on the ocean shore"
+	s.remove("sea ");
+	cout << s;
 
 
 //	return RUN_ALL_TESTS();

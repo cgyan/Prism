@@ -111,6 +111,9 @@ public:
 	String &		replace(const String & oldStr, const Char & newChar);
 	String &		replace(const Char & oldChar, const String & newStr);
 	String &		replace(const Char & oldChar, const Char & newChar);
+	String &		remove(const int position, const int nCharsToRemove);
+	String &		remove(const Char & c);
+	String &		remove(const String & str);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	const int 		size() const;

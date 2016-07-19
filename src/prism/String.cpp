@@ -455,7 +455,7 @@ const bool String::rangeCheck(const int index) const {
 }
 
 /**
- * Replaces \em nChars of characters starting at \em position (0-based) with \em str.
+ * Replaces \em nCharsToReplace of characters starting at \em position (0-based) with \em str.
  * \code
  * // starting at position 5, replace 6 characters with the string "Bona"
  *
@@ -498,7 +498,7 @@ String & String::replace(const int position, const int nCharsToReplace, const St
 }
 
 /**
- *
+ * Replaces \em nCharsToReplace of characters starting at \em position (0-based) with \em c.
  */
 String & String::replace(const int position, const int nCharsToReplace, const Char & c) {
 	return replace(position, nCharsToReplace, String(c));
@@ -571,6 +571,36 @@ String & String::replace(const Char & oldChar, const String & newStr) {
  */
 String & String::replace(const Char & oldChar, const Char & newChar) {
 	return replace(String(oldChar), String(newChar));
+}
+
+/**
+ * Removes \em nCharsToRemove starting from \em position (0-based).
+ * @return Returns a reference to this string.
+ */
+String & String::remove(const int position, const int nCharsToRemove) {
+
+	prism::copy(begin()+position+nCharsToRemove, end(), begin()+position);
+	resize(size() - nCharsToRemove);
+
+	return *this;
+}
+
+/**
+ * Removes all occurrences of the Char \em c.
+ * @retrn Returns a reference to this string.
+ */
+String & String::remove(const Char & c) {
+	replace(c, "");
+	return *this;
+}
+
+/**
+ * Removes all occurrences of \em str.
+ * @return Returns a reference to this string.
+ */
+String & String::remove(const String & str) {
+	replace(str, "");
+	return *this;
 }
 
 /**

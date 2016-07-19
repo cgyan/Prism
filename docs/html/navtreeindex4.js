@@ -1,5 +1,11 @@
 var NAVTREEINDEX4 =
 {
+"classprism_1_1_vector3.html":[2,0,0,25],
+"classprism_1_1_vector3.html#a01c359c54b0abcb52476485519a1c225":[2,0,0,25,18],
+"classprism_1_1_vector3.html#a0b83b76136fcd64d3d12f50db5db223f":[2,0,0,25,37],
+"classprism_1_1_vector3.html#a0ca9ab8904b692b589173f485c7f6b7f":[2,0,0,25,6],
+"classprism_1_1_vector3.html#a0d0e7d76a7c50f29bc37b8176eb04d32":[2,0,0,25,12],
+"classprism_1_1_vector3.html#a11737fc5a6e49ccea73916795ed26d1a":[2,0,0,25,25],
 "classprism_1_1_vector3.html#a14e54c21f7b7349bdc0accdba8bdf27e":[2,0,0,25,24],
 "classprism_1_1_vector3.html#a1b79c5f89ef21b3e2e291143bdd63da0":[2,0,0,25,20],
 "classprism_1_1_vector3.html#a1d921241365dbcd6d97ff3f048303774":[2,0,0,25,8],
@@ -86,8 +92,8 @@ var NAVTREEINDEX4 =
 "dir_86e08252e90321e8a01040f7cc774cfe.html":[3,0,1,0],
 "dir_bfccd401955b95cf8c75461437045ac0.html":[3,0,0],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_0x7e.html":[2,3,0,24],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
@@ -157,8 +163,8 @@ var NAVTREEINDEX4 =
 "md_README.html":[0],
 "namespacemembers.html":[1,1,0],
 "namespacemembers_func.html":[1,1,1],
-"namespaceprism.html":[1,0,0],
 "namespaceprism.html":[2,0,0],
+"namespaceprism.html":[1,0,0],
 "namespaces.html":[1,0],
 "pages.html":[]
 };

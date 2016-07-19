@@ -40,7 +40,7 @@ var NAVTREEINDEX =
 "classprism_1_1_array.html#aa8807977580f48dfd2cd7b6dd85dfebf",
 "classprism_1_1_matrix4.html#af9da747da374bbcb3c1eb86888445a04",
 "classprism_1_1_shared_pointer.html#afa1e95ed17f645ed02ee12494d006a7b",
-"classprism_1_1_vector3.html#a14e54c21f7b7349bdc0accdba8bdf27e"
+"classprism_1_1_vector3.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
