@@ -52,8 +52,9 @@ int main(int argc, char * argv[]) {
 //
 //	cout << s;
 
+	Char c('s');
 	String s("I see sea ships on the sea shore");
-	s.replace("sea", "ocean");
+	s.replace("sea", '*');
 
 	cout << s; // outputs: "I see ocean ships on the ocean shore"
 

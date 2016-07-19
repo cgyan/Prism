@@ -104,10 +104,13 @@ public:
 	void			push_back(const char c);
 	void			push_front(const String & str);
 	void			push_front(const char c);
-	String &		replace(const int position, const int nCharsToReplace, const String & str);
+	String &		replace(const int position, const int nCharsToReplace, const String & newStr);
 	String & 		replace(const int position, const int nCharsToReplace, const Char & c);
 	String &		replace(String::iterator itBegin, String::iterator itEnd, const String & str);
 	String &		replace(const String & oldStr, const String & newStr);
+	String &		replace(const String & oldStr, const Char & newChar);
+	String &		replace(const Char & oldChar, const String & newStr);
+	String &		replace(const Char & oldChar, const Char & newChar);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	const int 		size() const;

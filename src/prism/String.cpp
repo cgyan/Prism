@@ -466,32 +466,32 @@ const bool String::rangeCheck(const int index) const {
  * \endcode
  * @return Returns a reference to this string.
  */
-String & String::replace(const int position, const int nCharsToReplace, const String & str) {
+String & String::replace(const int position, const int nCharsToReplace, const String & newStr) {
 
 	int oldSize = size();
 
 	// if new string is less than chars replaced
 	// then proceeding characters need to shuffle down
-	if (str.size() < nCharsToReplace) {
+	if (newStr.size() < nCharsToReplace) {
 		String::iterator bit = this->begin() + position + nCharsToReplace;
 		String::iterator eit = this->end();
-		String::iterator obit = this->begin() + position + str.size();
+		String::iterator obit = this->begin() + position + newStr.size();
 
 		prism::copy(bit, eit, obit);
-		prism::copy(str.begin(), str.end(), this->begin()+position);
-		this->resize(oldSize - nCharsToReplace + str.size());
+		prism::copy(newStr.begin(), newStr.end(), this->begin()+position);
+		this->resize(oldSize - nCharsToReplace + newStr.size());
 	}
 	// else if new string is more than chars replaced
 	// then the string needs to be resized to accommodate the new string
 	else {
-		this->resize(this->size() - nCharsToReplace + str.size());
+		this->resize(this->size() - nCharsToReplace + newStr.size());
 
 		String::iterator bit = this->begin() + position + nCharsToReplace;
 		String::iterator eit = this->begin() + oldSize;
 		String::iterator oeit = this->end();
 
 		prism::copy_backward(bit, eit, oeit);
-		prism::copy(str.begin(), str.end(), this->begin() + position);
+		prism::copy(newStr.begin(), newStr.end(), this->begin() + position);
 	}
 
 	return *this;
@@ -537,16 +537,40 @@ String & String::replace(const String & oldStr, const String & newStr) {
 	while (bit != eit) {
 		int bitIndex = bit - begin();
 
-		String::iterator thisIt = prism::search(bit, eit, oldStr.begin(), oldStr.end());
-		if (thisIt == eit) break;
-		else {
-			replace(thisIt-begin(), oldStr.size(), newStr);
-		}
+		String::iterator currIt = prism::search(bit, eit, oldStr.begin(), oldStr.end());
+		if (currIt == eit) break;
+		else replace(currIt-begin(), oldStr.size(), newStr);
+
+		// in case the iterators have been invalidated through reallocation ...
 		bit = begin() + bitIndex + 1;
 		eit = end();
 	}
 
 	return *this;
+}
+
+/**
+ * Replaces each occurrence of \em oldStr with \em newChar.
+ * @return Returns a reference to this string.
+ */
+String & String::replace(const String & oldStr, const Char & newChar) {
+	return replace(oldStr, String(newChar));
+}
+
+/**
+ * Replaces each occurrence of the Char \em c with the string \em newStr.
+ * @return Returns a reference to this string.
+ */
+String & String::replace(const Char & oldChar, const String & newStr) {
+	return replace(String(oldChar), newStr);
+}
+
+/**
+ * Replaces each occurrence of the Char \em oldChar with the Char \em newChar.
+ * @return Returns a reference to this string.
+ */
+String & String::replace(const Char & oldChar, const Char & newChar) {
+	return replace(String(oldChar), String(newChar));
 }
 
 /**
