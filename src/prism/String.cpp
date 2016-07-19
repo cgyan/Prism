@@ -110,7 +110,7 @@ String & String::append(const String & str) {
  * @return Returns a reference to this string with \em c appended to the end.
  */
 String & String::append(const char c) {
-	return insert(end(), String(c));
+	return insert(end(), c);
 }
 
 /**
