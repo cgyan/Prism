@@ -466,10 +466,41 @@ const bool String::rangeCheck(const int index) const {
 
 /**
  * Replaces \em nChars of characters starting at \em position with \em str.
+ * \code
+ * String s("Cala Millor in Majorca!");
+ * s1.replace(5, 6, "Bona");
+ *
+ * cout << s1; // outputs: "Cala Bona in Majorca!"
+ * \endcode
  * @return Returns a reference to this string.
  */
 String & String::replace(const int position, const int nChars, const String & str) {
 
+	int oldSize = size();
+
+	// new string is less than chars replaced
+	if (str.size() < nChars) {
+		String::iterator bit = this->begin() + position + nChars;
+		String::iterator eit = this->end();
+		String::iterator obit = this->begin() + position + str.size();
+
+		prism::copy(bit, eit, obit);
+		prism::copy(str.begin(), str.end(), this->begin()+position);
+		this->resize(oldSize - nChars + str.size());
+	}
+	// else if new string is more than chars replaced
+	else {
+		this->resize(this->size() - nChars + str.size());
+
+		String::iterator bit = this->begin() + position + nChars;
+		String::iterator eit = this->begin() + oldSize;
+		String::iterator oeit = this->end();
+
+		prism::copy_backward(bit, eit, oeit);
+		prism::copy(str.begin(), str.end(), this->begin() + position);
+	}
+
+	return *this;
 }
 
 /**

@@ -47,9 +47,10 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
-	Char c('6');
+	String s1("Cala Millor in Majorca");
+	s1.replace(5, 6, "Bona");
 
-	cout << c.toAscii();
+	cout << s1;
 
 
 //	return RUN_ALL_TESTS();

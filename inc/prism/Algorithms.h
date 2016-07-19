@@ -71,6 +71,17 @@ OutputIterator copy(InputIterator first, InputIterator last, OutputIterator othe
 }
 
 /**
+ *
+ */
+template <class BidirectionalIterator1, class BidirectionalIterator2>
+BidirectionalIterator2 copy_backward(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 otherLast) {
+	while (last != first) {
+		*(--otherLast) = *(--last);
+	}
+	return otherLast;
+}
+
+/**
  * Copies the elements in the range \em [first,last) for
  * which \em pred returns true to the range beginning at \em otherFirst.
  */
