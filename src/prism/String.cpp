@@ -60,17 +60,7 @@ String::String(const std::string & str)
 }
 
 /**
- * Creates a string of size 1 initialised to the char \em c.
- */
-String::String(const char c)
-	: d(new StringData)
-{
-	resize(1);
-	prism::fill_n(d->storage.start, 1, c);
-}
-
-/**
- *
+ * Creates a string of size 1 initialised to the Char \em c.
  */
 String::String(const Char & c)
 	: d(new StringData)
@@ -80,13 +70,13 @@ String::String(const Char & c)
 }
 
 /**
- *
+ * Creates a string filled with \em size amount of the char \em c.
  */
-String::String(const int size, const char c)
+String::String(const int size, const Char & c)
 	: d(new StringData)
 {
 	reserve(size);
-	prism::fill_n(d->storage.start, size, c);
+	prism::fill_n(d->storage.start, size, c.tochar());
 	d->storage.end = d->storage.start + size;
 }
 
@@ -357,7 +347,7 @@ String & String::insert(String::iterator insertBefore, const String & str) {
 	int newSize = size() + str.size();
 
 	if (newSize > capacity())
-		resize(newSize);
+		resize(newSize * d->storage.exponent);
 
 	// 3: copy the new string into this storage
 	prism::copy(str.begin(), str.end(), d->storage.start + startIndex);
@@ -465,39 +455,95 @@ const bool String::rangeCheck(const int index) const {
 }
 
 /**
- * Replaces \em nChars of characters starting at \em position with \em str.
+ * Replaces \em nChars of characters starting at \em position (0-based) with \em str.
  * \code
+ * // starting at position 5, replace 6 characters with the string "Bona"
+ *
  * String s("Cala Millor in Majorca!");
- * s1.replace(5, 6, "Bona");
+ * s.replace(5, 6, "Bona");
  *
  * cout << s1; // outputs: "Cala Bona in Majorca!"
  * \endcode
  * @return Returns a reference to this string.
  */
-String & String::replace(const int position, const int nChars, const String & str) {
+String & String::replace(const int position, const int nCharsToReplace, const String & str) {
 
 	int oldSize = size();
 
-	// new string is less than chars replaced
-	if (str.size() < nChars) {
-		String::iterator bit = this->begin() + position + nChars;
+	// if new string is less than chars replaced
+	// then proceeding characters need to shuffle down
+	if (str.size() < nCharsToReplace) {
+		String::iterator bit = this->begin() + position + nCharsToReplace;
 		String::iterator eit = this->end();
 		String::iterator obit = this->begin() + position + str.size();
 
 		prism::copy(bit, eit, obit);
 		prism::copy(str.begin(), str.end(), this->begin()+position);
-		this->resize(oldSize - nChars + str.size());
+		this->resize(oldSize - nCharsToReplace + str.size());
 	}
 	// else if new string is more than chars replaced
+	// then the string needs to be resized to accommodate the new string
 	else {
-		this->resize(this->size() - nChars + str.size());
+		this->resize(this->size() - nCharsToReplace + str.size());
 
-		String::iterator bit = this->begin() + position + nChars;
+		String::iterator bit = this->begin() + position + nCharsToReplace;
 		String::iterator eit = this->begin() + oldSize;
 		String::iterator oeit = this->end();
 
 		prism::copy_backward(bit, eit, oeit);
 		prism::copy(str.begin(), str.end(), this->begin() + position);
+	}
+
+	return *this;
+}
+
+/**
+ *
+ */
+String & String::replace(const int position, const int nCharsToReplace, const Char & c) {
+	return replace(position, nCharsToReplace, String(c));
+}
+
+/**
+ * Replaces the characters in the range \em [begin/end] with \em str. \n
+ * The characters replaced are all the characters between \em begin and \em end including \em begin
+ * but not \em end.
+ * \code
+ 	String s("Cala Bona in Majorca");
+	s.replace(s.begin()+5, s.begin()+9, "Millor");
+
+	cout << s; // outputs: "Cala Millor in Majorca!"
+ * \endcode
+ * @return Returns a reference to this string.
+ */
+String & String::replace(String::iterator itBegin, String::iterator itEnd, const String & str) {
+	return replace(itBegin - this->begin(), itEnd-itBegin, str);
+}
+
+/**
+ * Replaces each occurrence of \em oldStr with \em newStr.
+ * \code
+ * String s("I see sea ships on the sea shore");
+ * s.replace("sea", "ocean");
+
+ * cout << s; // outputs: "I see ocean ships on the ocean shore"
+ * \endcode
+ * @return Returns a reference to this string.
+ */
+String & String::replace(const String & oldStr, const String & newStr) {
+	String::iterator bit = begin();
+	String::iterator eit = end();
+
+	while (bit != eit) {
+		int bitIndex = bit - begin();
+
+		String::iterator thisIt = prism::search(bit, eit, oldStr.begin(), oldStr.end());
+		if (thisIt == eit) break;
+		else {
+			replace(thisIt-begin(), oldStr.size(), newStr);
+		}
+		bit = begin() + bitIndex + 1;
+		eit = end();
 	}
 
 	return *this;
@@ -540,7 +586,7 @@ void String::resize(const int newSize) {
 	int oldSize = size();
 
 	if (newSize > capacity()) {
-		int s = (capacity() + newSize) * d->storage.exponent;
+		int s = capacity() + newSize;
 		reserve(s);
 	}
 

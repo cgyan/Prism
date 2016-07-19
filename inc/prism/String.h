@@ -57,9 +57,8 @@ public:
 	String();
 	String(const char * str);
 	String(const std::string & str);
-	String(const char c);
 	String(const Char & c);
-	String(const int size, const char c);
+	String(const int size, const Char & c);
 	String(const String &copy);
 	virtual ~String();
 
@@ -105,7 +104,10 @@ public:
 	void			push_back(const char c);
 	void			push_front(const String & str);
 	void			push_front(const char c);
-	String &		replace(const int position, const int nChars, const String & str);
+	String &		replace(const int position, const int nCharsToReplace, const String & str);
+	String & 		replace(const int position, const int nCharsToReplace, const Char & c);
+	String &		replace(String::iterator itBegin, String::iterator itEnd, const String & str);
+	String &		replace(const String & oldStr, const String & newStr);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	const int 		size() const;

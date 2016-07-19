@@ -1,6 +1,7 @@
 var namespaceprism =
 [
     [ "Array", "classprism_1_1_array.html", "classprism_1_1_array" ],
+    [ "Char", "classprism_1_1_char.html", "classprism_1_1_char" ],
     [ "Circle", "classprism_1_1_circle.html", "classprism_1_1_circle" ],
     [ "Exception", "classprism_1_1_exception.html", "classprism_1_1_exception" ],
     [ "Flag", "classprism_1_1_flag.html", "classprism_1_1_flag" ],

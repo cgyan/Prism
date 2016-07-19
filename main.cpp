@@ -47,10 +47,15 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
-	String s1("Cala Millor in Majorca");
-	s1.replace(5, 6, "Bona");
+//	String s("Cala Bona in Majorca");
+//	s.replace(15, 1, Char('l'));
+//
+//	cout << s;
 
-	cout << s1;
+	String s("I see sea ships on the sea shore");
+	s.replace("sea", "ocean");
+
+	cout << s; // outputs: "I see ocean ships on the ocean shore"
 
 
 //	return RUN_ALL_TESTS();

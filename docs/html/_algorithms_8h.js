@@ -4,6 +4,7 @@ var _algorithms_8h =
     [ "all_of", "_algorithms_8h.html#aba366b328f3b6161e6115c16b7153c6d", null ],
     [ "any_of", "_algorithms_8h.html#a5d0e3ddb9f698759635572f1220ec0ca", null ],
     [ "copy", "_algorithms_8h.html#ae776f4cd825f79e7af1cf6ee1d90a209", null ],
+    [ "copy_backward", "_algorithms_8h.html#a2564c63b76369cc81ff725a56e818046", null ],
     [ "copy_if", "_algorithms_8h.html#afbed55ae6769c2d88c125aedc2f3846e", null ],
     [ "copy_n", "_algorithms_8h.html#af907f3f5637d4ec056e9b833b6272953", null ],
     [ "count", "_algorithms_8h.html#a024117fc3639cdf6598509edf22f034a", null ],
@@ -27,6 +28,7 @@ var _algorithms_8h =
     [ "replace_copy", "_algorithms_8h.html#a16d85ecb70d2f216714a0146a057a105", null ],
     [ "replace_copy_if", "_algorithms_8h.html#a55d702599739f7137516dcd095119f15", null ],
     [ "replace_if", "_algorithms_8h.html#af118c19f6b5448319eb3aaf2d556ac54", null ],
+    [ "search", "_algorithms_8h.html#affcb3e5150d72d9f79b85b9ea4eb41e2", null ],
     [ "sort", "_algorithms_8h.html#af8ceeac6329dade75da361abe8b15c5f", null ],
     [ "swap", "_algorithms_8h.html#a6430516ab4f2e2a7f43323acb6b559d8", null ],
     [ "swap_ranges", "_algorithms_8h.html#a4661f2c0c4dca098c137179b4d93f3dc", null ]

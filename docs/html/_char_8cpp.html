@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: src/prism/String.cpp File Reference</title>
+<title>Prism: src/prism/Char.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_string_8cpp.html','');});
+$(document).ready(function(){initNavTree('_char_8cpp.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -108,15 +108,10 @@ $(document).ready(function(){initNavTree('_string_8cpp.html','');});
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">String.cpp File Reference</div>  </div>
+<div class="title">Char.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;prism/String&gt;</code><br />
-<code>#include &lt;prism/Algorithms&gt;</code><br />
-<code>#include &lt;prism/OutOfBoundsException&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;cctype&gt;</code><br />
-<code>#include &lt;functional&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="_char_8h_source.html">prism/Char.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -125,29 +120,15 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0e7bfee93ae735b5af7e566ddd8c4f65"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a0e7bfee93ae735b5af7e566ddd8c4f65">prism::operator==</a> (const String &amp;str1, const String &amp;str2)</td></tr>
-<tr class="separator:a0e7bfee93ae735b5af7e566ddd8c4f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c2215edf9ab445c3c1791217d131b15"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a5c2215edf9ab445c3c1791217d131b15">prism::operator!=</a> (const String &amp;str1, const String &amp;str2)</td></tr>
-<tr class="separator:a5c2215edf9ab445c3c1791217d131b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d401776635a858ca8f279b6ee6a35f4"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a4d401776635a858ca8f279b6ee6a35f4">prism::operator+</a> (const String &amp;str1, const String &amp;str2)</td></tr>
-<tr class="separator:a4d401776635a858ca8f279b6ee6a35f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0e135948cfe325d658fd6e65ef3b754"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aa0e135948cfe325d658fd6e65ef3b754">prism::operator+</a> (const String &amp;str1, const char *str2)</td></tr>
-<tr class="separator:aa0e135948cfe325d658fd6e65ef3b754"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eceab4fd9349dda5fc47e0806ce168f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a6eceab4fd9349dda5fc47e0806ce168f">prism::operator+</a> (const char *str1, const String &amp;str2)</td></tr>
-<tr class="separator:a6eceab4fd9349dda5fc47e0806ce168f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7a27033c4b2b541f9f582119bcd188a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#ae7a27033c4b2b541f9f582119bcd188a">prism::operator+</a> (const char c, const String &amp;str)</td></tr>
-<tr class="separator:ae7a27033c4b2b541f9f582119bcd188a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07058e194f9108ce695ab99b6aaa7db1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a07058e194f9108ce695ab99b6aaa7db1">prism::operator+</a> (const String &amp;str, const char c)</td></tr>
-<tr class="separator:a07058e194f9108ce695ab99b6aaa7db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a166bbf645cc854542cc0fc50324670"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a0a166bbf645cc854542cc0fc50324670">prism::operator&lt;&lt;</a> (std::ostream &amp;out, const String &amp;s)</td></tr>
-<tr class="separator:a0a166bbf645cc854542cc0fc50324670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa67ea1154a35dabe9c2c232aff65e930"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aa67ea1154a35dabe9c2c232aff65e930">prism::operator&lt;&lt;</a> (std::ostream &amp;out, const Char &amp;c)</td></tr>
+<tr class="separator:aa67ea1154a35dabe9c2c232aff65e930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_86e08252e90321e8a01040f7cc774cfe.html">prism</a></li><li class="navelem"><a class="el" href="_string_8cpp.html">String.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_86e08252e90321e8a01040f7cc774cfe.html">prism</a></li><li class="navelem"><a class="el" href="_char_8cpp.html">Char.cpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

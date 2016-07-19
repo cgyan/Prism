@@ -2,6 +2,9 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
 [
     [ "Algorithms.h", "_algorithms_8h.html", "_algorithms_8h" ],
     [ "Array.h", "_array_8h.html", "_array_8h" ],
+    [ "Char.h", "_char_8h.html", [
+      [ "Char", "classprism_1_1_char.html", "classprism_1_1_char" ]
+    ] ],
     [ "Circle.h", "_circle_8h.html", [
       [ "Circle", "classprism_1_1_circle.html", "classprism_1_1_circle" ]
     ] ],
