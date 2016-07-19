@@ -58,9 +58,11 @@ const char \& \hyperlink{classprism_1_1_string_a55e86af07823ab80c1b6b0849231312b
 \item 
 const int \hyperlink{classprism_1_1_string_a79a0e1b2a185376d36935ff637ba5678}{capacity} () const 
 \item 
-\hyperlink{classprism_1_1_string_a8b46f0fbe9c5c94ba892975242e3ab68}{const\+\_\+iterator} \hyperlink{classprism_1_1_string_a75949922d27570e2e10bb9b48c12040b}{cbegin} () const 
+\hyperlink{classprism_1_1_string_a8b46f0fbe9c5c94ba892975242e3ab68}{const\+\_\+iterator} \hyperlink{classprism_1_1_string_a1c06ffe23cc1c0d552a2f5a32e40ba89}{const\+Begin} () const 
 \item 
-\hyperlink{classprism_1_1_string_a8b46f0fbe9c5c94ba892975242e3ab68}{const\+\_\+iterator} \hyperlink{classprism_1_1_string_a4581fe1b0f09c49753d8a9f5ddbba4ce}{cend} () const 
+const char $\ast$ \hyperlink{classprism_1_1_string_ac336a0e353c9e8f27c9867171d70dd5d}{const\+Data} () const 
+\item 
+\hyperlink{classprism_1_1_string_a8b46f0fbe9c5c94ba892975242e3ab68}{const\+\_\+iterator} \hyperlink{classprism_1_1_string_a650b471cb36e6918361136895abef8bb}{const\+End} () const 
 \item 
 void \hyperlink{classprism_1_1_string_a6a0006f4412961eab5625d6366f60137}{chop} (const int num)
 \item 
@@ -381,27 +383,7 @@ Returns a const iterator to the first character in the string.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_string_a79a0e1b2a185376d36935ff637ba5678}{}\label{classprism_1_1_string_a79a0e1b2a185376d36935ff637ba5678}
-@ return Returns the capacity of the underlying data storage. \index{prism\+::\+String@{prism\+::\+String}!cbegin@{cbegin}}
-\index{cbegin@{cbegin}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{cbegin() const }{cbegin() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+::const\+\_\+iterator} prism\+::\+String\+::cbegin (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\hypertarget{classprism_1_1_string_a75949922d27570e2e10bb9b48c12040b}{}\label{classprism_1_1_string_a75949922d27570e2e10bb9b48c12040b}
-\begin{DoxyReturn}{Returns}
-Returns a const iterator to the first character in the string. 
-\end{DoxyReturn}
-\index{prism\+::\+String@{prism\+::\+String}!cend@{cend}}
-\index{cend@{cend}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{cend() const }{cend() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+::const\+\_\+iterator} prism\+::\+String\+::cend (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\hypertarget{classprism_1_1_string_a4581fe1b0f09c49753d8a9f5ddbba4ce}{}\label{classprism_1_1_string_a4581fe1b0f09c49753d8a9f5ddbba4ce}
-\begin{DoxyReturn}{Returns}
-Returns a const iterator to the imaginary position one after the last character. 
-\end{DoxyReturn}
-\index{prism\+::\+String@{prism\+::\+String}!chop@{chop}}
+@ return Returns the capacity of the underlying data storage. \index{prism\+::\+String@{prism\+::\+String}!chop@{chop}}
 \index{chop@{chop}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{chop(const int num)}{chop(const int num)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+String\+::chop (
 \begin{DoxyParamCaption}
@@ -415,7 +397,40 @@ Chops off (i.\+e. removes) {\itshape num} amount of characters from the end of t
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_adcfa3f36badcb9e84c2c956a6b29c865}{}\label{classprism_1_1_string_adcfa3f36badcb9e84c2c956a6b29c865}
-Clears the content of the string making \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size()} = 0. \index{prism\+::\+String@{prism\+::\+String}!contains@{contains}}
+\begin{DoxyReturn}{Returns}
+Returns the number of occurrences of the string {\itshape str}. Clears the content of the string making \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size()} = 0. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!const\+Begin@{const\+Begin}}
+\index{const\+Begin@{const\+Begin}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{const\+Begin() const }{constBegin() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+::const\+\_\+iterator} prism\+::\+String\+::const\+Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a1c06ffe23cc1c0d552a2f5a32e40ba89}{}\label{classprism_1_1_string_a1c06ffe23cc1c0d552a2f5a32e40ba89}
+\begin{DoxyReturn}{Returns}
+Returns a const iterator to the first character in the string. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!const\+Data@{const\+Data}}
+\index{const\+Data@{const\+Data}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{const\+Data() const }{constData() const }}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ prism\+::\+String\+::const\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_ac336a0e353c9e8f27c9867171d70dd5d}{}\label{classprism_1_1_string_ac336a0e353c9e8f27c9867171d70dd5d}
+\begin{DoxyReturn}{Returns}
+Returns a const pointer to the underlying data array. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!const\+End@{const\+End}}
+\index{const\+End@{const\+End}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{const\+End() const }{constEnd() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+::const\+\_\+iterator} prism\+::\+String\+::const\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a650b471cb36e6918361136895abef8bb}{}\label{classprism_1_1_string_a650b471cb36e6918361136895abef8bb}
+\begin{DoxyReturn}{Returns}
+Returns a const iterator to the imaginary position one after the last character. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!contains@{contains}}
 \index{contains@{contains}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{contains(const String \&str) const }{contains(const String &str) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+String\+::contains (
 \begin{DoxyParamCaption}
@@ -730,7 +745,7 @@ Returns a reference to this string.
 \item[{const {\bf String} \&}]{new\+Str}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_a41e0509f93cfa38cd6df3f6965d6f143}{}\label{classprism_1_1_string_a41e0509f93cfa38cd6df3f6965d6f143}
-Replaces {\itshape n\+Chars\+To\+Replace} of characters starting at {\itshape position} (0-\/based) with {\itshape str}. 
+Replaces {\itshape n\+Chars} of characters starting at {\itshape position} (0-\/based) with {\itshape str}. 
 \begin{DoxyCode}
 \textcolor{comment}{// starting at position 5, replace 6 characters with the string "Bona"}
 

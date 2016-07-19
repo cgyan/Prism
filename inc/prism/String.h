@@ -70,12 +70,14 @@ public:
 	iterator		begin();
 	const_iterator	begin() const;
 	const int 		capacity() const;
-	const_iterator	cbegin() const;
-	const_iterator	cend() const;
+	const_iterator	constBegin() const;
+	const char *	constData() const;
+	const_iterator	constEnd() const;
 	void			chop(const int num);
 	const bool		contains(const String & str) const;
 	const bool		contains(const char c) const;
 	const int		count(const char c) const;
+//	const int		count(const String & str) const;
 	void			clear();
 	char *			data();
 	const char *	data() const;
@@ -143,7 +145,6 @@ public:
 
 private:
 	const bool 	rangeCheck(const int index) const;
-	void		convertCharToUpper(char &c);
 };
 
 } /* namespace prism */

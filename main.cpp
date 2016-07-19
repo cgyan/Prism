@@ -52,11 +52,11 @@ int main(int argc, char * argv[]) {
 //
 //	cout << s;
 
-	String s("I see sea ships on the sea shore");
-	cout << s << endl;
+	Char c(5);
 
-	s.remove("sea ");
-	cout << s;
+
+	cout << Char::isLetterOrNumber('!');
+
 
 
 //	return RUN_ALL_TESTS();

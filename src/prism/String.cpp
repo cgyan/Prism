@@ -166,14 +166,21 @@ const int String::capacity() const {
 /**
  * @return Returns a const iterator to the first character in the string.
  */
-typename String::const_iterator String::cbegin() const {
+typename String::const_iterator String::constBegin() const {
 	return const_iterator(d->storage.start);
+}
+
+/**
+ * @return Returns a const pointer to the underlying data array.
+ */
+const char * String::constData() const {
+	return d->storage.start;
 }
 
 /**
  * @return Returns a const iterator to the imaginary position one after the last character.
  */
-typename String::const_iterator String::cend() const {
+typename String::const_iterator String::constEnd() const {
 	return const_iterator(d->storage.end);
 }
 
@@ -201,19 +208,31 @@ const bool String::contains(const char c) const {
 }
 
 /**
- *
- */
-void String::convertCharToUpper(char &c) {
-	if (c >= 97 && c <= 122)
-		c -= 32;
-}
-
-/**
  * @return Returns the number of occurrences of the char \em c.
  */
 const int String::count(const char c) const {
 	return prism::count(d->storage.start, d->storage.end, c);
 }
+
+/**
+ * @return Returns the number of occurrences of the string \em str.
+ */
+//const int String::count(const String & str) const {
+//	int ret = 0;
+//
+//	const_iterator bit = constBegin();
+//	const_iterator eit = constEnd();
+//
+//	while (bit != eit) {
+//		const_iterator result = prism::search(bit, bit+str.size(), str.begin(), str.end());
+//		if (result == eit) break;
+//		else {
+//			++ret;
+//			++bit;
+//		}
+//	}
+//	return ret;
+//}
 
 /**
  * Clears the content of the string making size() = 0.
@@ -455,7 +474,7 @@ const bool String::rangeCheck(const int index) const {
 }
 
 /**
- * Replaces \em nCharsToReplace of characters starting at \em position (0-based) with \em str.
+ * Replaces \em nChars of characters starting at \em position (0-based) with \em str.
  * \code
  * // starting at position 5, replace 6 characters with the string "Bona"
  *
@@ -731,9 +750,9 @@ const int String::toInt() const {
  */
 String String::toLower() const {
 	String s(*this);
-	const_iterator cit = s.cbegin();
+	const_iterator cit = s.constBegin();
 
-	while (cit != s.cend()) {
+	while (cit != s.constEnd()) {
 		Char c(*cit);
 		if (c.isLetter() && c.isUpper()) {
 			c += 32;
@@ -756,9 +775,9 @@ std::string String::toStdString() const {
  */
 String String::toUpper() const {
 	String s(*this);
-	const_iterator cit = s.cbegin();
+	const_iterator cit = s.constBegin();
 
-	while (cit != s.cend()) {
+	while (cit != s.constEnd()) {
 		Char c(*cit);
 		if (c.isLetter() && c.isLower()) {
 			c -= 32;
