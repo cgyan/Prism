@@ -121,17 +121,6 @@ String & String::append(const char * str) {
 }
 
 /**
- * @return Returns a reference to the char at \em index.
- * @throw Throws an OutOfBoundsException if \em index is out of bounds.
- */
-char & String::at(const int index) {
-	if (!rangeCheck(index))
-		throw OutOfBoundsException(index);
-
-	return this->operator [](index);
-}
-
-/**
  * @return Returns a const reference to the char at \em index.
  * @throw Throws an OutOfBoundsException if \em index is out of bounds.
  */
@@ -215,24 +204,24 @@ const int String::count(const char c) const {
 }
 
 /**
- * @return Returns the number of occurrences of the string \em str.
+ * @return Returns the number of (potentially overlapping) occurrences of the string \em str.
  */
-//const int String::count(const String & str) const {
-//	int ret = 0;
-//
-//	const_iterator bit = constBegin();
-//	const_iterator eit = constEnd();
-//
-//	while (bit != eit) {
-//		const_iterator result = prism::search(bit, bit+str.size(), str.begin(), str.end());
-//		if (result == eit) break;
-//		else {
-//			++ret;
-//			++bit;
-//		}
-//	}
-//	return ret;
-//}
+const int String::count(const String & str) const {
+	int ret = 0;
+
+	const_iterator bit = constBegin();
+	const_iterator eit = constEnd();
+
+	while (bit != eit) {
+		const_iterator result = prism::search(bit, eit, str.begin(), str.end());
+		if (result != eit) {
+			++ret;
+			bit = result + 1;
+		}
+		else ++bit;
+	}
+	return ret;
+}
 
 /**
  * Clears the content of the string making size() = 0.
@@ -474,6 +463,48 @@ const bool String::rangeCheck(const int index) const {
 }
 
 /**
+ * Removes \em nCharsToRemove starting from \em position (0-based).
+ * @return Returns a reference to this string.
+ */
+String & String::remove(const int position, const int nCharsToRemove) {
+
+	prism::copy(begin()+position+nCharsToRemove, end(), begin()+position);
+	resize(size() - nCharsToRemove);
+
+	return *this;
+}
+
+/**
+ * Removes all occurrences of the Char \em c.
+ * @retrn Returns a reference to this string.
+ */
+String & String::remove(const Char & c) {
+	replace(c, "");
+	return *this;
+}
+
+/**
+ * Removes all occurrences of \em str.
+ * @return Returns a reference to this string.
+ */
+String & String::remove(const String & str) {
+	replace(str, "");
+	return *this;
+}
+
+/**
+ * @return Returns a new string which is composed of this string repeated \em nTimes.
+ */
+//String String::repeated(int nTimes) const {
+//	String s(*this);
+//
+//	while(--nTimes > 0)
+//		s.append(*this);
+//
+//	return s;
+//}
+
+/**
  * Replaces \em nChars of characters starting at \em position (0-based) with \em str.
  * \code
  * // starting at position 5, replace 6 characters with the string "Bona"
@@ -590,36 +621,6 @@ String & String::replace(const Char & oldChar, const String & newStr) {
  */
 String & String::replace(const Char & oldChar, const Char & newChar) {
 	return replace(String(oldChar), String(newChar));
-}
-
-/**
- * Removes \em nCharsToRemove starting from \em position (0-based).
- * @return Returns a reference to this string.
- */
-String & String::remove(const int position, const int nCharsToRemove) {
-
-	prism::copy(begin()+position+nCharsToRemove, end(), begin()+position);
-	resize(size() - nCharsToRemove);
-
-	return *this;
-}
-
-/**
- * Removes all occurrences of the Char \em c.
- * @retrn Returns a reference to this string.
- */
-String & String::remove(const Char & c) {
-	replace(c, "");
-	return *this;
-}
-
-/**
- * Removes all occurrences of \em str.
- * @return Returns a reference to this string.
- */
-String & String::remove(const String & str) {
-	replace(str, "");
-	return *this;
 }
 
 /**

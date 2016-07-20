@@ -56,6 +56,7 @@ public:
 public:
 	String();
 	String(const char * str);
+//	String(const Char * str); // must be null-terminated
 	String(const std::string & str);
 	String(const Char & c);
 	String(const int size, const Char & c);
@@ -65,7 +66,6 @@ public:
 	String &		append(const String & str);
 	String & 		append(const char c);
 	String & 		append(const char *str);
-	char &			at(const int index);
 	const char &	at(const int index) const;
 	iterator		begin();
 	const_iterator	begin() const;
@@ -77,7 +77,7 @@ public:
 	const bool		contains(const String & str) const;
 	const bool		contains(const char c) const;
 	const int		count(const char c) const;
-//	const int		count(const String & str) const;
+	const int		count(const String & str) const;
 	void			clear();
 	char *			data();
 	const char *	data() const;
@@ -89,11 +89,13 @@ public:
 //	const int		firstIndexOf(const String & str, const int from=0) const;
 	const int		firstIndexOf(const char c, const int from=0) const;
 	String &		insert(const int position, const String & str);
+//	String &		insert(const int position, const Char * str, const int size);
 	String &		insert(const int position, const char c);
 	String &		insert(String::iterator insertBefore, const String & str);
 	String &		insert(String::iterator insertBefore, const char c);
 	const bool		isEmpty() const;
 	const int		lastIndexOf(const char c, const int from=-1) const;
+//	const int		lastIndexOf(const String & str, const int from=-1) const;
 	const int 		length() const;
 	char & 			operator[](const int index);
 	const char &	operator[](const int index) const;
@@ -106,27 +108,40 @@ public:
 	void			push_back(const char c);
 	void			push_front(const String & str);
 	void			push_front(const char c);
-	String &		replace(const int position, const int nCharsToReplace, const String & newStr);
-	String & 		replace(const int position, const int nCharsToReplace, const Char & c);
-	String &		replace(String::iterator itBegin, String::iterator itEnd, const String & str);
-	String &		replace(const String & oldStr, const String & newStr);
-	String &		replace(const String & oldStr, const Char & newChar);
-	String &		replace(const Char & oldChar, const String & newStr);
-	String &		replace(const Char & oldChar, const Char & newChar);
 	String &		remove(const int position, const int nCharsToRemove);
 	String &		remove(const Char & c);
 	String &		remove(const String & str);
+//	String			repeated(int nTimes) const;
+	String &		replace(const int position, const int nCharsToReplace, const String & newStr);
+	String & 		replace(const int position, const int nCharsToReplace, const Char & c);
+//	String & 		replace(const int position, const int nCharsToReplace, const Char * str, const int size);
+	String &		replace(String::iterator itBegin, String::iterator itEnd, const String & str);
+	String &		replace(const String & oldStr, const String & newStr);
+//	String &		replace(const Char * oldStr, const int osize, const Char * newStr, const int nsize);
+	String &		replace(const String & oldStr, const Char & newChar);
+	String &		replace(const Char & oldChar, const String & newStr);
+	String &		replace(const Char & oldChar, const Char & newChar);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
+//	String &		setNum(const int n);
+//	String &		setNum(const float n);
+//	String &		setNum(const double n);
 	const int 		size() const;
+//	Vector<String>	split(const String & sep);
+//	Vector<String>	split(const Char & sep);
+//	void			squeeze();
 	const bool		startsWith(const String & str) const;
 	const bool		startsWith(const char c) const;
 	String			sub(const int startChar, int size=-1) const;
 	String			sub(String::iterator first, String::iterator last) const;
+//	const double	toDouble() const;
+//	const float		toFloat() const;
 	const int		toInt() const;
 	String			toLower() const;
 	std::string		toStdString() const;
 	String			toUpper() const;
+//	String			trimmed() const;
+//	const Char *	unicode() const;
 
 	// static
 	static String	fromCharArray(const char * str);

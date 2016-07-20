@@ -140,6 +140,18 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a1f29b22985dc0ec1fc548a551ce313ed}{operator==} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
 \item 
+const bool \hyperlink{namespaceprism_a1ba68b64a6cfdcff9e144b8c2476cddb}{operator==} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
+\item 
+const bool \hyperlink{namespaceprism_a249b6933154570d808cdd405ab1fd89b}{operator!=} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
+\item 
+const bool \hyperlink{namespaceprism_a2fc3e64ba36a16f24cb0ae387c83f35f}{operator$<$} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
+\item 
+const bool \hyperlink{namespaceprism_ab8a312729c4c9ae72836d0034a6f0758}{operator$>$} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
+\item 
+const bool \hyperlink{namespaceprism_a87d86e9266469c8a40537e12a560b066}{operator$<$=} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
+\item 
+const bool \hyperlink{namespaceprism_aad049ddef9beb3fec3e7057a7f651280}{operator$>$=} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
+\item 
 std\+::ostream \& \hyperlink{namespaceprism_aa67ea1154a35dabe9c2c232aff65e930}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_char}{Char} \&c)
 \item 
 const bool \hyperlink{namespaceprism_a0ce1ad6e6392618212d5ab3bebb8e585}{operator==} (const \hyperlink{classprism_1_1_circle}{Circle} \&c1, const \hyperlink{classprism_1_1_circle}{Circle} \&c2)
@@ -585,6 +597,17 @@ Returns true if the managed pointers of p1 and p2 do not point to the same data,
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ad6391c124e006b0e3a3ec67f55e208b0}{}\label{namespaceprism_ad6391c124e006b0e3a3ec67f55e208b0}
 Returns true if the managed pointer of p1 and the raw pointer p2 do not point to the same data, false otherwise. \index{prism@{prism}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator"!=(const Char \&c1, const Char \&c2)}{operator!=(const Char &c1, const Char &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Char} \&}]{c1, }
+\item[{const {\bf Char} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a249b6933154570d808cdd405ab1fd89b}{}\label{namespaceprism_a249b6933154570d808cdd405ab1fd89b}
+\begin{DoxyReturn}{Returns}
+Returns true if the chars {\itshape c1} and {\itshape c2} are not equal, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator"!=(const U $\ast$p1, const Shared\+Pointer$<$ U $>$ \&p2)}{operator!=(const U *p1, const SharedPointer< U > &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::operator!= (
 \begin{DoxyParamCaption}
@@ -1248,6 +1271,17 @@ Returns a \hyperlink{classprism_1_1_quaternion}{Quaternion} that is the result o
 )}\hypertarget{namespaceprism_a517b4bc9b0ccc23f79b744d93b540fa6}{}\label{namespaceprism_a517b4bc9b0ccc23f79b744d93b540fa6}
 Returns a new \hyperlink{classprism_1_1_matrix4}{Matrix4} where each component of matrix m is divided by divisor. If divisor is 0 a new \hyperlink{classprism_1_1_matrix4}{Matrix4} is returned set to the identity matrix instead. \index{prism@{prism}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$(const Char \&c1, const Char \&c2)}{operator<(const Char &c1, const Char &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Char} \&}]{c1, }
+\item[{const {\bf Char} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a2fc3e64ba36a16f24cb0ae387c83f35f}{}\label{namespaceprism_a2fc3e64ba36a16f24cb0ae387c83f35f}
+\begin{DoxyReturn}{Returns}
+Returns true if the unicode value of {\itshape c1} is less than {\itshape c2}, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$(const Fraction \&f1, const Fraction \&f2)}{operator<(const Fraction &f1, const Fraction &f2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator$<$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Fraction} \&}]{f1, }
@@ -1267,14 +1301,6 @@ Returns true if {\itshape c1} has a smaller radius than {\itshape c2}, false oth
 \end{DoxyReturn}
 \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Char \&c)}{operator<<(std::ostream &out, const Char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{std\+::ostream \&}]{out, }
-\item[{const {\bf Char} \&}]{c}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_aa67ea1154a35dabe9c2c232aff65e930}{}\label{namespaceprism_aa67ea1154a35dabe9c2c232aff65e930}
-Allows an instance of \hyperlink{classprism_1_1_char}{Char} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Pointf \&p)}{operator<<(std::ostream &out, const Pointf &p)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{std\+::ostream \&}]{out, }
@@ -1290,6 +1316,14 @@ Returns an ostream object that allows this object to printed with std\+::cout \i
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_acb9fe7ab8ef5f1ee0338e3b057624393}{}\label{namespaceprism_acb9fe7ab8ef5f1ee0338e3b057624393}
 Returns an ostream object that allows this object to printed with std\+::cout \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Char \&c)}{operator<<(std::ostream &out, const Char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Char} \&}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aa67ea1154a35dabe9c2c232aff65e930}{}\label{namespaceprism_aa67ea1154a35dabe9c2c232aff65e930}
+Allows an instance of \hyperlink{classprism_1_1_char}{Char} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Fraction \&f)}{operator<<(std::ostream &out, const Fraction &f)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
@@ -1385,7 +1419,29 @@ Allows an instance of Matrx4x4 to be written to the ostream out and returns a re
 \item[{const {\bf String} \&}]{s}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{}\label{namespaceprism_a0a166bbf645cc854542cc0fc50324670}
-Allows an instance of \hyperlink{classprism_1_1_string}{String} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator==@{operator==}}
+Allows an instance of \hyperlink{classprism_1_1_string}{String} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$=(const Char \&c1, const Char \&c2)}{operator<=(const Char &c1, const Char &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Char} \&}]{c1, }
+\item[{const {\bf Char} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a87d86e9266469c8a40537e12a560b066}{}\label{namespaceprism_a87d86e9266469c8a40537e12a560b066}
+\begin{DoxyReturn}{Returns}
+Returns true if the unicode value of {\itshape c1} is less than or equal to {\itshape c2}, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator==@{operator==}}
+\index{operator==@{operator==}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator==(const Char \&c1, const Char \&c2)}{operator==(const Char &c1, const Char &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Char} \&}]{c1, }
+\item[{const {\bf Char} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a1ba68b64a6cfdcff9e144b8c2476cddb}{}\label{namespaceprism_a1ba68b64a6cfdcff9e144b8c2476cddb}
+\begin{DoxyReturn}{Returns}
+Returns true if the chars {\itshape c1} and {\itshape c2} are equal, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator==@{operator==}}
 \index{operator==@{operator==}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator==(const Pointf \&p1, const Pointf \&p2)}{operator==(const Pointf &p1, const Pointf &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool prism\+::operator== (
 \begin{DoxyParamCaption}
@@ -1514,6 +1570,17 @@ Compares the elements of the two matrices and returns true if they contain the s
 )}\hypertarget{namespaceprism_a0e7bfee93ae735b5af7e566ddd8c4f65}{}\label{namespaceprism_a0e7bfee93ae735b5af7e566ddd8c4f65}
 \index{prism@{prism}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$>$(const Char \&c1, const Char \&c2)}{operator>(const Char &c1, const Char &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Char} \&}]{c1, }
+\item[{const {\bf Char} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ab8a312729c4c9ae72836d0034a6f0758}{}\label{namespaceprism_ab8a312729c4c9ae72836d0034a6f0758}
+\begin{DoxyReturn}{Returns}
+Returns true if the unicode value of {\itshape c1} is greater than {\itshape c2}, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$>$(const Fraction \&f1, const Fraction \&f2)}{operator>(const Fraction &f1, const Fraction &f2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator$>$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Fraction} \&}]{f1, }
@@ -1530,6 +1597,17 @@ Returns true if /em f1 is less than /em f2, false otherwise. \index{prism@{prism
 )}\hypertarget{namespaceprism_a671739ac8567654dba563c34af92213f}{}\label{namespaceprism_a671739ac8567654dba563c34af92213f}
 \begin{DoxyReturn}{Returns}
 Returns true if {\itshape c1} has a greater radius than {\itshape c2}, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$>$=(const Char \&c1, const Char \&c2)}{operator>=(const Char &c1, const Char &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Char} \&}]{c1, }
+\item[{const {\bf Char} \&}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aad049ddef9beb3fec3e7057a7f651280}{}\label{namespaceprism_aad049ddef9beb3fec3e7057a7f651280}
+\begin{DoxyReturn}{Returns}
+Returns true if the unicode value of {\itshape c1} is greater than or equal to {\itshape c2}, false otherwise. 
 \end{DoxyReturn}
 \index{prism@{prism}!remove@{remove}}
 \index{remove@{remove}!prism@{prism}}

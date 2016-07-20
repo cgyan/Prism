@@ -47,16 +47,10 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
-//	String s("Cala Bona in Majorca");
-//	s.replace(15, 1, Char('l'));
-//
-//	cout << s;
+	String s("Hello");
+	String ss = s.repeated(2);
 
-	Char c(5);
-
-
-	cout << Char::isLetterOrNumber('!');
-
+	cout << ss;
 
 
 //	return RUN_ALL_TESTS();
