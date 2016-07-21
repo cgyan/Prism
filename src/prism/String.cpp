@@ -10,6 +10,8 @@
 #include <prism/Algorithms>
 #include <prism/OutOfBoundsException>
 #include <iostream>
+#include <sstream>
+#include <string>
 #include <cctype>
 #include <functional>
 
@@ -495,18 +497,15 @@ String & String::remove(const String & str) {
 /**
  * @return Returns a new string which is composed of this string repeated \em nTimes.
  */
-//String String::repeated(int nTimes) const {
-//	String s;
-//	s.resize(size() * nTimes);
-//	std::cout << s.size() << " " << s.capacity() << std::endl;
-//
-//	while(--nTimes > 0) {
-//		prism::copy(begin(), end(), s.end());
-//
-//	}
-//
-//	return s;
-//}
+String String::repeated(int nTimes) const {
+	String s;
+	s.resize(size() * nTimes);
+
+	while (--nTimes >= 0)
+		prism::copy(begin(), end(), s.begin() + size()*nTimes);
+
+	return s;
+}
 
 /**
  * Replaces \em nChars of characters starting at \em position (0-based) with \em str.
@@ -673,6 +672,48 @@ void String::resize(const int newSize) {
 }
 
 /**
+ * Converts \em n to a string and sets it as the content of this string.
+ * @return Returns a reference to this string.
+ */
+String & String::setNum(const int n) {
+	std::ostringstream ss;
+	ss << n;
+	std::string stdStr = ss.str();
+	resize(stdStr.size());
+	prism::copy(stdStr.begin(), stdStr.end(), begin());
+
+	return *this;
+}
+
+/**
+ * Converts \em n to a string and sets it as the content of this string.
+ * @return Returns a reference to this string.
+ */
+String & String::setNum(const float n) {
+	std::ostringstream ss;
+	ss << n;
+	std::string stdStr = ss.str();
+	resize(stdStr.size());
+	prism::copy(stdStr.begin(), stdStr.end(), begin());
+
+	return *this;
+}
+
+/**
+ * Converts \em n to a string and sets it as the content of this string.
+ * @return Returns a reference to this string.
+ */
+String & String::setNum(const double n) {
+	std::ostringstream ss;
+	ss << n;
+	std::string stdStr = ss.str();
+	resize(stdStr.size());
+	prism::copy(stdStr.begin(), stdStr.end(), begin());
+
+	return *this;
+}
+
+/**
  * @return Returns the size of the string. This method is identical to length().
  */
 const int String::size() const {
@@ -725,6 +766,22 @@ String String::sub(iterator first, iterator last) const {
 	prism::copy(first, last, s.begin());
 
 	return s;
+}
+
+/**
+ * @return Returns the string converted to an \em double.
+ */
+const double String::toDouble() const {
+	std::string s = this->toStdString();
+	return std::stod(s);
+}
+
+/**
+ * @return Returns the string converted to an \em float.
+ */
+const float String::toFloat() const {
+	std::string s = this->toStdString();
+	return std::stof(s);
 }
 
 /**

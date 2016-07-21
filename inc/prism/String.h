@@ -111,7 +111,7 @@ public:
 	String &		remove(const int position, const int nCharsToRemove);
 	String &		remove(const Char & c);
 	String &		remove(const String & str);
-//	String			repeated(int nTimes) const;
+	String			repeated(int nTimes) const;
 	String &		replace(const int position, const int nCharsToReplace, const String & newStr);
 	String & 		replace(const int position, const int nCharsToReplace, const Char & c);
 //	String & 		replace(const int position, const int nCharsToReplace, const Char * str, const int size);
@@ -123,9 +123,9 @@ public:
 	String &		replace(const Char & oldChar, const Char & newChar);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
-//	String &		setNum(const int n);
-//	String &		setNum(const float n);
-//	String &		setNum(const double n);
+	String &		setNum(const int n);
+	String &		setNum(const float n);
+	String &		setNum(const double n);
 	const int 		size() const;
 //	Vector<String>	split(const String & sep);
 //	Vector<String>	split(const Char & sep);
@@ -134,14 +134,13 @@ public:
 	const bool		startsWith(const char c) const;
 	String			sub(const int startChar, int size=-1) const;
 	String			sub(String::iterator first, String::iterator last) const;
-//	const double	toDouble() const;
-//	const float		toFloat() const;
+	const double	toDouble() const;
+	const float		toFloat() const;
 	const int		toInt() const;
 	String			toLower() const;
 	std::string		toStdString() const;
 	String			toUpper() const;
 //	String			trimmed() const;
-//	const Char *	unicode() const;
 
 	// static
 	static String	fromCharArray(const char * str);

@@ -46,14 +46,8 @@ void print(int n) { cout << n << endl; }
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
-
-	float a = 29.4;
-	int b = 30;
-	String c("This is a string");
-	const char * d = "This is a c string";
-	Point p(10,20);
-
-//	Console console;
+	String s("Hello");
+	cout << s.repeated(3);
 
 
 //	return RUN_ALL_TESTS();
