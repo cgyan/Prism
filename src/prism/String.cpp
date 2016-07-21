@@ -496,10 +496,14 @@ String & String::remove(const String & str) {
  * @return Returns a new string which is composed of this string repeated \em nTimes.
  */
 //String String::repeated(int nTimes) const {
-//	String s(*this);
+//	String s;
+//	s.resize(size() * nTimes);
+//	std::cout << s.size() << " " << s.capacity() << std::endl;
 //
-//	while(--nTimes > 0)
-//		s.append(*this);
+//	while(--nTimes > 0) {
+//		prism::copy(begin(), end(), s.end());
+//
+//	}
 //
 //	return s;
 //}
