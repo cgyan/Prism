@@ -128,7 +128,7 @@ public:
 	String &		setNum(const double n);
 	const int 		size() const;
 //	Vector<String>	split(const String & sep);
-//	Vector<String>	split(const Char & sep);
+//	Vector<String>	split(const Char & sep) const;
 //	void			squeeze();
 	const bool		startsWith(const String & str) const;
 	const bool		startsWith(const char c) const;

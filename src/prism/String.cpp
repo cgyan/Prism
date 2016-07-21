@@ -723,6 +723,23 @@ const int String::size() const {
 /**
  *
  */
+//Vector<String> String::split(const Char & c) const {
+//	Vector<String> v;
+//	String::iterator bit = begin();
+//	String::iterator eit = end();
+//
+//	while (bit != eit) {
+//		String::iterator result = prism::find(bit, eit, c);
+//		if (result == eit) break;
+//		else
+//	}
+//
+//	return v;
+//}
+
+/**
+ *
+ */
 const bool String::startsWith(const String & str) const {
 	const_iterator eit = begin() + str.size();
 	const_iterator it = prism::search(begin(), eit, str.begin(), str.end());
