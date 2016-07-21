@@ -47,10 +47,13 @@ int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
 
-	String s("Hello");
-	String ss = s.repeated(2);
+	float a = 29.4;
+	int b = 30;
+	String c("This is a string");
+	const char * d = "This is a c string";
+	Point p(10,20);
 
-	cout << ss;
+//	Console console;
 
 
 //	return RUN_ALL_TESTS();
