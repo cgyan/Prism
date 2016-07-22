@@ -292,17 +292,25 @@ String & String::fill(const char c, const int size) {
 }
 
 /**
- *
- */
-//const int String::firstIndexOf(const String & str, const int from) const {
-//
-//}
-
-/**
- * @return Returns the position of the first occurrence of the char \em c in the string searching forwards
+ * @return Returns the position of the first occurrence of \em str in the string searching forwards
  * from the position \em from (0 by default). If there is no occurrence then -1 is returned instead.
  */
-const int String::firstIndexOf(const char c, const int from) const {
+const int String::indexOf(const String & str, const int from) const {
+	int ret = -1;
+
+	String::const_iterator result = prism::search(d->storage.start + from, d->storage.end,
+													str.d->storage.start, str.d->storage.end);
+	if (result != end())
+		ret = result - d->storage.start;
+
+	return ret;
+}
+
+/**
+ * @return Returns the position of the first occurrence of \em c in the string searching forwards
+ * from the position \em from (0 by default). If there is no occurrence then -1 is returned instead.
+ */
+const int String::indexOf(const char c, const int from) const {
 	int ret = -1;
 
 	String::const_iterator it = prism::find(d->storage.start + from, d->storage.end, c);
@@ -382,6 +390,30 @@ String & String::insert(String::iterator insertBefore, const char c) {
  */
 const bool String::isEmpty() const {
 	return size() == 0;
+}
+
+/**
+ * @return Returns the index of the last occurrence of \em str searching backwards from
+ * the index position \em from to the first character. \n
+ * If \em from is -1 (the default) then the search will begin from the last character and if
+ * it is set to -2 then the search begins at the second to last character and so on.
+ * If there is no occurrence of \em c then -1 is returned instead.
+ */
+const int String::lastIndexOf(const String & str, const int from) const {
+	int ret = -1;
+	const_iterator bit = end() + from;
+	const_iterator eit = end() + from + str.size();
+
+	while (bit >= begin()) {
+		const_iterator result = prism::search(bit, eit, str.d->storage.start, str.d->storage.end);
+		if (result != eit) {
+			ret = result - d->storage.start;
+			break;
+		}
+		--bit;
+	}
+
+	return ret;
 }
 
 /**

@@ -46,8 +46,14 @@ void print(int n) { cout << n << endl; }
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
-	String s("Hello");
-	cout << s.repeated(3);
+	String s("I see sea ships on the sea shore");
+	//        0123456789012345678901234567890
+
+	cout << s.lastIndexOf("sea", -6) << endl;
+	cout << s.lastIndexOf("sea", -7) << endl;
+	cout << s.lastIndexOf("sea", -8) << endl;
+	cout << s.lastIndexOf("sea", -9) << endl;
+	cout << s.lastIndexOf("sea", -10) << endl;
 
 
 //	return RUN_ALL_TESTS();

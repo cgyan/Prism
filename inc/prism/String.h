@@ -86,8 +86,8 @@ public:
 	const bool		endsWith(const String & str) const;
 	const bool		endsWith(const char c) const;
 	String &		fill(const char c, const int size=-1);
-//	const int		firstIndexOf(const String & str, const int from=0) const;
-	const int		firstIndexOf(const char c, const int from=0) const;
+	const int		indexOf(const String & str, const int from=0) const;
+	const int		indexOf(const char c, const int from=0) const;
 	String &		insert(const int position, const String & str);
 //	String &		insert(const int position, const Char * str, const int size);
 	String &		insert(const int position, const char c);
@@ -95,7 +95,7 @@ public:
 	String &		insert(String::iterator insertBefore, const char c);
 	const bool		isEmpty() const;
 	const int		lastIndexOf(const char c, const int from=-1) const;
-//	const int		lastIndexOf(const String & str, const int from=-1) const;
+	const int		lastIndexOf(const String & str, const int from=-1) const;
 	const int 		length() const;
 	char & 			operator[](const int index);
 	const char &	operator[](const int index) const;
