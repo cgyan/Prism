@@ -46,10 +46,11 @@ void print(int n) { cout << n << endl; }
 int main(int argc, char * argv[]) {
 //	::testing::InitGoogleTest(&argc, argv);
 
-	String s("name, address, phone");
+
 	//        0123456789012345678901234567890
 
-
+	String s("name address");
+	cout << s.split(","); // outputs: "in the summer"
 
 //	return RUN_ALL_TESTS();
 	return 0;

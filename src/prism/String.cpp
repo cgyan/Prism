@@ -772,28 +772,47 @@ const int String::size() const {
 }
 
 /**
- *
+ * Splits this string into substrings each time \em delimeter occurs.
+ * @return Returns a Vector of strings. If \em delimeter does not occur then a Vector
+ * containing one string (this string) will be returned instead.
  */
-//Vector<String> String::split(const Char & c) const {
-//	Vector<String> v;
-//	const_iterator bit = constBegin();
-//	const_iterator eit = constEnd();
-//
-//	while (bit != eit) {
-//		const_iterator result = prism::find(bit, eit, c);
-//		if (result != eit) {
-//			String s;
-//			s.resize(result-bit);
-//			prism::copy(bit, result+1, s.begin());
-//			v.append(s);
-//			bit = result+1;
-//		}
-//		else ++bit;
-//	}
-//
-//
-//	return v;
-//}
+Vector<String> String::split(const String & delimeter) const {
+	return split(Char(delimeter.at(0)));
+}
+
+/**
+ * Splits this string into substrings each time \em delimeter occurs.
+ * @return Returns a Vector of strings. If \em delimeter does not occur then a Vector
+ * containing one string (this string) will be returned instead.
+ */
+Vector<String> String::split(const Char & delimeter) const {
+	Vector<String> v;
+	const_iterator loopBit = constBegin();
+	const_iterator loopEit = constEnd();
+	const_iterator rangeBit = constBegin();
+
+	String s;
+
+	// the loop finds all the strings leading up to the last delimeter
+	while (loopBit != loopEit) {
+		if (*loopBit == delimeter) {
+			s.resize(loopBit - rangeBit);
+			prism::copy(rangeBit, loopBit, s.begin());
+			v.append(s.trimmed());
+			rangeBit = loopBit + 1;
+		}
+		++loopBit;
+	}
+
+	// this grabs the section of the string after the last delimeter
+
+	s.resize(loopBit - rangeBit);
+	prism::copy(rangeBit, loopBit, s.begin());
+	v.append(s.trimmed());
+
+
+	return v;
+}
 
 /**
  *
@@ -922,6 +941,48 @@ String String::toUpper() const {
 		}
 		++cit;
 	}
+	return s;
+}
+
+/**
+ * Trims the whitespace from the beginning and the end of the string.
+ * @return Returns a copy of this string with the whitespace trimmed off. If there is
+ * no whitespace to remove then the string is returned unchanged.
+ * \code
+ * String s("     in the summer     ");
+ * cout << s.trimmed(); // outputs: "in the summer"
+ * \endcode
+ */
+String String::trimmed() const {
+
+	const_iterator loopBit = constBegin();
+	const_iterator loopEit = constEnd();
+	const_iterator rangeBit = constBegin();
+	const_iterator rangeEit = constEnd();
+
+	while (loopBit != loopEit) {
+		if (!Char::isWhitespace(*loopBit)) {
+			rangeBit = loopBit;
+			break;
+		}
+		++loopBit;
+	}
+
+	loopBit = constBegin();
+	loopEit = constEnd() - 1;
+
+	while (loopEit >= loopBit) {
+		if (!Char::isWhitespace(*loopEit)) {
+			rangeEit = loopEit + 1;
+			break;
+		}
+		--loopEit;
+	}
+
+	String s;
+	s.resize(rangeEit - rangeBit);
+	prism::copy(rangeBit, rangeEit, s.begin());
+
 	return s;
 }
 

@@ -30,6 +30,7 @@ public:
 	const bool 	isNumber() const;
 	const bool 	isPrint() const;
 	const bool 	isPunct() const;
+//	const bool	isSpace() const;
 	const bool 	isWhitespace() const;
 	const bool 	isUpper() const;
 	const int 	toAscii() const;

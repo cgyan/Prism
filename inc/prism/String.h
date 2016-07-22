@@ -129,8 +129,8 @@ public:
 	String &		setNum(const double n);
 //	String			simplified() const;
 	const int 		size() const;
-//	Vector<String>	split(const String & sep);
-//	Vector<String>	split(const Char & sep) const;
+	Vector<String>	split(const String & delimeter) const;
+	Vector<String>	split(const Char & delimeter) const;
 //	void			squeeze();
 	const bool		startsWith(const String & str) const;
 	const bool		startsWith(const char c) const;
@@ -142,7 +142,7 @@ public:
 	String			toLower() const;
 	std::string		toStdString() const;
 	String			toUpper() const;
-//	String			trimmed() const;
+	String			trimmed() const;
 
 	// static
 	static String	fromCharArray(const char * str);

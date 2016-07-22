@@ -3,6 +3,8 @@ var searchData=
   ['testflag',['testFlag',['../classprism_1_1_flags.html#af7ea559d83cf7a5374a08747311d9efe',1,'prism::Flags']]],
   ['toascii',['toAscii',['../classprism_1_1_char.html#a26d719979d33ddc420591eb92fbf3bfc',1,'prism::Char']]],
   ['tochar',['tochar',['../classprism_1_1_char.html#aefd335b68105adc4a7904b5f6bdd6d3e',1,'prism::Char']]],
+  ['todouble',['toDouble',['../classprism_1_1_string.html#a9c8060a9bea6e9967e8b9714c04d6396',1,'prism::String']]],
+  ['tofloat',['toFloat',['../classprism_1_1_string.html#a4fcdc9050798010ab0b36a6e4ff053c9',1,'prism::String']]],
   ['toint',['toInt',['../classprism_1_1_string.html#afbf22d03096777ef6909794edc18a0f9',1,'prism::String']]],
   ['tolist',['toList',['../classprism_1_1_vector.html#a129dfc6925b70bb736a4539bcb323de9',1,'prism::Vector']]],
   ['tolower',['toLower',['../classprism_1_1_char.html#af145ceb6a02081c5562871a13a865429',1,'prism::Char::toLower() const '],['../classprism_1_1_char.html#a755a4a18c11c82cb6b1a504329b6cc9a',1,'prism::Char::toLower(const Char &amp;c)'],['../classprism_1_1_string.html#ac75330b46da019ccf2c964e4c2fd9f81',1,'prism::String::toLower()']]],
@@ -20,5 +22,6 @@ var searchData=
   ['translate',['translate',['../classprism_1_1_circle.html#ab11cd4ad2acffd0b55989c32a04a8e2d',1,'prism::Circle::translate(const float dx, const float dy)'],['../classprism_1_1_circle.html#a067a3baa023abff5e033b04efffe9f3b',1,'prism::Circle::translate(const Pointf &amp;offset)'],['../classprism_1_1_matrix4.html#a641fbb2e58403f03f18295afac0a028a',1,'prism::Matrix4::translate()'],['../classprism_1_1_rect.html#a18f564924e2d800589ddf8af039fa248',1,'prism::Rect::translate(const int dx, const int dy)'],['../classprism_1_1_rect.html#ab4fd05471a4321adf84dadefa85668b7',1,'prism::Rect::translate(const Point &amp;offset)']]],
   ['translated',['translated',['../classprism_1_1_circle.html#a255dcfc157fc52c83e0cbd9e54a65b89',1,'prism::Circle::translated(const float dx, const float dy) const '],['../classprism_1_1_circle.html#a7592ecc319feeaa2b446505b975b97c5',1,'prism::Circle::translated(const Pointf &amp;offset) const '],['../classprism_1_1_rect.html#accc97050ae8799c21cd64500b1a783dd',1,'prism::Rect::translated(const int dx, const int dy) const '],['../classprism_1_1_rect.html#ac71993c5f890157af1e3fa86423f8198',1,'prism::Rect::translated(const Point &amp;offset) const ']]],
   ['transpose',['transpose',['../classprism_1_1_size.html#ab1e9872f48f2ec894849973d6a325af6',1,'prism::Size']]],
-  ['transposed',['transposed',['../classprism_1_1_matrix4.html#a69fd0bae9a82c8fd6ef6437c91f37fab',1,'prism::Matrix4::transposed()'],['../classprism_1_1_rect.html#aa4f9bf21ac8c5a1d1b415df78ef5c0da',1,'prism::Rect::transposed()'],['../classprism_1_1_size.html#aaf2b4a70bfe6f18224c25f64901d8d8a',1,'prism::Size::transposed()']]]
+  ['transposed',['transposed',['../classprism_1_1_matrix4.html#a69fd0bae9a82c8fd6ef6437c91f37fab',1,'prism::Matrix4::transposed()'],['../classprism_1_1_rect.html#aa4f9bf21ac8c5a1d1b415df78ef5c0da',1,'prism::Rect::transposed()'],['../classprism_1_1_size.html#aaf2b4a70bfe6f18224c25f64901d8d8a',1,'prism::Size::transposed()']]],
+  ['trimmed',['trimmed',['../classprism_1_1_string.html#aef7dc34213c574a72c893f943a41e8e4',1,'prism::String']]]
 ];

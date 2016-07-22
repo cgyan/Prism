@@ -9,6 +9,8 @@ class \hyperlink{classprism_1_1_char}{Char}
 \item 
 class \hyperlink{classprism_1_1_circle}{Circle}
 \item 
+class \hyperlink{classprism_1_1_console}{Console}
+\item 
 class \hyperlink{classprism_1_1_exception}{Exception}
 \item 
 class \hyperlink{classprism_1_1_flag}{Flag}
@@ -125,6 +127,10 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{swap\+\_\+ranges} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
 \item 
 {\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&array)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a296f6880e6bb0011e60dcc658e097ed6}{output} (const T \&value)
+\item 
+\hyperlink{classprism_1_1_console}{Console} \hyperlink{namespaceprism_a7c20bd0fa006919ffd45f3036b91eafc}{console} ()
 \item 
 {\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a50da64555d454821545fe0311fde6a62}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&list)
 \item 
@@ -428,7 +434,14 @@ Returns true if {\itshape pred} returns true for all the elements in the range {
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}{}\label{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}
-Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!copy@{copy}}
+Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!console@{console}}
+\index{console@{console}!prism@{prism}}
+\subsubsection[{\texorpdfstring{console()}{console()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Console} prism\+::console (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a7c20bd0fa006919ffd45f3036b91eafc}{}\label{namespaceprism_a7c20bd0fa006919ffd45f3036b91eafc}
+\index{prism@{prism}!copy@{copy}}
 \index{copy@{copy}!prism@{prism}}
 \subsubsection[{\texorpdfstring{copy(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First)}{copy(InputIterator first, InputIterator last, OutputIterator otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator $>$ Output\+Iterator prism\+::copy (
 \begin{DoxyParamCaption}
@@ -1609,6 +1622,13 @@ Returns true if {\itshape c1} has a greater radius than {\itshape c2}, false oth
 \begin{DoxyReturn}{Returns}
 Returns true if the unicode value of {\itshape c1} is greater than or equal to {\itshape c2}, false otherwise. 
 \end{DoxyReturn}
+\index{prism@{prism}!output@{output}}
+\index{output@{output}!prism@{prism}}
+\subsubsection[{\texorpdfstring{output(const T \&value)}{output(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void prism\+::output (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a296f6880e6bb0011e60dcc658e097ed6}{}\label{namespaceprism_a296f6880e6bb0011e60dcc658e097ed6}
 \index{prism@{prism}!remove@{remove}}
 \index{remove@{remove}!prism@{prism}}
 \subsubsection[{\texorpdfstring{remove(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{remove(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ Forward\+Iterator prism\+::remove (

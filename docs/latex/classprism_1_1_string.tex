@@ -88,7 +88,9 @@ const bool \hyperlink{classprism_1_1_string_aa478bddcdb9ea30ba0a8d1389296607c}{e
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_ae7d89942e4c7ab431331400eb5489854}{fill} (const char c, const int \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size}=-\/1)
 \item 
-const int \hyperlink{classprism_1_1_string_af3b71f73c184a5f14ef91ad6e56187b7}{first\+Index\+Of} (const char c, const int from=0) const 
+const int \hyperlink{classprism_1_1_string_a76178d2dde63c7b76512df05ef093fac}{index\+Of} (const \hyperlink{classprism_1_1_string}{String} \&str, const int from=0) const 
+\item 
+const int \hyperlink{classprism_1_1_string_aa72e151f93550f307af8fc0f4e56ea72}{index\+Of} (const char c, const int from=0) const 
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_aebf2f6e19cb77967798ba096bb559f81}{insert} (const int position, const \hyperlink{classprism_1_1_string}{String} \&str)
 \item 
@@ -101,6 +103,8 @@ const int \hyperlink{classprism_1_1_string_af3b71f73c184a5f14ef91ad6e56187b7}{fi
 const bool \hyperlink{classprism_1_1_string_a2f2960f59d644b2d0f390a090fa7a4ef}{is\+Empty} () const 
 \item 
 const int \hyperlink{classprism_1_1_string_a94a9059dc86dcfcbf409ffc83f3da2a8}{last\+Index\+Of} (const char c, const int from=-\/1) const 
+\item 
+const int \hyperlink{classprism_1_1_string_a0e3385b701880ee0305dcd9e12b33366}{last\+Index\+Of} (const \hyperlink{classprism_1_1_string}{String} \&str, const int from=-\/1) const 
 \item 
 const int \hyperlink{classprism_1_1_string_a7dfc72427863cefb9fe883599272ca7d}{length} () const 
 \item 
@@ -132,6 +136,8 @@ void \hyperlink{classprism_1_1_string_a5471ead67f8901cbed6bd43ef9f4a618}{push\+\
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a1d13f42ceb8d784e2379be1394bc4ea6}{remove} (const \hyperlink{classprism_1_1_string}{String} \&str)
 \item 
+\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_ac6aaed91f33e21a1d98a56139d678bc0}{repeated} (int n\+Times) const 
+\item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a41e0509f93cfa38cd6df3f6965d6f143}{replace} (const int position, const int n\+Chars\+To\+Replace, const \hyperlink{classprism_1_1_string}{String} \&new\+Str)
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a4e8a35e0f084e4d382858e231bf5ed31}{replace} (const int position, const int n\+Chars\+To\+Replace, const \hyperlink{classprism_1_1_char}{Char} \&c)
@@ -150,6 +156,12 @@ void \hyperlink{classprism_1_1_string_aed752cc8c9e59a7b2366b85ab20a656b}{reserve
 \item 
 void \hyperlink{classprism_1_1_string_a77b3580eba01007afc7089cfd334abd5}{resize} (const int new\+Size)
 \item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a347d7ae9b3e5dcbc8da9902cdd64c3ab}{set\+Num} (const int n)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a5acc6453cfd4aca91dfe1e0b5162c95f}{set\+Num} (const float n)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a873dc1a423545930d644acc8388b602d}{set\+Num} (const double n)
+\item 
 const int \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size} () const 
 \item 
 const bool \hyperlink{classprism_1_1_string_ae9ce1b5a274fc4b672944da555552456}{starts\+With} (const \hyperlink{classprism_1_1_string}{String} \&str) const 
@@ -160,6 +172,10 @@ const bool \hyperlink{classprism_1_1_string_a5ce3cf5ba78faa6c9179fb777cc4c6ac}{s
 \item 
 \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_acb6b7f719571cccca2f08887e61ed2a5}{sub} (\hyperlink{classprism_1_1_string_adacc7975837e5fff95d70690777fb330}{String\+::iterator} first, \hyperlink{classprism_1_1_string_adacc7975837e5fff95d70690777fb330}{String\+::iterator} last) const 
 \item 
+const double \hyperlink{classprism_1_1_string_a9c8060a9bea6e9967e8b9714c04d6396}{to\+Double} () const 
+\item 
+const float \hyperlink{classprism_1_1_string_a4fcdc9050798010ab0b36a6e4ff053c9}{to\+Float} () const 
+\item 
 const int \hyperlink{classprism_1_1_string_afbf22d03096777ef6909794edc18a0f9}{to\+Int} () const 
 \item 
 \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_ac75330b46da019ccf2c964e4c2fd9f81}{to\+Lower} () const 
@@ -167,6 +183,8 @@ const int \hyperlink{classprism_1_1_string_afbf22d03096777ef6909794edc18a0f9}{to
 std\+::string \hyperlink{classprism_1_1_string_ad1018741610a6723a38ab52255147ac4}{to\+Std\+String} () const 
 \item 
 \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_afd1fc3691cbc2f267fc3d1d8f27d2c3a}{to\+Upper} () const 
+\item 
+\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_aef7dc34213c574a72c893f943a41e8e4}{trimmed} () const 
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -517,18 +535,7 @@ Returns true if the string\textquotesingle{}s last character is {\itshape c}, fa
 \item[{const int}]{size = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_ae7d89942e4c7ab431331400eb5489854}{}\label{classprism_1_1_string_ae7d89942e4c7ab431331400eb5489854}
-Sets every character to {\itshape c}. If {\itshape size} is not equal to -\/1 (the deafult) then the string gets resized to {\itshape size} first. \index{prism\+::\+String@{prism\+::\+String}!first\+Index\+Of@{first\+Index\+Of}}
-\index{first\+Index\+Of@{first\+Index\+Of}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{first\+Index\+Of(const char c, const int from=0) const }{firstIndexOf(const char c, const int from=0) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+String\+::first\+Index\+Of (
-\begin{DoxyParamCaption}
-\item[{const char}]{c, }
-\item[{const int}]{from = {\ttfamily 0}}
-\end{DoxyParamCaption}
-) const}\hypertarget{classprism_1_1_string_af3b71f73c184a5f14ef91ad6e56187b7}{}\label{classprism_1_1_string_af3b71f73c184a5f14ef91ad6e56187b7}
-\begin{DoxyReturn}{Returns}
-Returns the position of the first occurrence of the char {\itshape c} in the string searching forwards from the position {\itshape from} (0 by default). If there is no occurrence then -\/1 is returned instead. 
-\end{DoxyReturn}
-\index{prism\+::\+String@{prism\+::\+String}!from\+Char\+Array@{from\+Char\+Array}}
+Sets every character to {\itshape c}. If {\itshape size} is not equal to -\/1 (the deafult) then the string gets resized to {\itshape size} first. \index{prism\+::\+String@{prism\+::\+String}!from\+Char\+Array@{from\+Char\+Array}}
 \index{from\+Char\+Array@{from\+Char\+Array}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{from\+Char\+Array(const char $\ast$str)}{fromCharArray(const char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::from\+Char\+Array (
 \begin{DoxyParamCaption}
@@ -542,6 +549,28 @@ Returns the position of the first occurrence of the char {\itshape c} in the str
 \item[{const std\+::string \&}]{str}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a8692b9a7e4c25f349bb83b53ff3d6f36}{}\label{classprism_1_1_string_a8692b9a7e4c25f349bb83b53ff3d6f36}
+\index{prism\+::\+String@{prism\+::\+String}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{index\+Of(const String \&str, const int from=0) const }{indexOf(const String &str, const int from=0) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+String\+::index\+Of (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{str, }
+\item[{const int}]{from = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a76178d2dde63c7b76512df05ef093fac}{}\label{classprism_1_1_string_a76178d2dde63c7b76512df05ef093fac}
+\begin{DoxyReturn}{Returns}
+Returns the position of the first occurrence of {\itshape str} in the string searching forwards from the position {\itshape from} (0 by default). If there is no occurrence then -\/1 is returned instead. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{index\+Of(const char c, const int from=0) const }{indexOf(const char c, const int from=0) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+String\+::index\+Of (
+\begin{DoxyParamCaption}
+\item[{const char}]{c, }
+\item[{const int}]{from = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_aa72e151f93550f307af8fc0f4e56ea72}{}\label{classprism_1_1_string_aa72e151f93550f307af8fc0f4e56ea72}
+\begin{DoxyReturn}{Returns}
+Returns the position of the first occurrence of {\itshape c} in the string searching forwards from the position {\itshape from} (0 by default). If there is no occurrence then -\/1 is returned instead. 
+\end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!insert@{insert}}
 \index{insert@{insert}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{insert(const int position, const String \&str)}{insert(const int position, const String &str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::insert (
@@ -603,6 +632,18 @@ Returns true if the string has no content, false otherwise.
 ) const}\hypertarget{classprism_1_1_string_a94a9059dc86dcfcbf409ffc83f3da2a8}{}\label{classprism_1_1_string_a94a9059dc86dcfcbf409ffc83f3da2a8}
 \begin{DoxyReturn}{Returns}
 Returns the index of the last occurrence of the char {\itshape c} searching backwards from (and including) the position {\itshape from} to the first character. If {\itshape from} is -\/1 (the default) then the search will begin from the last character and if it is set to -\/2 then the search begins at the second to last character and so on. If there is no occurrence of {\itshape c} then -\/1 is returned instead. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!last\+Index\+Of@{last\+Index\+Of}}
+\index{last\+Index\+Of@{last\+Index\+Of}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{last\+Index\+Of(const String \&str, const int from=-\/1) const }{lastIndexOf(const String &str, const int from=-1) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+String\+::last\+Index\+Of (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{str, }
+\item[{const int}]{from = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a0e3385b701880ee0305dcd9e12b33366}{}\label{classprism_1_1_string_a0e3385b701880ee0305dcd9e12b33366}
+\begin{DoxyReturn}{Returns}
+Returns the index of the last occurrence of {\itshape str} searching backwards from the index position {\itshape from} to the first character. ~\newline
+If {\itshape from} is -\/1 (the default) then the search will begin from the last character and if it is set to -\/2 then the search begins at the second to last character and so on. If there is no occurrence of {\itshape c} then -\/1 is returned instead. 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!length@{length}}
 \index{length@{length}!prism\+::\+String@{prism\+::\+String}}
@@ -728,6 +769,16 @@ Removes all occurrences of the \hyperlink{classprism_1_1_char}{Char} {\itshape c
 Removes all occurrences of {\itshape str}. \begin{DoxyReturn}{Returns}
 Returns a reference to this string. 
 \end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!repeated@{repeated}}
+\index{repeated@{repeated}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{repeated(int n\+Times) const }{repeated(int nTimes) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::repeated (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Times}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_ac6aaed91f33e21a1d98a56139d678bc0}{}\label{classprism_1_1_string_ac6aaed91f33e21a1d98a56139d678bc0}
+\begin{DoxyReturn}{Returns}
+Returns a new string which is composed of this string repeated {\itshape n\+Times}. 
+\end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!replace@{replace}}
 \index{replace@{replace}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{replace(const int position, const int n\+Chars\+To\+Replace, const String \&new\+Str)}{replace(const int position, const int nCharsToReplace, const String &newStr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
@@ -737,8 +788,7 @@ Returns a reference to this string.
 \item[{const {\bf String} \&}]{new\+Str}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_a41e0509f93cfa38cd6df3f6965d6f143}{}\label{classprism_1_1_string_a41e0509f93cfa38cd6df3f6965d6f143}
-\begin{DoxyReturn}{Returns}
-Returns a new string which is composed of this string repeated {\itshape n\+Times}. Replaces {\itshape n\+Chars} of characters starting at {\itshape position} (0-\/based) with {\itshape str}. 
+Replaces {\itshape n\+Chars} of characters starting at {\itshape position} (0-\/based) with {\itshape str}. 
 \begin{DoxyCode}
 \textcolor{comment}{// starting at position 5, replace 6 characters with the string "Bona"}
 
@@ -747,8 +797,7 @@ s.replace(5, 6, \textcolor{stringliteral}{"Bona"});
 
 cout << s1; \textcolor{comment}{// outputs: "Cala Bona in Majorca!"}
 \end{DoxyCode}
- 
-
+ \begin{DoxyReturn}{Returns}
 Returns a reference to this string. 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!replace@{replace}}
@@ -846,7 +895,37 @@ Reserves enough memory for the string to contain {\itshape new\+Capacity} charac
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_a77b3580eba01007afc7089cfd334abd5}{}\label{classprism_1_1_string_a77b3580eba01007afc7089cfd334abd5}
 Resizes the string to {\itshape new\+Size}. ~\newline
-If {\itshape new\+Size} is less than the current size then those characters are removed from the end. If {\itshape new\+Size} is greater than the current size then those new characters will be initialised to default constructed values i.\+e. \char`\"{} \char`\"{}. \index{prism\+::\+String@{prism\+::\+String}!size@{size}}
+If {\itshape new\+Size} is less than the current size then those characters are removed from the end. If {\itshape new\+Size} is greater than the current size then those new characters will be initialised to default constructed values i.\+e. \char`\"{} \char`\"{}. \index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
+\index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{set\+Num(const int n)}{setNum(const int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\begin{DoxyParamCaption}
+\item[{const int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a347d7ae9b3e5dcbc8da9902cdd64c3ab}{}\label{classprism_1_1_string_a347d7ae9b3e5dcbc8da9902cdd64c3ab}
+Converts {\itshape n} to a string and sets it as the content of this string. \begin{DoxyReturn}{Returns}
+Returns a reference to this string. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
+\index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{set\+Num(const float n)}{setNum(const float n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\begin{DoxyParamCaption}
+\item[{const float}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a5acc6453cfd4aca91dfe1e0b5162c95f}{}\label{classprism_1_1_string_a5acc6453cfd4aca91dfe1e0b5162c95f}
+Converts {\itshape n} to a string and sets it as the content of this string. \begin{DoxyReturn}{Returns}
+Returns a reference to this string. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
+\index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{set\+Num(const double n)}{setNum(const double n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\begin{DoxyParamCaption}
+\item[{const double}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a873dc1a423545930d644acc8388b602d}{}\label{classprism_1_1_string_a873dc1a423545930d644acc8388b602d}
+Converts {\itshape n} to a string and sets it as the content of this string. \begin{DoxyReturn}{Returns}
+Returns a reference to this string. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!size@{size}}
 \index{size@{size}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+String\+::size (
 \begin{DoxyParamCaption}
@@ -891,6 +970,26 @@ Returns a new string copied from this string starting at the character at {\itsh
 ) const}\hypertarget{classprism_1_1_string_acb6b7f719571cccca2f08887e61ed2a5}{}\label{classprism_1_1_string_acb6b7f719571cccca2f08887e61ed2a5}
 \begin{DoxyReturn}{Returns}
 Returns a new string copied from this string starting at the character pointed to by the iterator {\itshape first} through to the character pointed at by the iterator {\itshape last}. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!to\+Double@{to\+Double}}
+\index{to\+Double@{to\+Double}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{to\+Double() const }{toDouble() const }}]{\setlength{\rightskip}{0pt plus 5cm}const double prism\+::\+String\+::to\+Double (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a9c8060a9bea6e9967e8b9714c04d6396}{}\label{classprism_1_1_string_a9c8060a9bea6e9967e8b9714c04d6396}
+\begin{DoxyReturn}{Returns}
+Returns the string converted to an {\itshape double}. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!to\+Float@{to\+Float}}
+\index{to\+Float@{to\+Float}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{to\+Float() const }{toFloat() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+String\+::to\+Float (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a4fcdc9050798010ab0b36a6e4ff053c9}{}\label{classprism_1_1_string_a4fcdc9050798010ab0b36a6e4ff053c9}
+\begin{DoxyReturn}{Returns}
+Returns the string converted to an {\itshape float}. 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!to\+Int@{to\+Int}}
 \index{to\+Int@{to\+Int}!prism\+::\+String@{prism\+::\+String}}
@@ -939,6 +1038,21 @@ Returns a copy of this string as a std\+::string.
 ) const}\hypertarget{classprism_1_1_string_afd1fc3691cbc2f267fc3d1d8f27d2c3a}{}\label{classprism_1_1_string_afd1fc3691cbc2f267fc3d1d8f27d2c3a}
 \begin{DoxyReturn}{Returns}
 Returns a copy of this string where each character is uppercase. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!trimmed@{trimmed}}
+\index{trimmed@{trimmed}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{trimmed() const }{trimmed() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::trimmed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_aef7dc34213c574a72c893f943a41e8e4}{}\label{classprism_1_1_string_aef7dc34213c574a72c893f943a41e8e4}
+Trims the whitespace from the beginning and the end of the string. \begin{DoxyReturn}{Returns}
+Returns a copy of this string with the whitespace trimmed off. If there is no whitespace to remove then the string is returned unchanged. 
+\begin{DoxyCode}
+\hyperlink{classprism_1_1_string_a3a9df9dd5d297b91d2eec1ef7c4db8d3}{String} s(\textcolor{stringliteral}{" in the summer "});
+cout << s.trimmed(); \textcolor{comment}{// outputs: "in the summer"}
+\end{DoxyCode}
+ 
 \end{DoxyReturn}
 
 
