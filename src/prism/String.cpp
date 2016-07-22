@@ -746,6 +746,25 @@ String & String::setNum(const double n) {
 }
 
 /**
+ *
+ */
+//String String::simplified() const {
+//	String s(*this);
+//	iterator bit = s.begin();
+
+//	while (bit != s.end()) {
+//		if ()
+//	}
+//
+//
+//	Char c('\t');
+//	iterator eit = prism::remove(s.begin(), s.end(), c);
+//	s.d->storage.end = s.d->storage.start + ( eit - s.begin() );
+
+//	return s;
+//}
+
+/**
  * @return Returns the size of the string. This method is identical to length().
  */
 const int String::size() const {
@@ -757,14 +776,21 @@ const int String::size() const {
  */
 //Vector<String> String::split(const Char & c) const {
 //	Vector<String> v;
-//	String::iterator bit = begin();
-//	String::iterator eit = end();
+//	const_iterator bit = constBegin();
+//	const_iterator eit = constEnd();
 //
 //	while (bit != eit) {
-//		String::iterator result = prism::find(bit, eit, c);
-//		if (result == eit) break;
-//		else
+//		const_iterator result = prism::find(bit, eit, c);
+//		if (result != eit) {
+//			String s;
+//			s.resize(result-bit);
+//			prism::copy(bit, result+1, s.begin());
+//			v.append(s);
+//			bit = result+1;
+//		}
+//		else ++bit;
 //	}
+//
 //
 //	return v;
 //}
@@ -1017,7 +1043,7 @@ String operator+(const String & str, const char c) {
 std::ostream & operator<<(std::ostream & out, const String &s) {
 	out << "String [" << &s << "] \"";
 	for (int i=0; i<s.size(); i++) out << s.d->storage.start[i];
-	std::cout << "\"\n";
+	std::cout << "\"";
 	std::cout << "------ size=" << s.size() << ", capacity=" << s.capacity() << " ";
 
 	return out;

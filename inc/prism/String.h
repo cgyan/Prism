@@ -14,6 +14,7 @@
 #include <string>
 #include <initializer_list>
 #include <prism/Iterator>
+#include <prism/Vector>
 
 namespace prism {
 
@@ -126,6 +127,7 @@ public:
 	String &		setNum(const int n);
 	String &		setNum(const float n);
 	String &		setNum(const double n);
+//	String			simplified() const;
 	const int 		size() const;
 //	Vector<String>	split(const String & sep);
 //	Vector<String>	split(const Char & sep) const;
