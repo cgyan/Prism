@@ -144,8 +144,8 @@ var NAVTREEINDEX4 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_0x7e.html":[2,3,1,24],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
@@ -205,8 +205,8 @@ var NAVTREEINDEX4 =
 "md_README.html":[0],
 "namespacemembers.html":[1,1,0],
 "namespacemembers_func.html":[1,1,1],
-"namespaceprism.html":[2,0,0],
 "namespaceprism.html":[1,0,0],
+"namespaceprism.html":[2,0,0],
 "namespaces.html":[1,0],
 "pages.html":[]
 };

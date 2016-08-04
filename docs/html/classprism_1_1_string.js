@@ -64,7 +64,7 @@ var classprism_1_1_string =
     [ "push_back", "classprism_1_1_string.html#a81b6a39be2a985ea02c46a4d1490755c", null ],
     [ "push_front", "classprism_1_1_string.html#aadab394ea2370e2d23fcf932d373dcd3", null ],
     [ "push_front", "classprism_1_1_string.html#a5471ead67f8901cbed6bd43ef9f4a618", null ],
-    [ "remove", "classprism_1_1_string.html#a3ccec53675d61756c3beb1bbc43c981f", null ],
+    [ "remove", "classprism_1_1_string.html#a1bc8aa48c8b1f999102f1417ff091253", null ],
     [ "remove", "classprism_1_1_string.html#afebd670881d543691a420f61a1e4cf37", null ],
     [ "remove", "classprism_1_1_string.html#a1d13f42ceb8d784e2379be1394bc4ea6", null ],
     [ "repeated", "classprism_1_1_string.html#ac6aaed91f33e21a1d98a56139d678bc0", null ],

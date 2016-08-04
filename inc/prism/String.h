@@ -103,7 +103,7 @@ public:
 	void			push_back(const char c);
 	void			push_front(const String & str);
 	void			push_front(const char c);
-	String &		remove(const int position, const int nCharsToRemove);
+	String &		remove(const int index, const int nCharsToRemove);
 	String &		remove(const char c);
 	String &		remove(const String & str);
 	String			repeated(int nTimes) const;

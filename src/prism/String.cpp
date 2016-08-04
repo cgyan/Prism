@@ -351,11 +351,15 @@ String & String::insert(String::iterator insertBefore, const String & str) {
 	// 1: increase capacity if necessary
 	int reserveSize = thisSize + str.size();
 	if (reserveSize > cap) {
+		// if the capacity == 0 then set new capacity to the size of the new string
+		// if the capacity > 0 then set the the new capacity to the size of the new
+		// string multiplied by the exponent
 		if (cap > 0)
 			reserveSize = reserveSize * d->storage.exponent;
 		reserve(reserveSize);
-		d->storage.end = d->storage.start + thisSize + str.size();
 	}
+
+	d->storage.end = d->storage.start + thisSize + str.size();
 
 	// 2: if the string isn't empty shift up the chars after the
 	// insertion point to make room for str.
@@ -496,9 +500,9 @@ const bool String::rangeCheck(const int index) const {
  * Removes \em nCharsToRemove starting from \em position (0-based).
  * @return Returns a reference to this string.
  */
-String & String::remove(const int position, const int nCharsToRemove) {
+String & String::remove(const int index, const int nCharsToRemove) {
 
-	prism::copy(begin()+position+nCharsToRemove, end(), begin()+position);
+	prism::copy(begin()+index+nCharsToRemove, end(), begin()+index);
 	resize(size() - nCharsToRemove);
 
 	return *this;
@@ -506,7 +510,7 @@ String & String::remove(const int position, const int nCharsToRemove) {
 
 /**
  * Removes all occurrences of the Char \em c.
- * @retrn Returns a reference to this string.
+ * @return Returns a reference to this string.
  */
 String & String::remove(const char c) {
 	replace(c, "");
