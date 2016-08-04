@@ -64,21 +64,21 @@ String::String(const std::string & str)
 /**
  * Creates a string of size 1 initialised to the Char \em c.
  */
-String::String(const Char & c)
+String::String(const char c)
 	: d(new StringData)
 {
 	resize(1);
-	prism::fill_n(d->storage.start, 1, c.tochar());
+	prism::fill_n(d->storage.start, 1, c);
 }
 
 /**
  * Creates a string filled with \em size amount of the char \em c.
  */
-String::String(const int size, const Char & c)
+String::String(const int size, const char c)
 	: d(new StringData)
 {
 	reserve(size);
-	prism::fill_n(d->storage.start, size, c.tochar());
+	prism::fill_n(d->storage.start, size, c);
 	d->storage.end = d->storage.start + size;
 }
 
@@ -512,7 +512,7 @@ String & String::remove(const int position, const int nCharsToRemove) {
  * Removes all occurrences of the Char \em c.
  * @retrn Returns a reference to this string.
  */
-String & String::remove(const Char & c) {
+String & String::remove(const char c) {
 	replace(c, "");
 	return *this;
 }
@@ -585,7 +585,7 @@ String & String::replace(const int position, const int nCharsToReplace, const St
 /**
  * Replaces \em nCharsToReplace of characters starting at \em position (0-based) with \em c.
  */
-String & String::replace(const int position, const int nCharsToReplace, const Char & c) {
+String & String::replace(const int position, const int nCharsToReplace, const char c) {
 	return replace(position, nCharsToReplace, String(c));
 }
 
@@ -638,31 +638,33 @@ String & String::replace(const String & oldStr, const String & newStr) {
  * Replaces each occurrence of \em oldStr with \em newChar.
  * @return Returns a reference to this string.
  */
-String & String::replace(const String & oldStr, const Char & newChar) {
-	return replace(oldStr, String(newChar));
+String & String::replace(const String & oldStr, const char c) {
+	return replace(oldStr, String(c));
 }
 
 /**
  * Replaces each occurrence of the Char \em c with the string \em newStr.
  * @return Returns a reference to this string.
  */
-String & String::replace(const Char & oldChar, const String & newStr) {
-	return replace(String(oldChar), newStr);
+String & String::replace(const char oldc, const String & newStr) {
+	return replace(String(oldc), newStr);
 }
 
 /**
  * Replaces each occurrence of the Char \em oldChar with the Char \em newChar.
  * @return Returns a reference to this string.
  */
-String & String::replace(const Char & oldChar, const Char & newChar) {
-	return replace(String(oldChar), String(newChar));
+String & String::replace(const char oldc, const char newc) {
+	return replace(String(oldc), String(newc));
 }
 
 /**
- * Reserves enough memory for the string to contain \em newCapacity characters i.e. newCapacity * sizeof(char).
- * The capacity can only grow and will not lessen even if clear() or remove() is called. Only squeeze() can
- * alter the capacity to a lower amount. If \em newCapacity is less than or equal to the current capacity then
- * nothing changes. Any existing characters in the string are not affected by this function.
+ * Reserves enough memory for the string to contain \em newCapacity characters
+ * i.e. newCapacity * sizeof(char). The capacity can only grow and will not
+ * lessen even if clear() or remove() is called. Only squeeze() can alter the
+ * capacity to a lower amount. If \em newCapacity is less than or equal to the
+ * current capacity then nothing changes. Any existing characters in the string
+ * are not affected by this function.
  */
 void String::reserve(const int newCapacity) {
 	if (newCapacity <= capacity())
@@ -681,10 +683,11 @@ void String::reserve(const int newCapacity) {
 
 /**
  * Resizes the string to \em newSize. \n
- * If \em newSize is less than the current size then those
- * characters are removed from the end. If \em newSize is greater than
- * the current size then those new characters will be initialised to
- * default constructed values i.e. " ".
+ * If \em newSize is less than the current size then those characters are
+ * removed from the end. If \em newSize is greater than the current size
+ * then those new characters will be initialised to default constructed values i.e. " ".
+ * The capacity will remain unchanged if the string is resized downwards but
+ * may increase as necessary if the string is resized upwards.
  */
 void String::resize(const int newSize) {
 	if (newSize < size()) {
@@ -695,8 +698,7 @@ void String::resize(const int newSize) {
 	int oldSize = size();
 
 	if (newSize > capacity()) {
-		int s = capacity() + newSize;
-		reserve(s);
+		reserve(newSize);
 	}
 
 	prism::fill(d->storage.start+oldSize, d->storage.start+newSize, char(' '));
@@ -718,10 +720,9 @@ String & String::setNum(const int n) {
 }
 
 /**
- * Converts \em n to a string and sets it as the content of this string.
- * @return Returns a reference to this string.
+ * This is an overloaded function.
  */
-String & String::setNum(const float n) {
+String & String::setNum(const unsigned int n) {
 	std::ostringstream ss;
 	ss << n;
 	std::string stdStr = ss.str();
@@ -732,10 +733,9 @@ String & String::setNum(const float n) {
 }
 
 /**
- * Converts \em n to a string and sets it as the content of this string.
- * @return Returns a reference to this string.
+ * This is an overloaded function.
  */
-String & String::setNum(const double n) {
+String & String::setNum(const long n) {
 	std::ostringstream ss;
 	ss << n;
 	std::string stdStr = ss.str();
@@ -746,23 +746,74 @@ String & String::setNum(const double n) {
 }
 
 /**
- *
+ * This is an overloaded function.
  */
-//String String::simplified() const {
-//	String s(*this);
-//	iterator bit = s.begin();
+String & String::setNum(const unsigned long n) {
+	std::ostringstream ss;
+	ss << n;
+	std::string stdStr = ss.str();
+	resize(stdStr.size());
+	prism::copy(stdStr.begin(), stdStr.end(), begin());
 
-//	while (bit != s.end()) {
-//		if ()
-//	}
-//
-//
-//	Char c('\t');
-//	iterator eit = prism::remove(s.begin(), s.end(), c);
-//	s.d->storage.end = s.d->storage.start + ( eit - s.begin() );
+	return *this;
+}
 
-//	return s;
-//}
+/**
+ * This is an overloaded function.\n
+ * Sets this string to the textual representation of the float \em n set to \em precision (6 by default).
+ * @return Returns a reference to this string.
+ */
+String & String::setNum(const float n, const int precision) {
+	std::ostringstream ss;
+	ss.precision(precision);
+	ss << n;
+	std::string stdStr = ss.str();
+	resize(stdStr.size());
+	prism::copy(stdStr.begin(), stdStr.end(), begin());
+
+	return *this;
+}
+
+/**
+ * This is an overloaded function.\n
+ * Sets this string to the textual representation of the double \em n set to \em precision (6 by default).
+ * @return Returns a reference to this string.
+ */
+String & String::setNum(const double n, const int precision) {
+	std::ostringstream ss;
+	ss.precision(precision);
+	ss << n;
+	std::string stdStr = ss.str();
+	resize(stdStr.size());
+	prism::copy(stdStr.begin(), stdStr.end(), begin());
+
+	return *this;
+}
+
+/**
+ * Removes all whitespace characters from the start and end of the string and
+ * replaces all whitespace between non-whitespace characters with a single space (' ').
+ * Whitespace characters are those such that Char::isWhitespace is true. These are space (' '),
+ * carriage return ('\\r'), tab ('\\t'), newline ('\\n'), vertical tab ('\\v') and formfeed ('\\f').
+ * \code
+ * String s("\n\t\t whitespace has\fbeen\\vremoved!\n");
+ * cout << s.simplified(); // outputs: "whitespace has been removed!"
+ * \endcode
+ * @return Returns a new string that has all whitespace stripped out and replacing internal whitespace
+ * with a single space (' ').
+ */
+String String::simplified() const {
+	String s = this->trimmed();
+
+	iterator it = s.begin();
+	while (it != s.end()) {
+		if (Char::isWhitespace(*it))
+			s.replace(*it, ' ');
+		++it;
+	}
+
+	return s;
+}
 
 /**
  * @return Returns the size of the string. This method is identical to length().
@@ -777,7 +828,7 @@ const int String::size() const {
  * containing one string (this string) will be returned instead.
  */
 Vector<String> String::split(const String & delimeter) const {
-	return split(Char(delimeter.at(0)));
+	return split(delimeter.at(0));
 }
 
 /**
@@ -785,7 +836,7 @@ Vector<String> String::split(const String & delimeter) const {
  * @return Returns a Vector of strings. If \em delimeter does not occur then a Vector
  * containing one string (this string) will be returned instead.
  */
-Vector<String> String::split(const Char & delimeter) const {
+Vector<String> String::split(const char delimeter) const {
 	Vector<String> v;
 	const_iterator loopBit = constBegin();
 	const_iterator loopEit = constEnd();
@@ -805,13 +856,30 @@ Vector<String> String::split(const Char & delimeter) const {
 	}
 
 	// this grabs the section of the string after the last delimeter
-
 	s.resize(loopBit - rangeBit);
 	prism::copy(rangeBit, loopBit, s.begin());
 	v.append(s.trimmed());
 
 
 	return v;
+}
+
+/**
+ * Destroys any unused memory currently held by this string. For example, if the string has a capacity
+ * of 10 and a size of 4, squeeze() will release the extra memory of the capacity resulting in a capacity and size of 4.
+ * If size() and capacity() are already equal then nothing happens.
+ */
+void String::squeeze() {
+	if (size() == capacity()) return;
+	int s = size();
+
+	char * newStorage = new char[s];
+	prism::copy(d->storage.start, d->storage.end, newStorage);
+
+	delete [] d->storage.start;
+	d->storage.start = newStorage;
+	d->storage.end = d->storage.start + s;
+	d->storage.finish = d->storage.start + s;
 }
 
 /**
@@ -945,7 +1013,8 @@ String String::toUpper() const {
 }
 
 /**
- * Trims the whitespace from the beginning and the end of the string.
+ * Trims the whitespace from the beginning and the end of the string. Characters which are whitespace
+ * are such that Char.isWhitespace() would return true.
  * @return Returns a copy of this string with the whitespace trimmed off. If there is
  * no whitespace to remove then the string is returned unchanged.
  * \code
@@ -1015,8 +1084,39 @@ String & String::operator =(const String & other) {
 /**
  *
  */
+String & String::operator =(const char * other) {
+	std::cout << "!" << std::endl;
+	*this = String(other);
+	return *this;
+}
+
+/**
+ *
+ */
+String & String::operator =(const char c) {
+	*this = String(c);
+	return *this;
+}
+
+/**
+ *
+ */
 String & String::operator +=(const String & other) {
 	return insert(end(), other);
+}
+
+/**
+ *
+ */
+String & String::operator +=(const char * other) {
+	return insert(end(), other);
+}
+
+/**
+ *
+ */
+String & String::operator +=(const char c) {
+	return insert(end(), c);
 }
 // ========================================================================
 // Static
@@ -1037,10 +1137,62 @@ String String::fromStdString(const std::string & str) {
 /**
  *
  */
-//String String::number(const int n) {
-//	char c = n;
-//	return String(c);
-//}
+String String::number(const int n) {
+	String s;
+	s.setNum(n);
+
+	return s;
+}
+
+/**
+ *
+ */
+String String::number(const unsigned int n) {
+	String s;
+	s.setNum(n);
+
+	return s;
+}
+
+/**
+ *
+ */
+String String::number(const long n) {
+	String s;
+	s.setNum(n);
+
+	return s;
+}
+
+/**
+ *
+ */
+String String::number(const unsigned long n) {
+	String s;
+	s.setNum(n);
+
+	return s;
+}
+
+/**
+ *
+ */
+String String::number(const float n, const int precision) {
+	String s;
+	s.setNum(n, precision);
+
+	return s;
+}
+
+/**
+ *
+ */
+String String::number(const double n, const int precision) {
+	String s;
+	s.setNum(n, precision);
+
+	return s;
+}
 
 /**
  *
@@ -1062,7 +1214,7 @@ const bool operator!=(const String & str1, const String & str2) {
 /**
  *
  */
-String operator+(const String & str1, const String & str2) {
+const String operator+(const String & str1, const String & str2) {
 	String s(str1);
 	return s.insert(s.end(), str2);
 }
@@ -1070,7 +1222,7 @@ String operator+(const String & str1, const String & str2) {
 /**
  *
  */
-String operator+(const String & str1, const char * str2) {
+const String operator+(const String & str1, const char * str2) {
 	String s(str1);
 	return s.insert(s.end(), str2);
 }
@@ -1078,7 +1230,7 @@ String operator+(const String & str1, const char * str2) {
 /**
  *
  */
-String operator+(const char * str1, const String & str2) {
+const String operator+(const char * str1, const String & str2) {
 	String s(str1);
 	return s.append(str2);
 }
@@ -1086,7 +1238,7 @@ String operator+(const char * str1, const String & str2) {
 /**
  *
  */
-String operator+(const char c, const String & str) {
+const String operator+(const char c, const String & str) {
 	String s(c);
 	return s+str;
 }
@@ -1094,7 +1246,7 @@ String operator+(const char c, const String & str) {
 /**
  *
  */
-String operator+(const String & str, const char c) {
+const String operator+(const String & str, const char c) {
 	return str + String(c);
 }
 

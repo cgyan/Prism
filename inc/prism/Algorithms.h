@@ -431,10 +431,13 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, Forward
 }
 
 /**
- * Sorts the elements in the range \em [first, last] in ascending order using bubble sort.
+ * Sorts the elements in the range \em [first, last] in ascending order using the Bubble Sort algorithm. \n
+ * The range used is \em [first,last), which contains all the elements between \em first and \em last,
+ * including the element pointed by \em first but not the element pointed by \em last.
+ * \note The objects being sorted must support operator>().
  */
 template <class RandomAccessIterator>
-void sort(RandomAccessIterator first, RandomAccessIterator last) {
+void sort_bubble(RandomAccessIterator first, RandomAccessIterator last) {
 
 	int i,j;
 	int n = last - first;
@@ -460,6 +463,40 @@ void sort(RandomAccessIterator first, RandomAccessIterator last) {
 		}
 
 	}
+
+}
+
+/**
+ * Sorts the elements in the range \em [first, last] in ascending order using the Quicksort algorithm. \n
+ * The range used is \em [first,last), which contains all the elements between \em first and \em last,
+ * including the element pointed by \em first but not the element pointed by \em last.
+ * \note The objects being sorted must support operator<=().
+ */
+template <class ForwardIterator>
+void sort_quicksort(ForwardIterator first, ForwardIterator last) {
+
+	ForwardIterator wall = first;
+	ForwardIterator pivot = last - 1;
+	ForwardIterator cachedFirst = first;
+
+	while (first <= pivot) {
+
+		if (first == pivot)
+			swap(*first, *wall);
+
+		else if (*first <= *pivot) {
+			swap(*first, *wall);
+			++wall;
+		}
+		++first;
+	}
+
+	if (cachedFirst == wall || cachedFirst+1 == wall) {}
+	else sort_quicksort(cachedFirst, wall);
+	if (last - 1 == wall) {}
+	else sort_quicksort(wall, last);
+
+
 
 }
 

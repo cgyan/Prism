@@ -8,7 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include test/containers/subdir.mk
+-include test/subdir.mk
 -include src/prism/subdir.mk
 -include external/gtest/subdir.mk
 -include subdir.mk

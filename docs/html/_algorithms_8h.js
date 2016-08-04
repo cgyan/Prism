@@ -29,7 +29,8 @@ var _algorithms_8h =
     [ "replace_copy_if", "_algorithms_8h.html#a55d702599739f7137516dcd095119f15", null ],
     [ "replace_if", "_algorithms_8h.html#af118c19f6b5448319eb3aaf2d556ac54", null ],
     [ "search", "_algorithms_8h.html#affcb3e5150d72d9f79b85b9ea4eb41e2", null ],
-    [ "sort", "_algorithms_8h.html#af8ceeac6329dade75da361abe8b15c5f", null ],
+    [ "sort_bubble", "_algorithms_8h.html#aa597d262eb2f9ef80703c883a2d18d1e", null ],
+    [ "sort_quicksort", "_algorithms_8h.html#a720fbbcb3f399b006969bb00a66686f9", null ],
     [ "swap", "_algorithms_8h.html#a6430516ab4f2e2a7f43323acb6b559d8", null ],
     [ "swap_ranges", "_algorithms_8h.html#a4661f2c0c4dca098c137179b4d93f3dc", null ]
 ];

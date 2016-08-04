@@ -3,7 +3,6 @@ var hierarchy =
     [ "prism::Array< T >", "classprism_1_1_array.html", null ],
     [ "prism::Char", "classprism_1_1_char.html", null ],
     [ "prism::Circle", "classprism_1_1_circle.html", null ],
-    [ "prism::Console", "classprism_1_1_console.html", null ],
     [ "prism::Exception", "classprism_1_1_exception.html", [
       [ "prism::OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", null ]
     ] ],

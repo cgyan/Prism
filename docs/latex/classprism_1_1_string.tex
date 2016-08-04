@@ -34,9 +34,9 @@ typedef int \hyperlink{classprism_1_1_string_a33d0fff8e7a3f85f43487c6975e3e766}{
 \item 
 \hyperlink{classprism_1_1_string_aedf9c8008bc992012ed8dea7b312683c}{String} (const std\+::string \&str)
 \item 
-\hyperlink{classprism_1_1_string_a15308d05157a15106dfa82ca9764ee30}{String} (const \hyperlink{classprism_1_1_char}{Char} \&c)
+\hyperlink{classprism_1_1_string_aa60f6e3b928d3072c204deba612dec65}{String} (const char c)
 \item 
-\hyperlink{classprism_1_1_string_adaf8ffdd5f77b21d8f11db6549fa7c17}{String} (const int \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size}, const \hyperlink{classprism_1_1_char}{Char} \&c)
+\hyperlink{classprism_1_1_string_ac14b5c78edff344d549496eba0b226c5}{String} (const int \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size}, const char c)
 \item 
 \hyperlink{classprism_1_1_string_a6734cae1e3f2165a4a5d1f48cb56d0fe}{String} (const \hyperlink{classprism_1_1_string}{String} \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
 \item 
@@ -108,14 +108,6 @@ const int \hyperlink{classprism_1_1_string_a0e3385b701880ee0305dcd9e12b33366}{la
 \item 
 const int \hyperlink{classprism_1_1_string_a7dfc72427863cefb9fe883599272ca7d}{length} () const 
 \item 
-char \& \hyperlink{classprism_1_1_string_a2aa545085262fc28c9199a5790bfbd0a}{operator\mbox{[}$\,$\mbox{]}} (const int index)
-\item 
-const char \& \hyperlink{classprism_1_1_string_ad519fe1a0696fe5c4b77808d605bc68e}{operator\mbox{[}$\,$\mbox{]}} (const int index) const 
-\item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_ad2c84ac36bccdb26c446d32a1615f321}{operator=} (const \hyperlink{classprism_1_1_string}{String} \&other)
-\item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a8d509ab7982bc6176c58f5fbce1da15c}{operator+=} (const \hyperlink{classprism_1_1_string}{String} \&other)
-\item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a0deb77daa45d88136d39b9960075cdb5}{prepend} (const \hyperlink{classprism_1_1_string}{String} \&str)
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a8f670c0ad0c7c00cdb89170f4b2275b3}{prepend} (const char c)
@@ -132,7 +124,7 @@ void \hyperlink{classprism_1_1_string_a5471ead67f8901cbed6bd43ef9f4a618}{push\+\
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a3ccec53675d61756c3beb1bbc43c981f}{remove} (const int position, const int n\+Chars\+To\+Remove)
 \item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a7529b02c672f5effdd31bdaad3e8f0de}{remove} (const \hyperlink{classprism_1_1_char}{Char} \&c)
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_afebd670881d543691a420f61a1e4cf37}{remove} (const char c)
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a1d13f42ceb8d784e2379be1394bc4ea6}{remove} (const \hyperlink{classprism_1_1_string}{String} \&str)
 \item 
@@ -140,17 +132,17 @@ void \hyperlink{classprism_1_1_string_a5471ead67f8901cbed6bd43ef9f4a618}{push\+\
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a41e0509f93cfa38cd6df3f6965d6f143}{replace} (const int position, const int n\+Chars\+To\+Replace, const \hyperlink{classprism_1_1_string}{String} \&new\+Str)
 \item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a4e8a35e0f084e4d382858e231bf5ed31}{replace} (const int position, const int n\+Chars\+To\+Replace, const \hyperlink{classprism_1_1_char}{Char} \&c)
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a6237d6e704f4c7b4133e279383607d7e}{replace} (const int position, const int n\+Chars\+To\+Replace, const char c)
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a0a8ad9ff92bb002dfb4c13625ad93d24}{replace} (\hyperlink{classprism_1_1_string_adacc7975837e5fff95d70690777fb330}{String\+::iterator} it\+Begin, \hyperlink{classprism_1_1_string_adacc7975837e5fff95d70690777fb330}{String\+::iterator} it\+End, const \hyperlink{classprism_1_1_string}{String} \&str)
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a81e268b27da75c013b41e400b2fcb2f1}{replace} (const \hyperlink{classprism_1_1_string}{String} \&old\+Str, const \hyperlink{classprism_1_1_string}{String} \&new\+Str)
 \item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_aeaf54043c5a919e901f6aa3a741c5019}{replace} (const \hyperlink{classprism_1_1_string}{String} \&old\+Str, const \hyperlink{classprism_1_1_char}{Char} \&new\+Char)
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a8187856b0d5d91bbcbfef8305904f3f2}{replace} (const \hyperlink{classprism_1_1_string}{String} \&old\+Str, const char c)
 \item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a0d37bca0afab3f37d2be64ee4101ca53}{replace} (const \hyperlink{classprism_1_1_char}{Char} \&old\+Char, const \hyperlink{classprism_1_1_string}{String} \&new\+Str)
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a572260554eada6b9171327b33c6f421e}{replace} (const char oldc, const \hyperlink{classprism_1_1_string}{String} \&new\+Str)
 \item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a511c58978ebfc1278d36f38bb8fa2d27}{replace} (const \hyperlink{classprism_1_1_char}{Char} \&old\+Char, const \hyperlink{classprism_1_1_char}{Char} \&new\+Char)
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_acb98024bec3abd2c69879e63140c345a}{replace} (const char oldc, const char newc)
 \item 
 void \hyperlink{classprism_1_1_string_aed752cc8c9e59a7b2366b85ab20a656b}{reserve} (const int new\+Capacity)
 \item 
@@ -158,11 +150,25 @@ void \hyperlink{classprism_1_1_string_a77b3580eba01007afc7089cfd334abd5}{resize}
 \item 
 \hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a347d7ae9b3e5dcbc8da9902cdd64c3ab}{set\+Num} (const int n)
 \item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a5acc6453cfd4aca91dfe1e0b5162c95f}{set\+Num} (const float n)
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a69294c6d468968ab31201f873b928c71}{set\+Num} (const unsigned int n)
 \item 
-\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a873dc1a423545930d644acc8388b602d}{set\+Num} (const double n)
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a1a5d7918d3b7ccf24304c003f3a14f6f}{set\+Num} (const long n)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_aa4874606f40ab093dfee5a57a7700193}{set\+Num} (const unsigned long n)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_ad9b75f3944646b1133eba004c802cdaa}{set\+Num} (const float n, const int precision=6)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a2e346d9f08d74e3bbc0361b65692d846}{set\+Num} (const double n, const int precision=6)
+\item 
+\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a6afd376891e93bc92379f25bc8e4cca0}{simplified} () const 
 \item 
 const int \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size} () const 
+\item 
+\hyperlink{classprism_1_1_vector}{Vector}$<$ \hyperlink{classprism_1_1_string}{String} $>$ \hyperlink{classprism_1_1_string_a84614e3771d07b57dc516da3b26b04e9}{split} (const \hyperlink{classprism_1_1_string}{String} \&delimeter) const 
+\item 
+\hyperlink{classprism_1_1_vector}{Vector}$<$ \hyperlink{classprism_1_1_string}{String} $>$ \hyperlink{classprism_1_1_string_abb0b955c049c6aebe1115b7823f438ad}{split} (const char delimeter) const 
+\item 
+void \hyperlink{classprism_1_1_string_a326c3afd3ed5b99dd53217e492526e0a}{squeeze} ()
 \item 
 const bool \hyperlink{classprism_1_1_string_ae9ce1b5a274fc4b672944da555552456}{starts\+With} (const \hyperlink{classprism_1_1_string}{String} \&str) const 
 \item 
@@ -185,6 +191,22 @@ std\+::string \hyperlink{classprism_1_1_string_ad1018741610a6723a38ab52255147ac4
 \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_afd1fc3691cbc2f267fc3d1d8f27d2c3a}{to\+Upper} () const 
 \item 
 \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_aef7dc34213c574a72c893f943a41e8e4}{trimmed} () const 
+\item 
+char \& \hyperlink{classprism_1_1_string_a2aa545085262fc28c9199a5790bfbd0a}{operator\mbox{[}$\,$\mbox{]}} (const int index)
+\item 
+const char \& \hyperlink{classprism_1_1_string_ad519fe1a0696fe5c4b77808d605bc68e}{operator\mbox{[}$\,$\mbox{]}} (const int index) const 
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_ad2c84ac36bccdb26c446d32a1615f321}{operator=} (const \hyperlink{classprism_1_1_string}{String} \&other)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a72162e465f226763b741467865d506e2}{operator=} (const char $\ast$other)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a61f21a091fec77de84ceab239b6d9c7d}{operator=} (const char c)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a8d509ab7982bc6176c58f5fbce1da15c}{operator+=} (const \hyperlink{classprism_1_1_string}{String} \&other)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a1a282edfd99b7570eb83a8c1188c5e2b}{operator+=} (const char $\ast$other)
+\item 
+\hyperlink{classprism_1_1_string}{String} \& \hyperlink{classprism_1_1_string_a28499824b5ab71a12c7f296e1428cf79}{operator+=} (const char c)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -192,6 +214,18 @@ std\+::string \hyperlink{classprism_1_1_string_ad1018741610a6723a38ab52255147ac4
 static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a11d319bfb0bf70ffdf71d2fc65b963db}{from\+Char\+Array} (const char $\ast$str)
 \item 
 static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a8692b9a7e4c25f349bb83b53ff3d6f36}{from\+Std\+String} (const std\+::string \&str)
+\item 
+static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a634481b6536dde9995b44082fbcbe0c5}{number} (const int n)
+\item 
+static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a4c8e81538cb37882488ff35b03b00f19}{number} (const unsigned int n)
+\item 
+static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a3eae3ed3829125b583ae9050849b5d4d}{number} (const long n)
+\item 
+static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a0da92ce265e3b9dee756746634a2ed1c}{number} (const unsigned long n)
+\item 
+static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a1d912a14f5b276aa18b31444eceef96d}{number} (const float n)
+\item 
+static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a58b2cc5927fec3459c5eefbc45ec0af4}{number} (const double n)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -200,15 +234,15 @@ const bool \hyperlink{classprism_1_1_string_a42ce36244ff044035bee8e0e1d764aa1}{o
 \item 
 const bool \hyperlink{classprism_1_1_string_a5ae2214b74e00980046a6b8bc25c5e7b}{operator!=} (const \hyperlink{classprism_1_1_string}{String} \&str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a3ea798e6b83ba7c64271b5124e5120fc}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a075cd9151fd072beb0e0cd6818705282}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a89cb74b26f923798ee7f796af2a1ae42}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const char $\ast$str2)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a5fa6807d2f989f96e6627f1491b3a17d}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const char $\ast$str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_ab79aff2a74a10fab48972bc689e5d87d}{operator+} (const char $\ast$str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a5c796b848ad804a70790ca1bb06eae98}{operator+} (const char $\ast$str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a9df3169a19201b969014c154ef4b87a1}{operator+} (const char c, const \hyperlink{classprism_1_1_string}{String} \&str)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a862eb7ba30f61463cb3b23470bbb4aac}{operator+} (const char c, const \hyperlink{classprism_1_1_string}{String} \&str)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a990ec91916a269128a8d9ad66b0224a9}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str, const char c)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a95840fe41f8c1dbc819e3215ac6eb616}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str, const char c)
 \item 
 std\+::ostream \& \hyperlink{classprism_1_1_string_a22f0a77d546199afaac3503fc9b9ef51}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_string}{String} \&s)
 \end{DoxyCompactItemize}
@@ -284,19 +318,19 @@ In C a character array must be terminated with the null character
 )}\hypertarget{classprism_1_1_string_aedf9c8008bc992012ed8dea7b312683c}{}\label{classprism_1_1_string_aedf9c8008bc992012ed8dea7b312683c}
 Creates a new string from a std\+::string. \index{prism\+::\+String@{prism\+::\+String}!String@{String}}
 \index{String@{String}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{String(const Char \&c)}{String(const Char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+String\+::\+String (
+\subsubsection[{\texorpdfstring{String(const char c)}{String(const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+String\+::\+String (
 \begin{DoxyParamCaption}
-\item[{const {\bf Char} \&}]{c}
+\item[{const char}]{c}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_a15308d05157a15106dfa82ca9764ee30}{}\label{classprism_1_1_string_a15308d05157a15106dfa82ca9764ee30}
+)}\hypertarget{classprism_1_1_string_aa60f6e3b928d3072c204deba612dec65}{}\label{classprism_1_1_string_aa60f6e3b928d3072c204deba612dec65}
 Creates a string of size 1 initialised to the \hyperlink{classprism_1_1_char}{Char} {\itshape c}. \index{prism\+::\+String@{prism\+::\+String}!String@{String}}
 \index{String@{String}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{String(const int size, const Char \&c)}{String(const int size, const Char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+String\+::\+String (
+\subsubsection[{\texorpdfstring{String(const int size, const char c)}{String(const int size, const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+String\+::\+String (
 \begin{DoxyParamCaption}
 \item[{const int}]{size, }
-\item[{const {\bf Char} \&}]{c}
+\item[{const char}]{c}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_adaf8ffdd5f77b21d8f11db6549fa7c17}{}\label{classprism_1_1_string_adaf8ffdd5f77b21d8f11db6549fa7c17}
+)}\hypertarget{classprism_1_1_string_ac14b5c78edff344d549496eba0b226c5}{}\label{classprism_1_1_string_ac14b5c78edff344d549496eba0b226c5}
 Creates a string filled with {\itshape size} amount of the char {\itshape c}. \index{prism\+::\+String@{prism\+::\+String}!String@{String}}
 \index{String@{String}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{String(const String \&copy)}{String(const String &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+String\+::\+String (
@@ -655,6 +689,48 @@ If {\itshape from} is -\/1 (the default) then the search will begin from the las
 \begin{DoxyReturn}{Returns}
 Returns the length of the string. This method is identical to \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size()}. 
 \end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
+\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{number(const int n)}{number(const int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
+\begin{DoxyParamCaption}
+\item[{const int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a634481b6536dde9995b44082fbcbe0c5}{}\label{classprism_1_1_string_a634481b6536dde9995b44082fbcbe0c5}
+\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
+\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{number(const unsigned int n)}{number(const unsigned int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a4c8e81538cb37882488ff35b03b00f19}{}\label{classprism_1_1_string_a4c8e81538cb37882488ff35b03b00f19}
+\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
+\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{number(const long n)}{number(const long n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
+\begin{DoxyParamCaption}
+\item[{const long}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a3eae3ed3829125b583ae9050849b5d4d}{}\label{classprism_1_1_string_a3eae3ed3829125b583ae9050849b5d4d}
+\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
+\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{number(const unsigned long n)}{number(const unsigned long n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a0da92ce265e3b9dee756746634a2ed1c}{}\label{classprism_1_1_string_a0da92ce265e3b9dee756746634a2ed1c}
+\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
+\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{number(const float n)}{number(const float n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
+\begin{DoxyParamCaption}
+\item[{const float}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a1d912a14f5b276aa18b31444eceef96d}{}\label{classprism_1_1_string_a1d912a14f5b276aa18b31444eceef96d}
+\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
+\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{number(const double n)}{number(const double n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
+\begin{DoxyParamCaption}
+\item[{const double}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a58b2cc5927fec3459c5eefbc45ec0af4}{}\label{classprism_1_1_string_a58b2cc5927fec3459c5eefbc45ec0af4}
 \index{prism\+::\+String@{prism\+::\+String}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{operator+=(const String \&other)}{operator+=(const String &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::operator+= (
@@ -662,6 +738,20 @@ Returns the length of the string. This method is identical to \hyperlink{classpr
 \item[{const {\bf String} \&}]{other}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_a8d509ab7982bc6176c58f5fbce1da15c}{}\label{classprism_1_1_string_a8d509ab7982bc6176c58f5fbce1da15c}
+\index{prism\+::\+String@{prism\+::\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{operator+=(const char $\ast$other)}{operator+=(const char *other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a1a282edfd99b7570eb83a8c1188c5e2b}{}\label{classprism_1_1_string_a1a282edfd99b7570eb83a8c1188c5e2b}
+\index{prism\+::\+String@{prism\+::\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{operator+=(const char c)}{operator+=(const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const char}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a28499824b5ab71a12c7f296e1428cf79}{}\label{classprism_1_1_string_a28499824b5ab71a12c7f296e1428cf79}
 \index{prism\+::\+String@{prism\+::\+String}!operator=@{operator=}}
 \index{operator=@{operator=}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{operator=(const String \&other)}{operator=(const String &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::operator= (
@@ -669,6 +759,20 @@ Returns the length of the string. This method is identical to \hyperlink{classpr
 \item[{const {\bf String} \&}]{other}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_ad2c84ac36bccdb26c446d32a1615f321}{}\label{classprism_1_1_string_ad2c84ac36bccdb26c446d32a1615f321}
+\index{prism\+::\+String@{prism\+::\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{operator=(const char $\ast$other)}{operator=(const char *other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a72162e465f226763b741467865d506e2}{}\label{classprism_1_1_string_a72162e465f226763b741467865d506e2}
+\index{prism\+::\+String@{prism\+::\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{operator=(const char c)}{operator=(const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const char}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a61f21a091fec77de84ceab239b6d9c7d}{}\label{classprism_1_1_string_a61f21a091fec77de84ceab239b6d9c7d}
 \index{prism\+::\+String@{prism\+::\+String}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{operator[](const int index)}{operator[](const int index)}}]{\setlength{\rightskip}{0pt plus 5cm}char \& prism\+::\+String\+::operator\mbox{[}$\,$\mbox{]} (
@@ -754,11 +858,11 @@ Returns a reference to this string.
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!remove@{remove}}
 \index{remove@{remove}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{remove(const Char \&c)}{remove(const Char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::remove (
+\subsubsection[{\texorpdfstring{remove(const char c)}{remove(const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::remove (
 \begin{DoxyParamCaption}
-\item[{const {\bf Char} \&}]{c}
+\item[{const char}]{c}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_a7529b02c672f5effdd31bdaad3e8f0de}{}\label{classprism_1_1_string_a7529b02c672f5effdd31bdaad3e8f0de}
+)}\hypertarget{classprism_1_1_string_afebd670881d543691a420f61a1e4cf37}{}\label{classprism_1_1_string_afebd670881d543691a420f61a1e4cf37}
 Removes all occurrences of the \hyperlink{classprism_1_1_char}{Char} {\itshape c}.  Returns a reference to this string. \index{prism\+::\+String@{prism\+::\+String}!remove@{remove}}
 \index{remove@{remove}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{remove(const String \&str)}{remove(const String &str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::remove (
@@ -802,13 +906,13 @@ Returns a reference to this string.
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!replace@{replace}}
 \index{replace@{replace}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{replace(const int position, const int n\+Chars\+To\+Replace, const Char \&c)}{replace(const int position, const int nCharsToReplace, const Char &c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
+\subsubsection[{\texorpdfstring{replace(const int position, const int n\+Chars\+To\+Replace, const char c)}{replace(const int position, const int nCharsToReplace, const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
 \begin{DoxyParamCaption}
 \item[{const int}]{position, }
 \item[{const int}]{n\+Chars\+To\+Replace, }
-\item[{const {\bf Char} \&}]{c}
+\item[{const char}]{c}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_a4e8a35e0f084e4d382858e231bf5ed31}{}\label{classprism_1_1_string_a4e8a35e0f084e4d382858e231bf5ed31}
+)}\hypertarget{classprism_1_1_string_a6237d6e704f4c7b4133e279383607d7e}{}\label{classprism_1_1_string_a6237d6e704f4c7b4133e279383607d7e}
 Replaces {\itshape n\+Chars\+To\+Replace} of characters starting at {\itshape position} (0-\/based) with {\itshape c}. \index{prism\+::\+String@{prism\+::\+String}!replace@{replace}}
 \index{replace@{replace}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{replace(\+String\+::iterator it\+Begin, String\+::iterator it\+End, const String \&str)}{replace(String::iterator itBegin, String::iterator itEnd, const String &str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
@@ -849,34 +953,34 @@ Returns a reference to this string.
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!replace@{replace}}
 \index{replace@{replace}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{replace(const String \&old\+Str, const Char \&new\+Char)}{replace(const String &oldStr, const Char &newChar)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
+\subsubsection[{\texorpdfstring{replace(const String \&old\+Str, const char c)}{replace(const String &oldStr, const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
 \begin{DoxyParamCaption}
 \item[{const {\bf String} \&}]{old\+Str, }
-\item[{const {\bf Char} \&}]{new\+Char}
+\item[{const char}]{c}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_aeaf54043c5a919e901f6aa3a741c5019}{}\label{classprism_1_1_string_aeaf54043c5a919e901f6aa3a741c5019}
+)}\hypertarget{classprism_1_1_string_a8187856b0d5d91bbcbfef8305904f3f2}{}\label{classprism_1_1_string_a8187856b0d5d91bbcbfef8305904f3f2}
 Replaces each occurrence of {\itshape old\+Str} with {\itshape new\+Char}. \begin{DoxyReturn}{Returns}
 Returns a reference to this string. 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!replace@{replace}}
 \index{replace@{replace}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{replace(const Char \&old\+Char, const String \&new\+Str)}{replace(const Char &oldChar, const String &newStr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
+\subsubsection[{\texorpdfstring{replace(const char oldc, const String \&new\+Str)}{replace(const char oldc, const String &newStr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
 \begin{DoxyParamCaption}
-\item[{const {\bf Char} \&}]{old\+Char, }
+\item[{const char}]{oldc, }
 \item[{const {\bf String} \&}]{new\+Str}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_a0d37bca0afab3f37d2be64ee4101ca53}{}\label{classprism_1_1_string_a0d37bca0afab3f37d2be64ee4101ca53}
+)}\hypertarget{classprism_1_1_string_a572260554eada6b9171327b33c6f421e}{}\label{classprism_1_1_string_a572260554eada6b9171327b33c6f421e}
 Replaces each occurrence of the \hyperlink{classprism_1_1_char}{Char} {\itshape c} with the string {\itshape new\+Str}. \begin{DoxyReturn}{Returns}
 Returns a reference to this string. 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!replace@{replace}}
 \index{replace@{replace}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{replace(const Char \&old\+Char, const Char \&new\+Char)}{replace(const Char &oldChar, const Char &newChar)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
+\subsubsection[{\texorpdfstring{replace(const char oldc, const char newc)}{replace(const char oldc, const char newc)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::replace (
 \begin{DoxyParamCaption}
-\item[{const {\bf Char} \&}]{old\+Char, }
-\item[{const {\bf Char} \&}]{new\+Char}
+\item[{const char}]{oldc, }
+\item[{const char}]{newc}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_a511c58978ebfc1278d36f38bb8fa2d27}{}\label{classprism_1_1_string_a511c58978ebfc1278d36f38bb8fa2d27}
+)}\hypertarget{classprism_1_1_string_acb98024bec3abd2c69879e63140c345a}{}\label{classprism_1_1_string_acb98024bec3abd2c69879e63140c345a}
 Replaces each occurrence of the \hyperlink{classprism_1_1_char}{Char} {\itshape old\+Char} with the \hyperlink{classprism_1_1_char}{Char} {\itshape new\+Char}. \begin{DoxyReturn}{Returns}
 Returns a reference to this string. 
 \end{DoxyReturn}
@@ -887,7 +991,7 @@ Returns a reference to this string.
 \item[{const int}]{new\+Capacity}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_string_aed752cc8c9e59a7b2366b85ab20a656b}{}\label{classprism_1_1_string_aed752cc8c9e59a7b2366b85ab20a656b}
-Reserves enough memory for the string to contain {\itshape new\+Capacity} characters i.\+e. new\+Capacity $\ast$ sizeof(char). The capacity can only grow and will not lessen even if \hyperlink{classprism_1_1_string_adcfa3f36badcb9e84c2c956a6b29c865}{clear()} or \hyperlink{classprism_1_1_string_a3ccec53675d61756c3beb1bbc43c981f}{remove()} is called. Only squeeze() can alter the capacity to a lower amount. If {\itshape new\+Capacity} is less than or equal to the current capacity then nothing changes. Any existing characters in the string are not affected by this function. \index{prism\+::\+String@{prism\+::\+String}!resize@{resize}}
+Reserves enough memory for the string to contain {\itshape new\+Capacity} characters i.\+e. new\+Capacity $\ast$ sizeof(char). The capacity can only grow and will not lessen even if \hyperlink{classprism_1_1_string_adcfa3f36badcb9e84c2c956a6b29c865}{clear()} or \hyperlink{classprism_1_1_string_a3ccec53675d61756c3beb1bbc43c981f}{remove()} is called. Only \hyperlink{classprism_1_1_string_a326c3afd3ed5b99dd53217e492526e0a}{squeeze()} can alter the capacity to a lower amount. If {\itshape new\+Capacity} is less than or equal to the current capacity then nothing changes. Any existing characters in the string are not affected by this function. \index{prism\+::\+String@{prism\+::\+String}!resize@{resize}}
 \index{resize@{resize}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{resize(const int new\+Size)}{resize(const int newSize)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+String\+::resize (
 \begin{DoxyParamCaption}
@@ -907,23 +1011,63 @@ Returns a reference to this string.
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
 \index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{set\+Num(const float n)}{setNum(const float n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\subsubsection[{\texorpdfstring{set\+Num(const unsigned int n)}{setNum(const unsigned int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
 \begin{DoxyParamCaption}
-\item[{const float}]{n}
+\item[{const unsigned int}]{n}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_a5acc6453cfd4aca91dfe1e0b5162c95f}{}\label{classprism_1_1_string_a5acc6453cfd4aca91dfe1e0b5162c95f}
-Converts {\itshape n} to a string and sets it as the content of this string. \begin{DoxyReturn}{Returns}
+)}\hypertarget{classprism_1_1_string_a69294c6d468968ab31201f873b928c71}{}\label{classprism_1_1_string_a69294c6d468968ab31201f873b928c71}
+This is an overloaded function. \index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
+\index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{set\+Num(const long n)}{setNum(const long n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\begin{DoxyParamCaption}
+\item[{const long}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a1a5d7918d3b7ccf24304c003f3a14f6f}{}\label{classprism_1_1_string_a1a5d7918d3b7ccf24304c003f3a14f6f}
+This is an overloaded function. \index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
+\index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{set\+Num(const unsigned long n)}{setNum(const unsigned long n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\begin{DoxyParamCaption}
+\item[{const unsigned long}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_aa4874606f40ab093dfee5a57a7700193}{}\label{classprism_1_1_string_aa4874606f40ab093dfee5a57a7700193}
+This is an overloaded function. \index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
+\index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{set\+Num(const float n, const int precision=6)}{setNum(const float n, const int precision=6)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\begin{DoxyParamCaption}
+\item[{const float}]{n, }
+\item[{const int}]{precision = {\ttfamily 6}}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_ad9b75f3944646b1133eba004c802cdaa}{}\label{classprism_1_1_string_ad9b75f3944646b1133eba004c802cdaa}
+This is an overloaded function.~\newline
+Sets this string to the textual representation of the float {\itshape n} set to {\itshape precision} (6 by default). \begin{DoxyReturn}{Returns}
 Returns a reference to this string. 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!set\+Num@{set\+Num}}
 \index{set\+Num@{set\+Num}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{set\+Num(const double n)}{setNum(const double n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
+\subsubsection[{\texorpdfstring{set\+Num(const double n, const int precision=6)}{setNum(const double n, const int precision=6)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::set\+Num (
 \begin{DoxyParamCaption}
-\item[{const double}]{n}
+\item[{const double}]{n, }
+\item[{const int}]{precision = {\ttfamily 6}}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_string_a873dc1a423545930d644acc8388b602d}{}\label{classprism_1_1_string_a873dc1a423545930d644acc8388b602d}
-Converts {\itshape n} to a string and sets it as the content of this string. \begin{DoxyReturn}{Returns}
+)}\hypertarget{classprism_1_1_string_a2e346d9f08d74e3bbc0361b65692d846}{}\label{classprism_1_1_string_a2e346d9f08d74e3bbc0361b65692d846}
+This is an overloaded function.~\newline
+Sets this string to the textual representation of the double {\itshape n} set to {\itshape precision} (6 by default). \begin{DoxyReturn}{Returns}
 Returns a reference to this string. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!simplified@{simplified}}
+\index{simplified@{simplified}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{simplified() const }{simplified() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::simplified (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a6afd376891e93bc92379f25bc8e4cca0}{}\label{classprism_1_1_string_a6afd376891e93bc92379f25bc8e4cca0}
+Removes all whitespace characters from the start and end of the string and replaces all whitespace between non-\/whitespace characters with a single space (\textquotesingle{} \textquotesingle{}). Whitespace characters are those such that \hyperlink{classprism_1_1_char_a734f3cebcb96e155e9d120a416f7bf74}{Char\+::is\+Whitespace} is true. These are space (\textquotesingle{} \textquotesingle{}), carriage return (\textquotesingle{}\textbackslash{}r\textquotesingle{}), tab (\textquotesingle{}\textbackslash{}t\textquotesingle{}), newline (\textquotesingle{}\textbackslash{}n\textquotesingle{}), vertical tab (\textquotesingle{}\textbackslash{}v\textquotesingle{}) and formfeed (\textquotesingle{}\textbackslash{}f\textquotesingle{}). 
+\begin{DoxyCode}
+\hyperlink{classprism_1_1_string_a3a9df9dd5d297b91d2eec1ef7c4db8d3}{String} s(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t\(\backslash\)t whitespace has\(\backslash\)fbeen\(\backslash\)\(\backslash\)vremoved!\(\backslash\)n"});
+cout << s.simplified(); \textcolor{comment}{// outputs: "whitespace has been removed!"}
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+Returns a new string that has all whitespace stripped out and replacing internal whitespace with a single space (\textquotesingle{} \textquotesingle{}). 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!size@{size}}
 \index{size@{size}!prism\+::\+String@{prism\+::\+String}}
@@ -935,7 +1079,34 @@ Returns a reference to this string.
 \begin{DoxyReturn}{Returns}
 Returns the size of the string. This method is identical to \hyperlink{classprism_1_1_string_a7dfc72427863cefb9fe883599272ca7d}{length()}. 
 \end{DoxyReturn}
-\index{prism\+::\+String@{prism\+::\+String}!starts\+With@{starts\+With}}
+\index{prism\+::\+String@{prism\+::\+String}!split@{split}}
+\index{split@{split}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{split(const String \&delimeter) const }{split(const String &delimeter) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<$ {\bf String} $>$ prism\+::\+String\+::split (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{delimeter}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_a84614e3771d07b57dc516da3b26b04e9}{}\label{classprism_1_1_string_a84614e3771d07b57dc516da3b26b04e9}
+Splits this string into substrings each time {\itshape delimeter} occurs. \begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classprism_1_1_vector}{Vector} of strings. If {\itshape delimeter} does not occur then a \hyperlink{classprism_1_1_vector}{Vector} containing one string (this string) will be returned instead. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!split@{split}}
+\index{split@{split}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{split(const char delimeter) const }{split(const char delimeter) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<$ {\bf String} $>$ prism\+::\+String\+::split (
+\begin{DoxyParamCaption}
+\item[{const char}]{delimeter}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_string_abb0b955c049c6aebe1115b7823f438ad}{}\label{classprism_1_1_string_abb0b955c049c6aebe1115b7823f438ad}
+Splits this string into substrings each time {\itshape delimeter} occurs. \begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classprism_1_1_vector}{Vector} of strings. If {\itshape delimeter} does not occur then a \hyperlink{classprism_1_1_vector}{Vector} containing one string (this string) will be returned instead. 
+\end{DoxyReturn}
+\index{prism\+::\+String@{prism\+::\+String}!squeeze@{squeeze}}
+\index{squeeze@{squeeze}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{squeeze()}{squeeze()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+String\+::squeeze (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_string_a326c3afd3ed5b99dd53217e492526e0a}{}\label{classprism_1_1_string_a326c3afd3ed5b99dd53217e492526e0a}
+Destroys any unused memory currently held by this string. For example, if the string has a capacity of 10 and a size of 4, \hyperlink{classprism_1_1_string_a326c3afd3ed5b99dd53217e492526e0a}{squeeze()} will release the extra memory of the capacity resulting in a capacity and size of 4. If \hyperlink{classprism_1_1_string_a603b5a90681d43adf7c6c29018e0300c}{size()} and \hyperlink{classprism_1_1_string_a79a0e1b2a185376d36935ff637ba5678}{capacity()} are already equal then nothing happens. \index{prism\+::\+String@{prism\+::\+String}!starts\+With@{starts\+With}}
 \index{starts\+With@{starts\+With}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{starts\+With(const String \&str) const }{startsWith(const String &str) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+String\+::starts\+With (
 \begin{DoxyParamCaption}
@@ -1046,10 +1217,10 @@ Returns a copy of this string where each character is uppercase.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_string_aef7dc34213c574a72c893f943a41e8e4}{}\label{classprism_1_1_string_aef7dc34213c574a72c893f943a41e8e4}
-Trims the whitespace from the beginning and the end of the string. \begin{DoxyReturn}{Returns}
+Trims the whitespace from the beginning and the end of the string. Characters which are whitespace are such that \hyperlink{classprism_1_1_char_a734f3cebcb96e155e9d120a416f7bf74}{Char.\+is\+Whitespace()} would return true. \begin{DoxyReturn}{Returns}
 Returns a copy of this string with the whitespace trimmed off. If there is no whitespace to remove then the string is returned unchanged. 
 \begin{DoxyCode}
-\hyperlink{classprism_1_1_string_a3a9df9dd5d297b91d2eec1ef7c4db8d3}{String} s(\textcolor{stringliteral}{" in the summer "});
+\hyperlink{classprism_1_1_string_a3a9df9dd5d297b91d2eec1ef7c4db8d3}{String} s(\textcolor{stringliteral}{"     in the summer     "});
 cout << s.trimmed(); \textcolor{comment}{// outputs: "in the summer"}
 \end{DoxyCode}
  
@@ -1067,44 +1238,44 @@ cout << s.trimmed(); \textcolor{comment}{// outputs: "in the summer"}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a5ae2214b74e00980046a6b8bc25c5e7b}{}\label{classprism_1_1_string_a5ae2214b74e00980046a6b8bc25c5e7b}
 \index{prism\+::\+String@{prism\+::\+String}!operator+@{operator+}}
 \index{operator+@{operator+}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} operator+ (
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf String} \&}]{str1, }
 \item[{const {\bf String} \&}]{str2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a3ea798e6b83ba7c64271b5124e5120fc}{}\label{classprism_1_1_string_a3ea798e6b83ba7c64271b5124e5120fc}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a075cd9151fd072beb0e0cd6818705282}{}\label{classprism_1_1_string_a075cd9151fd072beb0e0cd6818705282}
 \index{prism\+::\+String@{prism\+::\+String}!operator+@{operator+}}
 \index{operator+@{operator+}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} operator+ (
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf String} \&}]{str1, }
 \item[{const char $\ast$}]{str2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a89cb74b26f923798ee7f796af2a1ae42}{}\label{classprism_1_1_string_a89cb74b26f923798ee7f796af2a1ae42}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a5fa6807d2f989f96e6627f1491b3a17d}{}\label{classprism_1_1_string_a5fa6807d2f989f96e6627f1491b3a17d}
 \index{prism\+::\+String@{prism\+::\+String}!operator+@{operator+}}
 \index{operator+@{operator+}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} operator+ (
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} operator+ (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{str1, }
 \item[{const {\bf String} \&}]{str2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_ab79aff2a74a10fab48972bc689e5d87d}{}\label{classprism_1_1_string_ab79aff2a74a10fab48972bc689e5d87d}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a5c796b848ad804a70790ca1bb06eae98}{}\label{classprism_1_1_string_a5c796b848ad804a70790ca1bb06eae98}
 \index{prism\+::\+String@{prism\+::\+String}!operator+@{operator+}}
 \index{operator+@{operator+}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} operator+ (
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} operator+ (
 \begin{DoxyParamCaption}
 \item[{const char}]{c, }
 \item[{const {\bf String} \&}]{str}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a9df3169a19201b969014c154ef4b87a1}{}\label{classprism_1_1_string_a9df3169a19201b969014c154ef4b87a1}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a862eb7ba30f61463cb3b23470bbb4aac}{}\label{classprism_1_1_string_a862eb7ba30f61463cb3b23470bbb4aac}
 \index{prism\+::\+String@{prism\+::\+String}!operator+@{operator+}}
 \index{operator+@{operator+}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} operator+ (
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf String} \&}]{str, }
 \item[{const char}]{c}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a990ec91916a269128a8d9ad66b0224a9}{}\label{classprism_1_1_string_a990ec91916a269128a8d9ad66b0224a9}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_string_a95840fe41f8c1dbc819e3215ac6eb616}{}\label{classprism_1_1_string_a95840fe41f8c1dbc819e3215ac6eb616}
 \index{prism\+::\+String@{prism\+::\+String}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (

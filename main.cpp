@@ -9,12 +9,14 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <ctime>
 #include <vector>
 #include <stack>
 #include <list>
 #include <queue>
 #include <deque>
 #include <forward_list>
+#include <climits>
 //#include <algorithm>
 #include <prism/Array>
 #include <prism/Stack>
@@ -35,6 +37,7 @@
 #include <prism/Char>
 #include <prism/Algorithms>
 
+
 using namespace prism;
 using namespace std;
 
@@ -44,16 +47,15 @@ bool isNegative(int n) { return n<0; }
 void print(int n) { cout << n << endl; }
 
 int main(int argc, char * argv[]) {
-//	::testing::InitGoogleTest(&argc, argv);
+	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
+	::testing::GTEST_FLAG(filter) = "*String*";
+	::testing::InitGoogleTest(&argc, argv);
 
 
-	//        0123456789012345678901234567890
 
-	String s("name address");
-	cout << s.split(","); // outputs: "in the summer"
 
-//	return RUN_ALL_TESTS();
-	return 0;
+	return RUN_ALL_TESTS();
+//	return 0;
 }
 
 

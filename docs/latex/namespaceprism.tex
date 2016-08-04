@@ -9,8 +9,6 @@ class \hyperlink{classprism_1_1_char}{Char}
 \item 
 class \hyperlink{classprism_1_1_circle}{Circle}
 \item 
-class \hyperlink{classprism_1_1_console}{Console}
-\item 
 class \hyperlink{classprism_1_1_exception}{Exception}
 \item 
 class \hyperlink{classprism_1_1_flag}{Flag}
@@ -122,15 +120,13 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator1 \hyperlink{namespaceprism_affcb3e5150d72d9f79b85b9ea4eb41e2}{search} (Forward\+Iterator1 first1, Forward\+Iterator1 last1, Forward\+Iterator2 first2, Forward\+Iterator2 last2)
 \item 
-{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_af8ceeac6329dade75da361abe8b15c5f}{sort} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_aa597d262eb2f9ef80703c883a2d18d1e}{sort\+\_\+bubble} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a720fbbcb3f399b006969bb00a66686f9}{sort\+\_\+quicksort} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{swap\+\_\+ranges} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
 \item 
 {\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&array)
-\item 
-{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a296f6880e6bb0011e60dcc658e097ed6}{output} (const T \&value)
-\item 
-\hyperlink{classprism_1_1_console}{Console} \hyperlink{namespaceprism_a7c20bd0fa006919ffd45f3036b91eafc}{console} ()
 \item 
 {\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a50da64555d454821545fe0311fde6a62}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&list)
 \item 
@@ -314,15 +310,15 @@ const bool \hyperlink{namespaceprism_a0e7bfee93ae735b5af7e566ddd8c4f65}{operator
 \item 
 const bool \hyperlink{namespaceprism_a5c2215edf9ab445c3c1791217d131b15}{operator!=} (const \hyperlink{classprism_1_1_string}{String} \&str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a4d401776635a858ca8f279b6ee6a35f4}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a433f7afd310d95a93cf8c03d1f831812}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_aa0e135948cfe325d658fd6e65ef3b754}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const char $\ast$str2)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a50879e9455a36b7762514951ca0f47f7}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str1, const char $\ast$str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a6eceab4fd9349dda5fc47e0806ce168f}{operator+} (const char $\ast$str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a7d59729f69eafd3bc9f4d30ad9dd06b6}{operator+} (const char $\ast$str1, const \hyperlink{classprism_1_1_string}{String} \&str2)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_ae7a27033c4b2b541f9f582119bcd188a}{operator+} (const char c, const \hyperlink{classprism_1_1_string}{String} \&str)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_aa0fce6a8b93050fcb6db327e68b701e3}{operator+} (const char c, const \hyperlink{classprism_1_1_string}{String} \&str)
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a07058e194f9108ce695ab99b6aaa7db1}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str, const char c)
+const \hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a8ae68ccc6eb3a47a748671c1a7af88ca}{operator+} (const \hyperlink{classprism_1_1_string}{String} \&str, const char c)
 \item 
 std\+::ostream \& \hyperlink{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_string}{String} \&s)
 \item 
@@ -434,14 +430,7 @@ Returns true if {\itshape pred} returns true for all the elements in the range {
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}{}\label{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}
-Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!console@{console}}
-\index{console@{console}!prism@{prism}}
-\subsubsection[{\texorpdfstring{console()}{console()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Console} prism\+::console (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a7c20bd0fa006919ffd45f3036b91eafc}{}\label{namespaceprism_a7c20bd0fa006919ffd45f3036b91eafc}
-\index{prism@{prism}!copy@{copy}}
+Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!copy@{copy}}
 \index{copy@{copy}!prism@{prism}}
 \subsubsection[{\texorpdfstring{copy(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First)}{copy(InputIterator first, InputIterator last, OutputIterator otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator $>$ Output\+Iterator prism\+::copy (
 \begin{DoxyParamCaption}
@@ -1065,44 +1054,44 @@ Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that is the result of addi
 )}\hypertarget{namespaceprism_a33537d30f01f996f8a05fc5b1b49ba3b}{}\label{namespaceprism_a33537d30f01f996f8a05fc5b1b49ba3b}
 Returns a new \hyperlink{classprism_1_1_matrix4}{Matrix4} which is the sum of m1 and m2. \index{prism@{prism}!operator+@{operator+}}
 \index{operator+@{operator+}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator+(const String \&str1, const String \&str2)}{operator+(const String &str1, const String &str2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::operator+ (
+\subsubsection[{\texorpdfstring{operator+(const String \&str1, const String \&str2)}{operator+(const String &str1, const String &str2)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} prism\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf String} \&}]{str1, }
 \item[{const {\bf String} \&}]{str2}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a4d401776635a858ca8f279b6ee6a35f4}{}\label{namespaceprism_a4d401776635a858ca8f279b6ee6a35f4}
+)}\hypertarget{namespaceprism_a433f7afd310d95a93cf8c03d1f831812}{}\label{namespaceprism_a433f7afd310d95a93cf8c03d1f831812}
 \index{prism@{prism}!operator+@{operator+}}
 \index{operator+@{operator+}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator+(const String \&str1, const char $\ast$str2)}{operator+(const String &str1, const char *str2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::operator+ (
+\subsubsection[{\texorpdfstring{operator+(const String \&str1, const char $\ast$str2)}{operator+(const String &str1, const char *str2)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} prism\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf String} \&}]{str1, }
 \item[{const char $\ast$}]{str2}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_aa0e135948cfe325d658fd6e65ef3b754}{}\label{namespaceprism_aa0e135948cfe325d658fd6e65ef3b754}
+)}\hypertarget{namespaceprism_a50879e9455a36b7762514951ca0f47f7}{}\label{namespaceprism_a50879e9455a36b7762514951ca0f47f7}
 \index{prism@{prism}!operator+@{operator+}}
 \index{operator+@{operator+}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator+(const char $\ast$str1, const String \&str2)}{operator+(const char *str1, const String &str2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::operator+ (
+\subsubsection[{\texorpdfstring{operator+(const char $\ast$str1, const String \&str2)}{operator+(const char *str1, const String &str2)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} prism\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{str1, }
 \item[{const {\bf String} \&}]{str2}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a6eceab4fd9349dda5fc47e0806ce168f}{}\label{namespaceprism_a6eceab4fd9349dda5fc47e0806ce168f}
+)}\hypertarget{namespaceprism_a7d59729f69eafd3bc9f4d30ad9dd06b6}{}\label{namespaceprism_a7d59729f69eafd3bc9f4d30ad9dd06b6}
 \index{prism@{prism}!operator+@{operator+}}
 \index{operator+@{operator+}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator+(const char c, const String \&str)}{operator+(const char c, const String &str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::operator+ (
+\subsubsection[{\texorpdfstring{operator+(const char c, const String \&str)}{operator+(const char c, const String &str)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} prism\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{const char}]{c, }
 \item[{const {\bf String} \&}]{str}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_ae7a27033c4b2b541f9f582119bcd188a}{}\label{namespaceprism_ae7a27033c4b2b541f9f582119bcd188a}
+)}\hypertarget{namespaceprism_aa0fce6a8b93050fcb6db327e68b701e3}{}\label{namespaceprism_aa0fce6a8b93050fcb6db327e68b701e3}
 \index{prism@{prism}!operator+@{operator+}}
 \index{operator+@{operator+}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator+(const String \&str, const char c)}{operator+(const String &str, const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::operator+ (
+\subsubsection[{\texorpdfstring{operator+(const String \&str, const char c)}{operator+(const String &str, const char c)}}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf String} prism\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf String} \&}]{str, }
 \item[{const char}]{c}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a07058e194f9108ce695ab99b6aaa7db1}{}\label{namespaceprism_a07058e194f9108ce695ab99b6aaa7db1}
+)}\hypertarget{namespaceprism_a8ae68ccc6eb3a47a748671c1a7af88ca}{}\label{namespaceprism_a8ae68ccc6eb3a47a748671c1a7af88ca}
 \index{prism@{prism}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator-\/(const Fraction \&f1, const Fraction \&f2)}{operator-(const Fraction &f1, const Fraction &f2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} prism\+::operator-\/ (
@@ -1622,13 +1611,6 @@ Returns true if {\itshape c1} has a greater radius than {\itshape c2}, false oth
 \begin{DoxyReturn}{Returns}
 Returns true if the unicode value of {\itshape c1} is greater than or equal to {\itshape c2}, false otherwise. 
 \end{DoxyReturn}
-\index{prism@{prism}!output@{output}}
-\index{output@{output}!prism@{prism}}
-\subsubsection[{\texorpdfstring{output(const T \&value)}{output(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void prism\+::output (
-\begin{DoxyParamCaption}
-\item[{const T \&}]{value}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a296f6880e6bb0011e60dcc658e097ed6}{}\label{namespaceprism_a296f6880e6bb0011e60dcc658e097ed6}
 \index{prism@{prism}!remove@{remove}}
 \index{remove@{remove}!prism@{prism}}
 \subsubsection[{\texorpdfstring{remove(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{remove(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ Forward\+Iterator prism\+::remove (
@@ -1719,15 +1701,31 @@ Assigns {\itshape new\+Value} to all the elements in the range {\itshape }\mbox{
 \item[{Forward\+Iterator2}]{last2}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_affcb3e5150d72d9f79b85b9ea4eb41e2}{}\label{namespaceprism_affcb3e5150d72d9f79b85b9ea4eb41e2}
-Searches the range \mbox{[}first1,last1) for the first occurrence of the sequence defined by \mbox{[}first2,last2), and returns an iterator to its first element, or last1 if no occurrences are found. The range used is \mbox{[}first1,last1), which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. \index{prism@{prism}!sort@{sort}}
-\index{sort@{sort}!prism@{prism}}
-\subsubsection[{\texorpdfstring{sort(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{sort(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::sort (
+Searches the range \mbox{[}first1,last1) for the first occurrence of the sequence defined by \mbox{[}first2,last2), and returns an iterator to its first element, or last1 if no occurrences are found. The range used is \mbox{[}first1,last1), which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. \index{prism@{prism}!sort\+\_\+bubble@{sort\+\_\+bubble}}
+\index{sort\+\_\+bubble@{sort\+\_\+bubble}!prism@{prism}}
+\subsubsection[{\texorpdfstring{sort\+\_\+bubble(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{sort_bubble(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::sort\+\_\+bubble (
 \begin{DoxyParamCaption}
 \item[{Random\+Access\+Iterator}]{first, }
 \item[{Random\+Access\+Iterator}]{last}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_af8ceeac6329dade75da361abe8b15c5f}{}\label{namespaceprism_af8ceeac6329dade75da361abe8b15c5f}
-Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascending order using bubble sort. \index{prism@{prism}!swap@{swap}}
+)}\hypertarget{namespaceprism_aa597d262eb2f9ef80703c883a2d18d1e}{}\label{namespaceprism_aa597d262eb2f9ef80703c883a2d18d1e}
+Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascending order using the Bubble Sort algorithm. ~\newline
+The range used is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \begin{DoxyNote}{Note}
+The objects being sorted must support \hyperlink{namespaceprism_ab8a312729c4c9ae72836d0034a6f0758}{operator$>$()}. 
+\end{DoxyNote}
+\index{prism@{prism}!sort\+\_\+quicksort@{sort\+\_\+quicksort}}
+\index{sort\+\_\+quicksort@{sort\+\_\+quicksort}!prism@{prism}}
+\subsubsection[{\texorpdfstring{sort\+\_\+quicksort(\+Forward\+Iterator first, Forward\+Iterator last)}{sort_quicksort(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ void prism\+::sort\+\_\+quicksort (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a720fbbcb3f399b006969bb00a66686f9}{}\label{namespaceprism_a720fbbcb3f399b006969bb00a66686f9}
+Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascending order using the Quicksort algorithm. ~\newline
+The range used is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \begin{DoxyNote}{Note}
+The objects being sorted must support \hyperlink{namespaceprism_a87d86e9266469c8a40537e12a560b066}{operator$<$=()}. 
+\end{DoxyNote}
+\index{prism@{prism}!swap@{swap}}
 \index{swap@{swap}!prism@{prism}}
 \subsubsection[{\texorpdfstring{swap(\+T \&a, T \&b)}{swap(T &a, T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void prism\+::swap (
 \begin{DoxyParamCaption}

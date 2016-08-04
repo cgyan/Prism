@@ -57,10 +57,9 @@ public:
 public:
 	String();
 	String(const char * str);
-//	String(const Char * str); // must be null-terminated
 	String(const std::string & str);
-	String(const Char & c);
-	String(const int size, const Char & c);
+	String(const char c);
+	String(const int size, const char c);
 	String(const String &copy);
 	virtual ~String();
 
@@ -90,7 +89,6 @@ public:
 	const int		indexOf(const String & str, const int from=0) const;
 	const int		indexOf(const char c, const int from=0) const;
 	String &		insert(const int position, const String & str);
-//	String &		insert(const int position, const Char * str, const int size);
 	String &		insert(const int position, const char c);
 	String &		insert(String::iterator insertBefore, const String & str);
 	String &		insert(String::iterator insertBefore, const char c);
@@ -98,10 +96,6 @@ public:
 	const int		lastIndexOf(const char c, const int from=-1) const;
 	const int		lastIndexOf(const String & str, const int from=-1) const;
 	const int 		length() const;
-	char & 			operator[](const int index);
-	const char &	operator[](const int index) const;
-	String &		operator=(const String &other);
-	String &		operator+=(const String & other);
 	String &		prepend(const String & str);
 	String & 		prepend(const char c);
 	String & 		prepend(const char *str);
@@ -110,28 +104,29 @@ public:
 	void			push_front(const String & str);
 	void			push_front(const char c);
 	String &		remove(const int position, const int nCharsToRemove);
-	String &		remove(const Char & c);
+	String &		remove(const char c);
 	String &		remove(const String & str);
 	String			repeated(int nTimes) const;
 	String &		replace(const int position, const int nCharsToReplace, const String & newStr);
-	String & 		replace(const int position, const int nCharsToReplace, const Char & c);
-//	String & 		replace(const int position, const int nCharsToReplace, const Char * str, const int size);
+	String & 		replace(const int position, const int nCharsToReplace, const char c);
 	String &		replace(String::iterator itBegin, String::iterator itEnd, const String & str);
 	String &		replace(const String & oldStr, const String & newStr);
-//	String &		replace(const Char * oldStr, const int osize, const Char * newStr, const int nsize);
-	String &		replace(const String & oldStr, const Char & newChar);
-	String &		replace(const Char & oldChar, const String & newStr);
-	String &		replace(const Char & oldChar, const Char & newChar);
+	String &		replace(const String & oldStr, const char c);
+	String &		replace(const char oldc, const String & newStr);
+	String &		replace(const char oldc, const char newc);
 	void 			reserve(const int newCapacity);
 	void			resize(const int newSize);
 	String &		setNum(const int n);
-	String &		setNum(const float n);
-	String &		setNum(const double n);
-//	String			simplified() const;
+	String &		setNum(const unsigned int n);
+	String &		setNum(const long n);
+	String &		setNum(const unsigned long n);
+	String &		setNum(const float n, const int precision=6);
+	String &		setNum(const double n, const int precision=6);
+	String			simplified() const;
 	const int 		size() const;
 	Vector<String>	split(const String & delimeter) const;
-	Vector<String>	split(const Char & delimeter) const;
-//	void			squeeze();
+	Vector<String>	split(const char delimeter) const;
+	void			squeeze();
 	const bool		startsWith(const String & str) const;
 	const bool		startsWith(const char c) const;
 	String			sub(const int startChar, int size=-1) const;
@@ -144,19 +139,33 @@ public:
 	String			toUpper() const;
 	String			trimmed() const;
 
+	char & 			operator[](const int index);
+	const char &	operator[](const int index) const;
+	String &		operator=(const String &other);
+	String &		operator=(const char * other);
+	String &		operator=(const char c);
+	String &		operator+=(const String & other);
+	String &		operator+=(const char * other);
+	String &		operator+=(const char c);
+
 	// static
 	static String	fromCharArray(const char * str);
 	static String	fromStdString(const std::string & str);
-//	static String	number(const int n);
+	static String	number(const int n);
+	static String	number(const unsigned int n);
+	static String	number(const long n);
+	static String	number(const unsigned long n);
+	static String	number(const float n, const int precision=6);
+	static String	number(const double n, const int precision=6);
 
 	// related non-members
 	friend const bool		operator==(const String & str1, const String & str2);
 	friend const bool		operator!=(const String & str1, const String & str2);
-	friend String			operator+(const String & str1, const String & str2);
-	friend String			operator+(const String & str1, const char * str2);
-	friend String			operator+(const char * str1, const String & str2);
-	friend String			operator+(const char c, const String & str);
-	friend String			operator+(const String & str, const char c);
+	friend const String		operator+(const String & str1, const String & str2);
+	friend const String		operator+(const String & str1, const char * str2);
+	friend const String		operator+(const char * str1, const String & str2);
+	friend const String		operator+(const char c, const String & str);
+	friend const String		operator+(const String & str, const char c);
 	friend std::ostream & 	operator<<(std::ostream & out, const String &s);
 
 private:
