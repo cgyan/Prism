@@ -343,38 +343,34 @@ String & String::insert(const int position, const char c) {
  * @return Returns a reference to this string.
  */
 String & String::insert(String::iterator insertBefore, const String & str) {
-	// ===========================================================================================
-	// Currently this method copies all the characters after the insertion point into
-	// a temp buffer, inserts the new string and then copies the temp buffer
-	// back onto the end of the string. This could be improved by not using the temp buffer
-	// and instead just looping through the characters backwards and moving them one at a time
-	// to their new location at the end of the string. The Vector::insert() method does this.
-	// ===========================================================================================
 
-	// 1: copy all the chars that will shift up to a temp buffer
-	int startIndex = insertBefore - begin();
-	iterator itBegin = begin() + startIndex;
-	iterator itEnd = end();
+	int cap = capacity();
+	int thisSize = size();
+	int insertIndex = insertBefore - begin();
 
-	int nCharsToMove = itEnd - itBegin;
-	String buffer;
-	buffer.resize(nCharsToMove);
-	prism::copy(itBegin, itEnd, buffer.begin());
+	// 1: increase capacity if necessary
+	int reserveSize = thisSize + str.size();
+	if (reserveSize > cap) {
+		if (cap > 0)
+			reserveSize = reserveSize * d->storage.exponent;
+		reserve(reserveSize);
+		d->storage.end = d->storage.start + thisSize + str.size();
+	}
 
-	// 2: need more capacity?
-	int newSize = size() + str.size();
+	// 2: if the string isn't empty shift up the chars after the
+	// insertion point to make room for str.
+	if (thisSize > 0)
+		prism::copy_backward(d->storage.start+insertIndex,
+							 d->storage.start+thisSize,
+							 d->storage.end);
 
-	if (newSize > capacity())
-		resize(newSize * d->storage.exponent);
+	// 3: copy new string in at insertion point
+	prism::copy(str.begin(),
+				str.end(),
+				d->storage.start+insertIndex);
 
-	// 3: copy the new string into this storage
-	prism::copy(str.begin(), str.end(), d->storage.start + startIndex);
 
-	// 4: copy the buffer back into this string
-	startIndex = startIndex + str.size();
-	prism::copy(buffer.begin(), buffer.end(), d->storage.start + startIndex);
-
-	return (*this);
+	return *this;
 }
 
 /**
@@ -690,6 +686,8 @@ void String::reserve(const int newCapacity) {
  * may increase as necessary if the string is resized upwards.
  */
 void String::resize(const int newSize) {
+	if (newSize == size())
+		return;
 	if (newSize < size()) {
 		d->storage.end = d->storage.start + newSize;
 		return;

@@ -71,9 +71,10 @@ OutputIterator copy(InputIterator first, InputIterator last, OutputIterator othe
 }
 
 /**
- * Copies the elements in the range [first,last] starting from \em last to the range ending at \em otherLast.
- * The elements copied are between \em first and \em last, including \em first but not \em last.
- * \em otherLast should point to the past-the-end position of the destination range.
+ * Copies the elements in the range [first,last] starting from \em last to the range ending
+ * at \em otherLast. The elements copied are between \em first and \em last,
+ * including \em first but not \em last. \em otherLast should point to the past-the-end
+ * position of the destination range.
  */
 template <class BidirectionalIterator1, class BidirectionalIterator2>
 BidirectionalIterator2 copy_backward(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 otherLast) {

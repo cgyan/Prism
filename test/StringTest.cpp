@@ -85,7 +85,7 @@ TEST_F(StringTest, constructorCopy) {
 /**
  *
  */
-TEST_F(StringTest, newStringReserve) {
+TEST_F(StringTest, reserveNewString) {
 	String s;
 	s.reserve(15);
 	ASSERT_EQ(s, "");
@@ -96,7 +96,7 @@ TEST_F(StringTest, newStringReserve) {
 /**
  *
  */
-TEST_F(StringTest, existingStringReserveMore) {
+TEST_F(StringTest, reserveMoreExistingString) {
 	String s("test");
 	s.reserve(8);
 	ASSERT_EQ(s, "test");
@@ -109,7 +109,7 @@ TEST_F(StringTest, existingStringReserveMore) {
  * Any call to reserve() with a value less than the current capacity
  * should be ignored.
  */
-TEST_F(StringTest, existingStringReserveLess) {
+TEST_F(StringTest, reserveLessExistingString) {
 	String s("test");
 	s.reserve(2);
 	ASSERT_EQ(s, "test");
@@ -121,7 +121,7 @@ TEST_F(StringTest, existingStringReserveLess) {
  * Calling String::resize(arg) on a new empty string should set both the
  * size and capacity to arg and init each character to a space.
  */
-TEST_F(StringTest, newStringResize) {
+TEST_F(StringTest, resizeNewString) {
 	String s;
 	s.resize(5);
 	ASSERT_EQ(s, "     "); // 5 single spaces
@@ -134,7 +134,7 @@ TEST_F(StringTest, newStringResize) {
  * than the current size those characters are removed but the capacity
  * remains unchanged.
  */
-TEST_F(StringTest, existingStringResizeLower) {
+TEST_F(StringTest, resizeLowerExistingString) {
 	String s("test");
 	s.resize(2);
 	ASSERT_EQ(s, "te");
@@ -145,15 +145,50 @@ TEST_F(StringTest, existingStringResizeLower) {
 /**
  * Calling String::resize(arg) on an existing string where arg is greater
  * than the current size will increase the string's size to arg setting the
- * new characters to ' '. It may also increase the capacity, if necessary, setting
- * it to arg.
+ * new characters to ' '. This test will force an increase of the capacity
+ * from 4 to 8.
  */
-TEST_F(StringTest, existingStringResizeGreater) {
+TEST_F(StringTest, resizeGreaterExistingString) {
 	String s("test");
 	s.resize(8);
 	ASSERT_EQ(s, "test    "); // "test" followed by four spaces
 	ASSERT_EQ(s.size(), 8);
 	ASSERT_EQ(s.capacity(), 8);
+}
+
+/**
+ * Calling String::resize(arg) on an existing string where arg is the same value
+ * as the string's size will change nothing.
+ */
+TEST_F(StringTest, resizeToSameSizeExistingString) {
+	String s("test");
+	s.resize(4);
+	ASSERT_EQ(s, "test");
+	ASSERT_EQ(s.size(), 4);
+	ASSERT_EQ(s.capacity(), 4);
+}
+
+/**
+ * On an empty string calling String::insert(iterator, str) should increase
+ * the capacity to accommodate str. The capacity should equal the size.
+ */
+TEST_F(StringTest, insertBeginNewStringIterator) {
+	String s;
+	s.insert(s.end(), "test");
+	ASSERT_EQ(s, "test");
+	ASSERT_EQ(s.size(), 4);
+	ASSERT_EQ(s.capacity(), 4);
+}
+
+/**
+ *
+ */
+TEST_F(StringTest, insertBeginExistingStringIterator) {
+	String s("millor");
+	s.insert(s.begin(), "cala");
+	ASSERT_EQ(s, "calamillor");
+	ASSERT_EQ(s.size(), 6);
+	ASSERT_EQ(s.capacity(), 12);
 }
 
 
