@@ -157,11 +157,40 @@ TEST_F(StringTest, at) {
  * Test: capacity()
  */
 TEST_F(StringTest, capacity) {
+
+	// test capacity of empty string
 	String s;
 	ASSERT_EQ(s.capacity(), 0);
 
+	// test capacity on empty string after reserve
 	s.reserve(15);
 	ASSERT_EQ(s.capacity(), 15);
+
+	// test capacity on new string after initialisation
+	// a new string after initialisation should have the same capacity as the size
+	String s2("test");
+	ASSERT_EQ(s2.capacity(), 4);
+
+	// test capacity on existing string after appending
+	// capacity should be double the size
+	s2.append("ing");
+	ASSERT_EQ(s2, "testing");
+	ASSERT_EQ(s2.size(), 7);
+	ASSERT_EQ(s2.capacity(), 14);
+
+	// test capacity on existing string after removing characters
+	// capacity should remain the same
+	s2.remove(4, 3);
+	ASSERT_EQ(s2, "test");
+	ASSERT_EQ(s2.capacity(), 14);
+
+	// test capacity on existing string after chop
+	// capacity should remain the same
+	s2.chop(1);
+	ASSERT_EQ(s, "tes");
+	ASSERT_EQ(s2.capacity(), 14);
+
+	// clear
 }
 
 /**
