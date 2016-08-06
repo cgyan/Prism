@@ -20,7 +20,7 @@
 #include <prism/Iterator>
 #include <prism/List>
 #include <prism/OutOfBoundsException>
-#include <prism/Algorithms.h>
+#include <prism/algorithms>
 
 namespace prism {
 

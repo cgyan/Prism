@@ -11,14 +11,14 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
+  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Flags \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Flags.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pointf \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pointf.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf.h
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Circle:
 
@@ -44,7 +44,9 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
+
+/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Flags:
 
@@ -57,5 +59,3 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Mathf.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms:

@@ -1,6 +1,6 @@
 /*
- * Algorithms.h
- * v0.1
+ * algorithms.cpp
+ * v1
  *
  *  Created on: Jul 13, 2016
  *      Author: iainhemstock
@@ -245,6 +245,23 @@ Function for_each(InputIterator first, InputIterator last, Function func) {
 }
 
 /**
+ * Returns true if the elements in the range \em [first,last] are sorted in ascending order, false otherwise.
+ * The range searched is \em [first,last), which contains all the elements between \em first and \em last,
+ * including the element pointed by \em first but not the element pointed by \em last.
+ */
+template <class ForwardIterator>
+const bool is_sorted(ForwardIterator first, ForwardIterator last) {
+	if (first == last) return true;
+	ForwardIterator current = first;
+
+	while (++current != last) {
+		if (*current < *first) return false;
+		++first;
+	}
+	return true;
+}
+
+/**
  * Returns the largest of \em a and \em b.
  * If they are equivalent then \em a is returned.
  */
@@ -432,6 +449,16 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, Forward
 }
 
 /**
+ * Sorts the elements in the range \em [first,last] in ascending order using the quicksort algorithm.
+ * The range used is [first1,last1), which contains all the elements between first1 and last1,
+ * including the element pointed by first1 but not the element pointed by last1.
+ */
+template <class ForwardIterator>
+void sort(ForwardIterator first, ForwardIterator last) {
+	sort_quicksort(first, last);
+}
+
+/**
  * Sorts the elements in the range \em [first, last] in ascending order using the Bubble Sort algorithm. \n
  * The range used is \em [first,last), which contains all the elements between \em first and \em last,
  * including the element pointed by \em first but not the element pointed by \em last.
@@ -440,30 +467,35 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, Forward
 template <class RandomAccessIterator>
 void sort_bubble(RandomAccessIterator first, RandomAccessIterator last) {
 
-	int i,j;
-	int n = last - first;
+	RandomAccessIterator thisElement = first;
+	RandomAccessIterator nextElement = thisElement+1;
+	RandomAccessIterator bit = first;
 
 	bool swapped = false;
 
-	for(i = 0; i < n-1; i++) {
+	while (bit != last-1) {
 		swapped = false;
-		RandomAccessIterator thisElement = first;
+		while (thisElement != last-1) {
 
-		for(j = 0; j < n-1-i; j++) {
-			RandomAccessIterator nextElement = thisElement + 1;
-
-			if(*thisElement > *nextElement) {
-				prism::swap(*thisElement, *nextElement);
+			if (*thisElement > *nextElement) {
+				swap(*thisElement, *nextElement);
 				swapped = true;
 			}
-			thisElement++;
+			++thisElement;
+			++nextElement;
 		}
-
-		if(!swapped) {
-			break;
-		}
-
+		if (!swapped) break; // already in sorted order
+		thisElement = first;
+		nextElement = thisElement+1;
+		++bit;
 	}
+}
+
+/**
+ *
+ */
+template <class RandomAccessIterator>
+void sort_heap(RandomAccessIterator first, RandomAccessIterator last) {
 
 }
 

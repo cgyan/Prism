@@ -14,7 +14,8 @@ test/StringTest.d: ../test/StringTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
+  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -46,4 +47,6 @@ test/StringTest.d: ../test/StringTest.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
+
+/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:

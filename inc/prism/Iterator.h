@@ -24,7 +24,8 @@ struct bidirectional_iterator_tag : public forward_iterator_tag {};
 struct random_access_iterator_tag : public bidirectional_iterator_tag {};
 
 /****************************************************************************************************************
- * A useful way to extract types from an iterator i.e. iterator_traits<Stack<int> >::pointer.
+ * A useful way to extract types from an iterator
+ * i.e. Stack<int> * p = iterator_traits<Stack<int> >::pointer.
  ****************************************************************************************************************/
 template <class IterType>
 struct iterator_traits  {
@@ -173,74 +174,6 @@ public:
 	// Related non-members
 	friend inline RandomAccessConstIterator 	operator+(const int i, RandomAccessConstIterator & it) { return RandomAccessConstIterator(it.p + i); }
 	friend inline RandomAccessConstIterator 	operator-(const int i, RandomAccessConstIterator & it) { return RandomAccessConstIterator(it.p - i); }
-};
-
-/****************************************************************************************************************
- * Special iterator for the List container (implemented as a bidirectional iterator. A list contains a linked
- * list of nodes and each node contains the actual values stored by the user. As such the iterator needs to return that
- * value and not the node as that is part of the private implementation.
- ****************************************************************************************************************/
-template <class Node, class T>
-struct ListIterator {
-	typedef T							value_type;
-	typedef T&							reference;
-	typedef T*							pointer;
-	typedef bidirectional_iterator_tag 	iterator_category;
-	typedef std::ptrdiff_t 				difference_type;
-
-										Node * node;
-										ListIterator() : node(0) {}
-										ListIterator(Node * node) : node(node) {}
-										ListIterator(const ListIterator & copy) { node = copy.node; }
-	reference 							operator*() { return node->value; }
-	pointer 							operator->() { return &node->value; }
-	ListIterator & 						operator++() { node = node->next; return *this; }
-	ListIterator   						operator++(int junk) { Node * n = node; node = node->next; return n; }
-	ListIterator & 						operator--() { node = node->prev; return *this; }
-	ListIterator  						operator--(int junk) { Node * n = node; node = node->prev; return n; }
-	ListIterator & 						operator=(const ListIterator & rhs) { node = rhs.node; return *this;}
-	bool 								operator!=(const ListIterator & rhs) { return node != rhs.node; }
-	bool 								operator==(const ListIterator & rhs) const { return node == rhs.node; }
-
-	// Related non-members
-	friend inline difference_type 		operator-(const ListIterator & lhs, const ListIterator & rhs) { return lhs.node - rhs.node; }
-	friend inline const bool 			operator<(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs < 0; }
-	friend inline const bool 			operator>(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs > 0; }
-	friend inline const bool 			operator<=(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs <= 0; }
-	friend inline const bool 			operator>=(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs >= 0; }
-};
-
-/****************************************************************************************************************
- * Const List iterator
- ****************************************************************************************************************/
-template <class Node, class T>
-struct ListConstIterator {
-	typedef const T						value_type;
-	typedef const T&					reference;
-	typedef const T*					pointer;
-	typedef bidirectional_iterator_tag 	iterator_category;
-	typedef std::ptrdiff_t 				difference_type;
-
-										Node * node;
-										ListConstIterator() : node(0) {}
-										ListConstIterator(Node * node) : node(node) {}
-										ListConstIterator(const ListConstIterator & copy) { node = copy.node; }
-	reference 							operator*() { return node->value; }
-	pointer 							operator->() { return &node->value; }
-	ListConstIterator & 				operator++() { node = node->next; return *this; }
-	ListConstIterator   				operator++(int junk) { Node * n = node; node = node->next; return n; }
-	ListConstIterator & 				operator--() { node = node->prev; return *this; }
-	ListConstIterator 	 				operator--(int junk) { Node * n = node; node = node->prev; return n; }
-	ListConstIterator & 				operator=(const ListConstIterator & rhs) { node = rhs.node; return *this;}
-	bool 								operator!=(const ListConstIterator & rhs) { return node != rhs.node; }
-	bool 								operator==(const ListConstIterator & rhs) const { return node == rhs.node; }
-
-	// Related non-members
-	friend inline difference_type 		operator-(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs.node - rhs.node; }
-	friend inline const bool 			operator<(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs < 0; }
-	friend inline const bool 			operator>(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs > 0; }
-	friend inline const bool 			operator<=(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs <= 0; }
-	friend inline const bool 			operator>=(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs >= 0; }
 };
 
 }

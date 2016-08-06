@@ -1,1 +1,1 @@
-#include <prism/Algorithms.h>
+#include <../src/prism/algorithms.cpp>

@@ -14,7 +14,8 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
+  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Queue \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Queue.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Point \
@@ -39,8 +40,7 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Char \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Char.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Char.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -72,7 +72,9 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
+
+/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Queue:
 
@@ -123,5 +125,3 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Char:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Char.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms:

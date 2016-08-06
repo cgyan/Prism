@@ -25,7 +25,6 @@ TEST_F(StringTest, constructorDefault) {
 	String s;
 	ASSERT_EQ(s, "");
 	ASSERT_EQ(s.size(), 0);
-	ASSERT_EQ(s.capacity(), 0);
 }
 
 /**
@@ -36,7 +35,6 @@ TEST_F(StringTest, constructorCString) {
 	String s(cs);
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 }
 
 /**
@@ -47,7 +45,6 @@ TEST_F(StringTest, constructorStdString) {
 	String s(ss);
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 }
 
 /**
@@ -58,7 +55,6 @@ TEST_F(StringTest, constructorChar) {
 	String s(c);
 	ASSERT_EQ(s, c);
 	ASSERT_EQ(s.size(), 1);
-	ASSERT_EQ(s.capacity(), 1);
 }
 
 /**
@@ -69,7 +65,6 @@ TEST_F(StringTest, constructorNumChars) {
 	String s(5, c);
 	ASSERT_EQ(s, "*****");
 	ASSERT_EQ(s.size(), 5);
-	ASSERT_EQ(s.capacity(), 5);
 }
 
 /**
@@ -80,7 +75,6 @@ TEST_F(StringTest, constructorCopy) {
 	String copy(first);
 	ASSERT_EQ(copy, "test");
 	ASSERT_EQ(copy.size(), 4);
-	ASSERT_EQ(copy.capacity(), 4);
 }
 
 /**
@@ -93,13 +87,11 @@ TEST_F(StringTest, append_string) {
 	s = s.append("test");
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// append to existing string
 	s = s.append("ing");
 	ASSERT_EQ(s, "testing");
 	ASSERT_EQ(s.size(), 7);
-	ASSERT_EQ(s.capacity(), 14);
 }
 
 /**
@@ -112,13 +104,11 @@ TEST_F(StringTest, append_char) {
 	s = s.append('a');
 	ASSERT_EQ(s, "a");
 	ASSERT_EQ(s.size(), 1);
-	ASSERT_EQ(s.capacity(), 1);
 
 	// append to existing string
 	s = s.append('b');
 	ASSERT_EQ(s, "ab");
 	ASSERT_EQ(s.size(), 2);
-	ASSERT_EQ(s.capacity(), 4);
 }
 
 /**
@@ -132,14 +122,12 @@ TEST_F(StringTest, append_cstring) {
 	s = s.append(cstr1);
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// append to existing string
 	const char * cstr2 = "ing";
 	s = s.append(cstr2);
 	ASSERT_EQ(s, "testing");
 	ASSERT_EQ(s.size(), 7);
-	ASSERT_EQ(s.capacity(), 14);
 }
 
 /**
@@ -352,34 +340,27 @@ TEST_F(StringTest, insert_iterator_string) {
 	s1.insert(s1.begin(), "test");
 	ASSERT_EQ(s1, "test");
 	ASSERT_EQ(s1.size(), 4);
-	ASSERT_EQ(s1.capacity(), 4);
 
 	// insert new string at end of empty string
 	String s2;
 	s2 = s2.insert(s2.end(), "test");
 	ASSERT_EQ(s2, "test");
 	ASSERT_EQ(s2.size(), 4);
-	ASSERT_EQ(s2.capacity(), 4);
 
 	// insert new string at beginning of existing string
-	// capacity should be double the size
 	s2 = s2.insert(s2.begin(), "begin_");
 	ASSERT_EQ(s2, "begin_test");
 	ASSERT_EQ(s2.size(), 10);
-	ASSERT_EQ(s2.capacity(), 20);
 
 	// insert new string in middle of existing string
 	s2 = s2.insert(s2.begin()+6, "google_");
 	ASSERT_EQ(s2, "begin_google_test");
 	ASSERT_EQ(s2.size(), 17);
-	ASSERT_EQ(s2.capacity(), 20);
 
 	// insert new string at end of existing string
-	// no reallocation so capacity remains unchanged
 	s2 = s2.insert(s2.end(), "_end");
 	ASSERT_EQ(s2, "begin_google_test_end");
 	ASSERT_EQ(s2.size(), 21);
-	ASSERT_EQ(s2.capacity(), 42);
 }
 
 /**
@@ -392,34 +373,27 @@ TEST_F(StringTest, insert_iterator_char) {
 	s1.insert(s1.begin(), 'a');
 	ASSERT_EQ(s1, "a");
 	ASSERT_EQ(s1.size(), 1);
-	ASSERT_EQ(s1.capacity(), 1);
 
 	// insert new string at end of empty string
 	String s2;
 	s2 = s2.insert(s2.end(), 'a');
 	ASSERT_EQ(s2, "a");
 	ASSERT_EQ(s2.size(), 1);
-	ASSERT_EQ(s2.capacity(), 1);
 
 	// insert new string at beginning of existing string
-	// capacity should be double the size
 	s2 = s2.insert(s2.begin(), 'b');
 	ASSERT_EQ(s2, "ba");
 	ASSERT_EQ(s2.size(), 2);
-	ASSERT_EQ(s2.capacity(), 4);
 
 	// insert new string in middle of existing string
 	s2 = s2.insert(s2.begin()+1, 'c');
 	ASSERT_EQ(s2, "bca");
 	ASSERT_EQ(s2.size(), 3);
-	ASSERT_EQ(s2.capacity(), 4);
 
 	// insert new string at end of existing string
-	// no reallocation so capacity remains unchanged
 	s2 = s2.insert(s2.end(), 'd');
 	ASSERT_EQ(s2, "bcad");
 	ASSERT_EQ(s2.size(), 4);
-	ASSERT_EQ(s2.capacity(), 4);
 }
 
 /**
@@ -432,34 +406,27 @@ TEST_F(StringTest, insert_index_string) {
 	s1.insert(0, "test");
 	ASSERT_EQ(s1, "test");
 	ASSERT_EQ(s1.size(), 4);
-	ASSERT_EQ(s1.capacity(), 4);
 
 	// insert new string at end of empty string
 	String s2;
 	s2 = s2.insert(s2.size(), "test");
 	ASSERT_EQ(s2, "test");
 	ASSERT_EQ(s2.size(), 4);
-	ASSERT_EQ(s2.capacity(), 4);
 
 	// insert new string at beginning of existing string
-	// capacity should be double the size
 	s2 = s2.insert(0, "begin_");
 	ASSERT_EQ(s2, "begin_test");
 	ASSERT_EQ(s2.size(), 10);
-	ASSERT_EQ(s2.capacity(), 20);
 
 	// insert new string in middle of existing string
 	s2 = s2.insert(6, "google_");
 	ASSERT_EQ(s2, "begin_google_test");
 	ASSERT_EQ(s2.size(), 17);
-	ASSERT_EQ(s2.capacity(), 20);
 
 	// insert new string at end of existing string
-	// no reallocation so capacity remains unchanged
 	s2 = s2.insert(s2.size(), "_end");
 	ASSERT_EQ(s2, "begin_google_test_end");
 	ASSERT_EQ(s2.size(), 21);
-	ASSERT_EQ(s2.capacity(), 42);
 }
 
 /**
@@ -472,35 +439,27 @@ TEST_F(StringTest, insert_index_char) {
 	s1.insert(0, 'a');
 	ASSERT_EQ(s1, "a");
 	ASSERT_EQ(s1.size(), 1);
-	ASSERT_EQ(s1.capacity(), 1);
 
 	// insert new char at end of empty string
 	String s2;
 	s2 = s2.insert(s2.size(), 'a');
 	ASSERT_EQ(s2, "a");
 	ASSERT_EQ(s2.size(), 1);
-	ASSERT_EQ(s2.capacity(), 1);
 
 	// insert new char at beginning of existing string
-	// capacity should be double the size
 	s2 = s2.insert(0, 'b');
 	ASSERT_EQ(s2, "ba");
 	ASSERT_EQ(s2.size(), 2);
-	ASSERT_EQ(s2.capacity(), 4);
 
 	// insert new char in middle of existing string
-	// no reallocation so capacity remains unchanged
 	s2 = s2.insert(1, 'c');
 	ASSERT_EQ(s2, "bca");
 	ASSERT_EQ(s2.size(), 3);
-	ASSERT_EQ(s2.capacity(), 4);
 
 	// insert new char at end of existing string
-	// no reallocation so capacity remains unchanged
 	s2 = s2.insert(s2.size(), 'd');
 	ASSERT_EQ(s2, "bcad");
 	ASSERT_EQ(s2.size(), 4);
-	ASSERT_EQ(s2.capacity(), 4);
 }
 
 /**
@@ -532,13 +491,11 @@ TEST_F(StringTest, prepend_string) {
 	s = s.prepend("test");
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// prepend to existing string
 	s = s.prepend("google");
 	ASSERT_EQ(s, "googletest");
 	ASSERT_EQ(s.size(), 10);
-	ASSERT_EQ(s.capacity(), 20);
 }
 
 /**
@@ -551,13 +508,11 @@ TEST_F(StringTest, prepend_char) {
 	s = s.prepend('a');
 	ASSERT_EQ(s, "a");
 	ASSERT_EQ(s.size(), 1);
-	ASSERT_EQ(s.capacity(), 1);
 
 	// prepend to existing string
 	s = s.prepend('b');
 	ASSERT_EQ(s, "ba");
 	ASSERT_EQ(s.size(), 2);
-	ASSERT_EQ(s.capacity(), 4);
 }
 
 /**
@@ -571,14 +526,12 @@ TEST_F(StringTest, prepend_cstring) {
 	s = s.prepend(cstr1);
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// prepend to existing string
 	const char * cstr2 = "google";
 	s = s.prepend(cstr2);
 	ASSERT_EQ(s, "googletest");
 	ASSERT_EQ(s.size(), 10);
-	ASSERT_EQ(s.capacity(), 20);
 }
 
 /**
@@ -591,13 +544,11 @@ TEST_F(StringTest, push_back_string) {
 	s.push_back("test");
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// push_back to existing string
 	s.push_back("ing");
 	ASSERT_EQ(s, "testing");
 	ASSERT_EQ(s.size(), 7);
-	ASSERT_EQ(s.capacity(), 14);
 }
 
 /**
@@ -610,13 +561,11 @@ TEST_F(StringTest, push_back_char) {
 	s.push_back('a');
 	ASSERT_EQ(s, "a");
 	ASSERT_EQ(s.size(), 1);
-	ASSERT_EQ(s.capacity(), 1);
 
 	// push_back to existing string
 	s.push_back('b');
 	ASSERT_EQ(s, "ab");
 	ASSERT_EQ(s.size(), 2);
-	ASSERT_EQ(s.capacity(), 4);
 }
 
 /**
@@ -630,14 +579,12 @@ TEST_F(StringTest, push_back_cstring) {
 	s.push_back(cstr1);
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// push_back to existing string
 	const char * cstr2 = "ing";
 	s.push_back(cstr2);
 	ASSERT_EQ(s, "testing");
 	ASSERT_EQ(s.size(), 7);
-	ASSERT_EQ(s.capacity(), 14);
 }
 
 /**
@@ -650,13 +597,11 @@ TEST_F(StringTest, push_front_string) {
 	s.push_front("test");
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// push_front to existing string
 	s.push_front("google");
 	ASSERT_EQ(s, "googletest");
 	ASSERT_EQ(s.size(), 10);
-	ASSERT_EQ(s.capacity(), 20);
 }
 
 /**
@@ -669,13 +614,11 @@ TEST_F(StringTest, push_front_char) {
 	s.push_front('a');
 	ASSERT_EQ(s, "a");
 	ASSERT_EQ(s.size(), 1);
-	ASSERT_EQ(s.capacity(), 1);
 
 	// push_front to existing string
 	s.push_front('b');
 	ASSERT_EQ(s, "ba");
 	ASSERT_EQ(s.size(), 2);
-	ASSERT_EQ(s.capacity(), 4);
 }
 
 /**
@@ -689,14 +632,12 @@ TEST_F(StringTest, push_front_cstring) {
 	s.push_front(cstr1);
 	ASSERT_EQ(s, "test");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), 4);
 
 	// push_front to existing string
 	const char * cstr2 = "google";
 	s.push_front(cstr2);
 	ASSERT_EQ(s, "googletest");
 	ASSERT_EQ(s.size(), 10);
-	ASSERT_EQ(s.capacity(), 20);
 }
 
 /**
@@ -704,11 +645,9 @@ TEST_F(StringTest, push_front_cstring) {
  */
 TEST_F(StringTest, remove_index_numChars) {
 	String s("montreal");
-	int cap = s.capacity();
 	s = s.remove(1, 4);
 	ASSERT_EQ(s, "meal");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), cap);
 }
 
 /**
@@ -716,11 +655,9 @@ TEST_F(StringTest, remove_index_numChars) {
  */
 TEST_F(StringTest, remove_string) {
 	String s("montreal");
-	int cap = s.capacity();
 	s = s.remove("ontr");
 	ASSERT_EQ(s, "meal");
 	ASSERT_EQ(s.size(), 4);
-	ASSERT_EQ(s.capacity(), cap);
 }
 
 /**
@@ -728,11 +665,9 @@ TEST_F(StringTest, remove_string) {
  */
 TEST_F(StringTest, remove_char) {
 	String s("I see sea ships on the sea shore");
-	int cap = s.capacity();
 	s = s.remove('s');
 	ASSERT_EQ(s, "I ee ea hip on the ea hore");
 	ASSERT_EQ(s.size(), 26);
-	ASSERT_EQ(s.capacity(), cap);
 }
 
 /**
