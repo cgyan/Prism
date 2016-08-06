@@ -21,7 +21,7 @@ namespace prism {
 /******************************************************************************
  * StringData
  *****************************************************************************/
-/*! \cond DO_NOT_DOCUMENT */
+// \cond DO_NOT_DOCUMENT
 struct StringData {
 	struct memory {
 		char * start; 	// the start of the memory

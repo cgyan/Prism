@@ -175,7 +175,7 @@ TEST_F(StringTest, capacity) {
 	// test capacity on existing string after chop
 	// capacity should remain the same
 	s2.chop(1);
-	ASSERT_EQ(s, "tes");
+	ASSERT_EQ(s2, "tes");
 	ASSERT_EQ(s2.capacity(), 14);
 
 	// clear
@@ -678,6 +678,69 @@ TEST_F(StringTest, repeated) {
 	s = s.repeated(3);
 	ASSERT_EQ(s, "holaholahola");
 	ASSERT_EQ(s.size(), 12);
+}
+
+/**
+ * Test: replace (position, nCharsToReplace, newStr)
+ */
+TEST_F(StringTest, replace_pos_num_string) {
+	String s("Cala Millor in Majorca!");
+	s.replace(5, 6, "Bona");
+	ASSERT_EQ(s, "Cala Bona in Majorca!");
+}
+
+/**
+ * Test: replace (position, nCharsToReplace, char)
+ */
+TEST_F(StringTest, replace_pos_num_char) {
+	String s("Cala Millor in Majorca!");
+	s.replace(22, 1, '?'); // change ! to ?
+	ASSERT_EQ(s, "Cala Millor in Majorca?");
+}
+
+/**
+ * Test: replace (iterator, iterator, newStr)
+ */
+TEST_F(StringTest, replace_iterator_iterator_string) {
+	String s("Cala Bona in Majorca!");
+	s.replace(s.begin()+5, s.begin()+9, "Millor");
+	ASSERT_EQ(s, "Cala Millor in Majorca!");
+}
+
+/**
+ * Test: replace(oldString, newString)
+ */
+TEST_F(StringTest, replace_string_string) {
+	String s("I see sea ships on the sea shore");
+	s.replace("sea", "ocean");
+	ASSERT_EQ(s, "I see ocean ships on the ocean shore");
+}
+
+/**
+ * Test: replace(oldString, char)
+ */
+TEST_F(StringTest, replace_string_char) {
+	String s("I see sea ships on the sea shore");
+	s.replace("sea", '%');
+	ASSERT_EQ(s, "I see % ships on the % shore");
+}
+
+/**
+ * Test: replace(char, string)
+ */
+TEST_F(StringTest, replace_char_string) {
+	String s("I see sea ships on the sea shore");
+	s.replace('s', "[CENSORED]");
+	ASSERT_EQ(s, "I [CENSORED]ee [CENSORED]ea [CENSORED]hip[CENSORED] on the [CENSORED]ea [CENSORED]hore");
+}
+
+/**
+ * Test: replace(char, char)
+ */
+TEST_F(StringTest, replace_char_char) {
+	String s("I see sea ships on the sea shore");
+	s.replace('s', 'S');
+	ASSERT_EQ(s, "I See Sea ShipS on the Sea Shore");
 }
 
 /**

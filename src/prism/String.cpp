@@ -643,7 +643,7 @@ String & String::replace(const String & oldStr, const char c) {
 }
 
 /**
- * Replaces each occurrence of the Char \em c with the string \em newStr.
+ * Replaces each occurrence of the char \em c with the string \em newStr.
  * @return Returns a reference to this string.
  */
 String & String::replace(const char oldc, const String & newStr) {
@@ -651,7 +651,7 @@ String & String::replace(const char oldc, const String & newStr) {
 }
 
 /**
- * Replaces each occurrence of the Char \em oldChar with the Char \em newChar.
+ * Replaces each occurrence of the char \em oldChar with the char \em newChar.
  * @return Returns a reference to this string.
  */
 String & String::replace(const char oldc, const char newc) {

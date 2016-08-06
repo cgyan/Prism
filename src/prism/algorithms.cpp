@@ -492,7 +492,7 @@ void sort_bubble(RandomAccessIterator first, RandomAccessIterator last) {
 }
 
 /**
- *
+ * todo heapsort
  */
 template <class RandomAccessIterator>
 void sort_heap(RandomAccessIterator first, RandomAccessIterator last) {

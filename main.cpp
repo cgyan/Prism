@@ -48,26 +48,13 @@ void print(int n) { cout << n << endl; }
 
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
-//	::testing::GTEST_FLAG(filter) = "*String*";
-//	::testing::InitGoogleTest(&argc, argv);
+	::testing::GTEST_FLAG(filter) = "*String*";
+	::testing::InitGoogleTest(&argc, argv);
 
-	List<int> c;
-	c.push_back(6);
-	c.push_back(5);
-	c.push_back(4);
-	c.push_back(3);
-	c.push_back(2);
-	c.push_back(1);
-	cout << c << endl;
-	cout << prism::is_sorted(c.begin(), c.end()) << endl;
 
-//	prism::sort_bubble(c.begin(), c.end());
 
-	cout << c << endl;
-	cout << prism::is_sorted(c.begin(), c.end());
-
-//	return RUN_ALL_TESTS();
-	return 0;
+	return RUN_ALL_TESTS();
+//	return 0;
 }
 
 
