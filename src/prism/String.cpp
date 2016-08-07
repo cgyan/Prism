@@ -798,7 +798,7 @@ String & String::setNum(const double n, const int precision) {
  * Whitespace characters are those such that Char::isWhitespace is true. These are space (' '),
  * carriage return ('\\r'), tab ('\\t'), newline ('\\n'), vertical tab ('\\v') and formfeed ('\\f').
  * \code
- * String s("\n\t\t whitespace has\fbeen\\vremoved!\n");
+ * String s("\n\t\t whitespace has\fbeen\vremoved!\n");
  * cout << s.simplified(); // outputs: "whitespace has been removed!"
  * \endcode
  * @return Returns a new string that has all whitespace stripped out and replacing internal whitespace
@@ -826,20 +826,11 @@ const int String::size() const {
 
 /**
  * Splits this string into substrings each time \em delimeter occurs.
- * @return Returns a Vector of strings. If \em delimeter does not occur then a Vector
+ * @return Returns a List of strings. If \em delimeter does not occur then a List
  * containing one string (this string) will be returned instead.
  */
-Vector<String> String::split(const String & delimeter) const {
-	return split(delimeter.at(0));
-}
-
-/**
- * Splits this string into substrings each time \em delimeter occurs.
- * @return Returns a Vector of strings. If \em delimeter does not occur then a Vector
- * containing one string (this string) will be returned instead.
- */
-Vector<String> String::split(const char delimeter) const {
-	Vector<String> v;
+List<String> String::split(const char delimeter) const {
+	List<String> list;
 	const_iterator loopBit = constBegin();
 	const_iterator loopEit = constEnd();
 	const_iterator rangeBit = constBegin();
@@ -851,7 +842,7 @@ Vector<String> String::split(const char delimeter) const {
 		if (*loopBit == delimeter) {
 			s.resize(loopBit - rangeBit);
 			prism::copy(rangeBit, loopBit, s.begin());
-			v.append(s.trimmed());
+			list.append(s.trimmed());
 			rangeBit = loopBit + 1;
 		}
 		++loopBit;
@@ -860,10 +851,10 @@ Vector<String> String::split(const char delimeter) const {
 	// this grabs the section of the string after the last delimeter
 	s.resize(loopBit - rangeBit);
 	prism::copy(rangeBit, loopBit, s.begin());
-	v.append(s.trimmed());
+	list.append(s.trimmed());
 
 
-	return v;
+	return list;
 }
 
 /**
@@ -885,7 +876,7 @@ void String::squeeze() {
 }
 
 /**
- *
+ * @return Returns true if the string start with \em str, false otherwise.
  */
 const bool String::startsWith(const String & str) const {
 	const_iterator eit = begin() + str.size();
@@ -896,33 +887,39 @@ const bool String::startsWith(const String & str) const {
 }
 
 /**
- *
+ * @return Returns true if the string starts with \em c, false otherwise.
  */
 const bool String::startsWith(const char c) const {
 	return at(0) == c;
 }
 
 /**
- * @return Returns a new string copied from this string starting at the character
- * at \em startChar for \em size characters.
+ * @return Returns a new string copied from this string starting at \em startIndex
+ * for \em nChars characters. If \em nChars is -1 (the default) then
+ * the whole string from \em startIndex is copied.
  */
-String String::sub(const int startChar, int size) const {
-	if (size > this->size())
-		return *this;
+String String::sub(const int startIndex, int nChars) const {
 
-	if (size == -1)
-		size = this->size();
+	if ((startIndex == 0 && nChars == -1) ||
+			(startIndex == 0 && nChars >= this->size())) {
+		return *this;
+	}
+
+	char * b = d->storage.start + startIndex;
+	if (nChars == -1 || b + nChars > d->storage.end)
+		nChars = d->storage.end - b;
 
 	String s;
-	s.resize(size);
-	prism::copy_n(d->storage.start + startChar, size, s.begin());
+	s.resize(nChars);
+	prism::copy_n(b, nChars, s.d->storage.start);
 
 	return s;
 }
 
 /**
- * @return Returns a new string copied from this string starting at the character
- * pointed to by the iterator \em first through to the character pointed at by the iterator \em last.
+ * @return Returns a new string copied from the range \em [first, last]. The
+ * range copied is all characters between \em first and \em last, including \em first
+ * but not \em last.
  */
 String String::sub(iterator first, iterator last) const {
 	String s;
@@ -1075,10 +1072,12 @@ const char & String::operator [](const int index) const {
  *
  */
 String & String::operator =(const String & other) {
-	int size = other.size();
-	reserve(size);
-	prism::copy(other.begin(), other.end(), d->storage.start);
-	d->storage.end = d->storage.start + size;
+	if (*this != other) {
+		int size = other.size();
+		reserve(size);
+		prism::copy(other.begin(), other.end(), d->storage.start);
+		d->storage.end = d->storage.start + size;
+	}
 
 	return *this;
 }
@@ -1087,7 +1086,6 @@ String & String::operator =(const String & other) {
  *
  */
 String & String::operator =(const char * other) {
-	std::cout << "!" << std::endl;
 	*this = String(other);
 	return *this;
 }

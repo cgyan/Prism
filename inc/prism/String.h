@@ -14,7 +14,7 @@
 #include <string>
 #include <initializer_list>
 #include <prism/Iterator>
-#include <prism/Vector>
+#include <prism/List>
 
 namespace prism {
 
@@ -124,12 +124,11 @@ public:
 	String &		setNum(const double n, const int precision=6);
 	String			simplified() const;
 	const int 		size() const;
-	Vector<String>	split(const String & delimeter) const;
-	Vector<String>	split(const char delimeter) const;
+	List<String>	split(const char delimeter) const;
 	void			squeeze();
 	const bool		startsWith(const String & str) const;
 	const bool		startsWith(const char c) const;
-	String			sub(const int startChar, int size=-1) const;
+	String			sub(const int startIndex, int nChars=-1) const;
 	String			sub(String::iterator first, String::iterator last) const;
 	const double	toDouble() const;
 	const float		toFloat() const;

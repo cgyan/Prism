@@ -834,6 +834,271 @@ TEST_F(StringTest, resizeToSameSizeExistingString) {
 	ASSERT_EQ(s.capacity(), 4);
 }
 
+/**
+ * Test: setNum(int)
+ */
+TEST_F(StringTest, setNum_int) {
+	int n = -123;
+	String s;
+	s.setNum(n);
+	ASSERT_EQ(s, "-123");
+	ASSERT_EQ(s.size(), 4);
+}
+
+/**
+ * Test: setNum(unsigned int)
+ */
+TEST_F(StringTest, setNum_unsigned_int) {
+	unsigned int n = 123;
+	String s;
+	s.setNum(n);
+	ASSERT_EQ(s, "123");
+	ASSERT_EQ(s.size(), 3);
+}
+
+/**
+ * Test: setNum(long)
+ */
+TEST_F(StringTest, setNum_long) {
+	long n = -123456;
+	String s;
+	s.setNum(n);
+	ASSERT_EQ(s, "-123456");
+	ASSERT_EQ(s.size(), 7);
+}
+
+/**
+ * Test: setNum(unsigned long)
+ */
+TEST_F(StringTest, setNum_unsigned_long) {
+	unsigned long n = 123456;
+	String s;
+	s.setNum(n);
+	ASSERT_EQ(s, "123456");
+	ASSERT_EQ(s.size(), 6);
+}
+
+/**
+ * Test: setNum(float, precision)
+ */
+TEST_F(StringTest, setNum_float_precision) {
+	float n = 3.14159;
+	String s;
+	s.setNum(n);
+	ASSERT_EQ(s, "3.14159");
+	ASSERT_EQ(s.size(), 7);
+
+	s.setNum(n, 5);
+	ASSERT_EQ(s, "3.1416");
+}
+
+/**
+ * Test: setNum(double, precision)
+ */
+TEST_F(StringTest, setNum_double_precision) {
+	double n = 3.14159;
+	String s;
+	s.setNum(n);
+	ASSERT_EQ(s, "3.14159");
+	ASSERT_EQ(s.size(), 7);
+
+	s.setNum(n, 5);
+	ASSERT_EQ(s, "3.1416");
+}
+
+/**
+ * Test: simplified()
+ */
+TEST_F(StringTest, simplified) {
+	String s("\n\t\t whitespace has\fbeen\vremoved!\n");
+	s = s.simplified();
+	ASSERT_EQ(s, "whitespace has been removed!");
+}
+
+/**
+ * Test: size()
+ */
+TEST_F(StringTest, size) {
+	String s;
+	ASSERT_EQ(s.size(), 0);
+
+	s.reserve(5);
+	ASSERT_EQ(s.size(), 0);
+
+	s.resize(10);
+	ASSERT_EQ(s, "          "); // 10 spaces
+	ASSERT_EQ(s.size(), 10);
+
+	s.fill('u', 7);
+	ASSERT_EQ(s, "uuuuuuu"); // 7 chars of u
+	ASSERT_EQ(s.size(), 7);
+}
+
+/**
+ * Test: squeeze()
+ */
+TEST_F(StringTest, squeeze) {
+
+	// test empty string
+	String s;
+	s.squeeze();
+	ASSERT_EQ(s.capacity(), 0);
+
+	s.reserve(25);
+	s = "bananas in pajamas";
+	ASSERT_EQ(s.size(), 18);
+	ASSERT_EQ(s.capacity(), 25);
+	s.squeeze();
+	ASSERT_EQ(s.capacity(), 18);
+}
+
+/**
+ * Test: startsWith(string)
+ */
+TEST_F(StringTest, startsWith_string) {
+	String s("Cala Millor in Majorca!");
+	ASSERT_TRUE(s.startsWith("Cala"));
+	ASSERT_FALSE(s.startsWith("Millor"));
+}
+
+/**
+ * Test: startsWith(char)
+ */
+TEST_F(StringTest, startsWith_char) {
+	String s("Cala Millor in Majorca!");
+	ASSERT_TRUE(s.startsWith('C'));
+	ASSERT_FALSE(s.startsWith('c'));
+}
+
+/**
+ * Test: sub(startIndex, nChars)
+ */
+TEST_F(StringTest, sub_index_nChars) {
+	String s("Cala Millor in Majorca!");
+
+	// copy from index 0
+	String sub = s.sub(0);
+	ASSERT_EQ(sub, "Cala Millor in Majorca!");
+
+	// copy from index 5
+	sub = s.sub(5);
+	ASSERT_EQ(sub, "Millor in Majorca!");
+
+	// copy from index 5 for 6 chars
+	sub = s.sub(5, 6);
+	ASSERT_EQ(sub, "Millor");
+
+	// copy from index 15 for 20 chars
+	// this should clip nChars to the end of the string instead
+	// of extending beyond it
+	sub = s.sub(15, 20);
+	ASSERT_EQ(sub, "Majorca!");
+}
+
+/**
+ * Test: sub(beginIterator, endIterator)
+ */
+TEST_F(StringTest, sub_beginIterator_endIterator) {
+	String s("bananas in pajamas");
+
+	String sub = s.sub(s.begin(), s.end());
+	ASSERT_EQ(sub, "bananas in pajamas");
+
+	// substring of first word
+	sub = s.sub(s.begin(), s.begin()+7);
+	ASSERT_EQ(sub, "bananas");
+
+	// substring of middle word
+	sub = s.sub(s.begin()+8, s.begin()+10);
+	ASSERT_EQ(sub, "in");
+
+	// substring of last word
+	sub = s.sub(s.begin()+11, s.end());
+	ASSERT_EQ(sub, "pajamas");
+}
+
+/**
+ * Test: toDouble()
+ */
+TEST_F(StringTest, toDouble) {
+	double n = 3.14159;
+	String s("3.14159");
+	ASSERT_EQ(s.toDouble(), n);
+}
+
+/**
+ * Test: toFloat()
+ */
+TEST_F(StringTest, toFloat) {
+	float n = 3.14159;
+	String s("3.14159");
+	ASSERT_EQ(s.toFloat(), n);
+}
+
+/**
+ * Test: toInt()
+ */
+TEST_F(StringTest, toInt) {
+	int n = 1234;
+	String s("1234");
+	ASSERT_EQ(s.toInt(), n);
+}
+
+/**
+ * Test: toLower()
+ */
+TEST_F(StringTest, toLower) {
+
+	// test string with mixed lower and upper case
+	String s("More Effective C++");
+	ASSERT_EQ(s.toLower(), "more effective c++");
+
+	// test string with all upper
+	s = "MORE EFFECTIVE C++";
+	ASSERT_EQ(s.toLower(), "more effective c++");
+
+	// test string with all lower
+	s = "more effective c++";
+	ASSERT_EQ(s.toLower(), "more effective c++");
+}
+
+/**
+ * Test: toStdString()
+ */
+TEST_F(StringTest, toStdString) {
+	String s("More Effective C++");
+	std::string ss = s.toStdString();
+	ASSERT_STREQ(ss.c_str(), "More Effective C++");
+}
+
+/**
+ * Test: toUpper()
+ */
+TEST_F(StringTest, toUpper) {
+
+	// test string with mixed lower and upper case
+	String s("More Effective C++");
+	ASSERT_EQ(s.toUpper(), "MORE EFFECTIVE C++");
+
+	// test string with all lower
+	s = "more effective c++";
+	ASSERT_EQ(s.toUpper(), "MORE EFFECTIVE C++");
+
+	// test string with all upper
+	s = "MORE EFFECTIVE C++";
+	ASSERT_EQ(s, "MORE EFFECTIVE C++");
+}
+
+/**
+ * Test: trimmed()
+ */
+TEST_F(StringTest, trimmed) {
+	String s("     in the summer     ");
+	s = s.trimmed();
+	ASSERT_EQ(s, "in the summer");
+	ASSERT_EQ(s.size(), 13);
+}
+
 
 
 
