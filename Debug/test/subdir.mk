@@ -6,17 +6,20 @@
 CPP_SRCS += \
 ../test/ListTest.cpp \
 ../test/StackTest.cpp \
-../test/StringTest.cpp 
+../test/StringTest.cpp \
+../test/algorithmsTest.cpp 
 
 OBJS += \
 ./test/ListTest.o \
 ./test/StackTest.o \
-./test/StringTest.o 
+./test/StringTest.o \
+./test/algorithmsTest.o 
 
 CPP_DEPS += \
 ./test/ListTest.d \
 ./test/StackTest.d \
-./test/StringTest.d 
+./test/StringTest.d \
+./test/algorithmsTest.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

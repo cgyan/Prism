@@ -49,32 +49,12 @@ void print(int n) { cout << n << endl; }
 
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
-//	::testing::GTEST_FLAG(filter) = "*String*";
-//	::testing::InitGoogleTest(&argc, argv);
+	::testing::GTEST_FLAG(filter) = "*algorithms*";
+	::testing::InitGoogleTest(&argc, argv);
 
-	Array<int> c(12);
-	c[0] = 4;
-	c[1] = 11;
-	c[2] = 3;
-	c[3] = 2;
-	c[4] = 6;
-	c[5] = 9;
-	c[6] = 1;
-	c[7] = 8;
-	c[8] = 5;
-	c[9] = 7;
-	c[10] = 12;
-	c[11] = 10;
-//
-	prism::make_heap(c.begin(), c.end());
-//
-	cout << c << endl;
 
-	prism::make_heap(c.begin(), c.end());
 
-	cout << c;
-
-//	return RUN_ALL_TESTS();
+	return RUN_ALL_TESTS();
 //	return 0;
 }
 

@@ -12,9 +12,9 @@
 #include <string>
 #include <prism/String>
 
-using namespace prism;
+namespace prism {
 
-class StringTest : public String, public ::testing::Test {
+class StringTest : public ::testing::Test {
 
 };
 
@@ -1410,7 +1410,7 @@ TEST_F(StringTest, opPlus_string_char) {
 	ASSERT_EQ(s.size(), 6);
 }
 
-
+}
 
 
 

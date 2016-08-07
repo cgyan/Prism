@@ -8,7 +8,7 @@
 #include "gtest/gtest.h"
 #include <prism/List>
 
-using namespace prism;
+namespace prism {
 
 class ListTest : public ::testing::Test {
 
@@ -42,4 +42,4 @@ TEST_F(ListTest, clear) {
 	ASSERT_TRUE(list.size() == 0);
 }
 
-
+}

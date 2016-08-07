@@ -518,11 +518,22 @@ void sort_bubble(RandomAccessIterator first, RandomAccessIterator last) {
 }
 
 /**
- * todo heapsort
+ * Sorts the elements in the range \em [first,last] using the heapsort algorithm. \n
+ * The range used is \em [first,last), which contains all the elements between \em first and \em last,
+ * including the element pointed by \em first but not the element pointed by \em last.
  */
 template <class RandomAccessIterator>
 void sort_heap(RandomAccessIterator first, RandomAccessIterator last) {
+	if (first == last) return;
 
+	make_heap(first, last);
+
+	RandomAccessIterator currentNode = last;
+
+	while (--currentNode >= first) {
+		swap(*currentNode, *first);
+		p_heapify(first, first, currentNode);
+	}
 }
 
 /**
@@ -587,23 +598,19 @@ ForwardIterator2 swap_ranges(ForwardIterator1 first, ForwardIterator1 last, Forw
 // ==================================================================================================
 /**
  * Private recursive function called by make_heap().
- * Compare a node with its two children (if it has any) and ensures that the largest of the three
+ * Compares a node with its two children (if it has any) and ensures that the largest of the three
  * nodes is the parent node.
  */
 template <class RandomAccessIterator>
 void p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last) {
 
-	using namespace std;
-
-	cout << "heapifying!" << std::endl;
-
-	int nodeIndex = node-first;				// 5
-	int leftIndex = 2 * nodeIndex + 1;		// 11
-	int rightIndex = 2 * nodeIndex + 2;		// 12
+	int nodeIndex = node-first;
+	int leftIndex = 2 * nodeIndex + 1;
+	int rightIndex = 2 * nodeIndex + 2;
 
 	RandomAccessIterator leftNode = first + leftIndex;
 	RandomAccessIterator rightNode = first + rightIndex;
-	RandomAccessIterator largestNode = node;  	// 9
+	RandomAccessIterator largestNode = node;
 
 	if (leftNode < last && *largestNode < *leftNode)
 		largestNode = leftNode;
