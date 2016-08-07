@@ -221,9 +221,9 @@ static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_strin
 \item 
 static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a0da92ce265e3b9dee756746634a2ed1c}{number} (const unsigned long n)
 \item 
-static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a31d878bd52b7576b00152b9e832c78b8}{number} (const float n, const int precision=6)
-\item 
 static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a8662487577697139f34b0a98f339a35d}{number} (const double n, const int precision=6)
+\item 
+static \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_string_a31d878bd52b7576b00152b9e832c78b8}{number} (const float n, const int precision=6)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -715,20 +715,20 @@ Returns the length of the string. This method is identical to \hyperlink{classpr
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a0da92ce265e3b9dee756746634a2ed1c}{}\label{classprism_1_1_string_a0da92ce265e3b9dee756746634a2ed1c}
 \index{prism\+::\+String@{prism\+::\+String}!number@{number}}
 \index{number@{number}!prism\+::\+String@{prism\+::\+String}}
-\subsubsection[{\texorpdfstring{number(const float n, const int precision=6)}{number(const float n, const int precision=6)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
-\begin{DoxyParamCaption}
-\item[{const float}]{n, }
-\item[{const int}]{precision = {\ttfamily 6}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a31d878bd52b7576b00152b9e832c78b8}{}\label{classprism_1_1_string_a31d878bd52b7576b00152b9e832c78b8}
-\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
-\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{number(const double n, const int precision=6)}{number(const double n, const int precision=6)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
 \begin{DoxyParamCaption}
 \item[{const double}]{n, }
 \item[{const int}]{precision = {\ttfamily 6}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a8662487577697139f34b0a98f339a35d}{}\label{classprism_1_1_string_a8662487577697139f34b0a98f339a35d}
+\index{prism\+::\+String@{prism\+::\+String}!number@{number}}
+\index{number@{number}!prism\+::\+String@{prism\+::\+String}}
+\subsubsection[{\texorpdfstring{number(const float n, const int precision=6)}{number(const float n, const int precision=6)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+String\+::number (
+\begin{DoxyParamCaption}
+\item[{const float}]{n, }
+\item[{const int}]{precision = {\ttfamily 6}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_string_a31d878bd52b7576b00152b9e832c78b8}{}\label{classprism_1_1_string_a31d878bd52b7576b00152b9e832c78b8}
 \index{prism\+::\+String@{prism\+::\+String}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!prism\+::\+String@{prism\+::\+String}}
 \subsubsection[{\texorpdfstring{operator+=(const String \&other)}{operator+=(const String &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} \& prism\+::\+String\+::operator+= (
@@ -1137,7 +1137,7 @@ Returns a new string copied from this string starting at {\itshape start\+Index}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_string_acb6b7f719571cccca2f08887e61ed2a5}{}\label{classprism_1_1_string_acb6b7f719571cccca2f08887e61ed2a5}
 \begin{DoxyReturn}{Returns}
-Returns a new string copied from this string starting at the character pointed to by the iterator {\itshape first} through to the character pointed at by the iterator {\itshape last}. 
+Returns a new string copied from the range {\itshape }\mbox{[}first, last\mbox{]}. The range copied is all characters between {\itshape first} and {\itshape last}, including {\itshape first} but not {\itshape last}. 
 \end{DoxyReturn}
 \index{prism\+::\+String@{prism\+::\+String}!to\+Double@{to\+Double}}
 \index{to\+Double@{to\+Double}!prism\+::\+String@{prism\+::\+String}}

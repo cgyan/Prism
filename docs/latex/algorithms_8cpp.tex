@@ -1,6 +1,7 @@
 \hypertarget{algorithms_8cpp}{}\section{src/prism/algorithms.cpp File Reference}
 \label{algorithms_8cpp}\index{src/prism/algorithms.\+cpp@{src/prism/algorithms.\+cpp}}
 {\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,6 +16,8 @@
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{prism\+::swap} (T \&a, T \&b)
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_a5f2c83ae0d89a6581d1c42ba6fd79de0}{prism\+::p\+\_\+heapify} (Random\+Access\+Iterator node, Random\+Access\+Iterator first, Random\+Access\+Iterator last)
 \item 
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_a82052418345794a13044c15d8e32dd89}{prism\+::adjacent\+\_\+find} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
@@ -51,6 +54,8 @@
 {\footnotesize template$<$class Input\+Iterator , class Function $>$ }\\Function \hyperlink{namespaceprism_aae062d5bfdc0e53ae49c56520aded906}{prism\+::for\+\_\+each} (Input\+Iterator first, Input\+Iterator last, Function func)
 \item 
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\const bool \hyperlink{namespaceprism_acf5efbeb096446c47690b9e8bd2cc01a}{prism\+::is\+\_\+sorted} (Forward\+Iterator first, Forward\+Iterator last)
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_af8e36230e6cb92a41aaca282772a9e6e}{prism\+::make\+\_\+heap} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
 \item 
 {\footnotesize template$<$class T $>$ }\\const T \& \hyperlink{namespaceprism_a812456273adfa37979e79f07e731d412}{prism\+::max} (const T \&a, const T \&b)
 \item 

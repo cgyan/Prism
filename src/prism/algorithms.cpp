@@ -23,8 +23,10 @@ void p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAcce
 // ==================================================================================================
 
 /**
- * Searches the range \em [first,last) for the first occurrence of two consecutive elements
- * that match, and returns an iterator to the first of these two elements, or \em last if no such pair is found.
+ * Searches the range \em [first,last] for the first occurrence of
+ * two consecutive elements that match.
+ * @return Returns an iterator to the first of these two elements, or
+ * \em last if no such pair is found.
  */
 template <class ForwardIterator>
 ForwardIterator adjacent_find(ForwardIterator first, ForwardIterator last) {

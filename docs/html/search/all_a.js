@@ -5,6 +5,7 @@ var searchData=
   ['m_5ftailer',['m_tailer',['../classprism_1_1_list.html#a0740989f0d5af2bad19850fac850947e',1,'prism::List']]],
   ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
   ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['make_5fheap',['make_heap',['../namespaceprism.html#af8e36230e6cb92a41aaca282772a9e6e',1,'prism']]],
   ['mathf',['Mathf',['../classprism_1_1_mathf.html',1,'prism']]],
   ['mathf_2ecpp',['Mathf.cpp',['../_mathf_8cpp.html',1,'']]],
   ['mathf_2eh',['Mathf.h',['../_mathf_8h.html',1,'']]],

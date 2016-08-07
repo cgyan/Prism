@@ -10,10 +10,10 @@
 #define PRISM_STRING_H_
 
 #include <prism/Char>
-#include <ostream>
-#include <string>
 #include <prism/Iterator>
 #include <prism/List>
+#include <ostream>
+#include <string>
 
 namespace prism {
 
@@ -26,7 +26,7 @@ struct StringData {
 		char * start; 	// the start of the memory
 		char * end; 	// one position after the last value
 		char * finish;	 	// the end of the storage
-		int exponent;
+		int exponent;		// the rate at which to grow the storage
 		memory() : start(0), end(0), finish(0), exponent(2) {}
 		~memory() { delete [] start; start=0; end=0; finish=0; }
 	};

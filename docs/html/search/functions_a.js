@@ -1,6 +1,7 @@
 var searchData=
 [
   ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['make_5fheap',['make_heap',['../namespaceprism.html#af8e36230e6cb92a41aaca282772a9e6e',1,'prism']]],
   ['matrix4',['Matrix4',['../classprism_1_1_matrix4.html#a9db27bce505b827ee46568fb105ff563',1,'prism::Matrix4::Matrix4(void)'],['../classprism_1_1_matrix4.html#a442f58d6a24413f1e2cb7cf6150c5fb9',1,'prism::Matrix4::Matrix4(const float *values)'],['../classprism_1_1_matrix4.html#a6e19410eb6de5dfdaeb989d3042176a1',1,'prism::Matrix4::Matrix4(const float r1c1, const float r1c2, const float r1c3, const float r1c4, const float r2c1, const float r2c2, const float r2c3, const float r2c4, const float r3c1, const float r3c2, const float r3c3, const float r3c4, const float r4c1, const float r4c2, const float r4c3, const float r4c4)'],['../classprism_1_1_matrix4.html#a1112c0939a2dc4112d0552cafd37dff0',1,'prism::Matrix4::Matrix4(const Matrix4 &amp;copy)']]],
   ['max',['max',['../namespaceprism.html#a812456273adfa37979e79f07e731d412',1,'prism']]],
   ['mid',['mid',['../classprism_1_1_array.html#a184d0853ea009fb9d156c1302d46a87d',1,'prism::Array::mid()'],['../classprism_1_1_vector.html#ad15f2817fe441c22bbbdb1e1ecfe9aed',1,'prism::Vector::mid()']]],
