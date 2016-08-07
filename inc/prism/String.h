@@ -1,6 +1,6 @@
 /*
  * String.h
- * v0.1
+ * v1
  *
  *  Created on: Jul 11, 2016
  *      Author: iainhemstock
@@ -12,7 +12,6 @@
 #include <prism/Char>
 #include <ostream>
 #include <string>
-#include <initializer_list>
 #include <prism/Iterator>
 #include <prism/List>
 
@@ -154,8 +153,8 @@ public:
 	static String	number(const unsigned int n);
 	static String	number(const long n);
 	static String	number(const unsigned long n);
-	static String	number(const float n, const int precision=6);
 	static String	number(const double n, const int precision=6);
+	static String	number(const float n, const int precision=6);
 
 	// related non-members
 	friend const bool		operator==(const String & str1, const String & str2);

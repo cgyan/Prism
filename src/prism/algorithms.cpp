@@ -11,12 +11,16 @@
 
 // todo remove this
 #include <iostream>
+#include <cmath>
 
 namespace prism {
-
-// forward declaration
+// ==================================================================================================
+// forward declarations
 template <class T>
 void swap(T& a, T& b);
+template <class RandomAccessIterator>
+void p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last);
+// ==================================================================================================
 
 /**
  * Searches the range \em [first,last) for the first occurrence of two consecutive elements
@@ -262,6 +266,26 @@ const bool is_sorted(ForwardIterator first, ForwardIterator last) {
 }
 
 /**
+ * Rearranges the elements in the range \em [first,last] so that they satisfy
+ * the order conditions of a heap.\n
+ * The range searched is \em [first,last), which contains all the elements
+ * between \em first and \em last, including the element pointed by \em first
+ * but not the element pointed by \em last.
+ */
+template <class RandomAccessIterator>
+void make_heap(RandomAccessIterator first, RandomAccessIterator last) {
+	using namespace std;
+
+	int heapSize = last-first;
+	RandomAccessIterator node = first + heapSize/2 - 1;
+
+	while (node >= first) {
+		p_heapify(node, first, last);
+		--node;
+	}
+}
+
+/**
  * Returns the largest of \em a and \em b.
  * If they are equivalent then \em a is returned.
  */
@@ -451,7 +475,9 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, Forward
 /**
  * Sorts the elements in the range \em [first,last] in ascending order using the quicksort algorithm.
  * The range used is [first1,last1), which contains all the elements between first1 and last1,
- * including the element pointed by first1 but not the element pointed by last1.
+ * including the element pointed by first1 but not the element pointed by last1. \n
+ * Currently \em sort() is implemented using the quicksort algorithm which averages
+ * a reasonable O(n log(n)) complexity.
  */
 template <class ForwardIterator>
 void sort(ForwardIterator first, ForwardIterator last) {
@@ -556,7 +582,50 @@ ForwardIterator2 swap_ranges(ForwardIterator1 first, ForwardIterator1 last, Forw
 	}
 	return otherFirst;
 }
+// ==================================================================================================
+// private
+// ==================================================================================================
+/**
+ * Private recursive function called by make_heap().
+ * Compare a node with its two children (if it has any) and ensures that the largest of the three
+ * nodes is the parent node.
+ */
+template <class RandomAccessIterator>
+void p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last) {
+
+	using namespace std;
+
+	cout << "heapifying!" << std::endl;
+
+	int nodeIndex = node-first;				// 5
+	int leftIndex = 2 * nodeIndex + 1;		// 11
+	int rightIndex = 2 * nodeIndex + 2;		// 12
+
+	RandomAccessIterator leftNode = first + leftIndex;
+	RandomAccessIterator rightNode = first + rightIndex;
+	RandomAccessIterator largestNode = node;  	// 9
+
+	if (leftNode < last && *largestNode < *leftNode)
+		largestNode = leftNode;
+
+	if (rightNode < last && *largestNode < *rightNode)
+		largestNode = rightNode;
+
+	if (node != largestNode) {
+		swap(*node, *largestNode);
+		p_heapify(largestNode, first, last);
+	}
+
+}
 
 }
 
 #endif /* PRISM_ALGORITHMS_H_ */
+
+
+
+
+
+
+
+

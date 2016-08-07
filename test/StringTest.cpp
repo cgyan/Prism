@@ -1100,9 +1100,315 @@ TEST_F(StringTest, trimmed) {
 	ASSERT_EQ(s.size(), 13);
 }
 
+/**
+ * Test: operator[]()
+ */
+TEST_F(StringTest, opBrackets) {
+	String s("test");
+	ASSERT_EQ(s[0], 't');
+	ASSERT_EQ(s[1], 'e');
+	ASSERT_EQ(s[2], 's');
+	ASSERT_EQ(s[3], 't');
 
+	s[0] = 'b';
+	ASSERT_EQ(s[0], 'b');
+}
 
+/**
+ * Test: const operator[]()
+ */
+TEST_F(StringTest, opBracketsConst) {
+	const String s("test");
+	ASSERT_EQ(s[0], 't');
+	ASSERT_EQ(s[1], 'e');
+	ASSERT_EQ(s[2], 's');
+	ASSERT_EQ(s[3], 't');
+}
 
+/**
+ * Test: operator=(string)
+ */
+TEST_F(StringTest, opAssignment_string) {
+	String s("bananas in pajamas");
+
+	// assign s to new string
+	String s2 = s;
+	ASSERT_EQ(s2, s);
+	ASSERT_EQ(s2.size(), s.size());
+	ASSERT_EQ(s2.capacity(), s.capacity());
+
+	// assign s to existing string
+	String s3("cat's pajamas");
+	s3 = s;
+	ASSERT_EQ(s3, s);
+	ASSERT_EQ(s3.size(), s.size());
+	ASSERT_EQ(s3.capacity(), s.capacity());
+}
+
+/**
+ * Test: operator=(cstring)
+ */
+TEST_F(StringTest, opAssignment_cstring) {
+	const char * cs = "bananas in pajamas";
+	int csSize = 18;
+
+	// assign cs to new string
+	String s2 = cs;
+	ASSERT_EQ(s2, cs);
+	ASSERT_EQ(s2.size(), csSize);
+
+	// assign cs to existing string
+	String s3("cat's pajamas");
+	s3 = cs;
+	ASSERT_EQ(s3, cs);
+	ASSERT_EQ(s3.size(), csSize);
+}
+
+/**
+ * Test: operator=(char)
+ */
+TEST_F(StringTest, opAssignment_char) {
+	char c = 'f';
+
+	// assign c to new string
+	String s2 = c;
+	ASSERT_EQ(s2, "f");
+	ASSERT_EQ(s2.size(), 1);
+
+	// assign c to existing string
+	String s3("cat's pajamas");
+	s3 = c;
+	ASSERT_EQ(s3, "f");
+	ASSERT_EQ(s3.size(), 1);
+}
+
+/**
+ * Test: operator+=(string)
+ */
+TEST_F(StringTest, opPlusEquals_string) {
+	String s("test");
+
+	// append s to new string
+	String s2;
+	s2 += s;
+	ASSERT_EQ(s2, "test");
+	ASSERT_EQ(s2.size(), 4);
+
+	// append s to existing string
+	String s3("google");
+	s3 += s;
+	ASSERT_EQ(s3, "googletest");
+	ASSERT_EQ(s3.size(), 10);
+}
+
+/**
+ * Test: operator+=(cstring)
+ */
+TEST_F(StringTest, opPlusEquals_cstring) {
+	const char * s = "test";
+
+	// append s to new string
+	String s2;
+	s2 += s;
+	ASSERT_EQ(s2, "test");
+	ASSERT_EQ(s2.size(), 4);
+
+	// append s to existing string
+	String s3("google");
+	s3 += s;
+	ASSERT_EQ(s3, "googletest");
+	ASSERT_EQ(s3.size(), 10);
+}
+
+/**
+ * Test: operator+=(char)
+ */
+TEST_F(StringTest, opPlusEquals_char) {
+	char c = '?';
+
+	// append c to new string
+	String s2;
+	s2 += c;
+	ASSERT_EQ(s2, "?");
+	ASSERT_EQ(s2.size(), 1);
+
+	// append c to existing string
+	String s3("google");
+	s3 += c;
+	ASSERT_EQ(s3, "google?");
+	ASSERT_EQ(s3.size(), 7);
+}
+// ============================================================================================
+// Static
+// ============================================================================================
+/**
+ * Test:: fromCharArray(cstring)
+ */
+TEST_F(StringTest, fromCharArray) {
+	const char * cs = "in the summertime";
+	String s = String::fromCharArray(cs);
+
+	ASSERT_EQ(s, cs);
+	ASSERT_EQ(s.size(), 17);
+}
+
+/**
+ * Test:: fromStdString(stdString)
+ */
+TEST_F(StringTest, fromStdString) {
+	std::string ss = "in the summertime";
+	String s = String::fromStdString(ss);
+
+	ASSERT_EQ(s, ss);
+	ASSERT_EQ(s.size(), ss.size());
+}
+
+/**
+ * Test: number(int)
+ */
+TEST_F(StringTest, number_int) {
+	int n = -123;
+	String s = String::number(n);
+
+	ASSERT_EQ(s, "-123");
+	ASSERT_EQ(s.size(), 4);
+}
+
+/**
+ * Test: number(unsigned int)
+ */
+TEST_F(StringTest, number_unsignedint) {
+	unsigned int n = 123;
+	String s = String::number(n);
+
+	ASSERT_EQ(s, "123");
+	ASSERT_EQ(s.size(), 3);
+}
+
+/**
+ * Test: number(long)
+ */
+TEST_F(StringTest, number_long) {
+	long n = -123;
+	String s = String::number(n);
+
+	ASSERT_EQ(s, "-123");
+	ASSERT_EQ(s.size(), 4);
+}
+
+/**
+ * Test: number(unsigned long)
+ */
+TEST_F(StringTest, number_unsignedlong) {
+	unsigned long n = 123;
+	String s = String::number(n);
+
+	ASSERT_EQ(s, "123");
+	ASSERT_EQ(s.size(), 3);
+}
+
+/**
+ * Test: number(double)
+ */
+TEST_F(StringTest, number_double_precision) {
+	double n = 3.14159;
+	String s = String::number(n);
+
+	ASSERT_EQ(s, "3.14159");
+	ASSERT_EQ(s.size(), 7);
+
+	s = String::number(n, 5);
+	ASSERT_EQ(s, "3.1416");
+	ASSERT_EQ(s.size(), 6);
+}
+
+/**
+ * Test: number(float)
+ */
+TEST_F(StringTest, number_float_precision) {
+	float n = 3.14159;
+	String s = String::number(n);
+
+	ASSERT_EQ(s, "3.14159");
+	ASSERT_EQ(s.size(), 7);
+
+	s = String::number(n, 5);
+	ASSERT_EQ(s, "3.1416");
+	ASSERT_EQ(s.size(), 6);
+}
+// ============================================================================================
+// Related non-members
+// ============================================================================================
+/**
+ * Test: operator==(string, string)
+ */
+TEST_F(StringTest, opEqualsEquals) {
+	String s1 = "test";
+	String s2 = "test";
+	ASSERT_TRUE(s1 == s2);
+	String s3 = "testing";
+	ASSERT_FALSE(s1 == s3);
+}
+
+/**
+ * Test: operator!=(string, string)
+ */
+TEST_F(StringTest, opNotEquals) {
+	String s1 = "test";
+	String s2 = "testing";
+	ASSERT_TRUE(s1 != s2);
+	String s3 = "test";
+	ASSERT_FALSE(s1 != s3);
+}
+
+/**
+ * Test: operator+(str1, str2)
+ */
+TEST_F(StringTest, opPlus_string_string) {
+	String s = String("google") + String("test");
+	ASSERT_EQ(s, "googletest");
+	ASSERT_EQ(s.size(), 10);
+}
+
+/**
+ * Test: operator+(string, cstring)
+ */
+TEST_F(StringTest, opPlus_string_cstring) {
+	const char * cs = "test";
+	String s = String("google") + cs;
+	ASSERT_EQ(s, "googletest");
+	ASSERT_EQ(s.size(), 10);
+}
+
+/**
+ * Test: operator+(cstring, string)
+ */
+TEST_F(StringTest, opPlus_cstring_string) {
+	const char * cs = "google";
+	String s = cs + String("test");
+	ASSERT_EQ(s, "googletest");
+	ASSERT_EQ(s.size(), 10);
+}
+
+/**
+ * Test: operator+(char, string)
+ */
+TEST_F(StringTest, opPlus_char_string) {
+	char c = 'g';
+	String s = c + String("oogle");
+	ASSERT_EQ(s, "google");
+	ASSERT_EQ(s.size(), 6);
+}
+
+/**
+ * Test: operator+(string, char)
+ */
+TEST_F(StringTest, opPlus_string_char) {
+	char c = 'e';
+	String s = String("googl") + c;
+	ASSERT_EQ(s, "google");
+	ASSERT_EQ(s.size(), 6);
+}
 
 
 

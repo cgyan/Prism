@@ -1,6 +1,6 @@
 /*
  * String.cpp
- * v0.1
+ * v1
  *
  *  Created on: Jul 11, 2016
  *      Author: iainhemstock
@@ -12,8 +12,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include <cctype>
-#include <functional>
 
 namespace prism {
 
