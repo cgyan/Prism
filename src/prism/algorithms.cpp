@@ -39,7 +39,7 @@ ForwardIterator adjacent_find(ForwardIterator first, ForwardIterator last) {
 }
 
 /**
- * Returns true if \em pred returns true for all the elements in the range \em [first,last)
+ * Returns true if \em pred returns true for all the elements in the range \em [first,last]
  * or if the range is empty, and false otherwise.
  */
 template <class InputIterator, class Predicate>
@@ -64,7 +64,7 @@ bool any_of(InputIterator first, InputIterator last, Predicate pred) {
 }
 
 /**
- * Copies the elements in the range \em [first,last) into the range beginning at \em otherFirst.
+ * Copies the elements in the range \em [first,last] into the range beginning at \em otherFirst.
  */
 template <class InputIterator, class OutputIterator>
 OutputIterator copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
@@ -91,7 +91,7 @@ BidirectionalIterator2 copy_backward(BidirectionalIterator1 first, Bidirectional
 }
 
 /**
- * Copies the elements in the range \em [first,last) for
+ * Copies the elements in the range \em [first,last] for
  * which \em pred returns true to the range beginning at \em otherFirst.
  */
 template <class InputIterator, class OutputIterator, class Predicate>
@@ -108,7 +108,8 @@ OutputIterator copy_if(InputIterator first, InputIterator last, OutputIterator o
 }
 
 /**
- * Copies the first \em n elements from the range beginning at \em first into the range beginning at \em otherFirst.
+ * Copies the first \em n elements from the range beginning at \em first
+ * into the range beginning at \em otherFirst.
  */
 template <class InputIterator, class Size, class OutputIterator>
 OutputIterator copy_n(InputIterator first, Size n, OutputIterator otherFirst) {
@@ -122,7 +123,7 @@ OutputIterator copy_n(InputIterator first, Size n, OutputIterator otherFirst) {
 }
 
 /**
- * Returns the number of elements in the range \em [first,last) that compare equal to \em value.
+ * Returns the number of elements in the range \em [first,last] that compare equal to \em value.
  */
 template <class InputIterator, class T>
 int count(InputIterator first, InputIterator last, const T& value) {
@@ -134,7 +135,7 @@ int count(InputIterator first, InputIterator last, const T& value) {
 }
 
 /**
- * Returns the number of elements in the range \em [first,last) for which \em pred is true.
+ * Returns the number of elements in the range \em [first,last] for which \em pred is true.
  */
 template <class InputIterator, class Predicate>
 int count_if(InputIterator first, InputIterator last, Predicate pred) {
@@ -159,10 +160,10 @@ void delete_range(ForwardIterator first, ForwardIterator last) {
 }
 
 /**
- * Compares the elements in the range \em [first1,last1) with those in the
- * range beginning at \em first2, and returns true if all of the
+ * Compares the elements in the range \em [first1,last1] with those in the
+ * range beginning at \em otherFirst, and returns true if all of the
  * elements in both ranges match. \n
- * The elements are compared using operator==.
+ * \note The elements being compared must support operator==().
  */
 template <class InputIterator1, class InputIterator2>
 bool equal(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst) {
@@ -175,7 +176,7 @@ bool equal(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst)
 }
 
 /**
- * Assigns \em value to all the elements in the range \em [first,last).
+ * Assigns \em value to all the elements in the range \em [first,last].
  */
 template <class ForwardIterator, class T>
 void fill(ForwardIterator first, ForwardIterator last, const T& value) {
@@ -198,7 +199,7 @@ void fill_n(ForwardIterator first, int size, const T& value) {
 }
 
 /**
- * Returns an iterator to the first element in the range \em [first,last)
+ * Returns an iterator to the first element in the range \em [first,last]
  * that compares equal to \em value. If no such element is found, the function returns \em last.
  */
 template <class InputIterator, class T>
@@ -211,7 +212,7 @@ InputIterator find(InputIterator first, InputIterator last, const T& value) {
 }
 
 /**
- * Returns an iterator to the first element in the range \em [first,last) for which \em pred returns true.
+ * Returns an iterator to the first element in the range \em [first,last] for which \em pred returns true.
  * If no such element is found, the function returns \em last.
  */
 template <class InputIterator, class Predicate>
@@ -239,7 +240,7 @@ InputIterator find_last(InputIterator first, InputIterator last, const T& value)
 }
 
 /**
- * Applies function \em func to each of the elements in the range \em [first,last).
+ * Applies function \em func to each of the elements in the range \em [first,last].
  */
 template <class InputIterator, class Function>
 Function for_each(InputIterator first, InputIterator last, Function func) {
@@ -308,7 +309,7 @@ const T& min(const T& a, const T& b) {
 }
 
 /**
- * Returns true if \em pred returns false for all the elements in the range \em [first,last)
+ * Returns true if \em pred returns false for all the elements in the range \em [first,last]
  * or if the range is empty, and false otherwise.
  */
 template <class InputIterator, class Predicate>
@@ -321,7 +322,7 @@ bool none_of(InputIterator first, InputIterator last, Predicate pred) {
 }
 
 /**
- * Transforms the range \em [first,last) into a range with all the elements that
+ * Transforms the range \em [first,last] into a range with all the elements that
  * compare equal to \em value removed, and returns an iterator to the new end of that range.
  */
 template <class ForwardIterator, class T>
@@ -338,7 +339,7 @@ ForwardIterator remove (ForwardIterator first, ForwardIterator last, const T& va
 }
 
 /**
- * Copies the elements in the range \em [first,last) to the range beginning at \em otherFirst,
+ * Copies the elements in the range \em [first,last] to the range beginning at \em otherFirst,
  * except those elements that compare equal to \em value.
  */
 template <class InputIterator, class OutputIterator, class T>
@@ -355,7 +356,7 @@ OutputIterator remove_copy (InputIterator first, InputIterator last, OutputItera
 }
 
 /**
- * Copies the elements in the range \em [first,last) to the range beginning at \em otherFirst,
+ * Copies the elements in the range \em [first,last] to the range beginning at \em otherFirst,
  * except those elements for which \em pred returns true.
  */
 template <class InputIterator, class OutputIterator, class UnaryPredicate>
@@ -372,7 +373,7 @@ OutputIterator remove_copy_if (InputIterator first, InputIterator last, OutputIt
 }
 
 /**
- * Transforms the range \em [first,last) into a range with all the elements for which
+ * Transforms the range \em [first,last] into a range with all the elements for which
  * \em pred returns true removed, and returns an iterator to the new end of that range.
  */
 template <class ForwardIterator, class Predicate>
@@ -389,7 +390,7 @@ ForwardIterator remove_if(ForwardIterator first, ForwardIterator last, Predicate
 }
 
 /**
- * Assigns \em newValue to all the elements in the range \em [first,last) that compare equal to \em oldValue.
+ * Assigns \em newValue to all the elements in the range \em [first,last] that compare equal to \em oldValue.
  */
 template <class ForwardIterator, class T>
 void replace(ForwardIterator first, ForwardIterator last, const T& oldValue, const T& newValue) {
@@ -401,7 +402,7 @@ void replace(ForwardIterator first, ForwardIterator last, const T& oldValue, con
 }
 
 /**
- * Copies the elements in the range \em [first,last) to the range beginning
+ * Copies the elements in the range \em [first,last] to the range beginning
  * at \em otherFirst, replacing the appearances of \em oldValue by \em newValue.
  */
 template <class InputIterator, class OutputIterator, class T>
@@ -420,7 +421,7 @@ OutputIterator replace_copy(InputIterator first, InputIterator last, OutputItera
 }
 
 /**
- * Copies the elements in the range \em [first,last) to the range beginning at \em otherFirst,
+ * Copies the elements in the range \em [first,last] to the range beginning at \em otherFirst,
  * replacing those for which \em pred returns true by newValue.
  */
 template <class InputIterator, class OutputIterator, class Predicate, class T>
@@ -437,7 +438,7 @@ OutputIterator replace_copy_if(InputIterator first, InputIterator last, OutputIt
 }
 
 /**
- * Assigns \em newValue to all the elements in the range \em [first,last) for which \em pred returns true.
+ * Assigns \em newValue to all the elements in the range \em [first,last] for which \em pred returns true.
  */
 template <class ForwardIterator, class Predicate, class T>
 void replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, const T& newValue) {
@@ -449,9 +450,9 @@ void replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, con
 }
 
 /**
- * Searches the range [first1,last1) for the first occurrence of the sequence defined by [first2,last2),
+ * Searches the range [first1,last1] for the first occurrence of the sequence defined by [first2,last2],
  * and returns an iterator to its first element, or last1 if no occurrences are found.
- * The range used is [first1,last1), which contains all the elements between first1 and last1,
+ * The range used is [first1,last1], which contains all the elements between first1 and last1,
  * including the element pointed by first1 but not the element pointed by last1.
  */
 template<class ForwardIterator1, class ForwardIterator2>
@@ -476,7 +477,7 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, Forward
 
 /**
  * Sorts the elements in the range \em [first,last] in ascending order using the quicksort algorithm.
- * The range used is [first1,last1), which contains all the elements between first1 and last1,
+ * The range used is [first1,last1], which contains all the elements between first1 and last1,
  * including the element pointed by first1 but not the element pointed by last1. \n
  * Currently \em sort() is implemented using the quicksort algorithm which averages
  * a reasonable O(n log(n)) complexity.
@@ -488,7 +489,7 @@ void sort(ForwardIterator first, ForwardIterator last) {
 
 /**
  * Sorts the elements in the range \em [first, last] in ascending order using the Bubble Sort algorithm. \n
- * The range used is \em [first,last), which contains all the elements between \em first and \em last,
+ * The range used is \em [first,last], which contains all the elements between \em first and \em last,
  * including the element pointed by \em first but not the element pointed by \em last.
  * \note The objects being sorted must support operator>().
  */
@@ -521,7 +522,9 @@ void sort_bubble(RandomAccessIterator first, RandomAccessIterator last) {
 
 /**
  * Sorts the elements in the range \em [first,last] using the heapsort algorithm. \n
- * The range used is \em [first,last), which contains all the elements between \em first and \em last,
+ * The elements are first rearranged so that they satisfy the ordering of a heap (by a
+ * call to make_heap()).\n
+ * The range used is \em [first,last], which contains all the elements between \em first and \em last,
  * including the element pointed by \em first but not the element pointed by \em last.
  */
 template <class RandomAccessIterator>
@@ -540,7 +543,7 @@ void sort_heap(RandomAccessIterator first, RandomAccessIterator last) {
 
 /**
  * Sorts the elements in the range \em [first, last] in ascending order using the Quicksort algorithm. \n
- * The range used is \em [first,last), which contains all the elements between \em first and \em last,
+ * The range used is \em [first,last], which contains all the elements between \em first and \em last,
  * including the element pointed by \em first but not the element pointed by \em last.
  * \note The objects being sorted must support operator<=().
  */
@@ -583,7 +586,7 @@ void swap(T& a, T& b) {
 }
 
 /**
- * Exchanges the values of each of the elements in the range \em [first1,last1)
+ * Exchanges the values of each of the elements in the range \em [first1,last1]
  * with those of their respective elements in the range beginning at \em otherFirst.
  */
 template <class ForwardIterator1, class ForwardIterator2>

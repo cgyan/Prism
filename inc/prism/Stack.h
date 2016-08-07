@@ -7,7 +7,7 @@
  */
 
 /*
- * todo add support for itializer list constructor and move constructor
+ * todo add support for initializer list constructor and move constructor
  * i.e. array<int> a = {1,2,3.4};
  */
 
@@ -15,6 +15,7 @@
 #define PRISM_STACK_H_
 
 #include <prism/Vector>
+#include <ostream>
 
 namespace prism {
 
@@ -25,7 +26,6 @@ private:
 public:
 				Stack();
 	const bool 	empty() const;
-	const bool 	isEmpty() const;
 	void 		pop();
 	void 		push(const T& value);
 	const int 	size() const;
@@ -52,15 +52,6 @@ Stack<T, ContainerType>::Stack() {
  */
 template <class T, class ContainerType>
 const bool Stack<T, ContainerType>::empty() const {
-	return container.empty();
-}
-
-/**
- * Returns true if the stack containers no elements and false otherwise.
- * Equivalent to empty().
- */
-template <class T, class ContainerType>
-const bool Stack<T, ContainerType>::isEmpty() const {
 	return container.empty();
 }
 
@@ -143,3 +134,12 @@ Stack<T, ContainerType>& Stack<T, ContainerType>::operator<<(const T& value) {
 }
 
 #endif /* PRISM_STACK_H_ */
+
+
+
+
+
+
+
+
+

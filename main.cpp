@@ -49,8 +49,10 @@ void print(int n) { cout << n << endl; }
 
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
-	::testing::GTEST_FLAG(filter) = "*algorithms*";
+	::testing::GTEST_FLAG(filter) = "*Stack*";
 	::testing::InitGoogleTest(&argc, argv);
+
+
 
 
 
