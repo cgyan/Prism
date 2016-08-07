@@ -1066,9 +1066,10 @@ TEST_F(StringTest, toLower) {
  * Test: toStdString()
  */
 TEST_F(StringTest, toStdString) {
-	String s("More Effective C++");
+	const char * cs = "More Effective C++";
+	String s(cs);
 	std::string ss = s.toStdString();
-	ASSERT_STREQ(ss.c_str(), "More Effective C++");
+	ASSERT_STREQ(ss.c_str(), cs);
 }
 
 /**

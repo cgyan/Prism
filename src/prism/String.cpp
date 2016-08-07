@@ -990,7 +990,11 @@ String String::toLower() const {
  * @return Returns a copy of this string as a std::string.
  */
 std::string String::toStdString() const {
-	return std::string(d->storage.start);
+	std::string ss;
+	ss.reserve(this->size());
+	prism::copy(begin(), end(), ss.begin());
+
+	return ss;
 }
 
 /**
