@@ -1,6 +1,7 @@
 var dir_86e08252e90321e8a01040f7cc774cfe =
 [
     [ "algorithms.cpp", "algorithms_8cpp.html", "algorithms_8cpp" ],
+    [ "Bitvector.cpp", "_bitvector_8cpp.html", null ],
     [ "Char.cpp", "_char_8cpp.html", "_char_8cpp" ],
     [ "Circle.cpp", "_circle_8cpp.html", "_circle_8cpp" ],
     [ "Fraction.cpp", "_fraction_8cpp.html", "_fraction_8cpp" ],

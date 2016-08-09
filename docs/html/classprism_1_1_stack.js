@@ -1,15 +1,21 @@
 var classprism_1_1_stack =
 [
-    [ "Stack", "classprism_1_1_stack.html#a4da568aa6d3ca0042123fdbe4ec131df", null ],
-    [ "empty", "classprism_1_1_stack.html#a186c8700a2150e20ccd3c44c5a233f57", null ],
-    [ "isEmpty", "classprism_1_1_stack.html#a4a3ffd6921356ad4bb7b5980c913d3b3", null ],
-    [ "operator!=", "classprism_1_1_stack.html#af12831daa5d4ba74a77d09fbf43250db", null ],
-    [ "operator+=", "classprism_1_1_stack.html#aaf33f28fe48772fdf5f50cb32e04ff4f", null ],
-    [ "operator<<", "classprism_1_1_stack.html#a246b7ed1175426ba782e6d07d5cc4813", null ],
-    [ "operator==", "classprism_1_1_stack.html#afc17fcd9588a6d9f95af0bef309f8425", null ],
-    [ "pop", "classprism_1_1_stack.html#ada448478a035c703d738d025370f0ad1", null ],
-    [ "push", "classprism_1_1_stack.html#a7477a66874bfcc5cfc7e16d7f0e8a3c1", null ],
-    [ "size", "classprism_1_1_stack.html#ad8805f421b46c591bde99520edfa5f28", null ],
-    [ "top", "classprism_1_1_stack.html#af33699fcb4ad2b0b3b20c39debe0d72a", null ],
-    [ "top", "classprism_1_1_stack.html#a33d812475def65e53b13ab5aa171e146", null ]
+    [ "Stack", "classprism_1_1_stack.html#aa28cd4f7d2c39d7f3828460d662c3725", null ],
+    [ "Stack", "classprism_1_1_stack.html#ae2de2835a81ce5f19d6463bb7641c44f", null ],
+    [ "~Stack", "classprism_1_1_stack.html#afd4f167bfe42d9b432d3d107a4fc1657", null ],
+    [ "capacity", "classprism_1_1_stack.html#a0933dadf5810c98d2e7c0c6ea1b65a56", null ],
+    [ "empty", "classprism_1_1_stack.html#a5e7e52656e03bdea14680f59f61219f9", null ],
+    [ "operator+=", "classprism_1_1_stack.html#a6a8ec445b5503fdc5e3358dd1b100a9c", null ],
+    [ "operator<<", "classprism_1_1_stack.html#a6b19a970604a4edc6cccbb61f226e9e9", null ],
+    [ "pop", "classprism_1_1_stack.html#a9c5679c5b671e0fc79d00c53462686a4", null ],
+    [ "push", "classprism_1_1_stack.html#a7fb1e3478da9ff6782e99142621f21f2", null ],
+    [ "reserve", "classprism_1_1_stack.html#ae4e7c5bfe1435e87b4d2b4bac5ff749b", null ],
+    [ "size", "classprism_1_1_stack.html#ae51ff6d366bbaca46e60e3445e74b52b", null ],
+    [ "squeeze", "classprism_1_1_stack.html#ac80cada72fa44835425cd86f530cd64b", null ],
+    [ "toList", "classprism_1_1_stack.html#a3df4ac477d015a536aceaeed8a94de69", null ],
+    [ "top", "classprism_1_1_stack.html#a5af5f0fa0b2011871f144014ecb9b706", null ],
+    [ "top", "classprism_1_1_stack.html#ae31d2e2ea1b8c80b7c48b5d88e0465d0", null ],
+    [ "toVector", "classprism_1_1_stack.html#ac373a993c993bbf07a485a2838c9cae9", null ],
+    [ "operator!=", "classprism_1_1_stack.html#aa79914f1e49ebf8bd569580a2113326d", null ],
+    [ "operator==", "classprism_1_1_stack.html#aeb1f035d92d81418856c1f1c1bec54b3", null ]
 ];

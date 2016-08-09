@@ -4,18 +4,21 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../test/BitvectorTest.cpp \
 ../test/ListTest.cpp \
 ../test/StackTest.cpp \
 ../test/StringTest.cpp \
 ../test/algorithmsTest.cpp 
 
 OBJS += \
+./test/BitvectorTest.o \
 ./test/ListTest.o \
 ./test/StackTest.o \
 ./test/StringTest.o \
 ./test/algorithmsTest.o 
 
 CPP_DEPS += \
+./test/BitvectorTest.d \
 ./test/ListTest.d \
 ./test/StackTest.d \
 ./test/StringTest.d \

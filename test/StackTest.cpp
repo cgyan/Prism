@@ -38,7 +38,11 @@ TEST_F(StackTest, empty) {
  */
 TEST_F(StackTest, pop) {
 	Stack<int> s;
-	s << 1 << 2 << 3 << 4 << 5;
+	s.push(1);
+	s.push(2);
+	s.push(3);
+	s.push(4);
+	s.push(5);
 
 	s.pop();
 	ASSERT_TRUE(s.size() == 4);
@@ -75,7 +79,11 @@ TEST_F(StackTest, size) {
  */
 TEST_F(StackTest, top) {
 	Stack<int> s;
-	s << 1 << 2 << 3 << 4 << 5;
+	s.push(1);
+	s.push(2);
+	s.push(3);
+	s.push(4);
+	s.push(5);
 
 	ASSERT_TRUE(s.top() == 5);
 }
@@ -83,18 +91,58 @@ TEST_F(StackTest, top) {
 /**
  * Test: operator==()
  */
+TEST_F(StackTest, opEqualsEquals) {
+	Stack<int> s1;
+	Stack<int> s2;
+	Stack<int> s3;
+
+	for (int i=0; i<5; i++) {
+		s1.push(i);
+		s2.push(i);
+	}
+
+	ASSERT_TRUE(s1 == s2);
+	ASSERT_FALSE(s1 == s3);
+}
 
 /**
  * Test: operator!=()
  */
+TEST_F(StackTest, opNotEquals) {
+	Stack<int> s1;
+	Stack<int> s2;
+	Stack<int> s3;
+
+	for (int i=0; i<5; i++) {
+		s1.push(i);
+		s2.push(i);
+	}
+
+	ASSERT_TRUE(s1 != s3);
+	ASSERT_FALSE(s1 != s2);
+}
 
 /**
- * Test: operator+=()
+ * Test: operator+=(value)
  */
+TEST_F(StackTest, opPlusEquals) {
+	Stack<int> s;
+	s += 1;
+
+	ASSERT_EQ(s.size(), 1);
+	ASSERT_TRUE(s.top() == 1);
+}
 
 /**
- * Test: operator<<()
+ * Test: operator<<(value)
  */
+TEST_F(StackTest, opStreamIn) {
+	Stack<int> s;
+	s << 1 << 2 << 3;
+
+	ASSERT_EQ(s.size(), 3);
+	ASSERT_TRUE(s.top() == 3);
+}
 
 }
 

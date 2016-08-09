@@ -5,6 +5,7 @@ var searchData=
   ['find',['find',['../namespaceprism.html#a1b543d9c2862a539cc8b770abda87561',1,'prism']]],
   ['find_5fif',['find_if',['../namespaceprism.html#aa17e9e6c80f8a52479a52450a108a636',1,'prism']]],
   ['find_5flast',['find_last',['../namespaceprism.html#a3189014b9fa31e0ef0d1933c6f616618',1,'prism']]],
+  ['finish',['finish',['../structprism_1_1_stack_data_1_1memory.html#aeeae0886f3cfbe168999abba59314045',1,'prism::StackData::memory']]],
   ['first',['first',['../classprism_1_1_array.html#a342f29ffb8147cca71c204777bca5b2e',1,'prism::Array::first()'],['../classprism_1_1_array.html#abf7cb06917a0bea41a0c260da91227a5',1,'prism::Array::first() const '],['../classprism_1_1_list.html#a5c20cbafe00fff084b1c48016a0b04f8',1,'prism::List::first()'],['../classprism_1_1_list.html#a2ff7747c0784e8f8f71a9365a241601e',1,'prism::List::first() const '],['../classprism_1_1_vector.html#a1e2ec6951430f9850702ef7c95a13166',1,'prism::Vector::first()'],['../classprism_1_1_vector.html#a5615ffd739ddca3ecadcc4357c4842c3',1,'prism::Vector::first() const ']]],
   ['flag',['Flag',['../classprism_1_1_flag.html#aa1d5c600767c5827d5b019c73316f8c5',1,'prism::Flag']]],
   ['flag',['Flag',['../classprism_1_1_flag.html',1,'prism']]],

@@ -1,6 +1,9 @@
 var dir_5ee054a0bd514c9ebd20d9d51922438b =
 [
     [ "Array.h", "_array_8h.html", "_array_8h" ],
+    [ "Bitvector.h", "_bitvector_8h.html", [
+      [ "Bitvector", "classprism_1_1_bitvector.html", "classprism_1_1_bitvector" ]
+    ] ],
     [ "Char.h", "_char_8h.html", [
       [ "Char", "classprism_1_1_char.html", "classprism_1_1_char" ]
     ] ],
@@ -53,6 +56,8 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
       [ "Size", "classprism_1_1_size.html", "classprism_1_1_size" ]
     ] ],
     [ "Stack.h", "_stack_8h.html", [
+      [ "StackData", "structprism_1_1_stack_data.html", "structprism_1_1_stack_data" ],
+      [ "memory", "structprism_1_1_stack_data_1_1memory.html", "structprism_1_1_stack_data_1_1memory" ],
       [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ]
     ] ],
     [ "String.h", "_string_8h.html", [

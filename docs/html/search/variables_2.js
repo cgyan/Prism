@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node',['node',['../structprism_1_1_list_iterator.html#a7cbe2359c823f13675bcc1c6bba48142',1,'prism::ListIterator::node()'],['../structprism_1_1_list_const_iterator.html#a373ff5f84e74e50e52ff94162207d68e',1,'prism::ListConstIterator::node()']]]
+  ['finish',['finish',['../structprism_1_1_stack_data_1_1memory.html#aeeae0886f3cfbe168999abba59314045',1,'prism::StackData::memory']]]
 ];

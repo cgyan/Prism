@@ -1,6 +1,7 @@
 var namespaceprism =
 [
     [ "Array", "classprism_1_1_array.html", "classprism_1_1_array" ],
+    [ "Bitvector", "classprism_1_1_bitvector.html", "classprism_1_1_bitvector" ],
     [ "Char", "classprism_1_1_char.html", "classprism_1_1_char" ],
     [ "Circle", "classprism_1_1_circle.html", "classprism_1_1_circle" ],
     [ "Exception", "classprism_1_1_exception.html", "classprism_1_1_exception" ],
@@ -24,6 +25,7 @@ var namespaceprism =
     [ "SharedPointer", "classprism_1_1_shared_pointer.html", "classprism_1_1_shared_pointer" ],
     [ "Size", "classprism_1_1_size.html", "classprism_1_1_size" ],
     [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ],
+    [ "StackData", "structprism_1_1_stack_data.html", "structprism_1_1_stack_data" ],
     [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ],
     [ "Vector", "classprism_1_1_vector.html", "classprism_1_1_vector" ],
     [ "Vector2", "classprism_1_1_vector2.html", "classprism_1_1_vector2" ],

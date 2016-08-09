@@ -1,6 +1,6 @@
 /*
  * Stack.h
- * v0.1
+ * v1
  *
  *  Created on: Jan 6, 2015
  *      Author: iainhemstock

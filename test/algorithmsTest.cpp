@@ -40,6 +40,13 @@ int * algorithmsTest::randIntArray(const int size, const int min, const int max)
 		a[i] = rand() % max;
 	return a;
 }
+
+/**
+ * Predicates for tests
+ */
+bool algorithmsTest_isOdd(const int n) { return n%2 == 1; }
+bool algorithmsTest_isEven(int n) { return n%2 == 0; }
+bool algorithmsTest_isNegative(int n) { return n<0; }
 // ============================================================
 // TESTS
 // ============================================================
@@ -54,6 +61,28 @@ TEST_F(algorithmsTest, adjacentFind) {
 
 	ASSERT_TRUE(pValue == 7);
 	ASSERT_TRUE(pIndex == 2	);
+}
+
+/**
+ * Test: all_of(first, last, pred)
+ */
+TEST_F(algorithmsTest, all_of) {
+	int a[5] = {2,4,6,8,10};
+	bool allEven = all_of(a, a+5, algorithmsTest_isEven);
+	bool allOdd = all_of(a, a+5, algorithmsTest_isOdd);
+	ASSERT_TRUE(allEven);
+	ASSERT_FALSE(allOdd);
+}
+
+/**
+ * Test: any_of(first, last, pred)
+ */
+TEST_F(algorithmsTest, any_of) {
+	int a[6] = {2,4,6,-12,8,10};
+	bool anyNeg = any_of(a, a+6, algorithmsTest_isNegative);
+	bool anyOdd = any_of(a, a+6, algorithmsTest_isOdd);
+	ASSERT_TRUE(anyNeg);
+	ASSERT_FALSE(anyOdd);
 }
 
 /**

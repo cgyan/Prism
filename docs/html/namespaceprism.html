@@ -116,6 +116,8 @@ $(document).ready(function(){initNavTree('namespaceprism.html','');});
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html">Array</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_bitvector.html">Bitvector</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_char.html">Char</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_circle.html">Circle</a></td></tr>
@@ -161,6 +163,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_size.html">Size</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_stack.html">Stack</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_stack_data.html">StackData</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_string.html">String</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -622,7 +626,7 @@ template&lt;class InputIterator , class Predicate &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns true if <em>pred</em> returns true for all the elements in the range <em></em>[first,last) or if the range is empty, and false otherwise. </p>
+<p>Returns true if <em>pred</em> returns true for all the elements in the range <em></em>[first,last] or if the range is empty, and false otherwise. </p>
 
 </div>
 </div>
@@ -692,7 +696,7 @@ template&lt;class InputIterator , class OutputIterator &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copies the elements in the range <em></em>[first,last) into the range beginning at <em>otherFirst</em>. </p>
+<p>Copies the elements in the range <em></em>[first,last] into the range beginning at <em>otherFirst</em>. </p>
 
 </div>
 </div>
@@ -768,7 +772,7 @@ template&lt;class InputIterator , class OutputIterator , class Predicate &gt; </
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copies the elements in the range <em></em>[first,last) for which <em>pred</em> returns true to the range beginning at <em>otherFirst</em>. </p>
+<p>Copies the elements in the range <em></em>[first,last] for which <em>pred</em> returns true to the range beginning at <em>otherFirst</em>. </p>
 
 </div>
 </div>
@@ -838,7 +842,7 @@ template&lt;class InputIterator , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the number of elements in the range <em></em>[first,last) that compare equal to <em>value</em>. </p>
+<p>Returns the number of elements in the range <em></em>[first,last] that compare equal to <em>value</em>. </p>
 
 </div>
 </div>
@@ -873,7 +877,7 @@ template&lt;class InputIterator , class Predicate &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns the number of elements in the range <em></em>[first,last) for which <em>pred</em> is true. </p>
+<p>Returns the number of elements in the range <em></em>[first,last] for which <em>pred</em> is true. </p>
 
 </div>
 </div>
@@ -937,8 +941,8 @@ template&lt;class InputIterator1 , class InputIterator2 &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Compares the elements in the range <em></em>[first1,last1) with those in the range beginning at <em>first2</em>, and returns true if all of the elements in both ranges match. <br />
-The elements are compared using operator==. </p>
+<p>Compares the elements in the range <em></em>[first1,last1] with those in the range beginning at <em>otherFirst</em>, and returns true if all of the elements in both ranges match. <br />
+</p><dl class="section note"><dt>Note</dt><dd>The elements being compared must support <a class="el" href="namespaceprism.html#ae53d52e8a36ec7ca58ea1731cc18f1d8">operator==()</a>. </dd></dl>
 
 </div>
 </div>
@@ -973,7 +977,7 @@ template&lt;class ForwardIterator , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Assigns <em>value</em> to all the elements in the range <em></em>[first,last). </p>
+<p>Assigns <em>value</em> to all the elements in the range <em></em>[first,last]. </p>
 
 </div>
 </div>
@@ -1043,7 +1047,7 @@ template&lt;class InputIterator , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns an iterator to the first element in the range <em></em>[first,last) that compares equal to <em>value</em>. If no such element is found, the function returns <em>last</em>. </p>
+<p>Returns an iterator to the first element in the range <em></em>[first,last] that compares equal to <em>value</em>. If no such element is found, the function returns <em>last</em>. </p>
 
 </div>
 </div>
@@ -1078,7 +1082,7 @@ template&lt;class InputIterator , class Predicate &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns an iterator to the first element in the range <em></em>[first,last) for which <em>pred</em> returns true. If no such element is found, the function returns <em>last</em>. </p>
+<p>Returns an iterator to the first element in the range <em></em>[first,last] for which <em>pred</em> returns true. If no such element is found, the function returns <em>last</em>. </p>
 
 </div>
 </div>
@@ -1148,7 +1152,7 @@ template&lt;class InputIterator , class Function &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Applies function <em>func</em> to each of the elements in the range <em></em>[first,last). </p>
+<p>Applies function <em>func</em> to each of the elements in the range <em></em>[first,last]. </p>
 
 </div>
 </div>
@@ -1300,7 +1304,7 @@ template&lt;class InputIterator , class Predicate &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Returns true if <em>pred</em> returns false for all the elements in the range <em></em>[first,last) or if the range is empty, and false otherwise. </p>
+<p>Returns true if <em>pred</em> returns false for all the elements in the range <em></em>[first,last] or if the range is empty, and false otherwise. </p>
 
 </div>
 </div>
@@ -4704,7 +4708,7 @@ template&lt;class ForwardIterator , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Transforms the range <em></em>[first,last) into a range with all the elements that compare equal to <em>value</em> removed, and returns an iterator to the new end of that range. </p>
+<p>Transforms the range <em></em>[first,last] into a range with all the elements that compare equal to <em>value</em> removed, and returns an iterator to the new end of that range. </p>
 
 </div>
 </div>
@@ -4745,7 +4749,7 @@ template&lt;class InputIterator , class OutputIterator , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copies the elements in the range <em></em>[first,last) to the range beginning at <em>otherFirst</em>, except those elements that compare equal to <em>value</em>. </p>
+<p>Copies the elements in the range <em></em>[first,last] to the range beginning at <em>otherFirst</em>, except those elements that compare equal to <em>value</em>. </p>
 
 </div>
 </div>
@@ -4786,7 +4790,7 @@ template&lt;class InputIterator , class OutputIterator , class UnaryPredicate &g
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copies the elements in the range <em></em>[first,last) to the range beginning at <em>otherFirst</em>, except those elements for which <em>pred</em> returns true. </p>
+<p>Copies the elements in the range <em></em>[first,last] to the range beginning at <em>otherFirst</em>, except those elements for which <em>pred</em> returns true. </p>
 
 </div>
 </div>
@@ -4821,7 +4825,7 @@ template&lt;class ForwardIterator , class Predicate &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Transforms the range <em></em>[first,last) into a range with all the elements for which <em>pred</em> returns true removed, and returns an iterator to the new end of that range. </p>
+<p>Transforms the range <em></em>[first,last] into a range with all the elements for which <em>pred</em> returns true removed, and returns an iterator to the new end of that range. </p>
 
 </div>
 </div>
@@ -4862,7 +4866,7 @@ template&lt;class ForwardIterator , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Assigns <em>newValue</em> to all the elements in the range <em></em>[first,last) that compare equal to <em>oldValue</em>. </p>
+<p>Assigns <em>newValue</em> to all the elements in the range <em></em>[first,last] that compare equal to <em>oldValue</em>. </p>
 
 </div>
 </div>
@@ -4909,7 +4913,7 @@ template&lt;class InputIterator , class OutputIterator , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copies the elements in the range <em></em>[first,last) to the range beginning at <em>otherFirst</em>, replacing the appearances of <em>oldValue</em> by <em>newValue</em>. </p>
+<p>Copies the elements in the range <em></em>[first,last] to the range beginning at <em>otherFirst</em>, replacing the appearances of <em>oldValue</em> by <em>newValue</em>. </p>
 
 </div>
 </div>
@@ -4956,7 +4960,7 @@ template&lt;class InputIterator , class OutputIterator , class Predicate , class
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Copies the elements in the range <em></em>[first,last) to the range beginning at <em>otherFirst</em>, replacing those for which <em>pred</em> returns true by newValue. </p>
+<p>Copies the elements in the range <em></em>[first,last] to the range beginning at <em>otherFirst</em>, replacing those for which <em>pred</em> returns true by newValue. </p>
 
 </div>
 </div>
@@ -4997,7 +5001,7 @@ template&lt;class ForwardIterator , class Predicate , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Assigns <em>newValue</em> to all the elements in the range <em></em>[first,last) for which <em>pred</em> returns true. </p>
+<p>Assigns <em>newValue</em> to all the elements in the range <em></em>[first,last] for which <em>pred</em> returns true. </p>
 
 </div>
 </div>
@@ -5038,7 +5042,7 @@ template&lt;class ForwardIterator1 , class ForwardIterator2 &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Searches the range [first1,last1) for the first occurrence of the sequence defined by [first2,last2), and returns an iterator to its first element, or last1 if no occurrences are found. The range used is [first1,last1), which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. </p>
+<p>Searches the range [first1,last1] for the first occurrence of the sequence defined by [first2,last2], and returns an iterator to its first element, or last1 if no occurrences are found. The range used is [first1,last1], which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. </p>
 
 </div>
 </div>
@@ -5067,7 +5071,7 @@ template&lt;class ForwardIterator &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sorts the elements in the range <em></em>[first,last] in ascending order using the quicksort algorithm. The range used is [first1,last1), which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. <br />
+<p>Sorts the elements in the range <em></em>[first,last] in ascending order using the quicksort algorithm. The range used is [first1,last1], which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. <br />
 Currently <em><a class="el" href="namespaceprism.html#a9bf397cad0a67b67fbd1ecddf40d405e">sort()</a></em> is implemented using the quicksort algorithm which averages a reasonable O(n log(n)) complexity. </p>
 
 </div>
@@ -5098,7 +5102,7 @@ template&lt;class RandomAccessIterator &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Sorts the elements in the range <em></em>[first, last] in ascending order using the Bubble Sort algorithm. <br />
-The range used is <em></em>[first,last), which contains all the elements between <em>first</em> and <em>last</em>, including the element pointed by <em>first</em> but not the element pointed by <em>last</em>. </p><dl class="section note"><dt>Note</dt><dd>The objects being sorted must support <a class="el" href="namespaceprism.html#ab8a312729c4c9ae72836d0034a6f0758">operator&gt;()</a>. </dd></dl>
+The range used is <em></em>[first,last], which contains all the elements between <em>first</em> and <em>last</em>, including the element pointed by <em>first</em> but not the element pointed by <em>last</em>. </p><dl class="section note"><dt>Note</dt><dd>The objects being sorted must support <a class="el" href="namespaceprism.html#ab8a312729c4c9ae72836d0034a6f0758">operator&gt;()</a>. </dd></dl>
 
 </div>
 </div>
@@ -5128,7 +5132,8 @@ template&lt;class RandomAccessIterator &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Sorts the elements in the range <em></em>[first,last] using the heapsort algorithm. <br />
-The range used is <em></em>[first,last), which contains all the elements between <em>first</em> and <em>last</em>, including the element pointed by <em>first</em> but not the element pointed by <em>last</em>. </p>
+The elements are first rearranged so that they satisfy the ordering of a heap (by a call to <a class="el" href="namespaceprism.html#af8e36230e6cb92a41aaca282772a9e6e">make_heap()</a>).<br />
+The range used is <em></em>[first,last], which contains all the elements between <em>first</em> and <em>last</em>, including the element pointed by <em>first</em> but not the element pointed by <em>last</em>. </p>
 
 </div>
 </div>
@@ -5158,7 +5163,7 @@ template&lt;class ForwardIterator &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Sorts the elements in the range <em></em>[first, last] in ascending order using the Quicksort algorithm. <br />
-The range used is <em></em>[first,last), which contains all the elements between <em>first</em> and <em>last</em>, including the element pointed by <em>first</em> but not the element pointed by <em>last</em>. </p><dl class="section note"><dt>Note</dt><dd>The objects being sorted must support <a class="el" href="namespaceprism.html#a87d86e9266469c8a40537e12a560b066">operator&lt;=()</a>. </dd></dl>
+The range used is <em></em>[first,last], which contains all the elements between <em>first</em> and <em>last</em>, including the element pointed by <em>first</em> but not the element pointed by <em>last</em>. </p><dl class="section note"><dt>Note</dt><dd>The objects being sorted must support <a class="el" href="namespaceprism.html#a87d86e9266469c8a40537e12a560b066">operator&lt;=()</a>. </dd></dl>
 
 </div>
 </div>
@@ -5222,7 +5227,7 @@ template&lt;class ForwardIterator1 , class ForwardIterator2 &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Exchanges the values of each of the elements in the range <em></em>[first1,last1) with those of their respective elements in the range beginning at <em>otherFirst</em>. </p>
+<p>Exchanges the values of each of the elements in the range <em></em>[first1,last1] with those of their respective elements in the range beginning at <em>otherFirst</em>. </p>
 
 </div>
 </div>

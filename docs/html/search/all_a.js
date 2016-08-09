@@ -14,6 +14,8 @@ var searchData=
   ['matrix4_2ecpp',['Matrix4.cpp',['../_matrix4_8cpp.html',1,'']]],
   ['matrix4_2eh',['Matrix4.h',['../_matrix4_8h.html',1,'']]],
   ['max',['max',['../namespaceprism.html#a812456273adfa37979e79f07e731d412',1,'prism']]],
+  ['memory',['memory',['../structprism_1_1_stack_data_1_1memory.html#a8436051bcae1547f2b35b3dd00cb9bcd',1,'prism::StackData::memory']]],
+  ['memory',['memory',['../structprism_1_1_stack_data_1_1memory.html',1,'prism::StackData']]],
   ['mid',['mid',['../classprism_1_1_array.html#a184d0853ea009fb9d156c1302d46a87d',1,'prism::Array::mid()'],['../classprism_1_1_vector.html#ad15f2817fe441c22bbbdb1e1ecfe9aed',1,'prism::Vector::mid()']]],
   ['min',['min',['../namespaceprism.html#a10aff0aca673fb1837069dd8967e4738',1,'prism']]],
   ['movebottom',['moveBottom',['../classprism_1_1_circle.html#a6392112dd312ec8564596fe00b1e48fa',1,'prism::Circle::moveBottom()'],['../classprism_1_1_rect.html#ad9305fe8528c64db65ef9bd34c3578b8',1,'prism::Rect::moveBottom()']]],
