@@ -14,10 +14,10 @@ namespace prism {
 struct BitvectorData {
 	struct memory  {
 		unsigned short int * start; // unsigned short int is 16 bits each
-		unsigned short int * end;
 		unsigned short int * finish;
-		memory() : start(0), end(0), finish() {}
-		~memory() { delete []start; start=0; end=0; finish=0; }
+		int nBits;
+		memory() : start(0), finish(0), nBits(0) {}
+		~memory() { delete []start; start=0; finish=0; nBits=0; }
 	};
 	memory storage;
 };
@@ -27,14 +27,17 @@ struct BitvectorData {
 class Bitvector {
 private:
 	BitvectorData * d;
-private:
-	Bitvector() : d(new BitvectorData) {}
-	void reserve(const int nBytes);
 public:
 	Bitvector(const int nBits);
 	virtual ~Bitvector();
 
+	const bool get(const int pos) const;
 	const int size() const;
+
+private:
+	Bitvector() : d(new BitvectorData) {}
+	const bool rangeCheck(const int n) const;
+	void reserve(const int nBytes);
 };
 
 } /* namespace prism */
