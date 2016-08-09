@@ -32,12 +32,34 @@ TEST_F(BitvectorTest, get) {
 }
 
 /**
- * Test: set(pos, bool)
+ * Test: reset()
+ */
+TEST_F(BitvectorTest, reset) {
+	Bitvector bv(8);
+	bv.set(0);
+	bv.set(25);
+	bv.set(49);
+	bv.set(61);
+
+	bv.reset();
+	ASSERT_EQ(bv.toString(), "00000000");
+}
+
+/**
+ * Test: set()
  */
 TEST_F(BitvectorTest, set) {
+	Bitvector bv(8);
+	bv.set();
+	ASSERT_EQ(bv.toString(), "11111111");
+}
+
+/**
+ * Test: set(pos, bool)
+ */
+TEST_F(BitvectorTest, set_pos_bool) {
 	Bitvector bv(16);
 	bv.set(1, true);
-	cout << bv.get(1) << endl;
 }
 
 /**
@@ -56,7 +78,14 @@ TEST_F(BitvectorTest, size) {
  * Test: toString()
  */
 TEST_F(BitvectorTest, toString) {
+	Bitvector bv(8);
+	bv.set(0);
+	bv.set(2);
+	bv.set(4);
+	bv.set(7);
 
+	String s = bv.toString();
+	ASSERT_EQ(s, "10010101");
 }
 
 }

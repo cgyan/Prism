@@ -76,21 +76,20 @@ int main(int argc, char * argv[]) {
 //	cout << "bool has " << bytes << " bytes" << " (" << (8*bytes) << " bits)" << endl;
 //	cout << "================================================"<<endl;
 ////
-//	//   0000 0000 0000 0001 n
-//	//   0000 0000 0000 0100 mask
+//	//   0000 0000 0000 0000 n
+//	//   0000 0000 0000 0010 mask
 //	// &
 //	//   0000 0000 0000 0101 result
 //	unsigned short int n 	= 1;
 //	n				 		= (n<<16);
 //	cout << n << endl;
 //
-	Bitvector bv;
-	bv.set(1);
-	cout << bv.toString() << endl;
-	cout << bv.get(1) << endl;
 
 
-//	return RUN_ALL_TESTS();
+
+
+
+	return RUN_ALL_TESTS();
 //	return 0;
 }
 

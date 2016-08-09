@@ -35,6 +35,8 @@ public:
 	virtual ~Bitvector();
 
 	const bool 	get(const int pos) const;
+	void		reset();
+	void		set();
 	void 		set(const int pos, const bool b=true);
 	const int 	size() const;
 	String		toString() const;

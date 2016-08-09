@@ -64,7 +64,7 @@ const bool Bitvector::get(const int pos) const {
 	int bit = pos % (8 * sizeof(signed short int));
 
 	int mask = 1 << bit;
-	return (d->storage.start[cell] & mask) >> 1;
+	return (d->storage.start[cell] & mask) >> mask;
 }
 
 /**
@@ -73,6 +73,17 @@ const bool Bitvector::get(const int pos) const {
 const bool Bitvector::rangeCheck(const int n) const {
 	if (n < 0 || n > d->storage.nBits) return false;
 	return true;
+}
+
+/**
+ *
+ */
+void Bitvector::reset() {
+	unsigned short int * it = d->storage.start;
+	while (it != d->storage.finish) {
+		*it = *it & 0;
+		++it;
+	}
 }
 
 /**
@@ -93,6 +104,17 @@ void Bitvector::reserve(const int nBytes) {
 /**
  *
  */
+void Bitvector::set() {
+	unsigned short int * it = d->storage.start;
+	while (it != d->storage.finish) {
+		*it = *it | 1;
+		++it;
+	}
+}
+
+/**
+ *
+ */
 void Bitvector::set(const int pos, const bool b) {
 	if (!rangeCheck(pos))
 		throw OutOfBoundsException(pos);
@@ -100,12 +122,11 @@ void Bitvector::set(const int pos, const bool b) {
 	int cell = pos / (8 * sizeof(signed short int));
 	int bit = pos % (8 * sizeof(signed short int));
 
-	// 0000
-	// 0001
-	//
-
 	int mask = 1 << bit;
-	d->storage.start[cell] = (d->storage.start[cell] | mask);
+
+	if (b) d->storage.start[cell] = (d->storage.start[cell] | mask); 	// set bit to 1
+	else d->storage.start[cell] = d->storage.start[cell] & ~mask; 		// set bit to 0
+
 }
 
 /**
