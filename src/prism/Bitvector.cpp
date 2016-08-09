@@ -7,12 +7,23 @@
  */
 
 #include <prism/Bitvector.h>
+//#include <prism/String>
 #include <prism/algorithms>
 #include <prism/OutOfBoundsException>
 #include <iostream>
 using namespace std;//todo remove this
 
 namespace prism {
+
+/**
+ *
+ */
+Bitvector::Bitvector()
+	: d(new BitvectorData)
+{
+	reserve(1);
+	d->storage.nBits = 16;
+}
 
 /**
  * Creates a new Bitvector that contains \em nBits. \n
@@ -46,11 +57,14 @@ Bitvector::~Bitvector() {
  *
  */
 const bool Bitvector::get(const int pos) const {
-	if (rangeCheck(pos)) {
-
-	}
-	else
+	if (!rangeCheck(pos))
 		throw OutOfBoundsException(pos);
+
+	int cell = pos / (8 * sizeof(signed short int));
+	int bit = pos % (8 * sizeof(signed short int));
+
+	int mask = 1 << bit;
+	return (d->storage.start[cell] & mask) >> 1;
 }
 
 /**
@@ -59,13 +73,6 @@ const bool Bitvector::get(const int pos) const {
 const bool Bitvector::rangeCheck(const int n) const {
 	if (n < 0 || n > d->storage.nBits) return false;
 	return true;
-}
-
-/**
- * @return Returns the number of bits in the Bitvector.
- */
-const int Bitvector::size() const {
-	return d->storage.nBits;
 }
 
 /**
@@ -83,4 +90,59 @@ void Bitvector::reserve(const int nBytes) {
 	}
 }
 
+/**
+ *
+ */
+void Bitvector::set(const int pos, const bool b) {
+	if (!rangeCheck(pos))
+		throw OutOfBoundsException(pos);
+
+	int cell = pos / (8 * sizeof(signed short int));
+	int bit = pos % (8 * sizeof(signed short int));
+
+	// 0000
+	// 0001
+	//
+
+	int mask = 1 << bit;
+	d->storage.start[cell] = (d->storage.start[cell] | mask);
+}
+
+/**
+ * @return Returns the number of bits in the Bitvector.
+ */
+const int Bitvector::size() const {
+	return d->storage.nBits;
+}
+
+/**
+ *
+ */
+String Bitvector::toString() const {
+	String s;
+	s.reserve(d->storage.nBits);
+
+	for (int i=d->storage.nBits-1; i>=0; i--)
+		s += String::number(get(i));
+
+	return s;
+}
+
 } /* namespace prism */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

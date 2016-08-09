@@ -9,6 +9,8 @@
 #ifndef PRISM_BITVECTOR_H_
 #define PRISM_BITVECTOR_H_
 
+#include <prism/String>
+
 namespace prism {
 
 struct BitvectorData {
@@ -28,16 +30,18 @@ class Bitvector {
 private:
 	BitvectorData * d;
 public:
+	Bitvector();
 	Bitvector(const int nBits);
 	virtual ~Bitvector();
 
-	const bool get(const int pos) const;
-	const int size() const;
+	const bool 	get(const int pos) const;
+	void 		set(const int pos, const bool b=true);
+	const int 	size() const;
+	String		toString() const;
 
 private:
-	Bitvector() : d(new BitvectorData) {}
-	const bool rangeCheck(const int n) const;
-	void reserve(const int nBytes);
+	const bool 	rangeCheck(const int n) const;
+	void 		reserve(const int nBytes);
 };
 
 } /* namespace prism */

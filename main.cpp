@@ -37,7 +37,7 @@
 #include <prism/String>
 #include <prism/Char>
 #include <prism/algorithms>
-#include <bitset>
+#include <prism/Bitvector>
 
 
 using namespace prism;
@@ -84,11 +84,13 @@ int main(int argc, char * argv[]) {
 //	n				 		= (n<<16);
 //	cout << n << endl;
 //
-//
+	Bitvector bv;
+	bv.set(1);
+	cout << bv.toString() << endl;
+	cout << bv.get(1) << endl;
 
 
-
-	return RUN_ALL_TESTS();
+//	return RUN_ALL_TESTS();
 //	return 0;
 }
 

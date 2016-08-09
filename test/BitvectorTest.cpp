@@ -26,7 +26,18 @@ TEST_F(BitvectorTest, constructor) {
  * Test: get(pos)
  */
 TEST_F(BitvectorTest, get) {
+	Bitvector bv(20);
+	bool bit = bv.get(0);
+	ASSERT_FALSE(bit);
+}
 
+/**
+ * Test: set(pos, bool)
+ */
+TEST_F(BitvectorTest, set) {
+	Bitvector bv(16);
+	bv.set(1, true);
+	cout << bv.get(1) << endl;
 }
 
 /**
@@ -41,5 +52,26 @@ TEST_F(BitvectorTest, size) {
 	ASSERT_EQ(bv2.size(), 17);
 }
 
+/**
+ * Test: toString()
+ */
+TEST_F(BitvectorTest, toString) {
+
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
