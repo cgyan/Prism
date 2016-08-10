@@ -37,37 +37,30 @@ Bitvector::Bitvector(const int nBits)
 	: d(new BitvectorData)
 {
 	d->storage.nBits = nBits;
-	int usiBits = sizeof(unsigned short int) * 8;
-	int nBytes;
-
-	if (nBits % usiBits == 0) nBytes = nBits / usiBits;
-	else nBytes = nBits / usiBits + 1;
-
-	reserve(nBytes);
+	reserve(numBytes(nBits));
 }
 
 /**
- *
+ * Creates a new Bitvector from the string \em bitString.
+ * \code
+ * 	String s = "11101110";
+ *	Bitvector bv(s);
+ *	cout << bv.toString(); // output: 11101110
+ * \endcode
  */
 Bitvector::Bitvector(const String & bitString)
 	: d(new BitvectorData)
 {
 	d->storage.nBits = bitString.size();
-	int usiBits = sizeof(unsigned short int) * 8;
-	int nBytes;
-
-	if (d->storage.nBits % usiBits == 0) nBytes = d->storage.nBits / usiBits;
-	else nBytes = d->storage.nBits / usiBits + 1;
-
+	int nBytes = numBytes(d->storage.nBits);
 	reserve(nBytes);
 
-	String::const_iterator eit = bitString.constEnd();
-	String::const_iterator bit = bitString.constBegin();
+	String bs(bitString);
 
-	int i = 0;
-	while (--eit >= bit) {
-		if (*eit == Char('1')) set(i);
-		++i;
+	for (int i=0; i<d->storage.nBits; i++) {
+		if (*(bs.end()-1) == Char('1'))
+			set(i);
+		bs.chop(1);
 	}
 }
 
@@ -108,6 +101,19 @@ const bool Bitvector::get(int bit) const {
 }
 
 /**
+ * Private method that returns the number of bytes needed to hold \em nBits.
+ */
+const int Bitvector::numBytes(const int nBits) const {
+	int usiBits = sizeof(unsigned short int) * 8;
+	int nBytes;
+
+	if (nBits % usiBits == 0) nBytes = nBits / usiBits;
+	else nBytes = nBits / usiBits + 1;
+
+	return nBytes;
+}
+
+/**
  * Private method that performs a bounds check on the index \em n.
  * Returns true if \em n is is within bounds and false if not.
  */
@@ -125,9 +131,6 @@ void Bitvector::resetAll() {
 		*it = *it & 0;
 		++it;
 	}
-//	int s = size();
-//	for (int i=0; i<s; i++)
-//		set(i, false);
 }
 
 /**
@@ -177,8 +180,8 @@ void Bitvector::set(int bit, const bool b) {
 	int cell = bit / (8 * sizeof(unsigned short int));
 	bit = bit % (8 * sizeof(unsigned short int));
 
-	if (b) d->storage.start[0] = d->storage.start[cell] | (1<<bit); 	// set bit to 1
-	else d->storage.start[cell] = d->storage.start[cell] & ~(1<<bit);			// set bit to 0
+	if (b) d->storage.start[cell] = d->storage.start[cell] | (1<<bit); 	// set bit to 1
+	else d->storage.start[cell] = d->storage.start[cell] & ~(1<<bit);	// set bit to 0
 }
 
 /**
@@ -210,6 +213,38 @@ String Bitvector::toString() const {
 }
 
 /**
+ * Shifts all the bits in the Bitvector to the left by \em shift places.
+ * @return Returns a reference to this Bitvector.
+ */
+Bitvector & Bitvector::operator <<(const int shift) {
+
+	Bitvector copy(this->size());
+
+	// set each bit before the shift to 0
+	for (int i=0; i<shift; i++)
+		copy.set(i, false);
+
+	int j = 0;
+	for (int i=shift; i<copy.d->storage.nBits; i++, j++)
+		copy.set(i, get(j));
+
+	return *this = copy;
+}
+
+/**
+ * Assigns \em other to this Bitvector.
+ */
+Bitvector & Bitvector::operator =(const Bitvector & other) {
+	if (*this == other) return *this;
+
+	reserve(numBytes(d->storage.nBits));
+	prism::copy(other.d->storage.start, other.d->storage.finish, this->d->storage.start);
+	d->storage.finish = d->storage.start + other.size();
+
+	return *this;
+}
+
+/**
  *
  */
 const bool operator==(const Bitvector & bv1, const Bitvector & bv2) {
@@ -229,7 +264,7 @@ const bool operator!=(const Bitvector & bv1, const Bitvector & bv2) {
  * Allows an instance of Bitvector to be written to the ostream and returns a reference to the ostream.
  */
 std::ostream & operator<<(std::ostream & out, const Bitvector & bv) {
-	out << "Bitvector [" << &bv << "] ";
+	out << "Bitvector [" << &bv << "] (size:" << bv.size() << " bits) ";
 	for (int bit=bv.d->storage.nBits-1; bit>=0; bit--) {
 		out << bv.get(bit);
 	}

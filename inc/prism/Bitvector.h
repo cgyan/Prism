@@ -44,12 +44,16 @@ public:
 	const int 	size() const;
 	String		toString() const;
 
+	Bitvector &	operator<<(const int shift);
+	Bitvector & operator=(const Bitvector & other);
+
 	// related non members
 	friend const bool		operator==(const Bitvector & bv1, const Bitvector & bv2);
 	friend const bool		operator!=(const Bitvector & bv1, const Bitvector & bv2);
 	friend std::ostream & 	operator<<(std::ostream & out, const Bitvector &bv);
 
 private:
+	const int	numBytes(const int nBits) const;
 	const bool 	rangeCheck(const int n) const;
 	void 		reserve(const int nBytes);
 };
