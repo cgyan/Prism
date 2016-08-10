@@ -7,6 +7,8 @@ class \hyperlink{classprism_1_1_array}{Array}
 \item 
 class \hyperlink{classprism_1_1_bitvector}{Bitvector}
 \item 
+struct \hyperlink{structprism_1_1_bitvector_data}{Bitvector\+Data}
+\item 
 class \hyperlink{classprism_1_1_char}{Char}
 \item 
 class \hyperlink{classprism_1_1_circle}{Circle}
@@ -159,6 +161,8 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a720fbbcb3f399b006969bb00a66686f9}{sort\+\_\+quicksort} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{swap\+\_\+ranges} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
+\item 
+std\+::ostream \& \hyperlink{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv)
 \item 
 const bool \hyperlink{namespaceprism_a1ba68b64a6cfdcff9e144b8c2476cddb}{operator==} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
 \item 
@@ -1351,6 +1355,14 @@ Returns true if {\itshape c1} has a smaller radius than {\itshape c2}, false oth
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_acad408bf2576dfc62a573cb44aa895fb}{}\label{namespaceprism_acad408bf2576dfc62a573cb44aa895fb}
 Returns an ostream object that allows this object to printed with std\+::cout \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Bitvector \&bv)}{operator<<(std::ostream &out, const Bitvector &bv)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Bitvector} \&}]{bv}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{}\label{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}
+\index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Point \&p)}{operator<<(std::ostream &out, const Point &p)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}

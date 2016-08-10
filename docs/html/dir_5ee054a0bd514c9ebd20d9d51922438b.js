@@ -2,6 +2,8 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
 [
     [ "Array.h", "_array_8h.html", "_array_8h" ],
     [ "Bitvector.h", "_bitvector_8h.html", [
+      [ "BitvectorData", "structprism_1_1_bitvector_data.html", "structprism_1_1_bitvector_data" ],
+      [ "memory", "structprism_1_1_bitvector_data_1_1memory.html", "structprism_1_1_bitvector_data_1_1memory" ],
       [ "Bitvector", "classprism_1_1_bitvector.html", "classprism_1_1_bitvector" ]
     ] ],
     [ "Char.h", "_char_8h.html", [

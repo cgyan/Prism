@@ -50,42 +50,9 @@ void print(int n) { cout << n << endl; }
 
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
-	::testing::GTEST_FLAG(filter) = "*Bitvector*";
+	// to run a single test within a test case use: "*Class.test*"
+	::testing::GTEST_FLAG(filter) = "*BitvectorTest*";
 	::testing::InitGoogleTest(&argc, argv);
-
-
-	int bytes;
-
-//	int bytes = sizeof(short int);
-//	cout << "short int has " << bytes << " bytes" << " (" << (8*bytes) << " bits)" << endl;
-//	cout << "================================================"<<endl;
-//
-	bytes = sizeof(unsigned short int);
-	cout << "unsigned short int has " << bytes << " bytes" << " (" << (8*bytes) << " bits)" << endl;
-	cout << "================================================"<<endl;
-//
-//	bytes = sizeof(signed long int);
-//	cout << "signed long int has " << bytes << " bytes" << " (" << (8*bytes) << " bits)" << endl;
-//	cout << "================================================"<<endl;
-//
-//	bytes = sizeof(char);
-//	cout << "char has " << bytes << " bytes" << " (" << (8*bytes) << " bits)" << endl;
-//	cout << "================================================"<<endl;
-//
-//	bytes = sizeof(bool);
-//	cout << "bool has " << bytes << " bytes" << " (" << (8*bytes) << " bits)" << endl;
-//	cout << "================================================"<<endl;
-////
-//	//   0000 0000 0000 0000 n
-//	//   0000 0000 0000 0010 mask
-//	// &
-//	//   0000 0000 0000 0101 result
-//	unsigned short int n 	= 1;
-//	n				 		= (n<<16);
-//	cout << n << endl;
-//
-
-
 
 
 

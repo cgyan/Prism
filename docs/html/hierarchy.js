@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "prism::Array< T >", "classprism_1_1_array.html", null ],
     [ "prism::Bitvector", "classprism_1_1_bitvector.html", null ],
+    [ "prism::BitvectorData", "structprism_1_1_bitvector_data.html", null ],
     [ "prism::Char", "classprism_1_1_char.html", null ],
     [ "prism::Circle", "classprism_1_1_circle.html", null ],
     [ "prism::Exception", "classprism_1_1_exception.html", [
@@ -15,6 +16,7 @@ var hierarchy =
     [ "prism::ListIterator< Node, T >", "structprism_1_1_list_iterator.html", null ],
     [ "prism::Mathf", "classprism_1_1_mathf.html", null ],
     [ "prism::Matrix4", "classprism_1_1_matrix4.html", null ],
+    [ "prism::BitvectorData::memory", "structprism_1_1_bitvector_data_1_1memory.html", null ],
     [ "prism::StackData< T >::memory", "structprism_1_1_stack_data_1_1memory.html", null ],
     [ "prism::Point", "classprism_1_1_point.html", null ],
     [ "prism::Pointf", "classprism_1_1_pointf.html", null ],

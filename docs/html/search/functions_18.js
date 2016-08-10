@@ -7,7 +7,7 @@ var searchData=
   ['_7efraction',['~Fraction',['../classprism_1_1_fraction.html#a1a7170988796417122c670c2139dc933',1,'prism::Fraction']]],
   ['_7elist',['~List',['../classprism_1_1_list.html#aaa8567cc4eb408e62117f1a9782629ba',1,'prism::List']]],
   ['_7ematrix4',['~Matrix4',['../classprism_1_1_matrix4.html#aa2117a89fa9caa8dc2b412edca5e0dd5',1,'prism::Matrix4']]],
-  ['_7ememory',['~memory',['../structprism_1_1_stack_data_1_1memory.html#aa6972f951a723c1254625cd5981be21a',1,'prism::StackData::memory']]],
+  ['_7ememory',['~memory',['../structprism_1_1_bitvector_data_1_1memory.html#ad1bcb9f7b335bcbe7bcad827c54fef82',1,'prism::BitvectorData::memory::~memory()'],['../structprism_1_1_stack_data_1_1memory.html#aa6972f951a723c1254625cd5981be21a',1,'prism::StackData::memory::~memory()']]],
   ['_7epoint',['~Point',['../classprism_1_1_point.html#a948aa05b80053c019bf963315a2cea8a',1,'prism::Point']]],
   ['_7epointf',['~Pointf',['../classprism_1_1_pointf.html#aa1917073115feeeae7ef0065b01435a9',1,'prism::Pointf']]],
   ['_7equaternion',['~Quaternion',['../classprism_1_1_quaternion.html#a1430a69408c646b34a90ea10616599ea',1,'prism::Quaternion']]],
