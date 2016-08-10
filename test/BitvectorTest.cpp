@@ -144,17 +144,59 @@ TEST_F(BitvectorTest, toString) {
 }
 
 /**
- * Test: operator<<(shift)
+ * Test: operator<<(pos)
  */
 TEST_F(BitvectorTest, opShiftLeft) {
-	//							  ^
+
 	Bitvector bv("00000000000000000000000000001111"); // 32 digits
-	//							  ^
-	bv << 1;
+
+	bv = bv << 1;
 	ASSERT_TRUE(bv.toString() == "00000000000000000000000000011110");
 
-	bv << 30;
+	bv = bv << 30;
 	ASSERT_TRUE(bv.toString() == "10000000000000000000000000000000");
+}
+
+/**
+ * Test: operator>>(pos)
+ */
+TEST_F(BitvectorTest, opShiftRight) {
+
+	Bitvector bv("11110000000000000000000000001111"); // 32 digits
+
+	bv = bv >> 1;
+	ASSERT_TRUE(bv.toString() == "01111000000000000000000000000111");
+
+	bv = bv >> 2;
+	ASSERT_TRUE(bv.toString() == "00011110000000000000000000000001");
+}
+
+/**
+ * Test: operator<<=(pos)
+ */
+TEST_F(BitvectorTest, opShiftLeftEquals) {
+
+	Bitvector bv("00000000000000000000000000001111"); // 32 digits
+
+	bv <<= 1;
+	ASSERT_TRUE(bv.toString() == "00000000000000000000000000011110");
+
+	bv <<= 30;
+	ASSERT_TRUE(bv.toString() == "10000000000000000000000000000000");
+}
+
+/**
+ * Test: operator>>=(pos)
+ */
+TEST_F(BitvectorTest, opShiftRightEquals) {
+
+	Bitvector bv("11110000000000000000000000001111"); // 32 digits
+
+	bv >>= 1;
+	ASSERT_TRUE(bv.toString() == "01111000000000000000000000000111");
+
+	bv >>= 2;
+	ASSERT_TRUE(bv.toString() == "00011110000000000000000000000001");
 }
 
 /**

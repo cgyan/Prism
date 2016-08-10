@@ -37,15 +37,18 @@ public:
 	Bitvector(const Bitvector & copy);
 	virtual ~Bitvector();
 
-	const bool 	get(int bit) const;
-	void		resetAll();
-	void		setAll();
-	void 		set(int bit, const bool b=true);
-	const int 	size() const;
-	String		toString() const;
+	const bool 		get(int bit) const;
+	void			resetAll();
+	void			setAll();
+	void 			set(int bit, const bool b=true);
+	const int 		size() const;
+	String			toString() const;
 
-	Bitvector &	operator<<(const int shift);
-	Bitvector & operator=(const Bitvector & other);
+	Bitvector 		operator<<(const int pos) const;
+	Bitvector 		operator>>(const int pos) const;
+	Bitvector &		operator<<=(const int pos);
+	Bitvector &		operator>>=(const int pos);
+	Bitvector & 	operator=(const Bitvector & other);
 
 	// related non members
 	friend const bool		operator==(const Bitvector & bv1, const Bitvector & bv2);

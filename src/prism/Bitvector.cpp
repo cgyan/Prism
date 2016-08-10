@@ -213,22 +213,49 @@ String Bitvector::toString() const {
 }
 
 /**
- * Shifts all the bits in the Bitvector to the left by \em shift places.
+ * Shifts all the bits in the Bitvector to the left by \em pos places.
  * @return Returns a reference to this Bitvector.
  */
-Bitvector & Bitvector::operator <<(const int shift) {
+Bitvector Bitvector::operator <<(const int pos) const {
 
 	Bitvector copy(this->size());
 
-	// set each bit before the shift to 0
-	for (int i=0; i<shift; i++)
-		copy.set(i, false);
-
 	int j = 0;
-	for (int i=shift; i<copy.d->storage.nBits; i++, j++)
+	for (int i=pos; i<copy.d->storage.nBits; i++, j++)
 		copy.set(i, get(j));
 
-	return *this = copy;
+	return copy;
+}
+
+/**
+ * Shifts all the bits in the Bitvector to the left by \em pos places.
+ * @return Returns a reference to this Bitvector.
+ */
+Bitvector Bitvector::operator >>(const int pos) const {
+
+	Bitvector copy(this->size());
+
+	int j=0;
+	for (int i=pos; i<copy.d->storage.nBits; i++, j++)
+		copy.set(j, get(i));
+
+	return copy;
+}
+
+/**
+ *
+ */
+Bitvector & Bitvector::operator <<=(const int pos) {
+	*this = *this << pos;
+	return *this;
+}
+
+/**
+ *
+ */
+Bitvector & Bitvector::operator >>=(const int pos) {
+	*this = *this >> pos;
+	return *this;
 }
 
 /**

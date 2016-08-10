@@ -55,8 +55,11 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 
+	Bitvector bv("111100001111");
+	cout << (bv >>= 1);
 
-	return RUN_ALL_TESTS();
+
+//	return RUN_ALL_TESTS();
 //	return 0;
 }
 
