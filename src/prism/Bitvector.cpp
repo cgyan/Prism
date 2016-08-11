@@ -11,11 +11,10 @@
 #include <prism/algorithms>
 #include <prism/OutOfBoundsException>
 #include <prism/UnequalSizeException>
-#include <iostream>
-using namespace std;//todo remove this
+#include <ostream>
 
 namespace prism {
-typedef unsigned short int MemBlock;
+typedef unsigned long long int MemBlock;
 /**
  * Creates a new Bitvector that contains by default 16 bits.
  */
@@ -24,21 +23,22 @@ Bitvector::Bitvector()
 {
 	d->storage.nBits = sizeof(MemBlock) * 8;
 	reserve(1);
+	resetAll();
 }
 
 /**
  * Creates a new Bitvector that contains \em nBits. \n
  * More precisely the bitvector will contain enough bytes to represent the requested
- * number of bits. i.e. internally the storage is represented in unsigned short ints
- * which are 16 bits each so its size will always be a multiple of 16. If a Bitvector
- * with 10 bits is requested then the Bitvector will have a size of 16, if 23 bits
- * are requested then Bitvector will have a size of 32 etc.
+ * number of bits. i.e. internally the storage is represented in unsigned long long ints
+ * which are 64 bits each so its size will always be a multiple of 64. If a Bitvector
+ * with 10 bits is requested then the Bitvector will reserve 64 bits but still a size of 10.
  */
 Bitvector::Bitvector(const int nBits)
 	: d(new BitvectorData)
 {
 	d->storage.nBits = nBits;
 	reserve(numBytes(nBits));
+	resetAll();
 }
 
 /**
@@ -55,6 +55,7 @@ Bitvector::Bitvector(const String & bitString)
 	d->storage.nBits = bitString.size();
 	int nBytes = numBytes(d->storage.nBits);
 	reserve(nBytes);
+	resetAll();
 
 	String bs(bitString);
 
@@ -72,6 +73,7 @@ Bitvector::Bitvector(const Bitvector & other)
 	: d(new BitvectorData)
 {
 	reserve(other.d->storage.finish-other.d->storage.start);
+	resetAll();
 	prism::copy(other.d->storage.start, other.d->storage.finish, this->d->storage.start);
 	d->storage.nBits = other.d->storage.nBits;
 }
@@ -81,6 +83,36 @@ Bitvector::Bitvector(const Bitvector & other)
  */
 Bitvector::~Bitvector() {
 	delete d;
+}
+
+/**
+ * @return Returns true if all of the bits are set to 1.
+ */
+const bool Bitvector::all() const {
+	for (int i=0; i<d->storage.nBits; i++)
+		if (get(i) == 0) return false;
+	return true;
+}
+
+/**
+ * @return Returns true if any of the bits are set to 1.
+ */
+const bool Bitvector::any() const {
+	for (int i=0; i<d->storage.nBits; i++)
+		if (get(i)) return true;
+	return false;
+
+}
+
+/**
+ * @return Returns the number of bits that have been set to 1.
+ */
+const int Bitvector::count() const {
+	int n=0;
+	for (int i=0; i<d->storage.nBits; i++)
+		if (get(i)) ++n;
+	return n;
+
 }
 
 /**
@@ -119,14 +151,23 @@ const bool Bitvector::get(int bit) const {
 }
 
 /**
+ * @return Returns true if none of the bits are set to 1, false otherwise.
+ */
+const bool Bitvector::none() const {
+	for (int i=0; i<d->storage.nBits; i++)
+		if (get(i) == 1) return false;
+	return true;
+}
+
+/**
  * Private method that returns the number of bytes needed to hold \em nBits.
  */
 const int Bitvector::numBytes(const int nBits) const {
-	int usiBits = sizeof(MemBlock) * 8;
+	int nBlockBits = sizeof(MemBlock) * 8;
 	int nBytes;
 
-	if (nBits % usiBits == 0) nBytes = nBits / usiBits;
-	else nBytes = nBits / usiBits + 1;
+	if (nBits % nBlockBits == 0) nBytes = nBits / nBlockBits;
+	else nBytes = nBits / nBlockBits + 1;
 
 	return nBytes;
 }
@@ -136,7 +177,7 @@ const int Bitvector::numBytes(const int nBits) const {
  * Returns true if \em n is is within bounds and false if not.
  */
 const bool Bitvector::rangeCheck(const int n) const {
-	if (n < 0 || n > d->storage.nBits) return false;
+	if (n < 0 || n >= d->storage.nBits) return false;
 	return true;
 }
 
@@ -231,6 +272,38 @@ String Bitvector::toString() const {
 }
 
 /**
+ *
+ */
+MemBlock Bitvector::to_ull() const {
+//	if (d->storage.nBits > sizeof(MemBlock) * 8)
+//		return -1;
+//
+//	MemBlock * it = d->storage.start;
+//	String s;
+//
+//	while (it != d->storage.finish) {
+//		MemBlock mb = *it;
+//		s += String::number(mb);
+//	}
+//
+//	return
+}
+
+/**
+ * @return Returns the value of the bit at position \em bit.
+ */
+bool Bitvector::operator [](const int bit) {
+	return get(bit);
+}
+
+/**
+ * @return Returns the value of the bit at position \em bit.
+ */
+const bool Bitvector::operator [](const int bit) const {
+	return get(bit);
+}
+
+/**
  * @return Returns a copy of this Bitvector that has had all its bits shifted
  * to the left by \em pos positions.
  */
@@ -279,7 +352,8 @@ Bitvector & Bitvector::operator >>=(const int pos) {
 }
 
 /**
- *
+ * Flips all the bits from zeros to ones or from ones to zeros. Equivalent to flipAll().
+ * @return A copy of this Bitvector which has had all of its bits flipped.
  */
 Bitvector Bitvector::operator ~() const {
 	Bitvector copy(*this);
@@ -290,6 +364,33 @@ Bitvector Bitvector::operator ~() const {
 		++blockIt;
 	}
 	return copy;
+}
+
+/**
+ * Performs a bitwise AND on this Bitvector and \em other.
+ * @return Returns a reference to this Bitvector updated with the result of (this bitvector & other).
+ */
+Bitvector & Bitvector::operator &=(const Bitvector & other) {
+	*this = *this & other;
+	return *this;
+}
+
+/**
+ * Performs a bitwise OR on this Bitvector and \em other.
+ * @return Returns a reference to this Bitvector updated with the result of (this bitvector | other).
+ */
+Bitvector & Bitvector::operator |=(const Bitvector & other) {
+	*this = *this | other;
+	return *this;
+}
+
+/**
+ * Performs a bitwise XOR on this Bitvector and \em other.
+ * @return Returns a reference to this Bitvector updated with the result of (this bitvector & other).
+ */
+Bitvector & Bitvector::operator ^=(const Bitvector & other) {
+	*this = *this ^ other;
+	return *this;
 }
 
 /**
@@ -375,7 +476,7 @@ Bitvector operator^(const Bitvector & bv1, const Bitvector & bv2) {
 }
 
 /**
- *
+ * @return Returns true if the two Bitvectors are equal to each other, false otherwise.
  */
 const bool operator==(const Bitvector & bv1, const Bitvector & bv2) {
 	if (bv1.size() != bv2.size())
@@ -384,7 +485,7 @@ const bool operator==(const Bitvector & bv1, const Bitvector & bv2) {
 }
 
 /**
- *
+ * @return Returns true if the two Bitvectors are not equal to each other, flase otherwise.
  */
 const bool operator!=(const Bitvector & bv1, const Bitvector & bv2) {
 	return !(bv1==bv2);

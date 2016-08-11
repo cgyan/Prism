@@ -13,7 +13,7 @@
 #include <ostream>
 
 namespace prism {
-typedef unsigned short int MemBlock;
+typedef unsigned long long int MemBlock;
 
 struct BitvectorData {
 	struct memory  {
@@ -38,20 +38,30 @@ public:
 	Bitvector(const Bitvector & copy);
 	virtual ~Bitvector();
 
+	const bool		all() const;
+	const bool		any() const;
+	const int		count() const;
 	void			flip(int bit);
 	void			flipAll();
 	const bool 		get(int bit) const;
+	const bool		none() const;
 	void			resetAll();
 	void 			set(int bit, const bool b=true);
 	void			setAll();
 	const int 		size() const;
 	String			toString() const;
+	MemBlock		to_ull() const;
 
+	bool			operator[](const int bit);
+	const bool		operator[](const int bit) const;
 	Bitvector 		operator<<(const int pos) const;
 	Bitvector 		operator>>(const int pos) const;
 	Bitvector &		operator<<=(const int pos);
 	Bitvector &		operator>>=(const int pos);
 	Bitvector 		operator~() const;
+	Bitvector &		operator&=(const Bitvector & other);
+	Bitvector &		operator|=(const Bitvector & other);
+	Bitvector &		operator^=(const Bitvector & other);
 	Bitvector & 	operator=(const Bitvector & other);
 
 	// related non members

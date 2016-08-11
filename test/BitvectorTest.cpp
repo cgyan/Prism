@@ -19,7 +19,16 @@ class BitvectorTest : public ::testing::Test {
  * Test: Bitvector(nBits)
  */
 TEST_F(BitvectorTest, constructor) {
-	Bitvector bv(16);
+	Bitvector bv;
+}
+
+/**
+ * Test: constructor(nBits)
+ */
+TEST_F(BitvectorTest, constructor_nBits) {
+	Bitvector bv(20);
+
+	ASSERT_TRUE(bv.size() == 20);
 }
 
 /**
@@ -46,7 +55,41 @@ TEST_F(BitvectorTest, copyConstructor) {
 }
 
 /**
- * flip(bit)
+ * Test: all()
+ */
+TEST_F(BitvectorTest, all) {
+	Bitvector bv("0000");
+	ASSERT_FALSE(bv.all());
+	bv.set(1);
+	ASSERT_FALSE(bv.all());
+	bv.setAll();
+	ASSERT_TRUE(bv.all());
+}
+
+/**
+ * Test: any()
+ */
+TEST_F(BitvectorTest, any) {
+	Bitvector bv("0000");
+	ASSERT_FALSE(bv.any());
+	bv.set(1);
+	ASSERT_TRUE(bv.any());
+}
+
+/**
+ * Test: count()
+ */
+TEST_F(BitvectorTest, count) {
+	Bitvector bv("111100001111");
+	ASSERT_EQ(bv.count(), 8);
+	bv.setAll();
+	ASSERT_EQ(bv.count(), 12);
+	bv.resetAll();
+	ASSERT_EQ(bv.count(), 0);
+}
+
+/**
+ * TEST: flip(bit)
  */
 TEST_F(BitvectorTest, flip) {
 	Bitvector bv("11100100011101010");
@@ -84,6 +127,16 @@ TEST_F(BitvectorTest, get) {
 	ASSERT_FALSE(bv.get(1));
 	ASSERT_FALSE(bv.get(3));
 	ASSERT_FALSE(bv.get(5));
+}
+
+/**
+ * Test: none()
+ */
+TEST_F(BitvectorTest, none) {
+	Bitvector bv("111000110010");
+	ASSERT_FALSE(bv.none());
+	bv.resetAll();
+	ASSERT_TRUE(bv.none());
 }
 
 /**
@@ -168,6 +221,44 @@ TEST_F(BitvectorTest, toString) {
 }
 
 /**
+ * Test: operator[]()
+ */
+TEST_F(BitvectorTest, opBrackets) {
+	Bitvector bv("111100001010");
+	ASSERT_EQ(bv[0], 0);
+	ASSERT_EQ(bv[1], 1);
+	ASSERT_EQ(bv[2], 0);
+	ASSERT_EQ(bv[3], 1);
+	ASSERT_EQ(bv[4], 0);
+	ASSERT_EQ(bv[5], 0);
+	ASSERT_EQ(bv[6], 0);
+	ASSERT_EQ(bv[7], 0);
+	ASSERT_EQ(bv[8], 1);
+	ASSERT_EQ(bv[9], 1);
+	ASSERT_EQ(bv[10], 1);
+	ASSERT_EQ(bv[11], 1);
+}
+
+/**
+ * Test: const operator[]()
+ */
+TEST_F(BitvectorTest, opConstBrackets) {
+	const Bitvector bv("111100001010");
+	ASSERT_EQ(bv[0], 0);
+	ASSERT_EQ(bv[1], 1);
+	ASSERT_EQ(bv[2], 0);
+	ASSERT_EQ(bv[3], 1);
+	ASSERT_EQ(bv[4], 0);
+	ASSERT_EQ(bv[5], 0);
+	ASSERT_EQ(bv[6], 0);
+	ASSERT_EQ(bv[7], 0);
+	ASSERT_EQ(bv[8], 1);
+	ASSERT_EQ(bv[9], 1);
+	ASSERT_EQ(bv[10], 1);
+	ASSERT_EQ(bv[11], 1);
+}
+
+/**
  * Test: operator<<(pos)
  */
 TEST_F(BitvectorTest, opShiftLeft) {
@@ -189,6 +280,7 @@ TEST_F(BitvectorTest, opShiftRight) {
 	Bitvector bv("11110000000000000000000000001111"); // 32 digits
 
 	bv = bv >> 1;
+	cout << bv.toString() << endl;
 	ASSERT_TRUE(bv.toString() == "01111000000000000000000000000111");
 
 	bv = bv >> 2;
@@ -221,6 +313,49 @@ TEST_F(BitvectorTest, opShiftRightEquals) {
 
 	bv >>= 2;
 	ASSERT_TRUE(bv.toString() == "00011110000000000000000000000001");
+}
+
+/**
+ * Test: operator~()
+ */
+TEST_F(BitvectorTest, opBitwiseNOT) {
+	Bitvector bv("111011001000");
+	bv = ~bv;
+
+	ASSERT_EQ(bv.toString(), "000100110111");
+}
+
+/**
+ * Test: operator&=()
+ */
+TEST_F(BitvectorTest, opBitwiseANDEquals) {
+	Bitvector bv1("110010101111");
+	Bitvector bv2("101010101010");
+	bv1 &= bv2;
+
+	ASSERT_EQ(bv1.toString(), "100010101010");
+}
+
+/**
+ * Test: operator|=()
+ */
+TEST_F(BitvectorTest, opBitwiseOREquals) {
+	Bitvector bv1("110010101111");
+	Bitvector bv2("101010101010");
+	bv1 |= bv2;
+
+	ASSERT_EQ(bv1.toString(), "111010101111");
+}
+
+/**
+ * Test: operator^=()
+ */
+TEST_F(BitvectorTest, opBitwiseXOREquals) {
+	Bitvector bv1("110010101111");
+	Bitvector bv2("101010101010");
+	bv1 ^= bv2;
+
+	ASSERT_EQ(bv1.toString(), "011000000101");
 }
 
 /**
