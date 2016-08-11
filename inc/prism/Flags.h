@@ -1,5 +1,5 @@
 /**
-* Completely and shamelessly lifted from Qt's QFlag/QFlags classes and macros and just renamed without the prepended 'Q'.
+* Completely and shamefully lifted from Qt's QFlag/QFlags classes and macros and just renamed without the prepended 'Q'.
 * These classes allow enums to be treated as datatypes when passed to methods.
 * They are also type-safe so that the receiving method is expecting the enum and not the basic int equivalent.
 * So printFlag(Label::AlignLeft) works whilst printFlag(2) doesn't.

@@ -10,18 +10,19 @@
 #include <prism/Char>
 #include <prism/algorithms>
 #include <prism/OutOfBoundsException>
+#include <prism/UnequalSizeException>
 #include <iostream>
 using namespace std;//todo remove this
 
 namespace prism {
-
+typedef unsigned short int MemBlock;
 /**
  * Creates a new Bitvector that contains by default 16 bits.
  */
 Bitvector::Bitvector()
 	: d(new BitvectorData)
 {
-	d->storage.nBits = sizeof(unsigned short int) * 8; // 16 bits
+	d->storage.nBits = sizeof(MemBlock) * 8;
 	reserve(1);
 }
 
@@ -83,19 +84,36 @@ Bitvector::~Bitvector() {
 }
 
 /**
+ * Flips \em bit from zero to one or from one to zero.
+ */
+void Bitvector::flip(int bit) {
+	int cell = bit / (8 * sizeof(MemBlock));
+	bit = bit % (8 * sizeof(MemBlock));
+
+	d->storage.start[cell] = d->storage.start[cell] ^ (1<<bit);
+}
+
+/**
+ * Flips each bit converting zeros to ones and ones to zeros.
+ */
+void Bitvector::flipAll() {
+	*this = ~(*this);
+}
+
+/**
  * @return Returns the value of the bit at position \em bit.
  * \code
- * Bitvector bv;
- * bv.set(4);
- * cout << bv.get(4); // output: 1
+ * Bitvector bv; 		// 0000
+ * bv.set(3); 			// 1000
+ * cout << bv.get(3); 	// output: 1
  * \endcode
  */
 const bool Bitvector::get(int bit) const {
 	if (!rangeCheck(bit))
 		throw OutOfBoundsException(bit);
 
-	int cell = bit / (8 * sizeof(unsigned short int));
-	bit = bit % (8 * sizeof(unsigned short int));
+	int cell = bit / (8 * sizeof(MemBlock));
+	bit = bit % (8 * sizeof(MemBlock));
 
 	return ((d->storage.start[cell] & (1<<bit)) >> bit);
 }
@@ -104,7 +122,7 @@ const bool Bitvector::get(int bit) const {
  * Private method that returns the number of bytes needed to hold \em nBits.
  */
 const int Bitvector::numBytes(const int nBits) const {
-	int usiBits = sizeof(unsigned short int) * 8;
+	int usiBits = sizeof(MemBlock) * 8;
 	int nBytes;
 
 	if (nBits % usiBits == 0) nBytes = nBits / usiBits;
@@ -126,7 +144,7 @@ const bool Bitvector::rangeCheck(const int n) const {
  * Resets all the bits in the Bitvector to 0.
  */
 void Bitvector::resetAll() {
-	unsigned short int * it = d->storage.start;
+	MemBlock * it = d->storage.start;
 	while (it != d->storage.finish) {
 		*it = *it & 0;
 		++it;
@@ -138,29 +156,13 @@ void Bitvector::resetAll() {
  */
 void Bitvector::reserve(const int nBytes) {
 	if (nBytes > d->storage.finish - d->storage.start) {
-		unsigned short int * newStorage = new unsigned short int[nBytes];
+		MemBlock * newStorage = new MemBlock[nBytes];
 		prism::copy(d->storage.start, d->storage.finish, newStorage);
 
 		delete []d->storage.start;
 		d->storage.start = newStorage;
 		d->storage.finish = d->storage.start + nBytes;
 
-	}
-}
-
-/**
- * Sets all the bits in the Bitvector to 1.
- * \code
- * Bitvector bv(8);
- * bv.setAll();
- * cout << bv.toString(); // output: "11111111"
- * \endcode
- */
-void Bitvector::setAll() {
-	unsigned short int * it = d->storage.start;
-	while (it != d->storage.finish) {
-		*it = ~(*it & 0);
-		++it;
 	}
 }
 
@@ -177,11 +179,27 @@ void Bitvector::set(int bit, const bool b) {
 	if (!rangeCheck(bit))
 		throw OutOfBoundsException(bit);
 
-	int cell = bit / (8 * sizeof(unsigned short int));
-	bit = bit % (8 * sizeof(unsigned short int));
+	int cell = bit / (8 * sizeof(MemBlock));
+	bit = bit % (8 * sizeof(MemBlock));
 
 	if (b) d->storage.start[cell] = d->storage.start[cell] | (1<<bit); 	// set bit to 1
 	else d->storage.start[cell] = d->storage.start[cell] & ~(1<<bit);	// set bit to 0
+}
+
+/**
+ * Sets all the bits in the Bitvector to 1.
+ * \code
+ * Bitvector bv(8);
+ * bv.setAll();
+ * cout << bv.toString(); // output: "11111111"
+ * \endcode
+ */
+void Bitvector::setAll() {
+	MemBlock * it = d->storage.start;
+	while (it != d->storage.finish) {
+		*it = ~(*it & 0);
+		++it;
+	}
 }
 
 /**
@@ -213,8 +231,8 @@ String Bitvector::toString() const {
 }
 
 /**
- * Shifts all the bits in the Bitvector to the left by \em pos places.
- * @return Returns a reference to this Bitvector.
+ * @return Returns a copy of this Bitvector that has had all its bits shifted
+ * to the left by \em pos positions.
  */
 Bitvector Bitvector::operator <<(const int pos) const {
 
@@ -228,8 +246,8 @@ Bitvector Bitvector::operator <<(const int pos) const {
 }
 
 /**
- * Shifts all the bits in the Bitvector to the left by \em pos places.
- * @return Returns a reference to this Bitvector.
+ * @return Returns a copy of this Bitvector that has had all its bits shifted
+ * to the right by \em pos positions.
  */
 Bitvector Bitvector::operator >>(const int pos) const {
 
@@ -243,7 +261,8 @@ Bitvector Bitvector::operator >>(const int pos) const {
 }
 
 /**
- *
+ * @return Returns a reference to this Bitvector which has had its bits
+ * shifted to the left by \em pos positions.
  */
 Bitvector & Bitvector::operator <<=(const int pos) {
 	*this = *this << pos;
@@ -251,11 +270,26 @@ Bitvector & Bitvector::operator <<=(const int pos) {
 }
 
 /**
- *
+ * @return Returns a reference to this Bitvector which has had its bits
+ * shifted to the right by \em pos positions.
  */
 Bitvector & Bitvector::operator >>=(const int pos) {
 	*this = *this >> pos;
 	return *this;
+}
+
+/**
+ *
+ */
+Bitvector Bitvector::operator ~() const {
+	Bitvector copy(*this);
+	MemBlock * blockIt = copy.d->storage.start;
+
+	while (blockIt != copy.d->storage.finish) {
+		*blockIt = ~*blockIt;
+		++blockIt;
+	}
+	return copy;
 }
 
 /**
@@ -269,6 +303,75 @@ Bitvector & Bitvector::operator =(const Bitvector & other) {
 	d->storage.finish = d->storage.start + other.size();
 
 	return *this;
+}
+
+/**
+ * Performs a bitwise AND on \em bv1 and \em bv2.
+ * @return Returns a new Bitvector with the result of \em (bv1 & bv2).
+ */
+Bitvector operator&(const Bitvector & bv1, const Bitvector & bv2) {
+	if (bv1.size() != bv2.size())
+		throw UnequalSizeException(bv1.size(), bv2.size());
+
+	Bitvector result(bv1.size());
+	MemBlock * bv1It = bv1.d->storage.start;
+	MemBlock * bv2It = bv2.d->storage.start;
+	MemBlock * resultIt = result.d->storage.start;
+
+	while (bv1It != bv1.d->storage.finish) {
+		*resultIt = *bv1It & *bv2It;
+		++bv1It;
+		++bv2It;
+		++resultIt;
+	}
+
+	return result;
+}
+
+/**
+ * Performs a bitwise OR on \em bv1 and \em bv2.
+ * @return Returns a new Bitvector with the result of \em (bv1 | bv2).
+ */
+Bitvector operator|(const Bitvector & bv1, const Bitvector & bv2) {
+	if (bv1.size() != bv2.size())
+		throw UnequalSizeException(bv1.size(), bv2.size());
+
+	Bitvector result(bv1.size());
+	MemBlock * bv1It = bv1.d->storage.start;
+	MemBlock * bv2It = bv2.d->storage.start;
+	MemBlock * resultIt = result.d->storage.start;
+
+	while (bv1It != bv1.d->storage.finish) {
+		*resultIt = *bv1It | *bv2It;
+		++bv1It;
+		++bv2It;
+		++resultIt;
+	}
+
+	return result;
+}
+
+/**
+ * Performs a bitwise XOR on \em bv1 and \em bv2.
+ * @return Returns a new Bitvector with the result of \em (bv1 ^ bv2).
+ */
+Bitvector operator^(const Bitvector & bv1, const Bitvector & bv2) {
+	if (bv1.size() != bv2.size())
+		throw UnequalSizeException(bv1.size(), bv2.size());
+
+	Bitvector result(bv1.size());
+	MemBlock * bv1It = bv1.d->storage.start;
+	MemBlock * bv2It = bv2.d->storage.start;
+	MemBlock * resultIt = result.d->storage.start;
+
+	while (bv1It != bv1.d->storage.finish) {
+		*resultIt = *bv1It ^ *bv2It;
+		++bv1It;
+		++bv2It;
+		++resultIt;
+	}
+
+	return result;
 }
 
 /**

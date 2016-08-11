@@ -46,6 +46,30 @@ TEST_F(BitvectorTest, copyConstructor) {
 }
 
 /**
+ * flip(bit)
+ */
+TEST_F(BitvectorTest, flip) {
+	Bitvector bv("11100100011101010");
+	bv.flip(0);
+	bv.flip(1);
+	bv.flip(12);
+
+	ASSERT_EQ(bv.get(0), 1);
+	ASSERT_EQ(bv.get(1), 0);
+	ASSERT_EQ(bv.get(12), 1);
+}
+
+/**
+ * Test: flipAll()
+ */
+TEST_F(BitvectorTest, flipAll) {
+	Bitvector bv("11100100011101010");
+	bv.flipAll();
+
+	ASSERT_EQ(bv.toString(), "00011011100010101");
+}
+
+/**
  * Test: get(pos)
  */
 TEST_F(BitvectorTest, get) {
@@ -208,6 +232,40 @@ TEST_F(BitvectorTest, opAssignment) {
 
 	ASSERT_TRUE(bv2.toString() == "11110000111100001111");
 	ASSERT_TRUE(bv2.size() == 20);
+}
+
+/**
+ * Test: operator&(Bitvector1, Bitvector2)
+ */
+TEST_F(BitvectorTest, opBitwiseAND) {
+	Bitvector bv1("11100100011100101001"); // 20 digits
+	Bitvector bv2("00111001010100110001");
+	Bitvector bv3 = bv1 & bv2;
+
+	ASSERT_EQ(bv3.toString(), "00100000010100100001");
+}
+
+/**
+ * Test: operator|(Bitvector1, Bitvector2)
+ */
+TEST_F(BitvectorTest, opBitwiseOR) {
+	Bitvector bv1("11100100011100101001"); // 20 digits
+	Bitvector bv2("00111001010100110001");
+	Bitvector bv3 = bv1 | bv2;
+
+	ASSERT_EQ(bv3.toString(), "11111101011100111001");
+}
+
+/**
+ * Test: operator^(Bitvector1, Bitvector2)
+ */
+TEST_F(BitvectorTest, opBitwiseXOR) {
+	Bitvector bv1("11100100011100101001"); // 20 digits
+	Bitvector bv2("00111001010100110001");
+
+	Bitvector bv3 = bv1 ^ bv2;
+
+	ASSERT_EQ(bv3.toString(), "11011101001000011000");
 }
 
 /**

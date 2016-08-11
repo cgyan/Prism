@@ -162,6 +162,10 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{swap\+\_\+ranges} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
 \item 
+const bool \hyperlink{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}{operator==} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
+\item 
+const bool \hyperlink{namespaceprism_aca663878d61686ef365f3e51efddc4b4}{operator!=} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
+\item 
 std\+::ostream \& \hyperlink{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv)
 \item 
 const bool \hyperlink{namespaceprism_a1ba68b64a6cfdcff9e144b8c2476cddb}{operator==} (const \hyperlink{classprism_1_1_char}{Char} \&c1, const \hyperlink{classprism_1_1_char}{Char} \&c2)
@@ -695,6 +699,14 @@ Returns true if /em f1 does not equal /em f2 in value, false otherwise. \index{p
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a75cab41d882d24ca064927f2390ef3a6}{}\label{namespaceprism_a75cab41d882d24ca064927f2390ef3a6}
 Returns true if x or y of p1 and p2 are not equal, false if not \index{prism@{prism}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator"!=(const Bitvector \&bv1, const Bitvector \&bv2)}{operator!=(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aca663878d61686ef365f3e51efddc4b4}{}\label{namespaceprism_aca663878d61686ef365f3e51efddc4b4}
+\index{prism@{prism}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator"!=(const Vector2 \&a, const Vector2 \&b)}{operator!=(const Vector2 &a, const Vector2 &b)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
 \begin{DoxyParamCaption}
@@ -1356,14 +1368,6 @@ Returns true if {\itshape c1} has a smaller radius than {\itshape c2}, false oth
 )}\hypertarget{namespaceprism_acad408bf2576dfc62a573cb44aa895fb}{}\label{namespaceprism_acad408bf2576dfc62a573cb44aa895fb}
 Returns an ostream object that allows this object to printed with std\+::cout \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Bitvector \&bv)}{operator<<(std::ostream &out, const Bitvector &bv)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{std\+::ostream \&}]{out, }
-\item[{const {\bf Bitvector} \&}]{bv}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{}\label{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}
-\index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Point \&p)}{operator<<(std::ostream &out, const Point &p)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{std\+::ostream \&}]{out, }
@@ -1395,6 +1399,14 @@ Allows an instance of \hyperlink{classprism_1_1_fraction}{Fraction} to be writte
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ad6335168e27f481d86ae42da444006d1}{}\label{namespaceprism_ad6335168e27f481d86ae42da444006d1}
 Allows an instance of \hyperlink{classprism_1_1_size}{Size} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Bitvector \&bv)}{operator<<(std::ostream &out, const Bitvector &bv)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Bitvector} \&}]{bv}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{}\label{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}
+Allows an instance of \hyperlink{classprism_1_1_bitvector}{Bitvector} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Vector2 \&v)}{operator<<(std::ostream &out, const Vector2 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
@@ -1555,6 +1567,14 @@ Returns true if the raw pointer p1 and the managed pointer of p2 point to the sa
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a739baa4e75c1ca83624d486eec1d45e9}{}\label{namespaceprism_a739baa4e75c1ca83624d486eec1d45e9}
 Returns true if x and y of p1 and p2 are equal, false if not \index{prism@{prism}!operator==@{operator==}}
+\index{operator==@{operator==}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator==(const Bitvector \&bv1, const Bitvector \&bv2)}{operator==(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}{}\label{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}
+\index{prism@{prism}!operator==@{operator==}}
 \index{operator==@{operator==}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator==(const Vector2 \&a, const Vector2 \&b)}{operator==(const Vector2 &a, const Vector2 &b)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
 \begin{DoxyParamCaption}

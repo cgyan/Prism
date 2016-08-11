@@ -13,11 +13,12 @@
 #include <ostream>
 
 namespace prism {
+typedef unsigned short int MemBlock;
 
 struct BitvectorData {
 	struct memory  {
-		unsigned short int * start; // unsigned short int is 16 bits each
-		unsigned short int * finish;
+		MemBlock * start; // unsigned short int is 16 bits each
+		MemBlock * finish;
 		int nBits;
 		memory() : start(0), finish(0), nBits(0) {}
 		~memory() { delete []start; start=0; finish=0; nBits=0; }
@@ -37,10 +38,12 @@ public:
 	Bitvector(const Bitvector & copy);
 	virtual ~Bitvector();
 
+	void			flip(int bit);
+	void			flipAll();
 	const bool 		get(int bit) const;
 	void			resetAll();
-	void			setAll();
 	void 			set(int bit, const bool b=true);
+	void			setAll();
 	const int 		size() const;
 	String			toString() const;
 
@@ -48,9 +51,13 @@ public:
 	Bitvector 		operator>>(const int pos) const;
 	Bitvector &		operator<<=(const int pos);
 	Bitvector &		operator>>=(const int pos);
+	Bitvector 		operator~() const;
 	Bitvector & 	operator=(const Bitvector & other);
 
 	// related non members
+	friend Bitvector		operator&(const Bitvector & bv1, const Bitvector & bv2);
+	friend Bitvector		operator|(const Bitvector & bv1, const Bitvector & bv2);
+	friend Bitvector		operator^(const Bitvector & bv1, const Bitvector & bv2);
 	friend const bool		operator==(const Bitvector & bv1, const Bitvector & bv2);
 	friend const bool		operator!=(const Bitvector & bv1, const Bitvector & bv2);
 	friend std::ostream & 	operator<<(std::ostream & out, const Bitvector &bv);

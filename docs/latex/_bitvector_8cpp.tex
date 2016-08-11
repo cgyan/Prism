@@ -1,6 +1,7 @@
 \hypertarget{_bitvector_8cpp}{}\section{src/prism/\+Bitvector.cpp File Reference}
 \label{_bitvector_8cpp}\index{src/prism/\+Bitvector.\+cpp@{src/prism/\+Bitvector.\+cpp}}
 {\ttfamily \#include $<$prism/\+Bitvector.\+h$>$}\\*
+{\ttfamily \#include $<$prism/\+Char$>$}\\*
 {\ttfamily \#include $<$prism/algorithms$>$}\\*
 {\ttfamily \#include $<$prism/\+Out\+Of\+Bounds\+Exception$>$}\\*
 {\ttfamily \#include $<$iostream$>$}\\*
@@ -11,6 +12,10 @@
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+const bool \hyperlink{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}{prism\+::operator==} (const Bitvector \&bv1, const Bitvector \&bv2)
+\item 
+const bool \hyperlink{namespaceprism_aca663878d61686ef365f3e51efddc4b4}{prism\+::operator!=} (const Bitvector \&bv1, const Bitvector \&bv2)
 \item 
 std\+::ostream \& \hyperlink{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{prism\+::operator$<$$<$} (std\+::ostream \&out, const Bitvector \&bv)
 \end{DoxyCompactItemize}

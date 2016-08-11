@@ -24,6 +24,7 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pointf.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedPointer \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedPointer.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/ReferenceCounter \
   /Users/iainhemstock/GitHub/Prism/inc/prism/ReferenceCounter.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Fraction \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Fraction.h \
@@ -93,6 +94,8 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/SharedPointer:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/SharedPointer.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/ReferenceCounter:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/ReferenceCounter.h:
 

@@ -319,6 +319,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a4661f2c0c4dca098c137179b4d93f3dc"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator1 , class ForwardIterator2 &gt; </td></tr>
 <tr class="memitem:a4661f2c0c4dca098c137179b4d93f3dc"><td class="memTemplItemLeft" align="right" valign="top">ForwardIterator2&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a4661f2c0c4dca098c137179b4d93f3dc">swap_ranges</a> (ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst)</td></tr>
 <tr class="separator:a4661f2c0c4dca098c137179b4d93f3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca036c7f0f8a5aaf98b46b4879189bcc"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aca036c7f0f8a5aaf98b46b4879189bcc">operator==</a> (const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;bv1, const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;bv2)</td></tr>
+<tr class="separator:aca036c7f0f8a5aaf98b46b4879189bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca663878d61686ef365f3e51efddc4b4"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aca663878d61686ef365f3e51efddc4b4">operator!=</a> (const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;bv1, const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;bv2)</td></tr>
+<tr class="separator:aca663878d61686ef365f3e51efddc4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b98ff0fee78022242292f24158ad1f0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a0b98ff0fee78022242292f24158ad1f0">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;bv)</td></tr>
 <tr class="separator:a0b98ff0fee78022242292f24158ad1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ba68b64a6cfdcff9e144b8c2476cddb"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a1ba68b64a6cfdcff9e144b8c2476cddb">operator==</a> (const <a class="el" href="classprism_1_1_char.html">Char</a> &amp;c1, const <a class="el" href="classprism_1_1_char.html">Char</a> &amp;c2)</td></tr>
@@ -1531,6 +1535,32 @@ template&lt;class U &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Returns true if x or y of p1 and p2 are not equal, false if not </p>
+
+</div>
+</div>
+<a class="anchor" id="aca663878d61686ef365f3e51efddc4b4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;&#160;</td>
+          <td class="paramname"><em>bv1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;&#160;</td>
+          <td class="paramname"><em>bv2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -3691,32 +3721,6 @@ template&lt;class U &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0b98ff0fee78022242292f24158ad1f0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ostream&amp; prism::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;&#160;</td>
-          <td class="paramname"><em>bv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="acb9fe7ab8ef5f1ee0338e3b057624393"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3822,6 +3826,33 @@ template&lt;class U &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Allows an instance of <a class="el" href="classprism_1_1_size.html">Size</a> to be written to the ostream and returns a reference to the ostream. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0b98ff0fee78022242292f24158ad1f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; prism::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;&#160;</td>
+          <td class="paramname"><em>bv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows an instance of <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> to be written to the ostream and returns a reference to the ostream. </p>
 
 </div>
 </div>
@@ -4345,6 +4376,32 @@ template&lt;class U &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Returns true if x and y of p1 and p2 are equal, false if not </p>
+
+</div>
+</div>
+<a class="anchor" id="aca036c7f0f8a5aaf98b46b4879189bcc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;&#160;</td>
+          <td class="paramname"><em>bv1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_bitvector.html">Bitvector</a> &amp;&#160;</td>
+          <td class="paramname"><em>bv2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
