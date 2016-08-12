@@ -11,6 +11,7 @@
 #include <prism/algorithms>
 #include <prism/OutOfBoundsException>
 #include <prism/UnequalSizeException>
+#include <prism/OverflowException>
 #include <cmath>
 using namespace std;
 
@@ -32,13 +33,13 @@ Bitvector::Bitvector()
  * More precisely the bitvector will contain enough bytes to represent the requested
  * number of bits. i.e. internally the storage is represented in unsigned long long ints
  * which are 64 bits each so its size will always be a multiple of 64. If a Bitvector
- * with 10 bits is requested then the Bitvector will reserve 64 bits but still a size of 10.
+ * with 10 bits is requested then the Bitvector will reserve 64 bits but will still have a size of 10.
  */
 Bitvector::Bitvector(const int nBits)
 	: d(new BitvectorData)
 {
 	d->storage.nBits = nBits;
-	reserve(numBytes(nBits));
+	reserve(numChunks(nBits));
 	resetAll();
 }
 
@@ -54,8 +55,8 @@ Bitvector::Bitvector(const String & bitString)
 	: d(new BitvectorData)
 {
 	d->storage.nBits = bitString.size();
-	int nBytes = numBytes(d->storage.nBits);
-	reserve(nBytes);
+	int nChunks = numChunks(d->storage.nBits);
+	reserve(nChunks);
 	resetAll();
 
 	String bs(bitString);
@@ -163,16 +164,16 @@ const bool Bitvector::none() const {
 }
 
 /**
- * Private method that returns the number of bytes needed to hold \em nBits.
+ * Private method that returns the number of chunks needed to hold \em nBits.
  */
-const int Bitvector::numBytes(const int nBits) const {
-	int nBlockBits = sizeof(unsigned long long int) * 8;
-	int nBytes;
+const int Bitvector::numChunks(const int nBits) const {
+	int nBitsInChunk = sizeof(unsigned long long int) * 8;
+	int nChunks;
 
-	if (nBits % nBlockBits == 0) nBytes = nBits / nBlockBits;
-	else nBytes = nBits / nBlockBits + 1;
+	if (nBits % nBitsInChunk == 0) nChunks = nBits / nBitsInChunk;
+	else nChunks = nBits / nBitsInChunk + 1;
 
-	return nBytes;
+	return nChunks;
 }
 
 /**
@@ -188,24 +189,24 @@ const bool Bitvector::rangeCheck(const int n) const {
  * Resets all the bits in the Bitvector to 0.
  */
 void Bitvector::resetAll() {
-	unsigned long long int * it = d->storage.start;
-	while (it != d->storage.finish) {
-		*it = *it & 0;
-		++it;
+	unsigned long long int * chunkIt = d->storage.start;
+	while (chunkIt != d->storage.finish) {
+		*chunkIt = *chunkIt & 0;
+		++chunkIt;
 	}
 }
 
 /**
  * Private method that reserves enough memory to contain the bits required.
  */
-void Bitvector::reserve(const int nBytes) {
-	if (nBytes > d->storage.finish - d->storage.start) {
-		unsigned long long int * newStorage = new unsigned long long int[nBytes];
-		prism::copy(d->storage.start, d->storage.finish, newStorage);
+void Bitvector::reserve(const int nChunks) {
+	if (nChunks > d->storage.finish - d->storage.start) {
+		unsigned long long int * newChunks = new unsigned long long int[nChunks];
+		prism::copy(d->storage.start, d->storage.finish, newChunks);
 
 		delete []d->storage.start;
-		d->storage.start = newStorage;
-		d->storage.finish = d->storage.start + nBytes;
+		d->storage.start = newChunks;
+		d->storage.finish = d->storage.start + nChunks;
 
 	}
 }
@@ -241,10 +242,10 @@ void Bitvector::set(int bit, const bool b) {
  * \endcode
  */
 void Bitvector::setAll() {
-	unsigned long long int * it = d->storage.start;
-	while (it != d->storage.finish) {
-		*it = ~(*it & 0);
-		++it;
+	unsigned long long int * chunkIt = d->storage.start;
+	while (chunkIt != d->storage.finish) {
+		*chunkIt = ~(*chunkIt & 0);
+		++chunkIt;
 	}
 }
 
@@ -277,17 +278,23 @@ String Bitvector::string() const {
 }
 
 /**
- *
+ * @return Returns an unsigned long long int with the integer value that has
+ * the same bits set as the Bitvector.
+ * \note If the binary value is more than an unsinged long long int can represent
+ * then an OverflowException is thrown.
  */
 unsigned long long int Bitvector::ull() const {
-	if (d->storage.nBits > sizeof(unsigned long long int) * 8)
-		return -1;
+	if (d->storage.nBits > sizeof(unsigned long long int) * 8) {
+		throw OverflowException();
+	}
 
 	unsigned long long int result = 0;
 
-	for (int i=0; i<d->storage.nBits; i++) {
-		if (get(i)) result += pow(2,i);
-	}
+	for (int i=0; i<d->storage.nBits; i++)
+		if (get(i)) {
+			unsigned long long int n = pow(2, i);
+			result += n;
+		}
 
 	return result;
 }
@@ -360,11 +367,11 @@ Bitvector & Bitvector::operator >>=(const int pos) {
  */
 Bitvector Bitvector::operator ~() const {
 	Bitvector copy(*this);
-	unsigned long long int * blockIt = copy.d->storage.start;
+	unsigned long long int * chunkIt = copy.d->storage.start;
 
-	while (blockIt != copy.d->storage.finish) {
-		*blockIt = ~*blockIt;
-		++blockIt;
+	while (chunkIt != copy.d->storage.finish) {
+		*chunkIt = ~*chunkIt;
+		++chunkIt;
 	}
 	return copy;
 }
@@ -402,7 +409,7 @@ Bitvector & Bitvector::operator ^=(const Bitvector & other) {
 Bitvector & Bitvector::operator =(const Bitvector & other) {
 	if (*this == other) return *this;
 
-	reserve(numBytes(d->storage.nBits));
+	reserve(numChunks(d->storage.nBits));
 	prism::copy(other.d->storage.start, other.d->storage.finish, this->d->storage.start);
 	d->storage.finish = d->storage.start + other.size();
 

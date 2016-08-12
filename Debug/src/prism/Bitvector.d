@@ -15,7 +15,9 @@ src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/UnequalSizeException \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/UnequalSizeException.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/UnequalSizeException.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/OverflowException \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/OverflowException.h
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Bitvector.h:
 
@@ -50,3 +52,7 @@ src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/UnequalSizeException:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/UnequalSizeException.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/OverflowException:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/OverflowException.h:

@@ -28,7 +28,7 @@ struct BitvectorData {
  * This is the class description for the Bitvector.
  */
 class Bitvector {
-public://todo back to private
+private:
 	BitvectorData * d;
 public:
 	Bitvector();
@@ -72,9 +72,9 @@ public:
 	friend std::ostream & 	operator<<(std::ostream & out, const Bitvector &bv);
 
 private:
-	const int	numBytes(const int nBits) const;
+	const int	numChunks(const int nBits) const;
 	const bool 	rangeCheck(const int n) const;
-	void 		reserve(const int nBytes);
+	void 		reserve(const int nChunks);
 };
 
 } /* namespace prism */
