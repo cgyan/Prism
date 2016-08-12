@@ -13,12 +13,11 @@
 #include <ostream>
 
 namespace prism {
-typedef unsigned long long int MemBlock;
 
 struct BitvectorData {
 	struct memory  {
-		MemBlock * start; // unsigned short int is 16 bits each
-		MemBlock * finish;
+		unsigned long long int * start; // unsigned long long ints are 64 bits each
+		unsigned long long int * finish;
 		int nBits;
 		memory() : start(0), finish(0), nBits(0) {}
 		~memory() { delete []start; start=0; finish=0; nBits=0; }
@@ -29,7 +28,7 @@ struct BitvectorData {
  * This is the class description for the Bitvector.
  */
 class Bitvector {
-private:
+public://todo back to private
 	BitvectorData * d;
 public:
 	Bitvector();
@@ -49,8 +48,8 @@ public:
 	void 			set(int bit, const bool b=true);
 	void			setAll();
 	const int 		size() const;
-	String			toString() const;
-	MemBlock		to_ull() const;
+	String			string() const;
+	unsigned long long int		ull() const;
 
 	bool			operator[](const int bit);
 	const bool		operator[](const int bit) const;

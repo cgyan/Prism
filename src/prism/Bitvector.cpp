@@ -11,17 +11,18 @@
 #include <prism/algorithms>
 #include <prism/OutOfBoundsException>
 #include <prism/UnequalSizeException>
-#include <ostream>
+#include <cmath>
+using namespace std;
 
 namespace prism {
-typedef unsigned long long int MemBlock;
+
 /**
- * Creates a new Bitvector that contains by default 16 bits.
+ * Creates a new Bitvector that contains by default 64 bits.
  */
 Bitvector::Bitvector()
 	: d(new BitvectorData)
 {
-	d->storage.nBits = sizeof(MemBlock) * 8;
+	d->storage.nBits = sizeof(unsigned long long int) * 8;
 	reserve(1);
 	resetAll();
 }
@@ -46,7 +47,7 @@ Bitvector::Bitvector(const int nBits)
  * \code
  * 	String s = "11101110";
  *	Bitvector bv(s);
- *	cout << bv.toString(); // output: 11101110
+ *	cout << bv.string(); // output: 11101110
  * \endcode
  */
 Bitvector::Bitvector(const String & bitString)
@@ -60,8 +61,8 @@ Bitvector::Bitvector(const String & bitString)
 	String bs(bitString);
 
 	for (int i=0; i<d->storage.nBits; i++) {
-		if (*(bs.end()-1) == Char('1'))
-			set(i);
+		if (*(bs.end()-1) == Char('1')) set(i);
+		else set(i, false);
 		bs.chop(1);
 	}
 }
@@ -119,8 +120,8 @@ const int Bitvector::count() const {
  * Flips \em bit from zero to one or from one to zero.
  */
 void Bitvector::flip(int bit) {
-	int cell = bit / (8 * sizeof(MemBlock));
-	bit = bit % (8 * sizeof(MemBlock));
+	int cell = bit / (8 * sizeof(unsigned long long int));
+	bit = bit % (8 * sizeof(unsigned long long int));
 
 	d->storage.start[cell] = d->storage.start[cell] ^ (1<<bit);
 }
@@ -144,10 +145,12 @@ const bool Bitvector::get(int bit) const {
 	if (!rangeCheck(bit))
 		throw OutOfBoundsException(bit);
 
-	int cell = bit / (8 * sizeof(MemBlock));
-	bit = bit % (8 * sizeof(MemBlock));
+	int cell = bit / (8 * sizeof(unsigned long long int));
+	bit = bit % (8 * sizeof(unsigned long long int));
 
-	return ((d->storage.start[cell] & (1<<bit)) >> bit);
+	unsigned long long int mask = 1;
+
+	return (d->storage.start[cell] & (mask<<bit)) >> bit;
 }
 
 /**
@@ -163,7 +166,7 @@ const bool Bitvector::none() const {
  * Private method that returns the number of bytes needed to hold \em nBits.
  */
 const int Bitvector::numBytes(const int nBits) const {
-	int nBlockBits = sizeof(MemBlock) * 8;
+	int nBlockBits = sizeof(unsigned long long int) * 8;
 	int nBytes;
 
 	if (nBits % nBlockBits == 0) nBytes = nBits / nBlockBits;
@@ -185,7 +188,7 @@ const bool Bitvector::rangeCheck(const int n) const {
  * Resets all the bits in the Bitvector to 0.
  */
 void Bitvector::resetAll() {
-	MemBlock * it = d->storage.start;
+	unsigned long long int * it = d->storage.start;
 	while (it != d->storage.finish) {
 		*it = *it & 0;
 		++it;
@@ -197,7 +200,7 @@ void Bitvector::resetAll() {
  */
 void Bitvector::reserve(const int nBytes) {
 	if (nBytes > d->storage.finish - d->storage.start) {
-		MemBlock * newStorage = new MemBlock[nBytes];
+		unsigned long long int * newStorage = new unsigned long long int[nBytes];
 		prism::copy(d->storage.start, d->storage.finish, newStorage);
 
 		delete []d->storage.start;
@@ -220,11 +223,13 @@ void Bitvector::set(int bit, const bool b) {
 	if (!rangeCheck(bit))
 		throw OutOfBoundsException(bit);
 
-	int cell = bit / (8 * sizeof(MemBlock));
-	bit = bit % (8 * sizeof(MemBlock));
+	int cell = bit / (8 * sizeof(unsigned long long int));
+	bit = bit % (8 * sizeof(unsigned long long int));
 
-	if (b) d->storage.start[cell] = d->storage.start[cell] | (1<<bit); 	// set bit to 1
-	else d->storage.start[cell] = d->storage.start[cell] & ~(1<<bit);	// set bit to 0
+	unsigned long long int mask = 1;
+
+	if (b) d->storage.start[cell] = d->storage.start[cell] | (mask<<bit); 	// set bit to 1
+	else d->storage.start[cell] = d->storage.start[cell] & ~(mask<<bit);	// set bit to 0
 }
 
 /**
@@ -232,11 +237,11 @@ void Bitvector::set(int bit, const bool b) {
  * \code
  * Bitvector bv(8);
  * bv.setAll();
- * cout << bv.toString(); // output: "11111111"
+ * cout << bv.string(); // output: "11111111"
  * \endcode
  */
 void Bitvector::setAll() {
-	MemBlock * it = d->storage.start;
+	unsigned long long int * it = d->storage.start;
 	while (it != d->storage.finish) {
 		*it = ~(*it & 0);
 		++it;
@@ -258,10 +263,10 @@ const int Bitvector::size() const {
  * Bitvector bv(4);
  * bv.set(0);
  * bv.set(2);
- * cout << bv.toString(); // output: "0101"
+ * cout << bv.string(); // output: "0101"
  * \endcode
  */
-String Bitvector::toString() const {
+String Bitvector::string() const {
 	String s;
 	s.reserve(d->storage.nBits);
 
@@ -274,19 +279,17 @@ String Bitvector::toString() const {
 /**
  *
  */
-MemBlock Bitvector::to_ull() const {
-//	if (d->storage.nBits > sizeof(MemBlock) * 8)
-//		return -1;
-//
-//	MemBlock * it = d->storage.start;
-//	String s;
-//
-//	while (it != d->storage.finish) {
-//		MemBlock mb = *it;
-//		s += String::number(mb);
-//	}
-//
-//	return
+unsigned long long int Bitvector::ull() const {
+	if (d->storage.nBits > sizeof(unsigned long long int) * 8)
+		return -1;
+
+	unsigned long long int result = 0;
+
+	for (int i=0; i<d->storage.nBits; i++) {
+		if (get(i)) result += pow(2,i);
+	}
+
+	return result;
 }
 
 /**
@@ -357,7 +360,7 @@ Bitvector & Bitvector::operator >>=(const int pos) {
  */
 Bitvector Bitvector::operator ~() const {
 	Bitvector copy(*this);
-	MemBlock * blockIt = copy.d->storage.start;
+	unsigned long long int * blockIt = copy.d->storage.start;
 
 	while (blockIt != copy.d->storage.finish) {
 		*blockIt = ~*blockIt;
@@ -415,15 +418,13 @@ Bitvector operator&(const Bitvector & bv1, const Bitvector & bv2) {
 		throw UnequalSizeException(bv1.size(), bv2.size());
 
 	Bitvector result(bv1.size());
-	MemBlock * bv1It = bv1.d->storage.start;
-	MemBlock * bv2It = bv2.d->storage.start;
-	MemBlock * resultIt = result.d->storage.start;
+	unsigned long long int * bv1It = bv1.d->storage.start;
+	unsigned long long int * bv2It = bv2.d->storage.start;
+	unsigned long long int * resultIt = result.d->storage.start;
 
 	while (bv1It != bv1.d->storage.finish) {
 		*resultIt = *bv1It & *bv2It;
-		++bv1It;
-		++bv2It;
-		++resultIt;
+		++bv1It; ++bv2It; ++resultIt;
 	}
 
 	return result;
@@ -438,15 +439,13 @@ Bitvector operator|(const Bitvector & bv1, const Bitvector & bv2) {
 		throw UnequalSizeException(bv1.size(), bv2.size());
 
 	Bitvector result(bv1.size());
-	MemBlock * bv1It = bv1.d->storage.start;
-	MemBlock * bv2It = bv2.d->storage.start;
-	MemBlock * resultIt = result.d->storage.start;
+	unsigned long long int * bv1It = bv1.d->storage.start;
+	unsigned long long int * bv2It = bv2.d->storage.start;
+	unsigned long long int * resultIt = result.d->storage.start;
 
 	while (bv1It != bv1.d->storage.finish) {
 		*resultIt = *bv1It | *bv2It;
-		++bv1It;
-		++bv2It;
-		++resultIt;
+		++bv1It; ++bv2It; ++resultIt;
 	}
 
 	return result;
@@ -461,15 +460,13 @@ Bitvector operator^(const Bitvector & bv1, const Bitvector & bv2) {
 		throw UnequalSizeException(bv1.size(), bv2.size());
 
 	Bitvector result(bv1.size());
-	MemBlock * bv1It = bv1.d->storage.start;
-	MemBlock * bv2It = bv2.d->storage.start;
-	MemBlock * resultIt = result.d->storage.start;
+	unsigned long long int * bv1It = bv1.d->storage.start;
+	unsigned long long int * bv2It = bv2.d->storage.start;
+	unsigned long long int * resultIt = result.d->storage.start;
 
 	while (bv1It != bv1.d->storage.finish) {
 		*resultIt = *bv1It ^ *bv2It;
-		++bv1It;
-		++bv2It;
-		++resultIt;
+		++bv1It; ++bv2It; ++resultIt;
 	}
 
 	return result;

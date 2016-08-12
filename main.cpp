@@ -56,8 +56,12 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 
+	cout << "ULLONG_MAX=" << ULLONG_MAX << endl;
+	unsigned long long int i = 18446744073709551615;
+	cout << i;
 
-	return RUN_ALL_TESTS();
+
+//	return RUN_ALL_TESTS();
 //	return 0;
 }
 

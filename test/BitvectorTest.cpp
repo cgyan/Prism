@@ -7,6 +7,7 @@
  */
 #include <gtest/gtest.h>
 #include <prism/Bitvector>
+#include <prism/OutOfBoundsException>
 #include <iostream> // todo remove this
 using namespace std; // todo remove this
 
@@ -37,7 +38,7 @@ TEST_F(BitvectorTest, constructor_nBits) {
 TEST_F(BitvectorTest, constructor_string) {
 	String s = "11110000111100001111"; // 20 digits
 	Bitvector bv(s);
-	ASSERT_TRUE(bv.toString() == "11110000111100001111");
+	ASSERT_TRUE(bv.string() == "11110000111100001111");
 }
 
 /**
@@ -51,7 +52,7 @@ TEST_F(BitvectorTest, copyConstructor) {
 	bv.set(7);
 
 	Bitvector copy(bv);
-	ASSERT_EQ(copy.toString(), "10010101");
+	ASSERT_EQ(copy.string(), "10010101");
 }
 
 /**
@@ -109,24 +110,32 @@ TEST_F(BitvectorTest, flipAll) {
 	Bitvector bv("11100100011101010");
 	bv.flipAll();
 
-	ASSERT_EQ(bv.toString(), "00011011100010101");
+	ASSERT_EQ(bv.string(), "00011011100010101");
 }
 
 /**
  * Test: get(pos)
  */
 TEST_F(BitvectorTest, get) {
-	Bitvector bv(6);
-	bv.set(0);
-	bv.set(2);
-	bv.set(4);
+	Bitvector bv("01010101010101010101010101010101010101010101010101010101");
+
+//	bv.set(0);
+//	bv.set(2);
+//	bv.set(4);
 
 	ASSERT_TRUE(bv.get(0));
 	ASSERT_TRUE(bv.get(2));
 	ASSERT_TRUE(bv.get(4));
+	ASSERT_TRUE(bv.get(30));
+	ASSERT_TRUE(bv.get(42));
+	ASSERT_TRUE(bv.get(54));
+
 	ASSERT_FALSE(bv.get(1));
 	ASSERT_FALSE(bv.get(3));
 	ASSERT_FALSE(bv.get(5));
+	ASSERT_FALSE(bv.get(31));
+	ASSERT_FALSE(bv.get(43));
+	ASSERT_FALSE(bv.get(55));
 }
 
 /**
@@ -150,7 +159,7 @@ TEST_F(BitvectorTest, resetAll) {
 	bv.set(7);
 
 	bv.resetAll();
-	ASSERT_EQ(bv.toString(), "00000000");
+	ASSERT_EQ(bv.string(), "00000000");
 }
 
 /**
@@ -159,38 +168,21 @@ TEST_F(BitvectorTest, resetAll) {
 TEST_F(BitvectorTest, setAll) {
 	Bitvector bv(8);
 	bv.setAll();
-	ASSERT_EQ(bv.toString(), "11111111");
+	ASSERT_EQ(bv.string(), "11111111");
 }
 
 /**
  * Test: set(pos, bool)
  */
 TEST_F(BitvectorTest, set_pos_bool) {
-	Bitvector bv(20);
-	bv.set(1, true);
-	bv.set(6);
-	bv.set(19);
+	Bitvector bv("01010101010101010101010101010101010101010101010101010101");
 
-	ASSERT_FALSE(bv.get(0));
-	ASSERT_TRUE(bv.get(1));
-	ASSERT_FALSE(bv.get(2));
-	ASSERT_FALSE(bv.get(3));
-	ASSERT_FALSE(bv.get(4));
-	ASSERT_FALSE(bv.get(5));
-	ASSERT_TRUE(bv.get(6));
-	ASSERT_FALSE(bv.get(7));
-	ASSERT_FALSE(bv.get(8));
-	ASSERT_FALSE(bv.get(9));
-	ASSERT_FALSE(bv.get(10));
-	ASSERT_FALSE(bv.get(11));
-	ASSERT_FALSE(bv.get(12));
-	ASSERT_FALSE(bv.get(13));
-	ASSERT_FALSE(bv.get(14));
-	ASSERT_FALSE(bv.get(15));
-	ASSERT_FALSE(bv.get(16));
-	ASSERT_FALSE(bv.get(17));
-	ASSERT_FALSE(bv.get(18));
-	ASSERT_TRUE(bv.get(19));
+	try { bv.set(55); }
+	catch (const OutOfBoundsException & e) {
+		cerr << "Exception: " << e.errorMsg() << endl;
+	}
+
+
 }
 
 /**
@@ -206,18 +198,29 @@ TEST_F(BitvectorTest, size) {
 }
 
 /**
- * Test: toString()
+ * Test: string()
  */
-TEST_F(BitvectorTest, toString) {
+TEST_F(BitvectorTest, string) {
 	Bitvector bv(8);
 	bv.setAll();
 
-	ASSERT_EQ(bv.toString(), "11111111");
+	ASSERT_EQ(bv.string(), "11111111");
 
 	bv.set(0, false);
 	bv.set(4, false);
 
-	ASSERT_EQ(bv.toString(), "11101110");
+	ASSERT_EQ(bv.string(), "11101110");
+}
+
+/**
+ * Test: to_ull()
+ */
+TEST_F(BitvectorTest, ull) {
+	Bitvector bv("1111111111111111111111111111111111111111111111111111111111111111");
+	cout << bv.ull() << endl;
+	unsigned long long i = 18446744073709551615;
+	ASSERT_EQ(bv.ull(), i);
+
 }
 
 /**
@@ -266,10 +269,10 @@ TEST_F(BitvectorTest, opShiftLeft) {
 	Bitvector bv("00000000000000000000000000001111"); // 32 digits
 
 	bv = bv << 1;
-	ASSERT_TRUE(bv.toString() == "00000000000000000000000000011110");
+	ASSERT_TRUE(bv.string() == "00000000000000000000000000011110");
 
 	bv = bv << 30;
-	ASSERT_TRUE(bv.toString() == "10000000000000000000000000000000");
+	ASSERT_TRUE(bv.string() == "10000000000000000000000000000000");
 }
 
 /**
@@ -280,11 +283,10 @@ TEST_F(BitvectorTest, opShiftRight) {
 	Bitvector bv("11110000000000000000000000001111"); // 32 digits
 
 	bv = bv >> 1;
-	cout << bv.toString() << endl;
-	ASSERT_TRUE(bv.toString() == "01111000000000000000000000000111");
+	ASSERT_TRUE(bv.string() == "01111000000000000000000000000111");
 
 	bv = bv >> 2;
-	ASSERT_TRUE(bv.toString() == "00011110000000000000000000000001");
+	ASSERT_TRUE(bv.string() == "00011110000000000000000000000001");
 }
 
 /**
@@ -295,10 +297,10 @@ TEST_F(BitvectorTest, opShiftLeftEquals) {
 	Bitvector bv("00000000000000000000000000001111"); // 32 digits
 
 	bv <<= 1;
-	ASSERT_TRUE(bv.toString() == "00000000000000000000000000011110");
+	ASSERT_TRUE(bv.string() == "00000000000000000000000000011110");
 
 	bv <<= 30;
-	ASSERT_TRUE(bv.toString() == "10000000000000000000000000000000");
+	ASSERT_TRUE(bv.string() == "10000000000000000000000000000000");
 }
 
 /**
@@ -309,10 +311,10 @@ TEST_F(BitvectorTest, opShiftRightEquals) {
 	Bitvector bv("11110000000000000000000000001111"); // 32 digits
 
 	bv >>= 1;
-	ASSERT_TRUE(bv.toString() == "01111000000000000000000000000111");
+	ASSERT_TRUE(bv.string() == "01111000000000000000000000000111");
 
 	bv >>= 2;
-	ASSERT_TRUE(bv.toString() == "00011110000000000000000000000001");
+	ASSERT_TRUE(bv.string() == "00011110000000000000000000000001");
 }
 
 /**
@@ -322,7 +324,7 @@ TEST_F(BitvectorTest, opBitwiseNOT) {
 	Bitvector bv("111011001000");
 	bv = ~bv;
 
-	ASSERT_EQ(bv.toString(), "000100110111");
+	ASSERT_EQ(bv.string(), "000100110111");
 }
 
 /**
@@ -333,7 +335,7 @@ TEST_F(BitvectorTest, opBitwiseANDEquals) {
 	Bitvector bv2("101010101010");
 	bv1 &= bv2;
 
-	ASSERT_EQ(bv1.toString(), "100010101010");
+	ASSERT_EQ(bv1.string(), "100010101010");
 }
 
 /**
@@ -344,7 +346,7 @@ TEST_F(BitvectorTest, opBitwiseOREquals) {
 	Bitvector bv2("101010101010");
 	bv1 |= bv2;
 
-	ASSERT_EQ(bv1.toString(), "111010101111");
+	ASSERT_EQ(bv1.string(), "111010101111");
 }
 
 /**
@@ -355,7 +357,7 @@ TEST_F(BitvectorTest, opBitwiseXOREquals) {
 	Bitvector bv2("101010101010");
 	bv1 ^= bv2;
 
-	ASSERT_EQ(bv1.toString(), "011000000101");
+	ASSERT_EQ(bv1.string(), "011000000101");
 }
 
 /**
@@ -365,7 +367,7 @@ TEST_F(BitvectorTest, opAssignment) {
 	Bitvector bv1("11110000111100001111");
 	Bitvector bv2 = bv1;
 
-	ASSERT_TRUE(bv2.toString() == "11110000111100001111");
+	ASSERT_TRUE(bv2.string() == "11110000111100001111");
 	ASSERT_TRUE(bv2.size() == 20);
 }
 
@@ -377,7 +379,7 @@ TEST_F(BitvectorTest, opBitwiseAND) {
 	Bitvector bv2("00111001010100110001");
 	Bitvector bv3 = bv1 & bv2;
 
-	ASSERT_EQ(bv3.toString(), "00100000010100100001");
+	ASSERT_EQ(bv3.string(), "00100000010100100001");
 }
 
 /**
@@ -388,7 +390,7 @@ TEST_F(BitvectorTest, opBitwiseOR) {
 	Bitvector bv2("00111001010100110001");
 	Bitvector bv3 = bv1 | bv2;
 
-	ASSERT_EQ(bv3.toString(), "11111101011100111001");
+	ASSERT_EQ(bv3.string(), "11111101011100111001");
 }
 
 /**
@@ -400,7 +402,7 @@ TEST_F(BitvectorTest, opBitwiseXOR) {
 
 	Bitvector bv3 = bv1 ^ bv2;
 
-	ASSERT_EQ(bv3.toString(), "11011101001000011000");
+	ASSERT_EQ(bv3.string(), "11011101001000011000");
 }
 
 /**
