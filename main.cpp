@@ -55,7 +55,7 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*SharedDataPointerTest*";
 	::testing::InitGoogleTest(&argc, argv);
 
-
+	// adding copy on write support
 
 
 	return RUN_ALL_TESTS();
