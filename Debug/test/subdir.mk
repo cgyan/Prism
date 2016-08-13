@@ -6,6 +6,8 @@
 CPP_SRCS += \
 ../test/BitvectorTest.cpp \
 ../test/ListTest.cpp \
+../test/SharedDataPointerTest.cpp \
+../test/SharedDataTest.cpp \
 ../test/StackTest.cpp \
 ../test/StringTest.cpp \
 ../test/algorithmsTest.cpp 
@@ -13,6 +15,8 @@ CPP_SRCS += \
 OBJS += \
 ./test/BitvectorTest.o \
 ./test/ListTest.o \
+./test/SharedDataPointerTest.o \
+./test/SharedDataTest.o \
 ./test/StackTest.o \
 ./test/StringTest.o \
 ./test/algorithmsTest.o 
@@ -20,6 +24,8 @@ OBJS += \
 CPP_DEPS += \
 ./test/BitvectorTest.d \
 ./test/ListTest.d \
+./test/SharedDataPointerTest.d \
+./test/SharedDataTest.d \
 ./test/StackTest.d \
 ./test/StringTest.d \
 ./test/algorithmsTest.d 

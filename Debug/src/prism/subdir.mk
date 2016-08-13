@@ -14,6 +14,7 @@ CPP_SRCS += \
 ../src/prism/Pointf.cpp \
 ../src/prism/Quaternion.cpp \
 ../src/prism/Rect.cpp \
+../src/prism/SharedData.cpp \
 ../src/prism/Size.cpp \
 ../src/prism/String.cpp \
 ../src/prism/Vector2.cpp \
@@ -32,6 +33,7 @@ OBJS += \
 ./src/prism/Pointf.o \
 ./src/prism/Quaternion.o \
 ./src/prism/Rect.o \
+./src/prism/SharedData.o \
 ./src/prism/Size.o \
 ./src/prism/String.o \
 ./src/prism/Vector2.o \
@@ -50,6 +52,7 @@ CPP_DEPS += \
 ./src/prism/Pointf.d \
 ./src/prism/Quaternion.d \
 ./src/prism/Rect.d \
+./src/prism/SharedData.d \
 ./src/prism/Size.d \
 ./src/prism/String.d \
 ./src/prism/Vector2.d \
