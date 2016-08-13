@@ -33,6 +33,8 @@ class \hyperlink{classprism_1_1_matrix4}{Matrix4}
 \item 
 class \hyperlink{classprism_1_1_out_of_bounds_exception}{Out\+Of\+Bounds\+Exception}
 \item 
+class \hyperlink{classprism_1_1_overflow_exception}{Overflow\+Exception}
+\item 
 class \hyperlink{classprism_1_1_point}{Point}
 \item 
 class \hyperlink{classprism_1_1_pointf}{Pointf}
@@ -58,6 +60,8 @@ class \hyperlink{classprism_1_1_stack}{Stack}
 struct \hyperlink{structprism_1_1_stack_data}{Stack\+Data}
 \item 
 class \hyperlink{classprism_1_1_string}{String}
+\item 
+class \hyperlink{classprism_1_1_unequal_size_exception}{Unequal\+Size\+Exception}
 \item 
 class \hyperlink{classprism_1_1_vector}{Vector}
 \item 
@@ -161,6 +165,12 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a720fbbcb3f399b006969bb00a66686f9}{sort\+\_\+quicksort} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{swap\+\_\+ranges} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{namespaceprism_a26b2b2b5b2c5f305badd964c24625b36}{operator\&} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{namespaceprism_a145d1e196c14cdbdc4eccb01c60c9275}{operator$\vert$} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{namespaceprism_a6a18ff84f30ae8056d6807056a24ef14}{operator$^\wedge$} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
 \item 
 const bool \hyperlink{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}{operator==} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
 \item 
@@ -405,7 +415,7 @@ std\+::ostream \& \hyperlink{namespaceprism_aeb86919d9ba71747d21fbd6e28671692}{o
 
 
 \subsection{Detailed Description}
-Completely and shamelessly lifted from Qt\textquotesingle{}s Q\+Flag/\+Q\+Flags classes and macros and just renamed without the prepended \textquotesingle{}Q\textquotesingle{}. These classes allow enums to be treated as datatypes when passed to methods. They are also type-\/safe so that the receiving method is expecting the enum and not the basic int equivalent. So print\+Flag(\+Label\+::\+Align\+Left) works whilst print\+Flag(2) doesn\textquotesingle{}t.
+Completely and shamefully lifted from Qt\textquotesingle{}s Q\+Flag/\+Q\+Flags classes and macros and just renamed without the prepended \textquotesingle{}Q\textquotesingle{}. These classes allow enums to be treated as datatypes when passed to methods. They are also type-\/safe so that the receiving method is expecting the enum and not the basic int equivalent. So print\+Flag(\+Label\+::\+Align\+Left) works whilst print\+Flag(2) doesn\textquotesingle{}t.
 
 For example,
 
@@ -700,14 +710,6 @@ Returns true if /em f1 does not equal /em f2 in value, false otherwise. \index{p
 )}\hypertarget{namespaceprism_a75cab41d882d24ca064927f2390ef3a6}{}\label{namespaceprism_a75cab41d882d24ca064927f2390ef3a6}
 Returns true if x or y of p1 and p2 are not equal, false if not \index{prism@{prism}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator"!=(const Bitvector \&bv1, const Bitvector \&bv2)}{operator!=(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
-\begin{DoxyParamCaption}
-\item[{const {\bf Bitvector} \&}]{bv1, }
-\item[{const {\bf Bitvector} \&}]{bv2}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_aca663878d61686ef365f3e51efddc4b4}{}\label{namespaceprism_aca663878d61686ef365f3e51efddc4b4}
-\index{prism@{prism}!operator"!=@{operator"!=}}
-\index{operator"!=@{operator"!=}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator"!=(const Vector2 \&a, const Vector2 \&b)}{operator!=(const Vector2 &a, const Vector2 &b)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector2} \&}]{a, }
@@ -739,6 +741,17 @@ Compares the vectors and returns true if a and b are not equal, false otherwise.
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a9e32551f997ae19dc52df146482405c1}{}\label{namespaceprism_a9e32551f997ae19dc52df146482405c1}
 Compares q1 and q2 and returns true if they are not equal, false otherwise. \index{prism@{prism}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator"!=(const Bitvector \&bv1, const Bitvector \&bv2)}{operator!=(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aca663878d61686ef365f3e51efddc4b4}{}\label{namespaceprism_aca663878d61686ef365f3e51efddc4b4}
+\begin{DoxyReturn}{Returns}
+Returns true if the two Bitvectors are not equal to each other, flase otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator"!=(const Circle \&c1, const Circle \&c2)}{operator!=(const Circle &c1, const Circle &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
 \begin{DoxyParamCaption}
@@ -773,6 +786,17 @@ Compares the elements of the two matrices and returns true if they don\textquote
 \item[{const {\bf String} \&}]{str2}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a5c2215edf9ab445c3c1791217d131b15}{}\label{namespaceprism_a5c2215edf9ab445c3c1791217d131b15}
+\index{prism@{prism}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator\&(const Bitvector \&bv1, const Bitvector \&bv2)}{operator&(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} prism\+::operator\& (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a26b2b2b5b2c5f305badd964c24625b36}{}\label{namespaceprism_a26b2b2b5b2c5f305badd964c24625b36}
+Performs a bitwise A\+ND on {\itshape bv1} and {\itshape bv2}. \begin{DoxyReturn}{Returns}
+Returns a new \hyperlink{classprism_1_1_bitvector}{Bitvector} with the result of {\itshape }(bv1 \& bv2). 
+\end{DoxyReturn}
 \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$\ast$(const Fraction \&f1, const Fraction \&f2)}{operator*(const Fraction &f1, const Fraction &f2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} prism\+::operator$\ast$ (
@@ -1400,14 +1424,6 @@ Allows an instance of \hyperlink{classprism_1_1_fraction}{Fraction} to be writte
 )}\hypertarget{namespaceprism_ad6335168e27f481d86ae42da444006d1}{}\label{namespaceprism_ad6335168e27f481d86ae42da444006d1}
 Allows an instance of \hyperlink{classprism_1_1_size}{Size} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Bitvector \&bv)}{operator<<(std::ostream &out, const Bitvector &bv)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{std\+::ostream \&}]{out, }
-\item[{const {\bf Bitvector} \&}]{bv}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{}\label{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}
-Allows an instance of \hyperlink{classprism_1_1_bitvector}{Bitvector} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Vector2 \&v)}{operator<<(std::ostream &out, const Vector2 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{std\+::ostream \&}]{out, }
@@ -1447,6 +1463,14 @@ Returns a reference to a stream which allows an instance of \hyperlink{classpris
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{}\label{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}
 \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Bitvector \&bv)}{operator<<(std::ostream &out, const Bitvector &bv)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Bitvector} \&}]{bv}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}{}\label{namespaceprism_a0b98ff0fee78022242292f24158ad1f0}
+Allows an instance of \hyperlink{classprism_1_1_bitvector}{Bitvector} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Circle \&c)}{operator<<(std::ostream &out, const Circle &c)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
@@ -1568,14 +1592,6 @@ Returns true if the raw pointer p1 and the managed pointer of p2 point to the sa
 )}\hypertarget{namespaceprism_a739baa4e75c1ca83624d486eec1d45e9}{}\label{namespaceprism_a739baa4e75c1ca83624d486eec1d45e9}
 Returns true if x and y of p1 and p2 are equal, false if not \index{prism@{prism}!operator==@{operator==}}
 \index{operator==@{operator==}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator==(const Bitvector \&bv1, const Bitvector \&bv2)}{operator==(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
-\begin{DoxyParamCaption}
-\item[{const {\bf Bitvector} \&}]{bv1, }
-\item[{const {\bf Bitvector} \&}]{bv2}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}{}\label{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}
-\index{prism@{prism}!operator==@{operator==}}
-\index{operator==@{operator==}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator==(const Vector2 \&a, const Vector2 \&b)}{operator==(const Vector2 &a, const Vector2 &b)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector2} \&}]{a, }
@@ -1607,6 +1623,17 @@ Compares the two vectors and if each of the corresponding components are equal i
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ac4ae112433b9ab32c801cccc9c3f74f0}{}\label{namespaceprism_ac4ae112433b9ab32c801cccc9c3f74f0}
 Compares q1 and q2 and returns true if they are equal, false otherwise. \index{prism@{prism}!operator==@{operator==}}
+\index{operator==@{operator==}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator==(const Bitvector \&bv1, const Bitvector \&bv2)}{operator==(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}{}\label{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}
+\begin{DoxyReturn}{Returns}
+Returns true if the two Bitvectors are equal to each other, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator==@{operator==}}
 \index{operator==@{operator==}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator==(const Circle \&c1, const Circle \&c2)}{operator==(const Circle &c1, const Circle &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
 \begin{DoxyParamCaption}
@@ -1683,6 +1710,28 @@ Returns true if {\itshape c1} has a greater radius than {\itshape c2}, false oth
 )}\hypertarget{namespaceprism_aad049ddef9beb3fec3e7057a7f651280}{}\label{namespaceprism_aad049ddef9beb3fec3e7057a7f651280}
 \begin{DoxyReturn}{Returns}
 Returns true if the unicode value of {\itshape c1} is greater than or equal to {\itshape c2}, false otherwise. 
+\end{DoxyReturn}
+\index{prism@{prism}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$^\wedge$(const Bitvector \&bv1, const Bitvector \&bv2)}{operator^(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} prism\+::operator$^\wedge$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a6a18ff84f30ae8056d6807056a24ef14}{}\label{namespaceprism_a6a18ff84f30ae8056d6807056a24ef14}
+Performs a bitwise X\+OR on {\itshape bv1} and {\itshape bv2}. \begin{DoxyReturn}{Returns}
+Returns a new \hyperlink{classprism_1_1_bitvector}{Bitvector} with the result of {\itshape }(bv1 $^\wedge$ bv2). 
+\end{DoxyReturn}
+\index{prism@{prism}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator\texttt{"|}(const Bitvector \&bv1, const Bitvector \&bv2)}{operator|(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} prism\+::operator$\vert$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a145d1e196c14cdbdc4eccb01c60c9275}{}\label{namespaceprism_a145d1e196c14cdbdc4eccb01c60c9275}
+Performs a bitwise OR on {\itshape bv1} and {\itshape bv2}. \begin{DoxyReturn}{Returns}
+Returns a new \hyperlink{classprism_1_1_bitvector}{Bitvector} with the result of {\itshape }(bv1 $\vert$ bv2). 
 \end{DoxyReturn}
 \index{prism@{prism}!p\+\_\+heapify@{p\+\_\+heapify}}
 \index{p\+\_\+heapify@{p\+\_\+heapify}!prism@{prism}}

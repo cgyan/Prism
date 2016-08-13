@@ -55,11 +55,7 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*BitvectorTest*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	// 2^64 = 			18446744073709551616
-	// 2^63 =			 9223372036854775808
-	// ULLONG_MAX = 	18446744073709551615
-//	unsigned long long int a = 9223372036854775808;
-//
+
 
 
 	return RUN_ALL_TESTS();

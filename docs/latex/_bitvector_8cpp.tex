@@ -1,10 +1,12 @@
 \hypertarget{_bitvector_8cpp}{}\section{src/prism/\+Bitvector.cpp File Reference}
 \label{_bitvector_8cpp}\index{src/prism/\+Bitvector.\+cpp@{src/prism/\+Bitvector.\+cpp}}
-{\ttfamily \#include $<$prism/\+Bitvector.\+h$>$}\\*
+{\ttfamily \#include $<$prism/\+Bitvector$>$}\\*
 {\ttfamily \#include $<$prism/\+Char$>$}\\*
 {\ttfamily \#include $<$prism/algorithms$>$}\\*
 {\ttfamily \#include $<$prism/\+Out\+Of\+Bounds\+Exception$>$}\\*
-{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$prism/\+Unequal\+Size\+Exception$>$}\\*
+{\ttfamily \#include $<$prism/\+Overflow\+Exception$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,6 +14,12 @@
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+Bitvector \hyperlink{namespaceprism_a26b2b2b5b2c5f305badd964c24625b36}{prism\+::operator\&} (const Bitvector \&bv1, const Bitvector \&bv2)
+\item 
+Bitvector \hyperlink{namespaceprism_a145d1e196c14cdbdc4eccb01c60c9275}{prism\+::operator$\vert$} (const Bitvector \&bv1, const Bitvector \&bv2)
+\item 
+Bitvector \hyperlink{namespaceprism_a6a18ff84f30ae8056d6807056a24ef14}{prism\+::operator$^\wedge$} (const Bitvector \&bv1, const Bitvector \&bv2)
 \item 
 const bool \hyperlink{namespaceprism_aca036c7f0f8a5aaf98b46b4879189bcc}{prism\+::operator==} (const Bitvector \&bv1, const Bitvector \&bv2)
 \item 

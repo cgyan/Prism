@@ -29,6 +29,9 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
     [ "OutOfBoundsException.h", "_out_of_bounds_exception_8h.html", [
       [ "OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", "classprism_1_1_out_of_bounds_exception" ]
     ] ],
+    [ "OverflowException.h", "_overflow_exception_8h.html", [
+      [ "OverflowException", "classprism_1_1_overflow_exception.html", "classprism_1_1_overflow_exception" ]
+    ] ],
     [ "Point.h", "_point_8h.html", [
       [ "Point", "classprism_1_1_point.html", "classprism_1_1_point" ]
     ] ],
@@ -64,6 +67,9 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
     ] ],
     [ "String.h", "_string_8h.html", [
       [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ]
+    ] ],
+    [ "UnequalSizeException.h", "_unequal_size_exception_8h.html", [
+      [ "UnequalSizeException", "classprism_1_1_unequal_size_exception.html", "classprism_1_1_unequal_size_exception" ]
     ] ],
     [ "Vector.h", "_vector_8h.html", [
       [ "Vector", "classprism_1_1_vector.html", "classprism_1_1_vector" ]

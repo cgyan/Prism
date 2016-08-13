@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['none',['none',['../classprism_1_1_bitvector.html#a33d1e72acbab4fb32eb24ddf72adc0cd',1,'prism::Bitvector']]],
   ['none_5fof',['none_of',['../namespaceprism.html#a10c83b433c7f98fd4513f1b68c6db594',1,'prism']]],
   ['normal',['normal',['../classprism_1_1_vector3.html#a3dea9d05ac3786470ecaaac2e9e1fbfb',1,'prism::Vector3::normal(const Vector3 &amp;otherVector) const '],['../classprism_1_1_vector3.html#aa46d9c866a806478b82b2e1f04a8208f',1,'prism::Vector3::normal(const Vector3 &amp;a, const Vector3 &amp;b)'],['../classprism_1_1_vector3.html#ad4444509c30100c4edf3c897a3bf59e7',1,'prism::Vector3::normal(const Vector3 &amp;a, const Vector3 &amp;b, const Vector3 &amp;c)']]],
   ['normalise',['normalise',['../classprism_1_1_quaternion.html#adce2473719f015c5e8def79cacf4a37c',1,'prism::Quaternion::normalise()'],['../classprism_1_1_vector2.html#a828a5663c78de16fcc714f5604d0668b',1,'prism::Vector2::normalise()'],['../classprism_1_1_vector3.html#a26d76e02209e76bc883ed8e4ba337dd8',1,'prism::Vector3::normalise()'],['../classprism_1_1_vector4.html#a8eb78b21b99dcc26a524bda2f281dd65',1,'prism::Vector4::normalise()']]],

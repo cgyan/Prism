@@ -1,4 +1,5 @@
 src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Bitvector \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Bitvector.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String \
   /Users/iainhemstock/GitHub/Prism/inc/prism/String.h \
@@ -18,6 +19,8 @@ src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/UnequalSizeException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OverflowException \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OverflowException.h
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Bitvector:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Bitvector.h:
 

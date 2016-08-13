@@ -111,11 +111,13 @@ $(document).ready(function(){initNavTree('_bitvector_8cpp.html','');});
 <div class="title">Bitvector.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="_bitvector_8h_source.html">prism/Bitvector.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;prism/Bitvector&gt;</code><br />
 <code>#include &lt;prism/Char&gt;</code><br />
 <code>#include &lt;prism/algorithms&gt;</code><br />
 <code>#include &lt;prism/OutOfBoundsException&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;prism/UnequalSizeException&gt;</code><br />
+<code>#include &lt;prism/OverflowException&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -124,6 +126,12 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a26b2b2b5b2c5f305badd964c24625b36"><td class="memItemLeft" align="right" valign="top">Bitvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a26b2b2b5b2c5f305badd964c24625b36">prism::operator&amp;</a> (const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td></tr>
+<tr class="separator:a26b2b2b5b2c5f305badd964c24625b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145d1e196c14cdbdc4eccb01c60c9275"><td class="memItemLeft" align="right" valign="top">Bitvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a145d1e196c14cdbdc4eccb01c60c9275">prism::operator|</a> (const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td></tr>
+<tr class="separator:a145d1e196c14cdbdc4eccb01c60c9275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a18ff84f30ae8056d6807056a24ef14"><td class="memItemLeft" align="right" valign="top">Bitvector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a6a18ff84f30ae8056d6807056a24ef14">prism::operator^</a> (const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td></tr>
+<tr class="separator:a6a18ff84f30ae8056d6807056a24ef14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca036c7f0f8a5aaf98b46b4879189bcc"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aca036c7f0f8a5aaf98b46b4879189bcc">prism::operator==</a> (const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td></tr>
 <tr class="separator:aca036c7f0f8a5aaf98b46b4879189bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca663878d61686ef365f3e51efddc4b4"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aca663878d61686ef365f3e51efddc4b4">prism::operator!=</a> (const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td></tr>

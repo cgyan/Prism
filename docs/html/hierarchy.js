@@ -6,7 +6,9 @@ var hierarchy =
     [ "prism::Char", "classprism_1_1_char.html", null ],
     [ "prism::Circle", "classprism_1_1_circle.html", null ],
     [ "prism::Exception", "classprism_1_1_exception.html", [
-      [ "prism::OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", null ]
+      [ "prism::OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", null ],
+      [ "prism::OverflowException", "classprism_1_1_overflow_exception.html", null ],
+      [ "prism::UnequalSizeException", "classprism_1_1_unequal_size_exception.html", null ]
     ] ],
     [ "prism::Flag", "classprism_1_1_flag.html", null ],
     [ "prism::Flags< Enum >", "classprism_1_1_flags.html", null ],

@@ -6,14 +6,13 @@
  *      Author: iainhemstock
  */
 
-#include <prism/Bitvector.h>
+#include <prism/Bitvector>
 #include <prism/Char>
 #include <prism/algorithms>
 #include <prism/OutOfBoundsException>
 #include <prism/UnequalSizeException>
 #include <prism/OverflowException>
 #include <cmath>
-using namespace std;
 
 namespace prism {
 
@@ -280,7 +279,7 @@ String Bitvector::string() const {
 /**
  * @return Returns an unsigned long long int with the integer value that has
  * the same bits set as the Bitvector.
- * \note If the binary value is more than an unsinged long long int can represent
+ * \note If the binary value is more than an unsigned long long int can represent
  * then an OverflowException is thrown.
  */
 unsigned long long int Bitvector::ull() const {
@@ -396,7 +395,7 @@ Bitvector & Bitvector::operator |=(const Bitvector & other) {
 
 /**
  * Performs a bitwise XOR on this Bitvector and \em other.
- * @return Returns a reference to this Bitvector updated with the result of (this bitvector & other).
+ * @return Returns a reference to this Bitvector updated with the result of (this bitvector ^ other).
  */
 Bitvector & Bitvector::operator ^=(const Bitvector & other) {
 	*this = *this ^ other;
@@ -481,6 +480,8 @@ Bitvector operator^(const Bitvector & bv1, const Bitvector & bv2) {
 
 /**
  * @return Returns true if the two Bitvectors are equal to each other, false otherwise.
+ * The Bitvectors are considered equal if they are the same size and each corresponding bit
+ * is set to the same value.
  */
 const bool operator==(const Bitvector & bv1, const Bitvector & bv2) {
 	if (bv1.size() != bv2.size())
@@ -489,7 +490,7 @@ const bool operator==(const Bitvector & bv1, const Bitvector & bv2) {
 }
 
 /**
- * @return Returns true if the two Bitvectors are not equal to each other, flase otherwise.
+ * @return Returns true if the two Bitvectors are not equal to each other, false otherwise.
  */
 const bool operator!=(const Bitvector & bv1, const Bitvector & bv2) {
 	return !(bv1==bv2);

@@ -17,17 +17,35 @@
 \item 
 virtual \hyperlink{classprism_1_1_bitvector_ac68d7732ae33ccded5b5ef5971280c6d}{$\sim$\+Bitvector} ()
 \item 
+const bool \hyperlink{classprism_1_1_bitvector_ae67b760618f6bf396afb68352a5dfcad}{all} () const 
+\item 
+const bool \hyperlink{classprism_1_1_bitvector_ad055160febd837c0c7b5586821c383f0}{any} () const 
+\item 
+const int \hyperlink{classprism_1_1_bitvector_a62458e0b7d104c8897124ba7e858b34c}{count} () const 
+\item 
+void \hyperlink{classprism_1_1_bitvector_aaa5007377d0c3ff1340967e6fa2b81a1}{flip} (int bit)
+\item 
+void \hyperlink{classprism_1_1_bitvector_a9133aaa30ecd6393a96932e5721c6a2d}{flip\+All} ()
+\item 
 const bool \hyperlink{classprism_1_1_bitvector_a0a3d203905a1125a2afbdd928997dbe2}{get} (int bit) const 
+\item 
+const bool \hyperlink{classprism_1_1_bitvector_a33d1e72acbab4fb32eb24ddf72adc0cd}{none} () const 
 \item 
 void \hyperlink{classprism_1_1_bitvector_abdf123d4a94086c5525ce7d8eed8a6e3}{reset\+All} ()
 \item 
-void \hyperlink{classprism_1_1_bitvector_aaa4362884a96b180fd45dd261423a7e3}{set\+All} ()
-\item 
 void \hyperlink{classprism_1_1_bitvector_af6dd4b91e57bb6a95f30c55fdb1ce6a5}{set} (int bit, const bool b=true)
+\item 
+void \hyperlink{classprism_1_1_bitvector_aaa4362884a96b180fd45dd261423a7e3}{set\+All} ()
 \item 
 const int \hyperlink{classprism_1_1_bitvector_aefc31462d8a52013191e0df4f45ccae4}{size} () const 
 \item 
-\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_bitvector_a2639e8ad277f15e545e2ec78db17ab4c}{to\+String} () const 
+\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_bitvector_abc220bdae95129cf71bb8ec70a877899}{string} () const 
+\item 
+unsigned long long int \hyperlink{classprism_1_1_bitvector_a63cc622f069e65f1b55e920927c3dc66}{ull} () const 
+\item 
+bool \hyperlink{classprism_1_1_bitvector_ab73a3eac53e5df3dc80486eddd1b8f3c}{operator\mbox{[}$\,$\mbox{]}} (const int bit)
+\item 
+const bool \hyperlink{classprism_1_1_bitvector_a2fcdd5ed5190df6a211e85c0b77a125a}{operator\mbox{[}$\,$\mbox{]}} (const int bit) const 
 \item 
 \hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{classprism_1_1_bitvector_a0d5163be9867dee195648df83273076a}{operator$<$$<$} (const int pos) const 
 \item 
@@ -37,12 +55,24 @@ const int \hyperlink{classprism_1_1_bitvector_aefc31462d8a52013191e0df4f45ccae4}
 \item 
 \hyperlink{classprism_1_1_bitvector}{Bitvector} \& \hyperlink{classprism_1_1_bitvector_a540f30c24a85e912c2a5d1d37241b89a}{operator$>$$>$=} (const int pos)
 \item 
-\hyperlink{classprism_1_1_bitvector}{Bitvector} \& \hyperlink{classprism_1_1_bitvector_a84f45db3420a5ef90d64997823924dc9}{operator=} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&other)
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{classprism_1_1_bitvector_ad5b9a350288e1f843f905de537215248}{operator$\sim$} () const 
 \item 
-\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{classprism_1_1_bitvector_a6cdd60018c3f86faeb9090b1beec5a96}{operator\&} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \& \hyperlink{classprism_1_1_bitvector_add4358afe6add8467aa32428cb13f823}{operator\&=} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&other)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \& \hyperlink{classprism_1_1_bitvector_ab11cf7a1216570e16f90f4390eb623ff}{operator$\vert$=} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&other)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \& \hyperlink{classprism_1_1_bitvector_a5b4ba0d10a0b620cebc0d8676180ed72}{operator$^\wedge$=} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&other)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \& \hyperlink{classprism_1_1_bitvector_a84f45db3420a5ef90d64997823924dc9}{operator=} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&other)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{classprism_1_1_bitvector_aacc3670e298003822cf25f68fce7cbe0}{operator\&} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{classprism_1_1_bitvector_a7da9252d437ed366b78e5f728f20ab8d}{operator$\vert$} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
+\item 
+\hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{classprism_1_1_bitvector_a774fe42b1254399adc7b8c6646f7cab3}{operator$^\wedge$} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
 \item 
 const bool \hyperlink{classprism_1_1_bitvector_ab73504943fa9f2b6d0bbaef200ba4088}{operator==} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
 \item 
@@ -63,7 +93,7 @@ This is the class description for the \hyperlink{classprism_1_1_bitvector}{Bitve
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_bitvector_a41d5de4bbd7bf193121a1614cf6b3b3b}{}\label{classprism_1_1_bitvector_a41d5de4bbd7bf193121a1614cf6b3b3b}
-Creates a new \hyperlink{classprism_1_1_bitvector}{Bitvector} that contains by default 16 bits. \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!Bitvector@{Bitvector}}
+Creates a new \hyperlink{classprism_1_1_bitvector}{Bitvector} that contains by default 64 bits. \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!Bitvector@{Bitvector}}
 \index{Bitvector@{Bitvector}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
 \subsubsection[{\texorpdfstring{Bitvector(const int n\+Bits)}{Bitvector(const int nBits)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Bitvector\+::\+Bitvector (
 \begin{DoxyParamCaption}
@@ -71,7 +101,7 @@ Creates a new \hyperlink{classprism_1_1_bitvector}{Bitvector} that contains by d
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_bitvector_ae2c403debb39b93d7de3317deb0daeeb}{}\label{classprism_1_1_bitvector_ae2c403debb39b93d7de3317deb0daeeb}
 Creates a new \hyperlink{classprism_1_1_bitvector}{Bitvector} that contains {\itshape n\+Bits}. ~\newline
-More precisely the bitvector will contain enough bytes to represent the requested number of bits. i.\+e. internally the storage is represented in unsigned short ints which are 16 bits each so its size will always be a multiple of 16. If a \hyperlink{classprism_1_1_bitvector}{Bitvector} with 10 bits is requested then the \hyperlink{classprism_1_1_bitvector}{Bitvector} will have a size of 16, if 23 bits are requested then \hyperlink{classprism_1_1_bitvector}{Bitvector} will have a size of 32 etc. \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!Bitvector@{Bitvector}}
+More precisely the bitvector will contain enough bytes to represent the requested number of bits. i.\+e. internally the storage is represented in unsigned long long ints which are 64 bits each so its size will always be a multiple of 64. If a \hyperlink{classprism_1_1_bitvector}{Bitvector} with 10 bits is requested then the \hyperlink{classprism_1_1_bitvector}{Bitvector} will reserve 64 bits but will still have a size of 10. \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!Bitvector@{Bitvector}}
 \index{Bitvector@{Bitvector}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
 \subsubsection[{\texorpdfstring{Bitvector(const String \&bit\+String)}{Bitvector(const String &bitString)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Bitvector\+::\+Bitvector (
 \begin{DoxyParamCaption}
@@ -82,7 +112,7 @@ Creates a new \hyperlink{classprism_1_1_bitvector}{Bitvector} from the string {\
 \begin{DoxyCode}
    String s = \textcolor{stringliteral}{"11101110"};
 \hyperlink{classprism_1_1_bitvector_a41d5de4bbd7bf193121a1614cf6b3b3b}{Bitvector} bv(s);
-cout << bv.toString(); \textcolor{comment}{// output: 11101110}
+cout << bv.string(); \textcolor{comment}{// output: 11101110}
 \end{DoxyCode}
  \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!Bitvector@{Bitvector}}
 \index{Bitvector@{Bitvector}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
@@ -101,7 +131,51 @@ Creates a copy of {\itshape other}. \index{prism\+::\+Bitvector@{prism\+::\+Bitv
 Destroys this \hyperlink{classprism_1_1_bitvector}{Bitvector} 
 
 \subsection{Member Function Documentation}
-\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!get@{get}}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!all@{all}}
+\index{all@{all}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{all() const }{all() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Bitvector\+::all (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_bitvector_ae67b760618f6bf396afb68352a5dfcad}{}\label{classprism_1_1_bitvector_ae67b760618f6bf396afb68352a5dfcad}
+\begin{DoxyReturn}{Returns}
+Returns true if all of the bits are set to 1. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!any@{any}}
+\index{any@{any}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{any() const }{any() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Bitvector\+::any (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_bitvector_ad055160febd837c0c7b5586821c383f0}{}\label{classprism_1_1_bitvector_ad055160febd837c0c7b5586821c383f0}
+\begin{DoxyReturn}{Returns}
+Returns true if any of the bits are set to 1. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!count@{count}}
+\index{count@{count}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{count() const }{count() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Bitvector\+::count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_bitvector_a62458e0b7d104c8897124ba7e858b34c}{}\label{classprism_1_1_bitvector_a62458e0b7d104c8897124ba7e858b34c}
+\begin{DoxyReturn}{Returns}
+Returns the number of bits that have been set to 1. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!flip@{flip}}
+\index{flip@{flip}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{flip(int bit)}{flip(int bit)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Bitvector\+::flip (
+\begin{DoxyParamCaption}
+\item[{int}]{bit}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_bitvector_aaa5007377d0c3ff1340967e6fa2b81a1}{}\label{classprism_1_1_bitvector_aaa5007377d0c3ff1340967e6fa2b81a1}
+Flips {\itshape bit} from zero to one or from one to zero. \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!flip\+All@{flip\+All}}
+\index{flip\+All@{flip\+All}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{flip\+All()}{flipAll()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Bitvector\+::flip\+All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_bitvector_a9133aaa30ecd6393a96932e5721c6a2d}{}\label{classprism_1_1_bitvector_a9133aaa30ecd6393a96932e5721c6a2d}
+Flips each bit converting zeros to ones and ones to zeros. \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!get@{get}}
 \index{get@{get}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
 \subsubsection[{\texorpdfstring{get(int bit) const }{get(int bit) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Bitvector\+::get (
 \begin{DoxyParamCaption}
@@ -111,22 +185,31 @@ Destroys this \hyperlink{classprism_1_1_bitvector}{Bitvector}
 \begin{DoxyReturn}{Returns}
 Returns the value of the bit at position {\itshape bit}. 
 \begin{DoxyCode}
-\hyperlink{classprism_1_1_bitvector_a41d5de4bbd7bf193121a1614cf6b3b3b}{Bitvector} bv;
-bv.set(4);
-cout << bv.get(4); \textcolor{comment}{// output: 1}
+\hyperlink{classprism_1_1_bitvector_a41d5de4bbd7bf193121a1614cf6b3b3b}{Bitvector} bv;       \textcolor{comment}{// 0000}
+bv.set(3);          \textcolor{comment}{// 1000}
+cout << bv.get(3);  \textcolor{comment}{// output: 1}
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\&@{operator\&}}
-\index{operator\&@{operator\&}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
-\subsubsection[{\texorpdfstring{operator\&(const Bitvector \&bv1, const Bitvector \&bv2)}{operator&(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} prism\+::\+Bitvector\+::operator\& (
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!none@{none}}
+\index{none@{none}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{none() const }{none() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Bitvector\+::none (
 \begin{DoxyParamCaption}
-\item[{const {\bf Bitvector} \&}]{bv1, }
-\item[{const {\bf Bitvector} \&}]{bv2}
+{}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_bitvector_a6cdd60018c3f86faeb9090b1beec5a96}{}\label{classprism_1_1_bitvector_a6cdd60018c3f86faeb9090b1beec5a96}
+) const}\hypertarget{classprism_1_1_bitvector_a33d1e72acbab4fb32eb24ddf72adc0cd}{}\label{classprism_1_1_bitvector_a33d1e72acbab4fb32eb24ddf72adc0cd}
 \begin{DoxyReturn}{Returns}
-Returns a \hyperlink{classprism_1_1_bitvector}{Bitvector} that is the result of {\itshape }(bv1 \& {\itshape bv2}). 
+Returns true if none of the bits are set to 1, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\&=@{operator\&=}}
+\index{operator\&=@{operator\&=}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator\&=(const Bitvector \&other)}{operator&=(const Bitvector &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} \& prism\+::\+Bitvector\+::operator\&= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_bitvector_add4358afe6add8467aa32428cb13f823}{}\label{classprism_1_1_bitvector_add4358afe6add8467aa32428cb13f823}
+Performs a bitwise A\+ND on this \hyperlink{classprism_1_1_bitvector}{Bitvector} and {\itshape other}. \begin{DoxyReturn}{Returns}
+Returns a reference to this \hyperlink{classprism_1_1_bitvector}{Bitvector} updated with the result of (this bitvector \& other). 
 \end{DoxyReturn}
 \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
@@ -175,6 +258,56 @@ Returns a copy of this \hyperlink{classprism_1_1_bitvector}{Bitvector} that has 
 \begin{DoxyReturn}{Returns}
 Returns a reference to this \hyperlink{classprism_1_1_bitvector}{Bitvector} which has had its bits shifted to the right by {\itshape pos} positions. 
 \end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator[](const int bit)}{operator[](const int bit)}}]{\setlength{\rightskip}{0pt plus 5cm}bool prism\+::\+Bitvector\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{bit}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_bitvector_ab73a3eac53e5df3dc80486eddd1b8f3c}{}\label{classprism_1_1_bitvector_ab73a3eac53e5df3dc80486eddd1b8f3c}
+\begin{DoxyReturn}{Returns}
+Returns the value of the bit at position {\itshape bit}. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator[](const int bit) const }{operator[](const int bit) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Bitvector\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const int}]{bit}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_bitvector_a2fcdd5ed5190df6a211e85c0b77a125a}{}\label{classprism_1_1_bitvector_a2fcdd5ed5190df6a211e85c0b77a125a}
+\begin{DoxyReturn}{Returns}
+Returns the value of the bit at position {\itshape bit}. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator$^\wedge$=@{operator$^\wedge$=}}
+\index{operator$^\wedge$=@{operator$^\wedge$=}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator$^\wedge$=(const Bitvector \&other)}{operator^=(const Bitvector &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} \& prism\+::\+Bitvector\+::operator$^\wedge$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_bitvector_a5b4ba0d10a0b620cebc0d8676180ed72}{}\label{classprism_1_1_bitvector_a5b4ba0d10a0b620cebc0d8676180ed72}
+Performs a bitwise X\+OR on this \hyperlink{classprism_1_1_bitvector}{Bitvector} and {\itshape other}. \begin{DoxyReturn}{Returns}
+Returns a reference to this \hyperlink{classprism_1_1_bitvector}{Bitvector} updated with the result of (this bitvector \& other). 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator\texttt{"|}=(const Bitvector \&other)}{operator|=(const Bitvector &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} \& prism\+::\+Bitvector\+::operator$\vert$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_bitvector_ab11cf7a1216570e16f90f4390eb623ff}{}\label{classprism_1_1_bitvector_ab11cf7a1216570e16f90f4390eb623ff}
+Performs a bitwise OR on this \hyperlink{classprism_1_1_bitvector}{Bitvector} and {\itshape other}. \begin{DoxyReturn}{Returns}
+Returns a reference to this \hyperlink{classprism_1_1_bitvector}{Bitvector} updated with the result of (this bitvector $\vert$ other). 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator````~@{operator$\sim$}}
+\index{operator````~@{operator$\sim$}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator$\sim$() const }{operator~() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} prism\+::\+Bitvector\+::operator$\sim$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_bitvector_ad5b9a350288e1f843f905de537215248}{}\label{classprism_1_1_bitvector_ad5b9a350288e1f843f905de537215248}
+Flips all the bits from zeros to ones or from ones to zeros. Equivalent to \hyperlink{classprism_1_1_bitvector_a9133aaa30ecd6393a96932e5721c6a2d}{flip\+All()}. \begin{DoxyReturn}{Returns}
+A copy of this \hyperlink{classprism_1_1_bitvector}{Bitvector} which has had all of its bits flipped. 
+\end{DoxyReturn}
 \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!reset\+All@{reset\+All}}
 \index{reset\+All@{reset\+All}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
 \subsubsection[{\texorpdfstring{reset\+All()}{resetAll()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Bitvector\+::reset\+All (
@@ -207,7 +340,7 @@ Sets all the bits in the \hyperlink{classprism_1_1_bitvector}{Bitvector} to 1.
 \begin{DoxyCode}
 \hyperlink{classprism_1_1_bitvector_a41d5de4bbd7bf193121a1614cf6b3b3b}{Bitvector} bv(8);
 bv.setAll();
-cout << bv.toString(); \textcolor{comment}{// output: "11111111"}
+cout << bv.string(); \textcolor{comment}{// output: "11111111"}
 \end{DoxyCode}
  \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!size@{size}}
 \index{size@{size}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
@@ -219,23 +352,36 @@ cout << bv.toString(); \textcolor{comment}{// output: "11111111"}
 \begin{DoxyReturn}{Returns}
 Returns the number of bits in the \hyperlink{classprism_1_1_bitvector}{Bitvector}. 
 \end{DoxyReturn}
-\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!to\+String@{to\+String}}
-\index{to\+String@{to\+String}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
-\subsubsection[{\texorpdfstring{to\+String() const }{toString() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+Bitvector\+::to\+String (
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!string@{string}}
+\index{string@{string}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{string() const }{string() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+Bitvector\+::string (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}\hypertarget{classprism_1_1_bitvector_a2639e8ad277f15e545e2ec78db17ab4c}{}\label{classprism_1_1_bitvector_a2639e8ad277f15e545e2ec78db17ab4c}
+) const}\hypertarget{classprism_1_1_bitvector_abc220bdae95129cf71bb8ec70a877899}{}\label{classprism_1_1_bitvector_abc220bdae95129cf71bb8ec70a877899}
 \begin{DoxyReturn}{Returns}
 Returns a \hyperlink{classprism_1_1_string}{String} representation of the bits in the \hyperlink{classprism_1_1_bitvector}{Bitvector}. The least significant bit is the one to the far right and most significant bit is to the far left. 
 \begin{DoxyCode}
 \hyperlink{classprism_1_1_bitvector_a41d5de4bbd7bf193121a1614cf6b3b3b}{Bitvector} bv(4);
 bv.set(0);
 bv.set(2);
-cout << bv.toString(); \textcolor{comment}{// output: "0101"}
+cout << bv.string(); \textcolor{comment}{// output: "0101"}
 \end{DoxyCode}
  
 \end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!ull@{ull}}
+\index{ull@{ull}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{ull() const }{ull() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int prism\+::\+Bitvector\+::ull (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_bitvector_a63cc622f069e65f1b55e920927c3dc66}{}\label{classprism_1_1_bitvector_a63cc622f069e65f1b55e920927c3dc66}
+\begin{DoxyReturn}{Returns}
+Returns an unsigned long long int with the integer value that has the same bits set as the \hyperlink{classprism_1_1_bitvector}{Bitvector}. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the binary value is more than an unsigned long long int can represent then an \hyperlink{classprism_1_1_overflow_exception}{Overflow\+Exception} is thrown. 
+\end{DoxyNote}
 
 
 \subsection{Friends And Related Function Documentation}
@@ -247,6 +393,20 @@ cout << bv.toString(); \textcolor{comment}{// output: "0101"}
 \item[{const {\bf Bitvector} \&}]{bv2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_bitvector_a085f70a7612a9fc1dd410533d09fa6fc}{}\label{classprism_1_1_bitvector_a085f70a7612a9fc1dd410533d09fa6fc}
+\begin{DoxyReturn}{Returns}
+Returns true if the two Bitvectors are not equal to each other, flase otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator\&}{operator&}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} operator\& (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_bitvector_aacc3670e298003822cf25f68fce7cbe0}{}\label{classprism_1_1_bitvector_aacc3670e298003822cf25f68fce7cbe0}
+Performs a bitwise A\+ND on {\itshape bv1} and {\itshape bv2}. \begin{DoxyReturn}{Returns}
+Returns a new \hyperlink{classprism_1_1_bitvector}{Bitvector} with the result of {\itshape }(bv1 \& bv2). 
+\end{DoxyReturn}
 \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
 \subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
@@ -263,6 +423,31 @@ Allows an instance of \hyperlink{classprism_1_1_bitvector}{Bitvector} to be writ
 \item[{const {\bf Bitvector} \&}]{bv2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_bitvector_ab73504943fa9f2b6d0bbaef200ba4088}{}\label{classprism_1_1_bitvector_ab73504943fa9f2b6d0bbaef200ba4088}
+\begin{DoxyReturn}{Returns}
+Returns true if the two Bitvectors are equal to each other, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator$^\wedge$}{operator^}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} operator$^\wedge$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_bitvector_a774fe42b1254399adc7b8c6646f7cab3}{}\label{classprism_1_1_bitvector_a774fe42b1254399adc7b8c6646f7cab3}
+Performs a bitwise X\+OR on {\itshape bv1} and {\itshape bv2}. \begin{DoxyReturn}{Returns}
+Returns a new \hyperlink{classprism_1_1_bitvector}{Bitvector} with the result of {\itshape }(bv1 $^\wedge$ bv2). 
+\end{DoxyReturn}
+\index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
+\subsubsection[{\texorpdfstring{operator\texttt{"|}}{operator|}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} operator$\vert$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bitvector} \&}]{bv1, }
+\item[{const {\bf Bitvector} \&}]{bv2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_bitvector_a7da9252d437ed366b78e5f728f20ab8d}{}\label{classprism_1_1_bitvector_a7da9252d437ed366b78e5f728f20ab8d}
+Performs a bitwise OR on {\itshape bv1} and {\itshape bv2}. \begin{DoxyReturn}{Returns}
+Returns a new \hyperlink{classprism_1_1_bitvector}{Bitvector} with the result of {\itshape }(bv1 $\vert$ bv2). 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
