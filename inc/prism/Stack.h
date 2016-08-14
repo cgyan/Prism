@@ -29,35 +29,30 @@ struct StackData : public SharedData {
 		T * finish;
 		const int exponent;
 
-		void copyDataToNewStorage(T* start, T* end, T* newStorage) {
-			prism::copy(start,end,newStorage);
-		}
-
 		Memory() : start(0), end(0), finish(0), exponent(2) {
 			// does nothing
 		}
 
-		Memory(const Memory & copy) : start(0), end(0), finish(0), exponent(copy.exponent) {
-			T* newStorage = new T[copy.finish-copy.start];
-			copyDataToNewStorage(copy.start, copy.end, newStorage);
-			delete []start;
-			start = newStorage;
-			end = start + (copy.end-copy.start);
-			finish = start + (copy.finish-copy.start);
+		Memory(const Memory & copy) : start(0), end(0), finish(0), exponent(copy.exponent){
+			reserve(copy.finish-copy.start, copy.start, copy.end);
 		}
 
 		~Memory() {
 			delete []start; start = 0; end = 0; finish = 0;
 		}
 
-		void reserve(const int newCapacity) {
-			int size = end-start;
-			T* newStorage = new T[newCapacity];
-			copyDataToNewStorage(start, end, newStorage);
+		void reserve(int capacity, T* pStart, T* pEnd) {
+			T* newStorage = new T[capacity];
+			prism::copy(pStart, pEnd, newStorage);
+
 			delete []start;
 			start = newStorage;
-			end = start + size;
-			finish = start + newCapacity;
+			end = start + (pEnd-pStart);
+			finish = start + capacity;
+		}
+
+		void reserve(const int newCapacity) {
+			reserve(newCapacity, start, end);
 		}
 	};
 	Memory storage;
