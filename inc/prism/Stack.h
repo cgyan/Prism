@@ -12,22 +12,55 @@
 #include <prism/algorithms>
 #include <prism/Vector>
 #include <prism/List>
+#include <prism/SharedData>
+#include <prism/SharedDataPointer>
+#include <ostream>
+using namespace std;
 
 namespace prism {
 // ========================================================================
 // StackData
 // ========================================================================
 template <class T>
-struct StackData {
-	struct memory {
+struct StackData : public SharedData {
+	struct Memory {
 		T * start;
 		T * end;
 		T * finish;
 		const int exponent;
-		memory() : start(0), end(0), finish(0), exponent(2) {}
-		~memory() { delete []start; start = 0; end = 0; finish = 0; }
+
+		void copyDataToNewStorage(T* start, T* end, T* newStorage) {
+			prism::copy(start,end,newStorage);
+		}
+
+		Memory() : start(0), end(0), finish(0), exponent(2) {
+			// does nothing
+		}
+
+		Memory(const Memory & copy) : start(0), end(0), finish(0), exponent(copy.exponent) {
+			T* newStorage = new T[copy.finish-copy.start];
+			copyDataToNewStorage(copy.start, copy.end, newStorage);
+			delete []start;
+			start = newStorage;
+			end = start + (copy.end-copy.start);
+			finish = start + (copy.finish-copy.start);
+		}
+
+		~Memory() {
+			delete []start; start = 0; end = 0; finish = 0;
+		}
+
+		void reserve(const int newCapacity) {
+			int size = end-start;
+			T* newStorage = new T[newCapacity];
+			copyDataToNewStorage(start, end, newStorage);
+			delete []start;
+			start = newStorage;
+			end = start + size;
+			finish = start + newCapacity;
+		}
 	};
-	memory storage;
+	Memory storage;
 };
 // ========================================================================
 // Stack
@@ -43,8 +76,8 @@ struct StackData {
  */
 template <class T>
 class Stack {
-private:
-	StackData<T> * d;
+public://todo change back to private
+	SharedDataPointer< StackData<T> > sp;
 public:
 	Stack();
 	Stack(const Stack<T> & copy);
@@ -68,14 +101,19 @@ public:
 	// related non-members
 	friend const bool operator==(const Stack<T> & s1, const Stack<T> & s2) {
 		if (s1.size() != s2.size()) return false;
-		return prism::equal(s1.d->storage.start, s1.d->storage.end, s2.d->storage.start);
+		return prism::equal(s1.sp->storage.start, s1.sp->storage.end, s2.sp->storage.start);
 	}
 
 	friend const bool operator!=(const Stack<T> & s1, const Stack<T> & s2) {
 		return !(s1==s2);
 	}
 
-
+	friend std::ostream & operator<<(std::ostream & out, const Stack<T> & stack) {
+		out << "Stack [" << &stack << "] size=" << stack.size() << " capacity=" << stack.capacity() << endl;
+		for (int i=0; i<stack.size(); i++)
+			out << "--[" << i << "] " << *(stack.sp->storage.start+i) << endl;
+		return out;
+	}
 
 
 
@@ -86,7 +124,7 @@ public:
  */
 template <class T>
 Stack<T>::Stack()
-	: d(new StackData<T>)
+	: sp(new StackData<T>)
 {}
 
 /**
@@ -94,14 +132,8 @@ Stack<T>::Stack()
  */
 template <class T>
 Stack<T>::Stack(const Stack<T> & copy)
-	: d(new StackData<T>)
+	: sp(copy.sp)
 {
-	if (!copy.empty()) {
-		reserve(copy.capacity());
-		prism::copy(copy.d->storage.start, copy.d->storage.end, this->d->storage.start);
-		d->storage.end = d->storage.start + copy.size();
-	}
-
 }
 
 /**
@@ -109,7 +141,7 @@ Stack<T>::Stack(const Stack<T> & copy)
  */
 template <class T>
 Stack<T>::~Stack() {
-	delete d;
+
 }
 
 /**
@@ -117,7 +149,7 @@ Stack<T>::~Stack() {
  */
 template <class T>
 const int Stack<T>::capacity() const {
-	return d->storage.finish - d->storage.start;
+	return sp->storage.finish - sp->storage.start;
 }
 
 /**
@@ -125,7 +157,7 @@ const int Stack<T>::capacity() const {
  */
 template <class T>
 const bool Stack<T>::empty() const {
-	return d->storage.start == d->storage.end;
+	return sp->storage.start == sp->storage.end;
 }
 
 /**
@@ -133,7 +165,9 @@ const bool Stack<T>::empty() const {
  */
 template <class T>
 void Stack<T>::pop() {
-	--d->storage.end;
+	cout << "popping" << endl;
+	sp.detach();
+	--sp->storage.end;
 }
 
 /**
@@ -141,12 +175,13 @@ void Stack<T>::pop() {
  */
 template <class T>
 void Stack<T>::push(const T& value) {
+	sp.detach();
 	int s = size();
 	if (s + 1 > capacity())
-		reserve((s+1)*d->storage.exponent);
+		sp->storage.reserve((s+1)*sp->storage.exponent);
 
-	*(d->storage.end) = value;
-	++d->storage.end;
+	*(sp->storage.end) = value;
+	++sp->storage.end;
 }
 
 /**
@@ -157,18 +192,20 @@ void Stack<T>::push(const T& value) {
  * values in the stack are not affected by this function.
  */
 template <class T>
-void Stack<T>::reserve(const int newCapacity) {
-	if (newCapacity > d->storage.finish-d->storage.start) {
+void Stack<T>::reserve(const int newCapacity)
+{
+	if (newCapacity > sp->storage.finish-sp->storage.start) {
+		sp->storage.reserve(newCapacity);
 
-		T * newStorage = new T[newCapacity];
-		if (!empty())
-			prism::copy(d->storage.start, d->storage.end, newStorage);
-
-		int s = size();
-		delete [] d->storage.start;
-		d->storage.start = newStorage;
-		d->storage.end = d->storage.start + s;
-		d->storage.finish = d->storage.start + newCapacity;
+//		T * newStorage = new T[newCapacity];
+//		if (!empty())
+//			prism::copy(sp->storage.start, sp->storage.end, newStorage);
+//
+//		int s = size();
+//		delete [] sp->storage.start;
+//		sp->storage.start = newStorage;
+//		sp->storage.end = sp->storage.start + s;
+//		sp->storage.finish = sp->storage.start + newCapacity;
 	}
 }
 
@@ -177,7 +214,7 @@ void Stack<T>::reserve(const int newCapacity) {
  */
 template <class T>
 const int Stack<T>::size() const {
-	return d->storage.end - d->storage.start;
+	return sp->storage.end - sp->storage.start;
 }
 
 /**
@@ -186,15 +223,17 @@ const int Stack<T>::size() const {
  * capacity and size of 4. If size() and capacity() are already equal then nothing happens.
  */
 template <class T>
-void Stack<T>::squeeze() {
-	if (d->storage.finish - d->storage.start > 0) {
+void Stack<T>::squeeze()
+{
+	sp.detach();
+	if (sp->storage.finish - sp->storage.start > 0) {
 		int s = size();
 		T * newStorage = new T[s];
-		prism::copy(d->storage.start, d->storage.end, newStorage);
-		delete []d->storage.start;
-		d->storage.start = newStorage;
-		d->storage.end = d->storage.start + s;
-		d->storage.finish = d->storage.end;
+		prism::copy(sp->storage.start, sp->storage.end, newStorage);
+		delete []sp->storage.start;
+		sp->storage.start = newStorage;
+		sp->storage.end = sp->storage.start + s;
+		sp->storage.finish = sp->storage.end;
 	}
 }
 
@@ -203,7 +242,7 @@ void Stack<T>::squeeze() {
  */
 template <class T>
 const T& Stack<T>::top() const {
-	return *(d->storage.end-1);
+	return *(sp->storage.end-1);
 }
 
 /**
@@ -211,7 +250,7 @@ const T& Stack<T>::top() const {
  */
 template <class T>
 T& Stack<T>::top() {
-	return *(d->storage.end-1);
+	return *(sp->storage.end-1);
 }
 
 /**
@@ -220,9 +259,9 @@ T& Stack<T>::top() {
 template <class T>
 List<T> Stack<T>::toList() const {
 	List<T> list;
-	T * it = d->storage.start;
+	T * it = sp->storage.start;
 
-	while (it != d->storage.end)
+	while (it != sp->storage.end)
 		list << *it++;
 
 	return list;
@@ -235,7 +274,7 @@ template <class T>
 Vector<T> Stack<T>::toVector() const {
 	Vector<T> v;
 	v.resize(this->size());
-	prism::copy(d->storage.start, d->storage.end, v.data());
+	prism::copy(sp->storage.start, sp->storage.end, v.data());
 
 	return v;
 }

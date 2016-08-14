@@ -144,6 +144,29 @@ TEST_F(StackTest, opStreamIn) {
 	ASSERT_TRUE(s.top() == 3);
 }
 
+/**
+ * Test: copy on write
+ */
+TEST_F(StackTest, copyOnWrite) {
+	Stack<int> s1;
+	s1 << 1 << 2 << 3 << 4 << 5;
+	Stack<int> s2(s1);
+
+	ASSERT_TRUE(s1.sp.data()->storage.start == s2.sp.data()->storage.start);
+	ASSERT_EQ(s1.top(), 5);
+	ASSERT_EQ(s2.top(), 5);
+	ASSERT_EQ(s1.size(), 5);
+	ASSERT_EQ(s2.size(), 5);
+
+	s2.pop();
+
+	ASSERT_FALSE(s1.sp.data()->storage.start == s2.sp.data()->storage.start);
+//	ASSERT_EQ(s1.top(), 5);
+//	ASSERT_EQ(s2.top(), 4);
+	ASSERT_EQ(s1.size(), 5);
+	ASSERT_EQ(4, s2.size());
+}
+
 }
 
 

@@ -39,8 +39,9 @@ SharedData::~SharedData() {
  *
  */
 void SharedData::decRef() {
-	if (--m_refCount == 0)
-		delete this;  // deletes the SharedData subclass
+	--m_refCount;
+//	if (--m_refCount == 0)
+//		delete this;  // deletes the SharedData subclass
 }
 
 /**
