@@ -13,7 +13,11 @@ test/StackTest.d: ../test/StackTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -44,3 +48,11 @@ test/StackTest.d: ../test/StackTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Exception:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedData:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedData.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer.h:

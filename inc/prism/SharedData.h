@@ -19,7 +19,7 @@ private:
 public:
 	SharedData();
 	SharedData(const SharedData & copy);
-	virtual ~SharedData() = 0;
+	virtual ~SharedData();
 
 	void 			decRef();
 	void 			incRef();

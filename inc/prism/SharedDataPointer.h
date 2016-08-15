@@ -10,7 +10,6 @@
 #define PRISM_SHAREDDATAPOINTER_H_
 
 #include <ostream>
-using namespace std;
 
 namespace prism {
 
@@ -63,9 +62,9 @@ inline SharedDataPointer<SharedDataType>::SharedDataPointer()
 template <class SharedDataType>
 inline SharedDataPointer<SharedDataType>::SharedDataPointer(SharedDataType * p)
 {
-	if (!p->isShareable())
-		p = new SharedDataType(*p);
-	else this->p = p;
+	if (p->isShareable())
+		this->p = p;
+	else p = new SharedDataType(*p);
 	p->incRef();
 }
 
@@ -75,9 +74,9 @@ inline SharedDataPointer<SharedDataType>::SharedDataPointer(SharedDataType * p)
 template <class SharedDataType>
 inline SharedDataPointer<SharedDataType>::SharedDataPointer(const SharedDataPointer & copy)
 {
-	if (!copy.p->isShareable())
-		p = new SharedDataType(*copy.p);
-	else p = copy.p;
+	if (copy.p->isShareable())
+		p = copy.p;
+	else p = new SharedDataType(*copy.p);
 	p->incRef();
 }
 
@@ -86,7 +85,12 @@ inline SharedDataPointer<SharedDataType>::SharedDataPointer(const SharedDataPoin
  */
 template <class SharedDataType>
 inline SharedDataPointer<SharedDataType>::~SharedDataPointer() {
-	if (p) p->decRef();
+	if (p) {
+		p->decRef();
+		if (p->refCount() == 0)
+			delete p;
+	}
+
 }
 
 /**
@@ -226,12 +230,13 @@ inline const bool SharedDataPointer<SharedDataType>::operator==(const SharedData
  *
  */
 template <class SharedDataType>
-inline SharedDataPointer<SharedDataType> & SharedDataPointer<SharedDataType>::operator=(const SharedDataPointer<SharedDataType> & rhs) {
-	if (p != rhs.p) { // don't assign to self
-
-		if (!rhs.p->isShareable())
-			p = new SharedDataType(*rhs.p);
-		else p = rhs.p;
+inline SharedDataPointer<SharedDataType> & SharedDataPointer<SharedDataType>::operator=(const SharedDataPointer<SharedDataType> & rhs)
+{
+	if (p != rhs.p)// don't assign to self
+	{
+		if (rhs.p->isShareable())
+			p = rhs.p;
+		else p = new SharedDataType(*rhs.p);
 		p->incRef();
 	}
 	return *this;

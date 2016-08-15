@@ -52,11 +52,58 @@ void print(int n) { cout << n << endl; }
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*"
-	::testing::GTEST_FLAG(filter) = "*SharedDataPointerTest*";
+	::testing::GTEST_FLAG(filter) = "*Stack*";
 	::testing::InitGoogleTest(&argc, argv);
 
+//	Stack<int> a;
+//	a << 1 << 2;
+//
+//	{
+//		Stack<int> b(a);
+//
+//		cout << "a.start=" << a.sp.data()->storage.start << ", b.start=" << b.sp.data()->storage.start << endl;
+//
+//	//	cout << (a.sp.data() == b.sp.data()) << endl;
+//	//	cout << a.d.refCount() << endl;
+//	//	cout << b.d.refCount() << endl;
+//
+//		cout << "b detaching" << endl;
+//		b.push(3);
+//
+//		cout << "a.start=" << a.sp.data()->storage.start << ", b.start=" << b.sp.data()->storage.start << endl;
+//
+//		cout << *(a.sp.data()->storage.start) << endl;
+//		cout << a.top() << endl;
+//		cout << b.top() << endl;
+//		cout << (a.sp.data() == b.sp.data()) << endl;
+//		cout << a.sp.refCount() << endl;
+//		cout << b.sp.refCount() << endl;
+//		cout << "";
+//	}
+//
+//	cout << "a.start=" << a.sp.data()->storage.start << endl;
+//	cout << *(a.sp.data()->storage.start + 1) << endl;
+//	cout << (a.sp.data()->storage.finish - a.sp.data()->storage.start) << endl;
+//	cout << a.top() << endl;
+//	cout << "";
 
-
+//	Stack<int> a;
+//	a << 10 << 20 << 30 << 40 << 50;
+//	Stack<int> b(a);
+//
+//	b.reserve(20);
+//
+//	cout << "Stack a: " << a << endl;
+//	cout << "Stack b: " << b << endl;
+//	cout << "a: top=" << a.top() << " size=" << a.size() << " capacity=" << a.capacity() << endl;
+//	cout << "b: top=" << b.top() << " size=" << b.size() << " capacity=" << b.capacity() << endl;
+//
+//	b.pop();
+//
+//	cout << "Stack a: " << a << endl;
+//	cout << "Stack b: " << b << endl;
+//	cout << "a: top=" << a.top() << " size=" << a.size() << " capacity=" << a.capacity() << endl;
+//	cout << "b: top=" << b.top() << " size=" << b.size() << " capacity=" << b.capacity() << endl;
 
 	return RUN_ALL_TESTS();
 //	return 0;

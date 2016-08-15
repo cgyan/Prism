@@ -16,6 +16,10 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Queue \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Queue.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Point \
@@ -78,6 +82,14 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Exception:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Exception.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedData:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedData.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Queue:
 
