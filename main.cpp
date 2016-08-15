@@ -87,23 +87,25 @@ int main(int argc, char * argv[]) {
 //	cout << a.top() << endl;
 //	cout << "";
 
-	Stack<int> a;
-	a << 10 << 20 << 30 << 40 << 50;
-	Stack<int> b(a);
+//	Stack<int> a;
+//	a << 10 << 20 << 30 << 40 << 50;
+//	Stack<int> b(a);
+//
+//	b.reserve(20);
+//
+//	cout << "Stack a: " << a << endl;
+//	cout << "Stack b: " << b << endl;
+//	cout << "a: top=" << a.top() << " size=" << a.size() << " capacity=" << a.capacity() << endl;
+//	cout << "b: top=" << b.top() << " size=" << b.size() << " capacity=" << b.capacity() << endl;
+//
+//	b.pop();
+//
+//	cout << "Stack a: " << a << endl;
+//	cout << "Stack b: " << b << endl;
+//	cout << "a: top=" << a.top() << " size=" << a.size() << " capacity=" << a.capacity() << endl;
+//	cout << "b: top=" << b.top() << " size=" << b.size() << " capacity=" << b.capacity() << endl;
 
-	cout << "Stack a: " << a << endl;
-	cout << "Stack b: " << b << endl;
-	cout << "a: top=" << a.top() << " size=" << a.size() << " capacity=" << a.capacity() << endl;
-	cout << "b: top=" << b.top() << " size=" << b.size() << " capacity=" << b.capacity() << endl;
-
-	b.pop();
-
-	cout << "Stack a: " << a << endl;
-	cout << "Stack b: " << b << endl;
-	cout << "a: top=" << a.top() << " size=" << a.size() << " capacity=" << a.capacity() << endl;
-	cout << "b: top=" << b.top() << " size=" << b.size() << " capacity=" << b.capacity() << endl;
-
-//	return RUN_ALL_TESTS();
+	return RUN_ALL_TESTS();
 //	return 0;
 }
 

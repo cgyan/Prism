@@ -10,7 +10,6 @@
 #define PRISM_SHAREDDATAPOINTER_H_
 
 #include <ostream>
-using namespace std;
 
 namespace prism {
 
