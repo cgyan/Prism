@@ -37,29 +37,6 @@ Time::~Time() {
 }
 
 /**
- *
- */
-Time Time::currentTime() {
-	using namespace std;
-	chrono::time_point<chrono::system_clock> now = chrono::system_clock::now();
-	time_t time = chrono::system_clock::to_time_t(now);
-
-	struct tm *midnight = localtime(&time);
-	midnight->tm_hour = 0;
-	midnight->tm_min = 0;
-	midnight->tm_sec = 0;
-
-	chrono::time_point<chrono::system_clock> md = chrono::system_clock::from_time_t(mktime(midnight));
-	chrono::system_clock::duration durationSinceMidnight = now-md;
-
-	chrono::milliseconds msSinceMidnight = chrono::duration_cast<chrono::milliseconds>(durationSinceMidnight);
-
-	Time ret;
-	ret.m_ms = msSinceMidnight.count();
-	return ret;
-}
-
-/**
  * @return Returns the hour part of the time (0-23).
  */
 const int Time::hour() const {
@@ -92,7 +69,7 @@ void Time::reset()
  * @return Returns the second part of the time (0-59).
  */
 const int Time::sec() const {
-	return (m_ms / MS_PER_SECOND) % SEC_PER_MINUTE;
+	return (m_ms / MS_PER_SECOND) % SECS_PER_MINUTE;
 }
 
 /**
@@ -120,6 +97,64 @@ String Time::toString() const {
 	ret += String::number(ms);
 
 	return ret;
+}
+
+/**
+ *
+ */
+Time Time::currentTime() {
+	using namespace std;
+	chrono::time_point<chrono::system_clock> now = chrono::system_clock::now();
+	time_t time = chrono::system_clock::to_time_t(now);
+
+	struct tm *midnight = localtime(&time);
+	midnight->tm_hour = 0;
+	midnight->tm_min = 0;
+	midnight->tm_sec = 0;
+
+	chrono::time_point<chrono::system_clock> md = chrono::system_clock::from_time_t(mktime(midnight));
+	chrono::system_clock::duration durationSinceMidnight = now-md;
+
+	chrono::milliseconds msSinceMidnight = chrono::duration_cast<chrono::milliseconds>(durationSinceMidnight);
+
+	Time ret;
+	ret.m_ms = msSinceMidnight.count();
+	return ret;
+}
+
+/**
+ *
+ */
+Time Time::hour(const int nHours) {
+	return Time(nHours,0);
+}
+
+/**
+ *
+ */
+Time Time::min(const int nMins) {
+	return Time(0,nMins);
+}
+
+/**
+ *
+ */
+Time Time::sec(const int nSec) {
+	return Time(0,0,nSec);
+}
+
+/**
+ *
+ */
+Time Time::msec(const int nMsec) {
+	return Time(0,0,0, nMsec);
+}
+
+/**
+ *
+ */
+Time operator +(const Time &t1, const Time &t2) {
+	return Time(0,0,0, t1.m_ms + t2.m_ms);
 }
 
 /**

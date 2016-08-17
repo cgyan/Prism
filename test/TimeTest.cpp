@@ -21,15 +21,16 @@ class TimeTest : public ::testing::Test {
  * Test: Time()
  */
 TEST_F(TimeTest, ctor) {
-
+	Time t = Time::currentTime();
+	t = t + Time::hour(2);
+	cout << t.toString() << endl;
 }
 
 /**
  * Test: Time(h,m,s,ms)
  */
 TEST_F(TimeTest, ctor_time) {
-	Time t(15,33, 24,125);
-	cout << t.toString() << endl;
+
 }
 
 /**
@@ -43,8 +44,7 @@ TEST_F(TimeTest, hour) {
  * Test: currentTime()
  */
 TEST_F(TimeTest, currentTime) {
-	Time t = Time::currentTime();
-	cout << t.toString() << endl;
+
 }
 
 

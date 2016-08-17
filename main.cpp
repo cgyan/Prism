@@ -191,7 +191,8 @@ int main(int argc, char * argv[]) {
 //	cout << "mins since midnight: " << minsSinceMidnight.count() << endl;
 
 
-
+	int i = Time::MS_PER_DAY + 6345;
+	cout << i % Time::MS_PER_DAY << endl;
 
 
 

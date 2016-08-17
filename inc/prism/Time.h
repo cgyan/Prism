@@ -27,19 +27,18 @@ public:
 		MS_PER_MINUTE 	= 60000,
 		MS_PER_HOUR 	= 3600000,
 		MS_PER_DAY 		= 86400000,
-		SEC_PER_MINUTE	= 60,
-		SEC_PER_HOUR	= 3600,
-		SEC_PER_DAY		= 86400,
-		MIN_PER_HOUR	= 60,
-		MIN_PER_DAY		= 1440,
-		HOUR_PER_DAY	= 24
+		SECS_PER_MINUTE	= 60,
+		SECS_PER_HOUR	= 3600,
+		SECS_PER_DAY	= 86400,
+		MINS_PER_HOUR	= 60,
+		MINS_PER_DAY	= 1440,
+		HOURS_PER_DAY	= 24
 	};
 public:
 	Time();
 	Time(const int hour, const int min, const int sec=0, const int msec=0);
 	virtual ~Time();
 
-	static Time currentTime();
 	const int 	hour() const;
 	const int 	min() const;
 	const int	msec() const;
@@ -47,6 +46,14 @@ public:
 	const int 	sec() const;
 	String		toString() const;
 
+	static Time currentTime();
+	static Time hour(const int nHour);
+	static Time min(const int nMin);
+	static Time sec(const int nSec);
+	static Time msec(const int nMsec);
+
+	// related nonmembers
+	friend Time operator+(const Time &t1, const Time & t2);
 	friend std::ostream & operator<<(std::ostream & out, const Time & t);
 };
 
