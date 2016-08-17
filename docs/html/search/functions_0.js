@@ -5,6 +5,7 @@ var searchData=
   ['adjusted',['adjusted',['../classprism_1_1_rect.html#aa0101c79f105eb2b988d3814e00be511',1,'prism::Rect']]],
   ['all',['all',['../classprism_1_1_bitvector.html#ae67b760618f6bf396afb68352a5dfcad',1,'prism::Bitvector']]],
   ['all_5fof',['all_of',['../namespaceprism.html#aba366b328f3b6161e6115c16b7153c6d',1,'prism']]],
+  ['allocateandtransfer',['allocateAndTransfer',['../structprism_1_1_stack_data_1_1_memory.html#a967d806859901f1e0fd4406a00317bac',1,'prism::StackData::Memory']]],
   ['angle',['angle',['../classprism_1_1_circle.html#ad4b91cf13b593a67abf9782db3fec5d9',1,'prism::Circle::angle(const float x, const float y) const '],['../classprism_1_1_circle.html#aeee2c0f59b94feb4dd3535950157d614',1,'prism::Circle::angle(const Pointf &amp;position) const ']]],
   ['anglemode',['angleMode',['../classprism_1_1_circle.html#a0aa261d16ff55088e5695820fa95e09b',1,'prism::Circle']]],
   ['any',['any',['../classprism_1_1_bitvector.html#ad055160febd837c0c7b5586821c383f0',1,'prism::Bitvector']]],

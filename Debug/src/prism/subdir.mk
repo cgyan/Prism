@@ -17,6 +17,7 @@ CPP_SRCS += \
 ../src/prism/SharedData.cpp \
 ../src/prism/Size.cpp \
 ../src/prism/String.cpp \
+../src/prism/Time.cpp \
 ../src/prism/Vector2.cpp \
 ../src/prism/Vector3.cpp \
 ../src/prism/Vector4.cpp \
@@ -36,6 +37,7 @@ OBJS += \
 ./src/prism/SharedData.o \
 ./src/prism/Size.o \
 ./src/prism/String.o \
+./src/prism/Time.o \
 ./src/prism/Vector2.o \
 ./src/prism/Vector3.o \
 ./src/prism/Vector4.o \
@@ -55,6 +57,7 @@ CPP_DEPS += \
 ./src/prism/SharedData.d \
 ./src/prism/Size.d \
 ./src/prism/String.d \
+./src/prism/Time.d \
 ./src/prism/Vector2.d \
 ./src/prism/Vector3.d \
 ./src/prism/Vector4.d \

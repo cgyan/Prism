@@ -107,9 +107,9 @@ public:
 	}
 
 	friend std::ostream & operator<<(std::ostream & out, const Stack<T> & stack) {
-		out << "Stack [" << &stack << "] size=" << stack.size() << " capacity=" << stack.capacity() << endl;
+		out << "Stack [" << &stack << "] size=" << stack.size() << " capacity=" << stack.capacity() << "\n";
 		for (int i=0; i<stack.size(); i++)
-			out << "--[" << i << "] " << *(stack.d->storage.start+i) << endl;
+			out << "--[" << i << "] " << *(stack.d->storage.start+i) << "\n";
 		return out;
 	}
 

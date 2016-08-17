@@ -1,6 +1,10 @@
 var searchData=
 [
   ['testflag',['testFlag',['../classprism_1_1_flags.html#af7ea559d83cf7a5374a08747311d9efe',1,'prism::Flags']]],
+  ['time',['Time',['../classprism_1_1_time.html',1,'prism']]],
+  ['time',['Time',['../classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12',1,'prism::Time']]],
+  ['time_2ecpp',['Time.cpp',['../_time_8cpp.html',1,'']]],
+  ['time_2eh',['Time.h',['../_time_8h.html',1,'']]],
   ['toascii',['toAscii',['../classprism_1_1_char.html#a26d719979d33ddc420591eb92fbf3bfc',1,'prism::Char']]],
   ['tochar',['tochar',['../classprism_1_1_char.html#aefd335b68105adc4a7904b5f6bdd6d3e',1,'prism::Char']]],
   ['todouble',['toDouble',['../classprism_1_1_string.html#a9c8060a9bea6e9967e8b9714c04d6396',1,'prism::String']]],

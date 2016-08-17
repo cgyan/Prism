@@ -286,7 +286,7 @@ Returns the value of the bit at position {\itshape bit}.
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_bitvector_a5b4ba0d10a0b620cebc0d8676180ed72}{}\label{classprism_1_1_bitvector_a5b4ba0d10a0b620cebc0d8676180ed72}
 Performs a bitwise X\+OR on this \hyperlink{classprism_1_1_bitvector}{Bitvector} and {\itshape other}. \begin{DoxyReturn}{Returns}
-Returns a reference to this \hyperlink{classprism_1_1_bitvector}{Bitvector} updated with the result of (this bitvector \& other). 
+Returns a reference to this \hyperlink{classprism_1_1_bitvector}{Bitvector} updated with the result of (this bitvector $^\wedge$ other). 
 \end{DoxyReturn}
 \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\texttt{"|}=@{operator\texttt{"|}=}}
 \index{operator\texttt{"|}=@{operator\texttt{"|}=}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
@@ -394,7 +394,7 @@ If the binary value is more than an unsigned long long int can represent then an
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_bitvector_a085f70a7612a9fc1dd410533d09fa6fc}{}\label{classprism_1_1_bitvector_a085f70a7612a9fc1dd410533d09fa6fc}
 \begin{DoxyReturn}{Returns}
-Returns true if the two Bitvectors are not equal to each other, flase otherwise. 
+Returns true if the two Bitvectors are not equal to each other, false otherwise. 
 \end{DoxyReturn}
 \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator\&@{operator\&}}
 \index{operator\&@{operator\&}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}
@@ -424,7 +424,7 @@ Allows an instance of \hyperlink{classprism_1_1_bitvector}{Bitvector} to be writ
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_bitvector_ab73504943fa9f2b6d0bbaef200ba4088}{}\label{classprism_1_1_bitvector_ab73504943fa9f2b6d0bbaef200ba4088}
 \begin{DoxyReturn}{Returns}
-Returns true if the two Bitvectors are equal to each other, false otherwise. 
+Returns true if the two Bitvectors are equal to each other, false otherwise. The Bitvectors are considered equal if they are the same size and each corresponding bit is set to the same value. 
 \end{DoxyReturn}
 \index{prism\+::\+Bitvector@{prism\+::\+Bitvector}!operator$^\wedge$@{operator$^\wedge$}}
 \index{operator$^\wedge$@{operator$^\wedge$}!prism\+::\+Bitvector@{prism\+::\+Bitvector}}

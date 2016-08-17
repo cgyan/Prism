@@ -35,6 +35,8 @@ T \& \hyperlink{classprism_1_1_stack_ae31d2e2ea1b8c80b7c48b5d88e0465d0}{top} ()
 \item 
 \hyperlink{classprism_1_1_vector}{Vector}$<$ T $>$ \hyperlink{classprism_1_1_stack_ac373a993c993bbf07a485a2838c9cae9}{to\+Vector} () const 
 \item 
+\hyperlink{classprism_1_1_stack}{Stack} \& \hyperlink{classprism_1_1_stack_ae1ff12e8acc61bc0cd9434e03c36c171}{operator=} (const \hyperlink{classprism_1_1_stack}{Stack}$<$ T $>$ \&other)
+\item 
 void \hyperlink{classprism_1_1_stack_a6a8ec445b5503fdc5e3358dd1b100a9c}{operator+=} (const T \&value)
 \item 
 \hyperlink{classprism_1_1_stack}{Stack}$<$ T $>$ \& \hyperlink{classprism_1_1_stack_a6b19a970604a4edc6cccbb61f226e9e9}{operator$<$$<$} (const T \&value)
@@ -42,9 +44,13 @@ void \hyperlink{classprism_1_1_stack_a6a8ec445b5503fdc5e3358dd1b100a9c}{operator
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
+class \hyperlink{classprism_1_1_stack_a660ffbd70515df798aa6fe2edafb3156}{Stack\+Test}
+\item 
 const bool \hyperlink{classprism_1_1_stack_aeb1f035d92d81418856c1f1c1bec54b3}{operator==} (const \hyperlink{classprism_1_1_stack}{Stack}$<$ T $>$ \&s1, const \hyperlink{classprism_1_1_stack}{Stack}$<$ T $>$ \&s2)
 \item 
 const bool \hyperlink{classprism_1_1_stack_aa79914f1e49ebf8bd569580a2113326d}{operator!=} (const \hyperlink{classprism_1_1_stack}{Stack}$<$ T $>$ \&s1, const \hyperlink{classprism_1_1_stack}{Stack}$<$ T $>$ \&s2)
+\item 
+std\+::ostream \& \hyperlink{classprism_1_1_stack_a7e1f9c28a318f010223ea59ac3d3733a}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_stack}{Stack}$<$ T $>$ \&stack)
 \end{DoxyCompactItemize}
 
 
@@ -114,7 +120,14 @@ Appends {\itshape value} to the end (top) of the stack. Equivalent to \hyperlink
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_stack_a6b19a970604a4edc6cccbb61f226e9e9}{}\label{classprism_1_1_stack_a6b19a970604a4edc6cccbb61f226e9e9}
-Appends {\itshape value} to the end (top) of the stack. Equivalent to \hyperlink{classprism_1_1_stack_a7fb1e3478da9ff6782e99142621f21f2}{push()}. \index{prism\+::\+Stack@{prism\+::\+Stack}!pop@{pop}}
+Appends {\itshape value} to the end (top) of the stack. Equivalent to \hyperlink{classprism_1_1_stack_a7fb1e3478da9ff6782e99142621f21f2}{push()}. \index{prism\+::\+Stack@{prism\+::\+Stack}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{operator=(const Stack$<$ T $>$ \&other)}{operator=(const Stack< T > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Stack}$<$ T $>$ \& {\bf prism\+::\+Stack}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Stack}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_stack_ae1ff12e8acc61bc0cd9434e03c36c171}{}\label{classprism_1_1_stack_ae1ff12e8acc61bc0cd9434e03c36c171}
+Assigns {\itshape other} to this \hyperlink{classprism_1_1_stack}{Stack}. \index{prism\+::\+Stack@{prism\+::\+Stack}!pop@{pop}}
 \index{pop@{pop}!prism\+::\+Stack@{prism\+::\+Stack}}
 \subsubsection[{\texorpdfstring{pop()}{pop()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Stack}$<$ T $>$\+::pop (
 \begin{DoxyParamCaption}
@@ -203,6 +216,14 @@ Returns this stack as a \hyperlink{classprism_1_1_vector}{Vector}. The stack rem
 \item[{const {\bf Stack}$<$ T $>$ \&}]{s2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_stack_aa79914f1e49ebf8bd569580a2113326d}{}\label{classprism_1_1_stack_aa79914f1e49ebf8bd569580a2113326d}
+\index{prism\+::\+Stack@{prism\+::\+Stack}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Stack}$<$ T $>$ \&}]{stack}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_stack_a7e1f9c28a318f010223ea59ac3d3733a}{}\label{classprism_1_1_stack_a7e1f9c28a318f010223ea59ac3d3733a}
 \index{prism\+::\+Stack@{prism\+::\+Stack}!operator==@{operator==}}
 \index{operator==@{operator==}!prism\+::\+Stack@{prism\+::\+Stack}}
 \subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool operator== (
@@ -211,6 +232,9 @@ Returns this stack as a \hyperlink{classprism_1_1_vector}{Vector}. The stack rem
 \item[{const {\bf Stack}$<$ T $>$ \&}]{s2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_stack_aeb1f035d92d81418856c1f1c1bec54b3}{}\label{classprism_1_1_stack_aeb1f035d92d81418856c1f1c1bec54b3}
+\index{prism\+::\+Stack@{prism\+::\+Stack}!Stack\+Test@{Stack\+Test}}
+\index{Stack\+Test@{Stack\+Test}!prism\+::\+Stack@{prism\+::\+Stack}}
+\subsubsection[{\texorpdfstring{Stack\+Test}{StackTest}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ friend class Stack\+Test\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_stack_a660ffbd70515df798aa6fe2edafb3156}{}\label{classprism_1_1_stack_a660ffbd70515df798aa6fe2edafb3156}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

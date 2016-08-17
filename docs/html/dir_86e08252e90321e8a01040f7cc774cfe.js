@@ -11,8 +11,10 @@ var dir_86e08252e90321e8a01040f7cc774cfe =
     [ "Pointf.cpp", "_pointf_8cpp.html", "_pointf_8cpp" ],
     [ "Quaternion.cpp", "_quaternion_8cpp.html", "_quaternion_8cpp" ],
     [ "Rect.cpp", "_rect_8cpp.html", "_rect_8cpp" ],
+    [ "SharedData.cpp", "_shared_data_8cpp.html", null ],
     [ "Size.cpp", "_size_8cpp.html", "_size_8cpp" ],
     [ "String.cpp", "_string_8cpp.html", "_string_8cpp" ],
+    [ "Time.cpp", "_time_8cpp.html", null ],
     [ "Vector2.cpp", "_vector2_8cpp.html", "_vector2_8cpp" ],
     [ "Vector3.cpp", "_vector3_8cpp.html", "_vector3_8cpp" ],
     [ "Vector4.cpp", "_vector4_8cpp.html", "_vector4_8cpp" ]

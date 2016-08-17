@@ -10,6 +10,7 @@ CPP_SRCS += \
 ../test/SharedDataTest.cpp \
 ../test/StackTest.cpp \
 ../test/StringTest.cpp \
+../test/TimeTest.cpp \
 ../test/algorithmsTest.cpp 
 
 OBJS += \
@@ -19,6 +20,7 @@ OBJS += \
 ./test/SharedDataTest.o \
 ./test/StackTest.o \
 ./test/StringTest.o \
+./test/TimeTest.o \
 ./test/algorithmsTest.o 
 
 CPP_DEPS += \
@@ -28,6 +30,7 @@ CPP_DEPS += \
 ./test/SharedDataTest.d \
 ./test/StackTest.d \
 ./test/StringTest.d \
+./test/TimeTest.d \
 ./test/algorithmsTest.d 
 
 

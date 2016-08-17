@@ -1,0 +1,93 @@
+\hypertarget{structprism_1_1_stack_data_1_1_memory}{}\section{prism\+:\+:Stack\+Data$<$ T $>$\+:\+:Memory Struct Reference}
+\label{structprism_1_1_stack_data_1_1_memory}\index{prism\+::\+Stack\+Data$<$ T $>$\+::\+Memory@{prism\+::\+Stack\+Data$<$ T $>$\+::\+Memory}}
+
+
+{\ttfamily \#include $<$Stack.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structprism_1_1_stack_data_1_1_memory_ad2395dc0984b60adfba6f0a57bbd47f8}{Memory} ()
+\item 
+\hyperlink{structprism_1_1_stack_data_1_1_memory_a9abfe931d4c5060414c6e0ecd74a98b3}{Memory} (const \hyperlink{structprism_1_1_stack_data_1_1_memory}{Memory} \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
+\item 
+\hyperlink{structprism_1_1_stack_data_1_1_memory_a54cad12e62750eb6e3e05f480015282f}{$\sim$\+Memory} ()
+\item 
+void \hyperlink{structprism_1_1_stack_data_1_1_memory_a967d806859901f1e0fd4406a00317bac}{allocate\+And\+Transfer} (int capacity, T $\ast$p\+Start, T $\ast$p\+End)
+\item 
+void \hyperlink{structprism_1_1_stack_data_1_1_memory_a3550ff768b04ebda60863da7e4e38c21}{reserve} (const int new\+Capacity)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{structprism_1_1_stack_data_1_1_memory_a5ca6f889c85fca00ab1bbf7f93d994cb}{start}
+\item 
+T $\ast$ \hyperlink{structprism_1_1_stack_data_1_1_memory_a4c2fc53a644757cf033636c013265eeb}{end}
+\item 
+T $\ast$ \hyperlink{structprism_1_1_stack_data_1_1_memory_a9078f4f85440e6c401abfb4888ff4c50}{finish}
+\item 
+const int \hyperlink{structprism_1_1_stack_data_1_1_memory_a0a82a73b0dd4e34356f933b0ebcf4649}{exponent}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!Memory@{Memory}}
+\index{Memory@{Memory}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{Memory()}{Memory()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::\+Memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_stack_data_1_1_memory_ad2395dc0984b60adfba6f0a57bbd47f8}{}\label{structprism_1_1_stack_data_1_1_memory_ad2395dc0984b60adfba6f0a57bbd47f8}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!Memory@{Memory}}
+\index{Memory@{Memory}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{Memory(const Memory \&copy)}{Memory(const Memory &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::\+Memory (
+\begin{DoxyParamCaption}
+\item[{const {\bf Memory} \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_stack_data_1_1_memory_a9abfe931d4c5060414c6e0ecd74a98b3}{}\label{structprism_1_1_stack_data_1_1_memory_a9abfe931d4c5060414c6e0ecd74a98b3}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!````~Memory@{$\sim$\+Memory}}
+\index{````~Memory@{$\sim$\+Memory}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{$\sim$\+Memory()}{~Memory()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::$\sim$\+Memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_stack_data_1_1_memory_a54cad12e62750eb6e3e05f480015282f}{}\label{structprism_1_1_stack_data_1_1_memory_a54cad12e62750eb6e3e05f480015282f}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!allocate\+And\+Transfer@{allocate\+And\+Transfer}}
+\index{allocate\+And\+Transfer@{allocate\+And\+Transfer}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{allocate\+And\+Transfer(int capacity, T $\ast$p\+Start, T $\ast$p\+End)}{allocateAndTransfer(int capacity, T *pStart, T *pEnd)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::allocate\+And\+Transfer (
+\begin{DoxyParamCaption}
+\item[{int}]{capacity, }
+\item[{T $\ast$}]{p\+Start, }
+\item[{T $\ast$}]{p\+End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_stack_data_1_1_memory_a967d806859901f1e0fd4406a00317bac}{}\label{structprism_1_1_stack_data_1_1_memory_a967d806859901f1e0fd4406a00317bac}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!reserve@{reserve}}
+\index{reserve@{reserve}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{reserve(const int new\+Capacity)}{reserve(const int newCapacity)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::reserve (
+\begin{DoxyParamCaption}
+\item[{const int}]{new\+Capacity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_stack_data_1_1_memory_a3550ff768b04ebda60863da7e4e38c21}{}\label{structprism_1_1_stack_data_1_1_memory_a3550ff768b04ebda60863da7e4e38c21}
+
+
+\subsection{Member Data Documentation}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!end@{end}}
+\index{end@{end}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{end}{end}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T$\ast$ {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::end}\hypertarget{structprism_1_1_stack_data_1_1_memory_a4c2fc53a644757cf033636c013265eeb}{}\label{structprism_1_1_stack_data_1_1_memory_a4c2fc53a644757cf033636c013265eeb}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!exponent@{exponent}}
+\index{exponent@{exponent}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{exponent}{exponent}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::exponent}\hypertarget{structprism_1_1_stack_data_1_1_memory_a0a82a73b0dd4e34356f933b0ebcf4649}{}\label{structprism_1_1_stack_data_1_1_memory_a0a82a73b0dd4e34356f933b0ebcf4649}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!finish@{finish}}
+\index{finish@{finish}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{finish}{finish}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T$\ast$ {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::finish}\hypertarget{structprism_1_1_stack_data_1_1_memory_a9078f4f85440e6c401abfb4888ff4c50}{}\label{structprism_1_1_stack_data_1_1_memory_a9078f4f85440e6c401abfb4888ff4c50}
+\index{prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}!start@{start}}
+\index{start@{start}!prism\+::\+Stack\+Data\+::\+Memory@{prism\+::\+Stack\+Data\+::\+Memory}}
+\subsubsection[{\texorpdfstring{start}{start}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T$\ast$ {\bf prism\+::\+Stack\+Data}$<$ T $>$\+::Memory\+::start}\hypertarget{structprism_1_1_stack_data_1_1_memory_a5ca6f889c85fca00ab1bbf7f93d994cb}{}\label{structprism_1_1_stack_data_1_1_memory_a5ca6f889c85fca00ab1bbf7f93d994cb}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/prism/\hyperlink{_stack_8h}{Stack.\+h}\end{DoxyCompactItemize}

@@ -62,11 +62,14 @@ var dir_5ee054a0bd514c9ebd20d9d51922438b =
     ] ],
     [ "Stack.h", "_stack_8h.html", [
       [ "StackData", "structprism_1_1_stack_data.html", "structprism_1_1_stack_data" ],
-      [ "memory", "structprism_1_1_stack_data_1_1memory.html", "structprism_1_1_stack_data_1_1memory" ],
+      [ "Memory", "structprism_1_1_stack_data_1_1_memory.html", "structprism_1_1_stack_data_1_1_memory" ],
       [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ]
     ] ],
     [ "String.h", "_string_8h.html", [
       [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ]
+    ] ],
+    [ "Time.h", "_time_8h.html", [
+      [ "Time", "classprism_1_1_time.html", "classprism_1_1_time" ]
     ] ],
     [ "UnequalSizeException.h", "_unequal_size_exception_8h.html", [
       [ "UnequalSizeException", "classprism_1_1_unequal_size_exception.html", "classprism_1_1_unequal_size_exception" ]

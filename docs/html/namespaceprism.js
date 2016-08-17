@@ -29,6 +29,7 @@ var namespaceprism =
     [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ],
     [ "StackData", "structprism_1_1_stack_data.html", "structprism_1_1_stack_data" ],
     [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ],
+    [ "Time", "classprism_1_1_time.html", "classprism_1_1_time" ],
     [ "UnequalSizeException", "classprism_1_1_unequal_size_exception.html", "classprism_1_1_unequal_size_exception" ],
     [ "Vector", "classprism_1_1_vector.html", "classprism_1_1_vector" ],
     [ "Vector2", "classprism_1_1_vector2.html", "classprism_1_1_vector2" ],

@@ -7,6 +7,7 @@ var classprism_1_1_stack =
     [ "empty", "classprism_1_1_stack.html#a5e7e52656e03bdea14680f59f61219f9", null ],
     [ "operator+=", "classprism_1_1_stack.html#a6a8ec445b5503fdc5e3358dd1b100a9c", null ],
     [ "operator<<", "classprism_1_1_stack.html#a6b19a970604a4edc6cccbb61f226e9e9", null ],
+    [ "operator=", "classprism_1_1_stack.html#ae1ff12e8acc61bc0cd9434e03c36c171", null ],
     [ "pop", "classprism_1_1_stack.html#a9c5679c5b671e0fc79d00c53462686a4", null ],
     [ "push", "classprism_1_1_stack.html#a7fb1e3478da9ff6782e99142621f21f2", null ],
     [ "reserve", "classprism_1_1_stack.html#ae4e7c5bfe1435e87b4d2b4bac5ff749b", null ],
@@ -17,5 +18,7 @@ var classprism_1_1_stack =
     [ "top", "classprism_1_1_stack.html#ae31d2e2ea1b8c80b7c48b5d88e0465d0", null ],
     [ "toVector", "classprism_1_1_stack.html#ac373a993c993bbf07a485a2838c9cae9", null ],
     [ "operator!=", "classprism_1_1_stack.html#aa79914f1e49ebf8bd569580a2113326d", null ],
-    [ "operator==", "classprism_1_1_stack.html#aeb1f035d92d81418856c1f1c1bec54b3", null ]
+    [ "operator<<", "classprism_1_1_stack.html#a7e1f9c28a318f010223ea59ac3d3733a", null ],
+    [ "operator==", "classprism_1_1_stack.html#aeb1f035d92d81418856c1f1c1bec54b3", null ],
+    [ "StackTest", "classprism_1_1_stack.html#a660ffbd70515df798aa6fe2edafb3156", null ]
 ];
