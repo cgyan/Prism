@@ -4,7 +4,6 @@
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include $<$cstring$>$}\\*
-{\ttfamily \#include $<$ctime$>$}\\*
 {\ttfamily \#include $<$vector$>$}\\*
 {\ttfamily \#include $<$stack$>$}\\*
 {\ttfamily \#include $<$list$>$}\\*
@@ -15,6 +14,8 @@
 {\ttfamily \#include $<$algorithm$>$}\\*
 {\ttfamily \#include $<$cmath$>$}\\*
 {\ttfamily \#include $<$bitset$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
 {\ttfamily \#include $<$prism/\+Array$>$}\\*
 {\ttfamily \#include $<$prism/\+Stack$>$}\\*
 {\ttfamily \#include $<$prism/\+List$>$}\\*
@@ -34,6 +35,7 @@
 {\ttfamily \#include $<$prism/\+Char$>$}\\*
 {\ttfamily \#include $<$prism/algorithms$>$}\\*
 {\ttfamily \#include $<$prism/\+Bitvector$>$}\\*
+{\ttfamily \#include $<$prism/\+Time$>$}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,11 +47,32 @@ bool \hyperlink{main_8cpp_a446d75696e46ba72f62b2e4b7263ff64}{is\+Negative} (int 
 \item 
 void \hyperlink{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}{print} (int n)
 \item 
+\hyperlink{classprism_1_1_string}{String} \hyperlink{main_8cpp_ad6751b34c9c3c5fc9ff682d259680667}{to\+String} (chrono\+::system\+\_\+clock\+::time\+\_\+point \&tp)
+\item 
+int \hyperlink{main_8cpp_a26a96160c99c86311be59fe1dabaae3a}{ms\+To\+Sec} (int ms)
+\item 
+int \hyperlink{main_8cpp_a9c9ec354aa4d088f583312cad57f809c}{ms\+To\+Min} (int ms)
+\item 
+int \hyperlink{main_8cpp_a4ea7d7923f7af3f4585f8e114bcf9974}{ms\+To\+Hour} (int ms)
+\item 
+int \hyperlink{main_8cpp_a7d0f42235266f9c065b7849e0c4a259a}{hour\+To\+Ms} (int hour)
+\item 
+int \hyperlink{main_8cpp_adbd6c6c8be1fbd13a5371948a525b89c}{min\+To\+Ms} (int min)
+\item 
+int \hyperlink{main_8cpp_abae4d7a9cafabd6dc2abd9f2abbcda96}{sec\+To\+Ms} (int sec)
+\item 
 int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\index{main.\+cpp@{main.\+cpp}!hour\+To\+Ms@{hour\+To\+Ms}}
+\index{hour\+To\+Ms@{hour\+To\+Ms}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{hour\+To\+Ms(int hour)}{hourToMs(int hour)}}]{\setlength{\rightskip}{0pt plus 5cm}int hour\+To\+Ms (
+\begin{DoxyParamCaption}
+\item[{int}]{hour}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a7d0f42235266f9c065b7849e0c4a259a}{}\label{main_8cpp_a7d0f42235266f9c065b7849e0c4a259a}
 \index{main.\+cpp@{main.\+cpp}!is\+Even@{is\+Even}}
 \index{is\+Even@{is\+Even}!main.\+cpp@{main.\+cpp}}
 \subsubsection[{\texorpdfstring{is\+Even(int n)}{isEven(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Even (
@@ -79,6 +102,34 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 \item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
 \end{DoxyParamCaption}
 )}\hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+\index{main.\+cpp@{main.\+cpp}!min\+To\+Ms@{min\+To\+Ms}}
+\index{min\+To\+Ms@{min\+To\+Ms}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{min\+To\+Ms(int min)}{minToMs(int min)}}]{\setlength{\rightskip}{0pt plus 5cm}int min\+To\+Ms (
+\begin{DoxyParamCaption}
+\item[{int}]{min}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_adbd6c6c8be1fbd13a5371948a525b89c}{}\label{main_8cpp_adbd6c6c8be1fbd13a5371948a525b89c}
+\index{main.\+cpp@{main.\+cpp}!ms\+To\+Hour@{ms\+To\+Hour}}
+\index{ms\+To\+Hour@{ms\+To\+Hour}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{ms\+To\+Hour(int ms)}{msToHour(int ms)}}]{\setlength{\rightskip}{0pt plus 5cm}int ms\+To\+Hour (
+\begin{DoxyParamCaption}
+\item[{int}]{ms}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a4ea7d7923f7af3f4585f8e114bcf9974}{}\label{main_8cpp_a4ea7d7923f7af3f4585f8e114bcf9974}
+\index{main.\+cpp@{main.\+cpp}!ms\+To\+Min@{ms\+To\+Min}}
+\index{ms\+To\+Min@{ms\+To\+Min}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{ms\+To\+Min(int ms)}{msToMin(int ms)}}]{\setlength{\rightskip}{0pt plus 5cm}int ms\+To\+Min (
+\begin{DoxyParamCaption}
+\item[{int}]{ms}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a9c9ec354aa4d088f583312cad57f809c}{}\label{main_8cpp_a9c9ec354aa4d088f583312cad57f809c}
+\index{main.\+cpp@{main.\+cpp}!ms\+To\+Sec@{ms\+To\+Sec}}
+\index{ms\+To\+Sec@{ms\+To\+Sec}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{ms\+To\+Sec(int ms)}{msToSec(int ms)}}]{\setlength{\rightskip}{0pt plus 5cm}int ms\+To\+Sec (
+\begin{DoxyParamCaption}
+\item[{int}]{ms}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a26a96160c99c86311be59fe1dabaae3a}{}\label{main_8cpp_a26a96160c99c86311be59fe1dabaae3a}
 \index{main.\+cpp@{main.\+cpp}!print@{print}}
 \index{print@{print}!main.\+cpp@{main.\+cpp}}
 \subsubsection[{\texorpdfstring{print(int n)}{print(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void print (
@@ -86,3 +137,17 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 \item[{int}]{n}
 \end{DoxyParamCaption}
 )}\hypertarget{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}{}\label{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}
+\index{main.\+cpp@{main.\+cpp}!sec\+To\+Ms@{sec\+To\+Ms}}
+\index{sec\+To\+Ms@{sec\+To\+Ms}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{sec\+To\+Ms(int sec)}{secToMs(int sec)}}]{\setlength{\rightskip}{0pt plus 5cm}int sec\+To\+Ms (
+\begin{DoxyParamCaption}
+\item[{int}]{sec}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_abae4d7a9cafabd6dc2abd9f2abbcda96}{}\label{main_8cpp_abae4d7a9cafabd6dc2abd9f2abbcda96}
+\index{main.\+cpp@{main.\+cpp}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{to\+String(chrono\+::system\+\_\+clock\+::time\+\_\+point \&tp)}{toString(chrono::system_clock::time_point &tp)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} to\+String (
+\begin{DoxyParamCaption}
+\item[{chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{tp}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_ad6751b34c9c3c5fc9ff682d259680667}{}\label{main_8cpp_ad6751b34c9c3c5fc9ff682d259680667}

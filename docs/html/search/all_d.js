@@ -3,7 +3,7 @@ var searchData=
   ['prism',['Prism',['../md_README.html',1,'']]],
   ['p_5fheapify',['p_heapify',['../namespaceprism.html#a5f2c83ae0d89a6581d1c42ba6fd79de0',1,'prism']]],
   ['pi',['PI',['../classprism_1_1_mathf.html#a96de371e5c5fe1eb981b6045c3148f3e',1,'prism::Mathf']]],
-  ['point',['point',['../classprism_1_1_circle.html#a42e70e1d37414bf4c22500b80b168c9d',1,'prism::Circle::point()'],['../classprism_1_1_point.html#a505a19bd681a9e195f8bf9dbd3c445c7',1,'prism::Point::Point(void)'],['../classprism_1_1_point.html#a93bfdd8fa48253786030802190577129',1,'prism::Point::Point(const int x, const int y)'],['../classprism_1_1_point.html#af09a25c46be47b8c4566b15ddac632b0',1,'prism::Point::Point(const Point &amp;copy)']]],
+  ['point',['Point',['../classprism_1_1_point.html#a505a19bd681a9e195f8bf9dbd3c445c7',1,'prism::Point::Point(void)'],['../classprism_1_1_point.html#a93bfdd8fa48253786030802190577129',1,'prism::Point::Point(const int x, const int y)'],['../classprism_1_1_point.html#af09a25c46be47b8c4566b15ddac632b0',1,'prism::Point::Point(const Point &amp;copy)'],['../classprism_1_1_circle.html#a42e70e1d37414bf4c22500b80b168c9d',1,'prism::Circle::point()']]],
   ['point',['Point',['../classprism_1_1_point.html',1,'prism']]],
   ['point_2ecpp',['Point.cpp',['../_point_8cpp.html',1,'']]],
   ['point_2eh',['Point.h',['../_point_8h.html',1,'']]],

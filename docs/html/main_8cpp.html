@@ -114,7 +114,6 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
-<code>#include &lt;ctime&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;stack&gt;</code><br />
 <code>#include &lt;list&gt;</code><br />
@@ -125,6 +124,8 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;bitset&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
 <code>#include &lt;prism/Array&gt;</code><br />
 <code>#include &lt;prism/Stack&gt;</code><br />
 <code>#include &lt;prism/List&gt;</code><br />
@@ -144,6 +145,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;prism/Char&gt;</code><br />
 <code>#include &lt;prism/algorithms&gt;</code><br />
 <code>#include &lt;prism/Bitvector&gt;</code><br />
+<code>#include &lt;prism/Time&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -155,10 +157,40 @@ Functions</h2></td></tr>
 <tr class="separator:a446d75696e46ba72f62b2e4b7263ff64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99ed1c00a6bcb150111479e48d730f18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a99ed1c00a6bcb150111479e48d730f18">print</a> (int n)</td></tr>
 <tr class="separator:a99ed1c00a6bcb150111479e48d730f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6751b34c9c3c5fc9ff682d259680667"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad6751b34c9c3c5fc9ff682d259680667">toString</a> (chrono::system_clock::time_point &amp;tp)</td></tr>
+<tr class="separator:ad6751b34c9c3c5fc9ff682d259680667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a96160c99c86311be59fe1dabaae3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a26a96160c99c86311be59fe1dabaae3a">msToSec</a> (int ms)</td></tr>
+<tr class="separator:a26a96160c99c86311be59fe1dabaae3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9ec354aa4d088f583312cad57f809c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9c9ec354aa4d088f583312cad57f809c">msToMin</a> (int ms)</td></tr>
+<tr class="separator:a9c9ec354aa4d088f583312cad57f809c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea7d7923f7af3f4585f8e114bcf9974"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4ea7d7923f7af3f4585f8e114bcf9974">msToHour</a> (int ms)</td></tr>
+<tr class="separator:a4ea7d7923f7af3f4585f8e114bcf9974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0f42235266f9c065b7849e0c4a259a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7d0f42235266f9c065b7849e0c4a259a">hourToMs</a> (int hour)</td></tr>
+<tr class="separator:a7d0f42235266f9c065b7849e0c4a259a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd6c6c8be1fbd13a5371948a525b89c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adbd6c6c8be1fbd13a5371948a525b89c">minToMs</a> (int min)</td></tr>
+<tr class="separator:adbd6c6c8be1fbd13a5371948a525b89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae4d7a9cafabd6dc2abd9f2abbcda96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abae4d7a9cafabd6dc2abd9f2abbcda96">secToMs</a> (int sec)</td></tr>
+<tr class="separator:abae4d7a9cafabd6dc2abd9f2abbcda96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a7d0f42235266f9c065b7849e0c4a259a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hourToMs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hour</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="afdeb4bcdb506aed270b96fe63038419d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -233,6 +265,70 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="adbd6c6c8be1fbd13a5371948a525b89c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int minToMs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ea7d7923f7af3f4585f8e114bcf9974"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int msToHour </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9c9ec354aa4d088f583312cad57f809c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int msToMin </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a26a96160c99c86311be59fe1dabaae3a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int msToSec </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a99ed1c00a6bcb150111479e48d730f18"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,6 +338,38 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abae4d7a9cafabd6dc2abd9f2abbcda96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int secToMs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6751b34c9c3c5fc9ff682d259680667"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_string.html">String</a> toString </td>
+          <td>(</td>
+          <td class="paramtype">chrono::system_clock::time_point &amp;&#160;</td>
+          <td class="paramname"><em>tp</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

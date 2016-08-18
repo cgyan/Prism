@@ -14,7 +14,7 @@ var dir_86e08252e90321e8a01040f7cc774cfe =
     [ "SharedData.cpp", "_shared_data_8cpp.html", null ],
     [ "Size.cpp", "_size_8cpp.html", "_size_8cpp" ],
     [ "String.cpp", "_string_8cpp.html", "_string_8cpp" ],
-    [ "Time.cpp", "_time_8cpp.html", null ],
+    [ "Time.cpp", "_time_8cpp.html", "_time_8cpp" ],
     [ "Vector2.cpp", "_vector2_8cpp.html", "_vector2_8cpp" ],
     [ "Vector3.cpp", "_vector3_8cpp.html", "_vector3_8cpp" ],
     [ "Vector4.cpp", "_vector4_8cpp.html", "_vector4_8cpp" ]

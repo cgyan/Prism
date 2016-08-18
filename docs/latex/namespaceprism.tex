@@ -360,6 +360,12 @@ const \hyperlink{classprism_1_1_string}{String} \hyperlink{namespaceprism_a8ae68
 \item 
 std\+::ostream \& \hyperlink{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_string}{String} \&s)
 \item 
+\hyperlink{classprism_1_1_time}{Time} \hyperlink{namespaceprism_afd483f03b731881b25da5612b1213e5f}{operator+} (const \hyperlink{classprism_1_1_time}{Time} \&t1, const \hyperlink{classprism_1_1_time}{Time} \&t2)
+\item 
+\hyperlink{classprism_1_1_time}{Time} \hyperlink{namespaceprism_aa18009df22007fbbde08ab44b16a9a31}{operator-\/} (const \hyperlink{classprism_1_1_time}{Time} \&t1, const \hyperlink{classprism_1_1_time}{Time} \&t2)
+\item 
+std\+::ostream \& \hyperlink{namespaceprism_a7c24ead13d51c13dcadde1b6df4a4967}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_time}{Time} \&t)
+\item 
 \hyperlink{classprism_1_1_vector2}{Vector2} \hyperlink{namespaceprism_ae482804c32b466401a9ecdf26bc1e6de}{operator+} (const \hyperlink{classprism_1_1_vector2}{Vector2} \&a, const \hyperlink{classprism_1_1_vector2}{Vector2} \&b)
 \item 
 \hyperlink{classprism_1_1_vector2}{Vector2} \hyperlink{namespaceprism_a86359a88dc5245847de48575a1f969e8}{operator-\/} (const \hyperlink{classprism_1_1_vector2}{Vector2} \&a, const \hyperlink{classprism_1_1_vector2}{Vector2} \&b)
@@ -1097,6 +1103,21 @@ Returns a \hyperlink{classprism_1_1_point}{Point} object that is the sum of the 
 )}\hypertarget{namespaceprism_a7141aeb35db81548155e44d60c05530e}{}\label{namespaceprism_a7141aeb35db81548155e44d60c05530e}
 Adds {\itshape s1} and {\itshape s2} together and returns a new \hyperlink{classprism_1_1_size}{Size} object. \index{prism@{prism}!operator+@{operator+}}
 \index{operator+@{operator+}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator+(const Time \&t1, const Time \&t2)}{operator+(const Time &t1, const Time &t2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{t1, }
+\item[{const {\bf Time} \&}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_afd483f03b731881b25da5612b1213e5f}{}\label{namespaceprism_afd483f03b731881b25da5612b1213e5f}
+Adds the two \hyperlink{classprism_1_1_time}{Time} objects together to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be after midnight then the time wraps round. 
+\begin{DoxyCode}
+Time t1(22,30);
+Time offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+
+Time result = t1+offset; \textcolor{comment}{// Time object set to 00:30:00:000}
+\end{DoxyCode}
+ \index{prism@{prism}!operator+@{operator+}}
+\index{operator+@{operator+}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator+(const Vector2 \&a, const Vector2 \&b)}{operator+(const Vector2 &a, const Vector2 &b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2} prism\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector2} \&}]{a, }
@@ -1208,6 +1229,21 @@ Returns a \hyperlink{classprism_1_1_point}{Point} object that is formed by subtr
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ab170e3ca42d85a6766cbc7950ddfb0c4}{}\label{namespaceprism_ab170e3ca42d85a6766cbc7950ddfb0c4}
 Subtracts {\itshape s2} from {\itshape s1} and returns a new \hyperlink{classprism_1_1_size}{Size} object. \index{prism@{prism}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator-\/(const Time \&t1, const Time \&t2)}{operator-(const Time &t1, const Time &t2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{t1, }
+\item[{const {\bf Time} \&}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aa18009df22007fbbde08ab44b16a9a31}{}\label{namespaceprism_aa18009df22007fbbde08ab44b16a9a31}
+Subtracts the \hyperlink{classprism_1_1_time}{Time} object {\itshape t2} from {\itshape t1} to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be before midnight then the time wraps round. 
+\begin{DoxyCode}
+Time t1(2,30);
+Time offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(3);
+
+Time result = t1-offset; \textcolor{comment}{// Time object set to 23:30:00:000}
+\end{DoxyCode}
+ \index{prism@{prism}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator-\/(const Vector2 \&a, const Vector2 \&b)}{operator-(const Vector2 &a, const Vector2 &b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2} prism\+::operator-\/ (
 \begin{DoxyParamCaption}
@@ -1425,6 +1461,14 @@ Allows an instance of \hyperlink{classprism_1_1_fraction}{Fraction} to be writte
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ad6335168e27f481d86ae42da444006d1}{}\label{namespaceprism_ad6335168e27f481d86ae42da444006d1}
 Allows an instance of \hyperlink{classprism_1_1_size}{Size} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Time \&t)}{operator<<(std::ostream &out, const Time &t)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Time} \&}]{t}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a7c24ead13d51c13dcadde1b6df4a4967}{}\label{namespaceprism_a7c24ead13d51c13dcadde1b6df4a4967}
+Allows an instance of \hyperlink{classprism_1_1_time}{Time} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Vector2 \&v)}{operator<<(std::ostream &out, const Vector2 &v)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}

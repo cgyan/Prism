@@ -4,9 +4,11 @@ var searchData=
   ['make_5fheap',['make_heap',['../namespaceprism.html#af8e36230e6cb92a41aaca282772a9e6e',1,'prism']]],
   ['matrix4',['Matrix4',['../classprism_1_1_matrix4.html#a9db27bce505b827ee46568fb105ff563',1,'prism::Matrix4::Matrix4(void)'],['../classprism_1_1_matrix4.html#a442f58d6a24413f1e2cb7cf6150c5fb9',1,'prism::Matrix4::Matrix4(const float *values)'],['../classprism_1_1_matrix4.html#a6e19410eb6de5dfdaeb989d3042176a1',1,'prism::Matrix4::Matrix4(const float r1c1, const float r1c2, const float r1c3, const float r1c4, const float r2c1, const float r2c2, const float r2c3, const float r2c4, const float r3c1, const float r3c2, const float r3c3, const float r3c4, const float r4c1, const float r4c2, const float r4c3, const float r4c4)'],['../classprism_1_1_matrix4.html#a1112c0939a2dc4112d0552cafd37dff0',1,'prism::Matrix4::Matrix4(const Matrix4 &amp;copy)']]],
   ['max',['max',['../namespaceprism.html#a812456273adfa37979e79f07e731d412',1,'prism']]],
-  ['memory',['memory',['../structprism_1_1_bitvector_data_1_1memory.html#a40de18a5a4154fe8f80f8ba63c9f5ab3',1,'prism::BitvectorData::memory::memory()'],['../structprism_1_1_stack_data_1_1_memory.html#ad2395dc0984b60adfba6f0a57bbd47f8',1,'prism::StackData::Memory::Memory()'],['../structprism_1_1_stack_data_1_1_memory.html#a9abfe931d4c5060414c6e0ecd74a98b3',1,'prism::StackData::Memory::Memory(const Memory &amp;copy)']]],
+  ['memory',['Memory',['../structprism_1_1_stack_data_1_1_memory.html#ad2395dc0984b60adfba6f0a57bbd47f8',1,'prism::StackData::Memory::Memory()'],['../structprism_1_1_stack_data_1_1_memory.html#a9abfe931d4c5060414c6e0ecd74a98b3',1,'prism::StackData::Memory::Memory(const Memory &amp;copy)'],['../structprism_1_1_bitvector_data_1_1memory.html#a40de18a5a4154fe8f80f8ba63c9f5ab3',1,'prism::BitvectorData::memory::memory()']]],
   ['mid',['mid',['../classprism_1_1_array.html#a184d0853ea009fb9d156c1302d46a87d',1,'prism::Array::mid()'],['../classprism_1_1_vector.html#ad15f2817fe441c22bbbdb1e1ecfe9aed',1,'prism::Vector::mid()']]],
-  ['min',['min',['../namespaceprism.html#a10aff0aca673fb1837069dd8967e4738',1,'prism']]],
+  ['min',['min',['../classprism_1_1_time.html#afd27e4b1e093fed8253b10090c6090aa',1,'prism::Time::min() const '],['../classprism_1_1_time.html#a0af1d18ebbc757c3e731b191e0165be9',1,'prism::Time::min(const int nMins)'],['../namespaceprism.html#a10aff0aca673fb1837069dd8967e4738',1,'prism::min()']]],
+  ['minsto',['minsTo',['../classprism_1_1_time.html#a654fe322a9b2aefe6ec9713bebf67fc7',1,'prism::Time']]],
+  ['mintoms',['minToMs',['../main_8cpp.html#adbd6c6c8be1fbd13a5371948a525b89c',1,'main.cpp']]],
   ['movebottom',['moveBottom',['../classprism_1_1_circle.html#a6392112dd312ec8564596fe00b1e48fa',1,'prism::Circle::moveBottom()'],['../classprism_1_1_rect.html#ad9305fe8528c64db65ef9bd34c3578b8',1,'prism::Rect::moveBottom()']]],
   ['movebottomleft',['moveBottomLeft',['../classprism_1_1_rect.html#adbbb1cabc46780b605f3400c5ee4e39e',1,'prism::Rect']]],
   ['movebottomright',['moveBottomRight',['../classprism_1_1_rect.html#a88696414c9cbcc840805482d09a83e65',1,'prism::Rect']]],
@@ -16,5 +18,10 @@ var searchData=
   ['moveto',['moveTo',['../classprism_1_1_rect.html#aa89a93ae63e2fd0dae063509f588f253',1,'prism::Rect::moveTo(const int x, const int y)'],['../classprism_1_1_rect.html#a7ee7a73b5cba4d3e3fcd048d77bceaa8',1,'prism::Rect::moveTo(const Point &amp;position)']]],
   ['movetop',['moveTop',['../classprism_1_1_circle.html#a6ed1dd2554b297751bb29c22eae26038',1,'prism::Circle::moveTop()'],['../classprism_1_1_rect.html#a1b1e4d524a29d32eab8c0938b6ae5246',1,'prism::Rect::moveTop()']]],
   ['movetopleft',['moveTopLeft',['../classprism_1_1_rect.html#ae0ccad0d81dbda985be4e9ee8ae3f6f7',1,'prism::Rect']]],
-  ['movetopright',['moveTopRight',['../classprism_1_1_rect.html#a24bdcf4de55d61b8c41010a8614203a7',1,'prism::Rect']]]
+  ['movetopright',['moveTopRight',['../classprism_1_1_rect.html#a24bdcf4de55d61b8c41010a8614203a7',1,'prism::Rect']]],
+  ['msec',['msec',['../classprism_1_1_time.html#a203ccb36ae3f75991b641e282350b280',1,'prism::Time::msec() const '],['../classprism_1_1_time.html#a6d835c48733a1f245101756039441441',1,'prism::Time::msec(const int nMsecs)']]],
+  ['msecsto',['msecsTo',['../classprism_1_1_time.html#a91a3b84fe2e96f260ce05a64d44212d6',1,'prism::Time']]],
+  ['mstohour',['msToHour',['../main_8cpp.html#a4ea7d7923f7af3f4585f8e114bcf9974',1,'main.cpp']]],
+  ['mstomin',['msToMin',['../main_8cpp.html#a9c9ec354aa4d088f583312cad57f809c',1,'main.cpp']]],
+  ['mstosec',['msToSec',['../main_8cpp.html#a26a96160c99c86311be59fe1dabaae3a',1,'main.cpp']]]
 ];

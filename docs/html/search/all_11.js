@@ -2,7 +2,7 @@ var searchData=
 [
   ['testflag',['testFlag',['../classprism_1_1_flags.html#af7ea559d83cf7a5374a08747311d9efe',1,'prism::Flags']]],
   ['time',['Time',['../classprism_1_1_time.html',1,'prism']]],
-  ['time',['Time',['../classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12',1,'prism::Time']]],
+  ['time',['Time',['../classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12',1,'prism::Time::Time()'],['../classprism_1_1_time.html#acdee4966daaf75f9b735744881481372',1,'prism::Time::Time(const int hour, const int min, const int sec=0, const int msec=0)']]],
   ['time_2ecpp',['Time.cpp',['../_time_8cpp.html',1,'']]],
   ['time_2eh',['Time.h',['../_time_8h.html',1,'']]],
   ['toascii',['toAscii',['../classprism_1_1_char.html#a26d719979d33ddc420591eb92fbf3bfc',1,'prism::Char']]],
@@ -19,6 +19,7 @@ var searchData=
   ['tostdforwardlist',['toStdForwardList',['../classprism_1_1_list.html#ab628c77e4598e1055a8b832367a31997',1,'prism::List']]],
   ['tostdstring',['toStdString',['../classprism_1_1_string.html#ad1018741610a6723a38ab52255147ac4',1,'prism::String']]],
   ['tostdvector',['toStdVector',['../classprism_1_1_vector.html#ae84be49ceac4011b35dd81218324b7df',1,'prism::Vector']]],
+  ['tostring',['toString',['../classprism_1_1_time.html#a1bb4fbb063aff43d3640334baaea281d',1,'prism::Time::toString()'],['../main_8cpp.html#ad6751b34c9c3c5fc9ff682d259680667',1,'toString():&#160;main.cpp']]],
   ['toupper',['toUpper',['../classprism_1_1_char.html#a1c34ae303e604dc91000427cea3c0934',1,'prism::Char::toUpper() const '],['../classprism_1_1_char.html#a7a8a0ac241932f5fe41aed5ee015f89e',1,'prism::Char::toUpper(const Char &amp;c)'],['../classprism_1_1_string.html#afd1fc3691cbc2f267fc3d1d8f27d2c3a',1,'prism::String::toUpper()']]],
   ['tovector',['toVector',['../classprism_1_1_stack.html#ac373a993c993bbf07a485a2838c9cae9',1,'prism::Stack']]],
   ['tovector2',['toVector2',['../classprism_1_1_vector3.html#adc9274bb1950e14acadcff0346732d2e',1,'prism::Vector3::toVector2()'],['../classprism_1_1_vector4.html#a42846c7b395f3a5fb871312c589de696',1,'prism::Vector4::toVector2()']]],

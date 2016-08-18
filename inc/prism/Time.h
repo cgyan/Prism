@@ -40,20 +40,33 @@ public:
 	virtual ~Time();
 
 	const int 	hour() const;
+	const int	hoursTo(const Time & time) const;
 	const int 	min() const;
+	const int	minsTo(const Time & time) const;
 	const int	msec() const;
+	const int	msecsTo(const Time &time) const;
 	void 		reset();
 	const int 	sec() const;
+	const int	secsTo(const Time & time) const;
+	void		set(const int hour, const int min, const int sec=0, const int msec=0);
 	String		toString() const;
 
 	static Time currentTime();
-	static Time hour(const int nHour);
-	static Time min(const int nMin);
-	static Time sec(const int nSec);
-	static Time msec(const int nMsec);
+	static Time hour(const int nHours);
+	static Time min(const int nMins);
+	static Time sec(const int nSecs);
+	static Time msec(const int nMsecs);
+
+	const bool 	operator==(const Time & other);
+	const bool 	operator!=(const Time & other);
+	const bool 	operator<(const Time & other);
+	const bool 	operator<=(const Time & other);
+	const bool 	operator>(const Time & other);
+	const bool 	operator>=(const Time & other);
 
 	// related nonmembers
 	friend Time operator+(const Time &t1, const Time & t2);
+	friend Time operator-(const Time &t1, const Time & t2);
 	friend std::ostream & operator<<(std::ostream & out, const Time & t);
 };
 

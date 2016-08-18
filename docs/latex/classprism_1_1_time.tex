@@ -4,17 +4,122 @@
 
 {\ttfamily \#include $<$Time.\+h$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a936aeb84b0e60cf062adb25a35cf2fda}{M\+S\+\_\+\+P\+E\+R\+\_\+\+S\+E\+C\+O\+ND} = 1000, 
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a91c834280bbe9c6ce2ea438f0132ca60}{M\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE} = 60000, 
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053aed67b9c928af60c5cad839b71253ad1c}{M\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR} = 3600000, 
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053aab960bfe4c84e6bd79bd4fd5b038bffd}{M\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY} = 86400000, 
+\\*
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a0e58469de7dd0d126a53b68db3e35ee0}{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE} = 60, 
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a43bac766fad2dce180ae4fff8a66441f}{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR} = 3600, 
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a73e1d097f17207730eb6935270e05c05}{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY} = 86400, 
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a3f4160b1bb1b56fbd23f53e614bd0bad}{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR} = 60, 
+\\*
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207}{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY} = 1440, 
+\hyperlink{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a2321329da5265ab087381f8c0483403e}{H\+O\+U\+R\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY} = 24
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} ()
 \item 
+\hyperlink{classprism_1_1_time_acdee4966daaf75f9b735744881481372}{Time} (const int \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{hour}, const int \hyperlink{classprism_1_1_time_afd27e4b1e093fed8253b10090c6090aa}{min}, const int \hyperlink{classprism_1_1_time_a83f655a9c7f1a2e8521ddcb395fa3796}{sec}=0, const int \hyperlink{classprism_1_1_time_a203ccb36ae3f75991b641e282350b280}{msec}=0)
+\item 
 virtual \hyperlink{classprism_1_1_time_a07e1c6bf7205b4451ac717a833b65968}{$\sim$\+Time} ()
+\item 
+const int \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{hour} () const 
+\item 
+const int \hyperlink{classprism_1_1_time_a759d033f1ef8602118fbe887eb8a2241}{hours\+To} (const \hyperlink{classprism_1_1_time}{Time} \&time) const 
+\item 
+const int \hyperlink{classprism_1_1_time_afd27e4b1e093fed8253b10090c6090aa}{min} () const 
+\item 
+const int \hyperlink{classprism_1_1_time_a654fe322a9b2aefe6ec9713bebf67fc7}{mins\+To} (const \hyperlink{classprism_1_1_time}{Time} \&time) const 
+\item 
+const int \hyperlink{classprism_1_1_time_a203ccb36ae3f75991b641e282350b280}{msec} () const 
+\item 
+const int \hyperlink{classprism_1_1_time_a91a3b84fe2e96f260ce05a64d44212d6}{msecs\+To} (const \hyperlink{classprism_1_1_time}{Time} \&time) const 
+\item 
+void \hyperlink{classprism_1_1_time_aff00f53fdc1e7b0eb249b6410d2cde28}{reset} ()
+\item 
+const int \hyperlink{classprism_1_1_time_a83f655a9c7f1a2e8521ddcb395fa3796}{sec} () const 
+\item 
+const int \hyperlink{classprism_1_1_time_a06e59e21a308459f3984a9680e431b32}{secs\+To} (const \hyperlink{classprism_1_1_time}{Time} \&time) const 
+\item 
+void \hyperlink{classprism_1_1_time_a7c67248f8370374686d1a61716b17485}{set} (const int \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{hour}, const int \hyperlink{classprism_1_1_time_afd27e4b1e093fed8253b10090c6090aa}{min}, const int \hyperlink{classprism_1_1_time_a83f655a9c7f1a2e8521ddcb395fa3796}{sec}=0, const int \hyperlink{classprism_1_1_time_a203ccb36ae3f75991b641e282350b280}{msec}=0)
+\item 
+\hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_time_a1bb4fbb063aff43d3640334baaea281d}{to\+String} () const 
+\item 
+const bool \hyperlink{classprism_1_1_time_ae621f5954eea065f7b7b6b4a5f0ec473}{operator==} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+\item 
+const bool \hyperlink{classprism_1_1_time_ada6a112edfbddbad8c470b17b445a0bb}{operator!=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+\item 
+const bool \hyperlink{classprism_1_1_time_a3684da92ae24473788c06240ea5af1ee}{operator$<$} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+\item 
+const bool \hyperlink{classprism_1_1_time_a892e6fb8bbf197bebc44950683722f17}{operator$<$=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+\item 
+const bool \hyperlink{classprism_1_1_time_ae155a256da81c7edee4e0c5e3915fde5}{operator$>$} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+\item 
+const bool \hyperlink{classprism_1_1_time_ad379fc491dfb79e5215dda85a0150335}{operator$>$=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_ae440b8eee979a64a49fd026087d8bd5a}{current\+Time} ()
+\item 
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}{hour} (const int n\+Hours)
+\item 
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}{min} (const int n\+Mins)
+\item 
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}{sec} (const int n\+Secs)
+\item 
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a6d835c48733a1f245101756039441441}{msec} (const int n\+Msecs)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_ae2e555aa5b5c51e44b576d8baf48a2cd}{operator+} (const \hyperlink{classprism_1_1_time}{Time} \&t1, const \hyperlink{classprism_1_1_time}{Time} \&t2)
+\item 
+\hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a09225563b0b317910b26c550ba74de64}{operator-\/} (const \hyperlink{classprism_1_1_time}{Time} \&t1, const \hyperlink{classprism_1_1_time}{Time} \&t2)
+\item 
+std\+::ostream \& \hyperlink{classprism_1_1_time_a25f100a1404d8c5535ddaafe65081fa7}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_time}{Time} \&t)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 This is the detailed description of \hyperlink{classprism_1_1_time}{Time}. 
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{\texorpdfstring{anonymous enum}{anonymous enum}}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+S\+\_\+\+P\+E\+R\+\_\+\+S\+E\+C\+O\+ND@{M\+S\+\_\+\+P\+E\+R\+\_\+\+S\+E\+C\+O\+ND}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!M\+S\+\_\+\+P\+E\+R\+\_\+\+S\+E\+C\+O\+ND@{M\+S\+\_\+\+P\+E\+R\+\_\+\+S\+E\+C\+O\+ND}}\item[{\em 
+M\+S\+\_\+\+P\+E\+R\+\_\+\+S\+E\+C\+O\+ND\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a936aeb84b0e60cf062adb25a35cf2fda}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a936aeb84b0e60cf062adb25a35cf2fda}
+}]\index{M\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE@{M\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!M\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE@{M\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE}}\item[{\em 
+M\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a91c834280bbe9c6ce2ea438f0132ca60}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a91c834280bbe9c6ce2ea438f0132ca60}
+}]\index{M\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR@{M\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!M\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR@{M\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR}}\item[{\em 
+M\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053aed67b9c928af60c5cad839b71253ad1c}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053aed67b9c928af60c5cad839b71253ad1c}
+}]\index{M\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{M\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!M\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{M\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}}\item[{\em 
+M\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053aab960bfe4c84e6bd79bd4fd5b038bffd}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053aab960bfe4c84e6bd79bd4fd5b038bffd}
+}]\index{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE@{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE@{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE}}\item[{\em 
+S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+M\+I\+N\+U\+TE\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a0e58469de7dd0d126a53b68db3e35ee0}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a0e58469de7dd0d126a53b68db3e35ee0}
+}]\index{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR@{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR@{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR}}\item[{\em 
+S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a43bac766fad2dce180ae4fff8a66441f}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a43bac766fad2dce180ae4fff8a66441f}
+}]\index{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}}\item[{\em 
+S\+E\+C\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a73e1d097f17207730eb6935270e05c05}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a73e1d097f17207730eb6935270e05c05}
+}]\index{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR@{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR@{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR}}\item[{\em 
+M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+H\+O\+UR\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a3f4160b1bb1b56fbd23f53e614bd0bad}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a3f4160b1bb1b56fbd23f53e614bd0bad}
+}]\index{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}}\item[{\em 
+M\+I\+N\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207}
+}]\index{H\+O\+U\+R\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{H\+O\+U\+R\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}!prism\+::\+Time@{prism\+::\+Time}}\index{prism\+::\+Time@{prism\+::\+Time}!H\+O\+U\+R\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY@{H\+O\+U\+R\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY}}\item[{\em 
+H\+O\+U\+R\+S\+\_\+\+P\+E\+R\+\_\+\+D\+AY\hypertarget{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a2321329da5265ab087381f8c0483403e}{}\label{classprism_1_1_time_a4f8bc7cc739ace83cbe9d7aff667d053a2321329da5265ab087381f8c0483403e}
+}]\end{description}
+\end{Desc}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \index{prism\+::\+Time@{prism\+::\+Time}!Time@{Time}}
@@ -24,14 +129,273 @@ This is the detailed description of \hyperlink{classprism_1_1_time}{Time}.
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{}\label{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}
-\index{prism\+::\+Time@{prism\+::\+Time}!````~Time@{$\sim$\+Time}}
+Constructs a \hyperlink{classprism_1_1_time}{Time} object set to midnight i.\+e. hour=min=sec=msec=0. \index{prism\+::\+Time@{prism\+::\+Time}!Time@{Time}}
+\index{Time@{Time}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{Time(const int hour, const int min, const int sec=0, const int msec=0)}{Time(const int hour, const int min, const int sec=0, const int msec=0)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Time\+::\+Time (
+\begin{DoxyParamCaption}
+\item[{const int}]{hour, }
+\item[{const int}]{min, }
+\item[{const int}]{sec = {\ttfamily 0}, }
+\item[{const int}]{msec = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_acdee4966daaf75f9b735744881481372}{}\label{classprism_1_1_time_acdee4966daaf75f9b735744881481372}
+Constructs a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape hour}, {\itshape min}, {\itshape sec} and {\itshape msec}. \index{prism\+::\+Time@{prism\+::\+Time}!````~Time@{$\sim$\+Time}}
 \index{````~Time@{$\sim$\+Time}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{$\sim$\+Time()}{~Time()}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Time\+::$\sim$\+Time (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1_time_a07e1c6bf7205b4451ac717a833b65968}{}\label{classprism_1_1_time_a07e1c6bf7205b4451ac717a833b65968}
+Destroys this \hyperlink{classprism_1_1_time}{Time} object. 
 
+\subsection{Member Function Documentation}
+\index{prism\+::\+Time@{prism\+::\+Time}!current\+Time@{current\+Time}}
+\index{current\+Time@{current\+Time}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{current\+Time()}{currentTime()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::current\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_ae440b8eee979a64a49fd026087d8bd5a}{}\label{classprism_1_1_time_ae440b8eee979a64a49fd026087d8bd5a}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classprism_1_1_time}{Time} object set to the current time as read from the system clock. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!hour@{hour}}
+\index{hour@{hour}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{hour() const }{hour() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::hour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{}\label{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}
+\begin{DoxyReturn}{Returns}
+Returns the hour part of the time (0-\/23). 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!hour@{hour}}
+\index{hour@{hour}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{hour(const int n\+Hours)}{hour(const int nHours)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::hour (
+\begin{DoxyParamCaption}
+\item[{const int}]{n\+Hours}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}{}\label{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}
+Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Hours}. \index{prism\+::\+Time@{prism\+::\+Time}!hours\+To@{hours\+To}}
+\index{hours\+To@{hours\+To}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{hours\+To(const Time \&time) const }{hoursTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::hours\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{time}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a759d033f1ef8602118fbe887eb8a2241}{}\label{classprism_1_1_time_a759d033f1ef8602118fbe887eb8a2241}
+\begin{DoxyReturn}{Returns}
+Returns the number of hours between {\itshape time} and this object\textquotesingle{}s time. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!min@{min}}
+\index{min@{min}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{min() const }{min() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_afd27e4b1e093fed8253b10090c6090aa}{}\label{classprism_1_1_time_afd27e4b1e093fed8253b10090c6090aa}
+\begin{DoxyReturn}{Returns}
+Returns the minute part of the time (0-\/59). 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!min@{min}}
+\index{min@{min}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{min(const int n\+Mins)}{min(const int nMins)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::min (
+\begin{DoxyParamCaption}
+\item[{const int}]{n\+Mins}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}{}\label{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}
+Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Mins}. \index{prism\+::\+Time@{prism\+::\+Time}!mins\+To@{mins\+To}}
+\index{mins\+To@{mins\+To}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{mins\+To(const Time \&time) const }{minsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::mins\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{time}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a654fe322a9b2aefe6ec9713bebf67fc7}{}\label{classprism_1_1_time_a654fe322a9b2aefe6ec9713bebf67fc7}
+\begin{DoxyReturn}{Returns}
+Returns the number of minutes between {\itshape time} and this object\textquotesingle{}s time. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!msec@{msec}}
+\index{msec@{msec}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{msec() const }{msec() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::msec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a203ccb36ae3f75991b641e282350b280}{}\label{classprism_1_1_time_a203ccb36ae3f75991b641e282350b280}
+\begin{DoxyReturn}{Returns}
+Returns the millisecond part of the time (0-\/999). 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!msec@{msec}}
+\index{msec@{msec}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{msec(const int n\+Msecs)}{msec(const int nMsecs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::msec (
+\begin{DoxyParamCaption}
+\item[{const int}]{n\+Msecs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a6d835c48733a1f245101756039441441}{}\label{classprism_1_1_time_a6d835c48733a1f245101756039441441}
+Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Msecs}. \index{prism\+::\+Time@{prism\+::\+Time}!msecs\+To@{msecs\+To}}
+\index{msecs\+To@{msecs\+To}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{msecs\+To(const Time \&time) const }{msecsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::msecs\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{time}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a91a3b84fe2e96f260ce05a64d44212d6}{}\label{classprism_1_1_time_a91a3b84fe2e96f260ce05a64d44212d6}
+\begin{DoxyReturn}{Returns}
+Returns the number of milliseconds between {\itshape time} and this object\textquotesingle{}s time. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator"!=(const Time \&other)}{operator!=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_ada6a112edfbddbad8c470b17b445a0bb}{}\label{classprism_1_1_time_ada6a112edfbddbad8c470b17b445a0bb}
+\begin{DoxyReturn}{Returns}
+Returns true if this object and {\itshape other} have different times, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator$<$(const Time \&other)}{operator<(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_a3684da92ae24473788c06240ea5af1ee}{}\label{classprism_1_1_time_a3684da92ae24473788c06240ea5af1ee}
+\begin{DoxyReturn}{Returns}
+Returns true if this object\textquotesingle{}s time is before {\itshape other}, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator$<$=(const Time \&other)}{operator<=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_a892e6fb8bbf197bebc44950683722f17}{}\label{classprism_1_1_time_a892e6fb8bbf197bebc44950683722f17}
+\begin{DoxyReturn}{Returns}
+Returns true if this object\textquotesingle{}s time is before or equal to {\itshape other}, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator==(const Time \&other)}{operator==(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_ae621f5954eea065f7b7b6b4a5f0ec473}{}\label{classprism_1_1_time_ae621f5954eea065f7b7b6b4a5f0ec473}
+\begin{DoxyReturn}{Returns}
+Returns true if this object and {\itshape other} have the same time, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator$>$(const Time \&other)}{operator>(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_ae155a256da81c7edee4e0c5e3915fde5}{}\label{classprism_1_1_time_ae155a256da81c7edee4e0c5e3915fde5}
+\begin{DoxyReturn}{Returns}
+Returns true if this object\textquotesingle{}s time is after {\itshape other}, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator$>$=(const Time \&other)}{operator>=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_ad379fc491dfb79e5215dda85a0150335}{}\label{classprism_1_1_time_ad379fc491dfb79e5215dda85a0150335}
+\begin{DoxyReturn}{Returns}
+Returns true if this object\textquotesingle{}s time is after or equal to {\itshape other}, false otherwise. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!reset@{reset}}
+\index{reset@{reset}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{reset()}{reset()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Time\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_aff00f53fdc1e7b0eb249b6410d2cde28}{}\label{classprism_1_1_time_aff00f53fdc1e7b0eb249b6410d2cde28}
+Resets the time back to midnight i.\+e. hour=min=sec=msec=0. \index{prism\+::\+Time@{prism\+::\+Time}!sec@{sec}}
+\index{sec@{sec}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{sec() const }{sec() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::sec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a83f655a9c7f1a2e8521ddcb395fa3796}{}\label{classprism_1_1_time_a83f655a9c7f1a2e8521ddcb395fa3796}
+\begin{DoxyReturn}{Returns}
+Returns the second part of the time (0-\/59). 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!sec@{sec}}
+\index{sec@{sec}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{sec(const int n\+Secs)}{sec(const int nSecs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::sec (
+\begin{DoxyParamCaption}
+\item[{const int}]{n\+Secs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}{}\label{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}
+Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Ssecs}. \index{prism\+::\+Time@{prism\+::\+Time}!secs\+To@{secs\+To}}
+\index{secs\+To@{secs\+To}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{secs\+To(const Time \&time) const }{secsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::secs\+To (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{time}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a06e59e21a308459f3984a9680e431b32}{}\label{classprism_1_1_time_a06e59e21a308459f3984a9680e431b32}
+\begin{DoxyReturn}{Returns}
+Returns the number of seconds between {\itshape time} and this object\textquotesingle{}s time. 
+\end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!set@{set}}
+\index{set@{set}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{set(const int hour, const int min, const int sec=0, const int msec=0)}{set(const int hour, const int min, const int sec=0, const int msec=0)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Time\+::set (
+\begin{DoxyParamCaption}
+\item[{const int}]{hour, }
+\item[{const int}]{min, }
+\item[{const int}]{sec = {\ttfamily 0}, }
+\item[{const int}]{msec = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_a7c67248f8370374686d1a61716b17485}{}\label{classprism_1_1_time_a7c67248f8370374686d1a61716b17485}
+Sets this \hyperlink{classprism_1_1_time}{Time} object to {\itshape hour}, {\itshape min}, {\itshape sec} and {\itshape msec}. \index{prism\+::\+Time@{prism\+::\+Time}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{to\+String() const }{toString() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+Time\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a1bb4fbb063aff43d3640334baaea281d}{}\label{classprism_1_1_time_a1bb4fbb063aff43d3640334baaea281d}
+\begin{DoxyReturn}{Returns}
+Returns a string representation of the time in the form 00\+:00\+:00\+:000. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{prism\+::\+Time@{prism\+::\+Time}!operator+@{operator+}}
+\index{operator+@{operator+}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{t1, }
+\item[{const {\bf Time} \&}]{t2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_time_ae2e555aa5b5c51e44b576d8baf48a2cd}{}\label{classprism_1_1_time_ae2e555aa5b5c51e44b576d8baf48a2cd}
+Adds the two \hyperlink{classprism_1_1_time}{Time} objects together to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be after midnight then the time wraps round. 
+\begin{DoxyCode}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} t1(22,30);
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} result = t1+offset; \textcolor{comment}{// Time object set to 00:30:00:000}
+\end{DoxyCode}
+ \index{prism\+::\+Time@{prism\+::\+Time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{t1, }
+\item[{const {\bf Time} \&}]{t2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_time_a09225563b0b317910b26c550ba74de64}{}\label{classprism_1_1_time_a09225563b0b317910b26c550ba74de64}
+Subtracts the \hyperlink{classprism_1_1_time}{Time} object {\itshape t2} from {\itshape t1} to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be before midnight then the time wraps round. 
+\begin{DoxyCode}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} t1(2,30);
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(3);
+
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} result = t1-offset; \textcolor{comment}{// Time object set to 23:30:00:000}
+\end{DoxyCode}
+ \index{prism\+::\+Time@{prism\+::\+Time}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf Time} \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_time_a25f100a1404d8c5535ddaafe65081fa7}{}\label{classprism_1_1_time_a25f100a1404d8c5535ddaafe65081fa7}
+Allows an instance of \hyperlink{classprism_1_1_time}{Time} to be written to the ostream and returns a reference to the ostream. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

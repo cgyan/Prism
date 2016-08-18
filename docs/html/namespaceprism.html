@@ -517,6 +517,12 @@ Functions</h2></td></tr>
 <tr class="separator:a8ae68ccc6eb3a47a748671c1a7af88ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a166bbf645cc854542cc0fc50324670"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a0a166bbf645cc854542cc0fc50324670">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classprism_1_1_string.html">String</a> &amp;s)</td></tr>
 <tr class="separator:a0a166bbf645cc854542cc0fc50324670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd483f03b731881b25da5612b1213e5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#afd483f03b731881b25da5612b1213e5f">operator+</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t1, const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t2)</td></tr>
+<tr class="separator:afd483f03b731881b25da5612b1213e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18009df22007fbbde08ab44b16a9a31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aa18009df22007fbbde08ab44b16a9a31">operator-</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t1, const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t2)</td></tr>
+<tr class="separator:aa18009df22007fbbde08ab44b16a9a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c24ead13d51c13dcadde1b6df4a4967"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a7c24ead13d51c13dcadde1b6df4a4967">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t)</td></tr>
+<tr class="separator:a7c24ead13d51c13dcadde1b6df4a4967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae482804c32b466401a9ecdf26bc1e6de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#ae482804c32b466401a9ecdf26bc1e6de">operator+</a> (const <a class="el" href="classprism_1_1_vector2.html">Vector2</a> &amp;a, const <a class="el" href="classprism_1_1_vector2.html">Vector2</a> &amp;b)</td></tr>
 <tr class="separator:ae482804c32b466401a9ecdf26bc1e6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86359a88dc5245847de48575a1f969e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_vector2.html">Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a86359a88dc5245847de48575a1f969e8">operator-</a> (const <a class="el" href="classprism_1_1_vector2.html">Vector2</a> &amp;a, const <a class="el" href="classprism_1_1_vector2.html">Vector2</a> &amp;b)</td></tr>
@@ -2817,6 +2823,32 @@ template&lt;class U &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="afd483f03b731881b25da5612b1213e5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds the two <a class="el" href="classprism_1_1_time.html">Time</a> objects together to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be after midnight then the time wraps round. </p><div class="fragment"><div class="line">Time t1(22,30);</div><div class="line">Time offset = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(2);</div><div class="line"></div><div class="line">Time result = t1+offset; <span class="comment">// Time object set to 00:30:00:000</span></div></div><!-- fragment --> 
+</div>
+</div>
 <a class="anchor" id="ae482804c32b466401a9ecdf26bc1e6de"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3188,6 +3220,32 @@ template&lt;class U &gt; </div>
 </div><div class="memdoc">
 <p>Subtracts <em>s2</em> from <em>s1</em> and returns a new <a class="el" href="classprism_1_1_size.html">Size</a> object. </p>
 
+</div>
+</div>
+<a class="anchor" id="aa18009df22007fbbde08ab44b16a9a31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Subtracts the <a class="el" href="classprism_1_1_time.html">Time</a> object <em>t2</em> from <em>t1</em> to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be before midnight then the time wraps round. </p><div class="fragment"><div class="line">Time t1(2,30);</div><div class="line">Time offset = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(3);</div><div class="line"></div><div class="line">Time result = t1-offset; <span class="comment">// Time object set to 23:30:00:000</span></div></div><!-- fragment --> 
 </div>
 </div>
 <a class="anchor" id="a86359a88dc5245847de48575a1f969e8"></a>
@@ -3866,6 +3924,33 @@ template&lt;class U &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Allows an instance of <a class="el" href="classprism_1_1_size.html">Size</a> to be written to the ostream and returns a reference to the ostream. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7c24ead13d51c13dcadde1b6df4a4967"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; prism::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allows an instance of <a class="el" href="classprism_1_1_time.html">Time</a> to be written to the ostream and returns a reference to the ostream. </p>
 
 </div>
 </div>

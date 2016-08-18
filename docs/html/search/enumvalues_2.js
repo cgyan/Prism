@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['gtest_5ferror',['GTEST_ERROR',['../namespacetesting_1_1internal.html#aa6255ef3b023c5b4e1a2198d887fb977a651e9cd2a904e0c8210536271b875f75',1,'testing::internal']]],
-  ['gtest_5ffatal',['GTEST_FATAL',['../namespacetesting_1_1internal.html#aa6255ef3b023c5b4e1a2198d887fb977a75063567740f6bf7da419b1b9197b12e',1,'testing::internal']]],
-  ['gtest_5finfo',['GTEST_INFO',['../namespacetesting_1_1internal.html#aa6255ef3b023c5b4e1a2198d887fb977aff315e0913fcda86fe4de882bf5e33e9',1,'testing::internal']]],
-  ['gtest_5fwarning',['GTEST_WARNING',['../namespacetesting_1_1internal.html#aa6255ef3b023c5b4e1a2198d887fb977a7a051bc2794f15a4bf0eab40562a304c',1,'testing::internal']]]
+  ['mins_5fper_5fday',['MINS_PER_DAY',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207',1,'prism::Time']]],
+  ['mins_5fper_5fhour',['MINS_PER_HOUR',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a3f4160b1bb1b56fbd23f53e614bd0bad',1,'prism::Time']]],
+  ['ms_5fper_5fday',['MS_PER_DAY',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053aab960bfe4c84e6bd79bd4fd5b038bffd',1,'prism::Time']]],
+  ['ms_5fper_5fhour',['MS_PER_HOUR',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053aed67b9c928af60c5cad839b71253ad1c',1,'prism::Time']]],
+  ['ms_5fper_5fminute',['MS_PER_MINUTE',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a91c834280bbe9c6ce2ea438f0132ca60',1,'prism::Time']]],
+  ['ms_5fper_5fsecond',['MS_PER_SECOND',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a936aeb84b0e60cf062adb25a35cf2fda',1,'prism::Time']]]
 ];

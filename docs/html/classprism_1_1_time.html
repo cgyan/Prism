@@ -107,7 +107,10 @@ $(document).ready(function(){initNavTree('classprism_1_1_time.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classprism_1_1_time-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">prism::Time Class Reference</div>  </div>
@@ -116,16 +119,128 @@ $(document).ready(function(){initNavTree('classprism_1_1_time.html','');});
 
 <p><code>#include &lt;<a class="el" href="_time_8h_source.html">Time.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a4f8bc7cc739ace83cbe9d7aff667d053"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a936aeb84b0e60cf062adb25a35cf2fda">MS_PER_SECOND</a> = 1000, 
+<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a91c834280bbe9c6ce2ea438f0132ca60">MS_PER_MINUTE</a> = 60000, 
+<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053aed67b9c928af60c5cad839b71253ad1c">MS_PER_HOUR</a> = 3600000, 
+<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053aab960bfe4c84e6bd79bd4fd5b038bffd">MS_PER_DAY</a> = 86400000, 
+<br />
+&#160;&#160;<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a0e58469de7dd0d126a53b68db3e35ee0">SECS_PER_MINUTE</a> = 60, 
+<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a43bac766fad2dce180ae4fff8a66441f">SECS_PER_HOUR</a> = 3600, 
+<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a73e1d097f17207730eb6935270e05c05">SECS_PER_DAY</a> = 86400, 
+<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a3f4160b1bb1b56fbd23f53e614bd0bad">MINS_PER_HOUR</a> = 60, 
+<br />
+&#160;&#160;<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207">MINS_PER_DAY</a> = 1440, 
+<a class="el" href="classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a2321329da5265ab087381f8c0483403e">HOURS_PER_DAY</a> = 24
+<br />
+ }</td></tr>
+<tr class="separator:a4f8bc7cc739ace83cbe9d7aff667d053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9cb33724bd39863cec83613c089d6f12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12">Time</a> ()</td></tr>
 <tr class="separator:a9cb33724bd39863cec83613c089d6f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdee4966daaf75f9b735744881481372"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#acdee4966daaf75f9b735744881481372">Time</a> (const int <a class="el" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">hour</a>, const int <a class="el" href="classprism_1_1_time.html#afd27e4b1e093fed8253b10090c6090aa">min</a>, const int <a class="el" href="classprism_1_1_time.html#a83f655a9c7f1a2e8521ddcb395fa3796">sec</a>=0, const int <a class="el" href="classprism_1_1_time.html#a203ccb36ae3f75991b641e282350b280">msec</a>=0)</td></tr>
+<tr class="separator:acdee4966daaf75f9b735744881481372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07e1c6bf7205b4451ac717a833b65968"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a07e1c6bf7205b4451ac717a833b65968">~Time</a> ()</td></tr>
 <tr class="separator:a07e1c6bf7205b4451ac717a833b65968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380242e03982df8bf4af3eaa2296c808"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">hour</a> () const </td></tr>
+<tr class="separator:a380242e03982df8bf4af3eaa2296c808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759d033f1ef8602118fbe887eb8a2241"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a759d033f1ef8602118fbe887eb8a2241">hoursTo</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;time) const </td></tr>
+<tr class="separator:a759d033f1ef8602118fbe887eb8a2241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd27e4b1e093fed8253b10090c6090aa"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#afd27e4b1e093fed8253b10090c6090aa">min</a> () const </td></tr>
+<tr class="separator:afd27e4b1e093fed8253b10090c6090aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654fe322a9b2aefe6ec9713bebf67fc7"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a654fe322a9b2aefe6ec9713bebf67fc7">minsTo</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;time) const </td></tr>
+<tr class="separator:a654fe322a9b2aefe6ec9713bebf67fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a203ccb36ae3f75991b641e282350b280"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a203ccb36ae3f75991b641e282350b280">msec</a> () const </td></tr>
+<tr class="separator:a203ccb36ae3f75991b641e282350b280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a3b84fe2e96f260ce05a64d44212d6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a91a3b84fe2e96f260ce05a64d44212d6">msecsTo</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;time) const </td></tr>
+<tr class="separator:a91a3b84fe2e96f260ce05a64d44212d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff00f53fdc1e7b0eb249b6410d2cde28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#aff00f53fdc1e7b0eb249b6410d2cde28">reset</a> ()</td></tr>
+<tr class="separator:aff00f53fdc1e7b0eb249b6410d2cde28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f655a9c7f1a2e8521ddcb395fa3796"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a83f655a9c7f1a2e8521ddcb395fa3796">sec</a> () const </td></tr>
+<tr class="separator:a83f655a9c7f1a2e8521ddcb395fa3796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e59e21a308459f3984a9680e431b32"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a06e59e21a308459f3984a9680e431b32">secsTo</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;time) const </td></tr>
+<tr class="separator:a06e59e21a308459f3984a9680e431b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c67248f8370374686d1a61716b17485"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a7c67248f8370374686d1a61716b17485">set</a> (const int <a class="el" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">hour</a>, const int <a class="el" href="classprism_1_1_time.html#afd27e4b1e093fed8253b10090c6090aa">min</a>, const int <a class="el" href="classprism_1_1_time.html#a83f655a9c7f1a2e8521ddcb395fa3796">sec</a>=0, const int <a class="el" href="classprism_1_1_time.html#a203ccb36ae3f75991b641e282350b280">msec</a>=0)</td></tr>
+<tr class="separator:a7c67248f8370374686d1a61716b17485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb4fbb063aff43d3640334baaea281d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_string.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a1bb4fbb063aff43d3640334baaea281d">toString</a> () const </td></tr>
+<tr class="separator:a1bb4fbb063aff43d3640334baaea281d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae621f5954eea065f7b7b6b4a5f0ec473"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#ae621f5954eea065f7b7b6b4a5f0ec473">operator==</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;other)</td></tr>
+<tr class="separator:ae621f5954eea065f7b7b6b4a5f0ec473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada6a112edfbddbad8c470b17b445a0bb"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#ada6a112edfbddbad8c470b17b445a0bb">operator!=</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;other)</td></tr>
+<tr class="separator:ada6a112edfbddbad8c470b17b445a0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3684da92ae24473788c06240ea5af1ee"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a3684da92ae24473788c06240ea5af1ee">operator&lt;</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;other)</td></tr>
+<tr class="separator:a3684da92ae24473788c06240ea5af1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892e6fb8bbf197bebc44950683722f17"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a892e6fb8bbf197bebc44950683722f17">operator&lt;=</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;other)</td></tr>
+<tr class="separator:a892e6fb8bbf197bebc44950683722f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae155a256da81c7edee4e0c5e3915fde5"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#ae155a256da81c7edee4e0c5e3915fde5">operator&gt;</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;other)</td></tr>
+<tr class="separator:ae155a256da81c7edee4e0c5e3915fde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad379fc491dfb79e5215dda85a0150335"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#ad379fc491dfb79e5215dda85a0150335">operator&gt;=</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;other)</td></tr>
+<tr class="separator:ad379fc491dfb79e5215dda85a0150335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae440b8eee979a64a49fd026087d8bd5a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#ae440b8eee979a64a49fd026087d8bd5a">currentTime</a> ()</td></tr>
+<tr class="separator:ae440b8eee979a64a49fd026087d8bd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2fffc1f771980417d2f91c661dff94"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#adc2fffc1f771980417d2f91c661dff94">hour</a> (const int nHours)</td></tr>
+<tr class="separator:adc2fffc1f771980417d2f91c661dff94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af1d18ebbc757c3e731b191e0165be9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a0af1d18ebbc757c3e731b191e0165be9">min</a> (const int nMins)</td></tr>
+<tr class="separator:a0af1d18ebbc757c3e731b191e0165be9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c2bde2875a4195c1947a3e6fd7bbcea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a5c2bde2875a4195c1947a3e6fd7bbcea">sec</a> (const int nSecs)</td></tr>
+<tr class="separator:a5c2bde2875a4195c1947a3e6fd7bbcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d835c48733a1f245101756039441441"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a6d835c48733a1f245101756039441441">msec</a> (const int nMsecs)</td></tr>
+<tr class="separator:a6d835c48733a1f245101756039441441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ae2e555aa5b5c51e44b576d8baf48a2cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#ae2e555aa5b5c51e44b576d8baf48a2cd">operator+</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t1, const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t2)</td></tr>
+<tr class="separator:ae2e555aa5b5c51e44b576d8baf48a2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09225563b0b317910b26c550ba74de64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a09225563b0b317910b26c550ba74de64">operator-</a> (const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t1, const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t2)</td></tr>
+<tr class="separator:a09225563b0b317910b26c550ba74de64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f100a1404d8c5535ddaafe65081fa7"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_time.html#a25f100a1404d8c5535ddaafe65081fa7">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;t)</td></tr>
+<tr class="separator:a25f100a1404d8c5535ddaafe65081fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is the detailed description of <a class="el" href="classprism_1_1_time.html">Time</a>. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a936aeb84b0e60cf062adb25a35cf2fda"></a>MS_PER_SECOND&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a91c834280bbe9c6ce2ea438f0132ca60"></a>MS_PER_MINUTE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053aed67b9c928af60c5cad839b71253ad1c"></a>MS_PER_HOUR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053aab960bfe4c84e6bd79bd4fd5b038bffd"></a>MS_PER_DAY&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a0e58469de7dd0d126a53b68db3e35ee0"></a>SECS_PER_MINUTE&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a43bac766fad2dce180ae4fff8a66441f"></a>SECS_PER_HOUR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a73e1d097f17207730eb6935270e05c05"></a>SECS_PER_DAY&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a3f4160b1bb1b56fbd23f53e614bd0bad"></a>MINS_PER_HOUR&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207"></a>MINS_PER_DAY&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a4f8bc7cc739ace83cbe9d7aff667d053a2321329da5265ab087381f8c0483403e"></a>HOURS_PER_DAY&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9cb33724bd39863cec83613c089d6f12"></a>
 <div class="memitem">
 <div class="memproto">
@@ -138,6 +253,46 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructs a <a class="el" href="classprism_1_1_time.html">Time</a> object set to midnight i.e. hour=min=sec=msec=0. </p>
+
+</div>
+</div>
+<a class="anchor" id="acdee4966daaf75f9b735744881481372"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">prism::Time::Time </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>hour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>sec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>msec</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructs a <a class="el" href="classprism_1_1_time.html">Time</a> object set to <em>hour</em>, <em>min</em>, <em>sec</em> and <em>msec</em>. </p>
 
 </div>
 </div>
@@ -161,6 +316,541 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Destroys this <a class="el" href="classprism_1_1_time.html">Time</a> object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae440b8eee979a64a49fd026087d8bd5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::Time::currentTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a <a class="el" href="classprism_1_1_time.html">Time</a> object set to the current time as read from the system clock. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a380242e03982df8bf4af3eaa2296c808"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::hour </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the hour part of the time (0-23). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adc2fffc1f771980417d2f91c661dff94"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::Time::hour </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nHours</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a <a class="el" href="classprism_1_1_time.html">Time</a> object set to <em>nHours</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a759d033f1ef8602118fbe887eb8a2241"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::hoursTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the number of hours between <em>time</em> and this object's time. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afd27e4b1e093fed8253b10090c6090aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::min </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the minute part of the time (0-59). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0af1d18ebbc757c3e731b191e0165be9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::Time::min </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nMins</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a <a class="el" href="classprism_1_1_time.html">Time</a> object set to <em>nMins</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a654fe322a9b2aefe6ec9713bebf67fc7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::minsTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the number of minutes between <em>time</em> and this object's time. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a203ccb36ae3f75991b641e282350b280"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::msec </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the millisecond part of the time (0-999). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6d835c48733a1f245101756039441441"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::Time::msec </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nMsecs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a <a class="el" href="classprism_1_1_time.html">Time</a> object set to <em>nMsecs</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a91a3b84fe2e96f260ce05a64d44212d6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::msecsTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the number of milliseconds between <em>time</em> and this object's time. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ada6a112edfbddbad8c470b17b445a0bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::Time::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if this object and <em>other</em> have different times, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3684da92ae24473788c06240ea5af1ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::Time::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if this object's time is before <em>other</em>, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a892e6fb8bbf197bebc44950683722f17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::Time::operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if this object's time is before or equal to <em>other</em>, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae621f5954eea065f7b7b6b4a5f0ec473"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::Time::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if this object and <em>other</em> have the same time, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae155a256da81c7edee4e0c5e3915fde5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::Time::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if this object's time is after <em>other</em>, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad379fc491dfb79e5215dda85a0150335"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::Time::operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if this object's time is after or equal to <em>other</em>, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aff00f53fdc1e7b0eb249b6410d2cde28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void prism::Time::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Resets the time back to midnight i.e. hour=min=sec=msec=0. </p>
+
+</div>
+</div>
+<a class="anchor" id="a83f655a9c7f1a2e8521ddcb395fa3796"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::sec </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the second part of the time (0-59). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5c2bde2875a4195c1947a3e6fd7bbcea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::Time::sec </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nSecs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Creates a <a class="el" href="classprism_1_1_time.html">Time</a> object set to <em>nSsecs</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a06e59e21a308459f3984a9680e431b32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::Time::secsTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the number of seconds between <em>time</em> and this object's time. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c67248f8370374686d1a61716b17485"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void prism::Time::set </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>hour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>sec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>msec</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets this <a class="el" href="classprism_1_1_time.html">Time</a> object to <em>hour</em>, <em>min</em>, <em>sec</em> and <em>msec</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a1bb4fbb063aff43d3640334baaea281d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_string.html">String</a> prism::Time::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a string representation of the time in the form 00:00:00:000. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="ae2e555aa5b5c51e44b576d8baf48a2cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Adds the two <a class="el" href="classprism_1_1_time.html">Time</a> objects together to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be after midnight then the time wraps round. </p><div class="fragment"><div class="line"><a class="code" href="classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12">Time</a> t1(22,30);</div><div class="line"><a class="code" href="classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12">Time</a> offset = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(2);</div><div class="line"></div><div class="line"><a class="code" href="classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12">Time</a> result = t1+offset; <span class="comment">// Time object set to 00:30:00:000</span></div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="a09225563b0b317910b26c550ba74de64"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Subtracts the <a class="el" href="classprism_1_1_time.html">Time</a> object <em>t2</em> from <em>t1</em> to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be before midnight then the time wraps round. </p><div class="fragment"><div class="line"><a class="code" href="classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12">Time</a> t1(2,30);</div><div class="line"><a class="code" href="classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12">Time</a> offset = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(3);</div><div class="line"></div><div class="line"><a class="code" href="classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12">Time</a> result = t1-offset; <span class="comment">// Time object set to 23:30:00:000</span></div></div><!-- fragment --> 
+</div>
+</div>
+<a class="anchor" id="a25f100a1404d8c5535ddaafe65081fa7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Allows an instance of <a class="el" href="classprism_1_1_time.html">Time</a> to be written to the ostream and returns a reference to the ostream. </p>
 
 </div>
 </div>
