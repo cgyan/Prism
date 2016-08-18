@@ -2846,7 +2846,7 @@ template&lt;class U &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adds the two <a class="el" href="classprism_1_1_time.html">Time</a> objects together to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be after midnight then the time wraps round. </p><div class="fragment"><div class="line">Time t1(22,30);</div><div class="line">Time offset = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(2);</div><div class="line"></div><div class="line">Time result = t1+offset; <span class="comment">// Time object set to 00:30:00:000</span></div></div><!-- fragment --> 
+<p>Adds the two <a class="el" href="classprism_1_1_time.html">Time</a> objects together to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be later than midnight then the time wraps round. </p><div class="fragment"><div class="line">Time time(20,0); <span class="comment">// 8pm</span></div><div class="line">Time offset1 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(2);</div><div class="line">Time offset2 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(5);</div><div class="line"></div><div class="line">Time result;</div><div class="line"></div><div class="line">result = time+offset1; <span class="comment">// Time object set to 22:00:00:000</span></div><div class="line">result = time+offset2; <span class="comment">// Time object set to 01:00:00:000</span></div></div><!-- fragment --> 
 </div>
 </div>
 <a class="anchor" id="ae482804c32b466401a9ecdf26bc1e6de"></a>
@@ -3222,32 +3222,6 @@ template&lt;class U &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aa18009df22007fbbde08ab44b16a9a31"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
-          <td class="paramname"><em>t1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
-          <td class="paramname"><em>t2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Subtracts the <a class="el" href="classprism_1_1_time.html">Time</a> object <em>t2</em> from <em>t1</em> to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be before midnight then the time wraps round. </p><div class="fragment"><div class="line">Time t1(2,30);</div><div class="line">Time offset = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(3);</div><div class="line"></div><div class="line">Time result = t1-offset; <span class="comment">// Time object set to 23:30:00:000</span></div></div><!-- fragment --> 
-</div>
-</div>
 <a class="anchor" id="a86359a88dc5245847de48575a1f969e8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3290,6 +3264,32 @@ template&lt;class U &gt; </div>
 </div><div class="memdoc">
 <p>Returns a <a class="el" href="classprism_1_1_vector2.html">Vector2</a> object where each vector component of v has been negated. </p>
 
+</div>
+</div>
+<a class="anchor" id="aa18009df22007fbbde08ab44b16a9a31"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Subtracts the <a class="el" href="classprism_1_1_time.html">Time</a> object <em>t2</em> from <em>t1</em> to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be before midnight then the time wraps round. </p><div class="fragment"><div class="line">Time time(5,0); <span class="comment">// 5am</span></div><div class="line">Time offset1 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(2);</div><div class="line">Time offset2 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(7);</div><div class="line"></div><div class="line">Time result;</div><div class="line"></div><div class="line">result = time-offset1; <span class="comment">// Time object set to 03:00:00:000 (3am)</span></div><div class="line">result = time-offset2; <span class="comment">// Time object set to 22:00:00:000 (10pm)</span></div></div><!-- fragment --> 
 </div>
 </div>
 <a class="anchor" id="a5eae37b5dc73c544572686f215cea89d"></a>

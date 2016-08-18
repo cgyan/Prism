@@ -57,12 +57,14 @@ public:
 	static Time sec(const int nSecs);
 	static Time msec(const int nMsecs);
 
-	const bool 	operator==(const Time & other);
-	const bool 	operator!=(const Time & other);
-	const bool 	operator<(const Time & other);
-	const bool 	operator<=(const Time & other);
-	const bool 	operator>(const Time & other);
-	const bool 	operator>=(const Time & other);
+	const bool 	operator==(const Time & other) const;
+	const bool 	operator!=(const Time & other) const;
+	const bool 	operator<(const Time & other) const;
+	const bool 	operator<=(const Time & other) const;
+	const bool 	operator>(const Time & other) const;
+	const bool 	operator>=(const Time & other) const;
+	Time &		operator+=(const Time & other);
+	Time &		operator-=(const Time & other);
 
 	// related nonmembers
 	friend Time operator+(const Time &t1, const Time & t2);

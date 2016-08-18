@@ -1109,12 +1109,16 @@ Adds {\itshape s1} and {\itshape s2} together and returns a new \hyperlink{class
 \item[{const {\bf Time} \&}]{t2}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_afd483f03b731881b25da5612b1213e5f}{}\label{namespaceprism_afd483f03b731881b25da5612b1213e5f}
-Adds the two \hyperlink{classprism_1_1_time}{Time} objects together to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be after midnight then the time wraps round. 
+Adds the two \hyperlink{classprism_1_1_time}{Time} objects together to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be later than midnight then the time wraps round. 
 \begin{DoxyCode}
-Time t1(22,30);
-Time offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+Time time(20,0); \textcolor{comment}{// 8pm}
+Time offset1 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+Time offset2 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(5);
 
-Time result = t1+offset; \textcolor{comment}{// Time object set to 00:30:00:000}
+Time result;
+
+result = time+offset1; \textcolor{comment}{// Time object set to 22:00:00:000}
+result = time+offset2; \textcolor{comment}{// Time object set to 01:00:00:000}
 \end{DoxyCode}
  \index{prism@{prism}!operator+@{operator+}}
 \index{operator+@{operator+}!prism@{prism}}
@@ -1230,21 +1234,6 @@ Returns a \hyperlink{classprism_1_1_point}{Point} object that is formed by subtr
 )}\hypertarget{namespaceprism_ab170e3ca42d85a6766cbc7950ddfb0c4}{}\label{namespaceprism_ab170e3ca42d85a6766cbc7950ddfb0c4}
 Subtracts {\itshape s2} from {\itshape s1} and returns a new \hyperlink{classprism_1_1_size}{Size} object. \index{prism@{prism}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator-\/(const Time \&t1, const Time \&t2)}{operator-(const Time &t1, const Time &t2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::operator-\/ (
-\begin{DoxyParamCaption}
-\item[{const {\bf Time} \&}]{t1, }
-\item[{const {\bf Time} \&}]{t2}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_aa18009df22007fbbde08ab44b16a9a31}{}\label{namespaceprism_aa18009df22007fbbde08ab44b16a9a31}
-Subtracts the \hyperlink{classprism_1_1_time}{Time} object {\itshape t2} from {\itshape t1} to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be before midnight then the time wraps round. 
-\begin{DoxyCode}
-Time t1(2,30);
-Time offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(3);
-
-Time result = t1-offset; \textcolor{comment}{// Time object set to 23:30:00:000}
-\end{DoxyCode}
- \index{prism@{prism}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator-\/(const Vector2 \&a, const Vector2 \&b)}{operator-(const Vector2 &a, const Vector2 &b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2} prism\+::operator-\/ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector2} \&}]{a, }
@@ -1259,6 +1248,25 @@ Returns a \hyperlink{classprism_1_1_vector2}{Vector2} that is the result of subt
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a124f1081b3a9bbc441dac9927f8a0fc5}{}\label{namespaceprism_a124f1081b3a9bbc441dac9927f8a0fc5}
 Returns a \hyperlink{classprism_1_1_vector2}{Vector2} object where each vector component of v has been negated. \index{prism@{prism}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator-\/(const Time \&t1, const Time \&t2)}{operator-(const Time &t1, const Time &t2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{t1, }
+\item[{const {\bf Time} \&}]{t2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aa18009df22007fbbde08ab44b16a9a31}{}\label{namespaceprism_aa18009df22007fbbde08ab44b16a9a31}
+Subtracts the \hyperlink{classprism_1_1_time}{Time} object {\itshape t2} from {\itshape t1} to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be before midnight then the time wraps round. 
+\begin{DoxyCode}
+Time time(5,0); \textcolor{comment}{// 5am}
+Time offset1 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+Time offset2 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(7);
+
+Time result;
+
+result = time-offset1; \textcolor{comment}{// Time object set to 03:00:00:000 (3am)}
+result = time-offset2; \textcolor{comment}{// Time object set to 22:00:00:000 (10pm)}
+\end{DoxyCode}
+ \index{prism@{prism}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator-\/(const Quaternion \&q1, const Quaternion \&q2)}{operator-(const Quaternion &q1, const Quaternion &q2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator-\/ (
 \begin{DoxyParamCaption}

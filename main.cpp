@@ -191,17 +191,8 @@ int main(int argc, char * argv[]) {
 //	cout << "mins since midnight: " << minsSinceMidnight.count() << endl;
 
 
-	 Time t1(2,30);
-	 Time offset = Time::hour(3);
 
-	 Time result = t1-offset; // Time object set to 00:30
-
-
-	cout << t1 << endl;
-
-
-
-//	return RUN_ALL_TESTS();
+	return RUN_ALL_TESTS();
 //	return 0;
 }
 

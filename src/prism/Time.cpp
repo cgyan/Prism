@@ -123,7 +123,7 @@ Time Time::currentTime() {
 }
 
 /**
- * Creates a Time object set to \em nHours.
+ * Static function that creates a Time object set to \em nHours.
  */
 Time Time::hour(const int nHours) {
 	return Time(nHours,0);
@@ -137,7 +137,7 @@ const int Time::hoursTo(const Time & time) const {
 }
 
 /**
- * Creates a Time object set to \em nMins.
+ * Static function that creates a Time object set to \em nMins.
  */
 Time Time::min(const int nMins) {
 	return Time(0,nMins);
@@ -151,7 +151,7 @@ const int Time::minsTo(const Time & time) const {
 }
 
 /**
- * Creates a Time object set to \em nMsecs.
+ * Static function that creates a Time object set to \em nMsecs.
  */
 Time Time::msec(const int nMsecs) {
 	return Time(0,0,0, nMsecs);
@@ -165,7 +165,7 @@ const int Time::msecsTo(const Time & time) const {
 }
 
 /**
- * Creates a Time object set to \em nSsecs.
+ * Static function that creates a Time object set to \em nSsecs.
  */
 Time Time::sec(const int nSecs) {
 	return Time(0,0,nSecs);
@@ -188,53 +188,75 @@ void Time::set(const int hour, const int min, const int sec, const int msec) {
 /**
  * @return Returns true if this object and \em other have the same time, false otherwise.
  */
-const bool Time::operator ==(const Time &other) {
+const bool Time::operator ==(const Time &other) const {
 	return m_ms == other.m_ms;
 }
 
 /**
  * @return Returns true if this object and \em other have different times, false otherwise.
  */
-const bool Time::operator !=(const Time &other) {
+const bool Time::operator !=(const Time &other) const {
 	return !(*this == other);
 }
 
 /**
  * @return Returns true if this object's time is before \em other, false otherwise.
  */
-const bool Time::operator <(const Time &other) {
+const bool Time::operator <(const Time &other) const {
 	return m_ms < other.m_ms;
 }
 
 /**
  * @return Returns true if this object's time is before or equal to \em other, false otherwise.
  */
-const bool Time::operator <=(const Time &other) {
+const bool Time::operator <=(const Time &other) const {
 	return m_ms <= other.m_ms;
 }
 
 /**
  * @return Returns true if this object's time is after \em other, false otherwise.
  */
-const bool Time::operator >(const Time &other) {
+const bool Time::operator >(const Time &other) const {
 	return m_ms > other.m_ms;
 }
 
 /**
  * @return Returns true if this object's time is after or equal to \em other, false otherwise.
  */
-const bool Time::operator >=(const Time &other) {
+const bool Time::operator >=(const Time &other) const {
 	return m_ms >= other.m_ms;
 }
 
 /**
+ * Adds the time from \em other to this time. If the new time would be
+ * later than midnight then the time wraps round.
+ */
+Time & Time::operator +=(const Time & other) {
+	*this = *this + other;
+	return *this;
+}
+
+/**
+ * Subtracts the time from \em other from this time. If the new time would be
+ * earlier than midnight then the time wraps round.
+ */
+Time & Time::operator -=(const Time & other) {
+	*this = *this - other;
+	return *this;
+}
+
+/**
  * Adds the two Time objects together to produce a new Time object. If the new time would be
- * after midnight then the time wraps round.
+ * later than midnight then the time wraps round.
  * \code
- * Time t1(22,30);
- * Time offset = Time::hour(2);
+ * Time time(20,0); // 8pm
+ * Time offset1 = Time::hour(2);
+ * Time offset2 = Time::hour(5);
  *
- * Time result = t1+offset; // Time object set to 00:30:00:000
+ * Time result;
+ *
+ * result = time+offset1; // Time object set to 22:00:00:000
+ * result = time+offset2; // Time object set to 01:00:00:000
  * \endcode
  */
 Time operator +(const Time &t1, const Time &t2)
@@ -252,10 +274,14 @@ Time operator +(const Time &t1, const Time &t2)
  * Subtracts the Time object \em t2 from \em t1 to produce a new Time object. If the new time would be
  * before midnight then the time wraps round.
  * \code
- * Time t1(2,30);
- * Time offset = Time::hour(3);
+ * Time time(5,0); // 5am
+ * Time offset1 = Time::hour(2);
+ * Time offset2 = Time::hour(7);
  *
- * Time result = t1-offset; // Time object set to 23:30:00:000
+ * Time result;
+ *
+ * result = time-offset1; // Time object set to 03:00:00:000 (3am)
+ * result = time-offset2; // Time object set to 22:00:00:000 (10pm)
  * \endcode
  */
 Time operator-(const Time &t1, const Time & t2) {

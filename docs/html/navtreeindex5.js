@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"functions_e.html":[2,3,0,4],
+"functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
 "functions_func.html":[2,3,1,0],
@@ -70,8 +72,8 @@ var NAVTREEINDEX5 =
 "md_README.html":[0],
 "namespacemembers.html":[1,1,0],
 "namespacemembers_func.html":[1,1,1],
-"namespaceprism.html":[1,0,0],
 "namespaceprism.html":[2,0,0],
+"namespaceprism.html":[1,0,0],
 "namespaces.html":[1,0],
 "pages.html":[],
 "structprism_1_1_bitvector_data.html":[2,0,0,2],

@@ -53,17 +53,21 @@ void \hyperlink{classprism_1_1_time_a7c67248f8370374686d1a61716b17485}{set} (con
 \item 
 \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_time_a1bb4fbb063aff43d3640334baaea281d}{to\+String} () const 
 \item 
-const bool \hyperlink{classprism_1_1_time_ae621f5954eea065f7b7b6b4a5f0ec473}{operator==} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+const bool \hyperlink{classprism_1_1_time_a83609d958807bf8256c39881db7002a5}{operator==} (const \hyperlink{classprism_1_1_time}{Time} \&other) const 
 \item 
-const bool \hyperlink{classprism_1_1_time_ada6a112edfbddbad8c470b17b445a0bb}{operator!=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+const bool \hyperlink{classprism_1_1_time_aa2aba406dd4de48f602126c0b46a957a}{operator!=} (const \hyperlink{classprism_1_1_time}{Time} \&other) const 
 \item 
-const bool \hyperlink{classprism_1_1_time_a3684da92ae24473788c06240ea5af1ee}{operator$<$} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+const bool \hyperlink{classprism_1_1_time_a10289f95ed3569a03cea9ae793dc9a63}{operator$<$} (const \hyperlink{classprism_1_1_time}{Time} \&other) const 
 \item 
-const bool \hyperlink{classprism_1_1_time_a892e6fb8bbf197bebc44950683722f17}{operator$<$=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+const bool \hyperlink{classprism_1_1_time_a30638c4a54601a0d7d52b9249060fe6f}{operator$<$=} (const \hyperlink{classprism_1_1_time}{Time} \&other) const 
 \item 
-const bool \hyperlink{classprism_1_1_time_ae155a256da81c7edee4e0c5e3915fde5}{operator$>$} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+const bool \hyperlink{classprism_1_1_time_a4418d7b5578e62a27798cd1df1ddfd3f}{operator$>$} (const \hyperlink{classprism_1_1_time}{Time} \&other) const 
 \item 
-const bool \hyperlink{classprism_1_1_time_ad379fc491dfb79e5215dda85a0150335}{operator$>$=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+const bool \hyperlink{classprism_1_1_time_aedf46b0ebca56e0fc141dd07f98c5022}{operator$>$=} (const \hyperlink{classprism_1_1_time}{Time} \&other) const 
+\item 
+\hyperlink{classprism_1_1_time}{Time} \& \hyperlink{classprism_1_1_time_a0c17a09d0c0899b875588680fb99b92c}{operator+=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
+\item 
+\hyperlink{classprism_1_1_time}{Time} \& \hyperlink{classprism_1_1_time_acfda18468af0af153873aab3f9a2ec41}{operator-\/=} (const \hyperlink{classprism_1_1_time}{Time} \&other)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -176,7 +180,7 @@ Returns the hour part of the time (0-\/23).
 \item[{const int}]{n\+Hours}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}{}\label{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}
-Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Hours}. \index{prism\+::\+Time@{prism\+::\+Time}!hours\+To@{hours\+To}}
+Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Hours}. \index{prism\+::\+Time@{prism\+::\+Time}!hours\+To@{hours\+To}}
 \index{hours\+To@{hours\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{hours\+To(const Time \&time) const }{hoursTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::hours\+To (
 \begin{DoxyParamCaption}
@@ -203,7 +207,7 @@ Returns the minute part of the time (0-\/59).
 \item[{const int}]{n\+Mins}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}{}\label{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}
-Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Mins}. \index{prism\+::\+Time@{prism\+::\+Time}!mins\+To@{mins\+To}}
+Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Mins}. \index{prism\+::\+Time@{prism\+::\+Time}!mins\+To@{mins\+To}}
 \index{mins\+To@{mins\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{mins\+To(const Time \&time) const }{minsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::mins\+To (
 \begin{DoxyParamCaption}
@@ -230,7 +234,7 @@ Returns the millisecond part of the time (0-\/999).
 \item[{const int}]{n\+Msecs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a6d835c48733a1f245101756039441441}{}\label{classprism_1_1_time_a6d835c48733a1f245101756039441441}
-Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Msecs}. \index{prism\+::\+Time@{prism\+::\+Time}!msecs\+To@{msecs\+To}}
+Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Msecs}. \index{prism\+::\+Time@{prism\+::\+Time}!msecs\+To@{msecs\+To}}
 \index{msecs\+To@{msecs\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{msecs\+To(const Time \&time) const }{msecsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::msecs\+To (
 \begin{DoxyParamCaption}
@@ -242,61 +246,75 @@ Returns the number of milliseconds between {\itshape time} and this object\textq
 \end{DoxyReturn}
 \index{prism\+::\+Time@{prism\+::\+Time}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{operator"!=(const Time \&other)}{operator!=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator!= (
+\subsubsection[{\texorpdfstring{operator"!=(const Time \&other) const }{operator!=(const Time &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator!= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Time} \&}]{other}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_time_ada6a112edfbddbad8c470b17b445a0bb}{}\label{classprism_1_1_time_ada6a112edfbddbad8c470b17b445a0bb}
+) const}\hypertarget{classprism_1_1_time_aa2aba406dd4de48f602126c0b46a957a}{}\label{classprism_1_1_time_aa2aba406dd4de48f602126c0b46a957a}
 \begin{DoxyReturn}{Returns}
 Returns true if this object and {\itshape other} have different times, false otherwise. 
 \end{DoxyReturn}
-\index{prism\+::\+Time@{prism\+::\+Time}!operator$<$@{operator$<$}}
-\index{operator$<$@{operator$<$}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{operator$<$(const Time \&other)}{operator<(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$<$ (
+\index{prism\+::\+Time@{prism\+::\+Time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator+=(const Time \&other)}{operator+=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} \& prism\+::\+Time\+::operator+= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Time} \&}]{other}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_time_a3684da92ae24473788c06240ea5af1ee}{}\label{classprism_1_1_time_a3684da92ae24473788c06240ea5af1ee}
+)}\hypertarget{classprism_1_1_time_a0c17a09d0c0899b875588680fb99b92c}{}\label{classprism_1_1_time_a0c17a09d0c0899b875588680fb99b92c}
+Adds the time from {\itshape other} to this time. If the new time would be later than midnight then the time wraps round. \index{prism\+::\+Time@{prism\+::\+Time}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator-\/=(const Time \&other)}{operator-=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} \& prism\+::\+Time\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_acfda18468af0af153873aab3f9a2ec41}{}\label{classprism_1_1_time_acfda18468af0af153873aab3f9a2ec41}
+Subtracts the time from {\itshape other} from this time. If the new time would be earlier than midnight then the time wraps round. \index{prism\+::\+Time@{prism\+::\+Time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{operator$<$(const Time \&other) const }{operator<(const Time &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Time} \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a10289f95ed3569a03cea9ae793dc9a63}{}\label{classprism_1_1_time_a10289f95ed3569a03cea9ae793dc9a63}
 \begin{DoxyReturn}{Returns}
 Returns true if this object\textquotesingle{}s time is before {\itshape other}, false otherwise. 
 \end{DoxyReturn}
 \index{prism\+::\+Time@{prism\+::\+Time}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{operator$<$=(const Time \&other)}{operator<=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$<$= (
+\subsubsection[{\texorpdfstring{operator$<$=(const Time \&other) const }{operator<=(const Time &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$<$= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Time} \&}]{other}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_time_a892e6fb8bbf197bebc44950683722f17}{}\label{classprism_1_1_time_a892e6fb8bbf197bebc44950683722f17}
+) const}\hypertarget{classprism_1_1_time_a30638c4a54601a0d7d52b9249060fe6f}{}\label{classprism_1_1_time_a30638c4a54601a0d7d52b9249060fe6f}
 \begin{DoxyReturn}{Returns}
 Returns true if this object\textquotesingle{}s time is before or equal to {\itshape other}, false otherwise. 
 \end{DoxyReturn}
 \index{prism\+::\+Time@{prism\+::\+Time}!operator==@{operator==}}
 \index{operator==@{operator==}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{operator==(const Time \&other)}{operator==(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator== (
+\subsubsection[{\texorpdfstring{operator==(const Time \&other) const }{operator==(const Time &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator== (
 \begin{DoxyParamCaption}
 \item[{const {\bf Time} \&}]{other}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_time_ae621f5954eea065f7b7b6b4a5f0ec473}{}\label{classprism_1_1_time_ae621f5954eea065f7b7b6b4a5f0ec473}
+) const}\hypertarget{classprism_1_1_time_a83609d958807bf8256c39881db7002a5}{}\label{classprism_1_1_time_a83609d958807bf8256c39881db7002a5}
 \begin{DoxyReturn}{Returns}
 Returns true if this object and {\itshape other} have the same time, false otherwise. 
 \end{DoxyReturn}
 \index{prism\+::\+Time@{prism\+::\+Time}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{operator$>$(const Time \&other)}{operator>(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$>$ (
+\subsubsection[{\texorpdfstring{operator$>$(const Time \&other) const }{operator>(const Time &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$>$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Time} \&}]{other}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_time_ae155a256da81c7edee4e0c5e3915fde5}{}\label{classprism_1_1_time_ae155a256da81c7edee4e0c5e3915fde5}
+) const}\hypertarget{classprism_1_1_time_a4418d7b5578e62a27798cd1df1ddfd3f}{}\label{classprism_1_1_time_a4418d7b5578e62a27798cd1df1ddfd3f}
 \begin{DoxyReturn}{Returns}
 Returns true if this object\textquotesingle{}s time is after {\itshape other}, false otherwise. 
 \end{DoxyReturn}
 \index{prism\+::\+Time@{prism\+::\+Time}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{operator$>$=(const Time \&other)}{operator>=(const Time &other)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$>$= (
+\subsubsection[{\texorpdfstring{operator$>$=(const Time \&other) const }{operator>=(const Time &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Time\+::operator$>$= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Time} \&}]{other}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_time_ad379fc491dfb79e5215dda85a0150335}{}\label{classprism_1_1_time_ad379fc491dfb79e5215dda85a0150335}
+) const}\hypertarget{classprism_1_1_time_aedf46b0ebca56e0fc141dd07f98c5022}{}\label{classprism_1_1_time_aedf46b0ebca56e0fc141dd07f98c5022}
 \begin{DoxyReturn}{Returns}
 Returns true if this object\textquotesingle{}s time is after or equal to {\itshape other}, false otherwise. 
 \end{DoxyReturn}
@@ -324,7 +342,7 @@ Returns the second part of the time (0-\/59).
 \item[{const int}]{n\+Secs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}{}\label{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}
-Creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Ssecs}. \index{prism\+::\+Time@{prism\+::\+Time}!secs\+To@{secs\+To}}
+Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Ssecs}. \index{prism\+::\+Time@{prism\+::\+Time}!secs\+To@{secs\+To}}
 \index{secs\+To@{secs\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{secs\+To(const Time \&time) const }{secsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::secs\+To (
 \begin{DoxyParamCaption}
@@ -365,12 +383,16 @@ Returns a string representation of the time in the form 00\+:00\+:00\+:000.
 \item[{const {\bf Time} \&}]{t2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_time_ae2e555aa5b5c51e44b576d8baf48a2cd}{}\label{classprism_1_1_time_ae2e555aa5b5c51e44b576d8baf48a2cd}
-Adds the two \hyperlink{classprism_1_1_time}{Time} objects together to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be after midnight then the time wraps round. 
+Adds the two \hyperlink{classprism_1_1_time}{Time} objects together to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be later than midnight then the time wraps round. 
 \begin{DoxyCode}
-\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} t1(22,30);
-\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} time(20,0); \textcolor{comment}{// 8pm}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset1 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset2 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(5);
 
-\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} result = t1+offset; \textcolor{comment}{// Time object set to 00:30:00:000}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} result;
+
+result = time+offset1; \textcolor{comment}{// Time object set to 22:00:00:000}
+result = time+offset2; \textcolor{comment}{// Time object set to 01:00:00:000}
 \end{DoxyCode}
  \index{prism\+::\+Time@{prism\+::\+Time}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!prism\+::\+Time@{prism\+::\+Time}}
@@ -382,10 +404,14 @@ Adds the two \hyperlink{classprism_1_1_time}{Time} objects together to produce a
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_time_a09225563b0b317910b26c550ba74de64}{}\label{classprism_1_1_time_a09225563b0b317910b26c550ba74de64}
 Subtracts the \hyperlink{classprism_1_1_time}{Time} object {\itshape t2} from {\itshape t1} to produce a new \hyperlink{classprism_1_1_time}{Time} object. If the new time would be before midnight then the time wraps round. 
 \begin{DoxyCode}
-\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} t1(2,30);
-\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(3);
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} time(5,0); \textcolor{comment}{// 5am}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset1 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(2);
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} offset2 = \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{Time::hour}(7);
 
-\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} result = t1-offset; \textcolor{comment}{// Time object set to 23:30:00:000}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} result;
+
+result = time-offset1; \textcolor{comment}{// Time object set to 03:00:00:000 (3am)}
+result = time-offset2; \textcolor{comment}{// Time object set to 22:00:00:000 (10pm)}
 \end{DoxyCode}
  \index{prism\+::\+Time@{prism\+::\+Time}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Time@{prism\+::\+Time}}

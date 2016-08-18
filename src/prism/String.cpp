@@ -1256,10 +1256,10 @@ const String operator+(const String & str, const char c) {
  * Allows an instance of String to be written to the ostream and returns a reference to the ostream.
  */
 std::ostream & operator<<(std::ostream & out, const String &s) {
-	out << "String [" << &s << "] \"";
+//	out << "String [" << &s << "] \"";
 	for (int i=0; i<s.size(); i++) out << s.d->storage.start[i];
-	std::cout << "\"";
-	std::cout << "------ size=" << s.size() << ", capacity=" << s.capacity() << " ";
+//	std::cout << "\"";
+//	std::cout << "------ size=" << s.size() << ", capacity=" << s.capacity() << " ";
 
 	return out;
 }
