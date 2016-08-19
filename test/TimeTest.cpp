@@ -188,7 +188,7 @@ TEST_F(TimeTest, toString) {
  * Test: hour(nHours)
  */
 TEST_F(TimeTest, hour_nHours) {
-	Time t = Time::hour(13);
+	Time t = Time::hours(13);
 	ASSERT_EQ("13:00:00:000", t.toString());
 	ASSERT_EQ(13, t.hour());
 	ASSERT_EQ(0, t.min());
@@ -200,7 +200,7 @@ TEST_F(TimeTest, hour_nHours) {
  * Test: min(nMins)
  */
 TEST_F(TimeTest, min_nMins) {
-	Time t = Time::min(45);
+	Time t = Time::mins(45);
 	ASSERT_EQ("00:45:00:000", t.toString());
 	ASSERT_EQ(0, t.hour());
 	ASSERT_EQ(45, t.min());
@@ -212,7 +212,7 @@ TEST_F(TimeTest, min_nMins) {
  * Test: sec(nSecs)
  */
 TEST_F(TimeTest, sec_nSecs) {
-	Time t = Time::sec(56);
+	Time t = Time::secs(56);
 	ASSERT_EQ("00:00:56:000", t.toString());
 	ASSERT_EQ(0, t.hour());
 	ASSERT_EQ(0, t.min());
@@ -224,7 +224,7 @@ TEST_F(TimeTest, sec_nSecs) {
  * Test: msec(nMsecs)
  */
 TEST_F(TimeTest, msecs_nMsecs) {
-	Time t = Time::msec(995);
+	Time t = Time::msecs(995);
 	ASSERT_EQ("00:00:00:995", t.toString());
 	ASSERT_EQ(0, t.hour());
 	ASSERT_EQ(0, t.min());
@@ -298,6 +298,62 @@ TEST_F(TimeTest, op_GreaterThanEquals) {
 	Time time2(23,10);
 
 	ASSERT_TRUE(time >= time2);
+}
+
+/**
+ * Test: operator+=()
+ */
+TEST_F(TimeTest, opPlusEquals) {
+	Time time;
+	time += Time::msecs(43200000);
+
+	ASSERT_EQ("12:00:00:000", time.toString());
+	ASSERT_EQ(12, time.hour());
+	ASSERT_EQ(0, time.min());
+	ASSERT_EQ(0, time.sec());
+	ASSERT_EQ(0, time.msec());
+}
+
+/**
+ * Test: operator-=()
+ */
+TEST_F(TimeTest, opMinusEquals) {
+	Time time = Time::msecs(43200000); // 12pm
+	time -= Time::mins(45);
+
+	ASSERT_EQ("11:15:00:000", time.toString());
+	ASSERT_EQ(11, time.hour());
+	ASSERT_EQ(15, time.min());
+	ASSERT_EQ(0, time.sec());
+	ASSERT_EQ(0, time.msec());
+}
+
+/**
+ * Test: operator+(Time, Time)
+ */
+TEST_F(TimeTest, opPlus) {
+	Time time = Time::msecs(43200000); // 12pm
+	time = time + Time::hours(3) + Time::mins(25) + Time::secs(10) + Time::msecs(550);
+
+	ASSERT_EQ("15:25:10:550", time.toString());
+	ASSERT_EQ(15, time.hour());
+	ASSERT_EQ(25, time.min());
+	ASSERT_EQ(10, time.sec());
+	ASSERT_EQ(550, time.msec());
+}
+
+/**
+ * Test: operator-(Time, Time)
+ */
+TEST_F(TimeTest, opMinus) {
+	Time time = Time::hours(12); // 12pm
+	time = time - Time::hours(3) - Time::mins(25) - Time::secs(10) - Time::msecs(550);
+
+	ASSERT_EQ("08:34:49:450", time.toString());
+	ASSERT_EQ(8, time.hour());
+	ASSERT_EQ(35, time.min());
+	ASSERT_EQ(50, time.sec());
+	ASSERT_EQ(450, time.msec());
 }
 
 

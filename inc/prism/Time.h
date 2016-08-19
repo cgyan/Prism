@@ -52,10 +52,10 @@ public:
 	String		toString() const;
 
 	static Time currentTime();
-	static Time hour(const int nHours);
-	static Time min(const int nMins);
-	static Time sec(const int nSecs);
-	static Time msec(const int nMsecs);
+	static Time hours(const int nHours);
+	static Time mins(const int nMins);
+	static Time secs(const int nSecs);
+	static Time msecs(const int nMsecs);
 
 	const bool 	operator==(const Time & other) const;
 	const bool 	operator!=(const Time & other) const;

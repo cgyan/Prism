@@ -125,7 +125,7 @@ Time Time::currentTime() {
 /**
  * Static function that creates a Time object set to \em nHours.
  */
-Time Time::hour(const int nHours) {
+Time Time::hours(const int nHours) {
 	return Time(nHours,0);
 }
 
@@ -139,7 +139,7 @@ const int Time::hoursTo(const Time & time) const {
 /**
  * Static function that creates a Time object set to \em nMins.
  */
-Time Time::min(const int nMins) {
+Time Time::mins(const int nMins) {
 	return Time(0,nMins);
 }
 
@@ -153,7 +153,7 @@ const int Time::minsTo(const Time & time) const {
 /**
  * Static function that creates a Time object set to \em nMsecs.
  */
-Time Time::msec(const int nMsecs) {
+Time Time::msecs(const int nMsecs) {
 	return Time(0,0,0, nMsecs);
 }
 
@@ -167,7 +167,7 @@ const int Time::msecsTo(const Time & time) const {
 /**
  * Static function that creates a Time object set to \em nSsecs.
  */
-Time Time::sec(const int nSecs) {
+Time Time::secs(const int nSecs) {
 	return Time(0,0,nSecs);
 }
 
