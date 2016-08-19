@@ -31,6 +31,8 @@ enum \{ \\*
 \item 
 virtual \hyperlink{classprism_1_1_time_a07e1c6bf7205b4451ac717a833b65968}{$\sim$\+Time} ()
 \item 
+const int \hyperlink{classprism_1_1_time_a786f569b1aae18249916c47d6221ae86}{elapsed} () const 
+\item 
 const int \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{hour} () const 
 \item 
 const int \hyperlink{classprism_1_1_time_a759d033f1ef8602118fbe887eb8a2241}{hours\+To} (const \hyperlink{classprism_1_1_time}{Time} \&time) const 
@@ -50,6 +52,8 @@ const int \hyperlink{classprism_1_1_time_a83f655a9c7f1a2e8521ddcb395fa3796}{sec}
 const int \hyperlink{classprism_1_1_time_a06e59e21a308459f3984a9680e431b32}{secs\+To} (const \hyperlink{classprism_1_1_time}{Time} \&time) const 
 \item 
 void \hyperlink{classprism_1_1_time_a7c67248f8370374686d1a61716b17485}{set} (const int \hyperlink{classprism_1_1_time_a380242e03982df8bf4af3eaa2296c808}{hour}, const int \hyperlink{classprism_1_1_time_afd27e4b1e093fed8253b10090c6090aa}{min}, const int \hyperlink{classprism_1_1_time_a83f655a9c7f1a2e8521ddcb395fa3796}{sec}=0, const int \hyperlink{classprism_1_1_time_a203ccb36ae3f75991b641e282350b280}{msec}=0)
+\item 
+void \hyperlink{classprism_1_1_time_a504e84942a112509c43c0c09d0441c0c}{start} ()
 \item 
 \hyperlink{classprism_1_1_string}{String} \hyperlink{classprism_1_1_time_a1bb4fbb063aff43d3640334baaea281d}{to\+String} () const 
 \item 
@@ -74,13 +78,13 @@ const bool \hyperlink{classprism_1_1_time_aedf46b0ebca56e0fc141dd07f98c5022}{ope
 \item 
 static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_ae440b8eee979a64a49fd026087d8bd5a}{current\+Time} ()
 \item 
-static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}{hour} (const int n\+Hours)
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a35581873592ae2ca5a9b43c3992bdcf2}{hours} (const int n\+Hours)
 \item 
-static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}{min} (const int n\+Mins)
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_ac1ffe68588575f1938803cc5d7445824}{mins} (const int n\+Mins)
 \item 
-static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}{sec} (const int n\+Secs)
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_af26eac6363bbcfc91f711bf4561863aa}{secs} (const int n\+Secs)
 \item 
-static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a6d835c48733a1f245101756039441441}{msec} (const int n\+Msecs)
+static \hyperlink{classprism_1_1_time}{Time} \hyperlink{classprism_1_1_time_a5434c17adf40516de89837013e01c039}{msecs} (const int n\+Msecs)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -163,6 +167,23 @@ Destroys this \hyperlink{classprism_1_1_time}{Time} object.
 \begin{DoxyReturn}{Returns}
 Returns a \hyperlink{classprism_1_1_time}{Time} object set to the current time as read from the system clock. 
 \end{DoxyReturn}
+\index{prism\+::\+Time@{prism\+::\+Time}!elapsed@{elapsed}}
+\index{elapsed@{elapsed}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{elapsed() const }{elapsed() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::elapsed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_time_a786f569b1aae18249916c47d6221ae86}{}\label{classprism_1_1_time_a786f569b1aae18249916c47d6221ae86}
+Used in conjunction with \hyperlink{classprism_1_1_time_a504e84942a112509c43c0c09d0441c0c}{start()}, time can be measured by calling \hyperlink{classprism_1_1_time_a786f569b1aae18249916c47d6221ae86}{elapsed()}. 
+\begin{DoxyCode}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} t;
+t.start();
+doSomethingIntensive();
+\textcolor{keywordtype}{int} ms = t.elapsed(); \textcolor{comment}{// number of milliseconds since t.start() was called}
+\end{DoxyCode}
+ \begin{DoxyReturn}{Returns}
+Returns the number of milliseconds since \hyperlink{classprism_1_1_time_a504e84942a112509c43c0c09d0441c0c}{start()} was called. 
+\end{DoxyReturn}
 \index{prism\+::\+Time@{prism\+::\+Time}!hour@{hour}}
 \index{hour@{hour}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{hour() const }{hour() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::hour (
@@ -173,13 +194,13 @@ Returns a \hyperlink{classprism_1_1_time}{Time} object set to the current time a
 \begin{DoxyReturn}{Returns}
 Returns the hour part of the time (0-\/23). 
 \end{DoxyReturn}
-\index{prism\+::\+Time@{prism\+::\+Time}!hour@{hour}}
-\index{hour@{hour}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{hour(const int n\+Hours)}{hour(const int nHours)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::hour (
+\index{prism\+::\+Time@{prism\+::\+Time}!hours@{hours}}
+\index{hours@{hours}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{hours(const int n\+Hours)}{hours(const int nHours)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::hours (
 \begin{DoxyParamCaption}
 \item[{const int}]{n\+Hours}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}{}\label{classprism_1_1_time_adc2fffc1f771980417d2f91c661dff94}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a35581873592ae2ca5a9b43c3992bdcf2}{}\label{classprism_1_1_time_a35581873592ae2ca5a9b43c3992bdcf2}
 Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Hours}. \index{prism\+::\+Time@{prism\+::\+Time}!hours\+To@{hours\+To}}
 \index{hours\+To@{hours\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{hours\+To(const Time \&time) const }{hoursTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::hours\+To (
@@ -200,13 +221,13 @@ Returns the number of hours between {\itshape time} and this object\textquotesin
 \begin{DoxyReturn}{Returns}
 Returns the minute part of the time (0-\/59). 
 \end{DoxyReturn}
-\index{prism\+::\+Time@{prism\+::\+Time}!min@{min}}
-\index{min@{min}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{min(const int n\+Mins)}{min(const int nMins)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::min (
+\index{prism\+::\+Time@{prism\+::\+Time}!mins@{mins}}
+\index{mins@{mins}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{mins(const int n\+Mins)}{mins(const int nMins)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::mins (
 \begin{DoxyParamCaption}
 \item[{const int}]{n\+Mins}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}{}\label{classprism_1_1_time_a0af1d18ebbc757c3e731b191e0165be9}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_ac1ffe68588575f1938803cc5d7445824}{}\label{classprism_1_1_time_ac1ffe68588575f1938803cc5d7445824}
 Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Mins}. \index{prism\+::\+Time@{prism\+::\+Time}!mins\+To@{mins\+To}}
 \index{mins\+To@{mins\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{mins\+To(const Time \&time) const }{minsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::mins\+To (
@@ -227,13 +248,13 @@ Returns the number of minutes between {\itshape time} and this object\textquotes
 \begin{DoxyReturn}{Returns}
 Returns the millisecond part of the time (0-\/999). 
 \end{DoxyReturn}
-\index{prism\+::\+Time@{prism\+::\+Time}!msec@{msec}}
-\index{msec@{msec}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{msec(const int n\+Msecs)}{msec(const int nMsecs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::msec (
+\index{prism\+::\+Time@{prism\+::\+Time}!msecs@{msecs}}
+\index{msecs@{msecs}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{msecs(const int n\+Msecs)}{msecs(const int nMsecs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::msecs (
 \begin{DoxyParamCaption}
 \item[{const int}]{n\+Msecs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a6d835c48733a1f245101756039441441}{}\label{classprism_1_1_time_a6d835c48733a1f245101756039441441}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a5434c17adf40516de89837013e01c039}{}\label{classprism_1_1_time_a5434c17adf40516de89837013e01c039}
 Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Msecs}. \index{prism\+::\+Time@{prism\+::\+Time}!msecs\+To@{msecs\+To}}
 \index{msecs\+To@{msecs\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{msecs\+To(const Time \&time) const }{msecsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::msecs\+To (
@@ -335,13 +356,13 @@ Resets the time back to midnight i.\+e. hour=min=sec=msec=0. \index{prism\+::\+T
 \begin{DoxyReturn}{Returns}
 Returns the second part of the time (0-\/59). 
 \end{DoxyReturn}
-\index{prism\+::\+Time@{prism\+::\+Time}!sec@{sec}}
-\index{sec@{sec}!prism\+::\+Time@{prism\+::\+Time}}
-\subsubsection[{\texorpdfstring{sec(const int n\+Secs)}{sec(const int nSecs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::sec (
+\index{prism\+::\+Time@{prism\+::\+Time}!secs@{secs}}
+\index{secs@{secs}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{secs(const int n\+Secs)}{secs(const int nSecs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} prism\+::\+Time\+::secs (
 \begin{DoxyParamCaption}
 \item[{const int}]{n\+Secs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}{}\label{classprism_1_1_time_a5c2bde2875a4195c1947a3e6fd7bbcea}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_time_af26eac6363bbcfc91f711bf4561863aa}{}\label{classprism_1_1_time_af26eac6363bbcfc91f711bf4561863aa}
 Static function that creates a \hyperlink{classprism_1_1_time}{Time} object set to {\itshape n\+Ssecs}. \index{prism\+::\+Time@{prism\+::\+Time}!secs\+To@{secs\+To}}
 \index{secs\+To@{secs\+To}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{secs\+To(const Time \&time) const }{secsTo(const Time &time) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Time\+::secs\+To (
@@ -362,7 +383,21 @@ Returns the number of seconds between {\itshape time} and this object\textquotes
 \item[{const int}]{msec = {\ttfamily 0}}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_time_a7c67248f8370374686d1a61716b17485}{}\label{classprism_1_1_time_a7c67248f8370374686d1a61716b17485}
-Sets this \hyperlink{classprism_1_1_time}{Time} object to {\itshape hour}, {\itshape min}, {\itshape sec} and {\itshape msec}. \index{prism\+::\+Time@{prism\+::\+Time}!to\+String@{to\+String}}
+Sets this \hyperlink{classprism_1_1_time}{Time} object to {\itshape hour}, {\itshape min}, {\itshape sec} and {\itshape msec}. \index{prism\+::\+Time@{prism\+::\+Time}!start@{start}}
+\index{start@{start}!prism\+::\+Time@{prism\+::\+Time}}
+\subsubsection[{\texorpdfstring{start()}{start()}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Time\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_time_a504e84942a112509c43c0c09d0441c0c}{}\label{classprism_1_1_time_a504e84942a112509c43c0c09d0441c0c}
+Sets the time to the current time. \hyperlink{classprism_1_1_time}{Time} can then be measured by calling \hyperlink{classprism_1_1_time_a786f569b1aae18249916c47d6221ae86}{elapsed()} at some later point. 
+\begin{DoxyCode}
+\hyperlink{classprism_1_1_time_a9cb33724bd39863cec83613c089d6f12}{Time} t;
+t.start();
+doSomethingIntensive();
+\textcolor{keywordtype}{int} ms = t.elapsed(); \textcolor{comment}{// number of milliseconds since t.start() was called}
+\end{DoxyCode}
+ \index{prism\+::\+Time@{prism\+::\+Time}!to\+String@{to\+String}}
 \index{to\+String@{to\+String}!prism\+::\+Time@{prism\+::\+Time}}
 \subsubsection[{\texorpdfstring{to\+String() const }{toString() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String} prism\+::\+Time\+::to\+String (
 \begin{DoxyParamCaption}

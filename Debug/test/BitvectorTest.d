@@ -10,6 +10,8 @@ test/BitvectorTest.d: ../test/BitvectorTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
+  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
@@ -36,6 +38,10 @@ test/BitvectorTest.d: ../test/BitvectorTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/List.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
+
+/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException:
 

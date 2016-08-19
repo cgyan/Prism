@@ -37,10 +37,64 @@ Time::~Time() {
 }
 
 /**
+ * @return Returns a Time object set to the current time as read from the system clock.
+ */
+Time Time::currentTime() {
+	using namespace std;
+	chrono::time_point<chrono::system_clock> now = chrono::system_clock::now();
+	time_t time = chrono::system_clock::to_time_t(now);
+
+	struct tm *midnight = localtime(&time);
+	midnight->tm_hour = 0;
+	midnight->tm_min = 0;
+	midnight->tm_sec = 0;
+
+	chrono::time_point<chrono::system_clock> md = chrono::system_clock::from_time_t(mktime(midnight));
+	chrono::system_clock::duration durationSinceMidnight = now-md;
+
+	chrono::milliseconds msSinceMidnight = chrono::duration_cast<chrono::milliseconds>(durationSinceMidnight);
+
+	Time ret;
+	ret.m_ms = msSinceMidnight.count();
+	return ret;
+}
+
+/**
+ * Used in conjunction with start(), time can be measured by calling elapsed().
+ * \code
+ * Time t;
+ * t.start();
+ * doSomethingIntensive();
+ * int ms = t.elapsed(); // number of milliseconds since t.start() was called
+ * \endcode
+ * @return Returns the number of milliseconds since start() was called.
+ */
+const int Time::elapsed() const {
+	int ms = msecsTo(currentTime());
+	if (ms < 0)
+		ms += MS_PER_DAY;
+	return ms;
+}
+
+/**
  * @return Returns the hour part of the time (0-23).
  */
 const int Time::hour() const {
 	return m_ms / MS_PER_HOUR;
+}
+
+/**
+ * Static function that creates a Time object set to \em nHours.
+ */
+Time Time::hours(const int nHours) {
+	return Time(nHours,0);
+}
+
+/**
+ * @return Returns the number of hours between \em time and this object's time.
+ */
+const int Time::hoursTo(const Time & time) const {
+	return time.m_ms/MS_PER_HOUR - this->m_ms/MS_PER_HOUR;
 }
 
 /**
@@ -51,10 +105,38 @@ const int Time::min() const {
 }
 
 /**
+ * Static function that creates a Time object set to \em nMins.
+ */
+Time Time::mins(const int nMins) {
+	return Time(0,nMins);
+}
+
+/**
+ * @return Returns the number of minutes between \em time and this object's time.
+ */
+const int Time::minsTo(const Time & time) const {
+	return time.m_ms/MS_PER_MINUTE - this->m_ms/MS_PER_MINUTE;
+}
+
+/**
  * @return Returns the millisecond part of the time (0-999).
  */
 const int Time::msec() const {
 	return m_ms % 1000;
+}
+
+/**
+ * Static function that creates a Time object set to \em nMsecs.
+ */
+Time Time::msecs(const int nMsecs) {
+	return Time(0,0,0, nMsecs);
+}
+
+/**
+ * @return Returns the number of milliseconds between \em time and this object's time.
+ */
+const int Time::msecsTo(const Time & time) const {
+	return time.m_ms-this->m_ms;
 }
 
 /**
@@ -70,6 +152,41 @@ void Time::reset()
  */
 const int Time::sec() const {
 	return (m_ms / MS_PER_SECOND) % SECS_PER_MINUTE;
+}
+
+/**
+ * Static function that creates a Time object set to \em nSsecs.
+ */
+Time Time::secs(const int nSecs) {
+	return Time(0,0,nSecs);
+}
+
+/**
+ * @return Returns the number of seconds between \em time and this object's time.
+ */
+const int Time::secsTo(const Time & time) const {
+	return time.m_ms/MS_PER_SECOND - this->m_ms/MS_PER_SECOND;
+}
+
+/**
+ * Sets this Time object to \em hour, \em min, \em sec and \em msec.
+ */
+void Time::set(const int hour, const int min, const int sec, const int msec) {
+	m_ms = hour*MS_PER_HOUR + min*MS_PER_MINUTE + sec*MS_PER_SECOND + msec;
+}
+
+/**
+ * Sets the time to the current time. Time can then be measured by calling elapsed()
+ * at some later point.
+ * \code
+ * Time t;
+ * t.start();
+ * doSomethingIntensive();
+ * int ms = t.elapsed(); // number of milliseconds since t.start() was called
+ * \endcode
+ */
+void Time::start() {
+	*this = currentTime();
 }
 
 /**
@@ -97,92 +214,6 @@ String Time::toString() const {
 	ret += String::number(ms);
 
 	return ret;
-}
-
-/**
- * @return Returns a Time object set to the current time as read from the system clock.
- */
-Time Time::currentTime() {
-	using namespace std;
-	chrono::time_point<chrono::system_clock> now = chrono::system_clock::now();
-	time_t time = chrono::system_clock::to_time_t(now);
-
-	struct tm *midnight = localtime(&time);
-	midnight->tm_hour = 0;
-	midnight->tm_min = 0;
-	midnight->tm_sec = 0;
-
-	chrono::time_point<chrono::system_clock> md = chrono::system_clock::from_time_t(mktime(midnight));
-	chrono::system_clock::duration durationSinceMidnight = now-md;
-
-	chrono::milliseconds msSinceMidnight = chrono::duration_cast<chrono::milliseconds>(durationSinceMidnight);
-
-	Time ret;
-	ret.m_ms = msSinceMidnight.count();
-	return ret;
-}
-
-/**
- * Static function that creates a Time object set to \em nHours.
- */
-Time Time::hours(const int nHours) {
-	return Time(nHours,0);
-}
-
-/**
- * @return Returns the number of hours between \em time and this object's time.
- */
-const int Time::hoursTo(const Time & time) const {
-	return time.m_ms/MS_PER_HOUR - this->m_ms/MS_PER_HOUR;
-}
-
-/**
- * Static function that creates a Time object set to \em nMins.
- */
-Time Time::mins(const int nMins) {
-	return Time(0,nMins);
-}
-
-/**
- * @return Returns the number of minutes between \em time and this object's time.
- */
-const int Time::minsTo(const Time & time) const {
-	return time.m_ms/MS_PER_MINUTE - this->m_ms/MS_PER_MINUTE;
-}
-
-/**
- * Static function that creates a Time object set to \em nMsecs.
- */
-Time Time::msecs(const int nMsecs) {
-	return Time(0,0,0, nMsecs);
-}
-
-/**
- * @return Returns the number of milliseconds between \em time and this object's time.
- */
-const int Time::msecsTo(const Time & time) const {
-	return time.m_ms-this->m_ms;
-}
-
-/**
- * Static function that creates a Time object set to \em nSsecs.
- */
-Time Time::secs(const int nSecs) {
-	return Time(0,0,nSecs);
-}
-
-/**
- * @return Returns the number of seconds between \em time and this object's time.
- */
-const int Time::secsTo(const Time & time) const {
-	return time.m_ms/MS_PER_SECOND - this->m_ms/MS_PER_SECOND;
-}
-
-/**
- * Sets this Time object to \em hour, \em min, \em sec and \em msec.
- */
-void Time::set(const int hour, const int min, const int sec, const int msec) {
-	m_ms = hour*MS_PER_HOUR + min*MS_PER_MINUTE + sec*MS_PER_SECOND + msec;
 }
 
 /**

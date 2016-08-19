@@ -10,12 +10,13 @@
 #define PRISM_ARRAY_H_
 
 /*
- * todo add support for initializer list constructor and move constructor
- * i.e. array<int> a = {1,2,3.4};
+ * todo add support for move constructor
  */
 
-#include <iostream>
 #include <prism/Iterator>
+#include <prism/algorithms>
+#include <iostream>
+#include <initializer_list>
 
 namespace prism {
 /*! Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence.
@@ -36,6 +37,7 @@ private:
 public:
 	Array(const int size);
 	Array(const int size, const T & value);
+	Array(std::initializer_list<T> il);
 	Array(const Array<T> & copy);
 	virtual ~Array();
 
@@ -102,6 +104,18 @@ Array<T>::Array(const int size, const T & value)
 {
 	for (int i=0; i<m_size; i++)
 		m_array[i] = value;
+}
+
+/**
+ * Creates an array populated from the elements of the initializer list.
+ */
+template <class T>
+Array<T>::Array(std::initializer_list<T> il)
+	: m_array(0), m_size(0)
+{
+	m_array = new T[il.size()];
+	m_size = il.size();
+	prism::copy(il.begin(), il.end(), m_array);
 }
 
 /**

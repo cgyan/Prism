@@ -7,7 +7,9 @@ test/StringTest.d: ../test/StringTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/List.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/List.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
+  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -26,3 +28,7 @@ test/StringTest.d: ../test/StringTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/List.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
+
+/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:

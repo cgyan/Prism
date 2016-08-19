@@ -10,16 +10,16 @@
  */
 
 /*
- * todo add support for itializer list constructor and move constructor
- * i.e. array<int> a = {1,2,3.4};
+ * todo add support for move constructor
  */
 
 #ifndef PRISM_LIST_H_
 #define PRISM_LIST_H_
 
+#include <prism/Iterator> // for bidirectional_iterator_tag
+#include <prism/algorithms>
 #include <ostream>
 #include <forward_list>
-#include <prism/Iterator> // for bidirectional_iterator_tag
 
 namespace prism {
 //
@@ -29,6 +29,7 @@ namespace prism {
  * stored by the user. As such the iterator needs to return that value and not the
  * node as that is part of the private implementation.
  ****************************************************************************************************************/
+// \cond DO_NOT_DOCUMENT
 template <class Node, class T>
 struct ListIterator {
 	typedef T							value_type;
@@ -58,10 +59,11 @@ struct ListIterator {
 	friend inline const bool 			operator<=(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs <= 0; }
 	friend inline const bool 			operator>=(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs >= 0; }
 };
-
+// \endcond
 /****************************************************************************************************************
  * Const List iterator
  ****************************************************************************************************************/
+// \cond DO_NOT_DOCUMENT
 template <class Node, class T>
 struct ListConstIterator {
 	typedef const T						value_type;
@@ -91,7 +93,7 @@ struct ListConstIterator {
 	friend inline const bool 			operator<=(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs <= 0; }
 	friend inline const bool 			operator>=(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs >= 0; }
 };
-
+// \endcond
 /****************************************************************************************************************
  *
  ****************************************************************************************************************/
@@ -128,6 +130,7 @@ protected:
 	int 					m_size;
 public:
 							List();
+							List(std::initializer_list<T> il);
 							List(const List<T> & copy);
 	virtual 				~List();
 	iterator 				append(const T & value);
@@ -188,6 +191,20 @@ template <class T>
 List<T>::List() : m_header(new Node()), m_tailer(new Node()), m_size(0) {
 	m_header->next = m_tailer;
 	m_tailer->prev = m_header;
+}
+
+/**
+ * Constructs a list from the elements contained in the initializer list.
+ */
+template <class T>
+List<T>::List(std::initializer_list<T> il)
+	: m_header(new Node()), m_tailer(new Node()), m_size(0)
+{
+	m_header->next = m_tailer;
+	m_tailer->prev = m_header;
+
+	for (auto it = il.begin(); it != il.end(); it++)
+		insert(--end(), *it);
 }
 
 /**

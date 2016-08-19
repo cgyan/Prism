@@ -174,6 +174,18 @@ TEST_F(TimeTest, set) {
 }
 
 /**
+ * Test: start()
+ */
+TEST_F(TimeTest, start) {
+	Time time;
+	time.start();
+	for (int i=0; i<1000000000; i++);
+	int ms = time.elapsed();
+
+	ASSERT_GT(ms, time.msecsTo(time));
+}
+
+/**
  * Test: toString()
  */
 TEST_F(TimeTest, toString) {
@@ -351,8 +363,8 @@ TEST_F(TimeTest, opMinus) {
 
 	ASSERT_EQ("08:34:49:450", time.toString());
 	ASSERT_EQ(8, time.hour());
-	ASSERT_EQ(35, time.min());
-	ASSERT_EQ(50, time.sec());
+	ASSERT_EQ(34, time.min());
+	ASSERT_EQ(49, time.sec());
 	ASSERT_EQ(450, time.msec());
 }
 

@@ -134,10 +134,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html">List</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_list_const_iterator.html">ListConstIterator</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_list_iterator.html">ListIterator</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_mathf.html">Mathf</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_matrix4.html">Matrix4</a></td></tr>
@@ -2823,32 +2819,6 @@ template&lt;class U &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afd483f03b731881b25da5612b1213e5f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
-          <td class="paramname"><em>t1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
-          <td class="paramname"><em>t2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Adds the two <a class="el" href="classprism_1_1_time.html">Time</a> objects together to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be later than midnight then the time wraps round. </p><div class="fragment"><div class="line">Time time(20,0); <span class="comment">// 8pm</span></div><div class="line">Time offset1 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(2);</div><div class="line">Time offset2 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(5);</div><div class="line"></div><div class="line">Time result;</div><div class="line"></div><div class="line">result = time+offset1; <span class="comment">// Time object set to 22:00:00:000</span></div><div class="line">result = time+offset2; <span class="comment">// Time object set to 01:00:00:000</span></div></div><!-- fragment --> 
-</div>
-</div>
 <a class="anchor" id="ae482804c32b466401a9ecdf26bc1e6de"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2874,6 +2844,32 @@ template&lt;class U &gt; </div>
 </div><div class="memdoc">
 <p>Returns a <a class="el" href="classprism_1_1_vector2.html">Vector2</a> that is the result of adding the components of vector a and vector b. </p>
 
+</div>
+</div>
+<a class="anchor" id="afd483f03b731881b25da5612b1213e5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_time.html">Time</a> prism::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_time.html">Time</a> &amp;&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds the two <a class="el" href="classprism_1_1_time.html">Time</a> objects together to produce a new <a class="el" href="classprism_1_1_time.html">Time</a> object. If the new time would be later than midnight then the time wraps round. </p><div class="fragment"><div class="line">Time time(20,0); <span class="comment">// 8pm</span></div><div class="line">Time offset1 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(2);</div><div class="line">Time offset2 = <a class="code" href="classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808">Time::hour</a>(5);</div><div class="line"></div><div class="line">Time result;</div><div class="line"></div><div class="line">result = time+offset1; <span class="comment">// Time object set to 22:00:00:000</span></div><div class="line">result = time+offset2; <span class="comment">// Time object set to 01:00:00:000</span></div></div><!-- fragment --> 
 </div>
 </div>
 <a class="anchor" id="ad81bceaddc25922e571b4bf427ffe296"></a>

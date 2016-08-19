@@ -89,13 +89,11 @@ TEST_F(algorithmsTest, any_of) {
  * Test: swap(val1, val2)
  */
 TEST_F(algorithmsTest, swap) {
-	int * a = intArray(10);
-	swap(a[0], a[9]);
+	int a[5] = {1,2,3,4,5};
+	swap(a[0], a[4]);
 
-	ASSERT_TRUE(a[0] == 9);
-	ASSERT_TRUE(a[9] == 0);
-
-	delete []a;
+	ASSERT_TRUE(a[0] == 5);
+	ASSERT_TRUE(a[4] == 1);
 }
 
 }

@@ -39,6 +39,7 @@ public:
 	Time(const int hour, const int min, const int sec=0, const int msec=0);
 	virtual ~Time();
 
+	const int	elapsed() const;
 	const int 	hour() const;
 	const int	hoursTo(const Time & time) const;
 	const int 	min() const;
@@ -49,6 +50,7 @@ public:
 	const int 	sec() const;
 	const int	secsTo(const Time & time) const;
 	void		set(const int hour, const int min, const int sec=0, const int msec=0);
+	void		start();
 	String		toString() const;
 
 	static Time currentTime();

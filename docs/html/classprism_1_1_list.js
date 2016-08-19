@@ -10,6 +10,7 @@ var classprism_1_1_list =
     [ "size_type", "classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd", null ],
     [ "value_type", "classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1", null ],
     [ "List", "classprism_1_1_list.html#af81334fa20cb34b36a40d0ac4c36e2a5", null ],
+    [ "List", "classprism_1_1_list.html#a344a7102226e251cc039476e7680c3b8", null ],
     [ "List", "classprism_1_1_list.html#a8f2ff5a39c10ca4f57b5d3794e72cf93", null ],
     [ "~List", "classprism_1_1_list.html#aaa8567cc4eb408e62117f1a9782629ba", null ],
     [ "append", "classprism_1_1_list.html#a5e6584f87eee4371e308e1aa9c3da6c8", null ],

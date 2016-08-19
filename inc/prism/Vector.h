@@ -7,8 +7,7 @@
  */
 
 /*
- * todo add support for initializer list constructor and move constructor
- * i.e. array<int> a = {1,2,3.4};
+ * todo add support for move constructor
  */
 
 #ifndef PRISM_VECTOR_H_
@@ -60,6 +59,7 @@ public:
 public:
 					Vector();
 					Vector(const int size, const T& value=T());
+					Vector(std::initializer_list<T> il);
 					Vector(const Vector<T>& copy);
 					~Vector();
 	void			append(const T& value);
@@ -161,6 +161,18 @@ template <class T>
 Vector<T>::Vector(const int size, const T& value) : d(new VectorData<T>()) {
 	reserve(size);
 	insert(0, size, value);
+}
+
+/**
+ * Creates a vector populated by the elements in the initializer list.
+ */
+template <class T>
+Vector<T>::Vector(std::initializer_list<T> il)
+	: d(new VectorData<T>())
+{
+	reserve(il.size());
+	for (auto elem : il)
+		insert(d->storage.end, 1, elem);
 }
 
 /**

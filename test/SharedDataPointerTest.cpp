@@ -21,7 +21,7 @@ class Dummy : public SharedData {
 private:
 	int m_index;
 public:
-	~Dummy() { cout << "Dummy destructing!" << endl; }
+//	~Dummy() { cout << "Dummy destructing!" << endl; }
 	void setIndex(const int i) { m_index = i; }
 	const int index() const { return m_index; }
 };

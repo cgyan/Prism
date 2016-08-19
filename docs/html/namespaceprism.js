@@ -10,8 +10,6 @@ var namespaceprism =
     [ "Flags", "classprism_1_1_flags.html", "classprism_1_1_flags" ],
     [ "Fraction", "classprism_1_1_fraction.html", "classprism_1_1_fraction" ],
     [ "List", "classprism_1_1_list.html", "classprism_1_1_list" ],
-    [ "ListConstIterator", "structprism_1_1_list_const_iterator.html", "structprism_1_1_list_const_iterator" ],
-    [ "ListIterator", "structprism_1_1_list_iterator.html", "structprism_1_1_list_iterator" ],
     [ "Mathf", "classprism_1_1_mathf.html", null ],
     [ "Matrix4", "classprism_1_1_matrix4.html", "classprism_1_1_matrix4" ],
     [ "OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", "classprism_1_1_out_of_bounds_exception" ],

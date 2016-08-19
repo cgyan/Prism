@@ -4,6 +4,7 @@ var classprism_1_1_array =
     [ "iterator", "classprism_1_1_array.html#a6814c2af67e8b3fc48b02319f5e63d50", null ],
     [ "Array", "classprism_1_1_array.html#aab128f1ed5a4547a04812b921dc75897", null ],
     [ "Array", "classprism_1_1_array.html#ac696e19a99b7a601f013352617689098", null ],
+    [ "Array", "classprism_1_1_array.html#ada5fda23d2713ee3b2875495c77948b2", null ],
     [ "Array", "classprism_1_1_array.html#a15f0a0b32b4d95975fd15f0c1321d144", null ],
     [ "~Array", "classprism_1_1_array.html#ad8787402f15054e257a7b407f07f469e", null ],
     [ "at", "classprism_1_1_array.html#a669341733bb97105adcedc9a9e159dcd", null ],

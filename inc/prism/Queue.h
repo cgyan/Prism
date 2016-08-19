@@ -19,15 +19,14 @@
  */
 
 /*
- * todo add support for itializer list constructor and move constructor
- * i.e. array<int> a = {1,2,3.4};
+ * todo add support for move constructor
  */
 
 #ifndef PRISM_QUEUE_H_
 #define PRISM_QUEUE_H_
 
-#include <ostream>
 #include <prism/Vector>
+#include <ostream>
 
 namespace prism {
 

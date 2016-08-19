@@ -8,7 +8,9 @@ src/prism/Time.d: ../src/prism/Time.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/List.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/List.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
+  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Time:
 
@@ -29,3 +31,7 @@ src/prism/Time.d: ../src/prism/Time.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/List.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
+
+/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:
