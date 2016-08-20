@@ -22,21 +22,21 @@ namespace prism {
 // ========================================================================
 template <class T>
 struct StackData : public SharedData {
-	struct Memory {
+	struct memory {
 		T * start;
 		T * end;
 		T * finish;
 		const int exponent;
 
-		Memory() : start(0), end(0), finish(0), exponent(2) {
+		memory() : start(0), end(0), finish(0), exponent(2) {
 			// does nothing
 		}
 
-		Memory(const Memory & copy) : start(0), end(0), finish(0), exponent(copy.exponent){
+		memory(const memory & copy) : start(0), end(0), finish(0), exponent(copy.exponent){
 			allocateAndTransfer(copy.finish-copy.start, copy.start, copy.end);
 		}
 
-		~Memory() {
+		~memory() {
 			delete []start; start = 0; end = 0; finish = 0;
 		}
 
@@ -56,7 +56,7 @@ struct StackData : public SharedData {
 			allocateAndTransfer(newCapacity, start, end);
 		}
 	};
-	Memory storage;
+	memory storage;
 };
 // ========================================================================
 // Stack
@@ -75,7 +75,6 @@ class Stack {
 private:
 	SharedDataPointer< StackData<T> > d;
 public:
-	friend class StackTest;
 	Stack();
 	Stack(const Stack<T> & copy);
 	~Stack();
