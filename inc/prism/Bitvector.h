@@ -13,7 +13,9 @@
 #include <ostream>
 
 namespace prism {
-
+/******************************************************************************
+ * BitvectorData
+ *****************************************************************************/
 struct BitvectorData {
 	struct memory  {
 		unsigned long long int * start; // unsigned long long ints are 64 bits each
@@ -24,6 +26,9 @@ struct BitvectorData {
 	};
 	memory storage;
 };
+/******************************************************************************
+ * Bitvector
+ *****************************************************************************/
 /*!
  * This is the class description for the Bitvector.
  */
