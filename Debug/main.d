@@ -49,7 +49,9 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Bitvector \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Bitvector.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Time \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Time.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Time.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Pair \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Pair.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -152,3 +154,7 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Time:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Time.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Pair:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Pair.h:
