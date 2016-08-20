@@ -1,1 +1,1 @@
-#include <prism/OutOfBoundsException.h>
+#include <prism/h/OutOfBoundsException.h>

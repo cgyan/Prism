@@ -57,7 +57,7 @@ void print(int n) { cout << n << endl; }
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "*Pair*";
+	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
 
