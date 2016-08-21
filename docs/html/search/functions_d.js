@@ -1,7 +1,8 @@
 var searchData=
 [
   ['p_5fheapify',['p_heapify',['../namespaceprism.html#a5f2c83ae0d89a6581d1c42ba6fd79de0',1,'prism']]],
-  ['point',['point',['../classprism_1_1_circle.html#a42e70e1d37414bf4c22500b80b168c9d',1,'prism::Circle::point()'],['../classprism_1_1_point.html#a505a19bd681a9e195f8bf9dbd3c445c7',1,'prism::Point::Point(void)'],['../classprism_1_1_point.html#a93bfdd8fa48253786030802190577129',1,'prism::Point::Point(const int x, const int y)'],['../classprism_1_1_point.html#af09a25c46be47b8c4566b15ddac632b0',1,'prism::Point::Point(const Point &amp;copy)']]],
+  ['pair',['Pair',['../structprism_1_1_pair.html#a01f54ce0c12eb6fa82d685b03be088e5',1,'prism::Pair::Pair()'],['../structprism_1_1_pair.html#a87875f551ff0f9c7f54752664a909a03',1,'prism::Pair::Pair(const T1 &amp;val1, const T2 &amp;val2)']]],
+  ['point',['Point',['../classprism_1_1_point.html#a505a19bd681a9e195f8bf9dbd3c445c7',1,'prism::Point::Point(void)'],['../classprism_1_1_point.html#a93bfdd8fa48253786030802190577129',1,'prism::Point::Point(const int x, const int y)'],['../classprism_1_1_point.html#af09a25c46be47b8c4566b15ddac632b0',1,'prism::Point::Point(const Point &amp;copy)'],['../classprism_1_1_circle.html#a42e70e1d37414bf4c22500b80b168c9d',1,'prism::Circle::point()']]],
   ['pointf',['Pointf',['../classprism_1_1_pointf.html#a214778342e0ac8ca95ebee01e196af20',1,'prism::Pointf::Pointf(void)'],['../classprism_1_1_pointf.html#a8c069c8a342d043475661270d19e6579',1,'prism::Pointf::Pointf(const float x, const float y)'],['../classprism_1_1_pointf.html#a8888306775c8851d1808881025d547df',1,'prism::Pointf::Pointf(const Pointf &amp;p)']]],
   ['points',['points',['../classprism_1_1_circle.html#a1443add46fe3c7d3e6c938cf0a43ba57',1,'prism::Circle']]],
   ['pop',['pop',['../classprism_1_1_queue.html#ac5a988d20ed06a55cb37d62d37e0ceda',1,'prism::Queue::pop()'],['../classprism_1_1_stack.html#a9c5679c5b671e0fc79d00c53462686a4',1,'prism::Stack::pop()']]],

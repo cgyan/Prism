@@ -19,6 +19,5 @@ var classprism_1_1_stack =
     [ "toVector", "classprism_1_1_stack.html#ac373a993c993bbf07a485a2838c9cae9", null ],
     [ "operator!=", "classprism_1_1_stack.html#aa79914f1e49ebf8bd569580a2113326d", null ],
     [ "operator<<", "classprism_1_1_stack.html#a7e1f9c28a318f010223ea59ac3d3733a", null ],
-    [ "operator==", "classprism_1_1_stack.html#aeb1f035d92d81418856c1f1c1bec54b3", null ],
-    [ "StackTest", "classprism_1_1_stack.html#a660ffbd70515df798aa6fe2edafb3156", null ]
+    [ "operator==", "classprism_1_1_stack.html#aeb1f035d92d81418856c1f1c1bec54b3", null ]
 ];

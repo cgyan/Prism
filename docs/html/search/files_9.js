@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['quaternion_2ecpp',['Quaternion.cpp',['../_quaternion_8cpp.html',1,'']]],
-  ['quaternion_2eh',['Quaternion.h',['../_quaternion_8h.html',1,'']]],
-  ['queue_2eh',['Queue.h',['../_queue_8h.html',1,'']]]
+  ['outofboundsexception_2eh',['OutOfBoundsException.h',['../_out_of_bounds_exception_8h.html',1,'']]],
+  ['overflowexception_2eh',['OverflowException.h',['../_overflow_exception_8h.html',1,'']]]
 ];

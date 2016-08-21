@@ -1,6 +1,6 @@
 /*
  * Iterator.h
- * v0.1
+ * v1
  *
  *  Created on: Jan 7, 2015
  *      Author: iainhemstock

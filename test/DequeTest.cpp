@@ -23,6 +23,13 @@ TEST_F(DequeTest, ctor) {
 	Deque<int> d;
 }
 
+/**
+ * Test: size()
+ */
+TEST_F(DequeTest, size) {
+	Deque<int> d;
+}
+
 }
 
 

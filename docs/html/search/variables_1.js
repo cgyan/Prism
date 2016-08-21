@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['end',['end',['../structprism_1_1_stack_data_1_1_memory.html#a4c2fc53a644757cf033636c013265eeb',1,'prism::StackData::Memory']]],
-  ['exponent',['exponent',['../structprism_1_1_stack_data_1_1_memory.html#a0a82a73b0dd4e34356f933b0ebcf4649',1,'prism::StackData::Memory']]]
+  ['finish',['finish',['../structprism_1_1_bitvector_data_1_1memory.html#a5a2a02836100db06313f226fb90a7601',1,'prism::BitvectorData::memory']]],
+  ['first',['first',['../structprism_1_1_pair.html#a5284359e4f965f152726c7d3ff95021a',1,'prism::Pair']]]
 ];

@@ -20,6 +20,7 @@ namespace prism {
 // ========================================================================
 // StackData
 // ========================================================================
+// \cond DO_NOT_DOCUMENT
 template <class T>
 struct StackData : public SharedData {
 	struct memory {
@@ -58,6 +59,7 @@ struct StackData : public SharedData {
 	};
 	memory storage;
 };
+// \endcond
 // ========================================================================
 // Stack
 // ========================================================================
