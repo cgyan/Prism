@@ -53,6 +53,11 @@ bool isOdd(int n) { return n%2 == 1; }
 bool isEven(int n) { return n%2 == 0; }
 bool isNegative(int n) { return n<0; }
 void print(int n) { cout << n << endl; }
+template <class ForwardIterator>
+std::ostream& printRange(std::ostream& out, ForwardIterator start, ForwardIterator end) {
+	while (start != end) out << *start++ << endl;
+	return out;
+}
 
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
@@ -60,9 +65,24 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
+	int size = 5000;
+	int j = size;
+	vector<int> c;
+	c.reserve(size);
+	for (int i=0; i<size; i++,--j)
+		c.push_back(j);
+
+	Time time;
+	time.start();
+
+	prism::sort_quicksort(c.begin(), c.end());
+
+	int elapsed = time.elapsed();
+
+	cout << "sort of " << size << " items took " << elapsed << " ms" << endl;
 
 
-	return RUN_ALL_TESTS();
+//	return RUN_ALL_TESTS();
 //	return 0;
 }
 

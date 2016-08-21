@@ -61,7 +61,7 @@ struct DequeBlock {
 	static const int size = 8; // size of each internal block
 	struct chunk {
 		T* start; // start of the storage
-		T* finish;// one position past the end of the storage
+		T* finish;// the end of the storage
 
 		chunk() : start(0), finish(0)
 		{
@@ -103,46 +103,6 @@ struct DequeBlock {
 };
 // \endcond
 //============================================================
-// DequeData
-//============================================================
-// \cond DO_NOT_DOCUMENT
-template <class T>
-struct DequeData : public SharedData {
-	struct memory {
-		DequeBlock<T>* start; // start of the storage
-		DequeBlock<T>* end;   // one position past the last DequeBlock
-		DequeBlock<T>* finish;// the end of the storage
-		T* first; // the first value
-		T* last;   // the last value
-
-		memory() : start(0), end(0), finish(0), first(0), last(0)
-		{
-			// does nothing
-		}
-
-		memory(const memory& copy) : start(0), end(0), finish(0)
-		{
-			allocateAndTransfer(copy.finish-copy.start, copy.start, copy.end);
-		}
-
-		~memory()
-		{
-			delete []start; start=0; end=0; finish=0;
-		}
-
-		void allocateAndTransfer(const int capacity, DequeBlock<T>* pStart, DequeBlock<T>* pEnd) {
-			DequeBlock<T>* newStorage = new DequeBlock<T>[capacity];
-			prism::copy(pStart, pEnd, newStorage);
-			delete []start;
-			start = newStorage;
-			end = start + (pEnd-pStart);
-			finish = start + capacity;
-		}
-	};
-	memory storage;
-};
-// \endcond
-//============================================================
 // DequeIterator
 // needs to know about:
 //		a) DequeBlock array, b) DequeBlock size, c) value type (T)
@@ -151,10 +111,46 @@ struct DequeData : public SharedData {
 template <class T>
 class DequeIterator {
 private:
-	T* p; // pointer to value
-	DequeBlock<T>* pBlock; // pointer to DequeBlock
-public:
-	DequeIterator() : p(nullptr) {}
+
+
+};
+// \endcond
+//============================================================
+// DequeData
+//============================================================
+// \cond DO_NOT_DOCUMENT
+template <class T>
+struct DequeData : public SharedData {
+	struct memory {
+		T** start; // pointer to array of T
+		T** finish;
+		DequeIterator<T> begin;
+		DequeIterator<T> end;
+
+		memory() : start(0), finish(0)
+		{
+			// does nothing
+		}
+
+		memory(const memory& copy) : start(0), finish(0)
+		{
+			allocateAndTransfer(copy.finish-copy.start, copy.start, copy.finish);
+		}
+
+		~memory()
+		{
+			delete []start; start=0; finish=0;
+		}
+
+		void allocateAndTransfer(const int capacity, DequeBlock<T>* pStart, DequeBlock<T>* pEnd) {
+			DequeBlock<T>* newStorage = new DequeBlock<T>[capacity];
+			prism::copy(pStart, pEnd, newStorage);
+			delete []start;
+			start = newStorage;
+			finish = start + capacity;
+		}
+	};
+	memory storage;
 };
 // \endcond
 //============================================================
