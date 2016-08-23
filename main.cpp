@@ -44,12 +44,13 @@
 #include <prism/Bitvector>
 #include <prism/Time>
 #include <prism/Pair>
+#include <prism/h/DequeIterator.h>
 
 
 using namespace prism;
 using namespace std;
 
-bool isOdd(int n) { return n%2 == 1; }
+//bool isOdd(int n) { return n%2 == 1; }
 bool isEven(int n) { return n%2 == 0; }
 bool isNegative(int n) { return n<0; }
 void print(int n) { cout << n << endl; }
@@ -59,27 +60,70 @@ std::ostream& printRange(std::ostream& out, ForwardIterator start, ForwardIterat
 	return out;
 }
 
+struct IsOdd {
+	bool operator()(int n) {
+		return n%2==1;
+	}
+};
+
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "*Deque*";
-	::testing::InitGoogleTest(&argc, argv);
+//	::testing::GTEST_FLAG(filter) = "*Deque*";
+//	::testing::InitGoogleTest(&argc, argv);
 
-	int size = 5000;
-	int j = size;
-	vector<int> c;
-	c.reserve(size);
-	for (int i=0; i<size; i++,--j)
-		c.push_back(j);
+	Block<int>** map_ = new Block<int>*[1];
 
-	Time time;
-	time.start();
+	Block<int>* block = new Block<int>();
+//	block->storage.start[0] = 0;
+//	block->storage.start[1] = 1;
+//	block->storage.start[2] = 2;
+//	block->storage.start[3] = 3;
+	block->storage.start[4] = 4;
+	block->storage.start[5] = 5;
+	block->storage.start[6] = 6;
+	block->storage.start[7] = 7;
+	block->storage.begin = block->storage.start+4;
 
-	prism::sort_quicksort(c.begin(), c.end());
+	map_[0] = block;
 
-	int elapsed = time.elapsed();
+	block = new Block<int>();
+	block->storage.start[0] = 10;
+	block->storage.start[1] = 11;
+	block->storage.start[2] = 12;
+	block->storage.start[3] = 13;
+	block->storage.start[4] = 14;
+	block->storage.start[5] = 15;
+	block->storage.start[6] = 16;
+	block->storage.start[7] = 17;
+	block->storage.end = block->storage.start+2;
 
-	cout << "sort of " << size << " items took " << elapsed << " ms" << endl;
+	map_[1] = block;
+
+	block = new Block<int>();
+	block->storage.start[0] = 20;
+	block->storage.start[1] = 21;
+	block->storage.start[2] = 22;
+	block->storage.start[3] = 23;
+	block->storage.start[4] = 24;
+	block->storage.start[5] = 25;
+//	block->storage.start[6] = 26;
+//	block->storage.start[7] = 27;
+	block->storage.end = block->storage.start+5;
+
+	map_[2] = block;
+
+	DequeIterator<int> start(map_[0]->storage.begin, map_);
+	DequeIterator<int> end(map_[1]->storage.end, map_+1);
+//	DequeIterator<int> end = start;
+//	DequeIterator<int> startCopy = start;
+
+//	for (; start != end; start++) {
+//		cout << *start << endl;
+//	}
+
+	cout << *(start+4) << endl;
+
 
 
 //	return RUN_ALL_TESTS();
