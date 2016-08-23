@@ -106,7 +106,7 @@ int main(int argc, char * argv[]) {
 	block->storage.start[2] = 22;
 	block->storage.start[3] = 23;
 	block->storage.start[4] = 24;
-	block->storage.start[5] = 25;
+//	block->storage.start[5] = 25;
 //	block->storage.start[6] = 26;
 //	block->storage.start[7] = 27;
 	block->storage.end = block->storage.start+5;
@@ -122,7 +122,7 @@ int main(int argc, char * argv[]) {
 //		cout << *start << endl;
 //	}
 
-	cout << *(start+4) << endl;
+	cout << *(start+=12) << endl;
 
 
 
