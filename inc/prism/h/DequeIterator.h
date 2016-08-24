@@ -87,21 +87,46 @@ public:
 	/**
 	 *
 	 */
-	DequeIterator operator+=(const int i)
+	DequeIterator& operator+=(const int i)
 	{
-		int offset = i + (block_->storage.begin-block_->storage.start);
-		if (offset >= 0 && offset  < block_->storage.BLOCKSIZE)
+		int offset = i + (p_ - block_->storage.start);
+		if (offset >= 0 && offset < block_->storage.BLOCKSIZE)
 			p_ += i;
 		else {
 			int mapOffset = 0;
 			if (offset > 0) mapOffset = offset / block_->storage.BLOCKSIZE;
-			else mapOffset = (-offset-1) / block_->storage.BLOCKSIZE - 1;
+			else mapOffset = -((-offset-1) / block_->storage.BLOCKSIZE) - 1;
 
 			setMap_(map_+mapOffset);
 			p_ = block_->storage.start + (offset-mapOffset * block_->storage.BLOCKSIZE);
 		}
 
-		return DequeIterator(p_, map_);
+		return *this;
+	}
+
+	/**
+	 *
+	 */
+	DequeIterator operator+(const int i)
+	{
+		DequeIterator tmp(*this);
+		return tmp += i;
+	}
+
+	/**
+	 *
+	 */
+	DequeIterator& operator-=(const int i)
+	{
+		return *this += -i;
+	}
+
+	/**
+	 *
+	 */
+	DequeIterator operator-(const int i) {
+		DequeIterator tmp(*this);
+		return tmp -= i;
 	}
 
 	/**

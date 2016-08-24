@@ -72,7 +72,7 @@ int main(int argc, char * argv[]) {
 //	::testing::GTEST_FLAG(filter) = "*Deque*";
 //	::testing::InitGoogleTest(&argc, argv);
 
-	Block<int>** map_ = new Block<int>*[1];
+	Block<int>** map_ = new Block<int>*[3];
 
 	Block<int>* block = new Block<int>();
 //	block->storage.start[0] = 0;
@@ -96,7 +96,7 @@ int main(int argc, char * argv[]) {
 	block->storage.start[5] = 15;
 	block->storage.start[6] = 16;
 	block->storage.start[7] = 17;
-	block->storage.end = block->storage.start+2;
+//	block->storage.end = block->storage.start+2;
 
 	map_[1] = block;
 
@@ -114,7 +114,7 @@ int main(int argc, char * argv[]) {
 	map_[2] = block;
 
 	DequeIterator<int> start(map_[0]->storage.begin, map_);
-	DequeIterator<int> end(map_[1]->storage.end, map_+1);
+	DequeIterator<int> end(map_[2]->storage.end, map_+2);
 //	DequeIterator<int> end = start;
 //	DequeIterator<int> startCopy = start;
 
@@ -122,7 +122,7 @@ int main(int argc, char * argv[]) {
 //		cout << *start << endl;
 //	}
 
-	cout << *(start+=12) << endl;
+	cout << *(6-end) << endl;
 
 
 
