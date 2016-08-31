@@ -12,7 +12,8 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
     [ "Circle.h", "_circle_8h.html", [
       [ "Circle", "classprism_1_1_circle.html", "classprism_1_1_circle" ]
     ] ],
-    [ "Deque.h", "_deque_8h.html", [
+    [ "Deque.h", "_deque_8h.html", "_deque_8h" ],
+    [ "Deque_old.h", "_deque__old_8h.html", [
       [ "Deque", "classprism_1_1_deque.html", "classprism_1_1_deque" ]
     ] ],
     [ "Exception.h", "_exception_8h.html", [
@@ -21,20 +22,6 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
     [ "Flags.h", "_flags_8h.html", "_flags_8h" ],
     [ "Fraction.h", "_fraction_8h.html", [
       [ "Fraction", "classprism_1_1_fraction.html", "classprism_1_1_fraction" ]
-    ] ],
-    [ "Iterator.h", "_iterator_8h.html", [
-      [ "input_iterator_tag", "structprism_1_1input__iterator__tag.html", null ],
-      [ "output_iterator_tag", "structprism_1_1output__iterator__tag.html", null ],
-      [ "forward_iterator_tag", "structprism_1_1forward__iterator__tag.html", null ],
-      [ "bidirectional_iterator_tag", "structprism_1_1bidirectional__iterator__tag.html", null ],
-      [ "random_access_iterator_tag", "structprism_1_1random__access__iterator__tag.html", null ],
-      [ "iterator_traits", "structprism_1_1iterator__traits.html", "structprism_1_1iterator__traits" ],
-      [ "ForwardIterator", "classprism_1_1_forward_iterator.html", "classprism_1_1_forward_iterator" ],
-      [ "ForwardConstIterator", "classprism_1_1_forward_const_iterator.html", "classprism_1_1_forward_const_iterator" ],
-      [ "BidirectionalIterator", "classprism_1_1_bidirectional_iterator.html", "classprism_1_1_bidirectional_iterator" ],
-      [ "BidirectionalConstIterator", "classprism_1_1_bidirectional_const_iterator.html", "classprism_1_1_bidirectional_const_iterator" ],
-      [ "RandomAccessIterator", "classprism_1_1_random_access_iterator.html", "classprism_1_1_random_access_iterator" ],
-      [ "RandomAccessConstIterator", "classprism_1_1_random_access_const_iterator.html", "classprism_1_1_random_access_const_iterator" ]
     ] ],
     [ "List.h", "_list_8h.html", "_list_8h" ],
     [ "Mathf.h", "_mathf_8h.html", [
@@ -83,6 +70,7 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
     [ "Stack.h", "_stack_8h.html", [
       [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ]
     ] ],
+    [ "StdDeque.h", "_std_deque_8h.html", "_std_deque_8h" ],
     [ "String.h", "_string_8h.html", [
       [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ]
     ] ],

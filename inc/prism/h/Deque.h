@@ -1,387 +1,436 @@
 /*
- * Deque.h
+ * DequeIterator.h
  * v1
  *
- *  Created on: Aug 20, 2016
+ *  Created on: Aug 23, 2016
  *      Author: iainhemstock
- *
-	bool size() const { return first.size + (buckets.size()- 2) * SIZE + last.size; }
-
-	T& operator[](size_t i) {
-	if (i < first.size) { return first[SIZE - i]; }
-
-	size_t const correctedIndex = i - first.size;
-	return buckets[correctedIndex / SIZE][correctedIndex % SIZE];
-}
- */
-/*
-----------------------------------------
-deque_base class line 896
-----------------------------------------
-line 1058
-template <class _Tp, class _Allocator>
-typename __deque_base<_Tp, _Allocator>::iterator
-__deque_base<_Tp, _Allocator>::begin() _NOEXCEPT
-{
-    __map_pointer __mp = __map_.begin() + __start_ / __block_size;
-    return iterator(__mp, __map_.empty() ? 0 : *__mp + __start_ % __block_size);
-}
-----------------------------------------
-template <class _Tp, class _Allocator>
-typename __deque_base<_Tp, _Allocator>::iterator
-__deque_base<_Tp, _Allocator>::end() _NOEXCEPT
-{
-    size_type __p = size() + __start_;
-    __map_pointer __mp = __map_.begin() + __p / __block_size;
-    return iterator(__mp, __map_.empty() ? 0 : *__mp + __p % __block_size);
-}
-----------------------------------------
-line 266
-template <class _ValueType, class _Pointer, class _Reference, class _MapPointer,
-          class _DiffType, _DiffType _BlockSize>
-class _LIBCPP_TYPE_VIS_ONLY __deque_iterator {}
-----------------------------------------
  */
 
-#ifndef DEQUE_H_
-#define DEQUE_H_
+#ifndef PRISM_DEQUE_H_
+#define PRISM_DEQUE_H_
 
 #include <prism/SharedData>
 #include <prism/SharedDataPointer>
-#include <prism/algorithms>
 #include <ostream>
+#include <cstddef> // for std::ptrdiff_t
+using namespace std;
 
 namespace prism {
-//============================================================
-// DequeBlock
-//============================================================
-// \cond DO_NOT_DOCUMENT
-template <class T>
-struct DequeBlock {
-	struct chunk {
-		T* start; 	// start of the storage
-		T* finish;	// the end of the storage
-		T* begin;	// points to the first element of the occupied range
-		T* end;		// points to the position-after-the-last-element of the occupied range
-		static const int size = 8; // size of each internal block
-		chunk() : start(0), finish(0), begin(0), end(0) {}
-		~chunk() { delete []start; start=0; finish=0; begin=0; end=0; }
-	};
-	chunk block;
-
-};
-// \endcond
-//============================================================
+static const int prism_deque_bucket_size = 8;
+//================================================================================
 // DequeIterator
-// needs to know about:
-//		a) DequeBlock array, b) DequeBlock size, c) value type (T)
-//============================================================
+//================================================================================
 // \cond DO_NOT_DOCUMENT
 template <class T>
 class DequeIterator {
+	typedef DequeIterator<T> 				iterator;
+	typedef T								value_type;
+	typedef std::ptrdiff_t 					difference_type;
+	typedef random_access_iterator_tag 		iterator_category;
+	typedef T& 								reference;
+	typedef T* 								pointer;
 private:
+	T** buckets;
+	T* current;
+	T* start;
+	T* finish;
+public:
+	DequeIterator()
+		: buckets(0),
+		  current(0),
+		  start(0),
+		  finish(0) {}
 
+	DequeIterator(T** buckets, T* current)
+		: buckets(buckets),
+		  current(current),
+		  start(*buckets),
+		  finish(start+prism_deque_bucket_size) {}
 
-};
-// \endcond
-//============================================================
-// DequeData
-//============================================================
-// \cond DO_NOT_DOCUMENT
-template <class T>
-struct DequeData : public SharedData {
-	typedef DequeBlock<T> 		Block;
-	typedef Block** 			Storage;
-	typedef DequeIterator<T> 	iterator;
+	DequeIterator(const iterator& copy)
+		: buckets(copy.buckets),
+		  current(copy.current),
+		  start(copy.start),
+		  finish(copy.finish) {}
 
-	struct memory
+	T& operator*() {
+		return *current;
+	}
+
+	T* operator->() {
+		return current;
+	}
+
+	iterator& operator+=(const int n)
 	{
+		int elementIndex = n + (current-start);
+		if (elementIndex >= 0 && elementIndex < prism_deque_bucket_size)
+			current += n;
+		else {
+			int bucketOffset = 0;
+			if (elementIndex > 0) bucketOffset = elementIndex / prism_deque_bucket_size;
+			else bucketOffset = -((-elementIndex-1) / prism_deque_bucket_size) - 1;
 
-		Storage start; // pointer to array of Blocks
-		Storage finish;
-		iterator begin;
-		iterator end;
-
-		void allocateStorage(const int size)
-		{
-
+			buckets += bucketOffset;
+			start = *buckets;
+			finish = start+ prism_deque_bucket_size;
+			current = start + (elementIndex - bucketOffset * prism_deque_bucket_size);
 		}
+		return *this;
+	}
 
-		/*
-		 allocate_node()
-		 deallocate_node(ptr)
-		 allocate_map(size)
-		 deallocate_map(ptr, size)
-		 initialize_map(size)
-		 create_nodes(start, finish)
-		 destroy_nodes(start, finish)
-		 default_initialize()
-		 fill_insert(iterator, size, value)
-		 fill_initialize(value)
-		 range_initialize(iter start, iter end)
-		 reallocate_map(numNodes)
-		 range_check(i)
-		 reserve_map_at_back(nNodes)
-		 reserve_map_at_front(nNodes)
+	iterator operator+(const int n) {
+		return *this += n;
+	}
 
+	iterator& operator-=(const int n) {
+		return *this += -n;
+	}
 
-		 */
-	};
-	memory storage;
+	iterator operator-(const int n) {
+		return *this -= n;
+	}
+
+	iterator& operator++() {
+		return *this += 1;
+	}
+
+	iterator operator++(int junk) {
+		iterator tmp(*this);
+		*this = *this += 1;
+		return tmp;
+	}
+
+	iterator& operator--() {
+		return *this -= 1;
+	}
+
+	iterator operator--(int junk) {
+		iterator tmp(*this);
+		*this = *this -= 1;
+		return tmp;
+	}
+
+	iterator& operator=(const iterator& rhs) {
+		if (*this != rhs) {
+			buckets = rhs.buckets;
+			current = rhs.current;
+			start = rhs.start;
+			finish = rhs.finish;
+		}
+		return *this;
+	}
+	//------------------------------------------------------------
+	// related non members
+	//------------------------------------------------------------
+	friend const bool operator==(const iterator& it1, const iterator& it2) {
+		return it1.buckets == it2.buckets &&
+				it1.current == it2.current &&
+				it1.start == it2.start &&
+				it1.finish == it2.finish;
+	}
+
+	friend const bool operator!=(const iterator& it1, const iterator& it2) {
+		return !(it1==it2);
+	}
+
+	friend const int operator-(const iterator& lhs, const iterator& rhs) {
+		return prism_deque_bucket_size *
+				(lhs.buckets-rhs.buckets-1) +
+				lhs.current-lhs.start +
+				rhs.finish-rhs.current;
+	}
+
+	friend const bool operator<(const iterator& lhs, const iterator& rhs) {
+		return lhs-rhs < 0;
+	}
+
+	friend const bool operator>(const iterator& lhs, const iterator& rhs) {
+		return lhs-rhs > 0;
+	}
+
+	friend const bool operator<=(const iterator& lhs, const iterator& rhs) {
+		return lhs-rhs <= 0;
+	}
+
+	friend const bool operator>=(const iterator& lhs, const iterator& rhs) {
+		return lhs-rhs >= 0;
+	}
 };
 // \endcond
-//============================================================
+//================================================================================
 // Deque
-//============================================================
+//================================================================================
 template <class T>
 class Deque {
-public:
-private:
-	SharedDataPointer<DequeData<T>> d;
-public:
-	Deque();
-	Deque(const Deque<T>& copy);
-	~Deque();
-
 
 };
 
-/**
- *
- */
-template <class T>
-Deque<T>::Deque()
-	: d(new DequeData<T>)
-{}
+} // namespace prism
 
-/**
- *
- */
-template <class T>
-Deque<T>::Deque(const Deque<T>& copy)
-	: d(copy.d)
-{}
+#endif // PRISM_DEQUE_H
 
-/**
- *
- */
-template <class T>
-Deque<T>::~Deque() {
-
-}
-
-}
-
-
-
-#endif /* DEQUE_H_ */
-//
-///*
-// * Deque.h
-// * v0.*
-// *
-// *  Created on: Aug 20, 2016
-// *      Author: iainhemstock
-// *
-//	bool size() const { return first.size + (buckets.size()- 2) * SIZE + last.size; }
-//
-//	T& operator[](size_t i) {
-//	if (i < first.size) { return first[SIZE - i]; }
-//
-//	size_t const correctedIndex = i - first.size;
-//	return buckets[correctedIndex / SIZE][correctedIndex % SIZE];
-//}
-// */
-///*
-//----------------------------------------
-//deque_base class line 896
-//----------------------------------------
-//line 1058
-//template <class _Tp, class _Allocator>
-//typename __deque_base<_Tp, _Allocator>::iterator
-//__deque_base<_Tp, _Allocator>::begin() _NOEXCEPT
-//{
-//    __map_pointer __mp = __map_.begin() + __start_ / __block_size;
-//    return iterator(__mp, __map_.empty() ? 0 : *__mp + __start_ % __block_size);
-//}
-//----------------------------------------
-//template <class _Tp, class _Allocator>
-//typename __deque_base<_Tp, _Allocator>::iterator
-//__deque_base<_Tp, _Allocator>::end() _NOEXCEPT
-//{
-//    size_type __p = size() + __start_;
-//    __map_pointer __mp = __map_.begin() + __p / __block_size;
-//    return iterator(__mp, __map_.empty() ? 0 : *__mp + __p % __block_size);
-//}
-//----------------------------------------
-//line 266
-//template <class _ValueType, class _Pointer, class _Reference, class _MapPointer,
-//          class _DiffType, _DiffType _BlockSize>
-//class _LIBCPP_TYPE_VIS_ONLY __deque_iterator {}
-//----------------------------------------
-// */
-//
-//#ifndef DEQUE_H_
-//#define DEQUE_H_
-//
-//#include <prism/SharedData>
-//#include <prism/SharedDataPointer>
-//#include <prism/algorithms>
-//#include <ostream>
-//
 //namespace prism {
-////============================================================
+////================================================================================
 //// DequeBlock
-////============================================================
+////================================================================================
 //// \cond DO_NOT_DOCUMENT
-//template <class T>
-//struct DequeBlock {
-//	static const int size = 8; // size of each internal block
-//	struct chunk {
-//		T* start; 	// start of the storage
-//		T* finish;	// the end of the storage
-//		T* begin;	// points to the first element of the occupied range
-//		T* end;		// points to the position-after-the-last-element of the occupied range
-//
-//		chunk() : start(0), finish(0), begin(0), end(0)
-//		{
-//			// does nothing
-//		}
-//
-//		chunk(const chunk& copy) : start(0), finish(0), begin(0), end(0)
-//		{
-//			allocateAndTransfer(copy.start, copy.finish);
-//		}
-//
-//		chunk& operator=(const chunk& other)
-//		{
-//			if (*this == other) return *this;
-//			allocateAndTransfer(other.start, other.finish);
-//			return *this;
-//		}
-//
-//		~chunk()
-//		{
-//			delete []start; start=0; finish=0;
-//		}
-//
-//		void allocateAndTransfer(T* pStart, T* pEnd)
-//		{
-//			T* newStorage = new T[size];
-//			prism::copy(pStart, pEnd, newStorage);
-//			delete []start;
-//			start = newStorage;
-//			finish = start + size;
-//		}
-//
-//		friend bool operator==(const chunk& c1, const chunk& c2) {
-//			return c1.start == c2.start && c1.finish == c2.finish;
-//		}
-//	};
-//	chunk block;
-//
-//};
+////template <class T>
+////struct Block {
+////	static const int BLOCKSIZE = 8;
+////	struct memory {
+////		T* start;	// the start of the storage
+////		T* finish;	// the end of the storage
+////		T* begin;	// the first element of T
+////		T* end;		// one position past the last element of T
+////		memory() {
+////			start = new T[BLOCKSIZE];
+////			finish = start + BLOCKSIZE;
+////			begin = start + BLOCKSIZE/2;
+////			end = begin;
+////		}
+////		~memory() { delete []start; }
+////	};
+////	memory storage;
+////};
 //// \endcond
-////============================================================
+//
+//static const int prism_deque_block_size = 8;
+////================================================================================
 //// DequeIterator
-//// needs to know about:
-////		a) DequeBlock array, b) DequeBlock size, c) value type (T)
-////============================================================
+////================================================================================
 //// \cond DO_NOT_DOCUMENT
 //template <class T>
 //class DequeIterator {
 //private:
+//	T* curr;
+//	T* first;
+//	T* last;
+//	T** blockPtr;
+//public:
+//	DequeIterator();
+//	DequeIterator(T* curr, T** blockPtr);
+//	DequeIterator(const DequeIterator& copy);
 //
+//	T& 				operator*() const;
+//	T* 				operator->() const;
+//	DequeIterator& 	operator+=(const int i);
+//	DequeIterator 	operator+(const int i);
+//	DequeIterator& 	operator-=(const int i);
+//	DequeIterator 	operator-(const int i);
+//	DequeIterator& 	operator++();
+//	DequeIterator 	operator++(const int junk);
+//	DequeIterator& 	operator--();
+//	DequeIterator 	operator--(int junk);
+//	DequeIterator& 	operator=(const DequeIterator& other);
+//
+//	// related non members
+//	//--------------------
+//	friend const bool operator==(const DequeIterator<T>& it1, const DequeIterator<T>& it2) {
+//		return it1.curr == it2.curr && it1.first == it2.first &&
+//				it1.last == it2.last && it1.blockPtr == it2.blockPtr;
+//	}
+//
+//	friend const bool operator!=(const DequeIterator<T>& it1, const DequeIterator<T>& it2) {
+//		return !(it1==it2);
+//	}
+//
+//	friend const int operator-(const DequeIterator& lhs, const DequeIterator& rhs) {
+//		return prism_deque_block_size * (lhs.blockPtr-rhs.blockPtr-1) +
+//				lhs.curr-lhs.first + rhs.last-rhs.curr;
+//	}
+//
+//	friend const bool operator<(const DequeIterator& lhs, const DequeIterator& rhs) {
+//		return lhs-rhs < 0;
+//	}
+//
+//	friend const bool operator>(const DequeIterator& lhs, const DequeIterator& rhs) {
+//		return lhs-rhs > 0;
+//	}
+//
+//	friend const bool operator<=(const DequeIterator& lhs, const DequeIterator& rhs) {
+//		return lhs-rhs <= 0;
+//	}
+//
+//	friend const bool operator>=(const DequeIterator& lhs, const DequeIterator& rhs) {
+//		return lhs-rhs >= 0;
+//	}
 //
 //};
+//
+//template <class T>
+//DequeIterator<T>::DequeIterator()
+//		: curr(0), first(0), last(0), blockPtr(0)
+//{}
+//
+//template <class T>
+//DequeIterator<T>::DequeIterator(T* curr, T** blockPtr)
+//	: curr(curr),
+//	  first(*blockPtr),
+//	  last(first+prism_deque_block_size),
+//	  blockPtr(blockPtr)
+//{}
+//
+//template <class T>
+//DequeIterator<T>::DequeIterator(const DequeIterator& copy)
+//	: curr(copy.curr),
+//	  first(*copy.blockPtr),
+//	  last(first+prism_deque_block_size),
+//	  blockPtr(copy.blockPtr)
+//{}
+//
+//template <class T>
+//T& DequeIterator<T>::operator*() const {
+//	return *curr;
+//}
+//
+//template <class T>
+//T* DequeIterator<T>::operator->() const {
+//	return curr;
+//}
+//
+//template <class T>
+//DequeIterator<T>& DequeIterator<T>::operator+=(const int i)
+//{
+//	int offset = i + (curr - first);
+//	if (offset >= 0 && offset < prism_deque_block_size)
+//		curr += i;
+//	else {
+//		int mapOffset = 0;
+//		if (offset > 0) mapOffset = offset / prism_deque_block_size;
+//		else mapOffset = -((-offset-1) / prism_deque_block_size) - 1;
+//
+//		blockPtr = blockPtr+mapOffset;
+//		curr = first + (offset-mapOffset * prism_deque_block_size);
+//	}
+//
+//	return *this;
+//}
+//
+//template <class T>
+//DequeIterator<T> DequeIterator<T>::operator+(const int i) {
+//	DequeIterator tmp(*this);
+//	return tmp += i;
+//}
+//
+//template <class T>
+//DequeIterator<T>& DequeIterator<T>::operator-=(const int i) {
+//	return *this += -i;
+//}
+//
+//template <class T>
+//DequeIterator<T> DequeIterator<T>::operator-(const int i) {
+//	DequeIterator tmp(*this);
+//	return tmp -= i;
+//}
+//
+//template <class T>
+//DequeIterator<T>& DequeIterator<T>::operator++()
+//{
+//	curr++;
+//	if (curr == last) {
+//		blockPtr = blockPtr+1;
+//		curr = first;
+//	}
+//
+//	return *this;
+//}
+//
+//template <class T>
+//DequeIterator<T> DequeIterator<T>::operator++(const int junk)
+//{
+//	T* tmp = curr;
+//	curr++;
+//	if (curr == last) {
+//		blockPtr = blockPtr+1;
+//		curr = first;
+//	}
+//
+//	return DequeIterator(tmp, blockPtr);
+//}
+//
+//template <class T>
+//DequeIterator<T>& DequeIterator<T>::operator--() {
+//	curr--;
+//	if (curr < first) {
+//		blockPtr = blockPtr-1;
+//		curr = last-1;
+//	}
+//	return *this;
+//}
+//
+//template <class T>
+//DequeIterator<T> DequeIterator<T>::operator--(int junk) {
+//	T* tmp = curr;
+//	curr--;
+//	if (curr < first) {
+//		blockPtr = blockPtr-1;
+//		curr = last-1;
+//	}
+//	return DequeIterator(tmp, blockPtr);
+//}
+//
+//template <class T>
+//DequeIterator<T>& DequeIterator<T>::operator=(const DequeIterator& other)
+//{
+//	if (*this != other) {
+//		*this = DequeIterator(curr, blockPtr);
+//	}
+//	return *this;
+//
+//}
+//
+//template <class T>
+//const bool operator==(const DequeIterator<T>& lhs, const DequeIterator<T>& rhs) {
+//	return lhs.p == rhs.p && lhs.blocks == rhs.blocks && lhs.block == rhs.block;
+//}
+//
+//template <class T>
+//const bool operator!=(const DequeIterator<T>& lhs, const DequeIterator<T>& rhs) {
+//	return !(lhs==rhs);
+//}
 //// \endcond
-////============================================================
+////================================================================================
 //// DequeData
-////============================================================
+////================================================================================
 //// \cond DO_NOT_DOCUMENT
 //template <class T>
 //struct DequeData : public SharedData {
-//	typedef DequeBlock<T> Block;
-//	typedef DequeIterator<T> iterator;
+//	struct memory {
+//		T** start;
+//		int size;
 //
-//	struct memory
-//	{
-//		typedef Block** Storage;
-//		Storage start; // pointer to array of Blocks
-//		Storage finish;
-//		iterator begin;
-//		iterator end;
+//		memory() : start(new T*[1])
+//		{}
 //
-//		memory() : start(0), finish(0)
-//		{
-//			// does nothing
+//		~memory() {
+////			T** block = start;
+////			while (block < size)
+////				delete *block++;
+////			delete [] start;
 //		}
-//
-//		memory(const memory& copy) : start(0), finish(0)
-//		{
-////			allocateAndTransfer(copy.finish-copy.start, copy.start, copy.finish);
-//		}
-//
-//		~memory()
-//		{
-//			delete []start; start=0; finish=0;
-//		}
-//
-//		void allocateAndTransfer(const int capacity, DequeBlock<T>* pStart, DequeBlock<T>* pEnd) {
-//			DequeBlock<T>* newStorage = new DequeBlock<T>[capacity];
-//			prism::copy(pStart, pEnd, newStorage);
-//			delete []start;
-////			start = newStorage;
-//			finish = start + capacity;
-//		}
-//
-//		/*
-//		 allocate_node()
-//		 deallocate_node(ptr)
-//		 allocate_map(size)
-//		 deallocate_map(ptr, size)
-//		 initialize_map(size)
-//		 create_nodes(start, finish)
-//		 destroy_nodes(start, finish)
-//		 default_initialize()
-//		 fill_insert(iterator, size, value)
-//		 fill_initialize(value)
-//		 range_initialize(iter start, iter end)
-//		 reallocate_map(numNodes)
-//		 range_check(i)
-//		 reserve_map_at_back(nNodes)
-//		 reserve_map_at_front(nNodes)
-//
-//
-//		 */
 //	};
 //	memory storage;
+//	DequeIterator<T> begin;
+//	DequeIterator<T> end;
+//
+//	const int size() const {
+//		return end - begin;
+//	}
 //};
 //// \endcond
-////============================================================
+////================================================================================
 //// Deque
-////============================================================
+////================================================================================
 //template <class T>
 //class Deque {
-//public:
-//	typedef DequeIterator<T> 					iterator;
-////	typedef DequeConstIterator<T>				const_iterator;
-////	typedef typename iterator::reference		reference;
-////	typedef typename const_iterator::reference	const_reference;
-////	typedef typename iterator::pointer			pointer;
-////	typedef typename const_iterator::pointer	const_pointer;
-////	typedef typename iterator::value_type		value_type;
-////	typedef typename iterator::difference_type	difference_type;
-////	typedef int									size_type;
 //private:
 //	SharedDataPointer<DequeData<T>> d;
 //public:
 //	Deque();
 //	Deque(const Deque<T>& copy);
-//	~Deque();
 //
-//	iterator begin();
-//
+//	const int size() const;
 //};
 //
 ///**
@@ -390,7 +439,26 @@ Deque<T>::~Deque() {
 //template <class T>
 //Deque<T>::Deque()
 //	: d(new DequeData<T>)
-//{}
+//{
+//	d->storage.start = new T*[1];
+//	d->storage.size = 1;
+//
+//	d->storage.start[0] = new T[prism_deque_block_size];
+////	block->storage.start[0] = 0;
+////	block->storage.start[1] = 1;
+////	block->storage.start[2] = 2;
+////	block->storage.start[3] = 3;
+//	d->storage.start[0][4] = 4;
+//	d->storage.start[0][5] = 5;
+//	d->storage.start[0][6] = 6;
+//	d->storage.start[0][7] = 7;
+//
+////
+////	d->begin = DequeIterator<T>(block+4, d->storage.start);
+////	d->end = d->begin + 1;
+//	d->begin = DequeIterator<T>(*(d->storage.start+4), d->storage.start);
+//	d->end = DequeIterator<T>(*(d->storage.start+8), d->storage.start);
+//}
 //
 ///**
 // *
@@ -398,47 +466,24 @@ Deque<T>::~Deque() {
 //template <class T>
 //Deque<T>::Deque(const Deque<T>& copy)
 //	: d(copy.d)
-//{}
+// {}
 //
 ///**
 // *
 // */
 //template <class T>
-//Deque<T>::~Deque() {
-//
+//const int Deque<T>::size() const {
+//	return d->size();
 //}
 //
-///**
-// * @return Returns an iterator pointing to the first element.
-// */
-//template <class T>
-//typename Deque<T>::iterator Deque<T>::begin() {
-//	return iterator();
-//}
-//
-//}
+//} // namespace prism
 //
 //
 //
-//#endif /* DEQUE_H_ */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//#endif /* PRSIM_DEQUE_H_ */

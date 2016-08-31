@@ -39,16 +39,22 @@
 {\ttfamily \#include $<$prism/\+Bitvector$>$}\\*
 {\ttfamily \#include $<$prism/\+Time$>$}\\*
 {\ttfamily \#include $<$prism/\+Pair$>$}\\*
-\subsection*{Functions}
+{\ttfamily \#include $<$prism/\+Deque$>$}\\*
+\subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-bool \hyperlink{main_8cpp_a4ba1068f7ec8a7e69b71a8e806f65a33}{is\+Odd} (int n)
+struct \hyperlink{struct_is_odd}{Is\+Odd}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
 \item 
 bool \hyperlink{main_8cpp_afdeb4bcdb506aed270b96fe63038419d}{is\+Even} (int n)
 \item 
 bool \hyperlink{main_8cpp_a446d75696e46ba72f62b2e4b7263ff64}{is\+Negative} (int n)
 \item 
 void \hyperlink{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}{print} (int n)
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\std\+::ostream \& \hyperlink{main_8cpp_af7f4df177025da81821de0efeba9aaa4}{print\+Range} (std\+::ostream \&out, Forward\+Iterator start, Forward\+Iterator end)
 \item 
 int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
@@ -69,13 +75,6 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 \item[{int}]{n}
 \end{DoxyParamCaption}
 )}\hypertarget{main_8cpp_a446d75696e46ba72f62b2e4b7263ff64}{}\label{main_8cpp_a446d75696e46ba72f62b2e4b7263ff64}
-\index{main.\+cpp@{main.\+cpp}!is\+Odd@{is\+Odd}}
-\index{is\+Odd@{is\+Odd}!main.\+cpp@{main.\+cpp}}
-\subsubsection[{\texorpdfstring{is\+Odd(int n)}{isOdd(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Odd (
-\begin{DoxyParamCaption}
-\item[{int}]{n}
-\end{DoxyParamCaption}
-)}\hypertarget{main_8cpp_a4ba1068f7ec8a7e69b71a8e806f65a33}{}\label{main_8cpp_a4ba1068f7ec8a7e69b71a8e806f65a33}
 \index{main.\+cpp@{main.\+cpp}!main@{main}}
 \index{main@{main}!main.\+cpp@{main.\+cpp}}
 \subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
@@ -91,3 +90,12 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 \item[{int}]{n}
 \end{DoxyParamCaption}
 )}\hypertarget{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}{}\label{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}
+\index{main.\+cpp@{main.\+cpp}!print\+Range@{print\+Range}}
+\index{print\+Range@{print\+Range}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{print\+Range(std\+::ostream \&out, Forward\+Iterator start, Forward\+Iterator end)}{printRange(std::ostream &out, ForwardIterator start, ForwardIterator end)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ std\+::ostream\& print\+Range (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{Forward\+Iterator}]{start, }
+\item[{Forward\+Iterator}]{end}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_af7f4df177025da81821de0efeba9aaa4}{}\label{main_8cpp_af7f4df177025da81821de0efeba9aaa4}

@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.cpp File Reference</div>  </div>
@@ -149,17 +150,24 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;prism/Bitvector&gt;</code><br />
 <code>#include &lt;prism/Time&gt;</code><br />
 <code>#include &lt;prism/Pair&gt;</code><br />
+<code>#include &lt;prism/Deque&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_is_odd.html">IsOdd</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4ba1068f7ec8a7e69b71a8e806f65a33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4ba1068f7ec8a7e69b71a8e806f65a33">isOdd</a> (int n)</td></tr>
-<tr class="separator:a4ba1068f7ec8a7e69b71a8e806f65a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdeb4bcdb506aed270b96fe63038419d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afdeb4bcdb506aed270b96fe63038419d">isEven</a> (int n)</td></tr>
 <tr class="separator:afdeb4bcdb506aed270b96fe63038419d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a446d75696e46ba72f62b2e4b7263ff64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a446d75696e46ba72f62b2e4b7263ff64">isNegative</a> (int n)</td></tr>
 <tr class="separator:a446d75696e46ba72f62b2e4b7263ff64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99ed1c00a6bcb150111479e48d730f18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a99ed1c00a6bcb150111479e48d730f18">print</a> (int n)</td></tr>
 <tr class="separator:a99ed1c00a6bcb150111479e48d730f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7f4df177025da81821de0efeba9aaa4"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator &gt; </td></tr>
+<tr class="memitem:af7f4df177025da81821de0efeba9aaa4"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af7f4df177025da81821de0efeba9aaa4">printRange</a> (std::ostream &amp;out, ForwardIterator start, ForwardIterator end)</td></tr>
+<tr class="separator:af7f4df177025da81821de0efeba9aaa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -186,22 +194,6 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool isNegative </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4ba1068f7ec8a7e69b71a8e806f65a33"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool isOdd </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -248,6 +240,40 @@ Functions</h2></td></tr>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af7f4df177025da81821de0efeba9aaa4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ForwardIterator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; printRange </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ForwardIterator&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ForwardIterator&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

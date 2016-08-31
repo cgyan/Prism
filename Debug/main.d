@@ -52,7 +52,8 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Time.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pair \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Pair.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/DequeIterator.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -160,4 +161,6 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Pair.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/DequeIterator.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/Deque:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:

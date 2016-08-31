@@ -206,7 +206,6 @@ void Vector<T>::append(const T& value) {
 	insert(end(), 1, value);
 }
 
-// todo add bounds checking to index
 /**
  * Returns a reference to the element at \em index.
  * \em index must be 0<=index<size().
@@ -219,7 +218,6 @@ T& Vector<T>::at(const int index) {
 	return this->operator[](index);
 }
 
-// todo add bounds checking to index
 /**
  * Returns a const reference to the element at \em index.
  * \em index must be 0<=index<size().
