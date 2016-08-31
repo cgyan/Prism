@@ -1,5 +1,5 @@
 /*
- * DequeIterator.h
+ * Deque.h
  * v1
  *
  *  Created on: Aug 23, 2016
@@ -33,25 +33,25 @@ private:
 	T** buckets;
 	T* current;
 	T* start;
-	T* finish;
+	T* end;
 public:
 	DequeIterator()
-		: buckets(0),
-		  current(0),
-		  start(0),
-		  finish(0) {}
+		: buckets(nullptr),
+		  current(nullptr),
+		  start(nullptr),
+		  end(nullptr) {}
 
 	DequeIterator(T** buckets, T* current)
 		: buckets(buckets),
 		  current(current),
 		  start(*buckets),
-		  finish(start+prism_deque_bucket_size) {}
+		  end(start+prism_deque_bucket_size) {}
 
 	DequeIterator(const iterator& copy)
 		: buckets(copy.buckets),
 		  current(copy.current),
 		  start(copy.start),
-		  finish(copy.finish) {}
+		  end(copy.end) {}
 
 	T& operator*() {
 		return *current;
@@ -73,7 +73,7 @@ public:
 
 			buckets += bucketOffset;
 			start = *buckets;
-			finish = start+ prism_deque_bucket_size;
+			end = start+ prism_deque_bucket_size;
 			current = start + (elementIndex - bucketOffset * prism_deque_bucket_size);
 		}
 		return *this;
@@ -116,7 +116,7 @@ public:
 			buckets = rhs.buckets;
 			current = rhs.current;
 			start = rhs.start;
-			finish = rhs.finish;
+			end = rhs.end;
 		}
 		return *this;
 	}
@@ -127,7 +127,7 @@ public:
 		return it1.buckets == it2.buckets &&
 				it1.current == it2.current &&
 				it1.start == it2.start &&
-				it1.finish == it2.finish;
+				it1.end == it2.end;
 	}
 
 	friend const bool operator!=(const iterator& it1, const iterator& it2) {
@@ -138,7 +138,7 @@ public:
 		return prism_deque_bucket_size *
 				(lhs.buckets-rhs.buckets-1) +
 				lhs.current-lhs.start +
-				rhs.finish-rhs.current;
+				rhs.end-rhs.current;
 	}
 
 	friend const bool operator<(const iterator& lhs, const iterator& rhs) {
@@ -158,13 +158,179 @@ public:
 	}
 };
 // \endcond
+//struct map {
+//	int** data;
+//	int mapSize;
+//	int bucketSize;
+//
+//	map() : data(nullptr), mapSize(2), bucketSize(8) {
+//		data = new int*[mapSize];
+//
+//		int* block = new int[bucketSize];
+//		block[4] = 4; block[5] = 5; block[6] = 6; block[7] = 7;
+//		data[0] = block;
+//
+//		block = new int[8];
+//		block[0] = 10; block[1] = 11; block[2] = 12; block[3] = 13;
+//		block[4] = 14; block[5] = 15; block[6] = 16; block[7] = 17;
+//		data[1] = block;
+//	}
+//
+//};
+//================================================================================
+// DequeData
+//================================================================================
+// \cond DO_NOT_DOCUMENT
+template <class T>
+struct DequeData : public SharedData {
+	typedef DequeIterator<T> iterator;
+//	map map;
+	struct memory {
+		T** start;
+		T** finish;
+
+		memory() : start(0), finish(0)
+		{}
+
+		~memory() {
+			deallocateStorage();
+		};
+
+		T* allocateBucket() {
+			return new T[prism_deque_bucket_size];
+		}
+
+		T** allocateStorage(const int size) {
+			return new T*[size];
+		}
+
+		void deallocateBucket(T* bucket) {
+			delete bucket;
+		}
+
+		void deallocateStorage() {
+			if (start != nullptr) {
+				for (int i=0; i<finish-start; i++)
+					deallocateBucket(start[i]);
+				delete []start;
+			}
+		}
+	};
+
+	memory 		storage;
+	iterator 	begin;
+	iterator 	end;
+
+	DequeData()	{
+		defaultInitialize();
+	}
+
+//	DequeData()	{
+//		storage.start = map.data;
+//		storage.finish = storage.start + 2;
+//		begin = iterator(storage.start, *storage.start+4);
+//		end = iterator(storage.start+1, *(storage.start+1)+prism_deque_bucket_size);
+//	}
+
+	~DequeData() {
+
+	}
+
+	const int capacity() const {
+		return (storage.finish-storage.start) * prism_deque_bucket_size;
+	}
+
+	// an empty deque will always have one initialized bucket
+	void defaultInitialize() {
+		storage.start = storage.allocateStorage(1);
+		storage.finish = storage.start + 1;
+		storage.start[0] = storage.allocateBucket();
+		begin = iterator(storage.start, (*storage.start)+prism_deque_bucket_size/2);
+		end = begin;
+	}
+
+	const int size() const {
+		return end-begin;
+	}
+};
+// \endcond
 //================================================================================
 // Deque
 //================================================================================
 template <class T>
 class Deque {
+	typedef DequeIterator<T> iterator;
+private:
+	SharedDataPointer<DequeData<T>> d;
+public:
+	Deque();
+	Deque(const Deque<T>& copy);
+	~Deque();
 
+	iterator 	begin() const;
+	const int 	capacity() const;
+	iterator 	end() const;
+	const int 	size() const;
 };
+
+/**
+ *
+ */
+template <class T>
+Deque<T>::Deque()
+	: d(new DequeData<T>)
+{
+
+
+}
+
+/**
+ *
+ */
+template <class T>
+Deque<T>::Deque(const Deque<T>& copy)
+	: d(copy.d)
+{}
+
+/**
+ *
+ */
+template <class T>
+Deque<T>::~Deque() {
+
+}
+
+/**
+ *
+ */
+template <class T>
+DequeIterator<T> Deque<T>::begin() const {
+	return d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+const int Deque<T>::capacity() const {
+	return d->capacity();
+}
+
+/**
+ *
+ */
+template <class T>
+DequeIterator<T> Deque<T>::end() const {
+	return d->end;
+}
+
+/**
+ *
+ */
+template <class T>
+const int Deque<T>::size() const {
+	return d->size();
+}
 
 } // namespace prism
 
