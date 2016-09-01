@@ -22,7 +22,7 @@ class DequeTest : public ::testing::Test {
 TEST_F(DequeTest, default_ctor)
 {
 	Deque<int> d;
-	cout << d.size() << endl;
+	cout << d << endl;
 //	DequeIterator<int> begin(buckets, *buckets+4);
 //	DequeIterator<int> end(buckets+1, *(buckets+1)+bucketSize);
 //	DequeIterator<int> it = end;

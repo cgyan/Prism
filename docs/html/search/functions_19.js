@@ -4,7 +4,7 @@ var searchData=
   ['_7ebitvector',['~Bitvector',['../classprism_1_1_bitvector.html#ac68d7732ae33ccded5b5ef5971280c6d',1,'prism::Bitvector']]],
   ['_7echar',['~Char',['../classprism_1_1_char.html#a380f6e37b5bf3ccd5a370ba5fd1b49df',1,'prism::Char']]],
   ['_7ecircle',['~Circle',['../classprism_1_1_circle.html#aff162a19ac60d0cefc5e5cc2ea397de7',1,'prism::Circle']]],
-  ['_7edeque',['~Deque',['../classprism_1_1_deque.html#a2a06b6247712d843c6f23df8ba807ca7',1,'prism::Deque']]],
+  ['_7edeque',['~Deque',['../classprism_1_1_deque.html#a2a06b6247712d843c6f23df8ba807ca7',1,'prism::Deque::~Deque()'],['../classprism_1_1_deque.html#a2a06b6247712d843c6f23df8ba807ca7',1,'prism::Deque::~Deque()']]],
   ['_7efraction',['~Fraction',['../classprism_1_1_fraction.html#a1a7170988796417122c670c2139dc933',1,'prism::Fraction']]],
   ['_7elist',['~List',['../classprism_1_1_list.html#aaa8567cc4eb408e62117f1a9782629ba',1,'prism::List']]],
   ['_7ematrix4',['~Matrix4',['../classprism_1_1_matrix4.html#aa2117a89fa9caa8dc2b412edca5e0dd5',1,'prism::Matrix4']]],

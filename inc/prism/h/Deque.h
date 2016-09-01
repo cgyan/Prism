@@ -29,8 +29,8 @@ class DequeIterator {
 	typedef random_access_iterator_tag 		iterator_category;
 	typedef T& 								reference;
 	typedef T* 								pointer;
-private:
-	T** buckets;
+public:
+	T** buckets; // (*buckets) is a pointer to one of the buckets i.e. T*
 	T* current;
 	T* start;
 	T* end;
@@ -204,6 +204,13 @@ struct DequeData : public SharedData {
 			return new T*[size];
 		}
 
+		void createBuckets(T** start, T** finish) {
+			while (start != finish) {
+				*start = allocateBucket();
+				++start;
+			}
+		}
+
 		void deallocateBucket(T* bucket) {
 			delete bucket;
 		}
@@ -222,7 +229,7 @@ struct DequeData : public SharedData {
 	iterator 	end;
 
 	DequeData()	{
-		defaultInitialize();
+		initializeMap(0);
 	}
 
 //	DequeData()	{
@@ -240,13 +247,20 @@ struct DequeData : public SharedData {
 		return (storage.finish-storage.start) * prism_deque_bucket_size;
 	}
 
-	// an empty deque will always have one initialized bucket
-	void defaultInitialize() {
-		storage.start = storage.allocateStorage(1);
-		storage.finish = storage.start + 1;
-		storage.start[0] = storage.allocateBucket();
-		begin = iterator(storage.start, (*storage.start)+prism_deque_bucket_size/2);
-		end = begin;
+
+	void initializeMap(const int numElements) {
+		int numBuckets = numElements / prism_deque_bucket_size + 1;
+
+		storage.start = storage.allocateStorage(numBuckets+2);
+		storage.finish = storage.start + numBuckets;
+
+		T** startBucket = storage.start + (storage.finish - storage.start - numBuckets) / 2;
+		T** endBucket = startBucket + numBuckets;
+		storage.createBuckets(startBucket, endBucket);
+
+		/*
+		 * set begin and end iterators here
+		 */
 	}
 
 	const int size() const {
@@ -270,7 +284,15 @@ public:
 	iterator 	begin() const;
 	const int 	capacity() const;
 	iterator 	end() const;
+	iterator	insert(iterator& pos, const int count, const T& value);
 	const int 	size() const;
+
+	friend std::ostream& operator<<(std::ostream& out, const Deque<T>& d) {
+		out << "Deque [" << &d << "]"
+				" size=" << d.size() <<
+				" numBuckets=" << d.d->storage.finish-d.d->storage.start;
+		return out;
+	}
 };
 
 /**
@@ -322,6 +344,14 @@ const int Deque<T>::capacity() const {
 template <class T>
 DequeIterator<T> Deque<T>::end() const {
 	return d->end;
+}
+
+/**
+ *
+ */
+template <class T>
+DequeIterator<T> Deque<T>::insert(iterator& pos, const int count, const T& value) {
+
 }
 
 /**

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['capacity',['capacity',['../classprism_1_1_stack.html#a0933dadf5810c98d2e7c0c6ea1b65a56',1,'prism::Stack::capacity()'],['../classprism_1_1_string.html#a79a0e1b2a185376d36935ff637ba5678',1,'prism::String::capacity()'],['../classprism_1_1_vector.html#aa6bfbb4672a51177c6fafbd503e90a92',1,'prism::Vector::capacity()']]],
+  ['capacity',['capacity',['../classprism_1_1_deque.html#ad787f6064309077863076b7a3c97d1c4',1,'prism::Deque::capacity()'],['../classprism_1_1_stack.html#a0933dadf5810c98d2e7c0c6ea1b65a56',1,'prism::Stack::capacity()'],['../classprism_1_1_string.html#a79a0e1b2a185376d36935ff637ba5678',1,'prism::String::capacity()'],['../classprism_1_1_vector.html#aa6bfbb4672a51177c6fafbd503e90a92',1,'prism::Vector::capacity()']]],
   ['cbegin',['cbegin',['../classprism_1_1_list.html#a55b460a5a5e00aeee87df83e8559349c',1,'prism::List::cbegin()'],['../classprism_1_1_vector.html#a3cb4a9878dfd0b58b8e0a5c01f5d37f5',1,'prism::Vector::cbegin()']]],
   ['cend',['cend',['../classprism_1_1_list.html#a1b526719a7f63a47482ff0b293d36ad1',1,'prism::List::cend()'],['../classprism_1_1_vector.html#a3ac39de85562660281a0fd7601ef203b',1,'prism::Vector::cend()']]],
   ['centralangle',['centralAngle',['../classprism_1_1_circle.html#aee1d224313e23f96ae2fcff7abeaf336',1,'prism::Circle']]],
