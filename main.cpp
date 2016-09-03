@@ -72,60 +72,13 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
-//	Block<int>** map_ = new Block<int>*[3];
-//
-//	Block<int>* block = new Block<int>();
-////	block->storage.start[0] = 0;
-////	block->storage.start[1] = 1;
-////	block->storage.start[2] = 2;
-////	block->storage.start[3] = 3;
-//	block->storage.start[4] = 4;
-//	block->storage.start[5] = 5;
-//	block->storage.start[6] = 6;
-//	block->storage.start[7] = 7;
-//	block->storage.begin = block->storage.start+4;
-//
-//	map_[0] = block;
-//
-//	block = new Block<int>();
-//	block->storage.start[0] = 10;
-//	block->storage.start[1] = 11;
-//	block->storage.start[2] = 12;
-//	block->storage.start[3] = 13;
-//	block->storage.start[4] = 14;
-//	block->storage.start[5] = 15;
-//	block->storage.start[6] = 16;
-//	block->storage.start[7] = 17;
-////	block->storage.end = block->storage.start+2;
-//
-//	map_[1] = block;
-//
-//	block = new Block<int>();
-//	block->storage.start[0] = 20;
-//	block->storage.start[1] = 21;
-//	block->storage.start[2] = 22;
-//	block->storage.start[3] = 23;
-//	block->storage.start[4] = 24;
-////	block->storage.start[5] = 25;
-////	block->storage.start[6] = 26;
-////	block->storage.start[7] = 27;
-//	block->storage.end = block->storage.start+5;
-//
-//	map_[2] = block;
-//
-//	DequeIterator<int> start(map_[0]->storage.begin, map_);
-//	DequeIterator<int> end(map_[2]->storage.end, map_+2);
-//	DequeIterator<int> end = start;
-//	DequeIterator<int> startCopy = start;
-
-//	for (; start != end; start++) {
-//		cout << *start << endl;
-//	}
+	Deque<int> d;
+	cout << d << endl;
 
 
 
 
-	return RUN_ALL_TESTS();
+//	return RUN_ALL_TESTS();
 //	return 0;
 }
 

@@ -73,14 +73,15 @@ public:
 
 			buckets += bucketOffset;
 			start = *buckets;
-			end = start+ prism_deque_bucket_size;
+			end = start + prism_deque_bucket_size;
 			current = start + (elementIndex - bucketOffset * prism_deque_bucket_size);
 		}
 		return *this;
 	}
 
 	iterator operator+(const int n) {
-		return *this += n;
+		iterator tmp = *this;
+		return tmp += n;
 	}
 
 	iterator& operator-=(const int n) {
@@ -88,7 +89,8 @@ public:
 	}
 
 	iterator operator-(const int n) {
-		return *this -= n;
+		iterator tmp = *this;
+		return tmp -= n;
 	}
 
 	iterator& operator++() {
@@ -155,6 +157,11 @@ public:
 
 	friend const bool operator>=(const iterator& lhs, const iterator& rhs) {
 		return lhs-rhs >= 0;
+	}
+
+	friend std::ostream& operator<<(std::ostream& out, const DequeIterator<T>& it) {
+		out << "iterator: current:" << it.current-it.start;
+		return out;
 	}
 };
 // \endcond
@@ -228,46 +235,72 @@ struct DequeData : public SharedData {
 	iterator 	begin;
 	iterator 	end;
 
-	DequeData()	{
-		initializeMap(0);
-	}
+	DequeData();
+	~DequeData();
 
-//	DequeData()	{
-//		storage.start = map.data;
-//		storage.finish = storage.start + 2;
-//		begin = iterator(storage.start, *storage.start+4);
-//		end = iterator(storage.start+1, *(storage.start+1)+prism_deque_bucket_size);
-//	}
-
-	~DequeData() {
-
-	}
-
-	const int capacity() const {
-		return (storage.finish-storage.start) * prism_deque_bucket_size;
-	}
-
-
-	void initializeMap(const int numElements) {
-		int numBuckets = numElements / prism_deque_bucket_size + 1;
-
-		storage.start = storage.allocateStorage(numBuckets+2);
-		storage.finish = storage.start + numBuckets;
-
-		T** startBucket = storage.start + (storage.finish - storage.start - numBuckets) / 2;
-		T** endBucket = startBucket + numBuckets;
-		storage.createBuckets(startBucket, endBucket);
-
-		/*
-		 * set begin and end iterators here
-		 */
-	}
-
-	const int size() const {
-		return end-begin;
-	}
+	const int 	capacity() const;
+	void 		initializeStorage(const int numElements);
+	const int 	size() const;
 };
 // \endcond
+/**
+ *
+ */
+template <class T>
+DequeData<T>::DequeData() {
+	initializeStorage(0);
+}
+
+/**
+ *
+ */
+template <class T>
+DequeData<T>::~DequeData() {
+
+}
+
+/**
+ *
+ */
+template <class T>
+const int DequeData<T>::capacity() const {
+	return (storage.finish-storage.start) * prism_deque_bucket_size;
+}
+
+/**
+ * Allocates storage, creates buckets and sets the iterators accordingly.
+ * If numElements is 0 then one bucket is created in preparation for future elements.
+ * If numElements is greater than 0 then enough buckets to hold the elements are created.
+ * The new elements start from a position such that there are equal free spaces at the
+ * start and end of the storage.
+ */
+template <class T>
+void DequeData<T>::initializeStorage(const int numElements) {
+	int numBuckets = numElements / prism_deque_bucket_size + 1;
+
+	storage.start = storage.allocateStorage(numBuckets);
+	storage.finish = storage.start + numBuckets;
+
+	T** startBucket = storage.start;
+	T** endBucket = startBucket + numBuckets;
+	storage.createBuckets(startBucket, endBucket);
+
+	begin.buckets = startBucket;
+	begin.start = *startBucket;
+	begin.current = begin.start
+			+ (numBuckets * prism_deque_bucket_size) / 2
+			- numElements / 2;
+	begin.end = begin.start + prism_deque_bucket_size;
+	end = begin + numElements;
+}
+
+/**
+ *
+ */
+template <class T>
+const int DequeData<T>::size() const {
+	return end-begin;
+}
 //================================================================================
 // Deque
 //================================================================================
@@ -290,7 +323,10 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Deque<T>& d) {
 		out << "Deque [" << &d << "]"
 				" size=" << d.size() <<
-				" numBuckets=" << d.d->storage.finish-d.d->storage.start;
+				" capacity=" << d.capacity() <<
+				" numBuckets=" << d.d->storage.finish-d.d->storage.start << endl;
+		out << "----begin: " << d.d->begin << endl;
+		out << "----end: " << d.d->end;
 		return out;
 	}
 };
