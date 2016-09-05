@@ -23,6 +23,7 @@
 #include <ctime>
 #include <initializer_list>
 #include <utility>
+#include <type_traits>
 #include <prism/Array>
 #include <prism/Stack>
 #include <prism/List>
@@ -45,6 +46,7 @@
 #include <prism/Time>
 #include <prism/Pair>
 #include <prism/Deque>
+#include <prism/types>
 
 
 using namespace prism;
@@ -73,25 +75,15 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 	Deque<int> d;
-	cout << d << endl;
+	Deque<int>::iterator it = d.begin();
+	*it = 45;
 
-
+	cout << *it << endl;
 
 
 //	return RUN_ALL_TESTS();
 //	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

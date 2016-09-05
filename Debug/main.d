@@ -53,7 +53,9 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pair \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/types \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/types.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -164,3 +166,7 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Deque:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/types:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/types.h:

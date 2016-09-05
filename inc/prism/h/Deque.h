@@ -11,6 +11,7 @@
 
 #include <prism/SharedData>
 #include <prism/SharedDataPointer>
+#include <prism/types> // for prism::conditional
 #include <ostream>
 #include <cstddef> // for std::ptrdiff_t
 using namespace std;
@@ -21,14 +22,16 @@ static const int prism_deque_bucket_size = 8;
 // DequeIterator
 //================================================================================
 // \cond DO_NOT_DOCUMENT
-template <class T>
+template <class T, bool isConst=true>
 class DequeIterator {
-	typedef DequeIterator<T> 				iterator;
-	typedef T								value_type;
-	typedef std::ptrdiff_t 					difference_type;
-	typedef random_access_iterator_tag 		iterator_category;
-	typedef T& 								reference;
-	typedef T* 								pointer;
+	typedef DequeIterator<T, false>		iterator;
+	typedef DequeIterator<T, true>		const_iterator;
+	typedef T							value_type;
+	typedef std::ptrdiff_t 				difference_type;
+	typedef random_access_iterator_tag 	iterator_category;
+	typedef typename prism::conditional<isConst, const T*, T*>::type pointer;
+	typedef typename prism::conditional<isConst, const T&, T&>::type reference;
+	typedef typename prism::conditional<isConst, const_iterator, iterator>::type Self;
 public:
 	T** buckets; // (*buckets) is a pointer to one of the buckets i.e. T*
 	T* current;
@@ -47,21 +50,21 @@ public:
 		  start(*buckets),
 		  end(start+prism_deque_bucket_size) {}
 
-	DequeIterator(const iterator& copy)
+	DequeIterator(const iterator& copy) // only accepts non-const iterator
 		: buckets(copy.buckets),
 		  current(copy.current),
 		  start(copy.start),
 		  end(copy.end) {}
 
-	T& operator*() {
+	reference operator*() {
 		return *current;
 	}
 
-	T* operator->() {
+	pointer operator->() {
 		return current;
 	}
 
-	iterator& operator+=(const int n)
+	Self& operator+=(const int n)
 	{
 		int elementIndex = n + (current-start);
 		if (elementIndex >= 0 && elementIndex < prism_deque_bucket_size)
@@ -79,41 +82,41 @@ public:
 		return *this;
 	}
 
-	iterator operator+(const int n) {
+	Self operator+(const int n) {
 		iterator tmp = *this;
 		return tmp += n;
 	}
 
-	iterator& operator-=(const int n) {
+	Self& operator-=(const int n) {
 		return *this += -n;
 	}
 
-	iterator operator-(const int n) {
+	Self operator-(const int n) {
 		iterator tmp = *this;
 		return tmp -= n;
 	}
 
-	iterator& operator++() {
+	Self& operator++() {
 		return *this += 1;
 	}
 
-	iterator operator++(int junk) {
+	Self operator++(int junk) {
 		iterator tmp(*this);
 		*this = *this += 1;
 		return tmp;
 	}
 
-	iterator& operator--() {
+	Self& operator--() {
 		return *this -= 1;
 	}
 
-	iterator operator--(int junk) {
+	Self operator--(int junk) {
 		iterator tmp(*this);
 		*this = *this -= 1;
 		return tmp;
 	}
 
-	iterator& operator=(const iterator& rhs) {
+	Self& operator=(const iterator& rhs) {
 		if (*this != rhs) {
 			buckets = rhs.buckets;
 			current = rhs.current;
@@ -159,7 +162,7 @@ public:
 		return lhs-rhs >= 0;
 	}
 
-	friend std::ostream& operator<<(std::ostream& out, const DequeIterator<T>& it) {
+	friend std::ostream& operator<<(std::ostream& out, const iterator& it) {
 		out << "iterator: current:" << it.current-it.start;
 		return out;
 	}
@@ -190,8 +193,9 @@ public:
 // \cond DO_NOT_DOCUMENT
 template <class T>
 struct DequeData : public SharedData {
-	typedef DequeIterator<T> iterator;
-//	map map;
+	typedef DequeIterator<T,false>	iterator;
+	typedef DequeIterator<T,true>	const_iterator;
+
 	struct memory {
 		T** start;
 		T** finish;
@@ -248,7 +252,7 @@ struct DequeData : public SharedData {
  */
 template <class T>
 DequeData<T>::DequeData() {
-	initializeStorage(0);
+	initializeStorage(20);
 }
 
 /**
@@ -268,7 +272,7 @@ const int DequeData<T>::capacity() const {
 }
 
 /**
- * Allocates storage, creates buckets and sets the iterators accordingly.
+ * Allocates storage, creates buckets and sets the begin and end iterators accordingly.
  * If numElements is 0 then one bucket is created in preparation for future elements.
  * If numElements is greater than 0 then enough buckets to hold the elements are created.
  * The new elements start from a position such that there are equal free spaces at the
@@ -306,7 +310,9 @@ const int DequeData<T>::size() const {
 //================================================================================
 template <class T>
 class Deque {
-	typedef DequeIterator<T> iterator;
+public:
+	typedef typename DequeData<T>::iterator 			iterator;
+	typedef typename DequeData<T>::const_iterator 		const_iterator;
 private:
 	SharedDataPointer<DequeData<T>> d;
 public:
@@ -314,11 +320,13 @@ public:
 	Deque(const Deque<T>& copy);
 	~Deque();
 
-	iterator 	begin() const;
-	const int 	capacity() const;
-	iterator 	end() const;
-	iterator	insert(iterator& pos, const int count, const T& value);
-	const int 	size() const;
+	iterator 		begin();
+	const_iterator 	begin() const;
+	const int 		capacity() const;
+	const_iterator	constBegin() const;
+	iterator 		end();
+	iterator		insert(iterator& pos, const int count, const T& value);
+	const int 		size() const;
 
 	friend std::ostream& operator<<(std::ostream& out, const Deque<T>& d) {
 		out << "Deque [" << &d << "]"
@@ -362,7 +370,15 @@ Deque<T>::~Deque() {
  *
  */
 template <class T>
-DequeIterator<T> Deque<T>::begin() const {
+typename Deque<T>::iterator Deque<T>::begin() {
+	return d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+typename Deque<T>::const_iterator Deque<T>::begin() const {
 	return d->begin;
 }
 
@@ -378,7 +394,15 @@ const int Deque<T>::capacity() const {
  *
  */
 template <class T>
-DequeIterator<T> Deque<T>::end() const {
+typename Deque<T>::const_iterator Deque<T>::constBegin() const {
+	return d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+typename Deque<T>::iterator Deque<T>::end() {
 	return d->end;
 }
 
@@ -386,7 +410,7 @@ DequeIterator<T> Deque<T>::end() const {
  *
  */
 template <class T>
-DequeIterator<T> Deque<T>::insert(iterator& pos, const int count, const T& value) {
+typename Deque<T>::iterator Deque<T>::insert(iterator& pos, const int count, const T& value) {
 
 }
 
