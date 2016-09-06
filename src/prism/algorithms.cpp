@@ -128,8 +128,9 @@ OutputIterator copy_n(InputIterator first, Size n, OutputIterator otherFirst) {
 template <class InputIterator, class T>
 int count(InputIterator first, InputIterator last, const T& value) {
 	int c = 0;
-	while (first++ != last) {
+	while (first != last) {
 		if (*first == value) c++;
+		++first;
 	}
 	return c;
 }

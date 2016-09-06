@@ -74,10 +74,12 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	std::initializer_list<int> list = {1,2,3,4,5,6,7,8,9};
+	std::initializer_list<int> list = {1,2,3,4,5,6,7,8,9,10,11,12};
 	Deque<int> d(list);
 
-	cout << d[8] << endl;
+//	printRange(cout, d.begin(), d.end());
+	cout << d.last() << endl;
+
 
 
 //	return RUN_ALL_TESTS();

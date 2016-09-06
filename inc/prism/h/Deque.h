@@ -168,7 +168,8 @@ public:
 	}
 
 	friend std::ostream& operator<<(std::ostream& out, const iterator& it) {
-		out << "iterator: current:" << it.current-it.start;
+		//out << "bucket:" << (it.buckets-&(it.buckets)) <<
+		out <<	"current:" << it.current-it.start;
 		return out;
 	}
 };
@@ -240,7 +241,9 @@ struct DequeData : public SharedData {
 	const int 	capacity() const;
 	void		fill(const T& value);
 	void 		initializeStorage(const int numElements);
+	const int	numBuckets() const;
 	const bool	rangeCheck(const int i) const;
+	void		clear();
 	const int 	size() const;
 };
 // \endcond
@@ -287,6 +290,19 @@ const int DequeData<T>::capacity() const {
 }
 
 /**
+ * Sets the begin and end iterators to the centre index of the whole Deque.
+ */
+template <class T>
+void DequeData<T>::clear() {
+	begin.buckets = storage.start + numBuckets() / 2;
+	begin.start = *begin.buckets;
+	begin.current = begin.start + prism_deque_bucket_size / 2;
+	begin.end = begin.start + prism_deque_bucket_size;
+
+	end = begin;
+}
+
+/**
  *
  */
 template <class T>
@@ -317,6 +333,14 @@ void DequeData<T>::initializeStorage(const int numElements) {
 			- numElements / 2;
 	begin.end = begin.start + prism_deque_bucket_size;
 	end = begin + numElements;
+}
+
+/**
+ *
+ */
+template <class T>
+const int DequeData<T>::numBuckets() const {
+	return storage.finish-storage.start;
 }
 
 /**
@@ -361,13 +385,29 @@ public:
 
 	T&				at(const int i);
 	const T&		at(const int i) const;
+	T&				back();
+	const T&		back() const;
 	iterator 		begin();
 	const_iterator 	begin() const;
 	const int 		capacity() const;
+	const_iterator	cbegin() const;
+	const_iterator	cend() const;
+	void			clear();
 	const_iterator	constBegin() const;
 	const_iterator	constEnd() const;
+	const bool		contains(const T& value) const;
+	const bool		empty() const;
 	iterator 		end();
 	const_iterator	end() const;
+	void			fill(const T& value);
+	T&				first();
+	const T&		first() const;
+	T&				front();
+	const T&		front() const;
+	const int		indexOf(const T& value, const int from=0);
+	const bool		isEmpty() const;
+	T&				last();
+	const T&		last() const;
 	const int 		size() const;
 
 	T&				operator[](const int i);
@@ -379,7 +419,7 @@ public:
 				" capacity=" << d.capacity() <<
 				" numBuckets=" << d.d->storage.finish-d.d->storage.start << endl;
 		out << "----begin: " << d.d->begin << endl;
-		out << "----end: " << d.d->end;
+		out << "----end:   " << d.d->end;
 		return out;
 	}
 };
@@ -447,6 +487,22 @@ const T& Deque<T>::at(const int i) const {
  *
  */
 template <class T>
+T& Deque<T>::back() {
+	return *(d->end-1);
+}
+
+/**
+ *
+ */
+template <class T>
+const T& Deque<T>::back() const {
+	return *(d->end-1);
+}
+
+/**
+ *
+ */
+template <class T>
 typename Deque<T>::iterator Deque<T>::begin() {
 	return d->begin;
 }
@@ -471,6 +527,30 @@ const int Deque<T>::capacity() const {
  *
  */
 template <class T>
+typename Deque<T>::const_iterator Deque<T>::cbegin() const {
+	return d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+typename Deque<T>::const_iterator Deque<T>::cend() const {
+	return d->end;
+}
+
+/**
+ *
+ */
+template <class T>
+void Deque<T>::clear() {
+	d->clear();
+}
+
+/**
+ *
+ */
+template <class T>
 typename Deque<T>::const_iterator Deque<T>::constBegin() const {
 	return d->begin;
 }
@@ -487,6 +567,22 @@ typename Deque<T>::const_iterator Deque<T>::constEnd() const {
  *
  */
 template <class T>
+const bool Deque<T>::contains(const T& value) const {
+	return prism::count(d->begin, d->end, value);
+}
+
+/**
+ *
+ */
+template <class T>
+const bool Deque<T>::empty() const {
+	return d->end == d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
 typename Deque<T>::iterator Deque<T>::end() {
 	return d->end;
 }
@@ -497,6 +593,81 @@ typename Deque<T>::iterator Deque<T>::end() {
 template <class T>
 typename Deque<T>::const_iterator Deque<T>::end() const {
 	return d->end;
+}
+
+/**
+ *
+ */
+template <class T>
+void Deque<T>::fill(const T& value) {
+	d->fill(value);
+}
+
+/**
+ *
+ */
+template <class T>
+T& Deque<T>::first() {
+	return *d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+const T& Deque<T>::first() const {
+	return *d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+T& Deque<T>::front() {
+	return *d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+const T& Deque<T>::front() const {
+	return *d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+const int Deque<T>::indexOf(const T& value, const int from) {
+	iterator it = prism::find(d->begin+from, d->end, value);
+	if (it == d->end)
+		return -1;
+	return it - d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+const bool Deque<T>::isEmpty() const {
+	return d->end == d->begin;
+}
+
+/**
+ *
+ */
+template <class T>
+T& Deque<T>::last() {
+	return *(d->end-1);
+}
+
+/**
+ *
+ */
+template <class T>
+const T& Deque<T>::last() const {
+	return *(d->end-1);
 }
 
 /**
