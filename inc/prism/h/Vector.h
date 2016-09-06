@@ -59,7 +59,7 @@ public:
 public:
 						Vector();
 						Vector(const int size, const T& value=T());
-						Vector(std::initializer_list<T> il);
+						Vector(std::initializer_list<T> list);
 						Vector(const Vector<T>& copy);
 						~Vector();
 	void				append(const T& value);

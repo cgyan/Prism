@@ -46,7 +46,7 @@
 #include <prism/Time>
 #include <prism/Pair>
 #include <prism/Deque>
-#include <prism/types>
+#include <prism/utilities>
 
 
 using namespace prism;
@@ -74,11 +74,10 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	Deque<int> d;
-	Deque<int>::iterator it = d.begin();
-	*it = 45;
+	std::initializer_list<int> list = {1,2,3,4,5,6,7,8,9};
+	Deque<int> d(list);
 
-	cout << *it << endl;
+	cout << d[8] << endl;
 
 
 //	return RUN_ALL_TESTS();

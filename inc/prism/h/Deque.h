@@ -11,9 +11,12 @@
 
 #include <prism/SharedData>
 #include <prism/SharedDataPointer>
-#include <prism/types> // for prism::conditional
+#include <prism/utilities> // for prism::conditional
+#include <prism/algorithms>
+#include <prism/OutOfBoundsException>
 #include <ostream>
 #include <cstddef> // for std::ptrdiff_t
+#include <initializer_list>
 using namespace std;
 
 namespace prism {
@@ -24,14 +27,15 @@ static const int prism_deque_bucket_size = 8;
 // \cond DO_NOT_DOCUMENT
 template <class T, bool isConst=true>
 class DequeIterator {
+public:
 	typedef DequeIterator<T, false>		iterator;
 	typedef DequeIterator<T, true>		const_iterator;
 	typedef T							value_type;
 	typedef std::ptrdiff_t 				difference_type;
 	typedef random_access_iterator_tag 	iterator_category;
-	typedef typename prism::conditional<isConst, const T*, T*>::type pointer;
-	typedef typename prism::conditional<isConst, const T&, T&>::type reference;
-	typedef typename prism::conditional<isConst, const_iterator, iterator>::type Self;
+	typedef typename prism::conditional_type<isConst, const T*, T*>::type pointer;
+	typedef typename prism::conditional_type<isConst, const T&, T&>::type reference;
+	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type Self;
 public:
 	T** buckets; // (*buckets) is a pointer to one of the buckets i.e. T*
 	T* current;
@@ -50,7 +54,8 @@ public:
 		  start(*buckets),
 		  end(start+prism_deque_bucket_size) {}
 
-	DequeIterator(const iterator& copy) // only accepts non-const iterator
+	// can converts non-const iterator into const iterator but not the other way around
+	DequeIterator(const iterator& copy)
 		: buckets(copy.buckets),
 		  current(copy.current),
 		  start(copy.start),
@@ -168,33 +173,21 @@ public:
 	}
 };
 // \endcond
-//struct map {
-//	int** data;
-//	int mapSize;
-//	int bucketSize;
-//
-//	map() : data(nullptr), mapSize(2), bucketSize(8) {
-//		data = new int*[mapSize];
-//
-//		int* block = new int[bucketSize];
-//		block[4] = 4; block[5] = 5; block[6] = 6; block[7] = 7;
-//		data[0] = block;
-//
-//		block = new int[8];
-//		block[0] = 10; block[1] = 11; block[2] = 12; block[3] = 13;
-//		block[4] = 14; block[5] = 15; block[6] = 16; block[7] = 17;
-//		data[1] = block;
-//	}
-//
-//};
 //================================================================================
 // DequeData
 //================================================================================
 // \cond DO_NOT_DOCUMENT
 template <class T>
 struct DequeData : public SharedData {
-	typedef DequeIterator<T,false>	iterator;
-	typedef DequeIterator<T,true>	const_iterator;
+	typedef DequeIterator<T,false>					iterator;
+	typedef DequeIterator<T,true>					const_iterator;
+	typedef typename iterator::value_type			value_type;
+	typedef typename iterator::difference_type		difference_type;
+	typedef typename iterator::pointer				pointer;
+	typedef typename iterator::reference			reference;
+	typedef typename const_iterator::pointer		const_pointer;
+	typedef typename const_iterator::reference		const_reference;
+	typedef typename iterator::iterator_category 	iterator_category;
 
 	struct memory {
 		T** start;
@@ -240,10 +233,14 @@ struct DequeData : public SharedData {
 	iterator 	end;
 
 	DequeData();
+	DequeData(const int size, const T& value);
+	DequeData(std::initializer_list<T> list);
 	~DequeData();
 
 	const int 	capacity() const;
+	void		fill(const T& value);
 	void 		initializeStorage(const int numElements);
+	const bool	rangeCheck(const int i) const;
 	const int 	size() const;
 };
 // \endcond
@@ -252,8 +249,26 @@ struct DequeData : public SharedData {
  */
 template <class T>
 DequeData<T>::DequeData() {
-	initializeStorage(20);
+	initializeStorage(0);
 }
+/**
+ *
+ */
+template <class T>
+DequeData<T>::DequeData(const int size, const T& value) {
+	initializeStorage(size);
+	fill(value);
+}
+
+/**
+ *
+ */
+template <class T>
+DequeData<T>::DequeData(std::initializer_list<T> list) {
+	initializeStorage(list.size());
+	prism::copy(list.begin(), list.end(), this->begin);
+}
+
 
 /**
  *
@@ -272,6 +287,14 @@ const int DequeData<T>::capacity() const {
 }
 
 /**
+ *
+ */
+template <class T>
+void DequeData<T>::fill(const T& value) {
+	prism::fill(this->begin, this->end, T(value));
+}
+
+/**
  * Allocates storage, creates buckets and sets the begin and end iterators accordingly.
  * If numElements is 0 then one bucket is created in preparation for future elements.
  * If numElements is greater than 0 then enough buckets to hold the elements are created.
@@ -285,17 +308,24 @@ void DequeData<T>::initializeStorage(const int numElements) {
 	storage.start = storage.allocateStorage(numBuckets);
 	storage.finish = storage.start + numBuckets;
 
-	T** startBucket = storage.start;
-	T** endBucket = startBucket + numBuckets;
-	storage.createBuckets(startBucket, endBucket);
+	storage.createBuckets(storage.start, storage.finish);
 
-	begin.buckets = startBucket;
-	begin.start = *startBucket;
+	begin.buckets = storage.start;
+	begin.start = *storage.start;
 	begin.current = begin.start
 			+ (numBuckets * prism_deque_bucket_size) / 2
 			- numElements / 2;
 	begin.end = begin.start + prism_deque_bucket_size;
 	end = begin + numElements;
+}
+
+/**
+ *
+ */
+template <class T>
+const bool DequeData<T>::rangeCheck(const int i) const {
+	int s = size();
+	return i >= 0 && i < s;
 }
 
 /**
@@ -311,22 +341,37 @@ const int DequeData<T>::size() const {
 template <class T>
 class Deque {
 public:
-	typedef typename DequeData<T>::iterator 			iterator;
-	typedef typename DequeData<T>::const_iterator 		const_iterator;
+	typedef typename DequeData<T>::iterator			iterator;
+	typedef typename DequeData<T>::const_iterator	const_iterator;
+	typedef typename iterator::value_type			value_type;
+	typedef typename iterator::difference_type		difference_type;
+	typedef typename iterator::pointer				pointer;
+	typedef typename iterator::reference			reference;
+	typedef typename const_iterator::pointer		const_pointer;
+	typedef typename const_iterator::reference		const_reference;
+	typedef typename iterator::iterator_category 	iterator_category;
 private:
 	SharedDataPointer<DequeData<T>> d;
 public:
 	Deque();
+	Deque(const int size, const T& value=T());
+	Deque(std::initializer_list<T> list);
 	Deque(const Deque<T>& copy);
 	~Deque();
 
+	T&				at(const int i);
+	const T&		at(const int i) const;
 	iterator 		begin();
 	const_iterator 	begin() const;
 	const int 		capacity() const;
 	const_iterator	constBegin() const;
+	const_iterator	constEnd() const;
 	iterator 		end();
-	iterator		insert(iterator& pos, const int count, const T& value);
+	const_iterator	end() const;
 	const int 		size() const;
+
+	T&				operator[](const int i);
+	const T&		operator[](const int i) const;
 
 	friend std::ostream& operator<<(std::ostream& out, const Deque<T>& d) {
 		out << "Deque [" << &d << "]"
@@ -345,10 +390,23 @@ public:
 template <class T>
 Deque<T>::Deque()
 	: d(new DequeData<T>)
-{
+{}
 
+/**
+ *
+ */
+template <class T>
+Deque<T>::Deque(const int size, const T& value)
+	: d(new DequeData<T>(size, value))
+{}
 
-}
+/**
+ *
+ */
+template <class T>
+Deque<T>::Deque(std::initializer_list<T> list)
+	: d(new DequeData<T>(list))
+{}
 
 /**
  *
@@ -362,8 +420,27 @@ Deque<T>::Deque(const Deque<T>& copy)
  *
  */
 template <class T>
-Deque<T>::~Deque() {
+Deque<T>::~Deque()
+{}
 
+/**
+ *
+ */
+template <class T>
+T& Deque<T>::at(const int i) {
+	if (d->rangeCheck(i))
+		return *(d->begin+i);
+	throw OutOfBoundsException(i);
+}
+
+/**
+ *
+ */
+template <class T>
+const T& Deque<T>::at(const int i) const {
+	if (d->rangeCheck(i))
+		return *(d->begin+i);
+	throw OutOfBoundsException(i);
 }
 
 /**
@@ -402,6 +479,14 @@ typename Deque<T>::const_iterator Deque<T>::constBegin() const {
  *
  */
 template <class T>
+typename Deque<T>::const_iterator Deque<T>::constEnd() const {
+	return d->end;
+}
+
+/**
+ *
+ */
+template <class T>
 typename Deque<T>::iterator Deque<T>::end() {
 	return d->end;
 }
@@ -410,8 +495,8 @@ typename Deque<T>::iterator Deque<T>::end() {
  *
  */
 template <class T>
-typename Deque<T>::iterator Deque<T>::insert(iterator& pos, const int count, const T& value) {
-
+typename Deque<T>::const_iterator Deque<T>::end() const {
+	return d->end;
 }
 
 /**
@@ -420,6 +505,22 @@ typename Deque<T>::iterator Deque<T>::insert(iterator& pos, const int count, con
 template <class T>
 const int Deque<T>::size() const {
 	return d->size();
+}
+
+/**
+ *
+ */
+template <class T>
+T& Deque<T>::operator [](const int i) {
+	return *(d->begin+i);
+}
+
+/**
+ *
+ */
+template <class T>
+const T& Deque<T>::operator [](const int i) const {
+	return *(d->begin+i);
 }
 
 } // namespace prism
