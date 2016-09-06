@@ -5,6 +5,8 @@ var hierarchy =
     [ "prism::BitvectorData", "structprism_1_1_bitvector_data.html", null ],
     [ "prism::Char", "classprism_1_1_char.html", null ],
     [ "prism::Circle", "classprism_1_1_circle.html", null ],
+    [ "prism::conditional_type< condition, Type1, Type2 >", "structprism_1_1conditional__type.html", null ],
+    [ "prism::conditional_type< false, Type1, Type2 >", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html", null ],
     [ "prism::Deque< T >", "classprism_1_1_deque.html", null ],
     [ "prism::Exception", "classprism_1_1_exception.html", [
       [ "prism::OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", null ],

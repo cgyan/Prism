@@ -227,6 +227,10 @@ struct DequeData : public SharedData {
 				delete []start;
 			}
 		}
+
+		const int numBuckets() const {
+			return finish-start;
+		}
 	};
 
 	memory 		storage;
@@ -241,7 +245,6 @@ struct DequeData : public SharedData {
 	const int 	capacity() const;
 	void		fill(const T& value);
 	void 		initializeStorage(const int numElements);
-	const int	numBuckets() const;
 	const bool	rangeCheck(const int i) const;
 	void		clear();
 	const int 	size() const;
@@ -290,11 +293,11 @@ const int DequeData<T>::capacity() const {
 }
 
 /**
- * Sets the begin and end iterators to the centre index of the whole Deque.
+ * Sets the begin and end iterators to the middle index of the whole Deque.
  */
 template <class T>
 void DequeData<T>::clear() {
-	begin.buckets = storage.start + numBuckets() / 2;
+	begin.buckets = storage.start + storage.numBuckets() / 2;
 	begin.start = *begin.buckets;
 	begin.current = begin.start + prism_deque_bucket_size / 2;
 	begin.end = begin.start + prism_deque_bucket_size;
@@ -314,8 +317,8 @@ void DequeData<T>::fill(const T& value) {
  * Allocates storage, creates buckets and sets the begin and end iterators accordingly.
  * If numElements is 0 then one bucket is created in preparation for future elements.
  * If numElements is greater than 0 then enough buckets to hold the elements are created.
- * The new elements start from a position such that there are equal free spaces at the
- * start and end of the storage.
+ * The new elements to be inserted start from a position such that there are equal free
+ * spaces at the start and end of the storage.
  */
 template <class T>
 void DequeData<T>::initializeStorage(const int numElements) {
@@ -336,15 +339,7 @@ void DequeData<T>::initializeStorage(const int numElements) {
 }
 
 /**
- *
- */
-template <class T>
-const int DequeData<T>::numBuckets() const {
-	return storage.finish-storage.start;
-}
-
-/**
- *
+ * Sanity check to make sure i is within range.
  */
 template <class T>
 const bool DequeData<T>::rangeCheck(const int i) const {
@@ -425,7 +420,7 @@ public:
 };
 
 /**
- *
+ * Creates an empty Deque.
  */
 template <class T>
 Deque<T>::Deque()
@@ -433,7 +428,7 @@ Deque<T>::Deque()
 {}
 
 /**
- *
+ * Creates a Deque that contains \em size amount of elements set to \em value.
  */
 template <class T>
 Deque<T>::Deque(const int size, const T& value)
@@ -441,7 +436,8 @@ Deque<T>::Deque(const int size, const T& value)
 {}
 
 /**
- *
+ * Creates a Deque and assigns the elements in the initializer list
+ * to the Deque.
  */
 template <class T>
 Deque<T>::Deque(std::initializer_list<T> list)
@@ -449,7 +445,7 @@ Deque<T>::Deque(std::initializer_list<T> list)
 {}
 
 /**
- *
+ * Creates a new Deque which is a copy of \em copy.
  */
 template <class T>
 Deque<T>::Deque(const Deque<T>& copy)
@@ -457,14 +453,16 @@ Deque<T>::Deque(const Deque<T>& copy)
 {}
 
 /**
- *
+ * Destroys this Deque.
  */
 template <class T>
 Deque<T>::~Deque()
 {}
 
 /**
- *
+ * @return Returns a reference to the the element at index \em i.
+ * @exception Throws an OutOfBoundsException if \em i is less than 0 or
+ * greater than or equal to \em size().
  */
 template <class T>
 T& Deque<T>::at(const int i) {
@@ -474,7 +472,9 @@ T& Deque<T>::at(const int i) {
 }
 
 /**
- *
+ * @return Returns a const reference to the the element at index \em i.
+ * @exception Throws an OutOfBoundsException if \em i is less than 0 or
+ * greater than or equal to \em size().
  */
 template <class T>
 const T& Deque<T>::at(const int i) const {
@@ -484,7 +484,7 @@ const T& Deque<T>::at(const int i) const {
 }
 
 /**
- *
+ * @return Returns a reference to the last element in the Deque.
  */
 template <class T>
 T& Deque<T>::back() {
@@ -492,7 +492,7 @@ T& Deque<T>::back() {
 }
 
 /**
- *
+ * @return Returns a const reference to the last element in the Deque.
  */
 template <class T>
 const T& Deque<T>::back() const {
@@ -500,7 +500,7 @@ const T& Deque<T>::back() const {
 }
 
 /**
- *
+ * @return Returns an iterator that points to the first element in the Deque.
  */
 template <class T>
 typename Deque<T>::iterator Deque<T>::begin() {
@@ -508,7 +508,7 @@ typename Deque<T>::iterator Deque<T>::begin() {
 }
 
 /**
- *
+ * @return Returns a const_iterator that points to the first element in the Deque.
  */
 template <class T>
 typename Deque<T>::const_iterator Deque<T>::begin() const {
@@ -516,7 +516,7 @@ typename Deque<T>::const_iterator Deque<T>::begin() const {
 }
 
 /**
- *
+ * @return Returns the capacity of the Deque.
  */
 template <class T>
 const int Deque<T>::capacity() const {
@@ -524,7 +524,7 @@ const int Deque<T>::capacity() const {
 }
 
 /**
- *
+ * @return Returns a const_iterator that points to the first element in the Deque.
  */
 template <class T>
 typename Deque<T>::const_iterator Deque<T>::cbegin() const {
@@ -532,7 +532,7 @@ typename Deque<T>::const_iterator Deque<T>::cbegin() const {
 }
 
 /**
- *
+ * @return Returns a const_iterator that points to one position past the last element in the Deque.
  */
 template <class T>
 typename Deque<T>::const_iterator Deque<T>::cend() const {
@@ -540,7 +540,8 @@ typename Deque<T>::const_iterator Deque<T>::cend() const {
 }
 
 /**
- *
+ * Clears all elements from the Deque so that its size is 0. \n
+ * Note that this does not affect the capacity.
  */
 template <class T>
 void Deque<T>::clear() {
@@ -548,7 +549,7 @@ void Deque<T>::clear() {
 }
 
 /**
- *
+ * @return Returns a const_iterator that points to the first element in the Deque.
  */
 template <class T>
 typename Deque<T>::const_iterator Deque<T>::constBegin() const {
@@ -556,7 +557,7 @@ typename Deque<T>::const_iterator Deque<T>::constBegin() const {
 }
 
 /**
- *
+ * @return Returns a const_iterator that points to one position past the last element in the Deque.
  */
 template <class T>
 typename Deque<T>::const_iterator Deque<T>::constEnd() const {
@@ -564,7 +565,7 @@ typename Deque<T>::const_iterator Deque<T>::constEnd() const {
 }
 
 /**
- *
+ * @return Returns true if the Deque contains \em value, false otherwise.
  */
 template <class T>
 const bool Deque<T>::contains(const T& value) const {
@@ -572,7 +573,7 @@ const bool Deque<T>::contains(const T& value) const {
 }
 
 /**
- *
+ * @return Returns true if the Deque is empty i.e. size == 0, false otherwise.
  */
 template <class T>
 const bool Deque<T>::empty() const {
@@ -580,7 +581,7 @@ const bool Deque<T>::empty() const {
 }
 
 /**
- *
+ * @return Returns an iterator that points to one position past the last element in the Deque.
  */
 template <class T>
 typename Deque<T>::iterator Deque<T>::end() {
@@ -588,7 +589,7 @@ typename Deque<T>::iterator Deque<T>::end() {
 }
 
 /**
- *
+ * @return Returns a const_iterator that points to one position past the last element in the Deque.
  */
 template <class T>
 typename Deque<T>::const_iterator Deque<T>::end() const {
@@ -596,7 +597,7 @@ typename Deque<T>::const_iterator Deque<T>::end() const {
 }
 
 /**
- *
+ * Sets each element in the Deque to \em value.
  */
 template <class T>
 void Deque<T>::fill(const T& value) {
@@ -604,7 +605,7 @@ void Deque<T>::fill(const T& value) {
 }
 
 /**
- *
+ * @return Returns a reference to the first element in the Deque.
  */
 template <class T>
 T& Deque<T>::first() {
@@ -612,7 +613,7 @@ T& Deque<T>::first() {
 }
 
 /**
- *
+ * @return Returns a const reference to the first element in the Deque.
  */
 template <class T>
 const T& Deque<T>::first() const {
@@ -620,7 +621,7 @@ const T& Deque<T>::first() const {
 }
 
 /**
- *
+ * @return Returns a reference to the first element in the Deque.
  */
 template <class T>
 T& Deque<T>::front() {
@@ -628,7 +629,7 @@ T& Deque<T>::front() {
 }
 
 /**
- *
+ * @return Returns a const reference to the first element in the Deque.
  */
 template <class T>
 const T& Deque<T>::front() const {
@@ -636,7 +637,9 @@ const T& Deque<T>::front() const {
 }
 
 /**
- *
+ * Searches for the first index starting from index \em from that contains \em value.
+ * @return Returns the index of of the first occurrence of \em value or -1 if \em value
+ * does not occur in the Deque.
  */
 template <class T>
 const int Deque<T>::indexOf(const T& value, const int from) {
@@ -647,7 +650,7 @@ const int Deque<T>::indexOf(const T& value, const int from) {
 }
 
 /**
- *
+ * @return Returns true if the Deque is empty i.e. size == 0, false otherwise.
  */
 template <class T>
 const bool Deque<T>::isEmpty() const {
@@ -655,7 +658,7 @@ const bool Deque<T>::isEmpty() const {
 }
 
 /**
- *
+ * @return Returns a reference to the last element in the Deque.
  */
 template <class T>
 T& Deque<T>::last() {
@@ -663,7 +666,7 @@ T& Deque<T>::last() {
 }
 
 /**
- *
+ * @return Returns a const reference to the last element in the Deque.
  */
 template <class T>
 const T& Deque<T>::last() const {
@@ -671,7 +674,7 @@ const T& Deque<T>::last() const {
 }
 
 /**
- *
+ * @return Returns the number of elements curently in the Deque.
  */
 template <class T>
 const int Deque<T>::size() const {
@@ -679,7 +682,8 @@ const int Deque<T>::size() const {
 }
 
 /**
- *
+ * @return Returns a reference to the element at index \em i.
+ * \note Note that no bounds checking is performed on \em i.
  */
 template <class T>
 T& Deque<T>::operator [](const int i) {
@@ -687,7 +691,8 @@ T& Deque<T>::operator [](const int i) {
 }
 
 /**
- *
+ * @return Returns a const reference to the element at index \em i.
+ * \note Note that no bounds checking is performed on \em i.
  */
 template <class T>
 const T& Deque<T>::operator [](const int i) const {

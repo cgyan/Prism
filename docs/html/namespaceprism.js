@@ -5,6 +5,8 @@ var namespaceprism =
     [ "BitvectorData", "structprism_1_1_bitvector_data.html", "structprism_1_1_bitvector_data" ],
     [ "Char", "classprism_1_1_char.html", "classprism_1_1_char" ],
     [ "Circle", "classprism_1_1_circle.html", "classprism_1_1_circle" ],
+    [ "conditional_type", "structprism_1_1conditional__type.html", "structprism_1_1conditional__type" ],
+    [ "conditional_type< false, Type1, Type2 >", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4" ],
     [ "Deque", "classprism_1_1_deque.html", "classprism_1_1_deque" ],
     [ "Exception", "classprism_1_1_exception.html", "classprism_1_1_exception" ],
     [ "Flag", "classprism_1_1_flag.html", "classprism_1_1_flag" ],

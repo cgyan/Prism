@@ -80,6 +80,10 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
     [ "UnequalSizeException.h", "_unequal_size_exception_8h.html", [
       [ "UnequalSizeException", "classprism_1_1_unequal_size_exception.html", "classprism_1_1_unequal_size_exception" ]
     ] ],
+    [ "utilities.h", "utilities_8h.html", [
+      [ "conditional_type", "structprism_1_1conditional__type.html", "structprism_1_1conditional__type" ],
+      [ "conditional_type< false, Type1, Type2 >", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4" ]
+    ] ],
     [ "Vector.h", "_vector_8h.html", [
       [ "Vector", "classprism_1_1_vector.html", "classprism_1_1_vector" ]
     ] ],

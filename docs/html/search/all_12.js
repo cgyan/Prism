@@ -29,5 +29,6 @@ var searchData=
   ['translated',['translated',['../classprism_1_1_circle.html#a255dcfc157fc52c83e0cbd9e54a65b89',1,'prism::Circle::translated(const float dx, const float dy) const '],['../classprism_1_1_circle.html#a7592ecc319feeaa2b446505b975b97c5',1,'prism::Circle::translated(const Pointf &amp;offset) const '],['../classprism_1_1_rect.html#accc97050ae8799c21cd64500b1a783dd',1,'prism::Rect::translated(const int dx, const int dy) const '],['../classprism_1_1_rect.html#ac71993c5f890157af1e3fa86423f8198',1,'prism::Rect::translated(const Point &amp;offset) const ']]],
   ['transpose',['transpose',['../classprism_1_1_size.html#ab1e9872f48f2ec894849973d6a325af6',1,'prism::Size']]],
   ['transposed',['transposed',['../classprism_1_1_matrix4.html#a69fd0bae9a82c8fd6ef6437c91f37fab',1,'prism::Matrix4::transposed()'],['../classprism_1_1_rect.html#aa4f9bf21ac8c5a1d1b415df78ef5c0da',1,'prism::Rect::transposed()'],['../classprism_1_1_size.html#aaf2b4a70bfe6f18224c25f64901d8d8a',1,'prism::Size::transposed()']]],
-  ['trimmed',['trimmed',['../classprism_1_1_string.html#aef7dc34213c574a72c893f943a41e8e4',1,'prism::String']]]
+  ['trimmed',['trimmed',['../classprism_1_1_string.html#aef7dc34213c574a72c893f943a41e8e4',1,'prism::String']]],
+  ['type',['type',['../structprism_1_1conditional__type.html#a9d57ba7c29ee017e38e49bbb72229b7e',1,'prism::conditional_type::type()'],['../structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html#ab06b40a3cd6b35aa1871c1c8e6d7930f',1,'prism::conditional_type&lt; false, Type1, Type2 &gt;::type()']]]
 ];
