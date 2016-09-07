@@ -233,11 +233,12 @@ InputIterator find_if(InputIterator first, InputIterator last, Predicate pred) {
  */
 template <class InputIterator, class T>
 InputIterator find_last(InputIterator first, InputIterator last, const T& value) {
+	InputIterator tmp = last;
 	while (--last >= first) {
 		if (*last == value)
 			return last;
 	}
-	return InputIterator(0);
+	return tmp;
 }
 
 /**

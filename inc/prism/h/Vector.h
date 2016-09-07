@@ -586,7 +586,7 @@ const T& Vector<T>::last() const {
 
 /**
  * Returns the index of the last occurrence of \em value in the vector. It searches backwards from index \em from.
- * If /em from is -1 (the default) then the search starts from the last element.
+ * If \em from is -1 (the default) then the search starts from the last element.
  * Returns -1 if there is no match found.
  * The vector's value type must support operator==().
  */
