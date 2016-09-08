@@ -75,13 +75,10 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 
-	Deque<int> d({1,2,3,4,5,6,7,8,9,10,11,9});
-	Vector<int> v({1,2,3,4,5,6,7,8,9,10,11,9});
+	Deque<int> d({0,1,2,3,4,5,6});
+	cout << d << endl;
+	d.insert(7,1,7);
 
-//	printRange(cout, d.begin(), d.end());
-
-	cout << d.lastIndexOf(9, d.size()-2) << endl;
-	cout << v.lastIndexOf(9, v.size()-2) << endl;
 
 
 

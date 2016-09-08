@@ -32,6 +32,8 @@ typedef iterator\+::iterator\+\_\+category \hyperlink{classprism_1_1_deque_a5a8e
 \item 
 \hyperlink{classprism_1_1_deque_ac73ef5f071e6dfddf1f5e8a123752d3e}{Deque} (const int \hyperlink{classprism_1_1_deque_a38e141650506c5b320093c5bd5486a8c}{size}, const T \&value=T())
 \item 
+\hyperlink{classprism_1_1_deque_a0b6d151a459f2170caac7d120b22c4c9}{Deque} (\hyperlink{classprism_1_1_deque_afc2f71fd5b01e963e093f64cc4da94ec}{const\+\_\+iterator} \hyperlink{classprism_1_1_deque_a9b4c76aae18b2d465f6e066fa3262cc4}{first}, \hyperlink{classprism_1_1_deque_afc2f71fd5b01e963e093f64cc4da94ec}{const\+\_\+iterator} \hyperlink{classprism_1_1_deque_a9ca3d5be5c2e941af1a14c1383063ae7}{last})
+\item 
 \hyperlink{classprism_1_1_deque_aa8c11433e26904fb8a46b912ea6617cf}{Deque} (std\+::initializer\+\_\+list$<$ T $>$ list)
 \item 
 \hyperlink{classprism_1_1_deque_abaa7ff51e27ef7acb0ca1afe523e7976}{Deque} (const \hyperlink{classprism_1_1_deque}{Deque}$<$ T $>$ \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
@@ -64,6 +66,8 @@ void \hyperlink{classprism_1_1_deque_ad644dd68be09f8070e8bf0821ddb6d9b}{clear} (
 \item 
 const bool \hyperlink{classprism_1_1_deque_af86c689901918b3a07e606c644d63d37}{contains} (const T \&value) const 
 \item 
+const int \hyperlink{classprism_1_1_deque_aeac135daab988ebe38d4a1c8e7e9d193}{count} (const T \&value) const 
+\item 
 const bool \hyperlink{classprism_1_1_deque_af1d67b91c768fe60b109ffe5f6dda745}{empty} () const 
 \item 
 \hyperlink{classprism_1_1_deque_af6fbdfa6e826f7f71b29f4d3cfb72ed1}{iterator} \hyperlink{classprism_1_1_deque_a37296b9dc29075a508028e7fe48cf269}{end} ()
@@ -89,6 +93,10 @@ const bool \hyperlink{classprism_1_1_deque_a848de5d427bfb87099f9992df2ff7596}{is
 \hyperlink{classprism_1_1_deque_a93d8792e719ca205ce1b9ed5d8207c1d}{reference} \hyperlink{classprism_1_1_deque_a9ca3d5be5c2e941af1a14c1383063ae7}{last} ()
 \item 
 \hyperlink{classprism_1_1_deque_a8fcabfe6976606b91b4abef0e0353584}{const\+\_\+reference} \hyperlink{classprism_1_1_deque_ae9d494c23c0a73603380d44f4e7070e6}{last} () const 
+\item 
+const int \hyperlink{classprism_1_1_deque_ae910373e27a9c0a453588bd8c928145e}{last\+Index\+Of} (const T \&value, int from=-\/1)
+\item 
+\hyperlink{classprism_1_1_deque}{Deque}$<$ T $>$ \hyperlink{classprism_1_1_deque_a456190fa35c2e5eee950b0ef61e75866}{mid} (const int start\+Index, const int \hyperlink{classprism_1_1_deque_aeac135daab988ebe38d4a1c8e7e9d193}{count}) const 
 \item 
 void \hyperlink{classprism_1_1_deque_a990a2499c18ace8ad27a62f247cc5f01}{replace} (const int index, const T \&value)
 \item 
@@ -168,6 +176,14 @@ Creates an empty \hyperlink{classprism_1_1_deque}{Deque}. \index{prism\+::\+Dequ
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_deque_ac73ef5f071e6dfddf1f5e8a123752d3e}{}\label{classprism_1_1_deque_ac73ef5f071e6dfddf1f5e8a123752d3e}
 Creates a \hyperlink{classprism_1_1_deque}{Deque} that contains {\itshape size} amount of elements set to {\itshape value}. \index{prism\+::\+Deque@{prism\+::\+Deque}!Deque@{Deque}}
+\index{Deque@{Deque}!prism\+::\+Deque@{prism\+::\+Deque}}
+\subsubsection[{\texorpdfstring{Deque(const\+\_\+iterator first, const\+\_\+iterator last)}{Deque(const_iterator first, const_iterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Deque}$<$ T $>$\+::{\bf Deque} (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+iterator}}]{first, }
+\item[{{\bf const\+\_\+iterator}}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_deque_a0b6d151a459f2170caac7d120b22c4c9}{}\label{classprism_1_1_deque_a0b6d151a459f2170caac7d120b22c4c9}
+\index{prism\+::\+Deque@{prism\+::\+Deque}!Deque@{Deque}}
 \index{Deque@{Deque}!prism\+::\+Deque@{prism\+::\+Deque}}
 \subsubsection[{\texorpdfstring{Deque(std\+::initializer\+\_\+list$<$ T $>$ list)}{Deque(std::initializer_list< T > list)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Deque}$<$ T $>$\+::{\bf Deque} (
 \begin{DoxyParamCaption}
@@ -350,6 +366,13 @@ Returns a const\+\_\+iterator that points to one position past the last element 
 \begin{DoxyReturn}{Returns}
 Returns true if the \hyperlink{classprism_1_1_deque}{Deque} contains {\itshape value}, false otherwise. 
 \end{DoxyReturn}
+\index{prism\+::\+Deque@{prism\+::\+Deque}!count@{count}}
+\index{count@{count}!prism\+::\+Deque@{prism\+::\+Deque}}
+\subsubsection[{\texorpdfstring{count(const T \&value) const }{count(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Deque}$<$ T $>$\+::count (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_deque_aeac135daab988ebe38d4a1c8e7e9d193}{}\label{classprism_1_1_deque_aeac135daab988ebe38d4a1c8e7e9d193}
 \index{prism\+::\+Deque@{prism\+::\+Deque}!empty@{empty}}
 \index{empty@{empty}!prism\+::\+Deque@{prism\+::\+Deque}}
 \subsubsection[{\texorpdfstring{empty() const }{empty() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Deque}$<$ T $>$\+::empty (
@@ -475,6 +498,22 @@ Returns a reference to the last element in the \hyperlink{classprism_1_1_deque}{
 \begin{DoxyReturn}{Returns}
 Returns a const reference to the last element in the \hyperlink{classprism_1_1_deque}{Deque}. 
 \end{DoxyReturn}
+\index{prism\+::\+Deque@{prism\+::\+Deque}!last\+Index\+Of@{last\+Index\+Of}}
+\index{last\+Index\+Of@{last\+Index\+Of}!prism\+::\+Deque@{prism\+::\+Deque}}
+\subsubsection[{\texorpdfstring{last\+Index\+Of(const T \&value, int from=-\/1)}{lastIndexOf(const T &value, int from=-1)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Deque}$<$ T $>$\+::last\+Index\+Of (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value, }
+\item[{int}]{from = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_deque_ae910373e27a9c0a453588bd8c928145e}{}\label{classprism_1_1_deque_ae910373e27a9c0a453588bd8c928145e}
+\index{prism\+::\+Deque@{prism\+::\+Deque}!mid@{mid}}
+\index{mid@{mid}!prism\+::\+Deque@{prism\+::\+Deque}}
+\subsubsection[{\texorpdfstring{mid(const int start\+Index, const int count) const }{mid(const int startIndex, const int count) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Deque}$<$ T $>$ {\bf prism\+::\+Deque}$<$ T $>$\+::mid (
+\begin{DoxyParamCaption}
+\item[{const int}]{start\+Index, }
+\item[{const int}]{count}
+\end{DoxyParamCaption}
+) const}\hypertarget{classprism_1_1_deque_a456190fa35c2e5eee950b0ef61e75866}{}\label{classprism_1_1_deque_a456190fa35c2e5eee950b0ef61e75866}
 \index{prism\+::\+Deque@{prism\+::\+Deque}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism\+::\+Deque@{prism\+::\+Deque}}
 \subsubsection[{\texorpdfstring{operator"!=(const Deque$<$ T $>$ \&rhs)}{operator!=(const Deque< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Deque}$<$ T $>$\+::operator!= (

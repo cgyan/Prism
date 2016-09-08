@@ -59,6 +59,7 @@ public:
 public:
 						Vector();
 						Vector(const int size, const T& value=T());
+						Vector(const_iterator first, const_iterator last);
 						Vector(std::initializer_list<T> list);
 						Vector(const Vector<T>& copy);
 						~Vector();
@@ -161,6 +162,19 @@ template <class T>
 Vector<T>::Vector(const int size, const T& value) : d(new VectorData<T>()) {
 	reserve(size);
 	insert(0, size, value);
+}
+
+/**
+ * Creates a vector containing copies of the elements in the range \em [first,last].
+ * \em const_iterator will be a Vector iterator.
+ */
+template <class T>
+Vector<T>::Vector(const_iterator first, const_iterator last)
+	: d(new VectorData<T>())
+{
+	reserve(last-first);
+	for (int i=0; i<last-first; i++)
+		insert(d->storage.end, 1, *first++);
 }
 
 /**

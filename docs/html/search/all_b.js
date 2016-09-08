@@ -16,7 +16,7 @@ var searchData=
   ['max',['max',['../namespaceprism.html#a812456273adfa37979e79f07e731d412',1,'prism']]],
   ['memory',['memory',['../structprism_1_1_bitvector_data_1_1memory.html',1,'prism::BitvectorData']]],
   ['memory',['memory',['../structprism_1_1_bitvector_data_1_1memory.html#a40de18a5a4154fe8f80f8ba63c9f5ab3',1,'prism::BitvectorData::memory']]],
-  ['mid',['mid',['../classprism_1_1_array.html#a184d0853ea009fb9d156c1302d46a87d',1,'prism::Array::mid()'],['../classprism_1_1_vector.html#ad15f2817fe441c22bbbdb1e1ecfe9aed',1,'prism::Vector::mid()']]],
+  ['mid',['mid',['../classprism_1_1_array.html#a184d0853ea009fb9d156c1302d46a87d',1,'prism::Array::mid()'],['../classprism_1_1_deque.html#a456190fa35c2e5eee950b0ef61e75866',1,'prism::Deque::mid()'],['../classprism_1_1_vector.html#ad15f2817fe441c22bbbdb1e1ecfe9aed',1,'prism::Vector::mid()']]],
   ['min',['min',['../classprism_1_1_time.html#afd27e4b1e093fed8253b10090c6090aa',1,'prism::Time::min()'],['../namespaceprism.html#a10aff0aca673fb1837069dd8967e4738',1,'prism::min()']]],
   ['mins',['mins',['../classprism_1_1_time.html#ac1ffe68588575f1938803cc5d7445824',1,'prism::Time']]],
   ['mins_5fper_5fday',['MINS_PER_DAY',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207',1,'prism::Time']]],

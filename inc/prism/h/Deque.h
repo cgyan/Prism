@@ -18,6 +18,7 @@
 #include <ostream>
 #include <cstddef> // for std::ptrdiff_t
 #include <initializer_list>
+#include <deque>
 using namespace std;
 
 namespace prism {
@@ -55,7 +56,6 @@ public:
 		  start(*buckets),
 		  end(start+prism_deque_bucket_size) {}
 
-	// can converts non-const iterator into const iterator but not the other way around
 	DequeIterator(const iterator& copy)
 		: buckets(copy.buckets),
 		  current(copy.current),
@@ -188,17 +188,71 @@ public:
 
 	friend std::ostream&
 	operator<<(std::ostream& out, const Self& it) {
-		out <<	"current index:" << it.current-it.start;
+		out << "[bucket:" << it.buckets;
+		out <<	"] [current index:" << it.current-it.start << "]";
 		return out;
 	}
 };
 // \endcond
+//================================================================================
+// DequeMemory
+//================================================================================
+template <class T>
+struct DequeMemory {
+	T** start;
+	T** finish;
+
+	DequeMemory() : start(nullptr), finish(nullptr)
+	{}
+
+	~DequeMemory() {
+		deallocateStorage();
+	};
+
+	T*
+	allocateBucket() {
+		return new T[prism_deque_bucket_size];
+	}
+
+	T**
+	allocateStorage(const int size) {
+		return new T*[size];
+	}
+
+	void
+	createBuckets(T** start, T** finish) {
+		while (start != finish) {
+			*start = allocateBucket();
+			++start;
+		}
+	}
+
+	void
+	deallocateBucket(T* bucket) {
+		delete bucket;
+	}
+
+	void
+	deallocateStorage() {
+		if (start != nullptr) {
+			for (int i=0; i<finish-start; i++)
+				deallocateBucket(start[i]);
+			delete []start;
+		}
+	}
+
+	const int
+	numBuckets() const {
+		return finish-start;
+	}
+};
 //================================================================================
 // DequeData
 //================================================================================
 // \cond DO_NOT_DOCUMENT
 template <class T>
 struct DequeData : public SharedData {
+	typedef DequeMemory<T>							memory;
 	typedef DequeIterator<T,false>					iterator;
 	typedef DequeIterator<T,true>					const_iterator;
 	typedef typename iterator::value_type			value_type;
@@ -209,68 +263,21 @@ struct DequeData : public SharedData {
 	typedef typename const_iterator::reference		const_reference;
 	typedef typename iterator::iterator_category 	iterator_category;
 
-	struct memory {
-		T** start;
-		T** finish;
-
-		memory() : start(0), finish(0)
-		{}
-
-		~memory() {
-			deallocateStorage();
-		};
-
-		T*
-		allocateBucket() {
-			return new T[prism_deque_bucket_size];
-		}
-
-		T**
-		allocateStorage(const int size) {
-			return new T*[size];
-		}
-
-		void
-		createBuckets(T** start, T** finish) {
-			while (start != finish) {
-				*start = allocateBucket();
-				++start;
-			}
-		}
-
-		void
-		deallocateBucket(T* bucket) {
-			delete bucket;
-		}
-
-		void
-		deallocateStorage() {
-			if (start != nullptr) {
-				for (int i=0; i<finish-start; i++)
-					deallocateBucket(start[i]);
-				delete []start;
-			}
-		}
-
-		const int
-		numBuckets() const {
-			return finish-start;
-		}
-	};
-
-	memory 		storage;
+	memory		storage;
 	iterator 	begin;
 	iterator 	end;
 
-	DequeData();
-	DequeData(const int size, const T& value);
-	DequeData(std::initializer_list<T> list);
-	~DequeData();
+				DequeData();
+				DequeData(const int size, const T& value);
+				DequeData(const_iterator first, const_iterator last);
+				DequeData(std::initializer_list<T> list);
+				~DequeData();
 
 	const int 	capacity() const;
 	void		clear();
 	void		fill(const T& value);
 	void 		initializeStorage(const int numElements);
+	void		insert(const int index, const int count, const T& value);
 	const bool	rangeCheck(const int i) const;
 	const int 	size() const;
 };
@@ -291,6 +298,16 @@ DequeData<T>::
 DequeData(const int size, const T& value) {
 	initializeStorage(size);
 	fill(value);
+}
+
+/**
+ *
+ */
+template <class T>
+DequeData<T>::
+DequeData(const_iterator first, const_iterator last) {
+	initializeStorage(last-first);
+	prism::copy(first, last, begin);
 }
 
 /**
@@ -376,6 +393,25 @@ initializeStorage(const int numElements) {
 }
 
 /**
+ *
+ */
+template <class T>
+void
+DequeData<T>::
+insert(const int index, const int count, const T& value) {
+	// where is the insertion happening?
+	if (index == 0) { // at the beginning
+
+	}
+	else if (index == size()) { // at the end
+
+	}
+	else { // somewhere between beginning and end
+
+	}
+}
+
+/**
  * Sanity check to make sure i is within range.
  */
 template <class T>
@@ -415,6 +451,7 @@ private:
 public:
 						Deque();
 						Deque(const int size, const T& value=T());
+						Deque(const_iterator first, const_iterator last);
 						Deque(std::initializer_list<T> list);
 						Deque(const Deque<T>& copy);
 						~Deque();
@@ -443,15 +480,18 @@ public:
 	reference			front();
 	const_reference		front() const;
 	const int			indexOf(const T& value, const int from=0);
+	void				insert(const int index, const int count, const T& value);
 	const bool			isEmpty() const;
 	reference			last();
 	const_reference		last() const;
 	const int			lastIndexOf(const T& value, int from=-1);
-//	Deque<T>			mid(const int startIndex, const int count) const;
+	Deque<T>			mid(const int startIndex, const int count) const;
 	void 				replace(const int index, const T& value);
 	const int 			size() const;
 	const bool			startsWith(const T& value) const;
 	List<T>				toList() const;
+//	deque<T>			toStdDeque() const;
+
 
 	reference			operator[](const int i);
 	const_reference		operator[](const int i) const;
@@ -487,6 +527,15 @@ template <class T>
 Deque<T>::
 Deque(const int size, const T& value)
 	: d(new DequeData<T>(size, value))
+{}
+
+/**
+ *
+ */
+template <class T>
+Deque<T>::
+Deque(const_iterator first, const_iterator last)
+	: d(new DequeData<T>(first, last))
 {}
 
 /**
@@ -702,7 +751,7 @@ template <class T>
 const bool
 Deque<T>::
 endsWith(const T& value) const {
-	return last() == value;
+	return back() == value;
 }
 
 /**
@@ -771,6 +820,16 @@ indexOf(const T& value, const int from) {
 }
 
 /**
+ *
+ */
+template <class T>
+void
+Deque<T>::
+insert(const int index, const int count, const T& value) {
+	d->insert(index, count, value);
+}
+
+/**
  * @return Returns true if the Deque is empty i.e. size == 0, false otherwise.
  */
 template <class T>
@@ -816,12 +875,18 @@ lastIndexOf(const T& value, int from) {
 /**
  *
  */
-//template <class T>
-//Deque<T>
-//Deque<T>::
-//mid(const int startIndex, const int count) const {
-//	return d->mid(startIndex, count);
-//}
+template <class T>
+Deque<T>
+Deque<T>::
+mid(const int startIndex, const int count) const {
+	const_iterator first = begin() + startIndex;
+	const_iterator last;
+
+	if (startIndex + count >= d->size()) last = end();
+	else last = first + count;
+
+	return Deque<T>(first, last);
+}
 
 /**
  *
@@ -868,6 +933,16 @@ toList() const {
 
 	return list;
 }
+
+/**
+ *
+ */
+//template <class T>
+//std::deque<T>
+//Deque<T>::
+//toStdDeque() const {
+//	return std::deque<T>(constBegin(), constEnd());
+//}
 
 /**
  * @return Returns a reference to the element at index \em i.
