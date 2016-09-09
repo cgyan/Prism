@@ -77,7 +77,9 @@ int main(int argc, char * argv[]) {
 
 	Deque<int> d({0,1,2,3,4,5,6});
 	cout << d << endl;
-	d.insert(7,1,7);
+	d.insert(0,1,7);
+	cout << d << endl;
+
 
 
 

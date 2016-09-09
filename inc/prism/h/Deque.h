@@ -22,6 +22,7 @@
 using namespace std;
 
 namespace prism {
+namespace aux {
 static const int prism_deque_bucket_size = 8;
 //================================================================================
 // DequeIterator
@@ -206,7 +207,7 @@ struct DequeMemory {
 	{}
 
 	~DequeMemory() {
-		deallocateStorage();
+		deallocateStorage(start, finish);
 	};
 
 	T*
@@ -215,8 +216,8 @@ struct DequeMemory {
 	}
 
 	T**
-	allocateStorage(const int size) {
-		return new T*[size];
+	allocateStorage(const int numBuckets) {
+		return new T*[numBuckets];
 	}
 
 	void
@@ -233,11 +234,11 @@ struct DequeMemory {
 	}
 
 	void
-	deallocateStorage() {
-		if (start != nullptr) {
-			for (int i=0; i<finish-start; i++)
-				deallocateBucket(start[i]);
-			delete []start;
+	deallocateStorage(T** storageStart, T** storageFinish) {
+		if (storageStart != nullptr) {
+			for (int i=0; i<storageFinish-storageStart; i++)
+				deallocateBucket(storageStart[i]);
+			delete []storageStart;
 		}
 	}
 
@@ -245,6 +246,56 @@ struct DequeMemory {
 	numBuckets() const {
 		return finish-start;
 	}
+
+
+
+	/**
+	 * fillInsert(pos, count, value)
+	 * --Checks if pos is at the start, end or somewhere in between
+	 * --Reserves elements at front (or back)
+	 * --Fills new elements with value
+	 * --Returns nothing
+	 *
+	 * reserveElementsAtFront(count)
+	 * --Checks how many spaces are available in begin's bucket before begin.current
+	 * --If count is more than those spaces then newElementsAtFront is called
+	 * --Returns iterator to new first position
+	 *
+	 * reserveElementsAtBack(count)
+	 * --Checks how many spaces are available in end's bucket after end.current
+	 * --If count is more than those spaces then newElementsAtBack is called
+	 * --Returns iterator to one position past the new last position
+	 *
+	 * newElementsAtFront(numNewElements)
+	 * --Calculates the number of new buckets needed
+	 * --Reserves storage at the front
+	 * --Allocates the buckets
+	 * --Returns nothing
+	 *
+	 * newElementsAtBAck(numNewElements)
+	 * --Calculates the number of new buckets needed
+	 * --Reserves storage at the back
+	 * --Allocates the buckets
+	 * --Returns nothing
+	 *
+	 * reserveStorageAtFront(numNewBuckets)
+	 * --Checks if there is enough storage for numNewBuckets before begin's bucket
+	 * --If not then the storage gets reallocated
+	 * --Returns nothing
+	 *
+	 * reserveStorageAtBack(numNewBuckets)
+	 * --Checks if there is enough storage for numNewBuckets after the last bucket
+	 * --If not then the storage gets reallocated
+	 * --Returns nothing
+	 *
+	 * reallocateStorage(numBuckets, newBucketsAtFront)
+	 * --Allocates new storage
+	 * --Calculates the new start bucket
+	 * --Copies the existing storage into the new storage
+	 * --Deallocates old storage
+	 * --Updates begin and end iterators
+	 * --Returns nothing
+	 */
 };
 //================================================================================
 // DequeData
@@ -252,7 +303,7 @@ struct DequeMemory {
 // \cond DO_NOT_DOCUMENT
 template <class T>
 struct DequeData : public SharedData {
-	typedef DequeMemory<T>							memory;
+	typedef DequeMemory<T>							Memory;
 	typedef DequeIterator<T,false>					iterator;
 	typedef DequeIterator<T,true>					const_iterator;
 	typedef typename iterator::value_type			value_type;
@@ -263,7 +314,7 @@ struct DequeData : public SharedData {
 	typedef typename const_iterator::reference		const_reference;
 	typedef typename iterator::iterator_category 	iterator_category;
 
-	memory		storage;
+	Memory		storage;
 	iterator 	begin;
 	iterator 	end;
 
@@ -277,8 +328,12 @@ struct DequeData : public SharedData {
 	void		clear();
 	void		fill(const T& value);
 	void 		initializeStorage(const int numElements);
-	void		insert(const int index, const int count, const T& value);
+	void		fillInsert(iterator pos, const int numElements, const T& value);
+	void		newElementsAtFront(const int numNewElements);
 	const bool	rangeCheck(const int i) const;
+	void		reallocateStorage(const int numNewBuckets, const bool newBucketsAtFront);
+	iterator	reserveElementsAtFront(const int numElements);
+	void		reserveStorageAtFront(const int bucketsToAdd);
 	const int 	size() const;
 };
 // \endcond
@@ -398,17 +453,40 @@ initializeStorage(const int numElements) {
 template <class T>
 void
 DequeData<T>::
-insert(const int index, const int count, const T& value) {
-	// where is the insertion happening?
-	if (index == 0) { // at the beginning
+fillInsert(iterator pos, const int numElements, const T& value) {
+	// insert at beginning
+	if (pos.current == begin.current) {
+		iterator newStart = reserveElementsAtFront(numElements);
+		prism::fill(newStart, newStart+numElements, value);
+		begin = newStart;
+	}
+	// inserting at end
+	else if (pos.current == end.current) {
 
 	}
-	else if (index == size()) { // at the end
+	// inserting somewhere between beginning and end
+	else {
 
 	}
-	else { // somewhere between beginning and end
 
-	}
+
+}
+
+/**
+	 * --Calculates the number of new buckets needed
+	 * --Reserves storage at the front
+	 * --Allocates the buckets
+	 * --Returns nothing
+ */
+template <class T>
+void
+DequeData<T>::
+newElementsAtFront(const int numNewElements) {
+	int numBuckets = numNewElements / prism_deque_bucket_size + 1;
+	if (numBuckets > begin.buckets - storage.start)
+		reserveStorageAtFront(numBuckets);
+
+	// allocate buckets here
 }
 
 /**
@@ -423,6 +501,65 @@ rangeCheck(const int i) const {
 }
 
 /**
+	 * --Allocates new storage
+	 * --Calculates the new start bucket
+	 * --Copies the existing storage into the new storage
+	 * --Deallocates old storage
+	 * --Updates begin and end iterators
+	 * --Returns nothing
+ */
+template <class T>
+void
+DequeData<T>::
+reallocateStorage(const int bucketsToAdd, const bool newBucketsAtFront) {
+	int totalNumBuckets = storage.numBuckets() + bucketsToAdd;
+	T** newStorage = storage.allocateStorage(totalNumBuckets);
+
+	if (newBucketsAtFront)
+		prism::copy(storage.start, storage.finish, newStorage+bucketsToAdd);
+	else
+		prism::copy(storage.start, storage.finish, newStorage);
+
+	storage.deallocateStorage(storage.start, storage.finish);
+
+	storage.start = newStorage;
+	storage.finish = storage.start + totalNumBuckets;
+	begin.buckets = storage.start;
+	end.buckets = begin.buckets + totalNumBuckets;
+}
+
+/**
+ 	 * --
+	 * --Checks how many spaces are available in begin's bucket before begin.current
+	 * --If count is more than those spaces then newElementsAtFront is called
+	 * --Returns iterator to new first position
+ */
+template <class T>
+typename DequeData<T>::iterator
+DequeData<T>::
+reserveElementsAtFront(const int numElements) {
+	int vacancies = begin.current - begin.start;
+	if (numElements > vacancies)
+		newElementsAtFront(numElements-vacancies);
+
+	return begin - numElements;
+}
+
+/**
+	 * --Checks if there is enough storage for bucketsToAdd before begin's bucket
+	 * --If not then the storage gets reallocated
+	 * --Returns nothing
+ */
+template <class T>
+void
+DequeData<T>::
+reserveStorageAtFront(const int bucketsToAdd) {
+	int bucketVacancies = begin.buckets - storage.start;
+	if (bucketsToAdd > bucketVacancies)
+		reallocateStorage(bucketsToAdd, true);
+}
+
+/**
  *
  */
 template <class T>
@@ -431,23 +568,26 @@ DequeData<T>::
 size() const {
 	return end-begin;
 }
+
+} // namespace aux
 //================================================================================
 // Deque
 //================================================================================
 template <class T>
 class Deque {
 public:
-	typedef typename DequeData<T>::iterator			iterator;
-	typedef typename DequeData<T>::const_iterator	const_iterator;
-	typedef typename iterator::value_type			value_type;
-	typedef typename iterator::difference_type		difference_type;
-	typedef typename iterator::pointer				pointer;
-	typedef typename iterator::reference			reference;
-	typedef typename const_iterator::pointer		const_pointer;
-	typedef typename const_iterator::reference		const_reference;
-	typedef typename iterator::iterator_category 	iterator_category;
+	typedef typename aux::DequeData<T>						Data;
+	typedef typename aux::DequeData<T>::iterator			iterator;
+	typedef typename aux::DequeData<T>::const_iterator		const_iterator;
+	typedef typename iterator::value_type					value_type;
+	typedef typename iterator::difference_type				difference_type;
+	typedef typename iterator::pointer						pointer;
+	typedef typename iterator::reference					reference;
+	typedef typename const_iterator::pointer				const_pointer;
+	typedef typename const_iterator::reference				const_reference;
+	typedef typename iterator::iterator_category 			iterator_category;
 private:
-	SharedDataPointer<DequeData<T>> d;
+	SharedDataPointer<Data> d;
 public:
 						Deque();
 						Deque(const int size, const T& value=T());
@@ -504,9 +644,20 @@ public:
 		out << "Deque [" << &d << "]"
 				" size=" << d.size() <<
 				" capacity=" << d.capacity() <<
-				" numBuckets=" << d.d->storage.finish-d.d->storage.start << endl;
-		out << "----begin: " << d.d->begin << endl;
-		out << "----end:   " << d.d->end;
+				" numBuckets=" << d.d->storage.numBuckets() << endl;
+		out << "----storage.start: [" << d.d->storage.start << "]" << endl;
+		out << "----begin:         " <<
+						"[buckets index:" << d.d->begin.buckets-d.d->storage.start << " " <<
+						"(" << d.d->begin.buckets << ")] " <<
+						"[current index:" << d.d->begin.current-d.d->begin.start << "]\n";
+		out << "----end:           "
+						"[buckets index:" << d.d->end.buckets-d.d->storage.start << " " <<
+						"(" << d.d->end.buckets << ")] " <<
+						"[current index:" << d.d->end.current-d.d->end.start << "]\n";
+
+		const_iterator cit = d.constBegin();
+		while (cit != d.end())
+			out << *cit++ << endl;
 		return out;
 	}
 };
@@ -517,7 +668,7 @@ public:
 template <class T>
 Deque<T>::
 Deque()
-	: d(new DequeData<T>)
+	: d(new Data)
 {}
 
 /**
@@ -526,7 +677,7 @@ Deque()
 template <class T>
 Deque<T>::
 Deque(const int size, const T& value)
-	: d(new DequeData<T>(size, value))
+	: d(new Data(size, value))
 {}
 
 /**
@@ -535,7 +686,7 @@ Deque(const int size, const T& value)
 template <class T>
 Deque<T>::
 Deque(const_iterator first, const_iterator last)
-	: d(new DequeData<T>(first, last))
+	: d(new Data(first, last))
 {}
 
 /**
@@ -545,7 +696,7 @@ Deque(const_iterator first, const_iterator last)
 template <class T>
 Deque<T>::
 Deque(std::initializer_list<T> list)
-	: d(new DequeData<T>(list))
+	: d(new Data(list))
 {}
 
 /**
@@ -826,7 +977,7 @@ template <class T>
 void
 Deque<T>::
 insert(const int index, const int count, const T& value) {
-	d->insert(index, count, value);
+	d->fillInsert(d->begin+index, count, value);
 }
 
 /**
