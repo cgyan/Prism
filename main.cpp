@@ -75,11 +75,12 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 
-	Deque<int> d({0,1,2,3,4,5,6});
+	Deque<int> d({0,1,2,3,4});
 	cout << d << endl;
-	d.insert(0,1,7);
+	d.insert(d.size(),3,100);
 	cout << d << endl;
-
+	cout << "!" << endl;
+	printRange(cout, d.begin(), d.end());
 
 
 

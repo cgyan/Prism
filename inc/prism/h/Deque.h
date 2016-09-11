@@ -202,6 +202,7 @@ template <class T>
 struct DequeMemory {
 	T** start;
 	T** finish;
+	//todo add exponent growth value for use when reallocating
 
 	DequeMemory() : start(nullptr), finish(nullptr)
 	{}
@@ -235,11 +236,7 @@ struct DequeMemory {
 
 	void
 	deallocateStorage(T** storageStart, T** storageFinish) {
-		if (storageStart != nullptr) {
-			for (int i=0; i<storageFinish-storageStart; i++)
-				deallocateBucket(storageStart[i]);
-			delete []storageStart;
-		}
+		delete []storageStart;
 	}
 
 	const int
@@ -456,13 +453,85 @@ DequeData<T>::
 fillInsert(iterator pos, const int numElements, const T& value) {
 	// insert at beginning
 	if (pos.current == begin.current) {
-		iterator newStart = reserveElementsAtFront(numElements);
-		prism::fill(newStart, newStart+numElements, value);
-		begin = newStart;
+//		cout << "[fillInsert::insertAtBeginning]" << endl;
+//		iterator newStart = reserveElementsAtFront(numElements);
+//		prism::fill(newStart, newStart+numElements, value);
+//		begin = newStart;
+
+		int oldSize = size();
+
+		int elementVacancies = begin.current - begin.start;
+		if (elementVacancies < numElements) {
+			int numBucketsNeeded = (numElements - elementVacancies)
+									/ prism_deque_bucket_size
+									+ 1;
+			int bucketVacancies = begin.buckets - storage.start;
+			if (bucketVacancies < numBucketsNeeded) {
+				int totalBucketsNeeded = storage.numBuckets() + numBucketsNeeded;
+				T** newStorage = storage.allocateStorage(totalBucketsNeeded);
+				prism::copy(storage.start, storage.finish, newStorage+numBucketsNeeded);
+				storage.createBuckets(newStorage, newStorage+numBucketsNeeded);
+
+				storage.deallocateStorage(storage.start, storage.finish);
+
+				storage.start = newStorage;
+				storage.finish = storage.start + totalBucketsNeeded;
+
+				begin.buckets = storage.start;
+				begin.start = *storage.start;
+				begin.end = begin.start + prism_deque_bucket_size;
+
+				begin.current = begin.end -
+								((numElements-elementVacancies) %
+								prism_deque_bucket_size);
+
+			}
+		}
+		else {
+			begin -= numElements;
+		}
+
+		end = begin + oldSize + numElements;
+		prism::fill(begin, begin+numElements, value);
 	}
 	// inserting at end
 	else if (pos.current == end.current) {
+		int oldSize = size();
 
+		int elementVacancies = end.end - end.current;
+		if (elementVacancies < numElements) {
+			int numBucketsNeeded = (numElements - elementVacancies)
+									/ prism_deque_bucket_size
+									+1;
+			int bucketVacancies = storage.finish - end.buckets - 1;
+			if (bucketVacancies < numBucketsNeeded) {
+				int totalBucketsNeeded = storage.numBuckets() + numBucketsNeeded;
+				T** newStorage = storage.allocateStorage(totalBucketsNeeded);
+				prism::copy(storage.start, storage.finish, newStorage);
+				storage.createBuckets(newStorage+storage.numBuckets(),
+										newStorage+storage.numBuckets()+numBucketsNeeded);
+
+				int beginIndex = begin.current - begin.start;
+
+				storage.deallocateStorage(storage.start, storage.finish);
+
+				storage.start = newStorage;
+				storage.finish = storage.start + totalBucketsNeeded;
+
+				begin.buckets = storage.start;
+				begin.start = *begin.buckets;
+				begin.end = begin.start + prism_deque_bucket_size;
+				begin.current = begin.start + beginIndex;
+
+				end = begin + oldSize + numElements;
+			}
+
+		}
+		else {
+			end += numElements;
+		}
+
+		prism::fill(begin+oldSize, begin+oldSize+numElements, value);
 	}
 	// inserting somewhere between beginning and end
 	else {
@@ -482,11 +551,14 @@ template <class T>
 void
 DequeData<T>::
 newElementsAtFront(const int numNewElements) {
-	int numBuckets = numNewElements / prism_deque_bucket_size + 1;
-	if (numBuckets > begin.buckets - storage.start)
-		reserveStorageAtFront(numBuckets);
-
-	// allocate buckets here
+	cout << "[newElementsAtFront]" << endl;
+	int numBucketsNeeded = numNewElements / prism_deque_bucket_size + 1;
+	cout << "numNewElements:" << numNewElements << endl;
+	cout << "numBucketsNeeded:" << numBucketsNeeded << endl;
+//	if (numBucketsNeeded > begin.buckets - storage.start) {
+	reserveStorageAtFront(numBucketsNeeded);
+	storage.createBuckets(storage.start, storage.start+numBucketsNeeded);
+//	}
 }
 
 /**
@@ -512,13 +584,20 @@ template <class T>
 void
 DequeData<T>::
 reallocateStorage(const int bucketsToAdd, const bool newBucketsAtFront) {
-	int totalNumBuckets = storage.numBuckets() + bucketsToAdd;
+	cout << "[reallocateStorage]" << endl;
+	int oldNumBuckets = storage.numBuckets();
+	int totalNumBuckets = oldNumBuckets + bucketsToAdd;
+	cout << "totalNumBuckets:" << totalNumBuckets << endl;
 	T** newStorage = storage.allocateStorage(totalNumBuckets);
 
-	if (newBucketsAtFront)
+	if (newBucketsAtFront) {
+		cout << "copying pointers from old storage to front of new storage" << endl;
 		prism::copy(storage.start, storage.finish, newStorage+bucketsToAdd);
-	else
+	}
+	else {
+		cout << "copying pointers from old storage to back of new storage" << endl;
 		prism::copy(storage.start, storage.finish, newStorage);
+	}
 
 	storage.deallocateStorage(storage.start, storage.finish);
 
@@ -526,6 +605,21 @@ reallocateStorage(const int bucketsToAdd, const bool newBucketsAtFront) {
 	storage.finish = storage.start + totalNumBuckets;
 	begin.buckets = storage.start;
 	end.buckets = begin.buckets + totalNumBuckets;
+
+	//=================================================
+	cout << "storage.start: " << storage.start << endl;
+	cout << "begin.buckets: " << begin.buckets << endl;
+	cout << "end.buckets: " << end.buckets << endl;
+	cout << "storage.start + 1 = " << (storage.start+1) << endl;
+	cout << "storage.start + 2 = " << (storage.start+2) << endl;
+	T** p = storage.start;
+	while (p!= storage.finish) {
+		cout << "p: " << p << endl;
+		cout << "*p: " << *p++ << endl;
+	}
+	cout << *(*(storage.start+1)+2) << endl;
+
+	//=================================================
 }
 
 /**
@@ -538,9 +632,11 @@ template <class T>
 typename DequeData<T>::iterator
 DequeData<T>::
 reserveElementsAtFront(const int numElements) {
-	int vacancies = begin.current - begin.start;
-	if (numElements > vacancies)
-		newElementsAtFront(numElements-vacancies);
+	cout << "[reserveElementsAtFront]" << endl;
+	int elementVacancies = begin.current - begin.start;
+	cout << "elementVacancies:" << elementVacancies << endl;
+	if (numElements > elementVacancies)
+		newElementsAtFront(numElements-elementVacancies);
 
 	return begin - numElements;
 }
@@ -554,7 +650,9 @@ template <class T>
 void
 DequeData<T>::
 reserveStorageAtFront(const int bucketsToAdd) {
+	cout << "[reserveStorageAtFront]" << endl;
 	int bucketVacancies = begin.buckets - storage.start;
+	cout << "bucketVacancies:" << bucketVacancies << endl;
 	if (bucketsToAdd > bucketVacancies)
 		reallocateStorage(bucketsToAdd, true);
 }
@@ -641,10 +739,10 @@ public:
 
 	friend std::ostream&
 	operator<<(std::ostream& out, const Deque<T>& d) {
-		out << "Deque [" << &d << "]"
-				" size=" << d.size() <<
-				" capacity=" << d.capacity() <<
-				" numBuckets=" << d.d->storage.numBuckets() << endl;
+		out << "Deque [" << &d << "]\n"
+				"----size:          " << d.size() << "\n" <<
+				"----capacity:      " << d.capacity() << "\n" <<
+				"----numBuckets:    " << d.d->storage.numBuckets() << endl;
 		out << "----storage.start: [" << d.d->storage.start << "]" << endl;
 		out << "----begin:         " <<
 						"[buckets index:" << d.d->begin.buckets-d.d->storage.start << " " <<
@@ -655,9 +753,28 @@ public:
 						"(" << d.d->end.buckets << ")] " <<
 						"[current index:" << d.d->end.current-d.d->end.start << "]\n";
 
-		const_iterator cit = d.constBegin();
-		while (cit != d.end())
-			out << *cit++ << endl;
+		T** buckets = d.d->storage.start;
+		const_iterator cbit = d.cbegin();
+		const_iterator ceit = d.cend();
+		int counter = 0;
+
+		while (buckets != d.d->storage.finish) {
+			if (counter == aux::prism_deque_bucket_size) {
+				cout << "-----------" << endl;
+				counter = 0;
+			}
+			cout << "Bucket " << (buckets-d.d->storage.start) << ": " << buckets << endl;
+
+			T* bucket = *buckets;
+			for (int i=0; i<aux::prism_deque_bucket_size; i++) {
+				if (bucket+i < cbit.current || bucket+i >= ceit.current)
+					cout << "  [-] *" << endl;
+				else
+					cout << "  [" << (cbit-d.cbegin()) << "] " << *cbit++ << endl;
+				++counter;
+			}
+			++buckets;
+		}
 		return out;
 	}
 };
