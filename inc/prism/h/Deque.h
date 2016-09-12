@@ -535,10 +535,92 @@ fillInsert(iterator pos, const int numElements, const T& value) {
 	}
 	// inserting somewhere between beginning and end
 	else {
+		// is the insertion point located in first or seconds half of the deque?
+		// check element vacancies
+		// check bucket vacancies
+		// reallocate if necessary
 
+		bool indexLocatedInFirstHalf = pos-begin < size() / 2;
+
+		if (indexLocatedInFirstHalf) {
+			int oldSize = size();
+			int insertIndex = pos-begin;
+
+			int elementVacancies = begin.current - begin.start;
+			if (elementVacancies < numElements) {
+				int numBucketsNeeded = (numElements - elementVacancies)
+										/ prism_deque_bucket_size
+										+ 1;
+				int bucketVacancies = begin.buckets - storage.start;
+				if (bucketVacancies < numBucketsNeeded) {
+					int totalBucketsNeeded = storage.numBuckets() + numBucketsNeeded;
+					T** newStorage = storage.allocateStorage(totalBucketsNeeded);
+					prism::copy(storage.start, storage.finish, newStorage+numBucketsNeeded);
+					storage.createBuckets(newStorage, newStorage+numBucketsNeeded);
+
+					storage.deallocateStorage(storage.start, storage.finish);
+
+					storage.start = newStorage;
+					storage.finish = storage.start + totalBucketsNeeded;
+
+					begin.buckets = storage.start;
+					begin.start = *storage.start;
+					begin.end = begin.start + prism_deque_bucket_size;
+
+					begin.current = begin.end -
+									((numElements-elementVacancies) %
+									prism_deque_bucket_size);
+
+				}
+			}
+			else {
+				begin -= numElements;
+			}
+
+			end = begin + oldSize + numElements;
+			prism::copy_n(begin+numElements, insertIndex, begin);
+			prism::fill(begin+insertIndex, begin+insertIndex+numElements, value);
+		}
+		else { // index is located in second half
+			int oldSize = size();
+			int insertIndex = pos-begin;
+
+			int elementVacancies = end.end - end.current;
+			if (elementVacancies < numElements) {
+				int numBucketsNeeded = (numElements - elementVacancies)
+										/ prism_deque_bucket_size
+										+1;
+				int bucketVacancies = storage.finish - end.buckets - 1;
+				if (bucketVacancies < numBucketsNeeded) {
+					int totalBucketsNeeded = storage.numBuckets() + numBucketsNeeded;
+					T** newStorage = storage.allocateStorage(totalBucketsNeeded);
+					prism::copy(storage.start, storage.finish, newStorage);
+					storage.createBuckets(newStorage+storage.numBuckets(),
+											newStorage+storage.numBuckets()+numBucketsNeeded);
+
+					int beginIndex = begin.current - begin.start;
+
+					storage.deallocateStorage(storage.start, storage.finish);
+
+					storage.start = newStorage;
+					storage.finish = storage.start + totalBucketsNeeded;
+
+					begin.buckets = storage.start;
+					begin.start = *begin.buckets;
+					begin.end = begin.start + prism_deque_bucket_size;
+					begin.current = begin.start + beginIndex;
+
+					end = begin + oldSize + numElements;
+				}
+
+			}
+			else {
+				end += numElements;
+			}
+			prism::copy_backward(begin+insertIndex, end-numElements, end);
+			prism::fill(begin+insertIndex, begin+insertIndex+numElements, value);
+		}
 	}
-
-
 }
 
 /**

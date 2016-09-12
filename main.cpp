@@ -75,9 +75,9 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 
-	Deque<int> d({0,1,2,3,4});
+	Deque<int> d({0,1,2,3,4,5});
 	cout << d << endl;
-	d.insert(d.size(),3,100);
+	d.insert(3,2,100);
 	cout << d << endl;
 	cout << "!" << endl;
 	printRange(cout, d.begin(), d.end());

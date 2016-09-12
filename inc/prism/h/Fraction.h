@@ -1,6 +1,6 @@
 /*
  * Fraction.h
- * v0.1
+ * v1
  *
  *  Created on: Jun 26, 2016
  *      Author: iainhemstock
