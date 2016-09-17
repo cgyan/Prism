@@ -67,14 +67,12 @@ public:
 		  end(copy.end) {}
 
 	reference
-	operator*() {
-		return *current;
-	}
+	operator*()
+	{ return *current; }
 
 	pointer
-	operator->() {
-		return current;
-	}
+	operator->()
+	{ return current; }
 
 	Self&
 	operator+=(const int n)
@@ -102,9 +100,8 @@ public:
 	}
 
 	Self&
-	operator-=(const int n) {
-		return *this += -n;
-	}
+	operator-=(const int n)
+	{ return *this += -n; }
 
 	Self
 	operator-(const int n) {
@@ -113,9 +110,8 @@ public:
 	}
 
 	Self&
-	operator++() {
-		return *this += 1;
-	}
+	operator++()
+	{ return *this += 1; }
 
 	Self
 	operator++(int junk) {
@@ -125,9 +121,8 @@ public:
 	}
 
 	Self&
-	operator--() {
-		return *this -= 1;
-	}
+	operator--()
+	{ return *this -= 1; }
 
 	Self
 	operator--(int junk) {
@@ -158,9 +153,8 @@ public:
 	}
 
 	friend const bool
-	operator!=(const Self& it1, const Self& it2) {
-		return !(it1==it2);
-	}
+	operator!=(const Self& it1, const Self& it2)
+	{ return !(it1==it2); }
 
 	friend const int
 	operator-(const Self& lhs, const Self& rhs) {
@@ -171,24 +165,20 @@ public:
 	}
 
 	friend const bool
-	operator<(const Self& lhs, const Self& rhs) {
-		return lhs-rhs < 0;
-	}
+	operator<(const Self& lhs, const Self& rhs)
+	{ return lhs-rhs < 0; }
 
 	friend const bool
-	operator>(const Self& lhs, const Self& rhs) {
-		return lhs-rhs > 0;
-	}
+	operator>(const Self& lhs, const Self& rhs)
+	{ return lhs-rhs > 0; }
 
 	friend const bool
-	operator<=(const Self& lhs, const Self& rhs) {
-		return lhs-rhs <= 0;
-	}
+	operator<=(const Self& lhs, const Self& rhs)
+	{ return lhs-rhs <= 0; }
 
 	friend const bool
-	operator>=(const Self& lhs, const Self& rhs) {
-		return lhs-rhs >= 0;
-	}
+	operator>=(const Self& lhs, const Self& rhs)
+	{ return lhs-rhs >= 0; }
 
 	friend std::ostream&
 	operator<<(std::ostream& out, const Self& it) {
@@ -244,9 +234,8 @@ struct DequeMemory {
 	}
 
 	storagePtr
-	allocateStorage(const int numBuckets) {
-		return storageAllocator.allocate(numBuckets);
-	}
+	allocateStorage(const int numBuckets)
+	{ return storageAllocator.allocate(numBuckets); }
 
 	void
 	deallocateBucket(pointer bucket)
@@ -265,56 +254,6 @@ struct DequeMemory {
 	const int
 	numBuckets() const
 	{ return finish-start; }
-
-
-
-	/**
-	 * fillInsert(pos, count, value)
-	 * --Checks if pos is at the start, end or somewhere in between
-	 * --Reserves elements at front (or back)
-	 * --Fills new elements with value
-	 * --Returns nothing
-	 *
-	 * reserveElementsAtFront(count)
-	 * --Checks how many spaces are available in begin's bucket before begin.current
-	 * --If count is more than those spaces then newElementsAtFront is called
-	 * --Returns iterator to new first position
-	 *
-	 * reserveElementsAtBack(count)
-	 * --Checks how many spaces are available in end's bucket after end.current
-	 * --If count is more than those spaces then newElementsAtBack is called
-	 * --Returns iterator to one position past the new last position
-	 *
-	 * newElementsAtFront(numNewElements)
-	 * --Calculates the number of new buckets needed
-	 * --Reserves storage at the front
-	 * --Allocates the buckets
-	 * --Returns nothing
-	 *
-	 * newElementsAtBAck(numNewElements)
-	 * --Calculates the number of new buckets needed
-	 * --Reserves storage at the back
-	 * --Allocates the buckets
-	 * --Returns nothing
-	 *
-	 * reserveStorageAtFront(numNewBuckets)
-	 * --Checks if there is enough storage for numNewBuckets before begin's bucket
-	 * --If not then the storage gets reallocated
-	 * --Returns nothing
-	 *
-	 * reserveStorageAtBack(numNewBuckets)
-	 * --Checks if there is enough storage for numNewBuckets after the last bucket
-	 * --If not then the storage gets reallocated
-	 * --Returns nothing
-	 *
-	 * reallocateStorage(numBuckets, newBucketsAtFront)
-	 * --Allocates new storage
-	 * --Calculates the new start bucket
-	 * --Copies the existing storage into the new storage
-	 * --Deallocates old storage
-	 * --Updates begin and end iterators
-	 * --Returns nothing
-	 */
 };
 //================================================================================
 // DequeData
@@ -427,26 +366,54 @@ struct DequeData : public SharedData {
 	/**
 	 *
 	 */
+	void
+	eraseAtBack(iterator pos) {
+		destroyElements(pos, end);
+		end = pos;
+	}
+
+	/**
+	 * Destroys all elements from begin up to (but not including) pos.
+	 */
+	void
+	eraseAtFront(iterator pos) {
+		destroyElements(begin, pos);
+		begin = pos;
+	}
+
+	/**
+	 *
+	 */
 	iterator
-	eraseRange(iterator from, iterator to) {
-		destroyElements(from, to);
-
-		int indexPosition = from-begin;
-		int numElements = to-from;
-		int numElementsBeforeFrom = from - begin;
-		int numElementsAfterTo = end - to;
-		iterator it;
-
-		if (numElementsBeforeFrom < numElementsAfterTo) {
-			it = prism::copy(this->begin, this->begin+indexPosition, this->begin+numElements);
-			begin += numElements;
+	eraseRange(iterator first, iterator last) {
+		if (first == last)
+			return first;
+		else if (first == begin && last == end) {
+			clear();
+			return end;
 		}
 		else {
-			it = prism::copy_backward(to, end, from+numElementsAfterTo);
-			end -= numElements;
-		}
+			int numElements = last-first;
+			int numElementsBeforeRange = first - begin;
 
-		return it;
+			bool b = numElementsBeforeRange <= (size() - numElements) / 2;
+			if (b) {
+//				if (first != begin) {
+					// copies elements up from the front
+					prism::copy_backward(this->begin, first, last);
+					eraseAtFront(begin+numElements);
+//				}
+			}
+			else {
+//				if (last != end) {
+					// copies elements down from the back
+					prism::copy(last, end, first);
+					eraseAtBack(end-numElements);
+//				}
+			}
+
+			return begin + numElementsBeforeRange;
+		}
 	}
 
 	/**
@@ -577,11 +544,11 @@ struct DequeData : public SharedData {
 
 		if (newBucketsAtFront) {
 			prism::copy(storage.start, storage.finish, newStorage+numBucketsToAdd);
-			storage.createBuckets(newStorage, newStorage+numBucketsToAdd);
+			storage.allocateBuckets(newStorage, newStorage+numBucketsToAdd);
 		}
 		else {
 			prism::copy(storage.start, storage.finish, newStorage);
-			storage.createBuckets(newStorage+storage.numBuckets(),
+			storage.allocateBuckets(newStorage+storage.numBuckets(),
 									newStorage+storage.numBuckets()+numBucketsToAdd);
 		}
 
@@ -702,7 +669,7 @@ public:
 	 * Creates an empty Deque.
 	 */
 	Deque()
-		: d(new Data)
+	: d(new Data)
 	{}
 
 	/**
@@ -710,7 +677,7 @@ public:
 	 * initialized to \em value.
 	 */
 	Deque(const int size, const T& value=T())
-		: d(new Data(size, value))
+	: d(new Data(size, value))
 	{}
 
 	/**
@@ -718,7 +685,7 @@ public:
 	 */
 	template <class ForwardIterator>
 	Deque(ForwardIterator first, ForwardIterator last)
-		: d(new Data(first, last))
+	: d(new Data(first, last))
 	{}
 
 	/**
@@ -726,14 +693,14 @@ public:
 	 * to the Deque.
 	 */
 	Deque(std::initializer_list<T> list)
-		: d(new Data(list))
+	: d(new Data(list))
 	{}
 
 	/**
 	 * Creates a new Deque which is a copy of \em copy.
 	 */
 	Deque(const Deque<T>& copy)
-		: d(copy.d)
+	: d(copy.d)
 	{}
 
 	/**
@@ -746,9 +713,8 @@ public:
 	 *
 	 */
 	void
-	append(const T& value) {
-		d->appendValue(value);
-	}
+	append(const T& value)
+	{ d->appendValue(value); }
 
 	/**
 	 * @return Returns a reference to the the element at index \em i.
@@ -778,178 +744,169 @@ public:
 	 * @return Returns a reference to the last element in the Deque.
 	 */
 	reference
-	back() {
-		return *(end()-1);
-	}
+	back()
+	{ return *(end()-1); }
 
 	/**
 	 * @return Returns a const reference to the last element in the Deque.
 	 */
 	const_reference
-	back() const {
-		return *(end()-1);
-	}
+	back() const
+	{ return *(end()-1); }
 
 	/**
 	 * @return Returns an iterator that points to the first element in the Deque.
 	 */
 	iterator
-	begin() {
-		return d->begin;
-	}
+	begin()
+	{ return d->begin; }
 
 	/**
 	 * @return Returns a const_iterator that points to the first element in the Deque.
 	 */
 	const_iterator
-	begin() const {
-		return d->begin;
-	}
+	begin() const
+	{ return d->begin; }
 
 	/**
 	 * @return Returns the capacity of the Deque.
 	 */
 	const int
-	capacity() const {
-		return d->capacity();
-	}
+	capacity() const
+	{ return d->capacity(); }
 
 	/**
 	 * @return Returns a const_iterator that points to the first element in the Deque.
 	 */
 	const_iterator
-	cbegin() const {
-		return d->begin;
-	}
+	cbegin() const
+	{ return d->begin; }
 
 	/**
 	 * @return Returns a const_iterator that points to one position past the last element in the Deque.
 	 */
 	const_iterator
-	cend() const {
-		return d->end;
-	}
+	cend() const
+	{ return d->end; }
 
 	/**
 	 * Clears all elements from the Deque so that its size is 0. \n
 	 * Note that this does not affect the capacity.
 	 */
 	void
-	clear() {
-		d->clear();
-	}
+	clear()
+	{ d->clear(); }
 
 	/**
 	 * @return Returns a const_iterator that points to the first element in the Deque.
 	 */
 	const_iterator
-	constBegin() const {
-		return d->begin;
-	}
+	constBegin() const
+	{ return d->begin; }
 
 	/**
 	 * @return Returns a const_iterator that points to one position past the last element in the Deque.
 	 */
 	const_iterator
-	constEnd() const {
-		return d->end;
-	}
+	constEnd() const
+	{ return d->end; }
 
 	/**
 	 * @return Returns true if the Deque contains \em value, false otherwise.
 	 */
 	const bool
-	contains(const T& value) const {
-		return prism::count(d->begin, d->end, value);
-	}
+	contains(const T& value) const
+	{ return prism::count(d->begin, d->end, value); }
 
 	/**
 	 *
 	 */
 	const int
-	count(const T& value) const {
-		return prism::count(d->begin, d->end, value);
-	}
+	count(const T& value) const
+	{ return prism::count(d->begin, d->end, value); }
 
 	/**
 	 * @return Returns true if the Deque is empty i.e. size == 0, false otherwise.
 	 */
 	const bool
-	empty() const {
-		return d->end == d->begin;
-	}
+	empty() const
+	{ return d->end == d->begin; }
 
 	/**
 	 * @return Returns an iterator that points to one position past the last element in the Deque.
 	 */
 	iterator
-	end() {
-		return d->end;
-	}
+	end()
+	{ return d->end; }
 
 	/**
 	 * @return Returns a const_iterator that points to one position past the last element in the Deque.
 	 */
 	const_iterator
-	end() const {
-		return d->end;
-	}
+	end() const
+	{ return d->end; }
 
 	/**
 	 *
 	 */
 	const bool
-	endsWith(const T& value) const {
-		return back() == value;
-	}
+	endsWith(const T& value) const
+	{ return back() == value; }
 
 	/**
 	 *
 	 */
 	iterator
-	erase(iterator from, iterator to) {
-		return d->eraseRange(from, to);
-	}
+	erase(iterator pos)
+	{ return erase(pos, pos+1); }
+
+	/**
+	 * @return Returns an iterator to the new position of the element that follows the
+	 * last element erased.
+	 * \code
+	 * Deque<int> d({1,2,3,4,5,6});
+	 * iterator it = d.erase(d.begin()+2, d.begin()+5);
+	 * // *it == 6 since the integers 3, 4 and 5 were erased
+	 * \endcode
+	 */
+	iterator
+	erase(iterator first, iterator last)
+	{ return d->eraseRange(first, last); }
 
 	/**
 	 * Sets each element in the Deque to \em value.
 	 */
 	void
-	fill(const T& value) {
-		d->fill(value);
-	}
+	fill(const T& value)
+	{ d->fill(value); }
 
 	/**
 	 * @return Returns a reference to the first element in the Deque.
 	 */
 	reference
-	first() {
-		return *begin();
-	}
+	first()
+	{ return *begin(); }
 
 	/**
 	 * @return Returns a const reference to the first element in the Deque.
 	 */
 	const_reference
-	first() const {
-		return *begin();
-	}
+	first() const
+	{ return *begin(); }
 
 	/**
 	 * @return Returns a reference to the first element in the Deque.
 	 */
 	reference
-	front() {
-		return *begin();
-	}
+	front()
+	{ return *begin(); }
 
 	/**
 	 * @return Returns a const reference to the first element in the Deque.
 	 */
 	const_reference
-	front() const {
-		return *begin();
-	}
+	front() const
+	{ return *begin(); }
 
 	/**
 	 * Searches for the first index starting from index \em from that contains \em value.
@@ -968,57 +925,50 @@ public:
 	 *
 	 */
 	void
-	insert(const int index, const T& value) {
-		d->fillInsert(d->begin+index, 1, value);
-	}
+	insert(const int index, const T& value)
+	{ d->fillInsert(d->begin+index, 1, value); }
 
 	/**
 	 *
 	 */
 	void
-	insert(const int index, const int count, const T& value) {
-		d->fillInsert(d->begin+index, count, value);
-	}
+	insert(const int index, const int count, const T& value)
+	{ d->fillInsert(d->begin+index, count, value); }
 
 	/**
 	 *
 	 */
 	iterator
-	insert(iterator insertBefore, const T& value) {
-		return d->fillInsert(insertBefore, 1, value);
-	}
+	insert(iterator insertBefore, const T& value)
+	{ return d->fillInsert(insertBefore, 1, value); }
 
 	/**
 	 *
 	 */
 	iterator
-	insert(iterator insertBefore, const int count, const T& value) {
-		return d->fillInsert(insertBefore, count, value);
-	}
+	insert(iterator insertBefore, const int count, const T& value)
+	{ return d->fillInsert(insertBefore, count, value); }
 
 	/**
 	 * @return Returns true if the Deque is empty i.e. size == 0, false otherwise.
 	 */
 	const bool
-	isEmpty() const {
-		return d->end == d->begin;
-	}
+	isEmpty() const
+	{ return d->end == d->begin; }
 
 	/**
 	 * @return Returns a reference to the last element in the Deque.
 	 */
 	reference
-	last() {
-		return *(end()-1);
-	}
+	last()
+	{ return *(end()-1); }
 
 	/**
 	 * @return Returns a const reference to the last element in the Deque.
 	 */
 	const_reference
-	last() const {
-		return *(end()-1);
-	}
+	last() const
+	{ return *(end()-1); }
 
 	/**
 	 *
@@ -1049,26 +999,50 @@ public:
 	 *
 	 */
 	void
-	prepend(const T& value) {
-	//	d->fillInsert(d->begin, 1, value);
-		d->prependValue(value);
-	}
+	prepend(const T& value)
+	{ d->prependValue(value); }
 
 	/**
 	 *
 	 */
 	void
-	push_back(const T& value) {
-		d->appendValue(value);
-	}
+	push_back(const T& value)
+	{ d->appendValue(value); }
 
 	/**
 	 *
 	 */
 	void
-	push_front(const T& value) {
-		d->prependValue(value);
-	}
+	push_front(const T& value)
+	{ d->prependValue(value); }
+
+	/**
+	 *
+	 */
+	void
+	remove(const int index)
+	{ erase(d->begin+index); }
+
+	/**
+	 *
+	 */
+	void
+	remove(const int index, const int count)
+	{ erase(d->begin+index, d->begin+index+count); }
+
+	/**
+	 *
+	 */
+	void
+	removeFirst()
+	{ remove(0); }
+
+	/**
+	 *
+	 */
+	void
+	removeLast()
+	{ remove(size()-1); }
 
 	/**
 	 *
@@ -1076,8 +1050,6 @@ public:
 	void
 	replace(const int index, const T& value) {
 		T* p = &*(d->begin+index);
-//		prism::destroy(p);
-//		prism::construct(p, value);
 		d->get_T_Allocator().destroy(p);
 		d->get_T_Allocator().construct(p, value);
 	}
@@ -1086,17 +1058,15 @@ public:
 	 * @return Returns the number of elements currently in the Deque.
 	 */
 	const int
-	size() const {
-		return d->size();
-	}
+	size() const
+	{ return d->size(); }
 
 	/**
 	 *
 	 */
 	const bool
-	startsWith(const T& value) const {
-		return first() == value;
-	}
+	startsWith(const T& value) const
+	{ return first() == value; }
 
 	/**
 	 *
@@ -1127,18 +1097,16 @@ public:
 	 * \note Note that no bounds checking is performed on \em i.
 	 */
 	reference
-	operator [](const int i) {
-		return *(d->begin+i);
-	}
+	operator [](const int i)
+	{ return *(d->begin+i); }
 
 	/**
 	 * @return Returns a const reference to the element at index \em i.
 	 * \note Note that no bounds checking is performed on \em i.
 	 */
 	const_reference
-	operator [](const int i) const {
-		return *(d->begin+i);
-	}
+	operator [](const int i) const
+	{ return *(d->begin+i); }
 
 	/**
 	 *
@@ -1155,24 +1123,22 @@ public:
 	 *
 	 */
 	const bool
-	operator==(const Deque<T>& rhs) {
-		return this->d == rhs.d;
-	}
+	operator==(const Deque<T>& rhs)
+	{ return this->d == rhs.d; }
 
 	/**
 	 *
 	 */
 	const bool
-	operator!=(const Deque<T>& rhs) {
-		return !(*this == rhs);
-	}
+	operator!=(const Deque<T>& rhs)
+	{ return !(*this == rhs); }
 
 	/**
 	 *
 	 */
 	Deque<T, Alloc>&
 	operator<<(const T& value) {
-		d->fillInsert(d->end, 1, value);
+		d->appendValue(value);
 		return *this;
 	}
 
@@ -1186,14 +1152,16 @@ public:
 				"----capacity:      " << d.capacity() << "\n" <<
 				"----numBuckets:    " << d.d->storage.numBuckets() << endl;
 		out << "----storage.start: [" << d.d->storage.start << "]" << endl;
-		out << "----begin:         " <<
-						"[buckets index:" << d.d->begin.buckets-d.d->storage.start << " " <<
-						"(" << d.d->begin.buckets << ")] " <<
-						"[current index:" << d.d->begin.current-d.d->begin.start << "]\n";
-		out << "----end:           "
-						"[buckets index:" << d.d->end.buckets-d.d->storage.start << " " <<
-						"(" << d.d->end.buckets << ")] " <<
-						"[current index:" << d.d->end.current-d.d->end.start << "]\n";
+		out << "----begin:\n" <<
+			   "      [buckets address: " << d.d->begin.buckets << "]\n" <<
+			   "      [buckets index: " << d.d->begin.buckets-d.d->storage.start << "] \n" <<
+			   "      [bucket address: " << d.d->begin.start << "]\n" <<
+			   "      [current index:" << d.d->begin.current-d.d->begin.start << "]\n";
+		out << "----end: \n" <<
+			   "      [buckets address: " << d.d->end.buckets << "] \n" <<
+			   "      [buckets index:" << d.d->end.buckets-d.d->storage.start << "] \n" <<
+			   "      [bucket address: " << d.d->end.start << "] \n" <<
+			   "      [current index:" << d.d->end.current-d.d->end.start << "]\n";
 
 		int startIndex = (d.d->begin.buckets - d.d->storage.start) *
 							aux::prism_deque_bucket_size

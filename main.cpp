@@ -134,13 +134,7 @@ int main(int argc, char * argv[]) {
 //	bucketAllocator.deallocate(bucket);
 //	storageAllocator.deallocate(start);
 
-	Deque<int> d({1,2,3,4,5,6,7});
-	cout << d << endl;
-
-	Deque<int>::iterator it = d.erase(d.begin()+2, d.begin()+5);
-	if(it == d.end()) cout << "it==end" << endl;
-	else cout << "*it==" << *it << endl;
-
+	Deque<int> d({1,2,3,4,5,6,7,8,9});
 
 	cout << d << endl;
 	cout << "!" << endl;
