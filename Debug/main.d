@@ -5,7 +5,8 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
-  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Stack \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Vector \
@@ -55,7 +56,12 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -69,7 +75,9 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
 
-/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Stack:
 
@@ -170,3 +178,13 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/memory:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h:

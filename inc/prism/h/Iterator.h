@@ -25,7 +25,8 @@ struct random_access_iterator_tag : public bidirectional_iterator_tag {};
 
 /****************************************************************************************************************
  * A useful way to extract types from an iterator
- * i.e. Stack<int> * p = iterator_traits<Stack<int> >::pointer.
+ * i.e. Stack<int> * p = iterator_traits<Stack<int> >::pointer;
+ * i.e. Vector<float> * p = iterator_traits<RandomAccessIterator>::pointer;
  ****************************************************************************************************************/
 template <class IterType>
 struct iterator_traits  {

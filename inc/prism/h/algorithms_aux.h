@@ -6,11 +6,11 @@
  *      Author: iainhemstock
  */
 
-#ifndef PRISM_ALGORITHMS_H_
-#define PRISM_ALGORITHMS_H_
+#ifndef PRISM_ALGORITHMS_AUX_H_
+#define PRISM_ALGORITHMS_AUX_H_
 
-// todo remove this
-#include <iostream>
+#include <prism/Iterator>
+#include <iostream> // todo remove this
 #include <cmath>
 
 namespace prism {
@@ -29,7 +29,8 @@ void p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAcce
  * \em last if no such pair is found.
  */
 template <class ForwardIterator>
-ForwardIterator adjacent_find(ForwardIterator first, ForwardIterator last) {
+ForwardIterator
+adjacent_find_aux(ForwardIterator first, ForwardIterator last) {
 	while (first != last) {
 		if (*first == *(first+1))
 			return first;
@@ -43,7 +44,8 @@ ForwardIterator adjacent_find(ForwardIterator first, ForwardIterator last) {
  * or if the range is empty, and false otherwise.
  */
 template <class InputIterator, class Predicate>
-bool all_of(InputIterator first, InputIterator last, Predicate pred) {
+bool
+all_of_aux(InputIterator first, InputIterator last, Predicate pred) {
 	while (first != last) {
 		if (!pred(*first)) return false;
 		first++;
@@ -55,7 +57,8 @@ bool all_of(InputIterator first, InputIterator last, Predicate pred) {
  * Returns true if \em pred returns true for any of the elements in the range \em [first, last].
  */
 template <class InputIterator, class Predicate>
-bool any_of(InputIterator first, InputIterator last, Predicate pred) {
+bool
+any_of_aux(InputIterator first, InputIterator last, Predicate pred) {
 	while (first != last) {
 		if (pred(*first)) return true;
 		first++;
@@ -67,7 +70,8 @@ bool any_of(InputIterator first, InputIterator last, Predicate pred) {
  * Copies the elements in the range \em [first,last] into the range beginning at \em otherFirst.
  */
 template <class InputIterator, class OutputIterator>
-OutputIterator copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
+OutputIterator
+copy_aux(InputIterator first, InputIterator last, OutputIterator otherFirst) {
 	while (first != last) {
 		*otherFirst = *first;
 		first++;
@@ -83,7 +87,8 @@ OutputIterator copy(InputIterator first, InputIterator last, OutputIterator othe
  * position of the destination range.
  */
 template <class BidirectionalIterator1, class BidirectionalIterator2>
-BidirectionalIterator2 copy_backward(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 otherLast) {
+BidirectionalIterator2
+copy_backward_aux(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 otherLast) {
 	while (last != first) {
 		*(--otherLast) = *(--last);
 	}
@@ -95,7 +100,8 @@ BidirectionalIterator2 copy_backward(BidirectionalIterator1 first, Bidirectional
  * which \em pred returns true to the range beginning at \em otherFirst.
  */
 template <class InputIterator, class OutputIterator, class Predicate>
-OutputIterator copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred) {
+OutputIterator
+copy_if_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred) {
 	while (first != last) {
 		if (pred(*first)) {
 			*otherFirst = *first;
@@ -112,7 +118,8 @@ OutputIterator copy_if(InputIterator first, InputIterator last, OutputIterator o
  * into the range beginning at \em otherFirst.
  */
 template <class InputIterator, class Size, class OutputIterator>
-OutputIterator copy_n(InputIterator first, Size n, OutputIterator otherFirst) {
+OutputIterator
+copy_n_aux(InputIterator first, Size n, OutputIterator otherFirst) {
 	while (n>0) {
 	    *otherFirst = *first;
 	    ++otherFirst;
@@ -126,7 +133,8 @@ OutputIterator copy_n(InputIterator first, Size n, OutputIterator otherFirst) {
  * Returns the number of elements in the range \em [first,last] that compare equal to \em value.
  */
 template <class InputIterator, class T>
-int count(InputIterator first, InputIterator last, const T& value) {
+int
+count_aux(InputIterator first, InputIterator last, const T& value) {
 	int c = 0;
 	while (first != last) {
 		if (*first == value) c++;
@@ -139,7 +147,8 @@ int count(InputIterator first, InputIterator last, const T& value) {
  * Returns the number of elements in the range \em [first,last] for which \em pred is true.
  */
 template <class InputIterator, class Predicate>
-int count_if(InputIterator first, InputIterator last, Predicate pred) {
+int
+count_if_aux(InputIterator first, InputIterator last, Predicate pred) {
 	int c = 0;
 	while (first != last)  {
 		if (pred(*first)) c++;
@@ -153,7 +162,8 @@ int count_if(InputIterator first, InputIterator last, Predicate pred) {
  * The element that the iterator points to therefore must be a pointer.
  */
 template <class ForwardIterator>
-void delete_range(ForwardIterator first, ForwardIterator last) {
+void
+delete_range_aux(ForwardIterator first, ForwardIterator last) {
 	while (first != last) {
 		delete *first;
 		first++;
@@ -167,7 +177,8 @@ void delete_range(ForwardIterator first, ForwardIterator last) {
  * \note The elements being compared must support operator==().
  */
 template <class InputIterator1, class InputIterator2>
-bool equal(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst) {
+bool
+equal_aux(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst) {
 	while (first != last) {
 		if (!(*first == *otherFirst)) return false;
 		first++;
@@ -180,7 +191,8 @@ bool equal(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst)
  * Assigns \em value to all the elements in the range \em [first,last].
  */
 template <class ForwardIterator, class T>
-void fill(ForwardIterator first, ForwardIterator last, const T& value) {
+void
+fill_aux(ForwardIterator first, ForwardIterator last, const T& value) {
 	while (first != last) {
 		*first = value;
 		first++;
@@ -191,7 +203,8 @@ void fill(ForwardIterator first, ForwardIterator last, const T& value) {
  * Assigns \em value to the first \em n elements of the sequence pointed by \em first.
  */
 template <class ForwardIterator, class T>
-void fill_n(ForwardIterator first, int size, const T& value) {
+void
+fill_n_aux(ForwardIterator first, int size, const T& value) {
 	while (size > 0) {
 		*first = value;
 		size--;
@@ -204,7 +217,8 @@ void fill_n(ForwardIterator first, int size, const T& value) {
  * that compares equal to \em value. If no such element is found, the function returns \em last.
  */
 template <class InputIterator, class T>
-InputIterator find(InputIterator first, InputIterator last, const T& value) {
+InputIterator
+find_aux(InputIterator first, InputIterator last, const T& value) {
 	while (first != last) {
 		if (*first == value) return first;
 		first++;
@@ -217,7 +231,8 @@ InputIterator find(InputIterator first, InputIterator last, const T& value) {
  * If no such element is found, the function returns \em last.
  */
 template <class InputIterator, class Predicate>
-InputIterator find_if(InputIterator first, InputIterator last, Predicate pred) {
+InputIterator
+find_if_aux(InputIterator first, InputIterator last, Predicate pred) {
 	while (first != last) {
 		if(pred(*first)) return first;
 		first++;
@@ -232,7 +247,8 @@ InputIterator find_if(InputIterator first, InputIterator last, Predicate pred) {
  * If no match is found then a null pointer is returned instead i.e. p=0;
  */
 template <class InputIterator, class T>
-InputIterator find_last(InputIterator first, InputIterator last, const T& value) {
+InputIterator
+find_last_aux(InputIterator first, InputIterator last, const T& value) {
 	InputIterator tmp = last;
 	while (--last >= first) {
 		if (*last == value)
@@ -245,7 +261,8 @@ InputIterator find_last(InputIterator first, InputIterator last, const T& value)
  * Applies function \em func to each of the elements in the range \em [first,last].
  */
 template <class InputIterator, class Function>
-Function for_each(InputIterator first, InputIterator last, Function func) {
+Function
+for_each_aux(InputIterator first, InputIterator last, Function func) {
 	while (first != last) {
 		func(*first);
 		first++;
@@ -259,7 +276,8 @@ Function for_each(InputIterator first, InputIterator last, Function func) {
  * including the element pointed by \em first but not the element pointed by \em last.
  */
 template <class ForwardIterator>
-const bool is_sorted(ForwardIterator first, ForwardIterator last) {
+const bool
+is_sorted_aux(ForwardIterator first, ForwardIterator last) {
 	if (first == last) return true;
 	ForwardIterator current = first;
 
@@ -278,7 +296,8 @@ const bool is_sorted(ForwardIterator first, ForwardIterator last) {
  * but not the element pointed by \em last.
  */
 template <class RandomAccessIterator>
-void make_heap(RandomAccessIterator first, RandomAccessIterator last) {
+void
+make_heap_aux(RandomAccessIterator first, RandomAccessIterator last) {
 	using namespace std;
 
 	int heapSize = last-first;
@@ -295,7 +314,8 @@ void make_heap(RandomAccessIterator first, RandomAccessIterator last) {
  * If they are equivalent then \em a is returned.
  */
 template <class T>
-const T& max(const T& a, const T& b) {
+const T&
+max_aux(const T& a, const T& b) {
 	if (b > a) return b;
 	return a;
 }
@@ -305,7 +325,8 @@ const T& max(const T& a, const T& b) {
  * If they are equivalent then \em a is returned.
  */
 template <class T>
-const T& min(const T& a, const T& b) {
+const T&
+min_aux(const T& a, const T& b) {
 	if (b > a) return a;
 	return b;
 }
@@ -315,7 +336,8 @@ const T& min(const T& a, const T& b) {
  * or if the range is empty, and false otherwise.
  */
 template <class InputIterator, class Predicate>
-bool none_of(InputIterator first, InputIterator last, Predicate pred) {
+bool
+none_of_aux(InputIterator first, InputIterator last, Predicate pred) {
 	while (first != last) {
 		if (pred(*first)) return false;
 		first++;
@@ -328,7 +350,8 @@ bool none_of(InputIterator first, InputIterator last, Predicate pred) {
  * compare equal to \em value removed, and returns an iterator to the new end of that range.
  */
 template <class ForwardIterator, class T>
-ForwardIterator remove (ForwardIterator first, ForwardIterator last, const T& value) {
+ForwardIterator
+remove_aux(ForwardIterator first, ForwardIterator last, const T& value) {
   ForwardIterator result = first;
   while (first!=last) {
     if (!(*first == value)) {
@@ -345,7 +368,8 @@ ForwardIterator remove (ForwardIterator first, ForwardIterator last, const T& va
  * except those elements that compare equal to \em value.
  */
 template <class InputIterator, class OutputIterator, class T>
-OutputIterator remove_copy (InputIterator first, InputIterator last, OutputIterator otherFirst, const T& value)
+OutputIterator
+remove_copy_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, const T& value)
 {
   while (first!=last) {
     if (!(*first == value)) {
@@ -362,7 +386,8 @@ OutputIterator remove_copy (InputIterator first, InputIterator last, OutputItera
  * except those elements for which \em pred returns true.
  */
 template <class InputIterator, class OutputIterator, class UnaryPredicate>
-OutputIterator remove_copy_if (InputIterator first, InputIterator last, OutputIterator otherFirst, UnaryPredicate pred)
+OutputIterator
+remove_copy_if_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, UnaryPredicate pred)
 {
   while (first!=last) {
     if (!pred(*first)) {
@@ -379,7 +404,8 @@ OutputIterator remove_copy_if (InputIterator first, InputIterator last, OutputIt
  * \em pred returns true removed, and returns an iterator to the new end of that range.
  */
 template <class ForwardIterator, class Predicate>
-ForwardIterator remove_if(ForwardIterator first, ForwardIterator last, Predicate pred) {
+ForwardIterator
+remove_if_aux(ForwardIterator first, ForwardIterator last, Predicate pred) {
 	ForwardIterator result = first;
 	while (first != last) {
 		if (!pred(*first)) {
@@ -395,7 +421,8 @@ ForwardIterator remove_if(ForwardIterator first, ForwardIterator last, Predicate
  * Assigns \em newValue to all the elements in the range \em [first,last] that compare equal to \em oldValue.
  */
 template <class ForwardIterator, class T>
-void replace(ForwardIterator first, ForwardIterator last, const T& oldValue, const T& newValue) {
+void
+replace_aux(ForwardIterator first, ForwardIterator last, const T& oldValue, const T& newValue) {
 	while (first != last) {
 		if (*first == oldValue)
 			*first = newValue;
@@ -408,7 +435,8 @@ void replace(ForwardIterator first, ForwardIterator last, const T& oldValue, con
  * at \em otherFirst, replacing the appearances of \em oldValue by \em newValue.
  */
 template <class InputIterator, class OutputIterator, class T>
-OutputIterator replace_copy(InputIterator first, InputIterator last, OutputIterator otherFirst,
+OutputIterator
+replace_copy_aux(InputIterator first, InputIterator last, OutputIterator otherFirst,
 		const T& oldValue, const T& newValue)
 {
 	while (first != last) {
@@ -427,7 +455,8 @@ OutputIterator replace_copy(InputIterator first, InputIterator last, OutputItera
  * replacing those for which \em pred returns true by newValue.
  */
 template <class InputIterator, class OutputIterator, class Predicate, class T>
-OutputIterator replace_copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst,
+OutputIterator
+replace_copy_if_aux(InputIterator first, InputIterator last, OutputIterator otherFirst,
 		Predicate pred, const T& newValue)
 {
 	while (first != last) {
@@ -443,7 +472,8 @@ OutputIterator replace_copy_if(InputIterator first, InputIterator last, OutputIt
  * Assigns \em newValue to all the elements in the range \em [first,last] for which \em pred returns true.
  */
 template <class ForwardIterator, class Predicate, class T>
-void replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, const T& newValue) {
+void
+replace_if_aux(ForwardIterator first, ForwardIterator last, Predicate pred, const T& newValue) {
 	while (first != last) {
 		if (pred(*first))
 			*first = newValue;
@@ -458,7 +488,8 @@ void replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, con
  * including the element pointed by first1 but not the element pointed by last1.
  */
 template<class ForwardIterator1, class ForwardIterator2>
-ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2) {
+ForwardIterator1
+search_aux(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2) {
 	if (first2==last2)
 		return first1;
 
@@ -485,7 +516,8 @@ ForwardIterator1 search(ForwardIterator1 first1, ForwardIterator1 last1, Forward
  * a reasonable O(n log(n)) complexity.
  */
 template <class ForwardIterator>
-void sort(ForwardIterator first, ForwardIterator last) {
+void
+sort_aux(ForwardIterator first, ForwardIterator last) {
 	sort_quicksort(first, last);
 }
 
@@ -496,7 +528,8 @@ void sort(ForwardIterator first, ForwardIterator last) {
  * \note The objects being sorted must support operator>().
  */
 template <class RandomAccessIterator>
-void sort_bubble(RandomAccessIterator first, RandomAccessIterator last) {
+void
+sort_bubble_aux(RandomAccessIterator first, RandomAccessIterator last) {
 
 	RandomAccessIterator thisElement = first;
 	RandomAccessIterator nextElement = thisElement+1;
@@ -530,7 +563,8 @@ void sort_bubble(RandomAccessIterator first, RandomAccessIterator last) {
  * including the element pointed by \em first but not the element pointed by \em last.
  */
 template <class RandomAccessIterator>
-void sort_heap(RandomAccessIterator first, RandomAccessIterator last) {
+void
+sort_heap_aux(RandomAccessIterator first, RandomAccessIterator last) {
 	if (first == last) return;
 
 	make_heap(first, last);
@@ -550,7 +584,8 @@ void sort_heap(RandomAccessIterator first, RandomAccessIterator last) {
  * \note The objects being sorted must support operator<=().
  */
 template <class ForwardIterator>
-void sort_quicksort(ForwardIterator first, ForwardIterator last) {
+void
+sort_quicksort_aux(ForwardIterator first, ForwardIterator last) {
 
 	ForwardIterator wall = first;
 	ForwardIterator pivot = last - 1;
@@ -581,7 +616,8 @@ void sort_quicksort(ForwardIterator first, ForwardIterator last) {
  * Exchanges the values of \em a and \em b.
  */
 template <class T>
-void swap(T& a, T& b) {
+void
+swap_aux(T& a, T& b) {
 	T temp = a;
 	a = b;
 	b = temp;
@@ -592,7 +628,8 @@ void swap(T& a, T& b) {
  * with those of their respective elements in the range beginning at \em otherFirst.
  */
 template <class ForwardIterator1, class ForwardIterator2>
-ForwardIterator2 swap_ranges(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
+ForwardIterator2
+swap_ranges_aux(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
 	while (first != last) {
 		prism::swap(*first, *otherFirst);
 		first++;
@@ -600,16 +637,90 @@ ForwardIterator2 swap_ranges(ForwardIterator1 first, ForwardIterator1 last, Forw
 	}
 	return otherFirst;
 }
+
+/**
+ * The range [first,last] represents a block of memory that has been allocated but
+ * not initialized i.e. no elements have been constructed yet. This means that the allocated
+ * memory cannot be dereferenced yet through an iterator (as in the prism::fill algorithm).
+ * This algorithm takes that memory block and initializes each element by
+ * copy-constructing each element in place.
+ * This algorithm differs from prism::fill because that algorithm dereferences the
+ * iterator to assign the new value whereas this algorithm doesn't. It copy-constructs in place instead.
+ */
+template <class ForwardIterator1, class ForwardIterator2>
+ForwardIterator2
+uninitialized_copy_n_aux(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst) {
+	for (int i=0; i<size; i++) {
+
+		// the following simplified is:
+		//	new (&*otherFirst) T(*first)
+
+		new (static_cast<void*>(&*otherFirst))
+				typename prism::iterator_traits<ForwardIterator1>::value_type(*first);
+		++first;
+		++otherFirst;
+	}
+	return otherFirst;
+}
+
+/**
+ * The range [first,last] represents a block of memory that has been allocated but
+ * not initialized i.e. no elements have been constructed yet. This means that the allocated
+ * memory cannot be dereferenced yet through an iterator (as in the prism::fill algorithm).
+ * This algorithm takes that memory block and initializes each element by
+ * copy-constructing each element in place.
+ * This algorithm differs from prism::fill because that algorithm dereferences the
+ * iterator to assign the new value whereas this algorithm doesn't. It copy-constructs in place instead.
+ */
+template <class ForwardIterator1, class ForwardIterator2>
+ForwardIterator2
+uninitialized_copy_aux(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
+	return uninitialized_copy_n_aux(first, last-first, otherFirst);
+}
+
+/**
+ * The range [first,last] represents a block of memory that has been allocated but
+ * not initialized i.e. no elements have been constructed yet. This means that the allocated
+ * memory cannot be dereferenced yet through an iterator (as in the prism::fill algorithm).
+ * This algorithm takes that memory block and initializes each element by
+ * copy-constructing each element in place.
+ * This algorithm differs from prism::fill because that algorithm dereferences the
+ * iterator to assign the new value whereas this algorithm doesn't. It copy-constructs in place instead.
+ */
+template <class ForwardIterator, class T>
+void
+uninitialized_fill_n_aux(ForwardIterator first, const int size, const T& value) {
+	for (int i=0; i<size; i++) {
+		new (static_cast<void*>(&*first)) T(value);
+		++first;
+	}
+}
+
+/**
+ * The range [first,last] represents a block of memory that has been allocated but
+ * not initialized i.e. no elements have been constructed yet. This means that the allocated
+ * memory cannot be dereferenced yet through an iterator (as in the prism::fill algorithm).
+ * This algorithm takes that memory block and initializes each element by
+ * copy-constructing each element in place.
+ * This algorithm differs from prism::fill because that algorithm dereferences the
+ * iterator to assign the new value whereas this algorithm doesn't. It copy-constructs in place instead.
+ */
+template <class ForwardIterator, class T>
+void
+uninitialized_fill_aux(ForwardIterator first, ForwardIterator last, const T& value) {
+	uninitialized_fill_n_aux(first, last-first, value);
+}
 // ==================================================================================================
 // private
 // ==================================================================================================
 /**
- * Private recursive function called by make_heap().
+ * Private recursive function called by make_heap_aux().
  * Compares a node with its two children (if it has any) and ensures that the largest of the three
  * nodes is the parent node.
  */
 template <class RandomAccessIterator>
-void p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last) {
+void
+p_heapify_aux(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last) {
 
 	int nodeIndex = node-first;
 	int leftIndex = 2 * nodeIndex + 1;
@@ -632,9 +743,9 @@ void p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAcce
 
 }
 
-}
+} // namespace prism
 
-#endif /* PRISM_ALGORITHMS_H_ */
+#endif /* PRISM_ALGORITHMS_AUX_H_ */
 
 
 

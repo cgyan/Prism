@@ -8,7 +8,8 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
-  /Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
@@ -38,7 +39,9 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
 
-/Users/iainhemstock/GitHub/Prism/external/../src/prism/algorithms.cpp:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException:
 
