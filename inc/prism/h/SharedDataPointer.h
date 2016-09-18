@@ -50,8 +50,10 @@ private:
  *
  */
 template <class SharedDataType>
-inline SharedDataPointer<SharedDataType>::SharedDataPointer()
-	: p(0)
+inline
+SharedDataPointer<SharedDataType>::
+SharedDataPointer()
+: p(0)
 {
 
 }
@@ -60,7 +62,9 @@ inline SharedDataPointer<SharedDataType>::SharedDataPointer()
  *
  */
 template <class SharedDataType>
-inline SharedDataPointer<SharedDataType>::SharedDataPointer(SharedDataType * p)
+inline
+SharedDataPointer<SharedDataType>::
+SharedDataPointer(SharedDataType * p)
 {
 	if (p->isShareable())
 		this->p = p;
@@ -72,7 +76,9 @@ inline SharedDataPointer<SharedDataType>::SharedDataPointer(SharedDataType * p)
  *
  */
 template <class SharedDataType>
-inline SharedDataPointer<SharedDataType>::SharedDataPointer(const SharedDataPointer & copy)
+inline
+SharedDataPointer<SharedDataType>::
+SharedDataPointer(const SharedDataPointer & copy)
 {
 	if (copy.p->isShareable())
 		p = copy.p;
@@ -84,7 +90,9 @@ inline SharedDataPointer<SharedDataType>::SharedDataPointer(const SharedDataPoin
  *
  */
 template <class SharedDataType>
-inline SharedDataPointer<SharedDataType>::~SharedDataPointer() {
+inline
+SharedDataPointer<SharedDataType>::
+~SharedDataPointer() {
 	if (p) {
 		p->decRef();
 		if (p->refCount() == 0)
@@ -97,7 +105,10 @@ inline SharedDataPointer<SharedDataType>::~SharedDataPointer() {
  *
  */
 template <class SharedDataType>
-inline const SharedDataType * SharedDataPointer<SharedDataType>::constData() const {
+inline
+const SharedDataType *
+SharedDataPointer<SharedDataType>::
+constData() const {
 	return p;
 }
 
@@ -105,7 +116,10 @@ inline const SharedDataType * SharedDataPointer<SharedDataType>::constData() con
  *
  */
 template <class SharedDataType>
-inline SharedDataType * SharedDataPointer<SharedDataType>::data() {
+inline
+SharedDataType *
+SharedDataPointer<SharedDataType>::
+data() {
 	return p;
 }
 
@@ -113,7 +127,10 @@ inline SharedDataType * SharedDataPointer<SharedDataType>::data() {
  *
  */
 template <class SharedDataType>
-inline const SharedDataType * SharedDataPointer<SharedDataType>::data() const {
+inline
+const SharedDataType *
+SharedDataPointer<SharedDataType>::
+data() const {
 	return p;
 }
 
@@ -121,7 +138,10 @@ inline const SharedDataType * SharedDataPointer<SharedDataType>::data() const {
  *
  */
 template <typename SharedDataType>
-inline void SharedDataPointer<SharedDataType>::detach() {
+inline
+void
+SharedDataPointer<SharedDataType>::
+detach() {
 	if (p->refCount() > 1) {
 		p->decRef();
 		p = new SharedDataType(*p);
@@ -134,7 +154,10 @@ inline void SharedDataPointer<SharedDataType>::detach() {
  *
  */
 template <class SharedDataType>
-inline const bool SharedDataPointer<SharedDataType>::isNull() const {
+inline
+const bool
+SharedDataPointer<SharedDataType>::
+isNull() const {
 	return p == 0;
 }
 
@@ -142,7 +165,10 @@ inline const bool SharedDataPointer<SharedDataType>::isNull() const {
  *
  */
 template <typename SharedDataType>
-inline const bool SharedDataPointer<SharedDataType>::isShareable() const {
+inline
+const bool
+SharedDataPointer<SharedDataType>::
+isShareable() const {
 	return (p) ? p->isShareable() : 0;
 }
 
@@ -150,7 +176,10 @@ inline const bool SharedDataPointer<SharedDataType>::isShareable() const {
  *
  */
 template <typename SharedDataType>
-inline const bool SharedDataPointer<SharedDataType>::isShared() const {
+inline
+const bool
+SharedDataPointer<SharedDataType>::
+isShared() const {
 	return (p) ? p->isShared() : 0;
 }
 
@@ -158,7 +187,10 @@ inline const bool SharedDataPointer<SharedDataType>::isShared() const {
  *
  */
 template <class SharedDataType>
-inline const int SharedDataPointer<SharedDataType>::refCount() const {
+inline
+const int
+SharedDataPointer<SharedDataType>::
+refCount() const {
 	return (p) ? p->refCount() : 0;
 }
 
@@ -166,7 +198,10 @@ inline const int SharedDataPointer<SharedDataType>::refCount() const {
  *
  */
 template <typename SharedDataType>
-inline void SharedDataPointer<SharedDataType>::setUnshareable() {
+inline
+void
+SharedDataPointer<SharedDataType>::
+setUnshareable() {
 	p->setUnshareable();
 }
 
@@ -174,7 +209,8 @@ inline void SharedDataPointer<SharedDataType>::setUnshareable() {
  *
  */
 template <class SharedDataType>
-inline SharedDataType * SharedDataPointer<SharedDataType>::operator->() {
+inline SharedDataType * SharedDataPointer<SharedDataType>::
+operator->() {
 	return p;
 };
 
@@ -182,7 +218,10 @@ inline SharedDataType * SharedDataPointer<SharedDataType>::operator->() {
  *
  */
 template <class SharedDataType>
-inline const SharedDataType * SharedDataPointer<SharedDataType>::operator->() const {
+inline
+const SharedDataType *
+SharedDataPointer<SharedDataType>::
+operator->() const {
 	return p;
 };
 
@@ -190,7 +229,10 @@ inline const SharedDataType * SharedDataPointer<SharedDataType>::operator->() co
  *
  */
 template <class SharedDataType>
-inline SharedDataType & SharedDataPointer<SharedDataType>::operator*() {
+inline
+SharedDataType &
+SharedDataPointer<SharedDataType>::
+operator*() {
 	return *p;
 }
 
@@ -198,7 +240,10 @@ inline SharedDataType & SharedDataPointer<SharedDataType>::operator*() {
  *
  */
 template <class SharedDataType>
-inline const SharedDataType & SharedDataPointer<SharedDataType>::operator*() const {
+inline
+const SharedDataType &
+SharedDataPointer<SharedDataType>::
+operator*() const {
 	return *p;
 }
 
@@ -206,7 +251,10 @@ inline const SharedDataType & SharedDataPointer<SharedDataType>::operator*() con
  *
  */
 template <class SharedDataType>
-inline const bool SharedDataPointer<SharedDataType>::operator!() const {
+inline
+const bool
+SharedDataPointer<SharedDataType>::
+operator!() const {
 	return isNull();
 }
 
@@ -214,7 +262,10 @@ inline const bool SharedDataPointer<SharedDataType>::operator!() const {
  *
  */
 template <class SharedDataType>
-inline const bool SharedDataPointer<SharedDataType>::operator!=(const SharedDataPointer<SharedDataType> & rhs) const {
+inline
+const bool
+SharedDataPointer<SharedDataType>::
+operator!=(const SharedDataPointer<SharedDataType> & rhs) const {
 	return p != rhs.p;
 }
 
@@ -222,7 +273,10 @@ inline const bool SharedDataPointer<SharedDataType>::operator!=(const SharedData
  *
  */
 template <class SharedDataType>
-inline const bool SharedDataPointer<SharedDataType>::operator==(const SharedDataPointer<SharedDataType> & rhs) const {
+inline
+const bool
+SharedDataPointer<SharedDataType>::
+operator==(const SharedDataPointer<SharedDataType> & rhs) const {
 	return p == rhs.p;
 }
 
@@ -230,7 +284,10 @@ inline const bool SharedDataPointer<SharedDataType>::operator==(const SharedData
  *
  */
 template <class SharedDataType>
-inline SharedDataPointer<SharedDataType> & SharedDataPointer<SharedDataType>::operator=(const SharedDataPointer<SharedDataType> & rhs)
+inline
+SharedDataPointer<SharedDataType> &
+SharedDataPointer<SharedDataType>::
+operator=(const SharedDataPointer<SharedDataType> & rhs)
 {
 	if (p != rhs.p)// don't assign to self
 	{

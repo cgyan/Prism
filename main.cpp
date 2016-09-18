@@ -50,6 +50,7 @@
 #include <prism/utilities>
 #include <prism/memory>
 #include <prism/Allocator>
+#include <prism/LoggerAllocator>
 #include <prism/h/Obj.h>
 
 
@@ -134,14 +135,17 @@ int main(int argc, char * argv[]) {
 //	bucketAllocator.deallocate(bucket);
 //	storageAllocator.deallocate(start);
 
-	Deque<int> d({1,2,3,4,5,6,7,8,9});
+	typedef Deque<int, LoggerAllocator<int>> Deque;
 
-	cout << d << endl;
+	Deque d1({1,2,3,4});
+	Deque d2(d1);
+
+	d1.append(5);
+
+	cout << d1 << endl;
+	cout << d2 << endl;
+
 	cout << "!" << endl;
-
-
-
-
 
 
 //	return RUN_ALL_TESTS();

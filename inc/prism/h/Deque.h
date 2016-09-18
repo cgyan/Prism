@@ -6,6 +6,13 @@
  *      Author: iainhemstock
  */
 
+/*TODO
+ *  Check that copy-on-write is working
+	Functions to add:
+		static Deque<T, Alloc> fromList(const List<T>& list);
+		void squeeze();
+*/
+
 #ifndef PRISM_DEQUE_H_
 #define PRISM_DEQUE_H_
 
@@ -15,8 +22,6 @@
 #include <prism/algorithms>
 #include <prism/OutOfBoundsException>
 #include <prism/List>
-#include <prism/String> // temp for debugging
-#include <prism/memory>
 #include <prism/Allocator>
 #include <ostream>
 #include <cstddef> // for std::ptrdiff_t
@@ -26,7 +31,7 @@ using namespace std;
 
 namespace prism {
 namespace aux {
-static const int prism_deque_bucket_size = 8;
+static const int prism_deque_bucket_size = 5;
 //================================================================================
 // DequeIterator
 //================================================================================
@@ -193,16 +198,17 @@ public:
 //================================================================================
 template <class T, class Alloc>
 struct DequeMemory {
-	typedef T**											storagePtr;
-	typedef typename Alloc::value_type					value_type;
-	typedef typename Alloc::difference_type				difference_type;
-	typedef typename Alloc::pointer						pointer;	 	// to T
-	typedef typename Alloc::reference					reference; 		// to T
-	typedef typename Alloc::const_pointer				const_pointer; 	// to T
-	typedef typename Alloc::const_reference				const_reference;// to T
-	typedef typename Alloc::template rebind<T>::other 	T_Alloc;
-	typedef typename Alloc::template rebind<T*>::other 	StorageAlloc;
-	typedef typename Alloc::template rebind<T>::other 	BucketAlloc;
+	typedef Alloc											T_Alloc;
+	typedef typename T_Alloc::template rebind<T*>::other 	StorageAlloc;
+	typedef typename T_Alloc::template rebind<T>::other 	BucketAlloc;
+
+	typedef T**												storagePtr;
+	typedef typename T_Alloc::value_type					value_type;
+	typedef typename T_Alloc::difference_type				difference_type;
+	typedef typename T_Alloc::pointer						pointer;
+	typedef typename T_Alloc::reference						reference;
+	typedef typename T_Alloc::const_pointer					const_pointer;
+	typedef typename T_Alloc::const_reference				const_reference;
 
 	T_Alloc 		T_Allocator; // allocator for type T
 	StorageAlloc 	storageAllocator;
@@ -216,6 +222,9 @@ struct DequeMemory {
 	: start(nullptr), finish(nullptr)
 	{}
 
+	/**
+	 * ~DequeData() handles the calls to the element's destructors
+	 */
 	~DequeMemory() {
 		destroyBuckets(start, finish);
 		deallocateStorage(start);
@@ -262,19 +271,20 @@ struct DequeMemory {
 template <class T, class Alloc>
 struct DequeData : public SharedData {
 
-	typedef typename Alloc::template rebind<T>::other 	T_Alloc;
-	typedef typename Alloc::template rebind<T*>::other 	StorageAlloc;
-	typedef typename Alloc::template rebind<T>::other 	BucketAlloc;
-	typedef DequeMemory<T, Alloc>						Memory;
-	typedef DequeIterator<T,false>						iterator;
-	typedef DequeIterator<T,true>						const_iterator;
-	typedef typename Alloc::value_type					value_type;
-	typedef typename Alloc::difference_type				difference_type;
-	typedef typename Alloc::pointer						pointer;
-	typedef typename Alloc::reference					reference;
-	typedef typename Alloc::const_pointer				const_pointer;
-	typedef typename Alloc::const_reference				const_reference;
-	typedef typename iterator::iterator_category 		iterator_category;
+	typedef Alloc											T_Alloc;
+	typedef typename T_Alloc::template rebind<T*>::other 	StorageAlloc;
+	typedef typename T_Alloc::template rebind<T>::other 	BucketAlloc;
+
+	typedef DequeMemory<T, T_Alloc>							Memory;
+	typedef DequeIterator<T,false>							iterator;
+	typedef DequeIterator<T,true>							const_iterator;
+	typedef typename T_Alloc::value_type					value_type;
+	typedef typename T_Alloc::difference_type				difference_type;
+	typedef typename T_Alloc::pointer						pointer;
+	typedef typename T_Alloc::reference						reference;
+	typedef typename T_Alloc::const_pointer					const_pointer;
+	typedef typename T_Alloc::const_reference				const_reference;
+	typedef typename iterator::iterator_category 			iterator_category;
 
 	Memory		storage;
 	iterator 	begin;
@@ -317,6 +327,8 @@ struct DequeData : public SharedData {
 	 */
 	~DequeData()
 	{ destroyElements(begin, end); }
+	/* ~DequeData() only has to destroy the elements because
+	   ~DequeMemory() handles all the deallocation */
 
 	/**
 	 *
@@ -361,6 +373,22 @@ struct DequeData : public SharedData {
 	destroyElements(iterator first, iterator last) {
 		while (first != last)
 			get_T_Allocator().destroy(&*first++);
+	}
+
+	/**
+	 *
+	 */
+	void
+	destroyUnusedBucketsAtBack() {
+		storage.destroyBuckets(end.buckets+1, storage.finish);
+	}
+
+	/**
+	 *
+	 */
+	void
+	destroyUnusedBucketsAtFront() {
+		storage.destroyBuckets(storage.start, begin.buckets);
 	}
 
 	/**
@@ -534,6 +562,33 @@ struct DequeData : public SharedData {
 	}
 
 	/**
+	 *
+	 */
+//	void
+//	reduceMemoryUse() {
+//		destroyUnusedBucketsAtFront();
+//		destroyUnusedBucketsAtBack();
+//
+//		int beginIndex = begin.current-begin.start;
+//		int numBuckets = end.buckets-begin.buckets;
+//
+//		T** newStorage = storage.storageAllocator.allocate(numBuckets);
+//		prism::copy(begin.buckets, end.buckets, newStorage);
+//
+//		storage.deallocateStorage(storage.start);
+//
+//		storage.start = newStorage;
+//		storage.finish = storage.start + numBuckets;
+//
+//		begin.buckets = storage.start;
+//		begin.start = *storage.start;
+//		begin.end = begin.start + prism_deque_bucket_size;
+//		begin.current = begin.start + beginIndex;
+//
+//		end = begin + size();
+//	}
+
+	/**
 	 * Storage is reallocated with the new buckets either added at the front or the back
 	 * as necessary.
 	 */
@@ -637,6 +692,25 @@ struct DequeData : public SharedData {
 	/**
 	 *
 	 */
+	void
+	resize(const int newSize, const T& value) {
+		int s = size();
+
+		if (newSize == s)
+			return;
+
+		if (newSize < size())
+			eraseAtBack(begin+newSize);
+
+		else {
+			int extraElements = newSize-s;
+			fillInsert(end, extraElements, value);
+		}
+	}
+
+	/**
+	 *
+	 */
 	const int
 	size() const {
 		return end-begin;
@@ -652,16 +726,17 @@ struct DequeData : public SharedData {
 template <class T, class Alloc = prism::Allocator<T>>
 class Deque {
 public:
-	typedef typename aux::DequeData<T, Alloc>					Data;
-	typedef typename aux::DequeData<T, Alloc>::iterator			iterator;
-	typedef typename aux::DequeData<T, Alloc>::const_iterator	const_iterator;
-	typedef typename Alloc::value_type							value_type;
-	typedef typename Alloc::difference_type						difference_type;
-	typedef typename Alloc::pointer								pointer;
-	typedef typename Alloc::reference							reference;
-	typedef typename Alloc::const_pointer						const_pointer;
-	typedef typename Alloc::const_reference						const_reference;
-	typedef typename iterator::iterator_category 				iterator_category;
+	typedef Alloc													T_Alloc;
+	typedef typename aux::DequeData<T, T_Alloc>						Data;
+	typedef typename aux::DequeData<T, T_Alloc>::iterator			iterator;
+	typedef typename aux::DequeData<T, T_Alloc>::const_iterator		const_iterator;
+	typedef typename T_Alloc::value_type							value_type;
+	typedef typename T_Alloc::difference_type						difference_type;
+	typedef typename T_Alloc::pointer								pointer;
+	typedef typename T_Alloc::reference								reference;
+	typedef typename T_Alloc::const_pointer							const_pointer;
+	typedef typename T_Alloc::const_reference						const_reference;
+	typedef typename iterator::iterator_category 					iterator_category;
 private:
 	SharedDataPointer<Data> d;
 public:
@@ -699,7 +774,7 @@ public:
 	/**
 	 * Creates a new Deque which is a copy of \em copy.
 	 */
-	Deque(const Deque<T>& copy)
+	Deque(const Deque<T, T_Alloc>& copy)
 	: d(copy.d)
 	{}
 
@@ -712,9 +787,18 @@ public:
 	/**
 	 *
 	 */
+	T_Alloc
+	allocator() const
+	{ return d->get_T_Allocator(); }
+
+	/**
+	 *
+	 */
 	void
-	append(const T& value)
-	{ d->appendValue(value); }
+	append(const T& value) {
+		d.detach();
+		d->appendValue(value);
+	}
 
 	/**
 	 * @return Returns a reference to the the element at index \em i.
@@ -723,6 +807,7 @@ public:
 	 */
 	reference
 	at(const int i) {
+		d.detach();
 		if (d->rangeCheck(i))
 			return *(d->begin+i);
 		throw OutOfBoundsException(i);
@@ -745,7 +830,10 @@ public:
 	 */
 	reference
 	back()
-	{ return *(end()-1); }
+	{
+		d.detach();
+		return *(end()-1);
+	}
 
 	/**
 	 * @return Returns a const reference to the last element in the Deque.
@@ -759,7 +847,10 @@ public:
 	 */
 	iterator
 	begin()
-	{ return d->begin; }
+	{
+		d.detach();
+		return d->begin;
+	}
 
 	/**
 	 * @return Returns a const_iterator that points to the first element in the Deque.
@@ -795,7 +886,10 @@ public:
 	 */
 	void
 	clear()
-	{ d->clear(); }
+	{
+		d.detach();
+		d->clear();
+	}
 
 	/**
 	 * @return Returns a const_iterator that points to the first element in the Deque.
@@ -837,7 +931,10 @@ public:
 	 */
 	iterator
 	end()
-	{ return d->end; }
+	{
+		d.detach();
+		return d->end;
+	}
 
 	/**
 	 * @return Returns a const_iterator that points to one position past the last element in the Deque.
@@ -858,7 +955,10 @@ public:
 	 */
 	iterator
 	erase(iterator pos)
-	{ return erase(pos, pos+1); }
+	{
+		d.detach();
+		return erase(pos, pos+1);
+	}
 
 	/**
 	 * @return Returns an iterator to the new position of the element that follows the
@@ -871,21 +971,30 @@ public:
 	 */
 	iterator
 	erase(iterator first, iterator last)
-	{ return d->eraseRange(first, last); }
+	{
+		d.detach();
+		return d->eraseRange(first, last);
+	}
 
 	/**
 	 * Sets each element in the Deque to \em value.
 	 */
 	void
 	fill(const T& value)
-	{ d->fill(value); }
+	{
+		d.detach();
+		d->fill(value);
+	}
 
 	/**
 	 * @return Returns a reference to the first element in the Deque.
 	 */
 	reference
 	first()
-	{ return *begin(); }
+	{
+		d.detach();
+		return *begin();
+	}
 
 	/**
 	 * @return Returns a const reference to the first element in the Deque.
@@ -899,7 +1008,10 @@ public:
 	 */
 	reference
 	front()
-	{ return *begin(); }
+	{
+		d.detach();
+		return *begin();
+	}
 
 	/**
 	 * @return Returns a const reference to the first element in the Deque.
@@ -914,7 +1026,7 @@ public:
 	 * does not occur in the Deque.
 	 */
 	const int
-	indexOf(const T& value, const int from=0) {
+	indexOf(const T& value, const int from=0) const {
 		iterator it = prism::find(d->begin+from, d->end, value);
 		if (it == d->end)
 			return -1;
@@ -926,28 +1038,40 @@ public:
 	 */
 	void
 	insert(const int index, const T& value)
-	{ d->fillInsert(d->begin+index, 1, value); }
+	{
+		d.detach();
+		d->fillInsert(d->begin+index, 1, value);
+	}
 
 	/**
 	 *
 	 */
 	void
 	insert(const int index, const int count, const T& value)
-	{ d->fillInsert(d->begin+index, count, value); }
+	{
+		d.detach();
+		d->fillInsert(d->begin+index, count, value);
+	}
 
 	/**
 	 *
 	 */
 	iterator
 	insert(iterator insertBefore, const T& value)
-	{ return d->fillInsert(insertBefore, 1, value); }
+	{
+		d.detach();
+		return d->fillInsert(insertBefore, 1, value);
+	}
 
 	/**
 	 *
 	 */
 	iterator
 	insert(iterator insertBefore, const int count, const T& value)
-	{ return d->fillInsert(insertBefore, count, value); }
+	{
+		d.detach();
+		return d->fillInsert(insertBefore, count, value);
+	}
 
 	/**
 	 * @return Returns true if the Deque is empty i.e. size == 0, false otherwise.
@@ -961,7 +1085,10 @@ public:
 	 */
 	reference
 	last()
-	{ return *(end()-1); }
+	{
+		d.detach();
+		return *(end()-1);
+	}
 
 	/**
 	 * @return Returns a const reference to the last element in the Deque.
@@ -974,7 +1101,7 @@ public:
 	 *
 	 */
 	const int
-	lastIndexOf(const T& value, int from=-1) {
+	lastIndexOf(const T& value, int from=-1) const {
 		if (from == -1) from = size();
 		else from += 1;
 		iterator it = prism::find_last(d->begin, d->begin+from, value);
@@ -984,7 +1111,7 @@ public:
 	/**
 	 *
 	 */
-	Deque<T>
+	Deque<T, T_Alloc>
 	mid(const int startIndex, const int count) const {
 		const_iterator first = begin() + startIndex;
 		const_iterator last;
@@ -992,7 +1119,25 @@ public:
 		if (startIndex + count >= d->size()) last = end();
 		else last = first + count;
 
-		return Deque<T>(first, last);
+		return Deque<T, T_Alloc>(first, last);
+	}
+
+	/**
+	 *
+	 */
+	void
+	pop_back() {
+		d.detach();
+		removeLast();
+	}
+
+	/**
+	 *
+	 */
+	void
+	pop_front() {
+		d.detach();
+		removeFirst();
 	}
 
 	/**
@@ -1000,58 +1145,98 @@ public:
 	 */
 	void
 	prepend(const T& value)
-	{ d->prependValue(value); }
+	{
+		d.detach();
+		d->prependValue(value);
+	}
 
 	/**
 	 *
 	 */
 	void
 	push_back(const T& value)
-	{ d->appendValue(value); }
+	{
+		d.detach();
+		d->appendValue(value);
+	}
 
 	/**
 	 *
 	 */
 	void
 	push_front(const T& value)
-	{ d->prependValue(value); }
+	{
+		d.detach();
+		d->prependValue(value);
+	}
 
 	/**
 	 *
 	 */
 	void
 	remove(const int index)
-	{ erase(d->begin+index); }
+	{
+		d.detach();
+		erase(d->begin+index);
+	}
 
 	/**
 	 *
 	 */
 	void
 	remove(const int index, const int count)
-	{ erase(d->begin+index, d->begin+index+count); }
+	{
+		d.detach();
+		erase(d->begin+index, d->begin+index+count);
+	}
+
+	/**
+	 *
+	 */
+	void
+	removeAll(const T& value) {
+		d.detach();
+		prism::remove(d->begin, d->end, value);
+	}
 
 	/**
 	 *
 	 */
 	void
 	removeFirst()
-	{ remove(0); }
+	{
+		d.detach();
+		remove(0);
+	}
 
 	/**
 	 *
 	 */
 	void
 	removeLast()
-	{ remove(size()-1); }
+	{
+		d.detach();
+		remove(size()-1);
+	}
 
 	/**
 	 *
 	 */
 	void
 	replace(const int index, const T& value) {
+		d.detach();
 		T* p = &*(d->begin+index);
 		d->get_T_Allocator().destroy(p);
 		d->get_T_Allocator().construct(p, value);
+	}
+
+	/**
+	 *
+	 */
+	void
+	resize(const int newSize, const T& value=T()) {
+		d.detach();
+		d->resize(newSize, value);
 	}
 
 	/**
@@ -1060,6 +1245,14 @@ public:
 	const int
 	size() const
 	{ return d->size(); }
+
+	/**
+	 *
+	 */
+//	void
+//	squeeze() {
+//		d->reduceMemoryUse();
+//	}
 
 	/**
 	 *
@@ -1085,12 +1278,13 @@ public:
 	/**
 	 *
 	 */
-	//template <class T>
-	//std::deque<T>
-	//Deque<T>::
-	//toStdDeque() const {
-	//	return std::deque<T>(constBegin(), constEnd());
-	//}
+	std::deque<T>
+	toStdDeque() const {
+		std::deque<T> sd;
+		sd.resize(this->size());
+		prism::copy(d->begin, d->end, sd.begin());
+		return sd;
+	}
 
 	/**
 	 * @return Returns a reference to the element at index \em i.
@@ -1098,7 +1292,10 @@ public:
 	 */
 	reference
 	operator [](const int i)
-	{ return *(d->begin+i); }
+	{
+		d.detach();
+		return *(d->begin+i);
+	}
 
 	/**
 	 * @return Returns a const reference to the element at index \em i.
@@ -1106,13 +1303,16 @@ public:
 	 */
 	const_reference
 	operator [](const int i) const
-	{ return *(d->begin+i); }
+	{
+		d.detach();
+		return *(d->begin+i);
+	}
 
 	/**
 	 *
 	 */
-	Deque<T>&
-	operator=(const Deque<T>& rhs) {
+	Deque<T, T_Alloc>&
+	operator=(const Deque<T, T_Alloc>& rhs) {
 		if (*this != rhs) {
 			d = rhs.d;
 		}
@@ -1123,21 +1323,41 @@ public:
 	 *
 	 */
 	const bool
-	operator==(const Deque<T>& rhs)
+	operator==(const Deque<T, T_Alloc>& rhs)
 	{ return this->d == rhs.d; }
 
 	/**
 	 *
 	 */
 	const bool
-	operator!=(const Deque<T>& rhs)
+	operator!=(const Deque<T, T_Alloc>& rhs)
 	{ return !(*this == rhs); }
 
 	/**
 	 *
 	 */
+	Deque<T, Alloc>
+	operator+(const Deque<T, Alloc>& rhs) {
+		d.detach();
+		return *this << rhs;
+	}
+
+	/**
+	 *
+	 */
 	Deque<T, Alloc>&
+	operator+=(const Deque<T, Alloc>& rhs) {
+		d.detach();
+		*this << rhs;
+		return *this;
+	}
+
+	/**
+	 *
+	 */
+	Deque<T, T_Alloc>&
 	operator<<(const T& value) {
+		d.detach();
 		d->appendValue(value);
 		return *this;
 	}
@@ -1145,13 +1365,29 @@ public:
 	/**
 	 *
 	 */
+	Deque<T, T_Alloc>&
+	operator<<(const Deque<T, T_Alloc>& rhs) {
+		d.detach();
+		int oldSize = size();
+		int newSize = oldSize + rhs.size();
+		this->resize(newSize);
+
+		prism::copy(rhs.begin(), rhs.end(), this->begin()+oldSize);
+
+		return *this;
+	}
+
+	/**
+	 *
+	 */
 	friend std::ostream&
-	operator<<(std::ostream& out, const Deque<T>& d) {
+	operator<<(std::ostream& out, const Deque<T, T_Alloc>& d) {
 		out << "Deque [" << &d << "]\n"
-				"----size:          " << d.size() << "\n" <<
-				"----capacity:      " << d.capacity() << "\n" <<
-				"----numBuckets:    " << d.d->storage.numBuckets() << endl;
-		out << "----storage.start: [" << d.d->storage.start << "]" << endl;
+				"----size:           " << d.size() << "\n" <<
+				"----capacity:       " << d.capacity() << "\n" <<
+				"----numBuckets:     " << d.d->storage.numBuckets() << endl;
+		out << "----storage.start:  [" << d.d->storage.start << "]" << endl;
+		out << "----storage.finish: [" << d.d->storage.finish << "]" << endl;
 		out << "----begin:\n" <<
 			   "      [buckets address: " << d.d->begin.buckets << "]\n" <<
 			   "      [buckets index: " << d.d->begin.buckets-d.d->storage.start << "] \n" <<

@@ -89,10 +89,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
@@ -132,23 +135,45 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
 <div class="contents">
 &#160;
 
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>Alloc
+: <a class="el" href="classprism_1_1_logger_allocator.html#a9460c1779c8a7240844ee66d65184275">prism::LoggerAllocator&lt; T &gt;</a>
+</li>
+<li>allocator_type
+: <a class="el" href="structprism_1_1_allocator_traits.html#a6d687c073652db923f1808e67f550fcd">prism::AllocatorTraits&lt; Alloc &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>BucketAlloc
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a06ddbfbcfbfb11f94d53cd8cc9942044">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>const_iterator
 : <a class="el" href="classprism_1_1_array.html#ab78c83a88959a72d59e5f930540be94a">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_deque.html#afc2f71fd5b01e963e093f64cc4da94ec">prism::Deque&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">prism::List&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a8b46f0fbe9c5c94ba892975242e3ab68">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#acc6ed07e2d7ed5065feec92a83e46fa4">prism::Vector&lt; T &gt;</a>
 </li>
 <li>const_pointer
-: <a class="el" href="classprism_1_1_deque.html#a4c43189271514578fda69c968b1d4e3c">prism::Deque&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#af6a4a91dfc203203ecc319a457ce4dce">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#ae9bcf74e2770e54eb99f29edfce5f81e">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#aad3d6caf7c7594161f7ae44034427f0f">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#ab7be76433c8a90f198e268a0918e8a6b">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#a7fd30d7613bea70e48af8fbd94460467">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#adbea4cbf0f4f62948eb2accf7d402456">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a0bf16322f83f0ad9103815a1cac16156">prism::Vector&lt; T &gt;</a>
 </li>
 <li>const_reference
-: <a class="el" href="classprism_1_1_deque.html#a8fcabfe6976606b91b4abef0e0353584">prism::Deque&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#a89911899c97ae877a81b798957a2d899">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#a5054d2fa3ac8a0a1d6d1885143107963">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#aea80995c139d8feb404c03404667d122">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#a908620eac035bd6d020d69919aeffcbe">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#a43e29d3baf22667bcebda8345fb5b101">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a7825c62cb2047e36ec704a17ef94f299">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a75325487acaa0f63496c110e5a5632bb">prism::Vector&lt; T &gt;</a>
 </li>
@@ -157,8 +182,11 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>difference_type
-: <a class="el" href="classprism_1_1_deque.html#a2639a05f15b2d1748258ceb9f6e5c8c3">prism::Deque&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#a1769ae6e60e970a4d30ee15275f7ac6d">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#a8cb6d0ad1c318af0984ce70b71b4f459">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a9f6b9845bb59ab3edcbb3f846156307e">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#a98f5a94db7ed98f032ee32ee34bbc8c8">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#ad9285548751a3bd2d51fbf39d2b33f2a">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a50fc3d423db1d24c511b28b24e4a7c00">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a5fe3b74bfb30d75aa74d4d896e6b7227">prism::Vector&lt; T &gt;</a>
 </li>
@@ -175,21 +203,28 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>iterator
 : <a class="el" href="classprism_1_1_array.html#a6814c2af67e8b3fc48b02319f5e63d50">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_deque.html#af6fbdfa6e826f7f71b29f4d3cfb72ed1">prism::Deque&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">prism::List&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#adacc7975837e5fff95d70690777fb330">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#aa547779173a63f6f8c9b2887498d10eb">prism::Vector&lt; T &gt;</a>
 </li>
-<li>iterator_category
-: <a class="el" href="classprism_1_1_deque.html#a5a8e5c9e68bc92b45fcf5b1dcae7418b">prism::Deque&lt; T &gt;</a>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>other
+: <a class="el" href="structprism_1_1_allocator_1_1rebind.html#a67ad1b0f9c61151a3063a742b411ccc3">prism::Allocator&lt; T &gt;::rebind&lt; U &gt;</a>
+, <a class="el" href="structprism_1_1_logger_allocator_1_1rebind.html#aba935f99abb34d58ffba123224838c15">prism::LoggerAllocator&lt; T &gt;::rebind&lt; U &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>pointer
-: <a class="el" href="classprism_1_1_deque.html#a9cff677f1cdffd6f9900a84fd0fa7b17">prism::Deque&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#ad3c6706a7243bd3ef489e16d34d5750f">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#aed8a12c05f82e96f45db30e9511fa62d">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a049807cdb47e3a25795342851d9c77aa">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#aed257df5c1db1015841de21318b6c5c2">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#aa39096d64ef616bad095b6439bcb1bbe">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#ac7944d9212ad675ba05280657ce14d12">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a9823d64f361cdff3fcc5043e8b4bd882">prism::Vector&lt; T &gt;</a>
 </li>
@@ -198,8 +233,11 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>reference
-: <a class="el" href="classprism_1_1_deque.html#a93d8792e719ca205ce1b9ed5d8207c1d">prism::Deque&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#a5dde9876d2ed0ca292d8a2019ac2836f">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#aa134d981ab397b1bb691af2da23b1ad6">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a735c5ea8341a854c7b0a9927c1296985">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#aace7abca3cacb471bba9f04bba680fc3">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#a7b3d035e8bae517d30ec47fee59cc450">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a0abe551090035c27a0f80ea403199727">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a8ccf98342707efbed82918a44be97438">prism::Vector&lt; T &gt;</a>
 </li>
@@ -208,14 +246,26 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>size_type
-: <a class="el" href="classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd">prism::List&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#a47cb9435e4e9ff4c934ea3d4b4338d52">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#a7cf55823ae63bccb9cf50b1e08619363">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#ab894ebf5870879f400300cd482961c94">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a33d0fff8e7a3f85f43487c6975e3e766">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a14c909f500f13b8b7a276bb97ae746e8">prism::Vector&lt; T &gt;</a>
+</li>
+<li>StorageAlloc
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#ac314b95624792862b1c97ea15e5bffd5">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
+</li>
+<li>storagePtr
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a94284c2277f5fbe4b5d0725467d5a6d3">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>T_Alloc
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#ae51ea3bab8a3bb39d82eb9032396b980">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
+</li>
 <li>type
 : <a class="el" href="structprism_1_1conditional__type.html#a9d57ba7c29ee017e38e49bbb72229b7e">prism::conditional_type&lt; condition, Type1, Type2 &gt;</a>
 , <a class="el" href="structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html#ab06b40a3cd6b35aa1871c1c8e6d7930f">prism::conditional_type&lt; false, Type1, Type2 &gt;</a>
@@ -225,8 +275,11 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
 <li>value_type
-: <a class="el" href="classprism_1_1_deque.html#ab14234d70c36a687014d59a5569863c7">prism::Deque&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#a45426ee64e0aba097a532e0ef5ff5700">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#a02838686d063e89d7c497fef69592265">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a31e50c9510a485f6ca2bd0be12b9fac6">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#a23e55c625e69c725c9704a1031a1b2b3">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a9808c1cb8dbe4ec046174c3318e577b7">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a12f8585af6daa44e7732880b3f725ee3">prism::Vector&lt; T &gt;</a>
 </li>

@@ -1,0 +1,115 @@
+\hypertarget{classprism_1_1_logger_allocator}{}\section{prism\+:\+:Logger\+Allocator$<$ T $>$ Class Template Reference}
+\label{classprism_1_1_logger_allocator}\index{prism\+::\+Logger\+Allocator$<$ T $>$@{prism\+::\+Logger\+Allocator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Logger\+Allocator.\+h$>$}
+
+Inheritance diagram for prism\+:\+:Logger\+Allocator$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classprism_1_1_logger_allocator}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprism_1_1_logger_allocator_1_1rebind}{rebind}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classprism_1_1_allocator}{Allocator}$<$ T $>$ \hyperlink{classprism_1_1_logger_allocator_a9460c1779c8a7240844ee66d65184275}{Alloc}
+\item 
+typedef \hyperlink{classprism_1_1_allocator_a45426ee64e0aba097a532e0ef5ff5700}{Alloc\+::value\+\_\+type} \hyperlink{classprism_1_1_logger_allocator_a23e55c625e69c725c9704a1031a1b2b3}{value\+\_\+type}
+\item 
+typedef \hyperlink{classprism_1_1_allocator_ad3c6706a7243bd3ef489e16d34d5750f}{Alloc\+::pointer} \hyperlink{classprism_1_1_logger_allocator_aa39096d64ef616bad095b6439bcb1bbe}{pointer}
+\item 
+typedef \hyperlink{classprism_1_1_allocator_a5dde9876d2ed0ca292d8a2019ac2836f}{Alloc\+::reference} \hyperlink{classprism_1_1_logger_allocator_a7b3d035e8bae517d30ec47fee59cc450}{reference}
+\item 
+typedef \hyperlink{classprism_1_1_allocator_af6a4a91dfc203203ecc319a457ce4dce}{Alloc\+::const\+\_\+pointer} \hyperlink{classprism_1_1_logger_allocator_a7fd30d7613bea70e48af8fbd94460467}{const\+\_\+pointer}
+\item 
+typedef \hyperlink{classprism_1_1_allocator_a89911899c97ae877a81b798957a2d899}{Alloc\+::const\+\_\+reference} \hyperlink{classprism_1_1_logger_allocator_a43e29d3baf22667bcebda8345fb5b101}{const\+\_\+reference}
+\item 
+typedef \hyperlink{classprism_1_1_allocator_a47cb9435e4e9ff4c934ea3d4b4338d52}{Alloc\+::size\+\_\+type} \hyperlink{classprism_1_1_logger_allocator_ab894ebf5870879f400300cd482961c94}{size\+\_\+type}
+\item 
+typedef \hyperlink{classprism_1_1_allocator_a1769ae6e60e970a4d30ee15275f7ac6d}{Alloc\+::difference\+\_\+type} \hyperlink{classprism_1_1_logger_allocator_ad9285548751a3bd2d51fbf39d2b33f2a}{difference\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classprism_1_1_logger_allocator_a996d16c3a83bdc5486eb5d8931fffc2b}{$\sim$\+Logger\+Allocator} ()
+\item 
+\hyperlink{classprism_1_1_allocator_ad3c6706a7243bd3ef489e16d34d5750f}{pointer} \hyperlink{classprism_1_1_logger_allocator_a0a3aab30c7f2bc10bb0501bff1f04740}{allocate} (const \hyperlink{classprism_1_1_allocator_a47cb9435e4e9ff4c934ea3d4b4338d52}{size\+\_\+type} num, \hyperlink{classprism_1_1_allocator_af6a4a91dfc203203ecc319a457ce4dce}{const\+\_\+pointer} p=0)
+\item 
+void \hyperlink{classprism_1_1_logger_allocator_a07406b7159321cadf91a1245641972c9}{deallocate} (\hyperlink{classprism_1_1_allocator_ad3c6706a7243bd3ef489e16d34d5750f}{pointer} p, const \hyperlink{classprism_1_1_allocator_a47cb9435e4e9ff4c934ea3d4b4338d52}{size\+\_\+type} num=0)
+\item 
+const int \hyperlink{classprism_1_1_logger_allocator_a06923632a7eeaf38ca8f94c18f77bf16}{num\+Allocations} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!Alloc@{Alloc}}
+\index{Alloc@{Alloc}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{Alloc}{Alloc}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Allocator}$<$T$>$ {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf Alloc}}\hypertarget{classprism_1_1_logger_allocator_a9460c1779c8a7240844ee66d65184275}{}\label{classprism_1_1_logger_allocator_a9460c1779c8a7240844ee66d65184275}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!const\+\_\+pointer@{const\+\_\+pointer}}
+\index{const\+\_\+pointer@{const\+\_\+pointer}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Alloc\+::const\+\_\+pointer} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf const\+\_\+pointer}}\hypertarget{classprism_1_1_logger_allocator_a7fd30d7613bea70e48af8fbd94460467}{}\label{classprism_1_1_logger_allocator_a7fd30d7613bea70e48af8fbd94460467}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!const\+\_\+reference@{const\+\_\+reference}}
+\index{const\+\_\+reference@{const\+\_\+reference}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Alloc\+::const\+\_\+reference} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf const\+\_\+reference}}\hypertarget{classprism_1_1_logger_allocator_a43e29d3baf22667bcebda8345fb5b101}{}\label{classprism_1_1_logger_allocator_a43e29d3baf22667bcebda8345fb5b101}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!difference\+\_\+type@{difference\+\_\+type}}
+\index{difference\+\_\+type@{difference\+\_\+type}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Alloc\+::difference\+\_\+type} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1_logger_allocator_ad9285548751a3bd2d51fbf39d2b33f2a}{}\label{classprism_1_1_logger_allocator_ad9285548751a3bd2d51fbf39d2b33f2a}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!pointer@{pointer}}
+\index{pointer@{pointer}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Alloc\+::pointer} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf pointer}}\hypertarget{classprism_1_1_logger_allocator_aa39096d64ef616bad095b6439bcb1bbe}{}\label{classprism_1_1_logger_allocator_aa39096d64ef616bad095b6439bcb1bbe}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!reference@{reference}}
+\index{reference@{reference}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Alloc\+::reference} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf reference}}\hypertarget{classprism_1_1_logger_allocator_a7b3d035e8bae517d30ec47fee59cc450}{}\label{classprism_1_1_logger_allocator_a7b3d035e8bae517d30ec47fee59cc450}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Alloc\+::size\+\_\+type} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf size\+\_\+type}}\hypertarget{classprism_1_1_logger_allocator_ab894ebf5870879f400300cd482961c94}{}\label{classprism_1_1_logger_allocator_ab894ebf5870879f400300cd482961c94}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ typedef {\bf Alloc\+::value\+\_\+type} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::{\bf value\+\_\+type}}\hypertarget{classprism_1_1_logger_allocator_a23e55c625e69c725c9704a1031a1b2b3}{}\label{classprism_1_1_logger_allocator_a23e55c625e69c725c9704a1031a1b2b3}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!````~Logger\+Allocator@{$\sim$\+Logger\+Allocator}}
+\index{````~Logger\+Allocator@{$\sim$\+Logger\+Allocator}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{$\sim$\+Logger\+Allocator()}{~LoggerAllocator()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::$\sim${\bf Logger\+Allocator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_logger_allocator_a996d16c3a83bdc5486eb5d8931fffc2b}{}\label{classprism_1_1_logger_allocator_a996d16c3a83bdc5486eb5d8931fffc2b}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!allocate@{allocate}}
+\index{allocate@{allocate}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{allocate(const size\+\_\+type num, const\+\_\+pointer p=0)}{allocate(const size_type num, const_pointer p=0)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf pointer} {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::allocate (
+\begin{DoxyParamCaption}
+\item[{const {\bf size\+\_\+type}}]{num, }
+\item[{{\bf const\+\_\+pointer}}]{p = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_logger_allocator_a0a3aab30c7f2bc10bb0501bff1f04740}{}\label{classprism_1_1_logger_allocator_a0a3aab30c7f2bc10bb0501bff1f04740}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!deallocate@{deallocate}}
+\index{deallocate@{deallocate}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{deallocate(pointer p, const size\+\_\+type num=0)}{deallocate(pointer p, const size_type num=0)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::deallocate (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer}}]{p, }
+\item[{const {\bf size\+\_\+type}}]{num = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_logger_allocator_a07406b7159321cadf91a1245641972c9}{}\label{classprism_1_1_logger_allocator_a07406b7159321cadf91a1245641972c9}
+\index{prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}!num\+Allocations@{num\+Allocations}}
+\index{num\+Allocations@{num\+Allocations}!prism\+::\+Logger\+Allocator@{prism\+::\+Logger\+Allocator}}
+\subsubsection[{\texorpdfstring{num\+Allocations() const }{numAllocations() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Logger\+Allocator}$<$ T $>$\+::num\+Allocations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_logger_allocator_a06923632a7eeaf38ca8f94c18f77bf16}{}\label{classprism_1_1_logger_allocator_a06923632a7eeaf38ca8f94c18f77bf16}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/prism/h/\hyperlink{_logger_allocator_8h}{Logger\+Allocator.\+h}\end{DoxyCompactItemize}

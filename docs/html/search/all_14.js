@@ -1,7 +1,7 @@
 var searchData=
 [
   ['value',['value',['../classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f',1,'prism::Array']]],
-  ['value_5ftype',['value_type',['../classprism_1_1_deque.html#ab14234d70c36a687014d59a5569863c7',1,'prism::Deque::value_type()'],['../classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1',1,'prism::List::value_type()'],['../classprism_1_1_string.html#a9808c1cb8dbe4ec046174c3318e577b7',1,'prism::String::value_type()'],['../classprism_1_1_vector.html#a12f8585af6daa44e7732880b3f725ee3',1,'prism::Vector::value_type()']]],
+  ['value_5ftype',['value_type',['../structprism_1_1_allocator_traits.html#a02838686d063e89d7c497fef69592265',1,'prism::AllocatorTraits::value_type()'],['../classprism_1_1_allocator.html#a45426ee64e0aba097a532e0ef5ff5700',1,'prism::Allocator::value_type()'],['../structprism_1_1aux_1_1_deque_memory.html#a31e50c9510a485f6ca2bd0be12b9fac6',1,'prism::aux::DequeMemory::value_type()'],['../classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1',1,'prism::List::value_type()'],['../classprism_1_1_logger_allocator.html#a23e55c625e69c725c9704a1031a1b2b3',1,'prism::LoggerAllocator::value_type()'],['../classprism_1_1_string.html#a9808c1cb8dbe4ec046174c3318e577b7',1,'prism::String::value_type()'],['../classprism_1_1_vector.html#a12f8585af6daa44e7732880b3f725ee3',1,'prism::Vector::value_type()']]],
   ['vector',['Vector',['../classprism_1_1_vector.html',1,'prism']]],
   ['vector',['Vector',['../classprism_1_1_vector.html#a0081b629c0ab4d85d6847a8cf382f1af',1,'prism::Vector::Vector()'],['../classprism_1_1_vector.html#a61d37ac01e42fca59cdf320804a2a7ed',1,'prism::Vector::Vector(const int size, const T &amp;value=T())'],['../classprism_1_1_vector.html#a32d0e9063ca7e7fb4ffed9940ee2b0bf',1,'prism::Vector::Vector(const_iterator first, const_iterator last)'],['../classprism_1_1_vector.html#a9a0d26456174aafd6bdae178f68dcd6d',1,'prism::Vector::Vector(std::initializer_list&lt; T &gt; list)'],['../classprism_1_1_vector.html#a6df8c0a101ff496b688f4937ec1f13e6',1,'prism::Vector::Vector(const Vector&lt; T &gt; &amp;copy)']]],
   ['vector_2eh',['Vector.h',['../_vector_8h.html',1,'']]],
@@ -13,8 +13,9 @@ var searchData=
   ['vector3',['Vector3',['../classprism_1_1_vector3.html',1,'prism']]],
   ['vector3_2ecpp',['Vector3.cpp',['../_vector3_8cpp.html',1,'']]],
   ['vector3_2eh',['Vector3.h',['../_vector3_8h.html',1,'']]],
-  ['vector4',['Vector4',['../classprism_1_1_vector4.html',1,'prism']]],
   ['vector4',['vector4',['../classprism_1_1_quaternion.html#af0d5601930898339edbfcc2f2d55bb4f',1,'prism::Quaternion::vector4()'],['../classprism_1_1_vector4.html#a1077cb6a3ea73ab0171ab5909a96dd42',1,'prism::Vector4::Vector4(void)'],['../classprism_1_1_vector4.html#ad097e262e55f67cc849daa101b192076',1,'prism::Vector4::Vector4(const float x, const float y, const float z, const float w)'],['../classprism_1_1_vector4.html#aae2d2af5837ffcdc7960eb956cf54cca',1,'prism::Vector4::Vector4(const Point &amp;p)'],['../classprism_1_1_vector4.html#ae09bb0d398cb836cb92291be056e27c3',1,'prism::Vector4::Vector4(const Point &amp;p, const float z, const float w)'],['../classprism_1_1_vector4.html#a4c069ee43bcc2793c443534763498200',1,'prism::Vector4::Vector4(const Vector2 &amp;v)'],['../classprism_1_1_vector4.html#abdf55a5ad526c2b615e6cba1b1b451a8',1,'prism::Vector4::Vector4(const Vector2 &amp;v, const float z, const float w)'],['../classprism_1_1_vector4.html#a88695d79edfe862a13fc940c2e278892',1,'prism::Vector4::Vector4(const Vector3 &amp;v)'],['../classprism_1_1_vector4.html#a43313928f6c97f358af79ea6efd55acd',1,'prism::Vector4::Vector4(const Vector3 &amp;v, const float w)'],['../classprism_1_1_vector4.html#a5ab7b4ef77a247cf7c77d4cec2a0c70d',1,'prism::Vector4::Vector4(const Vector4 &amp;v)']]],
+  ['vector4',['Vector4',['../classprism_1_1_vector4.html',1,'prism']]],
   ['vector4_2ecpp',['Vector4.cpp',['../_vector4_8cpp.html',1,'']]],
-  ['vector4_2eh',['Vector4.h',['../_vector4_8h.html',1,'']]]
+  ['vector4_2eh',['Vector4.h',['../_vector4_8h.html',1,'']]],
+  ['vector_3c_20t_20_2a_20_3e',['Vector&lt; T * &gt;',['../classprism_1_1_vector.html',1,'prism']]]
 ];

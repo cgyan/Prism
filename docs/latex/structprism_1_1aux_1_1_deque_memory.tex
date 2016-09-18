@@ -1,0 +1,190 @@
+\hypertarget{structprism_1_1aux_1_1_deque_memory}{}\section{prism\+:\+:aux\+:\+:Deque\+Memory$<$ T, Alloc $>$ Struct Template Reference}
+\label{structprism_1_1aux_1_1_deque_memory}\index{prism\+::aux\+::\+Deque\+Memory$<$ T, Alloc $>$@{prism\+::aux\+::\+Deque\+Memory$<$ T, Alloc $>$}}
+
+
+{\ttfamily \#include $<$Deque.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Alloc \hyperlink{structprism_1_1aux_1_1_deque_memory_ae51ea3bab8a3bb39d82eb9032396b980}{T\+\_\+\+Alloc}
+\item 
+typedef T\+\_\+\+Alloc\+::template rebind$<$ T $\ast$ $>$\+::other \hyperlink{structprism_1_1aux_1_1_deque_memory_ac314b95624792862b1c97ea15e5bffd5}{Storage\+Alloc}
+\item 
+typedef T\+\_\+\+Alloc\+::template rebind$<$ T $>$\+::other \hyperlink{structprism_1_1aux_1_1_deque_memory_a06ddbfbcfbfb11f94d53cd8cc9942044}{Bucket\+Alloc}
+\item 
+typedef T $\ast$$\ast$ \hyperlink{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{storage\+Ptr}
+\item 
+typedef T\+\_\+\+Alloc\+::value\+\_\+type \hyperlink{structprism_1_1aux_1_1_deque_memory_a31e50c9510a485f6ca2bd0be12b9fac6}{value\+\_\+type}
+\item 
+typedef T\+\_\+\+Alloc\+::difference\+\_\+type \hyperlink{structprism_1_1aux_1_1_deque_memory_a9f6b9845bb59ab3edcbb3f846156307e}{difference\+\_\+type}
+\item 
+typedef T\+\_\+\+Alloc\+::pointer \hyperlink{structprism_1_1aux_1_1_deque_memory_a049807cdb47e3a25795342851d9c77aa}{pointer}
+\item 
+typedef T\+\_\+\+Alloc\+::reference \hyperlink{structprism_1_1aux_1_1_deque_memory_a735c5ea8341a854c7b0a9927c1296985}{reference}
+\item 
+typedef T\+\_\+\+Alloc\+::const\+\_\+pointer \hyperlink{structprism_1_1aux_1_1_deque_memory_aad3d6caf7c7594161f7ae44034427f0f}{const\+\_\+pointer}
+\item 
+typedef T\+\_\+\+Alloc\+::const\+\_\+reference \hyperlink{structprism_1_1aux_1_1_deque_memory_aea80995c139d8feb404c03404667d122}{const\+\_\+reference}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structprism_1_1aux_1_1_deque_memory_ae858909cafd50c86fe2905d504eed125}{Deque\+Memory} ()
+\item 
+\hyperlink{structprism_1_1aux_1_1_deque_memory_a850791324a074b28ab98f124896f26b6}{$\sim$\+Deque\+Memory} ()
+\item 
+\hyperlink{structprism_1_1aux_1_1_deque_memory_a049807cdb47e3a25795342851d9c77aa}{pointer} \hyperlink{structprism_1_1aux_1_1_deque_memory_af610d956d4cf74e0cfb7cfa134438686}{allocate\+Bucket} ()
+\item 
+void \hyperlink{structprism_1_1aux_1_1_deque_memory_afc25cce4a26d8cdc39a1608ee4fa4d50}{allocate\+Buckets} (\hyperlink{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{storage\+Ptr} \hyperlink{structprism_1_1aux_1_1_deque_memory_aa7e9880e7681523029c4d7664d7743f2}{start}, \hyperlink{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{storage\+Ptr} \hyperlink{structprism_1_1aux_1_1_deque_memory_abc882c56fe6797c766bea89924801020}{finish})
+\item 
+\hyperlink{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{storage\+Ptr} \hyperlink{structprism_1_1aux_1_1_deque_memory_a35eaa6321baddaff4fd436aec3f3a718}{allocate\+Storage} (const int \hyperlink{structprism_1_1aux_1_1_deque_memory_acd3af6cc4ccbb124815819533463542d}{num\+Buckets})
+\item 
+void \hyperlink{structprism_1_1aux_1_1_deque_memory_a474903c0ccb976430724aa5b9988c4bc}{deallocate\+Bucket} (\hyperlink{structprism_1_1aux_1_1_deque_memory_a049807cdb47e3a25795342851d9c77aa}{pointer} bucket)
+\item 
+void \hyperlink{structprism_1_1aux_1_1_deque_memory_a25a968c2d9386b10a68d3220aa3283f8}{deallocate\+Storage} (\hyperlink{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{storage\+Ptr} storage\+Start)
+\item 
+void \hyperlink{structprism_1_1aux_1_1_deque_memory_a0748d04e88f3f0966e2987835a17f133}{destroy\+Buckets} (\hyperlink{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{storage\+Ptr} \hyperlink{namespaceprism_1_1aux_a16674f8b7bafe0844292be51e17dafa1}{first}, \hyperlink{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{storage\+Ptr} \hyperlink{namespaceprism_1_1aux_a23a89c64fd9ee1f27799fe56c943a44d}{last})
+\item 
+const int \hyperlink{structprism_1_1aux_1_1_deque_memory_acd3af6cc4ccbb124815819533463542d}{num\+Buckets} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structprism_1_1aux_1_1_deque_memory_ae51ea3bab8a3bb39d82eb9032396b980}{T\+\_\+\+Alloc} \hyperlink{structprism_1_1aux_1_1_deque_memory_ac2785bd032610f17d9e7e5aee422ff60}{T\+\_\+\+Allocator}
+\item 
+\hyperlink{structprism_1_1aux_1_1_deque_memory_ac314b95624792862b1c97ea15e5bffd5}{Storage\+Alloc} \hyperlink{structprism_1_1aux_1_1_deque_memory_a4aa5eb83afed81aab8a6031c02114252}{storage\+Allocator}
+\item 
+\hyperlink{structprism_1_1aux_1_1_deque_memory_a06ddbfbcfbfb11f94d53cd8cc9942044}{Bucket\+Alloc} \hyperlink{structprism_1_1aux_1_1_deque_memory_a7f3385f8ccbc39a7ae64eff752fc00a1}{bucket\+Allocator}
+\item 
+T $\ast$$\ast$ \hyperlink{structprism_1_1aux_1_1_deque_memory_aa7e9880e7681523029c4d7664d7743f2}{start}
+\item 
+T $\ast$$\ast$ \hyperlink{structprism_1_1aux_1_1_deque_memory_abc882c56fe6797c766bea89924801020}{finish}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!Bucket\+Alloc@{Bucket\+Alloc}}
+\index{Bucket\+Alloc@{Bucket\+Alloc}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{Bucket\+Alloc}{BucketAlloc}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::template rebind$<$T$>$\+::other {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf Bucket\+Alloc}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a06ddbfbcfbfb11f94d53cd8cc9942044}{}\label{structprism_1_1aux_1_1_deque_memory_a06ddbfbcfbfb11f94d53cd8cc9942044}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!const\+\_\+pointer@{const\+\_\+pointer}}
+\index{const\+\_\+pointer@{const\+\_\+pointer}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::const\+\_\+pointer {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf const\+\_\+pointer}}\hypertarget{structprism_1_1aux_1_1_deque_memory_aad3d6caf7c7594161f7ae44034427f0f}{}\label{structprism_1_1aux_1_1_deque_memory_aad3d6caf7c7594161f7ae44034427f0f}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!const\+\_\+reference@{const\+\_\+reference}}
+\index{const\+\_\+reference@{const\+\_\+reference}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::const\+\_\+reference {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf const\+\_\+reference}}\hypertarget{structprism_1_1aux_1_1_deque_memory_aea80995c139d8feb404c03404667d122}{}\label{structprism_1_1aux_1_1_deque_memory_aea80995c139d8feb404c03404667d122}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!difference\+\_\+type@{difference\+\_\+type}}
+\index{difference\+\_\+type@{difference\+\_\+type}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::difference\+\_\+type {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf difference\+\_\+type}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a9f6b9845bb59ab3edcbb3f846156307e}{}\label{structprism_1_1aux_1_1_deque_memory_a9f6b9845bb59ab3edcbb3f846156307e}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!pointer@{pointer}}
+\index{pointer@{pointer}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::pointer {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf pointer}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a049807cdb47e3a25795342851d9c77aa}{}\label{structprism_1_1aux_1_1_deque_memory_a049807cdb47e3a25795342851d9c77aa}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!reference@{reference}}
+\index{reference@{reference}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::reference {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf reference}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a735c5ea8341a854c7b0a9927c1296985}{}\label{structprism_1_1aux_1_1_deque_memory_a735c5ea8341a854c7b0a9927c1296985}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!Storage\+Alloc@{Storage\+Alloc}}
+\index{Storage\+Alloc@{Storage\+Alloc}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{Storage\+Alloc}{StorageAlloc}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::template rebind$<$T$\ast$$>$\+::other {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf Storage\+Alloc}}\hypertarget{structprism_1_1aux_1_1_deque_memory_ac314b95624792862b1c97ea15e5bffd5}{}\label{structprism_1_1aux_1_1_deque_memory_ac314b95624792862b1c97ea15e5bffd5}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!storage\+Ptr@{storage\+Ptr}}
+\index{storage\+Ptr@{storage\+Ptr}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{storage\+Ptr}{storagePtr}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T$\ast$$\ast$ {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf storage\+Ptr}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}{}\label{structprism_1_1aux_1_1_deque_memory_a94284c2277f5fbe4b5d0725467d5a6d3}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!T\+\_\+\+Alloc@{T\+\_\+\+Alloc}}
+\index{T\+\_\+\+Alloc@{T\+\_\+\+Alloc}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{T\+\_\+\+Alloc}{T_Alloc}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef Alloc {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf T\+\_\+\+Alloc}}\hypertarget{structprism_1_1aux_1_1_deque_memory_ae51ea3bab8a3bb39d82eb9032396b980}{}\label{structprism_1_1aux_1_1_deque_memory_ae51ea3bab8a3bb39d82eb9032396b980}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ typedef T\+\_\+\+Alloc\+::value\+\_\+type {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf value\+\_\+type}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a31e50c9510a485f6ca2bd0be12b9fac6}{}\label{structprism_1_1aux_1_1_deque_memory_a31e50c9510a485f6ca2bd0be12b9fac6}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!Deque\+Memory@{Deque\+Memory}}
+\index{Deque\+Memory@{Deque\+Memory}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{Deque\+Memory()}{DequeMemory()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::{\bf Deque\+Memory} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_ae858909cafd50c86fe2905d504eed125}{}\label{structprism_1_1aux_1_1_deque_memory_ae858909cafd50c86fe2905d504eed125}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!````~Deque\+Memory@{$\sim$\+Deque\+Memory}}
+\index{````~Deque\+Memory@{$\sim$\+Deque\+Memory}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{$\sim$\+Deque\+Memory()}{~DequeMemory()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::$\sim${\bf Deque\+Memory} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a850791324a074b28ab98f124896f26b6}{}\label{structprism_1_1aux_1_1_deque_memory_a850791324a074b28ab98f124896f26b6}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!allocate\+Bucket@{allocate\+Bucket}}
+\index{allocate\+Bucket@{allocate\+Bucket}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{allocate\+Bucket()}{allocateBucket()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ {\bf pointer} {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::allocate\+Bucket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_af610d956d4cf74e0cfb7cfa134438686}{}\label{structprism_1_1aux_1_1_deque_memory_af610d956d4cf74e0cfb7cfa134438686}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!allocate\+Buckets@{allocate\+Buckets}}
+\index{allocate\+Buckets@{allocate\+Buckets}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{allocate\+Buckets(storage\+Ptr start, storage\+Ptr finish)}{allocateBuckets(storagePtr start, storagePtr finish)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ void {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::allocate\+Buckets (
+\begin{DoxyParamCaption}
+\item[{{\bf storage\+Ptr}}]{start, }
+\item[{{\bf storage\+Ptr}}]{finish}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_afc25cce4a26d8cdc39a1608ee4fa4d50}{}\label{structprism_1_1aux_1_1_deque_memory_afc25cce4a26d8cdc39a1608ee4fa4d50}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!allocate\+Storage@{allocate\+Storage}}
+\index{allocate\+Storage@{allocate\+Storage}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{allocate\+Storage(const int num\+Buckets)}{allocateStorage(const int numBuckets)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ {\bf storage\+Ptr} {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::allocate\+Storage (
+\begin{DoxyParamCaption}
+\item[{const int}]{num\+Buckets}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a35eaa6321baddaff4fd436aec3f3a718}{}\label{structprism_1_1aux_1_1_deque_memory_a35eaa6321baddaff4fd436aec3f3a718}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!deallocate\+Bucket@{deallocate\+Bucket}}
+\index{deallocate\+Bucket@{deallocate\+Bucket}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{deallocate\+Bucket(pointer bucket)}{deallocateBucket(pointer bucket)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ void {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::deallocate\+Bucket (
+\begin{DoxyParamCaption}
+\item[{{\bf pointer}}]{bucket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a474903c0ccb976430724aa5b9988c4bc}{}\label{structprism_1_1aux_1_1_deque_memory_a474903c0ccb976430724aa5b9988c4bc}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!deallocate\+Storage@{deallocate\+Storage}}
+\index{deallocate\+Storage@{deallocate\+Storage}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{deallocate\+Storage(storage\+Ptr storage\+Start)}{deallocateStorage(storagePtr storageStart)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ void {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::deallocate\+Storage (
+\begin{DoxyParamCaption}
+\item[{{\bf storage\+Ptr}}]{storage\+Start}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a25a968c2d9386b10a68d3220aa3283f8}{}\label{structprism_1_1aux_1_1_deque_memory_a25a968c2d9386b10a68d3220aa3283f8}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!destroy\+Buckets@{destroy\+Buckets}}
+\index{destroy\+Buckets@{destroy\+Buckets}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{destroy\+Buckets(storage\+Ptr first, storage\+Ptr last)}{destroyBuckets(storagePtr first, storagePtr last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ void {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::destroy\+Buckets (
+\begin{DoxyParamCaption}
+\item[{{\bf storage\+Ptr}}]{first, }
+\item[{{\bf storage\+Ptr}}]{last}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_a0748d04e88f3f0966e2987835a17f133}{}\label{structprism_1_1aux_1_1_deque_memory_a0748d04e88f3f0966e2987835a17f133}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!num\+Buckets@{num\+Buckets}}
+\index{num\+Buckets@{num\+Buckets}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{num\+Buckets() const }{numBuckets() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ const int {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::num\+Buckets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1aux_1_1_deque_memory_acd3af6cc4ccbb124815819533463542d}{}\label{structprism_1_1aux_1_1_deque_memory_acd3af6cc4ccbb124815819533463542d}
+
+
+\subsection{Member Data Documentation}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!bucket\+Allocator@{bucket\+Allocator}}
+\index{bucket\+Allocator@{bucket\+Allocator}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{bucket\+Allocator}{bucketAllocator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ {\bf Bucket\+Alloc} {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::bucket\+Allocator}\hypertarget{structprism_1_1aux_1_1_deque_memory_a7f3385f8ccbc39a7ae64eff752fc00a1}{}\label{structprism_1_1aux_1_1_deque_memory_a7f3385f8ccbc39a7ae64eff752fc00a1}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!finish@{finish}}
+\index{finish@{finish}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{finish}{finish}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ T$\ast$$\ast$ {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::finish}\hypertarget{structprism_1_1aux_1_1_deque_memory_abc882c56fe6797c766bea89924801020}{}\label{structprism_1_1aux_1_1_deque_memory_abc882c56fe6797c766bea89924801020}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!start@{start}}
+\index{start@{start}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{start}{start}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ T$\ast$$\ast$ {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::start}\hypertarget{structprism_1_1aux_1_1_deque_memory_aa7e9880e7681523029c4d7664d7743f2}{}\label{structprism_1_1aux_1_1_deque_memory_aa7e9880e7681523029c4d7664d7743f2}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!storage\+Allocator@{storage\+Allocator}}
+\index{storage\+Allocator@{storage\+Allocator}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{storage\+Allocator}{storageAllocator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ {\bf Storage\+Alloc} {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::storage\+Allocator}\hypertarget{structprism_1_1aux_1_1_deque_memory_a4aa5eb83afed81aab8a6031c02114252}{}\label{structprism_1_1aux_1_1_deque_memory_a4aa5eb83afed81aab8a6031c02114252}
+\index{prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}!T\+\_\+\+Allocator@{T\+\_\+\+Allocator}}
+\index{T\+\_\+\+Allocator@{T\+\_\+\+Allocator}!prism\+::aux\+::\+Deque\+Memory@{prism\+::aux\+::\+Deque\+Memory}}
+\subsubsection[{\texorpdfstring{T\+\_\+\+Allocator}{T_Allocator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , class Alloc $>$ {\bf T\+\_\+\+Alloc} {\bf prism\+::aux\+::\+Deque\+Memory}$<$ T, Alloc $>$\+::T\+\_\+\+Allocator}\hypertarget{structprism_1_1aux_1_1_deque_memory_ac2785bd032610f17d9e7e5aee422ff60}{}\label{structprism_1_1aux_1_1_deque_memory_ac2785bd032610f17d9e7e5aee422ff60}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/prism/h/\hyperlink{_deque_8h}{Deque.\+h}\end{DoxyCompactItemize}

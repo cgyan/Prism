@@ -1,5 +1,12 @@
 var dir_aafb5e7074281cb47ca99873a43321d0 =
 [
+    [ "algorithms.h", "algorithms_8h.html", "algorithms_8h" ],
+    [ "algorithms_aux.h", "algorithms__aux_8h.html", "algorithms__aux_8h" ],
+    [ "Allocator.h", "_allocator_8h.html", [
+      [ "AllocatorTraits", "structprism_1_1_allocator_traits.html", "structprism_1_1_allocator_traits" ],
+      [ "Allocator", "classprism_1_1_allocator.html", "classprism_1_1_allocator" ],
+      [ "rebind", "structprism_1_1_allocator_1_1rebind.html", "structprism_1_1_allocator_1_1rebind" ]
+    ] ],
     [ "Array.h", "_array_8h.html", "_array_8h" ],
     [ "Bitvector.h", "_bitvector_8h.html", [
       [ "BitvectorData", "structprism_1_1_bitvector_data.html", "structprism_1_1_bitvector_data" ],
@@ -24,11 +31,19 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
       [ "Fraction", "classprism_1_1_fraction.html", "classprism_1_1_fraction" ]
     ] ],
     [ "List.h", "_list_8h.html", "_list_8h" ],
+    [ "LoggerAllocator.h", "_logger_allocator_8h.html", [
+      [ "LoggerAllocator", "classprism_1_1_logger_allocator.html", "classprism_1_1_logger_allocator" ],
+      [ "rebind", "structprism_1_1_logger_allocator_1_1rebind.html", "structprism_1_1_logger_allocator_1_1rebind" ]
+    ] ],
     [ "Mathf.h", "_mathf_8h.html", [
       [ "Mathf", "classprism_1_1_mathf.html", null ]
     ] ],
     [ "Matrix4.h", "_matrix4_8h.html", [
       [ "Matrix4", "classprism_1_1_matrix4.html", "classprism_1_1_matrix4" ]
+    ] ],
+    [ "memory.h", "memory_8h.html", "memory_8h" ],
+    [ "Obj.h", "_obj_8h.html", [
+      [ "Obj", "classprism_1_1_obj.html", "classprism_1_1_obj" ]
     ] ],
     [ "OutOfBoundsException.h", "_out_of_bounds_exception_8h.html", [
       [ "OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", "classprism_1_1_out_of_bounds_exception" ]

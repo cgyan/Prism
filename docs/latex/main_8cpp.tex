@@ -19,6 +19,7 @@
 {\ttfamily \#include $<$initializer\+\_\+list$>$}\\*
 {\ttfamily \#include $<$utility$>$}\\*
 {\ttfamily \#include $<$type\+\_\+traits$>$}\\*
+{\ttfamily \#include $<$new$>$}\\*
 {\ttfamily \#include $<$prism/\+Array$>$}\\*
 {\ttfamily \#include $<$prism/\+Stack$>$}\\*
 {\ttfamily \#include $<$prism/\+List$>$}\\*
@@ -42,6 +43,10 @@
 {\ttfamily \#include $<$prism/\+Pair$>$}\\*
 {\ttfamily \#include $<$prism/\+Deque$>$}\\*
 {\ttfamily \#include $<$prism/utilities$>$}\\*
+{\ttfamily \#include $<$prism/memory$>$}\\*
+{\ttfamily \#include $<$prism/\+Allocator$>$}\\*
+{\ttfamily \#include $<$prism/\+Logger\+Allocator$>$}\\*
+{\ttfamily \#include $<$prism/h/\+Obj.\+h$>$}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,11 +63,20 @@ void \hyperlink{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}{print} (int n)
 \item 
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\std\+::ostream \& \hyperlink{main_8cpp_af7f4df177025da81821de0efeba9aaa4}{print\+Range} (std\+::ostream \&out, Forward\+Iterator start, Forward\+Iterator end)
 \item 
+{\footnotesize template$<$typename Alloc\+Type , class T $>$ }\\void \hyperlink{main_8cpp_a4054c28a46c06f86ef08303f73c6dba5}{do\+Allocator\+Stuff} (const T \&value)
+\item 
 int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\index{main.\+cpp@{main.\+cpp}!do\+Allocator\+Stuff@{do\+Allocator\+Stuff}}
+\index{do\+Allocator\+Stuff@{do\+Allocator\+Stuff}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{do\+Allocator\+Stuff(const T \&value)}{doAllocatorStuff(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Alloc\+Type , class T $>$ void do\+Allocator\+Stuff (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a4054c28a46c06f86ef08303f73c6dba5}{}\label{main_8cpp_a4054c28a46c06f86ef08303f73c6dba5}
 \index{main.\+cpp@{main.\+cpp}!is\+Even@{is\+Even}}
 \index{is\+Even@{is\+Even}!main.\+cpp@{main.\+cpp}}
 \subsubsection[{\texorpdfstring{is\+Even(int n)}{isEven(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Even (

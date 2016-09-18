@@ -130,6 +130,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;initializer_list&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;new&gt;</code><br />
 <code>#include &lt;prism/Array&gt;</code><br />
 <code>#include &lt;prism/Stack&gt;</code><br />
 <code>#include &lt;prism/List&gt;</code><br />
@@ -153,6 +154,10 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;prism/Pair&gt;</code><br />
 <code>#include &lt;prism/Deque&gt;</code><br />
 <code>#include &lt;prism/utilities&gt;</code><br />
+<code>#include &lt;prism/memory&gt;</code><br />
+<code>#include &lt;prism/Allocator&gt;</code><br />
+<code>#include &lt;prism/LoggerAllocator&gt;</code><br />
+<code>#include &lt;<a class="el" href="_obj_8h_source.html">prism/h/Obj.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -170,10 +175,31 @@ Functions</h2></td></tr>
 <tr class="memitem:af7f4df177025da81821de0efeba9aaa4"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator &gt; </td></tr>
 <tr class="memitem:af7f4df177025da81821de0efeba9aaa4"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af7f4df177025da81821de0efeba9aaa4">printRange</a> (std::ostream &amp;out, ForwardIterator start, ForwardIterator end)</td></tr>
 <tr class="separator:af7f4df177025da81821de0efeba9aaa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4054c28a46c06f86ef08303f73c6dba5"><td class="memTemplParams" colspan="2">template&lt;typename AllocType , class T &gt; </td></tr>
+<tr class="memitem:a4054c28a46c06f86ef08303f73c6dba5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4054c28a46c06f86ef08303f73c6dba5">doAllocatorStuff</a> (const T &amp;value)</td></tr>
+<tr class="separator:a4054c28a46c06f86ef08303f73c6dba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a4054c28a46c06f86ef08303f73c6dba5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename AllocType , class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void doAllocatorStuff </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="afdeb4bcdb506aed270b96fe63038419d"></a>
 <div class="memitem">
 <div class="memproto">

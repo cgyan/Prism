@@ -227,8 +227,8 @@ find_aux(InputIterator first, InputIterator last, const T& value) {
 }
 
 /**
- * Returns an iterator to the first element in the range \em [first,last] for which \em pred returns true.
- * If no such element is found, the function returns \em last.
+ * Returns an iterator to the first element in the range \em [first,last]
+ * for which \em pred returns true. If no such element is found, the function returns \em last.
  */
 template <class InputIterator, class Predicate>
 InputIterator
@@ -241,8 +241,9 @@ find_if_aux(InputIterator first, InputIterator last, Predicate pred) {
 }
 
 /**
- * Returns an iterator to the last element in the range \em [first,last] that compares equal to \em value.
- * The range searched is \em [first,last), which contains all the elements between \em first and \em last,
+ * Returns an iterator to the last element in the range \em [first,last]
+ * that compares equal to \em value. The range searched is \em [first,last),
+ * which contains all the elements between \em first and \em last,
  * including the element pointed by \em first but not the element pointed by \em last.
  * If no match is found then a null pointer is returned instead i.e. p=0;
  */
@@ -271,8 +272,9 @@ for_each_aux(InputIterator first, InputIterator last, Function func) {
 }
 
 /**
- * Returns true if the elements in the range \em [first,last] are sorted in ascending order, false otherwise.
- * The range searched is \em [first,last), which contains all the elements between \em first and \em last,
+ * Returns true if the elements in the range \em [first,last] are sorted in
+ * ascending order, false otherwise. The range searched is \em [first,last),
+ * which contains all the elements between \em first and \em last,
  * including the element pointed by \em first but not the element pointed by \em last.
  */
 template <class ForwardIterator>
@@ -418,7 +420,8 @@ remove_if_aux(ForwardIterator first, ForwardIterator last, Predicate pred) {
 }
 
 /**
- * Assigns \em newValue to all the elements in the range \em [first,last] that compare equal to \em oldValue.
+ * Assigns \em newValue to all the elements in the range \em [first,last]
+ * that compare equal to \em oldValue.
  */
 template <class ForwardIterator, class T>
 void
@@ -426,7 +429,7 @@ replace_aux(ForwardIterator first, ForwardIterator last, const T& oldValue, cons
 	while (first != last) {
 		if (*first == oldValue)
 			*first = newValue;
-		first++;
+		++first;
 	}
 }
 
@@ -444,8 +447,8 @@ replace_copy_aux(InputIterator first, InputIterator last, OutputIterator otherFi
 			*otherFirst = newValue;
 		else
 			*otherFirst = *first;
-		first++;
-		otherFirst++;
+		++first;
+		++otherFirst;
 	}
 	return otherFirst;
 }
@@ -462,14 +465,15 @@ replace_copy_if_aux(InputIterator first, InputIterator last, OutputIterator othe
 	while (first != last) {
 		if (pred(*first)) *otherFirst = newValue;
 		else *otherFirst = *first;
-		first++;
-		otherFirst++;
+		++first;
+		++otherFirst;
 	}
 	return otherFirst;
 }
 
 /**
- * Assigns \em newValue to all the elements in the range \em [first,last] for which \em pred returns true.
+ * Assigns \em newValue to all the elements in the range \em [first,last]
+ * for which \em pred returns true.
  */
 template <class ForwardIterator, class Predicate, class T>
 void
@@ -477,15 +481,16 @@ replace_if_aux(ForwardIterator first, ForwardIterator last, Predicate pred, cons
 	while (first != last) {
 		if (pred(*first))
 			*first = newValue;
-		first++;
+		++first;
 	}
 }
 
 /**
- * Searches the range [first1,last1] for the first occurrence of the sequence defined by [first2,last2],
- * and returns an iterator to its first element, or last1 if no occurrences are found.
- * The range used is [first1,last1], which contains all the elements between first1 and last1,
- * including the element pointed by first1 but not the element pointed by last1.
+ * Searches the range [first1,last1] for the first occurrence of the sequence
+ * defined by [first2,last2], and returns an iterator to its first element,
+ * or last1 if no occurrences are found. The range used is [first1,last1],
+ * which contains all the elements between first1 and last1, including the
+ * element pointed by first1 but not the element pointed by last1.
  */
 template<class ForwardIterator1, class ForwardIterator2>
 ForwardIterator1
@@ -509,9 +514,10 @@ search_aux(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 fir
 }
 
 /**
- * Sorts the elements in the range \em [first,last] in ascending order using the quicksort algorithm.
- * The range used is [first1,last1], which contains all the elements between first1 and last1,
- * including the element pointed by first1 but not the element pointed by last1. \n
+ * Sorts the elements in the range \em [first,last] in ascending order
+ * using the quicksort algorithm. The range used is [first1,last1],
+ * which contains all the elements between first1 and last1, including the
+ * element pointed by first1 but not the element pointed by last1. \n
  * Currently \em sort() is implemented using the quicksort algorithm which averages
  * a reasonable O(n log(n)) complexity.
  */
@@ -522,9 +528,11 @@ sort_aux(ForwardIterator first, ForwardIterator last) {
 }
 
 /**
- * Sorts the elements in the range \em [first, last] in ascending order using the Bubble Sort algorithm. \n
- * The range used is \em [first,last], which contains all the elements between \em first and \em last,
- * including the element pointed by \em first but not the element pointed by \em last.
+ * Sorts the elements in the range \em [first, last] in ascending order using
+ * the Bubble Sort algorithm. \n
+ * The range used is \em [first,last], which contains all the elements between
+ * \em first and \em last, including the element pointed by \em first but not
+ * the element pointed by \em last. \n
  * \note The objects being sorted must support operator>().
  */
 template <class RandomAccessIterator>

@@ -870,7 +870,7 @@ EXCLUDE                = Debug \
                          notes \
                          reference \
                          test \
-                         inc/prism/Iterator.h
+                         inc/prism/h/Iterator.h
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

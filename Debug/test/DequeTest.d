@@ -19,12 +19,6 @@ test/DequeTest.d: ../test/DequeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/String \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/String.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Char \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Char.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h
 
@@ -67,18 +61,6 @@ test/DequeTest.d: ../test/DequeTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/String:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/String.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/Char:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Char.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/memory:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 

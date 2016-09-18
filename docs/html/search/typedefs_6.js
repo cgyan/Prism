@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size_5ftype',['size_type',['../classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd',1,'prism::List::size_type()'],['../classprism_1_1_string.html#a33d0fff8e7a3f85f43487c6975e3e766',1,'prism::String::size_type()'],['../classprism_1_1_vector.html#a14c909f500f13b8b7a276bb97ae746e8',1,'prism::Vector::size_type()']]]
+  ['other',['other',['../structprism_1_1_allocator_1_1rebind.html#a67ad1b0f9c61151a3063a742b411ccc3',1,'prism::Allocator::rebind::other()'],['../structprism_1_1_logger_allocator_1_1rebind.html#aba935f99abb34d58ffba123224838c15',1,'prism::LoggerAllocator::rebind::other()']]]
 ];

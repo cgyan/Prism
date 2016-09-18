@@ -115,7 +115,7 @@ public:
 	pointer
 	allocate(const size_type num, const_pointer p=0) {
 		pointer ptr = static_cast<pointer>(::operator new(num * sizeof(T)));
-		std::cout << "Allocator: allocating " << num << "*sizeof(T) [" << ptr << "]" << std::endl;
+//		std::cout << "Allocator: allocating " << num << "*sizeof(T) [" << ptr << "]" << std::endl;
 		return ptr;
 	}
 
@@ -133,7 +133,7 @@ public:
 	 */
 	void
 	deallocate(pointer p, const size_type num=0) {
-		std::cout << "Allocator: deallocating p [" << p << "]" << std::endl;
+//		std::cout << "Allocator: deallocating p [" << p << "]" << std::endl;
 		::operator delete(p);
 	}
 
@@ -179,3 +179,13 @@ private:
 } /* namespace prism */
 
 #endif /* PRISM_ALLOCATOR_H_ */
+
+
+
+
+
+
+
+
+
+

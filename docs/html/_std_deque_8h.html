@@ -283,7 +283,7 @@ Functions</h2></td></tr>
 <p>Returns a read/write reverse iterator that points to one before the first element in the deque. Iteration is done in reverse element order.</p>
 <p>Returns a read-only (constant) reverse iterator that points to one before the first element in the deque. Iteration is done in reverse element order.</p>
 <p>Returns the number of elements in the deque.</p>
-<p>Returns the size() of the largest possible deque.</p>
+<p>Returns the <a class="el" href="namespaceprism_1_1aux.html#a7311aa21cf3af7c4639ea15e4716de1b">size()</a> of the largest possible deque.</p>
 <p>Resizes the deque to the specified number of elements. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__new_size</td><td>Number of elements the deque should contain. </td></tr>
@@ -292,7 +292,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This function will resize the deque to the specified number of elements. If the number is smaller than the deque's current size the deque is truncated, otherwise the deque is extended and new elements are populated with given data.</p>
-<p>Returns true if the deque is empty. (Thus begin() would equal end().)</p>
+<p>Returns true if the deque is empty. (Thus <a class="el" href="namespaceprism_1_1aux.html#aae231a907fc705af50c90313e7f16ad0">begin()</a> would equal <a class="el" href="namespaceprism_1_1aux.html#a335f8dc9d05813c1eb69233ed66eea3d">end()</a>.)</p>
 <p>Subscript access to the data contained in the deque. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__n</td><td>The index of the element for which data should be accessed. </td></tr>
@@ -300,7 +300,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Read/write reference to data.</dd></dl>
-<p>This operator allows for easy, array-style, data access. Note that data access with this operator is unchecked and out_of_range lookups are not defined. (For checked lookups see at().)</p>
+<p>This operator allows for easy, array-style, data access. Note that data access with this operator is unchecked and out_of_range lookups are not defined. (For checked lookups see <a class="el" href="namespaceprism_1_1aux.html#ad5eb3c4af48fe544355159d8e9605c89">at()</a>.)</p>
 <p>Subscript access to the data contained in the deque. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__n</td><td>The index of the element for which data should be accessed. </td></tr>
@@ -308,8 +308,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Read-only (constant) reference to data.</dd></dl>
-<p>This operator allows for easy, array-style, data access. Note that data access with this operator is unchecked and out_of_range lookups are not defined. (For checked lookups see at().)</p>
-<p>Safety check used only from at().</p>
+<p>This operator allows for easy, array-style, data access. Note that data access with this operator is unchecked and out_of_range lookups are not defined. (For checked lookups see <a class="el" href="namespaceprism_1_1aux.html#ad5eb3c4af48fe544355159d8e9605c89">at()</a>.)</p>
+<p>Safety check used only from <a class="el" href="namespaceprism_1_1aux.html#ad5eb3c4af48fe544355159d8e9605c89">at()</a>.</p>
 <p>Provides access to the data contained in the deque. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">__n</td><td>The index of the element for which data should be accessed. </td></tr>
@@ -395,7 +395,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the next element (or end()).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the next element (or <a class="el" href="namespaceprism_1_1aux.html#a335f8dc9d05813c1eb69233ed66eea3d">end()</a>).</dd></dl>
 <p>This function will erase the element at the given position and thus shorten the deque by one.</p>
 <p>The user is cautioned that this function only erases the element, and that if the element is itself a pointer, the pointed-to memory is not touched in any way. Managing the pointer is the user's responsibility.</p>
 <p>Remove a range of elements. </p><dl class="params"><dt>Parameters</dt><dd>
@@ -405,7 +405,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the element pointed to by <em>last</em> prior to erasing (or end()).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the element pointed to by <em>last</em> prior to erasing (or <a class="el" href="namespaceprism_1_1aux.html#a335f8dc9d05813c1eb69233ed66eea3d">end()</a>).</dd></dl>
 <p>This function will erase the elements in the range [__first,__last) and shorten the deque accordingly.</p>
 <p>The user is cautioned that this function only erases the elements, and that if the elements themselves are pointers, the pointed-to memory is not touched in any way. Managing the pointer is the user's responsibility.</p>
 <p>Swaps data with another deque. </p><dl class="params"><dt>Parameters</dt><dd>

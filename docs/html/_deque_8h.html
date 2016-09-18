@@ -106,7 +106,8 @@ $(document).ready(function(){initNavTree('_deque_8h.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Deque.h File Reference</div>  </div>
 </div><!--header-->
@@ -117,21 +118,137 @@ $(document).ready(function(){initNavTree('_deque_8h.html','');});
 <code>#include &lt;prism/algorithms&gt;</code><br />
 <code>#include &lt;prism/OutOfBoundsException&gt;</code><br />
 <code>#include &lt;prism/List&gt;</code><br />
+<code>#include &lt;prism/String&gt;</code><br />
+<code>#include &lt;prism/memory&gt;</code><br />
+<code>#include &lt;prism/Allocator&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;initializer_list&gt;</code><br />
+<code>#include &lt;deque&gt;</code><br />
 </div>
 <p><a href="_deque_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1aux_1_1_deque_memory.html">prism::aux::DequeMemory&lt; T, Alloc &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceprism"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html">prism</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceprism_1_1aux"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html">prism::aux</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a73d05f9bac6f1390e68c9ca400dd90b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a73d05f9bac6f1390e68c9ca400dd90b7">prism::aux::Deque</a> ()</td></tr>
+<tr class="separator:a73d05f9bac6f1390e68c9ca400dd90b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a5a427044a1cfe6e053583d511f8e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a86a5a427044a1cfe6e053583d511f8e0">prism::aux::Deque</a> (const int size, const T &amp;value=T())</td></tr>
+<tr class="separator:a86a5a427044a1cfe6e053583d511f8e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4342187804b1509fa1d43846e5049897"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator &gt; </td></tr>
+<tr class="memitem:a4342187804b1509fa1d43846e5049897"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a4342187804b1509fa1d43846e5049897">prism::aux::Deque</a> (ForwardIterator first, ForwardIterator last)</td></tr>
+<tr class="separator:a4342187804b1509fa1d43846e5049897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806cef943a9796d8296803dbc3922a85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a806cef943a9796d8296803dbc3922a85">prism::aux::Deque</a> (std::initializer_list&lt; T &gt; list)</td></tr>
+<tr class="separator:a806cef943a9796d8296803dbc3922a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae67fb1e567d8a9d942bea9ca8271b45b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ae67fb1e567d8a9d942bea9ca8271b45b">prism::aux::Deque</a> (const Deque&lt; T, T_Alloc &gt; &amp;copy)</td></tr>
+<tr class="separator:ae67fb1e567d8a9d942bea9ca8271b45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad2ea6cf2b13bf2f38d16c4cac830e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#acad2ea6cf2b13bf2f38d16c4cac830e5">prism::aux::~Deque</a> ()</td></tr>
+<tr class="separator:acad2ea6cf2b13bf2f38d16c4cac830e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a436e9fe301b9cce4f865df50792524a9"><td class="memItemLeft" align="right" valign="top">T_Alloc&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a436e9fe301b9cce4f865df50792524a9">prism::aux::allocator</a> () const </td></tr>
+<tr class="separator:a436e9fe301b9cce4f865df50792524a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49493cdeebd18bd65b9c54934f13084"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ae49493cdeebd18bd65b9c54934f13084">prism::aux::append</a> (const T &amp;value)</td></tr>
+<tr class="separator:ae49493cdeebd18bd65b9c54934f13084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5eb3c4af48fe544355159d8e9605c89"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ad5eb3c4af48fe544355159d8e9605c89">prism::aux::at</a> (const int i)</td></tr>
+<tr class="separator:ad5eb3c4af48fe544355159d8e9605c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e806dafa121b876ac0eabec88c93c13"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a7e806dafa121b876ac0eabec88c93c13">prism::aux::back</a> ()</td></tr>
+<tr class="separator:a7e806dafa121b876ac0eabec88c93c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae231a907fc705af50c90313e7f16ad0"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#aae231a907fc705af50c90313e7f16ad0">prism::aux::begin</a> ()</td></tr>
+<tr class="separator:aae231a907fc705af50c90313e7f16ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b79e5620215d2439c5f35cc2a945fe"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a69b79e5620215d2439c5f35cc2a945fe">prism::aux::capacity</a> () const </td></tr>
+<tr class="separator:a69b79e5620215d2439c5f35cc2a945fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad8a6ad4b9b8416c05fdee349208d4c"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a0ad8a6ad4b9b8416c05fdee349208d4c">prism::aux::cbegin</a> () const </td></tr>
+<tr class="separator:a0ad8a6ad4b9b8416c05fdee349208d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6206fca04277236c2d6edd497c2bf22"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ad6206fca04277236c2d6edd497c2bf22">prism::aux::cend</a> () const </td></tr>
+<tr class="separator:ad6206fca04277236c2d6edd497c2bf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9dfe6df22b5b28d81a024a6bbc319c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#af9dfe6df22b5b28d81a024a6bbc319c3">prism::aux::clear</a> ()</td></tr>
+<tr class="separator:af9dfe6df22b5b28d81a024a6bbc319c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a759427246ea193f15c34088ed1bc56db"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a759427246ea193f15c34088ed1bc56db">prism::aux::constBegin</a> () const </td></tr>
+<tr class="separator:a759427246ea193f15c34088ed1bc56db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf4b387a907a2c27c35328a68956991"><td class="memItemLeft" align="right" valign="top">const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#aaaf4b387a907a2c27c35328a68956991">prism::aux::constEnd</a> () const </td></tr>
+<tr class="separator:aaaf4b387a907a2c27c35328a68956991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e0c925fe7f93dd8533f7b9ed6d6ab0f"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a4e0c925fe7f93dd8533f7b9ed6d6ab0f">prism::aux::contains</a> (const T &amp;value) const </td></tr>
+<tr class="separator:a4e0c925fe7f93dd8533f7b9ed6d6ab0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e4de22b19399e53423b408f624d866"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a14e4de22b19399e53423b408f624d866">prism::aux::count</a> (const T &amp;value) const </td></tr>
+<tr class="separator:a14e4de22b19399e53423b408f624d866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f1998dde2fd622124b8e727e19e143"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a83f1998dde2fd622124b8e727e19e143">prism::aux::empty</a> () const </td></tr>
+<tr class="separator:a83f1998dde2fd622124b8e727e19e143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335f8dc9d05813c1eb69233ed66eea3d"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a335f8dc9d05813c1eb69233ed66eea3d">prism::aux::end</a> ()</td></tr>
+<tr class="separator:a335f8dc9d05813c1eb69233ed66eea3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f19ac06a01a1831a83c94c3d5633bc"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ad7f19ac06a01a1831a83c94c3d5633bc">prism::aux::endsWith</a> (const T &amp;value) const </td></tr>
+<tr class="separator:ad7f19ac06a01a1831a83c94c3d5633bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57a97c10c7ffe497544eabb5819c236"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ab57a97c10c7ffe497544eabb5819c236">prism::aux::erase</a> (iterator pos)</td></tr>
+<tr class="separator:ab57a97c10c7ffe497544eabb5819c236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a014ff705700f2d842f1be0546bc30875"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a014ff705700f2d842f1be0546bc30875">prism::aux::erase</a> (iterator first, iterator last)</td></tr>
+<tr class="separator:a014ff705700f2d842f1be0546bc30875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd81ac98dc51b1741262ae9bcddf1e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a3bd81ac98dc51b1741262ae9bcddf1e0">prism::aux::fill</a> (const T &amp;value)</td></tr>
+<tr class="separator:a3bd81ac98dc51b1741262ae9bcddf1e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16674f8b7bafe0844292be51e17dafa1"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a16674f8b7bafe0844292be51e17dafa1">prism::aux::first</a> ()</td></tr>
+<tr class="separator:a16674f8b7bafe0844292be51e17dafa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072486b8ada0a0e862b2db17dc78b218"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a072486b8ada0a0e862b2db17dc78b218">prism::aux::front</a> ()</td></tr>
+<tr class="separator:a072486b8ada0a0e862b2db17dc78b218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f21082e4df92e571f6d251ed68987a3"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a7f21082e4df92e571f6d251ed68987a3">prism::aux::indexOf</a> (const T &amp;value, const int from=0)</td></tr>
+<tr class="separator:a7f21082e4df92e571f6d251ed68987a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c71b4a5c4b411080d5eb9f6838cafc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a8c71b4a5c4b411080d5eb9f6838cafc4">prism::aux::insert</a> (const int index, const T &amp;value)</td></tr>
+<tr class="separator:a8c71b4a5c4b411080d5eb9f6838cafc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa62fda77a8d7b6c7ad69667ef1933a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a3aa62fda77a8d7b6c7ad69667ef1933a">prism::aux::insert</a> (const int index, const int count, const T &amp;value)</td></tr>
+<tr class="separator:a3aa62fda77a8d7b6c7ad69667ef1933a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6279cb02a74270d3bff40cf30544435"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#aa6279cb02a74270d3bff40cf30544435">prism::aux::insert</a> (iterator insertBefore, const T &amp;value)</td></tr>
+<tr class="separator:aa6279cb02a74270d3bff40cf30544435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ddea176e048992d6fcc28bf6afc27ba"><td class="memItemLeft" align="right" valign="top">iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a5ddea176e048992d6fcc28bf6afc27ba">prism::aux::insert</a> (iterator insertBefore, const int count, const T &amp;value)</td></tr>
+<tr class="separator:a5ddea176e048992d6fcc28bf6afc27ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056cd3e2a9b275da43658b45cb141852"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a056cd3e2a9b275da43658b45cb141852">prism::aux::isEmpty</a> () const </td></tr>
+<tr class="separator:a056cd3e2a9b275da43658b45cb141852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a89c64fd9ee1f27799fe56c943a44d"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a23a89c64fd9ee1f27799fe56c943a44d">prism::aux::last</a> ()</td></tr>
+<tr class="separator:a23a89c64fd9ee1f27799fe56c943a44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c56b07e2e81113a801f4533d84baa92"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a1c56b07e2e81113a801f4533d84baa92">prism::aux::lastIndexOf</a> (const T &amp;value, int from=-1)</td></tr>
+<tr class="separator:a1c56b07e2e81113a801f4533d84baa92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c605820c19faa728da11c03594c190b"><td class="memItemLeft" align="right" valign="top">Deque&lt; T, T_Alloc &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a8c605820c19faa728da11c03594c190b">prism::aux::mid</a> (const int startIndex, const int count) const </td></tr>
+<tr class="separator:a8c605820c19faa728da11c03594c190b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a386d12e2908c0967706007f47883994b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a386d12e2908c0967706007f47883994b">prism::aux::prepend</a> (const T &amp;value)</td></tr>
+<tr class="separator:a386d12e2908c0967706007f47883994b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5638dc8c76cc3834f9371efcb4ec028f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a5638dc8c76cc3834f9371efcb4ec028f">prism::aux::push_back</a> (const T &amp;value)</td></tr>
+<tr class="separator:a5638dc8c76cc3834f9371efcb4ec028f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e0c5f7eadd3f6a3fe99dc469de11ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ad3e0c5f7eadd3f6a3fe99dc469de11ee">prism::aux::push_front</a> (const T &amp;value)</td></tr>
+<tr class="separator:ad3e0c5f7eadd3f6a3fe99dc469de11ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ddcb0855cf8ec32503548006dd26c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a12ddcb0855cf8ec32503548006dd26c6">prism::aux::remove</a> (const int index)</td></tr>
+<tr class="separator:a12ddcb0855cf8ec32503548006dd26c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2940f156104bc560804fb6c26c9389a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a2940f156104bc560804fb6c26c9389a2">prism::aux::remove</a> (const int index, const int count)</td></tr>
+<tr class="separator:a2940f156104bc560804fb6c26c9389a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae062b2489c5805ab0bd0e4554d13bfab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#ae062b2489c5805ab0bd0e4554d13bfab">prism::aux::removeFirst</a> ()</td></tr>
+<tr class="separator:ae062b2489c5805ab0bd0e4554d13bfab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7132c68a0630f19d5f1ab7f1edcb12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a4a7132c68a0630f19d5f1ab7f1edcb12">prism::aux::removeLast</a> ()</td></tr>
+<tr class="separator:a4a7132c68a0630f19d5f1ab7f1edcb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0091a7927530194b1865a0d589051a31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a0091a7927530194b1865a0d589051a31">prism::aux::replace</a> (const int index, const T &amp;value)</td></tr>
+<tr class="separator:a0091a7927530194b1865a0d589051a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7311aa21cf3af7c4639ea15e4716de1b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a7311aa21cf3af7c4639ea15e4716de1b">prism::aux::size</a> () const </td></tr>
+<tr class="separator:a7311aa21cf3af7c4639ea15e4716de1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb92aad56edf97b5d59f9e27bbfcd1b"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a8cb92aad56edf97b5d59f9e27bbfcd1b">prism::aux::startsWith</a> (const T &amp;value) const </td></tr>
+<tr class="separator:a8cb92aad56edf97b5d59f9e27bbfcd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9a10fe56f665939851e853c57b540f"><td class="memItemLeft" align="right" valign="top">List&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#aab9a10fe56f665939851e853c57b540f">prism::aux::toList</a> () const </td></tr>
+<tr class="separator:aab9a10fe56f665939851e853c57b540f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402922b74094cc44cc5fd647de7db684"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a402922b74094cc44cc5fd647de7db684">prism::aux::operator[]</a> (const int i)</td></tr>
+<tr class="separator:a402922b74094cc44cc5fd647de7db684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77dcc2dac220e07c992a00ca9362224a"><td class="memItemLeft" align="right" valign="top">Deque&lt; T, T_Alloc &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a77dcc2dac220e07c992a00ca9362224a">prism::aux::operator=</a> (const Deque&lt; T, T_Alloc &gt; &amp;rhs)</td></tr>
+<tr class="separator:a77dcc2dac220e07c992a00ca9362224a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb25d34954faecf07bae75666bc932f"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a5bb25d34954faecf07bae75666bc932f">prism::aux::operator==</a> (const Deque&lt; T, T_Alloc &gt; &amp;rhs)</td></tr>
+<tr class="separator:a5bb25d34954faecf07bae75666bc932f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f4f52e5988acc4c64eb93a760d9919e"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a4f4f52e5988acc4c64eb93a760d9919e">prism::aux::operator!=</a> (const Deque&lt; T, T_Alloc &gt; &amp;rhs)</td></tr>
+<tr class="separator:a4f4f52e5988acc4c64eb93a760d9919e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece27f0d83c3973377a7758ec6ff231f"><td class="memItemLeft" align="right" valign="top">Deque&lt; T, T_Alloc &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#aece27f0d83c3973377a7758ec6ff231f">prism::aux::operator&lt;&lt;</a> (const T &amp;value)</td></tr>
+<tr class="separator:aece27f0d83c3973377a7758ec6ff231f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a5c0ef1df966066532d96363411318"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism_1_1aux.html#a71a5c0ef1df966066532d96363411318">prism::aux::operator&lt;&lt;</a> (std::ostream &amp;out, const Deque&lt; T, T_Alloc &gt; &amp;d)</td></tr>
+<tr class="separator:a71a5c0ef1df966066532d96363411318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

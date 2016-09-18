@@ -6,16 +6,131 @@
 {\ttfamily \#include $<$prism/algorithms$>$}\\*
 {\ttfamily \#include $<$prism/\+Out\+Of\+Bounds\+Exception$>$}\\*
 {\ttfamily \#include $<$prism/\+List$>$}\\*
+{\ttfamily \#include $<$prism/\+String$>$}\\*
+{\ttfamily \#include $<$prism/memory$>$}\\*
+{\ttfamily \#include $<$prism/\+Allocator$>$}\\*
 {\ttfamily \#include $<$ostream$>$}\\*
 {\ttfamily \#include $<$cstddef$>$}\\*
 {\ttfamily \#include $<$initializer\+\_\+list$>$}\\*
+{\ttfamily \#include $<$deque$>$}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classprism_1_1_deque}{prism\+::\+Deque$<$ T $>$}
+struct \hyperlink{structprism_1_1aux_1_1_deque_memory}{prism\+::aux\+::\+Deque\+Memory$<$ T, Alloc $>$}
 \end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \hyperlink{namespaceprism}{prism}
+\item 
+ \hyperlink{namespaceprism_1_1aux}{prism\+::aux}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceprism_1_1aux_a73d05f9bac6f1390e68c9ca400dd90b7}{prism\+::aux\+::\+Deque} ()
+\item 
+\hyperlink{namespaceprism_1_1aux_a86a5a427044a1cfe6e053583d511f8e0}{prism\+::aux\+::\+Deque} (const int size, const T \&value=T())
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\\hyperlink{namespaceprism_1_1aux_a4342187804b1509fa1d43846e5049897}{prism\+::aux\+::\+Deque} (Forward\+Iterator first, Forward\+Iterator last)
+\item 
+\hyperlink{namespaceprism_1_1aux_a806cef943a9796d8296803dbc3922a85}{prism\+::aux\+::\+Deque} (std\+::initializer\+\_\+list$<$ T $>$ list)
+\item 
+\hyperlink{namespaceprism_1_1aux_ae67fb1e567d8a9d942bea9ca8271b45b}{prism\+::aux\+::\+Deque} (const Deque$<$ T, T\+\_\+\+Alloc $>$ \&copy)
+\item 
+\hyperlink{namespaceprism_1_1aux_acad2ea6cf2b13bf2f38d16c4cac830e5}{prism\+::aux\+::$\sim$\+Deque} ()
+\item 
+T\+\_\+\+Alloc \hyperlink{namespaceprism_1_1aux_a436e9fe301b9cce4f865df50792524a9}{prism\+::aux\+::allocator} () const 
+\item 
+void \hyperlink{namespaceprism_1_1aux_ae49493cdeebd18bd65b9c54934f13084}{prism\+::aux\+::append} (const T \&value)
+\item 
+reference \hyperlink{namespaceprism_1_1aux_ad5eb3c4af48fe544355159d8e9605c89}{prism\+::aux\+::at} (const int i)
+\item 
+reference \hyperlink{namespaceprism_1_1aux_a7e806dafa121b876ac0eabec88c93c13}{prism\+::aux\+::back} ()
+\item 
+iterator \hyperlink{namespaceprism_1_1aux_aae231a907fc705af50c90313e7f16ad0}{prism\+::aux\+::begin} ()
+\item 
+const int \hyperlink{namespaceprism_1_1aux_a69b79e5620215d2439c5f35cc2a945fe}{prism\+::aux\+::capacity} () const 
+\item 
+const\+\_\+iterator \hyperlink{namespaceprism_1_1aux_a0ad8a6ad4b9b8416c05fdee349208d4c}{prism\+::aux\+::cbegin} () const 
+\item 
+const\+\_\+iterator \hyperlink{namespaceprism_1_1aux_ad6206fca04277236c2d6edd497c2bf22}{prism\+::aux\+::cend} () const 
+\item 
+void \hyperlink{namespaceprism_1_1aux_af9dfe6df22b5b28d81a024a6bbc319c3}{prism\+::aux\+::clear} ()
+\item 
+const\+\_\+iterator \hyperlink{namespaceprism_1_1aux_a759427246ea193f15c34088ed1bc56db}{prism\+::aux\+::const\+Begin} () const 
+\item 
+const\+\_\+iterator \hyperlink{namespaceprism_1_1aux_aaaf4b387a907a2c27c35328a68956991}{prism\+::aux\+::const\+End} () const 
+\item 
+const bool \hyperlink{namespaceprism_1_1aux_a4e0c925fe7f93dd8533f7b9ed6d6ab0f}{prism\+::aux\+::contains} (const T \&value) const 
+\item 
+const int \hyperlink{namespaceprism_1_1aux_a14e4de22b19399e53423b408f624d866}{prism\+::aux\+::count} (const T \&value) const 
+\item 
+const bool \hyperlink{namespaceprism_1_1aux_a83f1998dde2fd622124b8e727e19e143}{prism\+::aux\+::empty} () const 
+\item 
+iterator \hyperlink{namespaceprism_1_1aux_a335f8dc9d05813c1eb69233ed66eea3d}{prism\+::aux\+::end} ()
+\item 
+const bool \hyperlink{namespaceprism_1_1aux_ad7f19ac06a01a1831a83c94c3d5633bc}{prism\+::aux\+::ends\+With} (const T \&value) const 
+\item 
+iterator \hyperlink{namespaceprism_1_1aux_ab57a97c10c7ffe497544eabb5819c236}{prism\+::aux\+::erase} (iterator pos)
+\item 
+iterator \hyperlink{namespaceprism_1_1aux_a014ff705700f2d842f1be0546bc30875}{prism\+::aux\+::erase} (iterator first, iterator last)
+\item 
+void \hyperlink{namespaceprism_1_1aux_a3bd81ac98dc51b1741262ae9bcddf1e0}{prism\+::aux\+::fill} (const T \&value)
+\item 
+reference \hyperlink{namespaceprism_1_1aux_a16674f8b7bafe0844292be51e17dafa1}{prism\+::aux\+::first} ()
+\item 
+reference \hyperlink{namespaceprism_1_1aux_a072486b8ada0a0e862b2db17dc78b218}{prism\+::aux\+::front} ()
+\item 
+const int \hyperlink{namespaceprism_1_1aux_a7f21082e4df92e571f6d251ed68987a3}{prism\+::aux\+::index\+Of} (const T \&value, const int from=0)
+\item 
+void \hyperlink{namespaceprism_1_1aux_a8c71b4a5c4b411080d5eb9f6838cafc4}{prism\+::aux\+::insert} (const int index, const T \&value)
+\item 
+void \hyperlink{namespaceprism_1_1aux_a3aa62fda77a8d7b6c7ad69667ef1933a}{prism\+::aux\+::insert} (const int index, const int count, const T \&value)
+\item 
+iterator \hyperlink{namespaceprism_1_1aux_aa6279cb02a74270d3bff40cf30544435}{prism\+::aux\+::insert} (iterator insert\+Before, const T \&value)
+\item 
+iterator \hyperlink{namespaceprism_1_1aux_a5ddea176e048992d6fcc28bf6afc27ba}{prism\+::aux\+::insert} (iterator insert\+Before, const int count, const T \&value)
+\item 
+const bool \hyperlink{namespaceprism_1_1aux_a056cd3e2a9b275da43658b45cb141852}{prism\+::aux\+::is\+Empty} () const 
+\item 
+reference \hyperlink{namespaceprism_1_1aux_a23a89c64fd9ee1f27799fe56c943a44d}{prism\+::aux\+::last} ()
+\item 
+const int \hyperlink{namespaceprism_1_1aux_a1c56b07e2e81113a801f4533d84baa92}{prism\+::aux\+::last\+Index\+Of} (const T \&value, int from=-\/1)
+\item 
+Deque$<$ T, T\+\_\+\+Alloc $>$ \hyperlink{namespaceprism_1_1aux_a8c605820c19faa728da11c03594c190b}{prism\+::aux\+::mid} (const int start\+Index, const int count) const 
+\item 
+void \hyperlink{namespaceprism_1_1aux_a386d12e2908c0967706007f47883994b}{prism\+::aux\+::prepend} (const T \&value)
+\item 
+void \hyperlink{namespaceprism_1_1aux_a5638dc8c76cc3834f9371efcb4ec028f}{prism\+::aux\+::push\+\_\+back} (const T \&value)
+\item 
+void \hyperlink{namespaceprism_1_1aux_ad3e0c5f7eadd3f6a3fe99dc469de11ee}{prism\+::aux\+::push\+\_\+front} (const T \&value)
+\item 
+void \hyperlink{namespaceprism_1_1aux_a12ddcb0855cf8ec32503548006dd26c6}{prism\+::aux\+::remove} (const int index)
+\item 
+void \hyperlink{namespaceprism_1_1aux_a2940f156104bc560804fb6c26c9389a2}{prism\+::aux\+::remove} (const int index, const int count)
+\item 
+void \hyperlink{namespaceprism_1_1aux_ae062b2489c5805ab0bd0e4554d13bfab}{prism\+::aux\+::remove\+First} ()
+\item 
+void \hyperlink{namespaceprism_1_1aux_a4a7132c68a0630f19d5f1ab7f1edcb12}{prism\+::aux\+::remove\+Last} ()
+\item 
+void \hyperlink{namespaceprism_1_1aux_a0091a7927530194b1865a0d589051a31}{prism\+::aux\+::replace} (const int index, const T \&value)
+\item 
+const int \hyperlink{namespaceprism_1_1aux_a7311aa21cf3af7c4639ea15e4716de1b}{prism\+::aux\+::size} () const 
+\item 
+const bool \hyperlink{namespaceprism_1_1aux_a8cb92aad56edf97b5d59f9e27bbfcd1b}{prism\+::aux\+::starts\+With} (const T \&value) const 
+\item 
+List$<$ T $>$ \hyperlink{namespaceprism_1_1aux_aab9a10fe56f665939851e853c57b540f}{prism\+::aux\+::to\+List} () const 
+\item 
+reference \hyperlink{namespaceprism_1_1aux_a402922b74094cc44cc5fd647de7db684}{prism\+::aux\+::operator\mbox{[}$\,$\mbox{]}} (const int i)
+\item 
+Deque$<$ T, T\+\_\+\+Alloc $>$ \& \hyperlink{namespaceprism_1_1aux_a77dcc2dac220e07c992a00ca9362224a}{prism\+::aux\+::operator=} (const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs)
+\item 
+const bool \hyperlink{namespaceprism_1_1aux_a5bb25d34954faecf07bae75666bc932f}{prism\+::aux\+::operator==} (const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs)
+\item 
+const bool \hyperlink{namespaceprism_1_1aux_a4f4f52e5988acc4c64eb93a760d9919e}{prism\+::aux\+::operator!=} (const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs)
+\item 
+Deque$<$ T, T\+\_\+\+Alloc $>$ \& \hyperlink{namespaceprism_1_1aux_aece27f0d83c3973377a7758ec6ff231f}{prism\+::aux\+::operator$<$$<$} (const T \&value)
+\item 
+std\+::ostream \& \hyperlink{namespaceprism_1_1aux_a71a5c0ef1df966066532d96363411318}{prism\+::aux\+::operator$<$$<$} (std\+::ostream \&out, const Deque$<$ T, T\+\_\+\+Alloc $>$ \&d)
 \end{DoxyCompactItemize}
