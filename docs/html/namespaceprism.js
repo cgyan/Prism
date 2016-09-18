@@ -1,6 +1,5 @@
 var namespaceprism =
 [
-    [ "aux", "namespaceprism_1_1aux.html", "namespaceprism_1_1aux" ],
     [ "Allocator", "classprism_1_1_allocator.html", "classprism_1_1_allocator" ],
     [ "AllocatorTraits", "structprism_1_1_allocator_traits.html", "structprism_1_1_allocator_traits" ],
     [ "Array", "classprism_1_1_array.html", "classprism_1_1_array" ],
@@ -10,7 +9,6 @@ var namespaceprism =
     [ "Circle", "classprism_1_1_circle.html", "classprism_1_1_circle" ],
     [ "conditional_type", "structprism_1_1conditional__type.html", "structprism_1_1conditional__type" ],
     [ "conditional_type< false, Type1, Type2 >", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4" ],
-    [ "Deque", "classprism_1_1_deque.html", "classprism_1_1_deque" ],
     [ "Exception", "classprism_1_1_exception.html", "classprism_1_1_exception" ],
     [ "Flag", "classprism_1_1_flag.html", "classprism_1_1_flag" ],
     [ "Flags", "classprism_1_1_flags.html", "classprism_1_1_flags" ],

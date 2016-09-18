@@ -1,0 +1,59 @@
+--------------------------------
+Copy On Write (Implicit Sharing)
+--------------------------------
+
+Main public object follows the pimpl idiom and encapsulates the private implementation into 
+an internal class that inherits from SharedData. The raw pointer is managed by a SharedDataPointer.
+
+class DequeData : public SharedData {
+
+};
+
+class Deque {
+	SharedDataPointer<DequeData> d;
+};
+
+---------------------------
+Making a copy of the Deque
+---------------------------
+
+The copy constructor of Deque simply takes a copy of the SharedDataPointer object. The 
+SharedDataPointer copy constructor checks if the SharedData subclass (DequeData) is 
+shareable i.e. it hasn't previously detached itself to perform a copy on write. If it is 
+shareable then it simply points to the same SharedData subclass. Now the original Deque 
+and the new Deque both point to the same SharedSData subclass (DequeData). If it isn't 
+shareable then the smart pointer makes its own copy of the SharedData subclass (by calling 
+the SharedData subclass' copy constructor) and points to that instead.
+
+Deque(const Deque& copy) 
+: d(copy.d)
+{}
+
+If SharedDataPointer makes its own copy of the SharedData subclass (DequeData) then the 
+SharedData subclass' copy constructor is called. This needs to perform a deep copy. Now 
+the SharedData subclass (DequeData) has its own copy of the data. Now the original Deque 
+still points to the original DequeData object but the new Deque points to its own copy of 
+the DequeData object.
+
+-----------------------------------------
+Modifying a Deque when other Deques 
+point to the same DequeData object
+-----------------------------------------
+
+So two Deques exist which both point to the same DequeData object.
+
+Deque d1({1,2,3,4,5});
+Deque d2(d1);
+
+Now the first Deque is going to be modified in some way. Any method that can (or potentially can) 
+modify a Deque has to call the detach() method on the SharedDataPointer before performing 
+any operation. When detach() is called the SharedDataPointer makes its own copy of the 
+DequeData object by calling the DequeData copy constructor. The DequeData copy constructor 
+makes a deep copy (as explained above) and the SharedDataPointer points to this new copy of 
+the DequeData object. It also sets the DequeData to be unshareable in the future. Now any 
+modifications are being performed on its own copy of the DequeData.
+
+Obvious methods like append(), erase(), resize() etc will modify the Deque but any method 
+that returns a reference to internal data needs to be assumed as a modifying method too since 
+the referenced value can be altered. These kinds of methods include at(), front(), back() and 
+operator[]. 

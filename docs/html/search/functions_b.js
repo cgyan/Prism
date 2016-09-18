@@ -8,7 +8,7 @@ var searchData=
   ['max_5faux',['max_aux',['../namespaceprism.html#a9d5ae6f65d12dcb2e433ffdc95b733bb',1,'prism']]],
   ['max_5fsize',['max_size',['../classprism_1_1_allocator.html#adc3d03562ab64759d8a48a191ff344d8',1,'prism::Allocator']]],
   ['memory',['memory',['../structprism_1_1_bitvector_data_1_1memory.html#a40de18a5a4154fe8f80f8ba63c9f5ab3',1,'prism::BitvectorData::memory']]],
-  ['mid',['mid',['../classprism_1_1_array.html#a184d0853ea009fb9d156c1302d46a87d',1,'prism::Array::mid()'],['../classprism_1_1_vector.html#ad15f2817fe441c22bbbdb1e1ecfe9aed',1,'prism::Vector::mid()'],['../namespaceprism_1_1aux.html#a8c605820c19faa728da11c03594c190b',1,'prism::aux::mid()']]],
+  ['mid',['mid',['../classprism_1_1_array.html#a184d0853ea009fb9d156c1302d46a87d',1,'prism::Array::mid()'],['../classprism_1_1_vector.html#ad15f2817fe441c22bbbdb1e1ecfe9aed',1,'prism::Vector::mid()'],['../namespaceprism.html#aeb39a03321ba086c660e96bfa11d33c4',1,'prism::mid()']]],
   ['min',['min',['../classprism_1_1_time.html#afd27e4b1e093fed8253b10090c6090aa',1,'prism::Time::min()'],['../namespaceprism.html#a10aff0aca673fb1837069dd8967e4738',1,'prism::min()']]],
   ['min_5faux',['min_aux',['../namespaceprism.html#a5ded05d282e95b0ab21c6aeaca2e8794',1,'prism']]],
   ['mins',['mins',['../classprism_1_1_time.html#ac1ffe68588575f1938803cc5d7445824',1,'prism::Time']]],

@@ -9,8 +9,7 @@
 #ifndef PRISM_LOGGERALLOCATOR_H_
 #define PRISM_LOGGERALLOCATOR_H_
 
-/**
- * This simple class extends the Allocator class by logging each memory allocation
+/*! This simple class extends the Allocator class by logging each memory allocation
  * and deallocation by storing the newly allocated pointer in a Vector on allocation
  * and removes it when the pointer is deallocated. In theory, at the end of the LoggerAllocator's
  * lifetime the Vector should be empty as all pointers should be deallocated. If there are

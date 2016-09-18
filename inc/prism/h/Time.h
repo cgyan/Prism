@@ -22,7 +22,7 @@ private:
 	// num of ms since midnight i.e. now-midnight
 	unsigned int m_ms;
 public:
-	enum {
+	enum Periods {
 		MS_PER_SECOND 	= 1000,
 		MS_PER_MINUTE 	= 60000,
 		MS_PER_HOUR 	= 3600000,

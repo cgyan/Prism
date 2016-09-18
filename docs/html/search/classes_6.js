@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['isodd',['IsOdd',['../struct_is_odd.html',1,'']]]
+  ['list',['List',['../classprism_1_1_list.html',1,'prism']]],
+  ['loggerallocator',['LoggerAllocator',['../classprism_1_1_logger_allocator.html',1,'prism']]]
 ];

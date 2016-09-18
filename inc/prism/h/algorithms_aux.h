@@ -661,7 +661,7 @@ uninitialized_copy_n_aux(ForwardIterator1 first, const int size, ForwardIterator
 	for (int i=0; i<size; i++) {
 
 		// the following simplified is:
-		//	new (&*otherFirst) T(*first)
+		//	new (otherFirst) T(first)
 
 		new (static_cast<void*>(&*otherFirst))
 				typename prism::iterator_traits<ForwardIterator1>::value_type(*first);

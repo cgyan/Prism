@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['t_5falloc',['T_Alloc',['../structprism_1_1aux_1_1_deque_memory.html#ae51ea3bab8a3bb39d82eb9032396b980',1,'prism::aux::DequeMemory']]],
-  ['t_5fallocator',['T_Allocator',['../structprism_1_1aux_1_1_deque_memory.html#ac2785bd032610f17d9e7e5aee422ff60',1,'prism::aux::DequeMemory']]],
   ['testflag',['testFlag',['../classprism_1_1_flags.html#af7ea559d83cf7a5374a08747311d9efe',1,'prism::Flags']]],
   ['time',['Time',['../classprism_1_1_time.html',1,'prism']]],
   ['time',['Time',['../classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12',1,'prism::Time::Time()'],['../classprism_1_1_time.html#acdee4966daaf75f9b735744881481372',1,'prism::Time::Time(const int hour, const int min, const int sec=0, const int msec=0)']]],
@@ -12,12 +10,13 @@ var searchData=
   ['todouble',['toDouble',['../classprism_1_1_string.html#a9c8060a9bea6e9967e8b9714c04d6396',1,'prism::String']]],
   ['tofloat',['toFloat',['../classprism_1_1_string.html#a4fcdc9050798010ab0b36a6e4ff053c9',1,'prism::String']]],
   ['toint',['toInt',['../classprism_1_1_string.html#afbf22d03096777ef6909794edc18a0f9',1,'prism::String']]],
-  ['tolist',['toList',['../classprism_1_1_stack.html#a3df4ac477d015a536aceaeed8a94de69',1,'prism::Stack::toList()'],['../classprism_1_1_vector.html#a129dfc6925b70bb736a4539bcb323de9',1,'prism::Vector::toList()'],['../namespaceprism_1_1aux.html#aab9a10fe56f665939851e853c57b540f',1,'prism::aux::toList()']]],
+  ['tolist',['toList',['../classprism_1_1_stack.html#a3df4ac477d015a536aceaeed8a94de69',1,'prism::Stack::toList()'],['../classprism_1_1_vector.html#a129dfc6925b70bb736a4539bcb323de9',1,'prism::Vector::toList()'],['../namespaceprism.html#a07654e91e7474a3ccdcd95bb5e57baea',1,'prism::toList()']]],
   ['tolower',['toLower',['../classprism_1_1_char.html#af145ceb6a02081c5562871a13a865429',1,'prism::Char::toLower() const '],['../classprism_1_1_char.html#a755a4a18c11c82cb6b1a504329b6cc9a',1,'prism::Char::toLower(const Char &amp;c)'],['../classprism_1_1_string.html#ac75330b46da019ccf2c964e4c2fd9f81',1,'prism::String::toLower()']]],
   ['top',['top',['../classprism_1_1_circle.html#a2c1851a017d5379d8ddf2a80d7bd1b1b',1,'prism::Circle::top()'],['../classprism_1_1_rect.html#a1e89336f88213ac0672643d188133bab',1,'prism::Rect::top()'],['../classprism_1_1_stack.html#a5af5f0fa0b2011871f144014ecb9b706',1,'prism::Stack::top() const '],['../classprism_1_1_stack.html#ae31d2e2ea1b8c80b7c48b5d88e0465d0',1,'prism::Stack::top()']]],
   ['topleft',['topLeft',['../classprism_1_1_rect.html#a2900a6e837124886d2e6aa500fba5bde',1,'prism::Rect']]],
   ['topoint',['toPoint',['../classprism_1_1_vector2.html#a8865c6f53a7d20f078db0105f9eedcf1',1,'prism::Vector2::toPoint()'],['../classprism_1_1_vector3.html#adad7647133bf35b64789b0418f2d1c67',1,'prism::Vector3::toPoint()'],['../classprism_1_1_vector4.html#a8df7c9df36666029ea8ec11bc60ac770',1,'prism::Vector4::toPoint()']]],
   ['topright',['topRight',['../classprism_1_1_rect.html#a0a5e7ccdaeb397649e1e9331110a7343',1,'prism::Rect']]],
+  ['tostddeque',['toStdDeque',['../namespaceprism.html#a770640a1fe99095d96e9295b225ac93d',1,'prism']]],
   ['tostdforwardlist',['toStdForwardList',['../classprism_1_1_list.html#ab628c77e4598e1055a8b832367a31997',1,'prism::List']]],
   ['tostdstring',['toStdString',['../classprism_1_1_string.html#ad1018741610a6723a38ab52255147ac4',1,'prism::String']]],
   ['tostdvector',['toStdVector',['../classprism_1_1_vector.html#ae84be49ceac4011b35dd81218324b7df',1,'prism::Vector']]],

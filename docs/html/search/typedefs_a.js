@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['t_5falloc',['T_Alloc',['../structprism_1_1aux_1_1_deque_memory.html#ae51ea3bab8a3bb39d82eb9032396b980',1,'prism::aux::DequeMemory']]],
-  ['type',['type',['../structprism_1_1conditional__type.html#a9d57ba7c29ee017e38e49bbb72229b7e',1,'prism::conditional_type::type()'],['../structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html#ab06b40a3cd6b35aa1871c1c8e6d7930f',1,'prism::conditional_type&lt; false, Type1, Type2 &gt;::type()']]]
+  ['value_5ftype',['value_type',['../structprism_1_1_allocator_traits.html#a02838686d063e89d7c497fef69592265',1,'prism::AllocatorTraits::value_type()'],['../classprism_1_1_allocator.html#a45426ee64e0aba097a532e0ef5ff5700',1,'prism::Allocator::value_type()'],['../classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1',1,'prism::List::value_type()'],['../classprism_1_1_logger_allocator.html#a23e55c625e69c725c9704a1031a1b2b3',1,'prism::LoggerAllocator::value_type()'],['../classprism_1_1_string.html#a9808c1cb8dbe4ec046174c3318e577b7',1,'prism::String::value_type()'],['../classprism_1_1_vector.html#a12f8585af6daa44e7732880b3f725ee3',1,'prism::Vector::value_type()']]]
 ];

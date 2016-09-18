@@ -20,9 +20,6 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
       [ "Circle", "classprism_1_1_circle.html", "classprism_1_1_circle" ]
     ] ],
     [ "Deque.h", "_deque_8h.html", "_deque_8h" ],
-    [ "Deque_old.h", "_deque__old_8h.html", [
-      [ "Deque", "classprism_1_1_deque.html", "classprism_1_1_deque" ]
-    ] ],
     [ "Exception.h", "_exception_8h.html", [
       [ "Exception", "classprism_1_1_exception.html", "classprism_1_1_exception" ]
     ] ],

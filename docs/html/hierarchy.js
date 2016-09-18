@@ -11,8 +11,6 @@ var hierarchy =
     [ "prism::Circle", "classprism_1_1_circle.html", null ],
     [ "prism::conditional_type< condition, Type1, Type2 >", "structprism_1_1conditional__type.html", null ],
     [ "prism::conditional_type< false, Type1, Type2 >", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html", null ],
-    [ "prism::Deque< T >", "classprism_1_1_deque.html", null ],
-    [ "prism::aux::DequeMemory< T, Alloc >", "structprism_1_1aux_1_1_deque_memory.html", null ],
     [ "prism::Exception", "classprism_1_1_exception.html", [
       [ "prism::OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", null ],
       [ "prism::OverflowException", "classprism_1_1_overflow_exception.html", null ],
@@ -38,7 +36,6 @@ var hierarchy =
     [ "prism::ReferenceCounter", "classprism_1_1_reference_counter.html", null ],
     [ "prism::SharedData", "classprism_1_1_shared_data.html", null ],
     [ "prism::SharedDataPointer< SharedDataType >", "classprism_1_1_shared_data_pointer.html", null ],
-    [ "prism::SharedDataPointer< DequeData< T > >", "classprism_1_1_shared_data_pointer.html", null ],
     [ "prism::SharedDataPointer< StackData< T > >", "classprism_1_1_shared_data_pointer.html", null ],
     [ "prism::SharedPointer< T >", "classprism_1_1_shared_pointer.html", null ],
     [ "prism::Size", "classprism_1_1_size.html", null ],

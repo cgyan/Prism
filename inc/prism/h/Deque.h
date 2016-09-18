@@ -7,7 +7,7 @@
  */
 
 /*TODO
- *  Check that copy-on-write is working
+ *  Add copy-on-write support
 	Functions to add:
 		static Deque<T, Alloc> fromList(const List<T>& list);
 		void squeeze();
@@ -30,8 +30,8 @@
 using namespace std;
 
 namespace prism {
-namespace aux {
-static const int prism_deque_bucket_size = 5;
+
+static const int prism_deque_bucket_size = 10;
 //================================================================================
 // DequeIterator
 //================================================================================
@@ -196,6 +196,7 @@ public:
 //================================================================================
 // DequeMemory
 //================================================================================
+// \cond DO_NOT_DOCUMENT
 template <class T, class Alloc>
 struct DequeMemory {
 	typedef Alloc											T_Alloc;
@@ -264,6 +265,7 @@ struct DequeMemory {
 	numBuckets() const
 	{ return finish-start; }
 };
+// \endcond
 //================================================================================
 // DequeData
 //================================================================================
@@ -319,6 +321,15 @@ struct DequeData : public SharedData {
 	DequeData(std::initializer_list<T> list) {
 		initializeStorage(list.size());
 		prism::copy(list.begin(), list.end(), this->begin);
+	}
+
+	/**
+	 * Performs a deep copy of the data in \em copy.
+	 * The iterators (begin and end) are set accordingly in initializeStorage().
+	 */
+	DequeData(const DequeData<T, Alloc>& copy) {
+		initializeStorage(copy.size());
+		prism::uninitialized_copy(copy.begin, copy.end, this->begin);
 	}
 
 
@@ -719,24 +730,23 @@ struct DequeData : public SharedData {
 };
 // \endcond
 
-} // namespace aux
 //================================================================================
 // Deque
 //================================================================================
 template <class T, class Alloc = prism::Allocator<T>>
 class Deque {
 public:
-	typedef Alloc													T_Alloc;
-	typedef typename aux::DequeData<T, T_Alloc>						Data;
-	typedef typename aux::DequeData<T, T_Alloc>::iterator			iterator;
-	typedef typename aux::DequeData<T, T_Alloc>::const_iterator		const_iterator;
-	typedef typename T_Alloc::value_type							value_type;
-	typedef typename T_Alloc::difference_type						difference_type;
-	typedef typename T_Alloc::pointer								pointer;
-	typedef typename T_Alloc::reference								reference;
-	typedef typename T_Alloc::const_pointer							const_pointer;
-	typedef typename T_Alloc::const_reference						const_reference;
-	typedef typename iterator::iterator_category 					iterator_category;
+	typedef Alloc									T_Alloc;
+	typedef DequeData<T, T_Alloc>					Data;
+	typedef typename Data::iterator					iterator;
+	typedef typename Data::const_iterator			const_iterator;
+	typedef typename T_Alloc::value_type			value_type;
+	typedef typename T_Alloc::difference_type		difference_type;
+	typedef typename T_Alloc::pointer				pointer;
+	typedef typename T_Alloc::reference				reference;
+	typedef typename T_Alloc::const_pointer			const_pointer;
+	typedef typename T_Alloc::const_reference		const_reference;
+	typedef typename iterator::iterator_category 	iterator_category;
 private:
 	SharedDataPointer<Data> d;
 public:
@@ -810,6 +820,7 @@ public:
 		d.detach();
 		if (d->rangeCheck(i))
 			return *(d->begin+i);
+
 		throw OutOfBoundsException(i);
 	}
 
@@ -829,8 +840,7 @@ public:
 	 * @return Returns a reference to the last element in the Deque.
 	 */
 	reference
-	back()
-	{
+	back() {
 		d.detach();
 		return *(end()-1);
 	}
@@ -846,8 +856,7 @@ public:
 	 * @return Returns an iterator that points to the first element in the Deque.
 	 */
 	iterator
-	begin()
-	{
+	begin() {
 		d.detach();
 		return d->begin;
 	}
@@ -885,8 +894,7 @@ public:
 	 * Note that this does not affect the capacity.
 	 */
 	void
-	clear()
-	{
+	clear() {
 		d.detach();
 		d->clear();
 	}
@@ -930,8 +938,7 @@ public:
 	 * @return Returns an iterator that points to one position past the last element in the Deque.
 	 */
 	iterator
-	end()
-	{
+	end() {
 		d.detach();
 		return d->end;
 	}
@@ -954,8 +961,7 @@ public:
 	 *
 	 */
 	iterator
-	erase(iterator pos)
-	{
+	erase(iterator pos) {
 		d.detach();
 		return erase(pos, pos+1);
 	}
@@ -970,8 +976,7 @@ public:
 	 * \endcode
 	 */
 	iterator
-	erase(iterator first, iterator last)
-	{
+	erase(iterator first, iterator last) {
 		d.detach();
 		return d->eraseRange(first, last);
 	}
@@ -980,8 +985,7 @@ public:
 	 * Sets each element in the Deque to \em value.
 	 */
 	void
-	fill(const T& value)
-	{
+	fill(const T& value) {
 		d.detach();
 		d->fill(value);
 	}
@@ -990,8 +994,7 @@ public:
 	 * @return Returns a reference to the first element in the Deque.
 	 */
 	reference
-	first()
-	{
+	first() {
 		d.detach();
 		return *begin();
 	}
@@ -1007,8 +1010,7 @@ public:
 	 * @return Returns a reference to the first element in the Deque.
 	 */
 	reference
-	front()
-	{
+	front() {
 		d.detach();
 		return *begin();
 	}
@@ -1037,8 +1039,7 @@ public:
 	 *
 	 */
 	void
-	insert(const int index, const T& value)
-	{
+	insert(const int index, const T& value) {
 		d.detach();
 		d->fillInsert(d->begin+index, 1, value);
 	}
@@ -1047,8 +1048,7 @@ public:
 	 *
 	 */
 	void
-	insert(const int index, const int count, const T& value)
-	{
+	insert(const int index, const int count, const T& value) {
 		d.detach();
 		d->fillInsert(d->begin+index, count, value);
 	}
@@ -1057,8 +1057,7 @@ public:
 	 *
 	 */
 	iterator
-	insert(iterator insertBefore, const T& value)
-	{
+	insert(iterator insertBefore, const T& value) {
 		d.detach();
 		return d->fillInsert(insertBefore, 1, value);
 	}
@@ -1067,8 +1066,7 @@ public:
 	 *
 	 */
 	iterator
-	insert(iterator insertBefore, const int count, const T& value)
-	{
+	insert(iterator insertBefore, const int count, const T& value) {
 		d.detach();
 		return d->fillInsert(insertBefore, count, value);
 	}
@@ -1084,8 +1082,7 @@ public:
 	 * @return Returns a reference to the last element in the Deque.
 	 */
 	reference
-	last()
-	{
+	last() {
 		d.detach();
 		return *(end()-1);
 	}
@@ -1144,8 +1141,7 @@ public:
 	 *
 	 */
 	void
-	prepend(const T& value)
-	{
+	prepend(const T& value) {
 		d.detach();
 		d->prependValue(value);
 	}
@@ -1154,8 +1150,7 @@ public:
 	 *
 	 */
 	void
-	push_back(const T& value)
-	{
+	push_back(const T& value) {
 		d.detach();
 		d->appendValue(value);
 	}
@@ -1164,8 +1159,7 @@ public:
 	 *
 	 */
 	void
-	push_front(const T& value)
-	{
+	push_front(const T& value) {
 		d.detach();
 		d->prependValue(value);
 	}
@@ -1174,8 +1168,7 @@ public:
 	 *
 	 */
 	void
-	remove(const int index)
-	{
+	remove(const int index) {
 		d.detach();
 		erase(d->begin+index);
 	}
@@ -1184,8 +1177,7 @@ public:
 	 *
 	 */
 	void
-	remove(const int index, const int count)
-	{
+	remove(const int index, const int count) {
 		d.detach();
 		erase(d->begin+index, d->begin+index+count);
 	}
@@ -1203,8 +1195,7 @@ public:
 	 *
 	 */
 	void
-	removeFirst()
-	{
+	removeFirst() {
 		d.detach();
 		remove(0);
 	}
@@ -1213,8 +1204,7 @@ public:
 	 *
 	 */
 	void
-	removeLast()
-	{
+	removeLast() {
 		d.detach();
 		remove(size()-1);
 	}
@@ -1291,8 +1281,7 @@ public:
 	 * \note Note that no bounds checking is performed on \em i.
 	 */
 	reference
-	operator [](const int i)
-	{
+	operator [](const int i) {
 		d.detach();
 		return *(d->begin+i);
 	}
@@ -1302,9 +1291,7 @@ public:
 	 * \note Note that no bounds checking is performed on \em i.
 	 */
 	const_reference
-	operator [](const int i) const
-	{
-		d.detach();
+	operator [](const int i) const {
 		return *(d->begin+i);
 	}
 
@@ -1323,14 +1310,14 @@ public:
 	 *
 	 */
 	const bool
-	operator==(const Deque<T, T_Alloc>& rhs)
+	operator==(const Deque<T, T_Alloc>& rhs) const
 	{ return this->d == rhs.d; }
 
 	/**
 	 *
 	 */
 	const bool
-	operator!=(const Deque<T, T_Alloc>& rhs)
+	operator!=(const Deque<T, T_Alloc>& rhs) const
 	{ return !(*this == rhs); }
 
 	/**
@@ -1400,13 +1387,13 @@ public:
 			   "      [current index:" << d.d->end.current-d.d->end.start << "]\n";
 
 		int startIndex = (d.d->begin.buckets - d.d->storage.start) *
-							aux::prism_deque_bucket_size
+							prism_deque_bucket_size
 							+ d.d->begin.current - d.d->begin.start;
 
 		const_iterator cit = d.cbegin();
 
 		for (int i=0; i<d.capacity(); i++) {
-			if (i % aux::prism_deque_bucket_size == 0) {
+			if (i % prism_deque_bucket_size == 0) {
 				cout << "---------------------------------" << endl;
 				cout << "Bucket " << (cit.buckets-d.d->storage.start) << ": " << cit.buckets << endl;
 				cout << "---------------------------------" << endl;

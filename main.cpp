@@ -135,17 +135,16 @@ int main(int argc, char * argv[]) {
 //	bucketAllocator.deallocate(bucket);
 //	storageAllocator.deallocate(start);
 
-	typedef Deque<int, LoggerAllocator<int>> Deque;
+//	typedef Deque<int, LoggerAllocator<int>> Deque;
+//	typedef Deque::iterator iterator;
 
-	Deque d1({1,2,3,4});
-	Deque d2(d1);
+	Deque<int> d({1,2,3});
+	Deque<int>::iterator it = d.begin();
 
-	d1.append(5);
-
-	cout << d1 << endl;
-	cout << d2 << endl;
-
-	cout << "!" << endl;
+	while (it != d.end()) {
+		cout << *it << endl;
+		++it;
+	}
 
 
 //	return RUN_ALL_TESTS();

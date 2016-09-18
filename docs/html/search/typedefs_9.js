@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['size_5ftype',['size_type',['../structprism_1_1_allocator_traits.html#a7cf55823ae63bccb9cf50b1e08619363',1,'prism::AllocatorTraits::size_type()'],['../classprism_1_1_allocator.html#a47cb9435e4e9ff4c934ea3d4b4338d52',1,'prism::Allocator::size_type()'],['../classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd',1,'prism::List::size_type()'],['../classprism_1_1_logger_allocator.html#ab894ebf5870879f400300cd482961c94',1,'prism::LoggerAllocator::size_type()'],['../classprism_1_1_string.html#a33d0fff8e7a3f85f43487c6975e3e766',1,'prism::String::size_type()'],['../classprism_1_1_vector.html#a14c909f500f13b8b7a276bb97ae746e8',1,'prism::Vector::size_type()']]],
-  ['storagealloc',['StorageAlloc',['../structprism_1_1aux_1_1_deque_memory.html#ac314b95624792862b1c97ea15e5bffd5',1,'prism::aux::DequeMemory']]],
-  ['storageptr',['storagePtr',['../structprism_1_1aux_1_1_deque_memory.html#a94284c2277f5fbe4b5d0725467d5a6d3',1,'prism::aux::DequeMemory']]]
+  ['type',['type',['../structprism_1_1conditional__type.html#a9d57ba7c29ee017e38e49bbb72229b7e',1,'prism::conditional_type::type()'],['../structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html#ab06b40a3cd6b35aa1871c1c8e6d7930f',1,'prism::conditional_type&lt; false, Type1, Type2 &gt;::type()']]]
 ];

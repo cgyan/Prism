@@ -201,7 +201,7 @@ Returns a read-\/only (constant) reverse iterator that points to one before the 
 
 Returns the number of elements in the deque.
 
-Returns the \hyperlink{namespaceprism_1_1aux_a7311aa21cf3af7c4639ea15e4716de1b}{size()} of the largest possible deque.
+Returns the \hyperlink{namespaceprism_acd3c0f96adf158a29387191d79c4d874}{size()} of the largest possible deque.
 
 Resizes the deque to the specified number of elements. 
 \begin{DoxyParams}{Parameters}
@@ -212,7 +212,7 @@ Resizes the deque to the specified number of elements.
 \end{DoxyParams}
 This function will resize the deque to the specified number of elements. If the number is smaller than the deque\textquotesingle{}s current size the deque is truncated, otherwise the deque is extended and new elements are populated with given data.
 
-Returns true if the deque is empty. (Thus \hyperlink{namespaceprism_1_1aux_aae231a907fc705af50c90313e7f16ad0}{begin()} would equal \hyperlink{namespaceprism_1_1aux_a335f8dc9d05813c1eb69233ed66eea3d}{end()}.)
+Returns true if the deque is empty. (Thus \hyperlink{namespaceprism_a05fcc740caf535a0f4ee6bba7301cf7f}{begin()} would equal \hyperlink{namespaceprism_a8976ba2aea6612a03f75a390f40daef8}{end()}.)
 
 Subscript access to the data contained in the deque. 
 \begin{DoxyParams}{Parameters}
@@ -222,7 +222,7 @@ Subscript access to the data contained in the deque.
 \begin{DoxyReturn}{Returns}
 Read/write reference to data.
 \end{DoxyReturn}
-This operator allows for easy, array-\/style, data access. Note that data access with this operator is unchecked and out\+\_\+of\+\_\+range lookups are not defined. (For checked lookups see \hyperlink{namespaceprism_1_1aux_ad5eb3c4af48fe544355159d8e9605c89}{at()}.)
+This operator allows for easy, array-\/style, data access. Note that data access with this operator is unchecked and out\+\_\+of\+\_\+range lookups are not defined. (For checked lookups see \hyperlink{namespaceprism_a675cbab48f22d95f990b33294a447dfe}{at()}.)
 
 Subscript access to the data contained in the deque. 
 \begin{DoxyParams}{Parameters}
@@ -232,9 +232,9 @@ Subscript access to the data contained in the deque.
 \begin{DoxyReturn}{Returns}
 Read-\/only (constant) reference to data.
 \end{DoxyReturn}
-This operator allows for easy, array-\/style, data access. Note that data access with this operator is unchecked and out\+\_\+of\+\_\+range lookups are not defined. (For checked lookups see \hyperlink{namespaceprism_1_1aux_ad5eb3c4af48fe544355159d8e9605c89}{at()}.)
+This operator allows for easy, array-\/style, data access. Note that data access with this operator is unchecked and out\+\_\+of\+\_\+range lookups are not defined. (For checked lookups see \hyperlink{namespaceprism_a675cbab48f22d95f990b33294a447dfe}{at()}.)
 
-Safety check used only from \hyperlink{namespaceprism_1_1aux_ad5eb3c4af48fe544355159d8e9605c89}{at()}.
+Safety check used only from \hyperlink{namespaceprism_a675cbab48f22d95f990b33294a447dfe}{at()}.
 
 Provides access to the data contained in the deque. 
 \begin{DoxyParams}{Parameters}
@@ -292,13 +292,13 @@ Removes first element.
 
 This is a typical stack operation. It shrinks the deque by one.
 
-Note that no data is returned, and if the first element\textquotesingle{}s data is needed, it should be retrieved before pop\+\_\+front() is called.
+Note that no data is returned, and if the first element\textquotesingle{}s data is needed, it should be retrieved before \hyperlink{namespaceprism_a407f71f548b4930e7880b44cd695b33d}{pop\+\_\+front()} is called.
 
 Removes last element.
 
 This is a typical stack operation. It shrinks the deque by one.
 
-Note that no data is returned, and if the last element\textquotesingle{}s data is needed, it should be retrieved before pop\+\_\+back() is called.
+Note that no data is returned, and if the last element\textquotesingle{}s data is needed, it should be retrieved before \hyperlink{namespaceprism_a682dc15d5493595804b4cf818b16281d}{pop\+\_\+back()} is called.
 
 Inserts given value into deque before specified iterator. 
 \begin{DoxyParams}{Parameters}
@@ -340,7 +340,7 @@ Remove element at given position.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-An iterator pointing to the next element (or \hyperlink{namespaceprism_1_1aux_a335f8dc9d05813c1eb69233ed66eea3d}{end()}).
+An iterator pointing to the next element (or \hyperlink{namespaceprism_a8976ba2aea6612a03f75a390f40daef8}{end()}).
 \end{DoxyReturn}
 This function will erase the element at the given position and thus shorten the deque by one.
 
@@ -354,7 +354,7 @@ Remove a range of elements.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-An iterator pointing to the element pointed to by {\itshape last} prior to erasing (or \hyperlink{namespaceprism_1_1aux_a335f8dc9d05813c1eb69233ed66eea3d}{end()}).
+An iterator pointing to the element pointed to by {\itshape last} prior to erasing (or \hyperlink{namespaceprism_a8976ba2aea6612a03f75a390f40daef8}{end()}).
 \end{DoxyReturn}
 This function will erase the elements in the range \mbox{[}\+\_\+\+\_\+first,\+\_\+\+\_\+last) and shorten the deque accordingly.
 
