@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['line',['line',['../structtesting_1_1internal_1_1_trace_info.html#ae9d269de1b77f4a3180d0d34acb4d7ff',1,'testing::internal::TraceInfo']]]
+  ['t_5fallocator',['T_Allocator',['../structprism_1_1aux_1_1_deque_memory.html#ac2785bd032610f17d9e7e5aee422ff60',1,'prism::aux::DequeMemory']]]
 ];

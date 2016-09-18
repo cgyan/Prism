@@ -1,1 +1,1 @@
-#include <prism/Quaternion.h>
+#include <prism/h/Quaternion.h>

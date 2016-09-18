@@ -32,7 +32,9 @@ typedef int \hyperlink{classprism_1_1_vector_a14c909f500f13b8b7a276bb97ae746e8}{
 \item 
 \hyperlink{classprism_1_1_vector_a61d37ac01e42fca59cdf320804a2a7ed}{Vector} (const int \hyperlink{classprism_1_1_vector_ac6ff3296683e76da61d48bcc15e4f175}{size}, const T \&value=T())
 \item 
-\hyperlink{classprism_1_1_vector_af40c40b61dbfabdb69251abd1518773c}{Vector} (std\+::initializer\+\_\+list$<$ T $>$ il)
+\hyperlink{classprism_1_1_vector_a32d0e9063ca7e7fb4ffed9940ee2b0bf}{Vector} (\hyperlink{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}{const\+\_\+iterator} \hyperlink{classprism_1_1_vector_a1e2ec6951430f9850702ef7c95a13166}{first}, \hyperlink{classprism_1_1_vector_acc6ed07e2d7ed5065feec92a83e46fa4}{const\+\_\+iterator} \hyperlink{classprism_1_1_vector_aa03291f774fc83f46972b07672fc616c}{last})
+\item 
+\hyperlink{classprism_1_1_vector_a9a0d26456174aafd6bdae178f68dcd6d}{Vector} (std\+::initializer\+\_\+list$<$ T $>$ list)
 \item 
 \hyperlink{classprism_1_1_vector_a6df8c0a101ff496b688f4937ec1f13e6}{Vector} (const \hyperlink{classprism_1_1_vector}{Vector}$<$ T $>$ \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
 \item 
@@ -224,7 +226,7 @@ std\+::ostream \& \hyperlink{classprism_1_1_vector_adea1a7e2e26629669d11a49d8899
 )}\hypertarget{classprism_1_1_vector_a0081b629c0ab4d85d6847a8cf382f1af}{}\label{classprism_1_1_vector_a0081b629c0ab4d85d6847a8cf382f1af}
 Creates an empty vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!Vector@{Vector}}
 \index{Vector@{Vector}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{Vector(const int size, const T \&value=\+T())}{Vector(const int size, const T &value=T())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf Vector} (
+\subsubsection[{\texorpdfstring{Vector(const int size, const T \&value=\+T())}{Vector(const int size, const T &value=T())}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf Vector} (
 \begin{DoxyParamCaption}
 \item[{const int}]{size, }
 \item[{const T \&}]{value = {\ttfamily T()}}
@@ -232,14 +234,22 @@ Creates an empty vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!Vector@{Ve
 )}\hypertarget{classprism_1_1_vector_a61d37ac01e42fca59cdf320804a2a7ed}{}\label{classprism_1_1_vector_a61d37ac01e42fca59cdf320804a2a7ed}
 Creates a vector containing {\itshape size} elements setting each value to its default constructed value i.\+e. T() if a value is not provided. If a value is provided then each element is set to {\itshape value}. \index{prism\+::\+Vector@{prism\+::\+Vector}!Vector@{Vector}}
 \index{Vector@{Vector}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{Vector(std\+::initializer\+\_\+list$<$ T $>$ il)}{Vector(std::initializer_list< T > il)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf Vector} (
+\subsubsection[{\texorpdfstring{Vector(const\+\_\+iterator first, const\+\_\+iterator last)}{Vector(const_iterator first, const_iterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf Vector} (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+iterator}}]{first, }
+\item[{{\bf const\+\_\+iterator}}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{classprism_1_1_vector_a32d0e9063ca7e7fb4ffed9940ee2b0bf}{}\label{classprism_1_1_vector_a32d0e9063ca7e7fb4ffed9940ee2b0bf}
+Creates a vector containing copies of the elements in the range {\itshape }\mbox{[}first,last\mbox{]}. {\itshape const\+\_\+iterator} will be a \hyperlink{classprism_1_1_vector}{Vector} iterator. \index{prism\+::\+Vector@{prism\+::\+Vector}!Vector@{Vector}}
+\index{Vector@{Vector}!prism\+::\+Vector@{prism\+::\+Vector}}
+\subsubsection[{\texorpdfstring{Vector(std\+::initializer\+\_\+list$<$ T $>$ list)}{Vector(std::initializer_list< T > list)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf Vector} (
 \begin{DoxyParamCaption}
 \item[{std\+::initializer\+\_\+list$<$ T $>$}]{il}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_vector_af40c40b61dbfabdb69251abd1518773c}{}\label{classprism_1_1_vector_af40c40b61dbfabdb69251abd1518773c}
+)}\hypertarget{classprism_1_1_vector_a9a0d26456174aafd6bdae178f68dcd6d}{}\label{classprism_1_1_vector_a9a0d26456174aafd6bdae178f68dcd6d}
 Creates a vector populated by the elements in the initializer list. \index{prism\+::\+Vector@{prism\+::\+Vector}!Vector@{Vector}}
 \index{Vector@{Vector}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{Vector(const Vector$<$ T $>$ \&copy)}{Vector(const Vector< T > &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf Vector} (
+\subsubsection[{\texorpdfstring{Vector(const Vector$<$ T $>$ \&copy)}{Vector(const Vector< T > &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf prism\+::\+Vector}$<$ T $>$\+::{\bf Vector} (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector}$<$ T $>$ \&}]{copy}
 \end{DoxyParamCaption}
@@ -256,7 +266,7 @@ Destroys this vector.
 \subsection{Member Function Documentation}
 \index{prism\+::\+Vector@{prism\+::\+Vector}!append@{append}}
 \index{append@{append}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{append(const T \&value)}{append(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::append (
+\subsubsection[{\texorpdfstring{append(const T \&value)}{append(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::append (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -354,14 +364,14 @@ Returns a const pointer to the underlying array data. \index{prism\+::\+Vector@{
 ) const}\hypertarget{classprism_1_1_vector_a99331f9557172b3e3e34fb36f23e5cc5}{}\label{classprism_1_1_vector_a99331f9557172b3e3e34fb36f23e5cc5}
 Returns a const iterator that points to the imaginary element one after the last value in the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!contains@{contains}}
 \index{contains@{contains}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{contains(const T \&value) const }{contains(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::contains (
+\subsubsection[{\texorpdfstring{contains(const T \&value) const }{contains(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::contains (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_vector_a6b21bf92cde4f91cb8d14efb4e315ea0}{}\label{classprism_1_1_vector_a6b21bf92cde4f91cb8d14efb4e315ea0}
 Returns true if the vector contains one or more occurrences of {\itshape value} and false otherwise. The vector\textquotesingle{}s value type must support \hyperlink{classprism_1_1_vector_aedbb9a32bb25fe4bc5907fa498fe6534}{operator==()}. \index{prism\+::\+Vector@{prism\+::\+Vector}!count@{count}}
 \index{count@{count}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{count(const T \&value) const }{count(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Vector}$<$ T $>$\+::count (
+\subsubsection[{\texorpdfstring{count(const T \&value) const }{count(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const int {\bf prism\+::\+Vector}$<$ T $>$\+::count (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -403,7 +413,7 @@ Returns an iterator to the imaginary element one position after the last value i
 ) const}\hypertarget{classprism_1_1_vector_a0a5a10cd6cd6790d2b3e2546af742fc9}{}\label{classprism_1_1_vector_a0a5a10cd6cd6790d2b3e2546af742fc9}
 Returns a const iterator to the imaginary element one position after the last value in the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!ends\+With@{ends\+With}}
 \index{ends\+With@{ends\+With}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{ends\+With(const T \&value) const }{endsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::ends\+With (
+\subsubsection[{\texorpdfstring{ends\+With(const T \&value) const }{endsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::ends\+With (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -425,7 +435,7 @@ Erases the element pointed to by {\itshape pos}. Returns an iterator to the next
 )}\hypertarget{classprism_1_1_vector_a170f8c53a09729cd04396604a982df59}{}\label{classprism_1_1_vector_a170f8c53a09729cd04396604a982df59}
 Erases the elements pointed to by the iterator range of {\itshape from} and {\itshape to}. Every element from {\itshape from} up to (but not including {\itshape to}) is erased. Returns an iterator to the first element after the erased elements (could be equal to \hyperlink{classprism_1_1_vector_a329f8549c259232b232e8f361bc4bcb1}{end()}). \index{prism\+::\+Vector@{prism\+::\+Vector}!fill@{fill}}
 \index{fill@{fill}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{fill(const T \&value)}{fill(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::fill (
+\subsubsection[{\texorpdfstring{fill(const T \&value)}{fill(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::fill (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -446,14 +456,14 @@ Returns a reference to the first element in the vector. \index{prism\+::\+Vector
 ) const}\hypertarget{classprism_1_1_vector_a5615ffd739ddca3ecadcc4357c4842c3}{}\label{classprism_1_1_vector_a5615ffd739ddca3ecadcc4357c4842c3}
 Returns a const reference to the first element in the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!from\+List@{from\+List}}
 \index{from\+List@{from\+List}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{from\+List(const List$<$ T $>$ \&list)}{fromList(const List< T > &list)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::from\+List (
+\subsubsection[{\texorpdfstring{from\+List(const List$<$ T $>$ \&list)}{fromList(const List< T > &list)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::from\+List (
 \begin{DoxyParamCaption}
 \item[{const {\bf List}$<$ T $>$ \&}]{list}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_vector_a66de66a61b4577aa20f6a6f5e4b8e99d}{}\label{classprism_1_1_vector_a66de66a61b4577aa20f6a6f5e4b8e99d}
 Creates and returns a vector that contains all the items from {\itshape list}. \index{prism\+::\+Vector@{prism\+::\+Vector}!from\+Std\+Vector@{from\+Std\+Vector}}
 \index{from\+Std\+Vector@{from\+Std\+Vector}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{from\+Std\+Vector(const std\+::vector$<$ T $>$ \&std\+Vec)}{fromStdVector(const std::vector< T > &stdVec)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::from\+Std\+Vector (
+\subsubsection[{\texorpdfstring{from\+Std\+Vector(const std\+::vector$<$ T $>$ \&std\+Vec)}{fromStdVector(const std::vector< T > &stdVec)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::from\+Std\+Vector (
 \begin{DoxyParamCaption}
 \item[{const std\+::vector$<$ T $>$ \&}]{std\+Vec}
 \end{DoxyParamCaption}
@@ -474,7 +484,7 @@ Returns a reference to the first element in the vector. \index{prism\+::\+Vector
 ) const}\hypertarget{classprism_1_1_vector_a3785411f25c191f68341fd8395d15440}{}\label{classprism_1_1_vector_a3785411f25c191f68341fd8395d15440}
 Returns a const reference to the first element in the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!index\+Of@{index\+Of}}
 \index{index\+Of@{index\+Of}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{index\+Of(const T \&value, const int from=0) const }{indexOf(const T &value, const int from=0) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Vector}$<$ T $>$\+::index\+Of (
+\subsubsection[{\texorpdfstring{index\+Of(const T \&value, const int from=0) const }{indexOf(const T &value, const int from=0) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const int {\bf prism\+::\+Vector}$<$ T $>$\+::index\+Of (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value, }
 \item[{const int}]{from = {\ttfamily 0}}
@@ -482,7 +492,7 @@ Returns a const reference to the first element in the vector. \index{prism\+::\+
 ) const}\hypertarget{classprism_1_1_vector_a0d0b833ffc1bc666624416e3b65181b4}{}\label{classprism_1_1_vector_a0d0b833ffc1bc666624416e3b65181b4}
 Searches the vector starting from index {\itshape from} (default is 0 if not specified) and returns the index of the first occurrence of {\itshape value} if found. Returns -\/1 otherwise. The vector\textquotesingle{}s value type must support \hyperlink{classprism_1_1_vector_aedbb9a32bb25fe4bc5907fa498fe6534}{operator==()}. \index{prism\+::\+Vector@{prism\+::\+Vector}!insert@{insert}}
 \index{insert@{insert}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{insert(const int index, const T \&value)}{insert(const int index, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
+\subsubsection[{\texorpdfstring{insert(const int index, const T \&value)}{insert(const int index, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
 \begin{DoxyParamCaption}
 \item[{const int}]{index, }
 \item[{const T \&}]{value}
@@ -490,7 +500,7 @@ Searches the vector starting from index {\itshape from} (default is 0 if not spe
 )}\hypertarget{classprism_1_1_vector_aa9d6409134a4242f10ed6dbed1c5a91d}{}\label{classprism_1_1_vector_aa9d6409134a4242f10ed6dbed1c5a91d}
 Inserts {\itshape value} at index {\itshape index}. \index{prism\+::\+Vector@{prism\+::\+Vector}!insert@{insert}}
 \index{insert@{insert}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{insert(const int index, const int count, const T \&value)}{insert(const int index, const int count, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
+\subsubsection[{\texorpdfstring{insert(const int index, const int count, const T \&value)}{insert(const int index, const int count, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
 \begin{DoxyParamCaption}
 \item[{const int}]{index, }
 \item[{const int}]{count, }
@@ -499,7 +509,7 @@ Inserts {\itshape value} at index {\itshape index}. \index{prism\+::\+Vector@{pr
 )}\hypertarget{classprism_1_1_vector_a2712cf9aaa506332ae150e9e3f60abed}{}\label{classprism_1_1_vector_a2712cf9aaa506332ae150e9e3f60abed}
 Inserts {\itshape count} copies of {\itshape value} starting at {\itshape index}.. \index{prism\+::\+Vector@{prism\+::\+Vector}!insert@{insert}}
 \index{insert@{insert}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{insert(iterator insert\+Before, const T \&value)}{insert(iterator insertBefore, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
+\subsubsection[{\texorpdfstring{insert(iterator insert\+Before, const T \&value)}{insert(iterator insertBefore, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
 \begin{DoxyParamCaption}
 \item[{{\bf iterator}}]{insert\+Before, }
 \item[{const T \&}]{value}
@@ -507,7 +517,7 @@ Inserts {\itshape count} copies of {\itshape value} starting at {\itshape index}
 )}\hypertarget{classprism_1_1_vector_ac665dc2e7c506656fb4bbe3db303159c}{}\label{classprism_1_1_vector_ac665dc2e7c506656fb4bbe3db303159c}
 Inserts {\itshape value} in front of the position represented by the iterator {\itshape insert\+Before}. \index{prism\+::\+Vector@{prism\+::\+Vector}!insert@{insert}}
 \index{insert@{insert}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{insert(iterator insert\+Before, const int count, const T \&value)}{insert(iterator insertBefore, const int count, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
+\subsubsection[{\texorpdfstring{insert(iterator insert\+Before, const int count, const T \&value)}{insert(iterator insertBefore, const int count, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$\+::{\bf iterator} {\bf prism\+::\+Vector}$<$ T $>$\+::insert (
 \begin{DoxyParamCaption}
 \item[{{\bf iterator}}]{insert\+Before, }
 \item[{const int}]{count, }
@@ -537,13 +547,13 @@ Returns a reference to the last element in the vector. \index{prism\+::\+Vector@
 ) const}\hypertarget{classprism_1_1_vector_a8298d925eeb3a3be9e68d874112daf8c}{}\label{classprism_1_1_vector_a8298d925eeb3a3be9e68d874112daf8c}
 Returns a const reference to the last element in the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!last\+Index\+Of@{last\+Index\+Of}}
 \index{last\+Index\+Of@{last\+Index\+Of}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{last\+Index\+Of(const T \&value, const int from=-\/1) const }{lastIndexOf(const T &value, const int from=-1) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const int {\bf prism\+::\+Vector}$<$ T $>$\+::last\+Index\+Of (
+\subsubsection[{\texorpdfstring{last\+Index\+Of(const T \&value, const int from=-\/1) const }{lastIndexOf(const T &value, const int from=-1) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const int {\bf prism\+::\+Vector}$<$ T $>$\+::last\+Index\+Of (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value, }
 \item[{const int}]{from = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_vector_a33e965cfc15bd23e0748dfacaeb97428}{}\label{classprism_1_1_vector_a33e965cfc15bd23e0748dfacaeb97428}
-Returns the index of the last occurrence of {\itshape value} in the vector. It searches backwards from index {\itshape from}. If /em from is -\/1 (the default) then the search starts from the last element. Returns -\/1 if there is no match found. The vector\textquotesingle{}s value type must support \hyperlink{classprism_1_1_vector_aedbb9a32bb25fe4bc5907fa498fe6534}{operator==()}. \index{prism\+::\+Vector@{prism\+::\+Vector}!mid@{mid}}
+Returns the index of the last occurrence of {\itshape value} in the vector. It searches backwards from index {\itshape from}. If {\itshape from} is -\/1 (the default) then the search starts from the last element. Returns -\/1 if there is no match found. The vector\textquotesingle{}s value type must support \hyperlink{classprism_1_1_vector_aedbb9a32bb25fe4bc5907fa498fe6534}{operator==()}. \index{prism\+::\+Vector@{prism\+::\+Vector}!mid@{mid}}
 \index{mid@{mid}!prism\+::\+Vector@{prism\+::\+Vector}}
 \subsubsection[{\texorpdfstring{mid(const int start\+Index, const int count=-\/1)}{mid(const int startIndex, const int count=-1)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::mid (
 \begin{DoxyParamCaption}
@@ -553,49 +563,49 @@ Returns the index of the last occurrence of {\itshape value} in the vector. It s
 )}\hypertarget{classprism_1_1_vector_ad15f2817fe441c22bbbdb1e1ecfe9aed}{}\label{classprism_1_1_vector_ad15f2817fe441c22bbbdb1e1ecfe9aed}
 Creates and returns a new vector containing {\itshape count} elements from this vector starting from {\itshape index}. If {\itshape count} is -\/1 (the default) then all elements after {\itshape index} are copied across. It performs a bounds check so if {\itshape start\+Index} + {\itshape count} goes past the end of the vector\textquotesingle{}s storage then all the elements from {\itshape start\+Index} up to and including the final element are copied over. \index{prism\+::\+Vector@{prism\+::\+Vector}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{operator"!=(const Vector$<$ T $>$ \&rhs) const }{operator!=(const Vector< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::operator!= (
+\subsubsection[{\texorpdfstring{operator"!=(const Vector$<$ T $>$ \&rhs) const }{operator!=(const Vector< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::operator!= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector}$<$ T $>$ \&}]{rhs}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_vector_a7f3b55afc7268eba0f06a16f54b66b0c}{}\label{classprism_1_1_vector_a7f3b55afc7268eba0f06a16f54b66b0c}
 Compares this vector with {\itshape rhs} and if both have the same number of elements in the same order then they are considered equal. Returns true if they are equal or false otherwise. \index{prism\+::\+Vector@{prism\+::\+Vector}!operator+@{operator+}}
 \index{operator+@{operator+}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{operator+(const Vector$<$ T $>$ \&rhs) const }{operator+(const Vector< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::operator+ (
+\subsubsection[{\texorpdfstring{operator+(const Vector$<$ T $>$ \&rhs) const }{operator+(const Vector< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$ {\bf prism\+::\+Vector}$<$ T $>$\+::operator+ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector}$<$ T $>$ \&}]{rhs}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_vector_a9275846b38b6ce971d7d7114bca5acc2}{}\label{classprism_1_1_vector_a9275846b38b6ce971d7d7114bca5acc2}
 Creates and returns a new vector that contains all of the elements from this vector followed by the elements from {\itshape rhs}. \index{prism\+::\+Vector@{prism\+::\+Vector}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{operator+=(const Vector$<$ T $>$ \&rhs)}{operator+=(const Vector< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator+= (
+\subsubsection[{\texorpdfstring{operator+=(const Vector$<$ T $>$ \&rhs)}{operator+=(const Vector< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator+= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector}$<$ T $>$ \&}]{rhs}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_vector_a094f14b6f6f219dda41b0b7879d9b6b5}{}\label{classprism_1_1_vector_a094f14b6f6f219dda41b0b7879d9b6b5}
 Appends the contents of {\itshape rhs} onto the end of this vector. Returns a reference to this vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{operator$<$$<$(const T \&value)}{operator<<(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator$<$$<$ (
+\subsubsection[{\texorpdfstring{operator$<$$<$(const T \&value)}{operator<<(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_vector_a687da3b48a2087e6e07fd5219389adb3}{}\label{classprism_1_1_vector_a687da3b48a2087e6e07fd5219389adb3}
 Appends {\itshape value} to the end of the vector. Equivalent to \hyperlink{classprism_1_1_vector_a690b3be3b217aab2842a5b9b7b0ab4dd}{append()}. \index{prism\+::\+Vector@{prism\+::\+Vector}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{operator$<$$<$(const Vector$<$ T $>$ \&rhs)}{operator<<(const Vector< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator$<$$<$ (
+\subsubsection[{\texorpdfstring{operator$<$$<$(const Vector$<$ T $>$ \&rhs)}{operator<<(const Vector< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector}$<$ T $>$ \&}]{rhs}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_vector_a63456dd4a36f843522f6312f0c3032e7}{}\label{classprism_1_1_vector_a63456dd4a36f843522f6312f0c3032e7}
 Appends the contents of the {\itshape rhs} vector onto the end of this vector. Returns a reference to this vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!operator=@{operator=}}
 \index{operator=@{operator=}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{operator=(const Vector$<$ T $>$ \&rhs)}{operator=(const Vector< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator= (
+\subsubsection[{\texorpdfstring{operator=(const Vector$<$ T $>$ \&rhs)}{operator=(const Vector< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Vector}$<$ T $>$ \& {\bf prism\+::\+Vector}$<$ T $>$\+::operator= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector}$<$ T $>$ \&}]{rhs}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_vector_a8e248700c87a2176c675c91d4f6a4390}{}\label{classprism_1_1_vector_a8e248700c87a2176c675c91d4f6a4390}
 Assignment operator assigns all of the elements from the vector {\itshape rhs} to this vector. Returns a reference to this vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!operator==@{operator==}}
 \index{operator==@{operator==}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{operator==(const Vector$<$ T $>$ \&rhs) const }{operator==(const Vector< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::operator== (
+\subsubsection[{\texorpdfstring{operator==(const Vector$<$ T $>$ \&rhs) const }{operator==(const Vector< T > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::operator== (
 \begin{DoxyParamCaption}
 \item[{const {\bf Vector}$<$ T $>$ \&}]{rhs}
 \end{DoxyParamCaption}
@@ -630,21 +640,21 @@ Removes the last element from the vector. \index{prism\+::\+Vector@{prism\+::\+V
 )}\hypertarget{classprism_1_1_vector_abd9320b7ae720bb4c3500ebba3e42537}{}\label{classprism_1_1_vector_abd9320b7ae720bb4c3500ebba3e42537}
 Removes the first element from the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!prepend@{prepend}}
 \index{prepend@{prepend}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{prepend(const T \&value)}{prepend(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::prepend (
+\subsubsection[{\texorpdfstring{prepend(const T \&value)}{prepend(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::prepend (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_vector_a1438597636b56d6c9f522e719097190c}{}\label{classprism_1_1_vector_a1438597636b56d6c9f522e719097190c}
 Inserts {\itshape value} at the start of the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!push\+\_\+back@{push\+\_\+back}}
 \index{push\+\_\+back@{push\+\_\+back}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{push\+\_\+back(const T \&value)}{push_back(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::push\+\_\+back (
+\subsubsection[{\texorpdfstring{push\+\_\+back(const T \&value)}{push_back(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::push\+\_\+back (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_vector_a4a920a4960f25c0aef5461eb46a2620e}{}\label{classprism_1_1_vector_a4a920a4960f25c0aef5461eb46a2620e}
 Appends {\itshape value} at the end of the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!push\+\_\+front@{push\+\_\+front}}
 \index{push\+\_\+front@{push\+\_\+front}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{push\+\_\+front(const T \&value)}{push_front(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::push\+\_\+front (
+\subsubsection[{\texorpdfstring{push\+\_\+front(const T \&value)}{push_front(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::push\+\_\+front (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -666,7 +676,7 @@ Removes the element at {\itshape index}. \index{prism\+::\+Vector@{prism\+::\+Ve
 )}\hypertarget{classprism_1_1_vector_a2b9dcf29eefe01b99a83ec5c2189b487}{}\label{classprism_1_1_vector_a2b9dcf29eefe01b99a83ec5c2189b487}
 Removes {\itshape count} elements starting from {\itshape index}. \index{prism\+::\+Vector@{prism\+::\+Vector}!remove\+All@{remove\+All}}
 \index{remove\+All@{remove\+All}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{remove\+All(const T \&value)}{removeAll(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::remove\+All (
+\subsubsection[{\texorpdfstring{remove\+All(const T \&value)}{removeAll(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::remove\+All (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -687,7 +697,7 @@ Removes the first element of the vector. \index{prism\+::\+Vector@{prism\+::\+Ve
 )}\hypertarget{classprism_1_1_vector_a0d2d2724f9ba5a520159ddce1c9b4681}{}\label{classprism_1_1_vector_a0d2d2724f9ba5a520159ddce1c9b4681}
 Removes the last element of the vector. \index{prism\+::\+Vector@{prism\+::\+Vector}!replace@{replace}}
 \index{replace@{replace}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{replace(const int index, const T \&value)}{replace(const int index, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::replace (
+\subsubsection[{\texorpdfstring{replace(const int index, const T \&value)}{replace(const int index, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Vector}$<$ T $>$\+::replace (
 \begin{DoxyParamCaption}
 \item[{const int}]{index, }
 \item[{const T \&}]{value}
@@ -724,7 +734,7 @@ Returns the number of elements currently stored in the vector. \index{prism\+::\
 )}\hypertarget{classprism_1_1_vector_ab2491ac6ff73d372ed8f080adef78208}{}\label{classprism_1_1_vector_ab2491ac6ff73d372ed8f080adef78208}
 Destroys any unused memory currently held by this vector. For example, if the vector has a capacity of 10 and a size of 4, \hyperlink{classprism_1_1_vector_ab2491ac6ff73d372ed8f080adef78208}{squeeze()} will release the extra memory of the capacity resulting in a capacity and size of 4. If \hyperlink{classprism_1_1_vector_ac6ff3296683e76da61d48bcc15e4f175}{size()} and \hyperlink{classprism_1_1_vector_aa6bfbb4672a51177c6fafbd503e90a92}{capacity()} are already equal then nothing happens. \index{prism\+::\+Vector@{prism\+::\+Vector}!starts\+With@{starts\+With}}
 \index{starts\+With@{starts\+With}!prism\+::\+Vector@{prism\+::\+Vector}}
-\subsubsection[{\texorpdfstring{starts\+With(const T \&value) const }{startsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::starts\+With (
+\subsubsection[{\texorpdfstring{starts\+With(const T \&value) const }{startsWith(const T &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const bool {\bf prism\+::\+Vector}$<$ T $>$\+::starts\+With (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
@@ -758,4 +768,4 @@ Creates an returns a std\+::vector containing all the elements from this vector.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-inc/prism/\hyperlink{_vector_8h}{Vector.\+h}\end{DoxyCompactItemize}
+inc/prism/h/\hyperlink{_vector_8h}{Vector.\+h}\end{DoxyCompactItemize}

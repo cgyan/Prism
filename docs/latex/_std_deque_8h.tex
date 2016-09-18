@@ -1,0 +1,441 @@
+\hypertarget{_std_deque_8h}{}\section{inc/prism/h/\+Std\+Deque.h File Reference}
+\label{_std_deque_8h}\index{inc/prism/h/\+Std\+Deque.\+h@{inc/prism/h/\+Std\+Deque.\+h}}
+{\ttfamily \#include $<$bits/concept\+\_\+check.\+h$>$}\\*
+{\ttfamily \#include $<$bits/stl\+\_\+iterator\+\_\+base\+\_\+types.\+h$>$}\\*
+{\ttfamily \#include $<$bits/stl\+\_\+iterator\+\_\+base\+\_\+funcs.\+h$>$}\\*
+{\ttfamily \#include $<$debug/assertions.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_std_deque_8h_a87949eb8a238d15bbc7d30d84cd3b8cf}{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}~512
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+namespace std \hyperlink{_std_deque_8h_a544d74b2d5d0dd2197f5fd6f02691de0}{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+V\+I\+S\+I\+B\+I\+L\+I\+TY} (default)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Std\+Deque.\+h@{Std\+Deque.\+h}!\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE@{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}}
+\index{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE@{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}!Std\+Deque.\+h@{Std\+Deque.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE}{_GLIBCXX_DEQUE_BUF_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE~512}\hypertarget{_std_deque_8h_a87949eb8a238d15bbc7d30d84cd3b8cf}{}\label{_std_deque_8h_a87949eb8a238d15bbc7d30d84cd3b8cf}
+
+
+\subsection{Function Documentation}
+\index{Std\+Deque.\+h@{Std\+Deque.\+h}!\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+V\+I\+S\+I\+B\+I\+L\+I\+TY@{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+V\+I\+S\+I\+B\+I\+L\+I\+TY}}
+\index{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+V\+I\+S\+I\+B\+I\+L\+I\+TY@{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+V\+I\+S\+I\+B\+I\+L\+I\+TY}!Std\+Deque.\+h@{Std\+Deque.\+h}}
+\subsubsection[{\texorpdfstring{\+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+V\+I\+S\+I\+B\+I\+L\+I\+T\+Y(default)}{_GLIBCXX_VISIBILITY(default)}}]{\setlength{\rightskip}{0pt plus 5cm}namespace std \+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+V\+I\+S\+I\+B\+I\+L\+I\+TY (
+\begin{DoxyParamCaption}
+\item[{default}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{_std_deque_8h_a544d74b2d5d0dd2197f5fd6f02691de0}{}\label{_std_deque_8h_a544d74b2d5d0dd2197f5fd6f02691de0}
+This function controls the size of memory nodes. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+size} & The size of an element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number (not byte size) of elements per node.
+\end{DoxyReturn}
+This function started off as a compiler kludge from S\+GI, but seems to be a useful wrapper around a repeated constant expression. The {\bfseries 512} is tunable (and no other code needs to change), but no investigation has been done since inheriting the S\+GI code. Touch \+\_\+\+G\+L\+I\+B\+C\+X\+X\+\_\+\+D\+E\+Q\+U\+E\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE only if you know what you are doing, however\+: changing it breaks the binary compatibility!!
+
+A deque\+::iterator.
+
+Quite a bit of intelligence here. Much of the functionality of deque is actually passed off to this class. A deque holds two of these internally, marking its valid range. Access to elements is done as offsets of either of those two, relying on operator overloading in this class.
+
+All the functions are op overloads except for \+\_\+\+M\+\_\+set\+\_\+node.
+
+Prepares to traverse new\+\_\+node. Sets everything except \+\_\+\+M\+\_\+cur, which should therefore be set by the caller immediately afterwards, based on \+\_\+\+M\+\_\+first and \+\_\+\+M\+\_\+last.
+
+Deque base class. This class provides the unified face for deque\textquotesingle{}s allocation. This class\textquotesingle{}s constructor and destructor allocate and deallocate (but do not initialize) storage. This makes exception safety easier.
+
+Nothing in this class ever constructs or destroys an actual Tp element. (Deque handles that itself.) Only/\+All memory management is performed here.
+
+Layout storage. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+num\+\_\+elements} & The count of T\textquotesingle{}s for which to allocate space at first. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing.
+\end{DoxyReturn}
+The initial underlying memory layout is a bit complicated...
+
+A standard container using fixed-\/size memory allocation and constant-\/time manipulation of elements at either end.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \+\_\+\+Tp} & Type of element. \\
+\hline
+{\em \+\_\+\+Alloc} & Allocator type, defaults to allocator$<$\+\_\+\+Tp$>$.\\
+\hline
+\end{DoxyTemplParams}
+Meets the requirements of a \href{tables.html#65}{\tt container}, a \href{tables.html#66}{\tt reversible container}, and a \href{tables.html#67}{\tt sequence}, including the \href{tables.html#68}{\tt optional sequence requirements}.
+
+In previous H\+P/\+S\+GI versions of deque, there was an extra template parameter so users could control the node size. This extension turned out to violate the C++ standard (it can be detected using template template parameters), and it was removed.
+
+Here\textquotesingle{}s how a deque$<$\+Tp$>$ manages memory. Each deque has 4 members\+:
+
+
+\begin{DoxyItemize}
+\item Tp$\ast$$\ast$ \+\_\+\+M\+\_\+map
+\item size\+\_\+t \+\_\+\+M\+\_\+map\+\_\+size
+\item iterator \+\_\+\+M\+\_\+start, \+\_\+\+M\+\_\+finish
+\end{DoxyItemize}
+
+map\+\_\+size is at least 8. map is an array of map\+\_\+size pointers-\/to-\/{\itshape nodes}. (The name map has nothing to do with the std\+::map class, and {\bfseries nodes} should not be confused with std\+::list\textquotesingle{}s usage of {\itshape node}.)
+
+A {\itshape node} has no specific type name as such, but it is referred to as {\itshape node} in this file. It is a simple array-\/of-\/\+Tp. If Tp is very large, there will be one Tp element per node (i.\+e., an {\itshape array} of one). For non-\/huge Tp\textquotesingle{}s, node size is inversely related to Tp size\+: the larger the Tp, the fewer Tp\textquotesingle{}s will fit in a node. The goal here is to keep the total size of a node relatively small and constant over different Tp\textquotesingle{}s, to improve allocator efficiency.
+
+Not every pointer in the map array will point to a node. If the initial number of elements in the deque is small, the /middle/ map pointers will be valid, and the ones at the edges will be unused. This same situation will arise as the map grows\+: available map pointers, if any, will be on the ends. As new nodes are created, only a subset of the map\textquotesingle{}s pointers need to be copied {\itshape outward}.
+
+Class invariants\+:
+\begin{DoxyItemize}
+\item For any nonsingular iterator i\+:
+\begin{DoxyItemize}
+\item i.\+node points to a member of the map array. (Yes, you read that correctly\+: i.\+node does not actually point to a node.) The member of the map array is what actually points to the node.
+\item i.\+first == $\ast$(i.\+node) (This points to the node (first Tp element).)
+\item i.\+last == i.\+first + node\+\_\+size
+\item i.\+cur is a pointer in the range \mbox{[}i.\+first, i.\+last). N\+O\+TE\+: the implication of this is that i.\+cur is always a dereferenceable pointer, even if i is a past-\/the-\/end iterator.
+\end{DoxyItemize}
+\item Start and Finish are always nonsingular iterators. N\+O\+TE\+: this means that an empty deque must have one node, a deque with $<$N elements (where N is the node buffer size) must have one node, a deque with N through (2\+N-\/1) elements must have two nodes, etc.
+\item For every node other than start.\+node and finish.\+node, every element in the node is an initialized object. If start.\+node == finish.\+node, then \mbox{[}start.\+cur, finish.\+cur) are initialized objects, and the elements outside that range are uninitialized storage. Otherwise, \mbox{[}start.\+cur, start.\+last) and \mbox{[}finish.\+first, finish.\+cur) are initialized objects, and \mbox{[}start.\+first, start.\+cur) and \mbox{[}finish.\+cur, finish.\+last) are uninitialized storage.
+\item \mbox{[}map, map + map\+\_\+size) is a valid, non-\/empty range.
+\item \mbox{[}start.\+node, finish.\+node\mbox{]} is a valid range contained within \mbox{[}map, map + map\+\_\+size).
+\item A pointer in the range \mbox{[}map, map + map\+\_\+size) points to an allocated node if and only if the pointer is in the range \mbox{[}start.\+node, finish.\+node\mbox{]}.
+
+Here\textquotesingle{}s the magic\+: nothing in deque is {\bfseries aware} of the discontiguous storage!
+
+The memory setup and layout occurs in the parent, \+\_\+\+Base, and the iterator class is entirely responsible for {\itshape leaping} from one node to the next. All the implementation routines for deque itself work only through the start and finish iterators. This keeps the routines simple and sane, and we can use other standard algorithms as well.
+\end{DoxyItemize}
+
+A total of four data members accumulated down the hierarchy. May be accessed via \+\_\+\+M\+\_\+impl.$\ast$
+
+Creates a deque with no elements.
+
+Creates a deque with no elements. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+a} & An allocator object.\\
+\hline
+\end{DoxyParams}
+Creates a deque with copies of an exemplar element. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+n} & The number of elements to initially create. \\
+\hline
+{\em \+\_\+\+\_\+value} & An element to copy. \\
+\hline
+{\em \+\_\+\+\_\+a} & An allocator.\\
+\hline
+\end{DoxyParams}
+This constructor fills the deque with {\itshape \+\_\+\+\_\+n} copies of {\itshape \+\_\+\+\_\+value}.
+
+Deque copy constructor. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+x} & A deque of identical element and allocator types.\\
+\hline
+\end{DoxyParams}
+The newly-\/created deque uses a copy of the allocator object used by {\itshape \+\_\+\+\_\+x} (unless the allocator traits dictate a different object).
+
+Builds a deque from a range. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+first} & An input iterator. \\
+\hline
+{\em \+\_\+\+\_\+last} & An input iterator. \\
+\hline
+{\em \+\_\+\+\_\+a} & An allocator object.\\
+\hline
+\end{DoxyParams}
+Create a deque consisting of copies of the elements from \mbox{[}\+\_\+\+\_\+first, \+\_\+\+\_\+last).
+
+If the iterators are forward, bidirectional, or random-\/access, then this will call the elements\textquotesingle{} copy constructor N times (where N is distance(\+\_\+\+\_\+first,\+\_\+\+\_\+last)) and do no memory reallocation. But if only input iterators are used, then this will do at most 2N calls to the copy constructor, and logN memory reallocations.
+
+The dtor only erases the elements, and note that if the elements themselves are pointers, the pointed-\/to memory is not touched in any way. Managing the pointer is the user\textquotesingle{}s responsibility.
+
+Deque assignment operator. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+x} & A deque of identical element and allocator types.\\
+\hline
+\end{DoxyParams}
+All the elements of {\itshape x} are copied.
+
+The newly-\/created deque uses a copy of the allocator object used by {\itshape \+\_\+\+\_\+x} (unless the allocator traits dictate a different object).
+
+Assigns a given value to a deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+n} & Number of elements to be assigned. \\
+\hline
+{\em \+\_\+\+\_\+val} & Value to be assigned.\\
+\hline
+\end{DoxyParams}
+This function fills a deque with {\itshape n} copies of the given value. Note that the assignment completely changes the deque and that the resulting deque\textquotesingle{}s size is the same as the number of elements assigned.
+
+Assigns a range to a deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+first} & An input iterator. \\
+\hline
+{\em \+\_\+\+\_\+last} & An input iterator.\\
+\hline
+\end{DoxyParams}
+This function fills a deque with copies of the elements in the range \mbox{[}\+\_\+\+\_\+first,\+\_\+\+\_\+last).
+
+Note that the assignment completely changes the deque and that the resulting deque\textquotesingle{}s size is the same as the number of elements assigned.
+
+Get a copy of the memory allocation object.
+
+Returns a read/write iterator that points to the first element in the deque. Iteration is done in ordinary element order.
+
+Returns a read-\/only (constant) iterator that points to the first element in the deque. Iteration is done in ordinary element order.
+
+Returns a read/write iterator that points one past the last element in the deque. Iteration is done in ordinary element order.
+
+Returns a read-\/only (constant) iterator that points one past the last element in the deque. Iteration is done in ordinary element order.
+
+Returns a read/write reverse iterator that points to the last element in the deque. Iteration is done in reverse element order.
+
+Returns a read-\/only (constant) reverse iterator that points to the last element in the deque. Iteration is done in reverse element order.
+
+Returns a read/write reverse iterator that points to one before the first element in the deque. Iteration is done in reverse element order.
+
+Returns a read-\/only (constant) reverse iterator that points to one before the first element in the deque. Iteration is done in reverse element order.
+
+Returns the number of elements in the deque.
+
+Returns the \hyperlink{namespaceprism_1_1aux_a7311aa21cf3af7c4639ea15e4716de1b}{size()} of the largest possible deque.
+
+Resizes the deque to the specified number of elements. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+new\+\_\+size} & Number of elements the deque should contain. \\
+\hline
+{\em \+\_\+\+\_\+x} & Data with which new elements should be populated.\\
+\hline
+\end{DoxyParams}
+This function will resize the deque to the specified number of elements. If the number is smaller than the deque\textquotesingle{}s current size the deque is truncated, otherwise the deque is extended and new elements are populated with given data.
+
+Returns true if the deque is empty. (Thus \hyperlink{namespaceprism_1_1aux_aae231a907fc705af50c90313e7f16ad0}{begin()} would equal \hyperlink{namespaceprism_1_1aux_a335f8dc9d05813c1eb69233ed66eea3d}{end()}.)
+
+Subscript access to the data contained in the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+n} & The index of the element for which data should be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Read/write reference to data.
+\end{DoxyReturn}
+This operator allows for easy, array-\/style, data access. Note that data access with this operator is unchecked and out\+\_\+of\+\_\+range lookups are not defined. (For checked lookups see \hyperlink{namespaceprism_1_1aux_ad5eb3c4af48fe544355159d8e9605c89}{at()}.)
+
+Subscript access to the data contained in the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+n} & The index of the element for which data should be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Read-\/only (constant) reference to data.
+\end{DoxyReturn}
+This operator allows for easy, array-\/style, data access. Note that data access with this operator is unchecked and out\+\_\+of\+\_\+range lookups are not defined. (For checked lookups see \hyperlink{namespaceprism_1_1aux_ad5eb3c4af48fe544355159d8e9605c89}{at()}.)
+
+Safety check used only from \hyperlink{namespaceprism_1_1aux_ad5eb3c4af48fe544355159d8e9605c89}{at()}.
+
+Provides access to the data contained in the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+n} & The index of the element for which data should be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Read/write reference to data. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If {\itshape \+\_\+\+\_\+n} is an invalid index.\\
+\hline
+\end{DoxyExceptions}
+This function provides for safer data access. The parameter is first checked that it is in the range of the deque. The function throws out\+\_\+of\+\_\+range if the check fails.
+
+Provides access to the data contained in the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+n} & The index of the element for which data should be accessed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Read-\/only (constant) reference to data. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If {\itshape \+\_\+\+\_\+n} is an invalid index.\\
+\hline
+\end{DoxyExceptions}
+This function provides for safer data access. The parameter is first checked that it is in the range of the deque. The function throws out\+\_\+of\+\_\+range if the check fails.
+
+Returns a read/write reference to the data at the first element of the deque.
+
+Returns a read-\/only (constant) reference to the data at the first element of the deque.
+
+Returns a read/write reference to the data at the last element of the deque.
+
+Returns a read-\/only (constant) reference to the data at the last element of the deque.
+
+Add data to the front of the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+x} & Data to be added.\\
+\hline
+\end{DoxyParams}
+This is a typical stack operation. The function creates an element at the front of the deque and assigns the given data to it. Due to the nature of a deque this operation can be done in constant time.
+
+Add data to the end of the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+x} & Data to be added.\\
+\hline
+\end{DoxyParams}
+This is a typical stack operation. The function creates an element at the end of the deque and assigns the given data to it. Due to the nature of a deque this operation can be done in constant time.
+
+Removes first element.
+
+This is a typical stack operation. It shrinks the deque by one.
+
+Note that no data is returned, and if the first element\textquotesingle{}s data is needed, it should be retrieved before pop\+\_\+front() is called.
+
+Removes last element.
+
+This is a typical stack operation. It shrinks the deque by one.
+
+Note that no data is returned, and if the last element\textquotesingle{}s data is needed, it should be retrieved before pop\+\_\+back() is called.
+
+Inserts given value into deque before specified iterator. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+position} & An iterator into the deque. \\
+\hline
+{\em \+\_\+\+\_\+x} & Data to be inserted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator that points to the inserted data.
+\end{DoxyReturn}
+This function will insert a copy of the given value before the specified location.
+
+Inserts a number of copies of given data into the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+position} & An iterator into the deque. \\
+\hline
+{\em \+\_\+\+\_\+n} & Number of elements to be inserted. \\
+\hline
+{\em \+\_\+\+\_\+x} & Data to be inserted.\\
+\hline
+\end{DoxyParams}
+This function will insert a specified number of copies of the given data before the location specified by {\itshape \+\_\+\+\_\+position}.
+
+Inserts a range into the deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+position} & An iterator into the deque. \\
+\hline
+{\em \+\_\+\+\_\+first} & An input iterator. \\
+\hline
+{\em \+\_\+\+\_\+last} & An input iterator.\\
+\hline
+\end{DoxyParams}
+This function will insert copies of the data in the range \mbox{[}\+\_\+\+\_\+first,\+\_\+\+\_\+last) into the deque before the location specified by {\itshape \+\_\+\+\_\+position}. This is known as {\itshape range insert}.
+
+Remove element at given position. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+position} & Iterator pointing to element to be erased. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator pointing to the next element (or \hyperlink{namespaceprism_1_1aux_a335f8dc9d05813c1eb69233ed66eea3d}{end()}).
+\end{DoxyReturn}
+This function will erase the element at the given position and thus shorten the deque by one.
+
+The user is cautioned that this function only erases the element, and that if the element is itself a pointer, the pointed-\/to memory is not touched in any way. Managing the pointer is the user\textquotesingle{}s responsibility.
+
+Remove a range of elements. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+first} & Iterator pointing to the first element to be erased. \\
+\hline
+{\em \+\_\+\+\_\+last} & Iterator pointing to one past the last element to be erased. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator pointing to the element pointed to by {\itshape last} prior to erasing (or \hyperlink{namespaceprism_1_1aux_a335f8dc9d05813c1eb69233ed66eea3d}{end()}).
+\end{DoxyReturn}
+This function will erase the elements in the range \mbox{[}\+\_\+\+\_\+first,\+\_\+\+\_\+last) and shorten the deque accordingly.
+
+The user is cautioned that this function only erases the elements, and that if the elements themselves are pointers, the pointed-\/to memory is not touched in any way. Managing the pointer is the user\textquotesingle{}s responsibility.
+
+Swaps data with another deque. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+x} & A deque of the same element and allocator types.\\
+\hline
+\end{DoxyParams}
+This exchanges the elements between two deques in constant time. (Four pointers, so it should be quite fast.) Note that the global \hyperlink{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{std\+::swap()} function is specialized such that std\+::swap(d1,d2) will feed to this function.
+
+Whether the allocators are swapped depends on the allocator traits.
+
+Erases all the elements. Note that this function only erases the elements, and that if the elements themselves are pointers, the pointed-\/to memory is not touched in any way. Managing the pointer is the user\textquotesingle{}s responsibility.
+
+Fills the deque with whatever is in \mbox{[}first,last). 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+first} & An input iterator. \\
+\hline
+{\em \+\_\+\+\_\+last} & An input iterator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing.
+\end{DoxyReturn}
+If the iterators are actually forward iterators (or better), then the memory layout can be done all at once. Else we move forward using push\+\_\+back on each value from the iterator.
+
+Fills the deque with copies of value. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+value} & Initial value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+\+\_\+\+M\+\_\+start and \+\_\+\+M\+\_\+finish have already been initialized, but none of the deque\textquotesingle{}s elements have yet been constructed.
+\end{DoxyPrecond}
+This function is called only when the user provides an explicit size (with or without an explicit exemplar value).
+
+Helper functions for push\+\_\+$\ast$ and pop\+\_\+$\ast$.
+
+Memory-\/handling helpers for the previous internal insert functions.
+
+Memory-\/handling helpers for the major map.
+
+Makes sure the \+\_\+\+M\+\_\+map has space for new nodes. Does not actually add the nodes. Can invalidate \+\_\+\+M\+\_\+map pointers. (And consequently, deque iterators.)
+
+Deque equality comparison. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+x} & A deque. \\
+\hline
+{\em \+\_\+\+\_\+y} & A deque of the same type as {\itshape \+\_\+\+\_\+x}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True iff the size and elements of the deques are equal.
+\end{DoxyReturn}
+This is an equivalence relation. It is linear in the size of the deques. Deques are considered equivalent if their sizes are equal, and if corresponding elements compare equal.
+
+Deque ordering relation. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+x} & A deque. \\
+\hline
+{\em \+\_\+\+\_\+y} & A deque of the same type as {\itshape \+\_\+\+\_\+x}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True iff {\itshape x} is lexicographically less than {\itshape \+\_\+\+\_\+y}.
+\end{DoxyReturn}
+This is a total ordering relation. It is linear in the size of the deques. The elements must be comparable with {\ttfamily $<$}.
+
+See std\+::lexicographical\+\_\+compare() for how the determination is made.
+
+Based on operator==
+
+Based on operator$<$
+
+Based on operator$<$
+
+Based on operator$<$
+
+See \hyperlink{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{std\+::deque\+::swap()}. 

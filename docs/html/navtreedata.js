@@ -5,8 +5,8 @@ var NAVTREE =
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "All", "namespacemembers.html", "namespacemembers_dup" ],
+        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -36,12 +36,13 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_array_8h.html",
-"algorithms_8cpp.html#af907f3f5637d4ec056e9b833b6272953",
-"classprism_1_1_list.html#a64abe6201e00a727d55299242b0f5aee",
-"classprism_1_1_rect.html#a97eb5a66441a49c7e149229376aba6a0",
-"classprism_1_1_time.html#a07e1c6bf7205b4451ac717a833b65968",
-"functions.html"
+"_allocator_8h.html",
+"_vector2_8cpp.html#a7e9d0b027a9e7d9e313affe5af91dabc",
+"classprism_1_1_circle.html",
+"classprism_1_1_out_of_bounds_exception.html#adc3c3d79e3211e6408d1b8670bd1766a",
+"classprism_1_1_size.html",
+"classprism_1_1_vector.html#a9275846b38b6ce971d7d7114bca5acc2",
+"namespacemembers_func_e.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

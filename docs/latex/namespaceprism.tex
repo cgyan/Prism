@@ -1,7 +1,16 @@
 \hypertarget{namespaceprism}{}\section{prism Namespace Reference}
 \label{namespaceprism}\index{prism@{prism}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceprism_1_1aux}{aux}
+\end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classprism_1_1_allocator}{Allocator}
+\item 
+struct \hyperlink{structprism_1_1_allocator_traits}{Allocator\+Traits}
 \item 
 class \hyperlink{classprism_1_1_array}{Array}
 \item 
@@ -13,6 +22,12 @@ class \hyperlink{classprism_1_1_char}{Char}
 \item 
 class \hyperlink{classprism_1_1_circle}{Circle}
 \item 
+struct \hyperlink{structprism_1_1conditional__type}{conditional\+\_\+type}
+\item 
+struct \hyperlink{structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4}{conditional\+\_\+type$<$ false, Type1, Type2 $>$}
+\item 
+class \hyperlink{classprism_1_1_deque}{Deque}
+\item 
 class \hyperlink{classprism_1_1_exception}{Exception}
 \item 
 class \hyperlink{classprism_1_1_flag}{Flag}
@@ -23,13 +38,19 @@ class \hyperlink{classprism_1_1_fraction}{Fraction}
 \item 
 class \hyperlink{classprism_1_1_list}{List}
 \item 
+class \hyperlink{classprism_1_1_logger_allocator}{Logger\+Allocator}
+\item 
 class \hyperlink{classprism_1_1_mathf}{Mathf}
 \item 
 class \hyperlink{classprism_1_1_matrix4}{Matrix4}
 \item 
+class \hyperlink{classprism_1_1_obj}{Obj}
+\item 
 class \hyperlink{classprism_1_1_out_of_bounds_exception}{Out\+Of\+Bounds\+Exception}
 \item 
 class \hyperlink{classprism_1_1_overflow_exception}{Overflow\+Exception}
+\item 
+struct \hyperlink{structprism_1_1_pair}{Pair}
 \item 
 class \hyperlink{classprism_1_1_point}{Point}
 \item 
@@ -53,8 +74,6 @@ class \hyperlink{classprism_1_1_size}{Size}
 \item 
 class \hyperlink{classprism_1_1_stack}{Stack}
 \item 
-struct \hyperlink{structprism_1_1_stack_data}{Stack\+Data}
-\item 
 class \hyperlink{classprism_1_1_string}{String}
 \item 
 class \hyperlink{classprism_1_1_time}{Time}
@@ -71,26 +90,6 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&array)
-\item 
-{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a50da64555d454821545fe0311fde6a62}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&list)
-\item 
-{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a9df924e4deb059bf1200701c8235410a}{operator!=} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
-\item 
-{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_ad6391c124e006b0e3a3ec67f55e208b0}{operator!=} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
-\item 
-{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_ab8792dbd5cac5678390843bacdb69daa}{operator!=} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
-\item 
-{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_ae53d52e8a36ec7ca58ea1731cc18f1d8}{operator==} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
-\item 
-{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a2b73e87f080646696ed6b595a3900119}{operator==} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
-\item 
-{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a1f29b22985dc0ec1fc548a551ce313ed}{operator==} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
-\item 
-{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{swap} (T \&a, T \&b)
-\item 
-{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_a5f2c83ae0d89a6581d1c42ba6fd79de0}{p\+\_\+heapify} (Random\+Access\+Iterator node, Random\+Access\+Iterator first, Random\+Access\+Iterator last)
 \item 
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_a82052418345794a13044c15d8e32dd89}{adjacent\+\_\+find} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
@@ -152,7 +151,7 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class Forward\+Iterator , class Predicate , class T $>$ }\\void \hyperlink{namespaceprism_af118c19f6b5448319eb3aaf2d556ac54}{replace\+\_\+if} (Forward\+Iterator first, Forward\+Iterator last, Predicate pred, const T \&new\+Value)
 \item 
-{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator1 \hyperlink{namespaceprism_affcb3e5150d72d9f79b85b9ea4eb41e2}{search} (Forward\+Iterator1 first1, Forward\+Iterator1 last1, Forward\+Iterator2 first2, Forward\+Iterator2 last2)
+{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator1 \hyperlink{namespaceprism_a03dbb806369b062fd90909fd826c2ee4}{search} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First, Forward\+Iterator2 other\+Last)
 \item 
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a9bf397cad0a67b67fbd1ecddf40d405e}{sort} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
@@ -162,7 +161,123 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 \item 
 {\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a720fbbcb3f399b006969bb00a66686f9}{sort\+\_\+quicksort} (Forward\+Iterator first, Forward\+Iterator last)
 \item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{swap} (T \&a, T \&b)
+\item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{swap\+\_\+ranges} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a8234c2c7917f750db94bb068d6fd554e}{uninitialized\+\_\+fill} (Forward\+Iterator first, Forward\+Iterator last, const T \&value)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a5485ae7bad862f6ff0ab363ed4697b61}{uninitialized\+\_\+fill\+\_\+n} (Forward\+Iterator first, const int size, const T \&value)
+\item 
+{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a5ff56f151fea6e709350a0e9fbdb70a8}{uninitialized\+\_\+copy} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_ad1c7d8eb38174ba66d98321b68047e6e}{uninitialized\+\_\+copy\+\_\+n} (Forward\+Iterator1 first, const int size, Forward\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_a5f2c83ae0d89a6581d1c42ba6fd79de0}{p\+\_\+heapify} (Random\+Access\+Iterator node, Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_a6b26c227e2d379b9d934a85a2570bae7}{adjacent\+\_\+find\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\bool \hyperlink{namespaceprism_adee0c5bacf315d8cfdc4de7151ba2295}{all\+\_\+of\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\bool \hyperlink{namespaceprism_aae3105c7afbb375201f4691b7ea966b4}{any\+\_\+of\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a8fc5dc440a705fbe80912a49ea6d899b}{copy\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First)
+\item 
+{\footnotesize template$<$class Bidirectional\+Iterator1 , class Bidirectional\+Iterator2 $>$ }\\Bidirectional\+Iterator2 \hyperlink{namespaceprism_af94bcd5517145cc7b62c59a84a776814}{copy\+\_\+backward\+\_\+aux} (Bidirectional\+Iterator1 first, Bidirectional\+Iterator1 last, Bidirectional\+Iterator2 other\+Last)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class Predicate $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a06d95b48370d6b89936a81e08f7ed8d7}{copy\+\_\+if\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Size , class Output\+Iterator $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a305d5bebe30595a5d4705a6cef37b52a}{copy\+\_\+n\+\_\+aux} (Input\+Iterator first, \hyperlink{classprism_1_1_size}{Size} n, Output\+Iterator other\+First)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class T $>$ }\\int \hyperlink{namespaceprism_a161f644c4e266d280a770bb0c9fbe045}{count\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, const T \&value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\int \hyperlink{namespaceprism_a8d72a3b00c7e3e537c82829965732dad}{count\+\_\+if\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a25e9f7e103a3f2ae15048eb75dc6af97}{delete\+\_\+range\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last)
+\item 
+{\footnotesize template$<$class Input\+Iterator1 , class Input\+Iterator2 $>$ }\\bool \hyperlink{namespaceprism_ac6dc9c68afaa8d8490148baf121bfc1c}{equal\+\_\+aux} (Input\+Iterator1 first, Input\+Iterator1 last, Input\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_a76092b4faa3c2a98088678943ad23df4}{fill\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last, const T \&value)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_ad2e7f5f7dee0072f4741520356ebdaee}{fill\+\_\+n\+\_\+aux} (Forward\+Iterator first, int size, const T \&value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class T $>$ }\\Input\+Iterator \hyperlink{namespaceprism_af23b68308b7ec11222bd2bfb2904c595}{find\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, const T \&value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\Input\+Iterator \hyperlink{namespaceprism_a91c456a075b03cfe290044281af93203}{find\+\_\+if\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class T $>$ }\\Input\+Iterator \hyperlink{namespaceprism_a66df70426cdeee37f0c06a90881f1f36}{find\+\_\+last\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, const T \&value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Function $>$ }\\Function \hyperlink{namespaceprism_a9adcafd2357df71bd906d85ffe9fdf85}{for\+\_\+each\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Function func)
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\const bool \hyperlink{namespaceprism_a29c1478cf9a6f78fa511d96f93b22791}{is\+\_\+sorted\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last)
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_a567b63d0d3fa2bc8bdba883f152848be}{make\+\_\+heap\+\_\+aux} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+\item 
+{\footnotesize template$<$class T $>$ }\\const T \& \hyperlink{namespaceprism_a9d5ae6f65d12dcb2e433ffdc95b733bb}{max\+\_\+aux} (const T \&a, const T \&b)
+\item 
+{\footnotesize template$<$class T $>$ }\\const T \& \hyperlink{namespaceprism_a5ded05d282e95b0ab21c6aeaca2e8794}{min\+\_\+aux} (const T \&a, const T \&b)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Predicate $>$ }\\bool \hyperlink{namespaceprism_a4333d241a3ee0f8bce307db84c7eba23}{none\+\_\+of\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_acb7d8d4b86592081686e15ee7a18f856}{remove\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last, const T \&value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ }\\Output\+Iterator \hyperlink{namespaceprism_ae3f41bf6d9ab98a87d693fba69f138dc}{remove\+\_\+copy\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class Unary\+Predicate $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a198b599ea535deb9fdf28c46c8658bd4}{remove\+\_\+copy\+\_\+if\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Unary\+Predicate pred)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class Predicate $>$ }\\Forward\+Iterator \hyperlink{namespaceprism_a95e9f5186670e27472aa7d8cd02397eb}{remove\+\_\+if\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last, Predicate pred)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_ad053e45daef65797bc1cff18dfcd8dc0}{replace\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last, const T \&old\+Value, const T \&new\+Value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a7055d91bb6279fa78b8b498297a11eab}{replace\+\_\+copy\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&old\+Value, const T \&new\+Value)
+\item 
+{\footnotesize template$<$class Input\+Iterator , class Output\+Iterator , class Predicate , class T $>$ }\\Output\+Iterator \hyperlink{namespaceprism_a1e660997b10ccb0985b35999c84a9bbf}{replace\+\_\+copy\+\_\+if\+\_\+aux} (Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred, const T \&new\+Value)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class Predicate , class T $>$ }\\void \hyperlink{namespaceprism_ad23d44d30470aed0ee16e931514bd727}{replace\+\_\+if\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last, Predicate pred, const T \&new\+Value)
+\item 
+{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator1 \hyperlink{namespaceprism_ab6f8ed8b450ff281e02218e10d5643a7}{search\+\_\+aux} (Forward\+Iterator1 first1, Forward\+Iterator1 last1, Forward\+Iterator2 first2, Forward\+Iterator2 last2)
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a9e7b2f97895db323cbefbc4af311ccb9}{sort\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last)
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_af3a66e1051c4c7874f305ad2a5f0b37e}{sort\+\_\+bubble\+\_\+aux} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_ab289bdf7cde130b0aeea21a9711770f4}{sort\+\_\+heap\+\_\+aux} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+\item 
+{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a46e0e235fa71938e5ebf29387b917057}{sort\+\_\+quicksort\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a6d3a7129cc6ab5d9a80301436e4d2e48}{swap\+\_\+aux} (T \&a, T \&b)
+\item 
+{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a7ca4ae3ad4c2e21d6fe48b6fae6930c3}{swap\+\_\+ranges\+\_\+aux} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a85d1fe2d10e98f9de7aec30799f2eec0}{uninitialized\+\_\+copy\+\_\+n\+\_\+aux} (Forward\+Iterator1 first, const int size, Forward\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator2 \hyperlink{namespaceprism_a6ef07b731fbaecb8abe1ad8faabaab1e}{uninitialized\+\_\+copy\+\_\+aux} (Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_aa02596d3361c57f312168ffac621e421}{uninitialized\+\_\+fill\+\_\+n\+\_\+aux} (Forward\+Iterator first, const int size, const T \&value)
+\item 
+{\footnotesize template$<$class Forward\+Iterator , class T $>$ }\\void \hyperlink{namespaceprism_aaa8fcd4a3943bfa624f77fc8f3af5916}{uninitialized\+\_\+fill\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last, const T \&value)
+\item 
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_a95d95c728950cef3542d8b1dd27eb344}{p\+\_\+heapify\+\_\+aux} (Random\+Access\+Iterator node, Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a403ca8f79c481a89132691c0fd8c3a06}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_array}{Array}$<$ T $>$ \&array)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a50da64555d454821545fe0311fde6a62}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \&list)
+\item 
+{\footnotesize template$<$class T , typename... Args$>$ }\\void \hyperlink{namespaceprism_af62c0c26668facbe5607e8915442010e}{construct} (T $\ast$p, Args \&\&...args)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_af889ac2726920ab1b4f5361e6563d041}{destroy} (T $\ast$p)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a9df924e4deb059bf1200701c8235410a}{operator!=} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_ad6391c124e006b0e3a3ec67f55e208b0}{operator!=} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_ab8792dbd5cac5678390843bacdb69daa}{operator!=} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_ae53d52e8a36ec7ca58ea1731cc18f1d8}{operator==} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a2b73e87f080646696ed6b595a3900119}{operator==} (const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p1, const U $\ast$p2)
+\item 
+{\footnotesize template$<$class U $>$ }\\const bool \hyperlink{namespaceprism_a1f29b22985dc0ec1fc548a551ce313ed}{operator==} (const U $\ast$p1, const \hyperlink{classprism_1_1_shared_pointer}{Shared\+Pointer}$<$ U $>$ \&p2)
 \item 
 \hyperlink{classprism_1_1_bitvector}{Bitvector} \hyperlink{namespaceprism_a26b2b2b5b2c5f305badd964c24625b36}{operator\&} (const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv1, const \hyperlink{classprism_1_1_bitvector}{Bitvector} \&bv2)
 \item 
@@ -431,6 +546,8 @@ void print\+Flag(\+Label\+::\+Align\+Flags f) \{ if (f == Label\+::\+Align\+Left
 
 int main(int argc, char$\ast$$\ast$ argv) \{ print\+Flag(\+Label\+::\+Align\+Left); \}
 
+This simple class extends the \hyperlink{classprism_1_1_allocator}{Allocator} class by logging each memory allocation and deallocation by storing the newly allocated pointer in a \hyperlink{classprism_1_1_vector}{Vector} on allocation and removes it when the pointer is deallocated. In theory, at the end of the \hyperlink{classprism_1_1_logger_allocator}{Logger\+Allocator}\textquotesingle{}s lifetime the \hyperlink{classprism_1_1_vector}{Vector} should be empty as all pointers should be deallocated. If there are still pointers in the vector then an error message is printed to the console.
+
 A \hyperlink{classprism_1_1_quaternion}{Quaternion} is made up of four components (w, x, y and z) which are a scalar (w) and a 3d vector (x, y and z). It does not suffer from gimbal lock and yet can represent any orientation possible.
 
 Some interesting properties of quaternion multiplication\+: a) it is associative but not commutitive -\/ (ab)c = a(bc) ab != ba
@@ -455,6 +572,17 @@ Concatenating rotational transforms together\+: Multiple quaternion rotations ca
 Searches the range {\itshape }\mbox{[}first,last\mbox{]} for the first occurrence of two consecutive elements that match. \begin{DoxyReturn}{Returns}
 Returns an iterator to the first of these two elements, or {\itshape last} if no such pair is found. 
 \end{DoxyReturn}
+\index{prism@{prism}!adjacent\+\_\+find\+\_\+aux@{adjacent\+\_\+find\+\_\+aux}}
+\index{adjacent\+\_\+find\+\_\+aux@{adjacent\+\_\+find\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{adjacent\+\_\+find\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last)}{adjacent_find_aux(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ Forward\+Iterator prism\+::adjacent\+\_\+find\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a6b26c227e2d379b9d934a85a2570bae7}{}\label{namespaceprism_a6b26c227e2d379b9d934a85a2570bae7}
+Searches the range {\itshape }\mbox{[}first,last\mbox{]} for the first occurrence of two consecutive elements that match. \begin{DoxyReturn}{Returns}
+Returns an iterator to the first of these two elements, or {\itshape last} if no such pair is found. 
+\end{DoxyReturn}
 \index{prism@{prism}!all\+\_\+of@{all\+\_\+of}}
 \index{all\+\_\+of@{all\+\_\+of}!prism@{prism}}
 \subsubsection[{\texorpdfstring{all\+\_\+of(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{all_of(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ bool prism\+::all\+\_\+of (
@@ -464,6 +592,15 @@ Returns an iterator to the first of these two elements, or {\itshape last} if no
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aba366b328f3b6161e6115c16b7153c6d}{}\label{namespaceprism_aba366b328f3b6161e6115c16b7153c6d}
+Returns true if {\itshape pred} returns true for all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} or if the range is empty, and false otherwise. \index{prism@{prism}!all\+\_\+of\+\_\+aux@{all\+\_\+of\+\_\+aux}}
+\index{all\+\_\+of\+\_\+aux@{all\+\_\+of\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{all\+\_\+of\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{all_of_aux(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ bool prism\+::all\+\_\+of\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_adee0c5bacf315d8cfdc4de7151ba2295}{}\label{namespaceprism_adee0c5bacf315d8cfdc4de7151ba2295}
 Returns true if {\itshape pred} returns true for all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} or if the range is empty, and false otherwise. \index{prism@{prism}!any\+\_\+of@{any\+\_\+of}}
 \index{any\+\_\+of@{any\+\_\+of}!prism@{prism}}
 \subsubsection[{\texorpdfstring{any\+\_\+of(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{any_of(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ bool prism\+::any\+\_\+of (
@@ -473,7 +610,24 @@ Returns true if {\itshape pred} returns true for all the elements in the range {
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}{}\label{namespaceprism_a5d0e3ddb9f698759635572f1220ec0ca}
-Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!copy@{copy}}
+Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!any\+\_\+of\+\_\+aux@{any\+\_\+of\+\_\+aux}}
+\index{any\+\_\+of\+\_\+aux@{any\+\_\+of\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{any\+\_\+of\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{any_of_aux(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ bool prism\+::any\+\_\+of\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aae3105c7afbb375201f4691b7ea966b4}{}\label{namespaceprism_aae3105c7afbb375201f4691b7ea966b4}
+Returns true if {\itshape pred} returns true for any of the elements in the range {\itshape }\mbox{[}first, last\mbox{]}. \index{prism@{prism}!construct@{construct}}
+\index{construct@{construct}!prism@{prism}}
+\subsubsection[{\texorpdfstring{construct(\+T $\ast$p, Args \&\&...\+args)}{construct(T *p, Args &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T , typename... Args$>$ void prism\+::construct (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p, }
+\item[{Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_af62c0c26668facbe5607e8915442010e}{}\label{namespaceprism_af62c0c26668facbe5607e8915442010e}
+\index{prism@{prism}!copy@{copy}}
 \index{copy@{copy}!prism@{prism}}
 \subsubsection[{\texorpdfstring{copy(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First)}{copy(InputIterator first, InputIterator last, OutputIterator otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator $>$ Output\+Iterator prism\+::copy (
 \begin{DoxyParamCaption}
@@ -482,6 +636,15 @@ Returns true if {\itshape pred} returns true for any of the elements in the rang
 \item[{Output\+Iterator}]{other\+First}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{}\label{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}
+Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} into the range beginning at {\itshape other\+First}. \index{prism@{prism}!copy\+\_\+aux@{copy\+\_\+aux}}
+\index{copy\+\_\+aux@{copy\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{copy\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First)}{copy_aux(InputIterator first, InputIterator last, OutputIterator otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator $>$ Output\+Iterator prism\+::copy\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a8fc5dc440a705fbe80912a49ea6d899b}{}\label{namespaceprism_a8fc5dc440a705fbe80912a49ea6d899b}
 Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} into the range beginning at {\itshape other\+First}. \index{prism@{prism}!copy\+\_\+backward@{copy\+\_\+backward}}
 \index{copy\+\_\+backward@{copy\+\_\+backward}!prism@{prism}}
 \subsubsection[{\texorpdfstring{copy\+\_\+backward(\+Bidirectional\+Iterator1 first, Bidirectional\+Iterator1 last, Bidirectional\+Iterator2 other\+Last)}{copy_backward(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 otherLast)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Bidirectional\+Iterator1 , class Bidirectional\+Iterator2 $>$ Bidirectional\+Iterator2 prism\+::copy\+\_\+backward (
@@ -491,6 +654,15 @@ Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} into the 
 \item[{Bidirectional\+Iterator2}]{other\+Last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a2564c63b76369cc81ff725a56e818046}{}\label{namespaceprism_a2564c63b76369cc81ff725a56e818046}
+Copies the elements in the range \mbox{[}first,last\mbox{]} starting from {\itshape last} to the range ending at {\itshape other\+Last}. The elements copied are between {\itshape first} and {\itshape last}, including {\itshape first} but not {\itshape last}. {\itshape other\+Last} should point to the past-\/the-\/end position of the destination range. \index{prism@{prism}!copy\+\_\+backward\+\_\+aux@{copy\+\_\+backward\+\_\+aux}}
+\index{copy\+\_\+backward\+\_\+aux@{copy\+\_\+backward\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{copy\+\_\+backward\+\_\+aux(\+Bidirectional\+Iterator1 first, Bidirectional\+Iterator1 last, Bidirectional\+Iterator2 other\+Last)}{copy_backward_aux(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 otherLast)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Bidirectional\+Iterator1 , class Bidirectional\+Iterator2 $>$ Bidirectional\+Iterator2 prism\+::copy\+\_\+backward\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Bidirectional\+Iterator1}]{first, }
+\item[{Bidirectional\+Iterator1}]{last, }
+\item[{Bidirectional\+Iterator2}]{other\+Last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_af94bcd5517145cc7b62c59a84a776814}{}\label{namespaceprism_af94bcd5517145cc7b62c59a84a776814}
 Copies the elements in the range \mbox{[}first,last\mbox{]} starting from {\itshape last} to the range ending at {\itshape other\+Last}. The elements copied are between {\itshape first} and {\itshape last}, including {\itshape first} but not {\itshape last}. {\itshape other\+Last} should point to the past-\/the-\/end position of the destination range. \index{prism@{prism}!copy\+\_\+if@{copy\+\_\+if}}
 \index{copy\+\_\+if@{copy\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{copy\+\_\+if(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred)}{copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class Predicate $>$ Output\+Iterator prism\+::copy\+\_\+if (
@@ -501,6 +673,16 @@ Copies the elements in the range \mbox{[}first,last\mbox{]} starting from {\itsh
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_afbed55ae6769c2d88c125aedc2f3846e}{}\label{namespaceprism_afbed55ae6769c2d88c125aedc2f3846e}
+Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} returns true to the range beginning at {\itshape other\+First}. \index{prism@{prism}!copy\+\_\+if\+\_\+aux@{copy\+\_\+if\+\_\+aux}}
+\index{copy\+\_\+if\+\_\+aux@{copy\+\_\+if\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{copy\+\_\+if\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred)}{copy_if_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class Predicate $>$ Output\+Iterator prism\+::copy\+\_\+if\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a06d95b48370d6b89936a81e08f7ed8d7}{}\label{namespaceprism_a06d95b48370d6b89936a81e08f7ed8d7}
 Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} returns true to the range beginning at {\itshape other\+First}. \index{prism@{prism}!copy\+\_\+n@{copy\+\_\+n}}
 \index{copy\+\_\+n@{copy\+\_\+n}!prism@{prism}}
 \subsubsection[{\texorpdfstring{copy\+\_\+n(\+Input\+Iterator first, Size n, Output\+Iterator other\+First)}{copy_n(InputIterator first, Size n, OutputIterator otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Size , class Output\+Iterator $>$ Output\+Iterator prism\+::copy\+\_\+n (
@@ -510,6 +692,15 @@ Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} for which
 \item[{Output\+Iterator}]{other\+First}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_af907f3f5637d4ec056e9b833b6272953}{}\label{namespaceprism_af907f3f5637d4ec056e9b833b6272953}
+Copies the first {\itshape n} elements from the range beginning at {\itshape first} into the range beginning at {\itshape other\+First}. \index{prism@{prism}!copy\+\_\+n\+\_\+aux@{copy\+\_\+n\+\_\+aux}}
+\index{copy\+\_\+n\+\_\+aux@{copy\+\_\+n\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{copy\+\_\+n\+\_\+aux(\+Input\+Iterator first, Size n, Output\+Iterator other\+First)}{copy_n_aux(InputIterator first, Size n, OutputIterator otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Size , class Output\+Iterator $>$ Output\+Iterator prism\+::copy\+\_\+n\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{{\bf Size}}]{n, }
+\item[{Output\+Iterator}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a305d5bebe30595a5d4705a6cef37b52a}{}\label{namespaceprism_a305d5bebe30595a5d4705a6cef37b52a}
 Copies the first {\itshape n} elements from the range beginning at {\itshape first} into the range beginning at {\itshape other\+First}. \index{prism@{prism}!count@{count}}
 \index{count@{count}!prism@{prism}}
 \subsubsection[{\texorpdfstring{count(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{count(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ int prism\+::count (
@@ -519,6 +710,15 @@ Copies the first {\itshape n} elements from the range beginning at {\itshape fir
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a024117fc3639cdf6598509edf22f034a}{}\label{namespaceprism_a024117fc3639cdf6598509edf22f034a}
+Returns the number of elements in the range {\itshape }\mbox{[}first,last\mbox{]} that compare equal to {\itshape value}. \index{prism@{prism}!count\+\_\+aux@{count\+\_\+aux}}
+\index{count\+\_\+aux@{count\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{count\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{count_aux(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ int prism\+::count\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a161f644c4e266d280a770bb0c9fbe045}{}\label{namespaceprism_a161f644c4e266d280a770bb0c9fbe045}
 Returns the number of elements in the range {\itshape }\mbox{[}first,last\mbox{]} that compare equal to {\itshape value}. \index{prism@{prism}!count\+\_\+if@{count\+\_\+if}}
 \index{count\+\_\+if@{count\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{count\+\_\+if(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{count_if(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ int prism\+::count\+\_\+if (
@@ -528,6 +728,15 @@ Returns the number of elements in the range {\itshape }\mbox{[}first,last\mbox{]
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_af0007d361beae18a930b6249752e509e}{}\label{namespaceprism_af0007d361beae18a930b6249752e509e}
+Returns the number of elements in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} is true. \index{prism@{prism}!count\+\_\+if\+\_\+aux@{count\+\_\+if\+\_\+aux}}
+\index{count\+\_\+if\+\_\+aux@{count\+\_\+if\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{count\+\_\+if\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{count_if_aux(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ int prism\+::count\+\_\+if\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a8d72a3b00c7e3e537c82829965732dad}{}\label{namespaceprism_a8d72a3b00c7e3e537c82829965732dad}
 Returns the number of elements in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} is true. \index{prism@{prism}!delete\+\_\+range@{delete\+\_\+range}}
 \index{delete\+\_\+range@{delete\+\_\+range}!prism@{prism}}
 \subsubsection[{\texorpdfstring{delete\+\_\+range(\+Forward\+Iterator first, Forward\+Iterator last)}{delete_range(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ void prism\+::delete\+\_\+range (
@@ -536,7 +745,22 @@ Returns the number of elements in the range {\itshape }\mbox{[}first,last\mbox{]
 \item[{Forward\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a83e62e5b148c55f949e5ea843d53ad67}{}\label{namespaceprism_a83e62e5b148c55f949e5ea843d53ad67}
-Deletes the elements in the range {\itshape }\mbox{[}first, last\mbox{]} by using the c++ delete operator. The element that the iterator points to therefore must be a pointer. \index{prism@{prism}!equal@{equal}}
+Deletes the elements in the range {\itshape }\mbox{[}first, last\mbox{]} by using the c++ delete operator. The element that the iterator points to therefore must be a pointer. \index{prism@{prism}!delete\+\_\+range\+\_\+aux@{delete\+\_\+range\+\_\+aux}}
+\index{delete\+\_\+range\+\_\+aux@{delete\+\_\+range\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{delete\+\_\+range\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last)}{delete_range_aux(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ void prism\+::delete\+\_\+range\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a25e9f7e103a3f2ae15048eb75dc6af97}{}\label{namespaceprism_a25e9f7e103a3f2ae15048eb75dc6af97}
+Deletes the elements in the range {\itshape }\mbox{[}first, last\mbox{]} by using the c++ delete operator. The element that the iterator points to therefore must be a pointer. \index{prism@{prism}!destroy@{destroy}}
+\index{destroy@{destroy}!prism@{prism}}
+\subsubsection[{\texorpdfstring{destroy(\+T $\ast$p)}{destroy(T *p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void prism\+::destroy (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_af889ac2726920ab1b4f5361e6563d041}{}\label{namespaceprism_af889ac2726920ab1b4f5361e6563d041}
+\index{prism@{prism}!equal@{equal}}
 \index{equal@{equal}!prism@{prism}}
 \subsubsection[{\texorpdfstring{equal(\+Input\+Iterator1 first, Input\+Iterator1 last, Input\+Iterator2 other\+First)}{equal(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator1 , class Input\+Iterator2 $>$ bool prism\+::equal (
 \begin{DoxyParamCaption}
@@ -545,6 +769,19 @@ Deletes the elements in the range {\itshape }\mbox{[}first, last\mbox{]} by usin
 \item[{Input\+Iterator2}]{other\+First}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}{}\label{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}
+Compares the elements in the range {\itshape }\mbox{[}first1,last1\mbox{]} with those in the range beginning at {\itshape other\+First}, and returns true if all of the elements in both ranges match. ~\newline
+\begin{DoxyNote}{Note}
+The elements being compared must support \hyperlink{namespaceprism_ae53d52e8a36ec7ca58ea1731cc18f1d8}{operator==()}. 
+\end{DoxyNote}
+\index{prism@{prism}!equal\+\_\+aux@{equal\+\_\+aux}}
+\index{equal\+\_\+aux@{equal\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{equal\+\_\+aux(\+Input\+Iterator1 first, Input\+Iterator1 last, Input\+Iterator2 other\+First)}{equal_aux(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator1 , class Input\+Iterator2 $>$ bool prism\+::equal\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator1}]{first, }
+\item[{Input\+Iterator1}]{last, }
+\item[{Input\+Iterator2}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ac6dc9c68afaa8d8490148baf121bfc1c}{}\label{namespaceprism_ac6dc9c68afaa8d8490148baf121bfc1c}
 Compares the elements in the range {\itshape }\mbox{[}first1,last1\mbox{]} with those in the range beginning at {\itshape other\+First}, and returns true if all of the elements in both ranges match. ~\newline
 \begin{DoxyNote}{Note}
 The elements being compared must support \hyperlink{namespaceprism_ae53d52e8a36ec7ca58ea1731cc18f1d8}{operator==()}. 
@@ -558,6 +795,15 @@ The elements being compared must support \hyperlink{namespaceprism_ae53d52e8a36e
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{}\label{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}
+Assigns {\itshape value} to all the elements in the range {\itshape }\mbox{[}first,last\mbox{]}. \index{prism@{prism}!fill\+\_\+aux@{fill\+\_\+aux}}
+\index{fill\+\_\+aux@{fill\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{fill\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{fill_aux(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::fill\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a76092b4faa3c2a98088678943ad23df4}{}\label{namespaceprism_a76092b4faa3c2a98088678943ad23df4}
 Assigns {\itshape value} to all the elements in the range {\itshape }\mbox{[}first,last\mbox{]}. \index{prism@{prism}!fill\+\_\+n@{fill\+\_\+n}}
 \index{fill\+\_\+n@{fill\+\_\+n}!prism@{prism}}
 \subsubsection[{\texorpdfstring{fill\+\_\+n(\+Forward\+Iterator first, int size, const T \&value)}{fill_n(ForwardIterator first, int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::fill\+\_\+n (
@@ -567,6 +813,15 @@ Assigns {\itshape value} to all the elements in the range {\itshape }\mbox{[}fir
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aceb4b9c511a5edb706296b457427b226}{}\label{namespaceprism_aceb4b9c511a5edb706296b457427b226}
+Assigns {\itshape value} to the first {\itshape n} elements of the sequence pointed by {\itshape first}. \index{prism@{prism}!fill\+\_\+n\+\_\+aux@{fill\+\_\+n\+\_\+aux}}
+\index{fill\+\_\+n\+\_\+aux@{fill\+\_\+n\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{fill\+\_\+n\+\_\+aux(\+Forward\+Iterator first, int size, const T \&value)}{fill_n_aux(ForwardIterator first, int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::fill\+\_\+n\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{int}]{size, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ad2e7f5f7dee0072f4741520356ebdaee}{}\label{namespaceprism_ad2e7f5f7dee0072f4741520356ebdaee}
 Assigns {\itshape value} to the first {\itshape n} elements of the sequence pointed by {\itshape first}. \index{prism@{prism}!find@{find}}
 \index{find@{find}!prism@{prism}}
 \subsubsection[{\texorpdfstring{find(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{find(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ Input\+Iterator prism\+::find (
@@ -576,6 +831,15 @@ Assigns {\itshape value} to the first {\itshape n} elements of the sequence poin
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a1b543d9c2862a539cc8b770abda87561}{}\label{namespaceprism_a1b543d9c2862a539cc8b770abda87561}
+Returns an iterator to the first element in the range {\itshape }\mbox{[}first,last\mbox{]} that compares equal to {\itshape value}. If no such element is found, the function returns {\itshape last}. \index{prism@{prism}!find\+\_\+aux@{find\+\_\+aux}}
+\index{find\+\_\+aux@{find\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{find\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{find_aux(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ Input\+Iterator prism\+::find\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_af23b68308b7ec11222bd2bfb2904c595}{}\label{namespaceprism_af23b68308b7ec11222bd2bfb2904c595}
 Returns an iterator to the first element in the range {\itshape }\mbox{[}first,last\mbox{]} that compares equal to {\itshape value}. If no such element is found, the function returns {\itshape last}. \index{prism@{prism}!find\+\_\+if@{find\+\_\+if}}
 \index{find\+\_\+if@{find\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{find\+\_\+if(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{find_if(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ Input\+Iterator prism\+::find\+\_\+if (
@@ -585,6 +849,15 @@ Returns an iterator to the first element in the range {\itshape }\mbox{[}first,l
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aa17e9e6c80f8a52479a52450a108a636}{}\label{namespaceprism_aa17e9e6c80f8a52479a52450a108a636}
+Returns an iterator to the first element in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} returns true. If no such element is found, the function returns {\itshape last}. \index{prism@{prism}!find\+\_\+if\+\_\+aux@{find\+\_\+if\+\_\+aux}}
+\index{find\+\_\+if\+\_\+aux@{find\+\_\+if\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{find\+\_\+if\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{find_if_aux(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ Input\+Iterator prism\+::find\+\_\+if\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a91c456a075b03cfe290044281af93203}{}\label{namespaceprism_a91c456a075b03cfe290044281af93203}
 Returns an iterator to the first element in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} returns true. If no such element is found, the function returns {\itshape last}. \index{prism@{prism}!find\+\_\+last@{find\+\_\+last}}
 \index{find\+\_\+last@{find\+\_\+last}!prism@{prism}}
 \subsubsection[{\texorpdfstring{find\+\_\+last(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{find_last(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ Input\+Iterator prism\+::find\+\_\+last (
@@ -594,6 +867,15 @@ Returns an iterator to the first element in the range {\itshape }\mbox{[}first,l
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a3189014b9fa31e0ef0d1933c6f616618}{}\label{namespaceprism_a3189014b9fa31e0ef0d1933c6f616618}
+Returns an iterator to the last element in the range {\itshape }\mbox{[}first,last\mbox{]} that compares equal to {\itshape value}. The range searched is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. If no match is found then a null pointer is returned instead i.\+e. p=0; \index{prism@{prism}!find\+\_\+last\+\_\+aux@{find\+\_\+last\+\_\+aux}}
+\index{find\+\_\+last\+\_\+aux@{find\+\_\+last\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{find\+\_\+last\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, const T \&value)}{find_last_aux(InputIterator first, InputIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class T $>$ Input\+Iterator prism\+::find\+\_\+last\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a66df70426cdeee37f0c06a90881f1f36}{}\label{namespaceprism_a66df70426cdeee37f0c06a90881f1f36}
 Returns an iterator to the last element in the range {\itshape }\mbox{[}first,last\mbox{]} that compares equal to {\itshape value}. The range searched is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. If no match is found then a null pointer is returned instead i.\+e. p=0; \index{prism@{prism}!for\+\_\+each@{for\+\_\+each}}
 \index{for\+\_\+each@{for\+\_\+each}!prism@{prism}}
 \subsubsection[{\texorpdfstring{for\+\_\+each(\+Input\+Iterator first, Input\+Iterator last, Function func)}{for_each(InputIterator first, InputIterator last, Function func)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Function $>$ Function prism\+::for\+\_\+each (
@@ -603,6 +885,15 @@ Returns an iterator to the last element in the range {\itshape }\mbox{[}first,la
 \item[{Function}]{func}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aae062d5bfdc0e53ae49c56520aded906}{}\label{namespaceprism_aae062d5bfdc0e53ae49c56520aded906}
+Applies function {\itshape func} to each of the elements in the range {\itshape }\mbox{[}first,last\mbox{]}. \index{prism@{prism}!for\+\_\+each\+\_\+aux@{for\+\_\+each\+\_\+aux}}
+\index{for\+\_\+each\+\_\+aux@{for\+\_\+each\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{for\+\_\+each\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Function func)}{for_each_aux(InputIterator first, InputIterator last, Function func)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Function $>$ Function prism\+::for\+\_\+each\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Function}]{func}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a9adcafd2357df71bd906d85ffe9fdf85}{}\label{namespaceprism_a9adcafd2357df71bd906d85ffe9fdf85}
 Applies function {\itshape func} to each of the elements in the range {\itshape }\mbox{[}first,last\mbox{]}. \index{prism@{prism}!is\+\_\+sorted@{is\+\_\+sorted}}
 \index{is\+\_\+sorted@{is\+\_\+sorted}!prism@{prism}}
 \subsubsection[{\texorpdfstring{is\+\_\+sorted(\+Forward\+Iterator first, Forward\+Iterator last)}{is_sorted(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ const bool prism\+::is\+\_\+sorted (
@@ -611,6 +902,14 @@ Applies function {\itshape func} to each of the elements in the range {\itshape 
 \item[{Forward\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_acf5efbeb096446c47690b9e8bd2cc01a}{}\label{namespaceprism_acf5efbeb096446c47690b9e8bd2cc01a}
+Returns true if the elements in the range {\itshape }\mbox{[}first,last\mbox{]} are sorted in ascending order, false otherwise. The range searched is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \index{prism@{prism}!is\+\_\+sorted\+\_\+aux@{is\+\_\+sorted\+\_\+aux}}
+\index{is\+\_\+sorted\+\_\+aux@{is\+\_\+sorted\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{is\+\_\+sorted\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last)}{is_sorted_aux(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ const bool prism\+::is\+\_\+sorted\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a29c1478cf9a6f78fa511d96f93b22791}{}\label{namespaceprism_a29c1478cf9a6f78fa511d96f93b22791}
 Returns true if the elements in the range {\itshape }\mbox{[}first,last\mbox{]} are sorted in ascending order, false otherwise. The range searched is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \index{prism@{prism}!make\+\_\+heap@{make\+\_\+heap}}
 \index{make\+\_\+heap@{make\+\_\+heap}!prism@{prism}}
 \subsubsection[{\texorpdfstring{make\+\_\+heap(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{make_heap(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::make\+\_\+heap (
@@ -620,6 +919,15 @@ Returns true if the elements in the range {\itshape }\mbox{[}first,last\mbox{]} 
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_af8e36230e6cb92a41aaca282772a9e6e}{}\label{namespaceprism_af8e36230e6cb92a41aaca282772a9e6e}
 Rearranges the elements in the range {\itshape }\mbox{[}first,last\mbox{]} so that they satisfy the order conditions of a heap.~\newline
+The range searched is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \index{prism@{prism}!make\+\_\+heap\+\_\+aux@{make\+\_\+heap\+\_\+aux}}
+\index{make\+\_\+heap\+\_\+aux@{make\+\_\+heap\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{make\+\_\+heap\+\_\+aux(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{make_heap_aux(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::make\+\_\+heap\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Random\+Access\+Iterator}]{first, }
+\item[{Random\+Access\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a567b63d0d3fa2bc8bdba883f152848be}{}\label{namespaceprism_a567b63d0d3fa2bc8bdba883f152848be}
+Rearranges the elements in the range {\itshape }\mbox{[}first,last\mbox{]} so that they satisfy the order conditions of a heap.~\newline
 The range searched is {\itshape }\mbox{[}first,last), which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \index{prism@{prism}!max@{max}}
 \index{max@{max}!prism@{prism}}
 \subsubsection[{\texorpdfstring{max(const T \&a, const T \&b)}{max(const T &a, const T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T\& prism\+::max (
@@ -628,6 +936,14 @@ The range searched is {\itshape }\mbox{[}first,last), which contains all the ele
 \item[{const T \&}]{b}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a812456273adfa37979e79f07e731d412}{}\label{namespaceprism_a812456273adfa37979e79f07e731d412}
+Returns the largest of {\itshape a} and {\itshape b}. If they are equivalent then {\itshape a} is returned. \index{prism@{prism}!max\+\_\+aux@{max\+\_\+aux}}
+\index{max\+\_\+aux@{max\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{max\+\_\+aux(const T \&a, const T \&b)}{max_aux(const T &a, const T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T\& prism\+::max\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{a, }
+\item[{const T \&}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a9d5ae6f65d12dcb2e433ffdc95b733bb}{}\label{namespaceprism_a9d5ae6f65d12dcb2e433ffdc95b733bb}
 Returns the largest of {\itshape a} and {\itshape b}. If they are equivalent then {\itshape a} is returned. \index{prism@{prism}!min@{min}}
 \index{min@{min}!prism@{prism}}
 \subsubsection[{\texorpdfstring{min(const T \&a, const T \&b)}{min(const T &a, const T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T\& prism\+::min (
@@ -636,6 +952,14 @@ Returns the largest of {\itshape a} and {\itshape b}. If they are equivalent the
 \item[{const T \&}]{b}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a10aff0aca673fb1837069dd8967e4738}{}\label{namespaceprism_a10aff0aca673fb1837069dd8967e4738}
+Returns the smallest of {\itshape a} and {\itshape b}. If they are equivalent then {\itshape a} is returned. \index{prism@{prism}!min\+\_\+aux@{min\+\_\+aux}}
+\index{min\+\_\+aux@{min\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{min\+\_\+aux(const T \&a, const T \&b)}{min_aux(const T &a, const T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const T\& prism\+::min\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{a, }
+\item[{const T \&}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a5ded05d282e95b0ab21c6aeaca2e8794}{}\label{namespaceprism_a5ded05d282e95b0ab21c6aeaca2e8794}
 Returns the smallest of {\itshape a} and {\itshape b}. If they are equivalent then {\itshape a} is returned. \index{prism@{prism}!none\+\_\+of@{none\+\_\+of}}
 \index{none\+\_\+of@{none\+\_\+of}!prism@{prism}}
 \subsubsection[{\texorpdfstring{none\+\_\+of(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{none_of(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ bool prism\+::none\+\_\+of (
@@ -645,6 +969,15 @@ Returns the smallest of {\itshape a} and {\itshape b}. If they are equivalent th
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a10c83b433c7f98fd4513f1b68c6db594}{}\label{namespaceprism_a10c83b433c7f98fd4513f1b68c6db594}
+Returns true if {\itshape pred} returns false for all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} or if the range is empty, and false otherwise. \index{prism@{prism}!none\+\_\+of\+\_\+aux@{none\+\_\+of\+\_\+aux}}
+\index{none\+\_\+of\+\_\+aux@{none\+\_\+of\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{none\+\_\+of\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Predicate pred)}{none_of_aux(InputIterator first, InputIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Predicate $>$ bool prism\+::none\+\_\+of\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a4333d241a3ee0f8bce307db84c7eba23}{}\label{namespaceprism_a4333d241a3ee0f8bce307db84c7eba23}
 Returns true if {\itshape pred} returns false for all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} or if the range is empty, and false otherwise. \index{prism@{prism}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator"!=(const Shared\+Pointer$<$ U $>$ \&p1, const Shared\+Pointer$<$ U $>$ \&p2)}{operator!=(const SharedPointer< U > &p1, const SharedPointer< U > &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class U $>$ const bool prism\+::operator!= (
@@ -939,14 +1272,6 @@ Returns a \hyperlink{classprism_1_1_vector4}{Vector4} that has had each vector c
 )}\hypertarget{namespaceprism_a429cccc5eee454ba019045afb4a01e93}{}\label{namespaceprism_a429cccc5eee454ba019045afb4a01e93}
 Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$\ast$(const Vector3 \&v, const float factor)}{operator*(const Vector3 &v, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} prism\+::operator$\ast$ (
-\begin{DoxyParamCaption}
-\item[{const {\bf Vector3} \&}]{v, }
-\item[{const float}]{factor}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}{}\label{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}
-Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$\ast$(const Quaternion \&q, const float factor)}{operator*(const Quaternion &q, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator$\ast$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Quaternion} \&}]{q, }
@@ -954,6 +1279,14 @@ Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector c
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}{}\label{namespaceprism_a45806b1a58ec5aae0db87d399d4d832b}
 Returns a \hyperlink{classprism_1_1_quaternion}{Quaternion} that is the result of multiplying each component of q by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Vector3 \&v, const float factor)}{operator*(const Vector3 &v, const float factor)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} prism\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v, }
+\item[{const float}]{factor}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}{}\label{namespaceprism_aa1f2f6de8bf1b584cbb82062a607e167}
+Returns a \hyperlink{classprism_1_1_vector3}{Vector3} that has had each vector component of v multiplied by factor. \index{prism@{prism}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$\ast$(const float factor, const Quaternion \&q)}{operator*(const float factor, const Quaternion &q)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion} prism\+::operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -1792,7 +2125,16 @@ Returns a new \hyperlink{classprism_1_1_bitvector}{Bitvector} with the result of
 \item[{Random\+Access\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a5f2c83ae0d89a6581d1c42ba6fd79de0}{}\label{namespaceprism_a5f2c83ae0d89a6581d1c42ba6fd79de0}
-Private recursive function called by \hyperlink{namespaceprism_af8e36230e6cb92a41aaca282772a9e6e}{make\+\_\+heap()}. Compares a node with its two children (if it has any) and ensures that the largest of the three nodes is the parent node. \index{prism@{prism}!remove@{remove}}
+\index{prism@{prism}!p\+\_\+heapify\+\_\+aux@{p\+\_\+heapify\+\_\+aux}}
+\index{p\+\_\+heapify\+\_\+aux@{p\+\_\+heapify\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{p\+\_\+heapify\+\_\+aux(\+Random\+Access\+Iterator node, Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{p_heapify_aux(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::p\+\_\+heapify\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Random\+Access\+Iterator}]{node, }
+\item[{Random\+Access\+Iterator}]{first, }
+\item[{Random\+Access\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a95d95c728950cef3542d8b1dd27eb344}{}\label{namespaceprism_a95d95c728950cef3542d8b1dd27eb344}
+Private recursive function called by \hyperlink{namespaceprism_a567b63d0d3fa2bc8bdba883f152848be}{make\+\_\+heap\+\_\+aux()}. Compares a node with its two children (if it has any) and ensures that the largest of the three nodes is the parent node. \index{prism@{prism}!remove@{remove}}
 \index{remove@{remove}!prism@{prism}}
 \subsubsection[{\texorpdfstring{remove(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{remove(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ Forward\+Iterator prism\+::remove (
 \begin{DoxyParamCaption}
@@ -1801,6 +2143,15 @@ Private recursive function called by \hyperlink{namespaceprism_af8e36230e6cb92a4
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aeddd21943bcf811c56f7d9d1bd4784f6}{}\label{namespaceprism_aeddd21943bcf811c56f7d9d1bd4784f6}
+Transforms the range {\itshape }\mbox{[}first,last\mbox{]} into a range with all the elements that compare equal to {\itshape value} removed, and returns an iterator to the new end of that range. \index{prism@{prism}!remove\+\_\+aux@{remove\+\_\+aux}}
+\index{remove\+\_\+aux@{remove\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{remove\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{remove_aux(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ Forward\+Iterator prism\+::remove\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_acb7d8d4b86592081686e15ee7a18f856}{}\label{namespaceprism_acb7d8d4b86592081686e15ee7a18f856}
 Transforms the range {\itshape }\mbox{[}first,last\mbox{]} into a range with all the elements that compare equal to {\itshape value} removed, and returns an iterator to the new end of that range. \index{prism@{prism}!remove\+\_\+copy@{remove\+\_\+copy}}
 \index{remove\+\_\+copy@{remove\+\_\+copy}!prism@{prism}}
 \subsubsection[{\texorpdfstring{remove\+\_\+copy(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&value)}{remove_copy(InputIterator first, InputIterator last, OutputIterator otherFirst, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ Output\+Iterator prism\+::remove\+\_\+copy (
@@ -1811,6 +2162,16 @@ Transforms the range {\itshape }\mbox{[}first,last\mbox{]} into a range with all
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ab7b6fb407340e51749169560b48fb20c}{}\label{namespaceprism_ab7b6fb407340e51749169560b48fb20c}
+Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, except those elements that compare equal to {\itshape value}. \index{prism@{prism}!remove\+\_\+copy\+\_\+aux@{remove\+\_\+copy\+\_\+aux}}
+\index{remove\+\_\+copy\+\_\+aux@{remove\+\_\+copy\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{remove\+\_\+copy\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&value)}{remove_copy_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ Output\+Iterator prism\+::remove\+\_\+copy\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ae3f41bf6d9ab98a87d693fba69f138dc}{}\label{namespaceprism_ae3f41bf6d9ab98a87d693fba69f138dc}
 Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, except those elements that compare equal to {\itshape value}. \index{prism@{prism}!remove\+\_\+copy\+\_\+if@{remove\+\_\+copy\+\_\+if}}
 \index{remove\+\_\+copy\+\_\+if@{remove\+\_\+copy\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{remove\+\_\+copy\+\_\+if(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Unary\+Predicate pred)}{remove_copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst, UnaryPredicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class Unary\+Predicate $>$ Output\+Iterator prism\+::remove\+\_\+copy\+\_\+if (
@@ -1821,6 +2182,16 @@ Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the ra
 \item[{Unary\+Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_abfc7da1f951e480a26d58fc098b78844}{}\label{namespaceprism_abfc7da1f951e480a26d58fc098b78844}
+Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, except those elements for which {\itshape pred} returns true. \index{prism@{prism}!remove\+\_\+copy\+\_\+if\+\_\+aux@{remove\+\_\+copy\+\_\+if\+\_\+aux}}
+\index{remove\+\_\+copy\+\_\+if\+\_\+aux@{remove\+\_\+copy\+\_\+if\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{remove\+\_\+copy\+\_\+if\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Unary\+Predicate pred)}{remove_copy_if_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, UnaryPredicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class Unary\+Predicate $>$ Output\+Iterator prism\+::remove\+\_\+copy\+\_\+if\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First, }
+\item[{Unary\+Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a198b599ea535deb9fdf28c46c8658bd4}{}\label{namespaceprism_a198b599ea535deb9fdf28c46c8658bd4}
 Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, except those elements for which {\itshape pred} returns true. \index{prism@{prism}!remove\+\_\+if@{remove\+\_\+if}}
 \index{remove\+\_\+if@{remove\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{remove\+\_\+if(\+Forward\+Iterator first, Forward\+Iterator last, Predicate pred)}{remove_if(ForwardIterator first, ForwardIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class Predicate $>$ Forward\+Iterator prism\+::remove\+\_\+if (
@@ -1830,6 +2201,15 @@ Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the ra
 \item[{Predicate}]{pred}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a2e9d25191ed83ea0a193f16d9c0a00b7}{}\label{namespaceprism_a2e9d25191ed83ea0a193f16d9c0a00b7}
+Transforms the range {\itshape }\mbox{[}first,last\mbox{]} into a range with all the elements for which {\itshape pred} returns true removed, and returns an iterator to the new end of that range. \index{prism@{prism}!remove\+\_\+if\+\_\+aux@{remove\+\_\+if\+\_\+aux}}
+\index{remove\+\_\+if\+\_\+aux@{remove\+\_\+if\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{remove\+\_\+if\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last, Predicate pred)}{remove_if_aux(ForwardIterator first, ForwardIterator last, Predicate pred)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class Predicate $>$ Forward\+Iterator prism\+::remove\+\_\+if\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
+\item[{Predicate}]{pred}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a95e9f5186670e27472aa7d8cd02397eb}{}\label{namespaceprism_a95e9f5186670e27472aa7d8cd02397eb}
 Transforms the range {\itshape }\mbox{[}first,last\mbox{]} into a range with all the elements for which {\itshape pred} returns true removed, and returns an iterator to the new end of that range. \index{prism@{prism}!replace@{replace}}
 \index{replace@{replace}!prism@{prism}}
 \subsubsection[{\texorpdfstring{replace(\+Forward\+Iterator first, Forward\+Iterator last, const T \&old\+Value, const T \&new\+Value)}{replace(ForwardIterator first, ForwardIterator last, const T &oldValue, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::replace (
@@ -1840,6 +2220,16 @@ Transforms the range {\itshape }\mbox{[}first,last\mbox{]} into a range with all
 \item[{const T \&}]{new\+Value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a6156070b98de7130b8c912ae3a6d333f}{}\label{namespaceprism_a6156070b98de7130b8c912ae3a6d333f}
+Assigns {\itshape new\+Value} to all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} that compare equal to {\itshape old\+Value}. \index{prism@{prism}!replace\+\_\+aux@{replace\+\_\+aux}}
+\index{replace\+\_\+aux@{replace\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{replace\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last, const T \&old\+Value, const T \&new\+Value)}{replace_aux(ForwardIterator first, ForwardIterator last, const T &oldValue, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::replace\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
+\item[{const T \&}]{old\+Value, }
+\item[{const T \&}]{new\+Value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ad053e45daef65797bc1cff18dfcd8dc0}{}\label{namespaceprism_ad053e45daef65797bc1cff18dfcd8dc0}
 Assigns {\itshape new\+Value} to all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} that compare equal to {\itshape old\+Value}. \index{prism@{prism}!replace\+\_\+copy@{replace\+\_\+copy}}
 \index{replace\+\_\+copy@{replace\+\_\+copy}!prism@{prism}}
 \subsubsection[{\texorpdfstring{replace\+\_\+copy(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&old\+Value, const T \&new\+Value)}{replace_copy(InputIterator first, InputIterator last, OutputIterator otherFirst, const T &oldValue, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ Output\+Iterator prism\+::replace\+\_\+copy (
@@ -1851,6 +2241,17 @@ Assigns {\itshape new\+Value} to all the elements in the range {\itshape }\mbox{
 \item[{const T \&}]{new\+Value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a16d85ecb70d2f216714a0146a057a105}{}\label{namespaceprism_a16d85ecb70d2f216714a0146a057a105}
+Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, replacing the appearances of {\itshape old\+Value} by {\itshape new\+Value}. \index{prism@{prism}!replace\+\_\+copy\+\_\+aux@{replace\+\_\+copy\+\_\+aux}}
+\index{replace\+\_\+copy\+\_\+aux@{replace\+\_\+copy\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{replace\+\_\+copy\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, const T \&old\+Value, const T \&new\+Value)}{replace_copy_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, const T &oldValue, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class T $>$ Output\+Iterator prism\+::replace\+\_\+copy\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First, }
+\item[{const T \&}]{old\+Value, }
+\item[{const T \&}]{new\+Value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a7055d91bb6279fa78b8b498297a11eab}{}\label{namespaceprism_a7055d91bb6279fa78b8b498297a11eab}
 Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, replacing the appearances of {\itshape old\+Value} by {\itshape new\+Value}. \index{prism@{prism}!replace\+\_\+copy\+\_\+if@{replace\+\_\+copy\+\_\+if}}
 \index{replace\+\_\+copy\+\_\+if@{replace\+\_\+copy\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{replace\+\_\+copy\+\_\+if(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred, const T \&new\+Value)}{replace_copy_if(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class Predicate , class T $>$ Output\+Iterator prism\+::replace\+\_\+copy\+\_\+if (
@@ -1862,6 +2263,17 @@ Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the ra
 \item[{const T \&}]{new\+Value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a55d702599739f7137516dcd095119f15}{}\label{namespaceprism_a55d702599739f7137516dcd095119f15}
+Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, replacing those for which {\itshape pred} returns true by new\+Value. \index{prism@{prism}!replace\+\_\+copy\+\_\+if\+\_\+aux@{replace\+\_\+copy\+\_\+if\+\_\+aux}}
+\index{replace\+\_\+copy\+\_\+if\+\_\+aux@{replace\+\_\+copy\+\_\+if\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{replace\+\_\+copy\+\_\+if\+\_\+aux(\+Input\+Iterator first, Input\+Iterator last, Output\+Iterator other\+First, Predicate pred, const T \&new\+Value)}{replace_copy_if_aux(InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Input\+Iterator , class Output\+Iterator , class Predicate , class T $>$ Output\+Iterator prism\+::replace\+\_\+copy\+\_\+if\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Input\+Iterator}]{first, }
+\item[{Input\+Iterator}]{last, }
+\item[{Output\+Iterator}]{other\+First, }
+\item[{Predicate}]{pred, }
+\item[{const T \&}]{new\+Value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a1e660997b10ccb0985b35999c84a9bbf}{}\label{namespaceprism_a1e660997b10ccb0985b35999c84a9bbf}
 Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the range beginning at {\itshape other\+First}, replacing those for which {\itshape pred} returns true by new\+Value. \index{prism@{prism}!replace\+\_\+if@{replace\+\_\+if}}
 \index{replace\+\_\+if@{replace\+\_\+if}!prism@{prism}}
 \subsubsection[{\texorpdfstring{replace\+\_\+if(\+Forward\+Iterator first, Forward\+Iterator last, Predicate pred, const T \&new\+Value)}{replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class Predicate , class T $>$ void prism\+::replace\+\_\+if (
@@ -1872,16 +2284,36 @@ Copies the elements in the range {\itshape }\mbox{[}first,last\mbox{]} to the ra
 \item[{const T \&}]{new\+Value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_af118c19f6b5448319eb3aaf2d556ac54}{}\label{namespaceprism_af118c19f6b5448319eb3aaf2d556ac54}
+Assigns {\itshape new\+Value} to all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} returns true. \index{prism@{prism}!replace\+\_\+if\+\_\+aux@{replace\+\_\+if\+\_\+aux}}
+\index{replace\+\_\+if\+\_\+aux@{replace\+\_\+if\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{replace\+\_\+if\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last, Predicate pred, const T \&new\+Value)}{replace_if_aux(ForwardIterator first, ForwardIterator last, Predicate pred, const T &newValue)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class Predicate , class T $>$ void prism\+::replace\+\_\+if\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
+\item[{Predicate}]{pred, }
+\item[{const T \&}]{new\+Value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ad23d44d30470aed0ee16e931514bd727}{}\label{namespaceprism_ad23d44d30470aed0ee16e931514bd727}
 Assigns {\itshape new\+Value} to all the elements in the range {\itshape }\mbox{[}first,last\mbox{]} for which {\itshape pred} returns true. \index{prism@{prism}!search@{search}}
 \index{search@{search}!prism@{prism}}
-\subsubsection[{\texorpdfstring{search(\+Forward\+Iterator1 first1, Forward\+Iterator1 last1, Forward\+Iterator2 first2, Forward\+Iterator2 last2)}{search(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator1 prism\+::search (
+\subsubsection[{\texorpdfstring{search(\+Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First, Forward\+Iterator2 other\+Last)}{search(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst, ForwardIterator2 otherLast)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator1 prism\+::search (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator1}]{first, }
+\item[{Forward\+Iterator1}]{last, }
+\item[{Forward\+Iterator2}]{other\+First, }
+\item[{Forward\+Iterator2}]{other\+Last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a03dbb806369b062fd90909fd826c2ee4}{}\label{namespaceprism_a03dbb806369b062fd90909fd826c2ee4}
+Searches the range \mbox{[}first1,last1\mbox{]} for the first occurrence of the sequence defined by \mbox{[}first2,last2\mbox{]}, and returns an iterator to its first element, or last1 if no occurrences are found. The range used is \mbox{[}first1,last1\mbox{]}, which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. \index{prism@{prism}!search\+\_\+aux@{search\+\_\+aux}}
+\index{search\+\_\+aux@{search\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{search\+\_\+aux(\+Forward\+Iterator1 first1, Forward\+Iterator1 last1, Forward\+Iterator2 first2, Forward\+Iterator2 last2)}{search_aux(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator1 prism\+::search\+\_\+aux (
 \begin{DoxyParamCaption}
 \item[{Forward\+Iterator1}]{first1, }
 \item[{Forward\+Iterator1}]{last1, }
 \item[{Forward\+Iterator2}]{first2, }
 \item[{Forward\+Iterator2}]{last2}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_affcb3e5150d72d9f79b85b9ea4eb41e2}{}\label{namespaceprism_affcb3e5150d72d9f79b85b9ea4eb41e2}
+)}\hypertarget{namespaceprism_ab6f8ed8b450ff281e02218e10d5643a7}{}\label{namespaceprism_ab6f8ed8b450ff281e02218e10d5643a7}
 Searches the range \mbox{[}first1,last1\mbox{]} for the first occurrence of the sequence defined by \mbox{[}first2,last2\mbox{]}, and returns an iterator to its first element, or last1 if no occurrences are found. The range used is \mbox{[}first1,last1\mbox{]}, which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. \index{prism@{prism}!sort@{sort}}
 \index{sort@{sort}!prism@{prism}}
 \subsubsection[{\texorpdfstring{sort(\+Forward\+Iterator first, Forward\+Iterator last)}{sort(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ void prism\+::sort (
@@ -1890,6 +2322,15 @@ Searches the range \mbox{[}first1,last1\mbox{]} for the first occurrence of the 
 \item[{Forward\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a9bf397cad0a67b67fbd1ecddf40d405e}{}\label{namespaceprism_a9bf397cad0a67b67fbd1ecddf40d405e}
+Sorts the elements in the range {\itshape }\mbox{[}first,last\mbox{]} in ascending order using the quicksort algorithm. The range used is \mbox{[}first1,last1\mbox{]}, which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. ~\newline
+Currently {\itshape \hyperlink{namespaceprism_a9bf397cad0a67b67fbd1ecddf40d405e}{sort()}} is implemented using the quicksort algorithm which averages a reasonable O(n log(n)) complexity. \index{prism@{prism}!sort\+\_\+aux@{sort\+\_\+aux}}
+\index{sort\+\_\+aux@{sort\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{sort\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last)}{sort_aux(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ void prism\+::sort\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a9e7b2f97895db323cbefbc4af311ccb9}{}\label{namespaceprism_a9e7b2f97895db323cbefbc4af311ccb9}
 Sorts the elements in the range {\itshape }\mbox{[}first,last\mbox{]} in ascending order using the quicksort algorithm. The range used is \mbox{[}first1,last1\mbox{]}, which contains all the elements between first1 and last1, including the element pointed by first1 but not the element pointed by last1. ~\newline
 Currently {\itshape \hyperlink{namespaceprism_a9bf397cad0a67b67fbd1ecddf40d405e}{sort()}} is implemented using the quicksort algorithm which averages a reasonable O(n log(n)) complexity. \index{prism@{prism}!sort\+\_\+bubble@{sort\+\_\+bubble}}
 \index{sort\+\_\+bubble@{sort\+\_\+bubble}!prism@{prism}}
@@ -1903,6 +2344,19 @@ Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascend
 The range used is {\itshape }\mbox{[}first,last\mbox{]}, which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \begin{DoxyNote}{Note}
 The objects being sorted must support \hyperlink{namespaceprism_ab8a312729c4c9ae72836d0034a6f0758}{operator$>$()}. 
 \end{DoxyNote}
+\index{prism@{prism}!sort\+\_\+bubble\+\_\+aux@{sort\+\_\+bubble\+\_\+aux}}
+\index{sort\+\_\+bubble\+\_\+aux@{sort\+\_\+bubble\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{sort\+\_\+bubble\+\_\+aux(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{sort_bubble_aux(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::sort\+\_\+bubble\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Random\+Access\+Iterator}]{first, }
+\item[{Random\+Access\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_af3a66e1051c4c7874f305ad2a5f0b37e}{}\label{namespaceprism_af3a66e1051c4c7874f305ad2a5f0b37e}
+Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascending order using the Bubble Sort algorithm. ~\newline
+The range used is {\itshape }\mbox{[}first,last\mbox{]}, which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. ~\newline
+\begin{DoxyNote}{Note}
+The objects being sorted must support \hyperlink{namespaceprism_ab8a312729c4c9ae72836d0034a6f0758}{operator$>$()}. 
+\end{DoxyNote}
 \index{prism@{prism}!sort\+\_\+heap@{sort\+\_\+heap}}
 \index{sort\+\_\+heap@{sort\+\_\+heap}!prism@{prism}}
 \subsubsection[{\texorpdfstring{sort\+\_\+heap(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{sort_heap(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::sort\+\_\+heap (
@@ -1911,6 +2365,16 @@ The objects being sorted must support \hyperlink{namespaceprism_ab8a312729c4c9ae
 \item[{Random\+Access\+Iterator}]{last}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a1e9fe74c5dcee70bf5dd5c89f1234a02}{}\label{namespaceprism_a1e9fe74c5dcee70bf5dd5c89f1234a02}
+Sorts the elements in the range {\itshape }\mbox{[}first,last\mbox{]} using the heapsort algorithm. ~\newline
+The elements are first rearranged so that they satisfy the ordering of a heap (by a call to \hyperlink{namespaceprism_af8e36230e6cb92a41aaca282772a9e6e}{make\+\_\+heap()}).~\newline
+The range used is {\itshape }\mbox{[}first,last\mbox{]}, which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \index{prism@{prism}!sort\+\_\+heap\+\_\+aux@{sort\+\_\+heap\+\_\+aux}}
+\index{sort\+\_\+heap\+\_\+aux@{sort\+\_\+heap\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{sort\+\_\+heap\+\_\+aux(\+Random\+Access\+Iterator first, Random\+Access\+Iterator last)}{sort_heap_aux(RandomAccessIterator first, RandomAccessIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Random\+Access\+Iterator $>$ void prism\+::sort\+\_\+heap\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Random\+Access\+Iterator}]{first, }
+\item[{Random\+Access\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ab289bdf7cde130b0aeea21a9711770f4}{}\label{namespaceprism_ab289bdf7cde130b0aeea21a9711770f4}
 Sorts the elements in the range {\itshape }\mbox{[}first,last\mbox{]} using the heapsort algorithm. ~\newline
 The elements are first rearranged so that they satisfy the ordering of a heap (by a call to \hyperlink{namespaceprism_af8e36230e6cb92a41aaca282772a9e6e}{make\+\_\+heap()}).~\newline
 The range used is {\itshape }\mbox{[}first,last\mbox{]}, which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \index{prism@{prism}!sort\+\_\+quicksort@{sort\+\_\+quicksort}}
@@ -1925,6 +2389,18 @@ Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascend
 The range used is {\itshape }\mbox{[}first,last\mbox{]}, which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \begin{DoxyNote}{Note}
 The objects being sorted must support \hyperlink{namespaceprism_a87d86e9266469c8a40537e12a560b066}{operator$<$=()}. 
 \end{DoxyNote}
+\index{prism@{prism}!sort\+\_\+quicksort\+\_\+aux@{sort\+\_\+quicksort\+\_\+aux}}
+\index{sort\+\_\+quicksort\+\_\+aux@{sort\+\_\+quicksort\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{sort\+\_\+quicksort\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last)}{sort_quicksort_aux(ForwardIterator first, ForwardIterator last)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ void prism\+::sort\+\_\+quicksort\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a46e0e235fa71938e5ebf29387b917057}{}\label{namespaceprism_a46e0e235fa71938e5ebf29387b917057}
+Sorts the elements in the range {\itshape }\mbox{[}first, last\mbox{]} in ascending order using the Quicksort algorithm. ~\newline
+The range used is {\itshape }\mbox{[}first,last\mbox{]}, which contains all the elements between {\itshape first} and {\itshape last}, including the element pointed by {\itshape first} but not the element pointed by {\itshape last}. \begin{DoxyNote}{Note}
+The objects being sorted must support \hyperlink{namespaceprism_a87d86e9266469c8a40537e12a560b066}{operator$<$=()}. 
+\end{DoxyNote}
 \index{prism@{prism}!swap@{swap}}
 \index{swap@{swap}!prism@{prism}}
 \subsubsection[{\texorpdfstring{swap(\+T \&a, T \&b)}{swap(T &a, T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void prism\+::swap (
@@ -1933,6 +2409,14 @@ The objects being sorted must support \hyperlink{namespaceprism_a87d86e9266469c8
 \item[{T \&}]{b}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}{}\label{namespaceprism_a6430516ab4f2e2a7f43323acb6b559d8}
+Exchanges the values of {\itshape a} and {\itshape b}. \index{prism@{prism}!swap\+\_\+aux@{swap\+\_\+aux}}
+\index{swap\+\_\+aux@{swap\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{swap\+\_\+aux(\+T \&a, T \&b)}{swap_aux(T &a, T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void prism\+::swap\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{T \&}]{a, }
+\item[{T \&}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a6d3a7129cc6ab5d9a80301436e4d2e48}{}\label{namespaceprism_a6d3a7129cc6ab5d9a80301436e4d2e48}
 Exchanges the values of {\itshape a} and {\itshape b}. \index{prism@{prism}!swap\+\_\+ranges@{swap\+\_\+ranges}}
 \index{swap\+\_\+ranges@{swap\+\_\+ranges}!prism@{prism}}
 \subsubsection[{\texorpdfstring{swap\+\_\+ranges(\+Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)}{swap_ranges(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator2 prism\+::swap\+\_\+ranges (
@@ -1942,4 +2426,85 @@ Exchanges the values of {\itshape a} and {\itshape b}. \index{prism@{prism}!swap
 \item[{Forward\+Iterator2}]{other\+First}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}{}\label{namespaceprism_a4661f2c0c4dca098c137179b4d93f3dc}
-Exchanges the values of each of the elements in the range {\itshape }\mbox{[}first1,last1\mbox{]} with those of their respective elements in the range beginning at {\itshape other\+First}. 
+Exchanges the values of each of the elements in the range {\itshape }\mbox{[}first1,last1\mbox{]} with those of their respective elements in the range beginning at {\itshape other\+First}. \index{prism@{prism}!swap\+\_\+ranges\+\_\+aux@{swap\+\_\+ranges\+\_\+aux}}
+\index{swap\+\_\+ranges\+\_\+aux@{swap\+\_\+ranges\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{swap\+\_\+ranges\+\_\+aux(\+Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)}{swap_ranges_aux(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator2 prism\+::swap\+\_\+ranges\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator1}]{first, }
+\item[{Forward\+Iterator1}]{last, }
+\item[{Forward\+Iterator2}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a7ca4ae3ad4c2e21d6fe48b6fae6930c3}{}\label{namespaceprism_a7ca4ae3ad4c2e21d6fe48b6fae6930c3}
+Exchanges the values of each of the elements in the range {\itshape }\mbox{[}first1,last1\mbox{]} with those of their respective elements in the range beginning at {\itshape other\+First}. \index{prism@{prism}!uninitialized\+\_\+copy@{uninitialized\+\_\+copy}}
+\index{uninitialized\+\_\+copy@{uninitialized\+\_\+copy}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+copy(\+Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)}{uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator2 prism\+::uninitialized\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator1}]{first, }
+\item[{Forward\+Iterator1}]{last, }
+\item[{Forward\+Iterator2}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a5ff56f151fea6e709350a0e9fbdb70a8}{}\label{namespaceprism_a5ff56f151fea6e709350a0e9fbdb70a8}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed yet. This means that the allocated memory cannot be dereferenced yet through an iterator (as in the \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} algorithm). This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. This algorithm differs from \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} because that algorithm dereferences the iterator to assign the new value whereas this algorithm doesn\textquotesingle{}t. It copy-\/constructs in place instead. \index{prism@{prism}!uninitialized\+\_\+copy\+\_\+aux@{uninitialized\+\_\+copy\+\_\+aux}}
+\index{uninitialized\+\_\+copy\+\_\+aux@{uninitialized\+\_\+copy\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+copy\+\_\+aux(\+Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)}{uninitialized_copy_aux(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator2 prism\+::uninitialized\+\_\+copy\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator1}]{first, }
+\item[{Forward\+Iterator1}]{last, }
+\item[{Forward\+Iterator2}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a6ef07b731fbaecb8abe1ad8faabaab1e}{}\label{namespaceprism_a6ef07b731fbaecb8abe1ad8faabaab1e}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed yet. This means that the allocated memory cannot be dereferenced yet through an iterator (as in the \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} algorithm). This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. This algorithm differs from \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} because that algorithm dereferences the iterator to assign the new value whereas this algorithm doesn\textquotesingle{}t. It copy-\/constructs in place instead. \index{prism@{prism}!uninitialized\+\_\+copy\+\_\+n@{uninitialized\+\_\+copy\+\_\+n}}
+\index{uninitialized\+\_\+copy\+\_\+n@{uninitialized\+\_\+copy\+\_\+n}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+copy\+\_\+n(\+Forward\+Iterator1 first, const int size, Forward\+Iterator2 other\+First)}{uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator2 prism\+::uninitialized\+\_\+copy\+\_\+n (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator1}]{first, }
+\item[{const int}]{size, }
+\item[{Forward\+Iterator2}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ad1c7d8eb38174ba66d98321b68047e6e}{}\label{namespaceprism_ad1c7d8eb38174ba66d98321b68047e6e}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed yet. This means that the allocated memory cannot be dereferenced yet through an iterator (as in the \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} algorithm). This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. This algorithm differs from \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} because that algorithm dereferences the iterator to assign the new value whereas this algorithm doesn\textquotesingle{}t. It copy-\/constructs in place instead. \index{prism@{prism}!uninitialized\+\_\+copy\+\_\+n\+\_\+aux@{uninitialized\+\_\+copy\+\_\+n\+\_\+aux}}
+\index{uninitialized\+\_\+copy\+\_\+n\+\_\+aux@{uninitialized\+\_\+copy\+\_\+n\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+copy\+\_\+n\+\_\+aux(\+Forward\+Iterator1 first, const int size, Forward\+Iterator2 other\+First)}{uninitialized_copy_n_aux(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator2 prism\+::uninitialized\+\_\+copy\+\_\+n\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator1}]{first, }
+\item[{const int}]{size, }
+\item[{Forward\+Iterator2}]{other\+First}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a85d1fe2d10e98f9de7aec30799f2eec0}{}\label{namespaceprism_a85d1fe2d10e98f9de7aec30799f2eec0}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed yet. This means that the allocated memory cannot be dereferenced yet through an iterator (as in the \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} algorithm). This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. This algorithm differs from \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} because that algorithm dereferences the iterator to assign the new value whereas this algorithm doesn\textquotesingle{}t. It copy-\/constructs in place instead. \index{prism@{prism}!uninitialized\+\_\+fill@{uninitialized\+\_\+fill}}
+\index{uninitialized\+\_\+fill@{uninitialized\+\_\+fill}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+fill(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{uninitialized_fill(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::uninitialized\+\_\+fill (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a8234c2c7917f750db94bb068d6fd554e}{}\label{namespaceprism_a8234c2c7917f750db94bb068d6fd554e}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed. This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. \index{prism@{prism}!uninitialized\+\_\+fill\+\_\+aux@{uninitialized\+\_\+fill\+\_\+aux}}
+\index{uninitialized\+\_\+fill\+\_\+aux@{uninitialized\+\_\+fill\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+fill\+\_\+aux(\+Forward\+Iterator first, Forward\+Iterator last, const T \&value)}{uninitialized_fill_aux(ForwardIterator first, ForwardIterator last, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::uninitialized\+\_\+fill\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{Forward\+Iterator}]{last, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aaa8fcd4a3943bfa624f77fc8f3af5916}{}\label{namespaceprism_aaa8fcd4a3943bfa624f77fc8f3af5916}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed yet. This means that the allocated memory cannot be dereferenced yet through an iterator (as in the \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} algorithm). This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. This algorithm differs from \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} because that algorithm dereferences the iterator to assign the new value whereas this algorithm doesn\textquotesingle{}t. It copy-\/constructs in place instead. \index{prism@{prism}!uninitialized\+\_\+fill\+\_\+n@{uninitialized\+\_\+fill\+\_\+n}}
+\index{uninitialized\+\_\+fill\+\_\+n@{uninitialized\+\_\+fill\+\_\+n}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+fill\+\_\+n(\+Forward\+Iterator first, const int size, const T \&value)}{uninitialized_fill_n(ForwardIterator first, const int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::uninitialized\+\_\+fill\+\_\+n (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{const int}]{size, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a5485ae7bad862f6ff0ab363ed4697b61}{}\label{namespaceprism_a5485ae7bad862f6ff0ab363ed4697b61}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed. This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. \index{prism@{prism}!uninitialized\+\_\+fill\+\_\+n\+\_\+aux@{uninitialized\+\_\+fill\+\_\+n\+\_\+aux}}
+\index{uninitialized\+\_\+fill\+\_\+n\+\_\+aux@{uninitialized\+\_\+fill\+\_\+n\+\_\+aux}!prism@{prism}}
+\subsubsection[{\texorpdfstring{uninitialized\+\_\+fill\+\_\+n\+\_\+aux(\+Forward\+Iterator first, const int size, const T \&value)}{uninitialized_fill_n_aux(ForwardIterator first, const int size, const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator , class T $>$ void prism\+::uninitialized\+\_\+fill\+\_\+n\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{Forward\+Iterator}]{first, }
+\item[{const int}]{size, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_aa02596d3361c57f312168ffac621e421}{}\label{namespaceprism_aa02596d3361c57f312168ffac621e421}
+The range \mbox{[}first,last\mbox{]} represents a block of memory that has been allocated but not initialized i.\+e. no elements have been constructed yet. This means that the allocated memory cannot be dereferenced yet through an iterator (as in the \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} algorithm). This algorithm takes that memory block and initializes each element by copy-\/constructing each element in place. This algorithm differs from \hyperlink{namespaceprism_a7c33653a5b4a07b31f5bde15e9085b45}{prism\+::fill} because that algorithm dereferences the iterator to assign the new value whereas this algorithm doesn\textquotesingle{}t. It copy-\/constructs in place instead. 

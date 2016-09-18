@@ -159,6 +159,9 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 <li>sec()
 : <a class="el" href="classprism_1_1_time.html#a83f655a9c7f1a2e8521ddcb395fa3796">prism::Time</a>
 </li>
+<li>second
+: <a class="el" href="structprism_1_1_pair.html#aca5dc71f12a19dbe1591f4b7e867396a">prism::Pair&lt; T1, T2 &gt;</a>
+</li>
 <li>secs()
 : <a class="el" href="classprism_1_1_time.html#af26eac6363bbcfc91f711bf4561863aa">prism::Time</a>
 </li>
@@ -303,7 +306,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="classprism_1_1_shared_data.html#a68d7aab69703ca6152731f1e041d6949">prism::SharedData</a>
 </li>
 <li>SharedDataPointer()
-: <a class="el" href="classprism_1_1_shared_data_pointer.html#a8f33e2be524ada8415b31533876f7a4d">prism::SharedDataPointer&lt; SharedDataType &gt;</a>
+: <a class="el" href="classprism_1_1_shared_data_pointer.html#aae89ba1520cd16d5d6efc06c3c763a57">prism::SharedDataPointer&lt; SharedDataType &gt;</a>
 </li>
 <li>SharedPointer()
 : <a class="el" href="classprism_1_1_shared_pointer.html#a076711618f299e5a5d04261d7d806aff">prism::SharedPointer&lt; T &gt;</a>
@@ -330,7 +333,10 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="classprism_1_1_vector.html#ac6ff3296683e76da61d48bcc15e4f175">prism::Vector&lt; T &gt;</a>
 </li>
 <li>size_type
-: <a class="el" href="classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd">prism::List&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_allocator.html#a47cb9435e4e9ff4c934ea3d4b4338d52">prism::Allocator&lt; T &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#a7cf55823ae63bccb9cf50b1e08619363">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd">prism::List&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_logger_allocator.html#ab894ebf5870879f400300cd482961c94">prism::LoggerAllocator&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a33d0fff8e7a3f85f43487c6975e3e766">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a14c909f500f13b8b7a276bb97ae746e8">prism::Vector&lt; T &gt;</a>
 </li>
@@ -343,14 +349,11 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 , <a class="el" href="classprism_1_1_vector.html#ab2491ac6ff73d372ed8f080adef78208">prism::Vector&lt; T &gt;</a>
 </li>
 <li>Stack()
-: <a class="el" href="classprism_1_1_stack.html#ae2de2835a81ce5f19d6463bb7641c44f">prism::Stack&lt; T &gt;</a>
-</li>
-<li>StackTest
-: <a class="el" href="classprism_1_1_stack.html#a660ffbd70515df798aa6fe2edafb3156">prism::Stack&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_stack.html#aa28cd4f7d2c39d7f3828460d662c3725">prism::Stack&lt; T &gt;</a>
 </li>
 <li>start
-: <a class="el" href="structprism_1_1_bitvector_data_1_1memory.html#afdb826bbd955a2b4695ece14bb1ef6cb">prism::BitvectorData::memory</a>
-, <a class="el" href="structprism_1_1_stack_data_1_1_memory.html#a5ca6f889c85fca00ab1bbf7f93d994cb">prism::StackData&lt; T &gt;::Memory</a>
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#aa7e9880e7681523029c4d7664d7743f2">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
+, <a class="el" href="structprism_1_1_bitvector_data_1_1memory.html#afdb826bbd955a2b4695ece14bb1ef6cb">prism::BitvectorData::memory</a>
 , <a class="el" href="classprism_1_1_time.html#a504e84942a112509c43c0c09d0441c0c">prism::Time</a>
 </li>
 <li>startsWith()
@@ -361,7 +364,15 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 </li>
 <li>storage
 : <a class="el" href="structprism_1_1_bitvector_data.html#abcf70b2679d4c52bf398a1a308aca5c2">prism::BitvectorData</a>
-, <a class="el" href="structprism_1_1_stack_data.html#a5e74274b678041cfd7676d08eed3864a">prism::StackData&lt; T &gt;</a>
+</li>
+<li>StorageAlloc
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#ac314b95624792862b1c97ea15e5bffd5">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
+</li>
+<li>storageAllocator
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a4aa5eb83afed81aab8a6031c02114252">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
+</li>
+<li>storagePtr
+: <a class="el" href="structprism_1_1aux_1_1_deque_memory.html#a94284c2277f5fbe4b5d0725467d5a6d3">prism::aux::DequeMemory&lt; T, Alloc &gt;</a>
 </li>
 <li>string()
 : <a class="el" href="classprism_1_1_bitvector.html#abc220bdae95129cf71bb8ec70a877899">prism::Bitvector</a>
@@ -370,7 +381,7 @@ $(document).ready(function(){initNavTree('functions_s.html','');});
 : <a class="el" href="classprism_1_1_string.html#ad273f297c9125493c40876e368347fbf">prism::String</a>
 </li>
 <li>sub()
-: <a class="el" href="classprism_1_1_string.html#acb6b7f719571cccca2f08887e61ed2a5">prism::String</a>
+: <a class="el" href="classprism_1_1_string.html#ab2224646e96ae71e4048e969da2fca93">prism::String</a>
 </li>
 </ul>
 </div><!-- contents -->

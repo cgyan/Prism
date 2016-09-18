@@ -89,8 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li><a href="#index_o"><span>o</span></a></li>
-      <li class="current"><a href="#index_s"><span>s</span></a></li>
+      <li class="current"><a href="#index_o"><span>o</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -132,6 +131,7 @@ $(document).ready(function(){initNavTree('functions_rela.html','');});
 , <a class="el" href="classprism_1_1_circle.html#ac1093de6b8dac6c9df82db5b72148634">prism::Circle</a>
 , <a class="el" href="classprism_1_1_fraction.html#a2469410854b8425a70b1489afa5651d5">prism::Fraction</a>
 , <a class="el" href="classprism_1_1_matrix4.html#aaedc2ff7fd572ebc03eec59fb11cd5a9">prism::Matrix4</a>
+, <a class="el" href="structprism_1_1_pair.html#ad411adb326c40ee806d6bd94f155562f">prism::Pair&lt; T1, T2 &gt;</a>
 , <a class="el" href="classprism_1_1_point.html#a694df69725e33fcd64fd0942c6bb5e82">prism::Point</a>
 , <a class="el" href="classprism_1_1_pointf.html#a15d703b43330fcb10ae27ce17ad1b96d">prism::Pointf</a>
 , <a class="el" href="classprism_1_1_quaternion.html#adc2df640ae236b94e01951d891d59e85">prism::Quaternion</a>
@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('functions_rela.html','');});
 </li>
 <li>operator*
 : <a class="el" href="classprism_1_1_fraction.html#ad106ee756801021779f14e992439db4a">prism::Fraction</a>
-, <a class="el" href="classprism_1_1_matrix4.html#a8f72f1280f8f44f2f85c32e930ef95f1">prism::Matrix4</a>
+, <a class="el" href="classprism_1_1_matrix4.html#a20a9788aba6ec37d10a0c04fa479b26e">prism::Matrix4</a>
 , <a class="el" href="classprism_1_1_point.html#a3fff687aebd2165ff57e237363953f36">prism::Point</a>
 , <a class="el" href="classprism_1_1_pointf.html#a3c30f12145ef35292b4bda98ffae5ed8">prism::Pointf</a>
 , <a class="el" href="classprism_1_1_quaternion.html#a02f988d3aef50bac26fc6fed8429d6a2">prism::Quaternion</a>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('functions_rela.html','');});
 , <a class="el" href="classprism_1_1_pointf.html#a32b96cc3995453a257c95f1a5048feec">prism::Pointf</a>
 , <a class="el" href="classprism_1_1_quaternion.html#a55c89dc55cca66b19679705c566a165a">prism::Quaternion</a>
 , <a class="el" href="classprism_1_1_size.html#a8a42e08734218778f68f34d79f9c8130">prism::Size</a>
-, <a class="el" href="classprism_1_1_string.html#a075cd9151fd072beb0e0cd6818705282">prism::String</a>
+, <a class="el" href="classprism_1_1_string.html#a95840fe41f8c1dbc819e3215ac6eb616">prism::String</a>
 , <a class="el" href="classprism_1_1_time.html#ae2e555aa5b5c51e44b576d8baf48a2cd">prism::Time</a>
 , <a class="el" href="classprism_1_1_vector2.html#a43adb85199fdc6ae1f9ba0397660ad9a">prism::Vector2</a>
 , <a class="el" href="classprism_1_1_vector3.html#a2f3fba6fd08b1a9ee79193581edead97">prism::Vector3</a>
@@ -176,7 +176,7 @@ $(document).ready(function(){initNavTree('functions_rela.html','');});
 , <a class="el" href="classprism_1_1_matrix4.html#a2e7720348e3d34cad4119b93c499971e">prism::Matrix4</a>
 , <a class="el" href="classprism_1_1_point.html#aff59dfb837229858286c1652bd9a8e40">prism::Point</a>
 , <a class="el" href="classprism_1_1_pointf.html#aa38ec65c1fe1ea8738ea87d584ce041b">prism::Pointf</a>
-, <a class="el" href="classprism_1_1_quaternion.html#a3a5605ba3f0bb654c528d2f7beb34147">prism::Quaternion</a>
+, <a class="el" href="classprism_1_1_quaternion.html#a82faed3b53a20e9c2acf7fa2406263c8">prism::Quaternion</a>
 , <a class="el" href="classprism_1_1_size.html#ac19f7036b22c72ce81d89025af2510f0">prism::Size</a>
 , <a class="el" href="classprism_1_1_time.html#a09225563b0b317910b26c550ba74de64">prism::Time</a>
 , <a class="el" href="classprism_1_1_vector2.html#a6132994fe4bbe4bd94b3bd1dbb83d5cf">prism::Vector2</a>
@@ -205,6 +205,8 @@ $(document).ready(function(){initNavTree('functions_rela.html','');});
 , <a class="el" href="classprism_1_1_circle.html#a4deb656103c2fc1ea9258fc37bfdcc6c">prism::Circle</a>
 , <a class="el" href="classprism_1_1_fraction.html#aae68a18403f22736f297b8671746f144">prism::Fraction</a>
 , <a class="el" href="classprism_1_1_matrix4.html#a4ccbb04098ce491412da339e07eb72d7">prism::Matrix4</a>
+, <a class="el" href="classprism_1_1_obj.html#aea0a13061e9985ddd6678f02fc2e17d3">prism::Obj</a>
+, <a class="el" href="structprism_1_1_pair.html#ad507a8268ac0c9d08cdfb644c3111276">prism::Pair&lt; T1, T2 &gt;</a>
 , <a class="el" href="classprism_1_1_point.html#aa818efa680e0d94ce91173ccb4b7aa08">prism::Point</a>
 , <a class="el" href="classprism_1_1_pointf.html#a2e9f3497d53913f99ea6a76c400f0b58">prism::Pointf</a>
 , <a class="el" href="classprism_1_1_quaternion.html#a9d6837ef4f759aa5ecd417adcea2e908">prism::Quaternion</a>
@@ -228,11 +230,12 @@ $(document).ready(function(){initNavTree('functions_rela.html','');});
 , <a class="el" href="classprism_1_1_circle.html#aea4bcef75428f13320f5c8148869d7ac">prism::Circle</a>
 , <a class="el" href="classprism_1_1_fraction.html#a061d9325f891c3601d892edce079652b">prism::Fraction</a>
 , <a class="el" href="classprism_1_1_matrix4.html#a0cbf3c575d1951cc9ae4dfe79c3a3729">prism::Matrix4</a>
+, <a class="el" href="structprism_1_1_pair.html#a8f7083ebabb27564eb111bda3c7a62bc">prism::Pair&lt; T1, T2 &gt;</a>
 , <a class="el" href="classprism_1_1_point.html#a2c5b474dd81e3ce9b80b206ea32deaae">prism::Point</a>
 , <a class="el" href="classprism_1_1_pointf.html#a1459678221b6e093b6e5eedc4f6f52a0">prism::Pointf</a>
 , <a class="el" href="classprism_1_1_quaternion.html#a9c72bd1e471ac599aaee1d3dfe729075">prism::Quaternion</a>
 , <a class="el" href="classprism_1_1_rect.html#ab32eafa53d6e2fedc5c4f4beeb10d12a">prism::Rect</a>
-, <a class="el" href="classprism_1_1_shared_pointer.html#ac396e2d37f10207b0e4da099d03ef759">prism::SharedPointer&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_shared_pointer.html#ae1688caf7bd4dc08f775cbe830ecd6cd">prism::SharedPointer&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_size.html#a0ecba9b1ddf7508ab7d47f24fccc5b2c">prism::Size</a>
 , <a class="el" href="classprism_1_1_stack.html#aeb1f035d92d81418856c1f1c1bec54b3">prism::Stack&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a42ce36244ff044035bee8e0e1d764aa1">prism::String</a>
@@ -253,13 +256,6 @@ $(document).ready(function(){initNavTree('functions_rela.html','');});
 </li>
 <li>operator|
 : <a class="el" href="classprism_1_1_bitvector.html#a7da9252d437ed366b78e5f728f20ab8d">prism::Bitvector</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>StackTest
-: <a class="el" href="classprism_1_1_stack.html#a660ffbd70515df798aa6fe2edafb3156">prism::Stack&lt; T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

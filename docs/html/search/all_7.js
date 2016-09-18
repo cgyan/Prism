@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['hasinverse',['hasInverse',['../classprism_1_1_matrix4.html#af9da747da374bbcb3c1eb86888445a04',1,'prism::Matrix4']]],
-  ['height',['height',['../classprism_1_1_rect.html#ad713f4536accdc6d5d2e6a6d83eac78b',1,'prism::Rect::height()'],['../classprism_1_1_size.html#a1be5292609e9061f9637edc0d436e7eb',1,'prism::Size::height()']]],
-  ['hour',['hour',['../classprism_1_1_time.html#a380242e03982df8bf4af3eaa2296c808',1,'prism::Time']]],
-  ['hours',['hours',['../classprism_1_1_time.html#a35581873592ae2ca5a9b43c3992bdcf2',1,'prism::Time']]],
-  ['hours_5fper_5fday',['HOURS_PER_DAY',['../classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a2321329da5265ab087381f8c0483403e',1,'prism::Time']]],
-  ['hoursto',['hoursTo',['../classprism_1_1_time.html#a759d033f1ef8602118fbe887eb8a2241',1,'prism::Time']]]
+  ['get',['get',['../classprism_1_1_bitvector.html#a0a3d203905a1125a2afbdd928997dbe2',1,'prism::Bitvector']]],
+  ['getcircle',['getCircle',['../classprism_1_1_circle.html#a84de2ca47dc084e49cc6645e7e723b9d',1,'prism::Circle']]],
+  ['getcoordinates',['getCoordinates',['../classprism_1_1_rect.html#a20e7825273f653914b1e3bc9954e7deb',1,'prism::Rect']]],
+  ['getrect',['getRect',['../classprism_1_1_rect.html#a24f54f589f54d555c623c3db8a169047',1,'prism::Rect']]]
 ];

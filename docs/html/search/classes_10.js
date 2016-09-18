@@ -1,28 +1,8 @@
 var searchData=
 [
-  ['samesizetupleprefixcomparator',['SameSizeTuplePrefixComparator',['../structstd_1_1tr1_1_1gtest__internal_1_1_same_size_tuple_prefix_comparator.html',1,'std::tr1::gtest_internal']]],
-  ['samesizetupleprefixcomparator_3c_200_2c_200_20_3e',['SameSizeTuplePrefixComparator&lt; 0, 0 &gt;',['../structstd_1_1tr1_1_1gtest__internal_1_1_same_size_tuple_prefix_comparator_3_010_00_010_01_4.html',1,'std::tr1::gtest_internal']]],
-  ['samesizetupleprefixcomparator_3c_20k_2c_20k_20_3e',['SameSizeTuplePrefixComparator&lt; k, k &gt;',['../structstd_1_1tr1_1_1gtest__internal_1_1_same_size_tuple_prefix_comparator_3_01k_00_01k_01_4.html',1,'std::tr1::gtest_internal']]],
-  ['scoped_5fptr',['scoped_ptr',['../classtesting_1_1internal_1_1scoped__ptr.html',1,'testing::internal']]],
-  ['scoped_5fptr_3c_20_3a_3astd_3a_3astring_20_3e',['scoped_ptr&lt; ::std::string &gt;',['../classtesting_1_1internal_1_1scoped__ptr.html',1,'testing::internal']]],
-  ['scoped_5fptr_3c_20_3a_3astd_3a_3astringstream_20_3e',['scoped_ptr&lt; ::std::stringstream &gt;',['../classtesting_1_1internal_1_1scoped__ptr.html',1,'testing::internal']]],
-  ['scoped_5fptr_3c_20const_20_3a_3astd_3a_3astring_20_3e',['scoped_ptr&lt; const ::std::string &gt;',['../classtesting_1_1internal_1_1scoped__ptr.html',1,'testing::internal']]],
-  ['scoped_5fptr_3c_20const_20t_20_3e',['scoped_ptr&lt; const T &gt;',['../classtesting_1_1internal_1_1scoped__ptr.html',1,'testing::internal']]],
-  ['scoped_5fptr_3c_20testing_3a_3ainternal_3a_3aparamiteratorinterface_3c_20t_20_3e_20_3e',['scoped_ptr&lt; testing::internal::ParamIteratorInterface&lt; T &gt; &gt;',['../classtesting_1_1internal_1_1scoped__ptr.html',1,'testing::internal']]],
-  ['scoped_5fptr_3c_20testing_3a_3ainternal_3a_3atestmetafactorybase_3c_20paramtype_20_3e_20_3e',['scoped_ptr&lt; testing::internal::TestMetaFactoryBase&lt; ParamType &gt; &gt;',['../classtesting_1_1internal_1_1scoped__ptr.html',1,'testing::internal']]],
-  ['scopedfaketestpartresultreporter',['ScopedFakeTestPartResultReporter',['../classtesting_1_1_scoped_fake_test_part_result_reporter.html',1,'testing']]],
-  ['scopedprematureexitfile',['ScopedPrematureExitFile',['../classtesting_1_1internal_1_1_scoped_premature_exit_file.html',1,'testing::internal']]],
-  ['scopedtrace',['ScopedTrace',['../classtesting_1_1internal_1_1_scoped_trace.html',1,'testing::internal']]],
-  ['shareddata',['SharedData',['../classprism_1_1_shared_data.html',1,'prism']]],
-  ['shareddatapointer',['SharedDataPointer',['../classprism_1_1_shared_data_pointer.html',1,'prism']]],
-  ['sharedpointer',['SharedPointer',['../classprism_1_1_shared_pointer.html',1,'prism']]],
-  ['singlefailurechecker',['SingleFailureChecker',['../classtesting_1_1internal_1_1_single_failure_checker.html',1,'testing::internal']]],
-  ['size',['Size',['../classprism_1_1_size.html',1,'prism']]],
-  ['stack',['Stack',['../classprism_1_1containers_1_1_stack.html',1,'prism::containers']]],
-  ['stack',['Stack',['../classprism_1_1_stack.html',1,'prism']]],
-  ['staticasserttypeeqhelper',['StaticAssertTypeEqHelper',['../structtesting_1_1internal_1_1_static_assert_type_eq_helper.html',1,'testing::internal']]],
-  ['staticasserttypeeqhelper_3c_20t_2c_20t_20_3e',['StaticAssertTypeEqHelper&lt; T, T &gt;',['../structtesting_1_1internal_1_1_static_assert_type_eq_helper_3_01_t_00_01_t_01_4.html',1,'testing::internal']]],
-  ['string',['String',['../classtesting_1_1internal_1_1_string.html',1,'testing::internal']]],
-  ['string',['String',['../classprism_1_1_string.html',1,'prism']]],
-  ['stringdata',['StringData',['../structprism_1_1_string_data.html',1,'prism']]]
+  ['vector',['Vector',['../classprism_1_1_vector.html',1,'prism']]],
+  ['vector2',['Vector2',['../classprism_1_1_vector2.html',1,'prism']]],
+  ['vector3',['Vector3',['../classprism_1_1_vector3.html',1,'prism']]],
+  ['vector4',['Vector4',['../classprism_1_1_vector4.html',1,'prism']]],
+  ['vector_3c_20t_20_2a_20_3e',['Vector&lt; T * &gt;',['../classprism_1_1_vector.html',1,'prism']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['uint',['UInt',['../classtesting_1_1internal_1_1_type_with_size.html#a3898640d9f6c1e18110eef90f47a5d7b',1,'testing::internal::TypeWithSize::UInt()'],['../classtesting_1_1internal_1_1_type_with_size_3_014_01_4.html#a7d559570f830bf35d095eeb94d98de58',1,'testing::internal::TypeWithSize&lt; 4 &gt;::UInt()'],['../classtesting_1_1internal_1_1_type_with_size_3_018_01_4.html#a747e21c5aee8faf07ec65cd4c3d1ca62',1,'testing::internal::TypeWithSize&lt; 8 &gt;::UInt()']]],
-  ['uint32',['UInt32',['../namespacetesting_1_1internal.html#a40d4fffcd2bf56f18b1c380615aa85e3',1,'testing::internal']]],
-  ['uint64',['UInt64',['../namespacetesting_1_1internal.html#aa6a1ac454e6d7e550fa4925c62c35caa',1,'testing::internal']]]
+  ['value_5ftype',['value_type',['../structprism_1_1_allocator_traits.html#a02838686d063e89d7c497fef69592265',1,'prism::AllocatorTraits::value_type()'],['../classprism_1_1_allocator.html#a45426ee64e0aba097a532e0ef5ff5700',1,'prism::Allocator::value_type()'],['../structprism_1_1aux_1_1_deque_memory.html#a31e50c9510a485f6ca2bd0be12b9fac6',1,'prism::aux::DequeMemory::value_type()'],['../classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1',1,'prism::List::value_type()'],['../classprism_1_1_logger_allocator.html#a23e55c625e69c725c9704a1031a1b2b3',1,'prism::LoggerAllocator::value_type()'],['../classprism_1_1_string.html#a9808c1cb8dbe4ec046174c3318e577b7',1,'prism::String::value_type()'],['../classprism_1_1_vector.html#a12f8585af6daa44e7732880b3f725ee3',1,'prism::Vector::value_type()']]]
 ];
