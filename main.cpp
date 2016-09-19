@@ -86,6 +86,7 @@ int main(int argc, char * argv[]) {
 	typedef tmp::ListNode<int> 					Node;
 
 	List list;
+	cout << list << endl;
 
 
 

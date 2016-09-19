@@ -134,6 +134,12 @@ struct ListNode {
 	Node* 					next;
 	Node* 					previous;
 
+	ListNode()
+	: value(T()),
+	  next(0),
+	  previous(0)
+	{}
+
 	ListNode(const T& value)
 	: value(value),
 	  next(nullptr),
@@ -146,20 +152,39 @@ struct ListNode {
 //============================================================
 template <class T, class Node, class NodeAllocator>
 struct ListMemory {
-	typedef typename NodeAllocator::pointer 				pointer;
-	typedef typename NodeAllocator::reference				reference;
-	typedef typename NodeAllocator::const_pointer			const_pointer;
-	typedef typename NodeAllocator::const_reference			const_reference;
+	typedef typename NodeAllocator::pointer 			NodePtr;
+	typedef typename NodeAllocator::reference			reference;
+	typedef typename NodeAllocator::const_pointer		const_pointer;
+	typedef typename NodeAllocator::const_reference		const_reference;
+	typedef ListIterator<T, Node, false>				iterator;
+	typedef ListIterator<T, Node, true>					const_iterator;
 
-	NodeAllocator nodeAllocator;
+	NodeAllocator m_nodeAllocator;
 
-	pointer
+	/**
+	 *
+	 */
+	NodePtr
 	allocateNode()
-	{ return nodeAllocator.allocate(1); }
+	{ return m_nodeAllocator.allocate(1); }
 
+	/**
+	 *
+	 */
 	void
-	deallocateNode(pointer np)
-	{ nodeAllocator.deallocate(np); }
+	deallocateNode(NodePtr np)
+	{ m_nodeAllocator.deallocate(np); }
+
+	/**
+	 *
+	 */
+	void
+	destroyNodes(iterator first, iterator last) {
+		while (first != last) {
+			deallocateNode(first.np);
+			++first;
+		}
+	}
 };
 
 //============================================================
@@ -167,20 +192,26 @@ struct ListMemory {
 //============================================================
 template <class T, class Node, class NodeAllocator>
 struct ListData : public SharedData {
-	typedef ListMemory<T, Node, NodeAllocator> Memory;
+	typedef ListMemory<T, Node, NodeAllocator> 			Memory;
+	typedef typename NodeAllocator::pointer 			NodePtr;
+	typedef typename NodeAllocator::reference			reference;
+	typedef typename NodeAllocator::const_pointer		const_pointer;
+	typedef typename NodeAllocator::const_reference		const_reference;
+	typedef ListIterator<T, Node, false>				iterator;
+	typedef ListIterator<T, Node, true>					const_iterator;
 
-	Memory	storage;
-	Node * 	header;
-	Node *	tailer;
-	int 	size;
+	Memory	m_storage;
+	NodePtr m_header;
+	NodePtr	m_tailer;
+	int 	m_size;
 
 	/**
 	 *
 	 */
 	ListData()
-	: header(0),
-	  tailer(0),
-	  size(0)
+	: m_header(0),
+	  m_tailer(0),
+	  m_size(0)
 	{
 		initializeStorage();
 	}
@@ -189,31 +220,41 @@ struct ListData : public SharedData {
 	 *
 	 */
 	ListData(const ListData& copy)
-	: header(storage.allocateNode()),
-	  tailer(storage.allocateNode()),
-	  size(copy.size)
+	: m_header(0),
+	  m_tailer(0),
+	  m_size(copy.m_size)
 	{
 		initializeStorage();
-
+		// copy data from copy to this
 	}
 
 	/**
 	 *
 	 */
-	Node*
+	~ListData() {
+		iterator begin(m_header);
+		iterator end(m_tailer);
+		++end;
+		m_storage.destroyNodes(begin, end);
+	}
+
+	/**
+	 *
+	 */
+	NodePtr
 	createHeaderOrTailerNode() {
-		Node* node = storage.allocateNode();
-		storage.nodeAllocator.construct(node);
+		NodePtr node = m_storage.allocateNode();
+		m_storage.m_nodeAllocator.construct(node);
 		return node;
 	}
 
 	/**
 	 *
 	 */
-	Node*
+	NodePtr
 	createNode(const T& value=T()) {
-		Node* node = storage.allocateNode();
-		storage.nodeAllocator.construct(node, value);
+		NodePtr node = m_storage.allocateNode();
+		m_storage.m_nodeAllocator.construct(node, value);
 		return node;
 	}
 
@@ -221,12 +262,37 @@ struct ListData : public SharedData {
 	 *
 	 */
 	void
-	initializeStorage() {
-		header = createHeaderOrTailerNode();
-		tailer = createHeaderOrTailerNode();
-		header->next = tailer;
-		tailer->previous = header;
+	destroyElements(iterator first, iterator last) {
+		while (first != last) {
+			m_storage.m_nodeAllocator.destroy(&*first);
+			++first;
+		}
 	}
+
+	/**
+	 *
+	 */
+	NodeAllocator
+	getNodeAllocator() const
+	{ return m_storage.m_nodeAllocator; }
+
+	/**
+	 *
+	 */
+	void
+	initializeStorage() {
+		m_header = createHeaderOrTailerNode();
+		m_tailer = createHeaderOrTailerNode();
+		m_header->next = m_tailer;
+		m_tailer->previous = m_header;
+	}
+
+	/**
+	 *
+	 */
+	const int
+	size() const
+	{ return m_size; }
 };
 
 //============================================================
@@ -262,6 +328,26 @@ public:
 	 */
 	~List()
 	{}
+
+	/**
+	 *
+	 */
+	const int
+	size() const {
+		return d->size();
+	}
+
+	/**
+	 *
+	 */
+	friend std::ostream& operator<<(std::ostream& out, const List<T, Alloc>& list) {
+		out << "List [" << &list << "] size=" << list.size() << "\n";
+		out << "--- header node: " << list.d->m_header << "\n";
+		out << "--- tailer node: " << list.d->m_tailer << "\n";
+
+
+		return out;
+	}
 };
 
 } // end namespace tmp
