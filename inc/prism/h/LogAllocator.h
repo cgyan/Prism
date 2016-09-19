@@ -1,13 +1,13 @@
 /*
- * LoggerAllocator.h
+ * LogAllocator.h
  * v1
  *
  *  Created on: Sep 18, 2016
  *      Author: iainhemstock
  */
 
-#ifndef PRISM_LOGGERALLOCATOR_H_
-#define PRISM_LOGGERALLOCATOR_H_
+#ifndef PRISM_LOGALLOCATOR_H_
+#define PRISM_LOGALLOCATOR_H_
 
 /*! This simple class extends the Allocator class by logging each memory allocation
  * and deallocation by storing the newly allocated pointer in a Vector on allocation
@@ -22,7 +22,7 @@
 namespace prism {
 
 template <class T>
-class LoggerAllocator : public Allocator<T> {
+class LogAllocator : public Allocator<T> {
 private:
 	Vector<T*> pointers;
 public:
@@ -35,7 +35,7 @@ public:
 	typedef typename Alloc::size_type 			size_type;
 	typedef typename Alloc::difference_type 	difference_type;
 
-	~LoggerAllocator() {
+	~LogAllocator() {
 		if (pointers.size() != 0) {
 			std::cerr << "LoggerAllocator: " << pointers.size() << " pointers not freed\n";
 			for (int i=0; i<pointers.size(); i++)
@@ -44,7 +44,7 @@ public:
 	}
 
 	template <class U>
-	struct rebind { typedef LoggerAllocator<U> other; };
+	struct rebind { typedef LogAllocator<U> other; };
 	/* example usage (using an int allocator to create a String allocator):
 	 * 	typedef typename Allocator<int>::template rebind<String>::other StringAllocator;
 	 */
@@ -72,4 +72,4 @@ public:
 
 
 
-#endif /* PRISM_LOGGERALLOCATOR_H_ */
+#endif /* PRISM_LOGALLOCATOR_H_ */

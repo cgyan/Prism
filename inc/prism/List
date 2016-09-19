@@ -1,1 +1,14 @@
+/*
+ * Deque
+ * v1
+ *
+ *  Created on: Sep19, 2016
+ *      Author: iainhemstock
+ */
+
+#ifndef PRISM_LIST_
+#define PRISM_LIST_
+
 #include <prism/h/List.h>
+
+#endif // PRISM_LIST_

@@ -182,6 +182,11 @@ public:
 //================================================================================
 // DequeMemory
 //================================================================================
+/**
+ * DequeMemory handles the allocations and deallocations of the storage and buckets
+ * but doesn't construct or destruct anything. i.e. constructers and destructors
+ * are not called from this class.
+ */
 // \cond DO_NOT_DOCUMENT
 template <class T, class Alloc>
 struct DequeMemory {

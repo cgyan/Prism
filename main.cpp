@@ -50,9 +50,9 @@
 #include <prism/utilities>
 #include <prism/memory>
 #include <prism/Allocator>
-#include <prism/LoggerAllocator>
+#include <prism/LogAllocator>
 #include <prism/h/Obj.h>
-
+#include <prism/tmp/List.h>
 
 
 using namespace prism;
@@ -80,12 +80,13 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
+	typedef tmp::List<int, LogAllocator<int>> 	List;
+	typedef List::iterator	 					Iterator;
+	typedef List::const_iterator				ConstIterator;
+	typedef tmp::ListNode<int> 					Node;
 
+	List list;
 
-	Obj o(12);
-	Deque<Obj> d(5, o);
-
-	cout << d << endl;
 
 
 //	return RUN_ALL_TESTS();

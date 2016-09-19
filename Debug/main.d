@@ -61,9 +61,10 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/LoggerAllocator \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/LoggerAllocator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/LogAllocator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/tmp/List.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -189,8 +190,10 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/LoggerAllocator:
+/Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/LoggerAllocator.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/LogAllocator.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/tmp/List.h:
