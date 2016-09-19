@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classprism_1_1_out_of_bounds_exception.html":[2,0,0,18],
 "classprism_1_1_out_of_bounds_exception.html#a00b8a2c0b262a0f1be1de6daae008cb7":[2,0,0,18,0],
 "classprism_1_1_out_of_bounds_exception.html#adc3c3d79e3211e6408d1b8670bd1766a":[2,0,0,18,1],
 "classprism_1_1_overflow_exception.html":[2,0,0,19],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "classprism_1_1_shared_pointer.html#ac396e2d37f10207b0e4da099d03ef759":[2,0,0,29,19],
 "classprism_1_1_shared_pointer.html#ad0eef18b3e5c37274f22cff8b88f7d66":[2,0,0,29,7],
 "classprism_1_1_shared_pointer.html#ae1688caf7bd4dc08f775cbe830ecd6cd":[2,0,0,29,18],
-"classprism_1_1_shared_pointer.html#aecf5f8614d4c5683e6c0207436ed8900":[2,0,0,29,5]
+"classprism_1_1_shared_pointer.html#aecf5f8614d4c5683e6c0207436ed8900":[2,0,0,29,5],
+"classprism_1_1_shared_pointer.html#aef4f7418cd76f2a7b0cb20ad83e44720":[2,0,0,29,10]
 };

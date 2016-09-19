@@ -1,1 +1,25 @@
+/*
+ * Deque
+ * v1
+ *
+ *  Created on: Aug 23, 2016
+ *      Author: iainhemstock
+ */
+
+#ifndef PRISM_DEQUE_
+#define PRISM_DEQUE_
+
+#include <prism/SharedData>
+#include <prism/SharedDataPointer>
+#include <prism/utilities> // for prism::conditional
+#include <prism/algorithms>
+#include <prism/OutOfBoundsException>
+#include <prism/List>
+#include <prism/Allocator>
+#include <ostream>
+#include <cstddef> // for std::ptrdiff_t
+#include <initializer_list>
+#include <deque>
 #include <prism/h/Deque.h>
+
+#endif // _PRISM_DEQUE_

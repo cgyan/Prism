@@ -356,15 +356,13 @@ const bool \hyperlink{namespaceprism_a92e90ca54b9fa627213076f93d44ca2d}{starts\+
 \item 
 \hyperlink{classprism_1_1_list}{List}$<$ T $>$ \hyperlink{namespaceprism_a07654e91e7474a3ccdcd95bb5e57baea}{to\+List} () const 
 \item 
-std\+::deque$<$ T $>$ \hyperlink{namespaceprism_a770640a1fe99095d96e9295b225ac93d}{to\+Std\+Deque} () const 
-\item 
 reference \hyperlink{namespaceprism_ae5cdc796ecf7df67ce6377bfe9eadb7c}{operator\mbox{[}$\,$\mbox{]}} (const int i)
 \item 
 \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, T\+\_\+\+Alloc $>$ \& \hyperlink{namespaceprism_ab5a3ba3d60ef11974d02f7941fa9a263}{operator=} (const \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, T\+\_\+\+Alloc $>$ \&rhs)
 \item 
-const bool \hyperlink{namespaceprism_a47eb78b48fe05bc2087a1c5e70f4c373}{operator==} (const \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, T\+\_\+\+Alloc $>$ \&rhs)
+const bool \hyperlink{namespaceprism_a54ae8f7d8d796d783af55f13ae4de95b}{operator==} (const \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, T\+\_\+\+Alloc $>$ \&rhs) const 
 \item 
-const bool \hyperlink{namespaceprism_a7410d6cd07f48e8495d2ac7196b2e609}{operator!=} (const \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, T\+\_\+\+Alloc $>$ \&rhs)
+const bool \hyperlink{namespaceprism_a5842267ec092ff201f89eefcc9540b44}{operator!=} (const \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, T\+\_\+\+Alloc $>$ \&rhs) const 
 \item 
 \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, Alloc $>$ \hyperlink{namespaceprism_a769b9ece349795edbfeb8e33cbf276e5}{operator+} (const \hyperlink{namespaceprism_a8e77ed12f9b3a35d81935362d3050d0c}{Deque}$<$ T, Alloc $>$ \&rhs)
 \item 
@@ -1094,7 +1092,7 @@ Returns a const\+\_\+iterator that points to one position past the last element 
 )}\hypertarget{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}{}\label{namespaceprism_ad3bede9a0f2c648e93677b14c45b1b7b}
 Compares the elements in the range {\itshape }\mbox{[}first1,last1\mbox{]} with those in the range beginning at {\itshape other\+First}, and returns true if all of the elements in both ranges match. ~\newline
 \begin{DoxyNote}{Note}
-The elements being compared must support \hyperlink{namespaceprism_a47eb78b48fe05bc2087a1c5e70f4c373}{operator==()}. 
+The elements being compared must support \hyperlink{namespaceprism_a54ae8f7d8d796d783af55f13ae4de95b}{operator==()}. 
 \end{DoxyNote}
 \index{prism@{prism}!equal\+\_\+aux@{equal\+\_\+aux}}
 \index{equal\+\_\+aux@{equal\+\_\+aux}!prism@{prism}}
@@ -1107,7 +1105,7 @@ The elements being compared must support \hyperlink{namespaceprism_a47eb78b48fe0
 )}\hypertarget{namespaceprism_ac6dc9c68afaa8d8490148baf121bfc1c}{}\label{namespaceprism_ac6dc9c68afaa8d8490148baf121bfc1c}
 Compares the elements in the range {\itshape }\mbox{[}first1,last1\mbox{]} with those in the range beginning at {\itshape other\+First}, and returns true if all of the elements in both ranges match. ~\newline
 \begin{DoxyNote}{Note}
-The elements being compared must support \hyperlink{namespaceprism_a47eb78b48fe05bc2087a1c5e70f4c373}{operator==()}. 
+The elements being compared must support \hyperlink{namespaceprism_a54ae8f7d8d796d783af55f13ae4de95b}{operator==()}. 
 \end{DoxyNote}
 \index{prism@{prism}!erase@{erase}}
 \index{erase@{erase}!prism@{prism}}
@@ -1586,11 +1584,11 @@ Compares the elements of the two matrices and returns true if they don\textquote
 )}\hypertarget{namespaceprism_a5c2215edf9ab445c3c1791217d131b15}{}\label{namespaceprism_a5c2215edf9ab445c3c1791217d131b15}
 \index{prism@{prism}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator"!=(const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs)}{operator!=(const Deque< T, T_Alloc > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
+\subsubsection[{\texorpdfstring{operator"!=(const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs) const }{operator!=(const Deque< T, T_Alloc > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator!= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Deque}$<$ T, T\+\_\+\+Alloc $>$ \&}]{rhs}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a7410d6cd07f48e8495d2ac7196b2e609}{}\label{namespaceprism_a7410d6cd07f48e8495d2ac7196b2e609}
+) const}\hypertarget{namespaceprism_a5842267ec092ff201f89eefcc9540b44}{}\label{namespaceprism_a5842267ec092ff201f89eefcc9540b44}
 \index{prism@{prism}!operator\&@{operator\&}}
 \index{operator\&@{operator\&}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator\&(const Bitvector \&bv1, const Bitvector \&bv2)}{operator&(const Bitvector &bv1, const Bitvector &bv2)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bitvector} prism\+::operator\& (
@@ -2377,18 +2375,18 @@ Allows an instance of Matrx4x4 to be written to the ostream out and returns a re
 )}\hypertarget{namespaceprism_a0a166bbf645cc854542cc0fc50324670}{}\label{namespaceprism_a0a166bbf645cc854542cc0fc50324670}
 Allows an instance of \hyperlink{classprism_1_1_string}{String} to be written to the ostream and returns a reference to the ostream. \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator$<$$<$(const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs)}{operator<<(const Deque< T, T_Alloc > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Deque}$<$T, T\+\_\+\+Alloc$>$\& prism\+::operator$<$$<$ (
-\begin{DoxyParamCaption}
-\item[{const {\bf Deque}$<$ T, T\+\_\+\+Alloc $>$ \&}]{rhs}
-\end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a602c194731bf182cf114b7d297bbff51}{}\label{namespaceprism_a602c194731bf182cf114b7d297bbff51}
-\index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(const T \&value)}{operator<<(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Deque}$<$T, T\+\_\+\+Alloc$>$\& prism\+::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{const T \&}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_a40203d2e776fe0acf317a98ef08f8be7}{}\label{namespaceprism_a40203d2e776fe0acf317a98ef08f8be7}
+\index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs)}{operator<<(const Deque< T, T_Alloc > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Deque}$<$T, T\+\_\+\+Alloc$>$\& prism\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Deque}$<$ T, T\+\_\+\+Alloc $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_a602c194731bf182cf114b7d297bbff51}{}\label{namespaceprism_a602c194731bf182cf114b7d297bbff51}
 \index{prism@{prism}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&out, const Deque$<$ T, T\+\_\+\+Alloc $>$ \&d)}{operator<<(std::ostream &out, const Deque< T, T_Alloc > &d)}}]{\setlength{\rightskip}{0pt plus 5cm}friend std\+::ostream\& prism\+::operator$<$$<$ (
@@ -2566,11 +2564,11 @@ Compares the elements of the two matrices and returns true if they contain the s
 )}\hypertarget{namespaceprism_a0e7bfee93ae735b5af7e566ddd8c4f65}{}\label{namespaceprism_a0e7bfee93ae735b5af7e566ddd8c4f65}
 \index{prism@{prism}!operator==@{operator==}}
 \index{operator==@{operator==}!prism@{prism}}
-\subsubsection[{\texorpdfstring{operator==(const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs)}{operator==(const Deque< T, T_Alloc > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
+\subsubsection[{\texorpdfstring{operator==(const Deque$<$ T, T\+\_\+\+Alloc $>$ \&rhs) const }{operator==(const Deque< T, T_Alloc > &rhs) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator== (
 \begin{DoxyParamCaption}
 \item[{const {\bf Deque}$<$ T, T\+\_\+\+Alloc $>$ \&}]{rhs}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceprism_a47eb78b48fe05bc2087a1c5e70f4c373}{}\label{namespaceprism_a47eb78b48fe05bc2087a1c5e70f4c373}
+) const}\hypertarget{namespaceprism_a54ae8f7d8d796d783af55f13ae4de95b}{}\label{namespaceprism_a54ae8f7d8d796d783af55f13ae4de95b}
 \index{prism@{prism}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator$>$(const Char \&c1, const Char \&c2)}{operator>(const Char &c1, const Char &c2)}}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::operator$>$ (
@@ -3083,13 +3081,6 @@ Exchanges the values of each of the elements in the range {\itshape }\mbox{[}fir
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{namespaceprism_a07654e91e7474a3ccdcd95bb5e57baea}{}\label{namespaceprism_a07654e91e7474a3ccdcd95bb5e57baea}
-\index{prism@{prism}!to\+Std\+Deque@{to\+Std\+Deque}}
-\index{to\+Std\+Deque@{to\+Std\+Deque}!prism@{prism}}
-\subsubsection[{\texorpdfstring{to\+Std\+Deque() const }{toStdDeque() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::deque$<$T$>$ prism\+::to\+Std\+Deque (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}\hypertarget{namespaceprism_a770640a1fe99095d96e9295b225ac93d}{}\label{namespaceprism_a770640a1fe99095d96e9295b225ac93d}
 \index{prism@{prism}!uninitialized\+\_\+copy@{uninitialized\+\_\+copy}}
 \index{uninitialized\+\_\+copy@{uninitialized\+\_\+copy}!prism@{prism}}
 \subsubsection[{\texorpdfstring{uninitialized\+\_\+copy(\+Forward\+Iterator1 first, Forward\+Iterator1 last, Forward\+Iterator2 other\+First)}{uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ Forward\+Iterator2 prism\+::uninitialized\+\_\+copy (

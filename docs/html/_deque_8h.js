@@ -35,14 +35,14 @@ var _deque_8h =
     [ "last", "_deque_8h.html#abe4956c4e865f55ca126b7fb973b5078", null ],
     [ "lastIndexOf", "_deque_8h.html#af0ed081bf6c17e965bfac0d207cd6c28", null ],
     [ "mid", "_deque_8h.html#aeb39a03321ba086c660e96bfa11d33c4", null ],
-    [ "operator!=", "_deque_8h.html#a7410d6cd07f48e8495d2ac7196b2e609", null ],
+    [ "operator!=", "_deque_8h.html#a5842267ec092ff201f89eefcc9540b44", null ],
     [ "operator+", "_deque_8h.html#a769b9ece349795edbfeb8e33cbf276e5", null ],
     [ "operator+=", "_deque_8h.html#a1619579754dfe66f3fe3559f2e4495e5", null ],
     [ "operator<<", "_deque_8h.html#a40203d2e776fe0acf317a98ef08f8be7", null ],
     [ "operator<<", "_deque_8h.html#a602c194731bf182cf114b7d297bbff51", null ],
     [ "operator<<", "_deque_8h.html#a554e40f4cee7980e001683ea75b16cd9", null ],
     [ "operator=", "_deque_8h.html#ab5a3ba3d60ef11974d02f7941fa9a263", null ],
-    [ "operator==", "_deque_8h.html#a47eb78b48fe05bc2087a1c5e70f4c373", null ],
+    [ "operator==", "_deque_8h.html#a54ae8f7d8d796d783af55f13ae4de95b", null ],
     [ "operator[]", "_deque_8h.html#ae5cdc796ecf7df67ce6377bfe9eadb7c", null ],
     [ "pop_back", "_deque_8h.html#a682dc15d5493595804b4cf818b16281d", null ],
     [ "pop_front", "_deque_8h.html#a407f71f548b4930e7880b44cd695b33d", null ],
@@ -59,6 +59,5 @@ var _deque_8h =
     [ "size", "_deque_8h.html#acd3c0f96adf158a29387191d79c4d874", null ],
     [ "startsWith", "_deque_8h.html#a92e90ca54b9fa627213076f93d44ca2d", null ],
     [ "toList", "_deque_8h.html#a07654e91e7474a3ccdcd95bb5e57baea", null ],
-    [ "toStdDeque", "_deque_8h.html#a770640a1fe99095d96e9295b225ac93d", null ],
     [ "~Deque", "_deque_8h.html#a331c22c8877ca45c3f9504b1fbfb711c", null ]
 ];

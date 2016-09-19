@@ -1,7 +1,6 @@
 test/DequeTest.d: ../test/DequeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer \
@@ -20,13 +19,12 @@ test/DequeTest.d: ../test/DequeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Deque:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData:
 
@@ -65,3 +63,5 @@ test/DequeTest.d: ../test/DequeTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:

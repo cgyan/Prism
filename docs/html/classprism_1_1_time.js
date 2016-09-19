@@ -1,15 +1,17 @@
 var classprism_1_1_time =
 [
-    [ "MS_PER_SECOND", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a936aeb84b0e60cf062adb25a35cf2fda", null ],
-    [ "MS_PER_MINUTE", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a91c834280bbe9c6ce2ea438f0132ca60", null ],
-    [ "MS_PER_HOUR", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053aed67b9c928af60c5cad839b71253ad1c", null ],
-    [ "MS_PER_DAY", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053aab960bfe4c84e6bd79bd4fd5b038bffd", null ],
-    [ "SECS_PER_MINUTE", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a0e58469de7dd0d126a53b68db3e35ee0", null ],
-    [ "SECS_PER_HOUR", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a43bac766fad2dce180ae4fff8a66441f", null ],
-    [ "SECS_PER_DAY", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a73e1d097f17207730eb6935270e05c05", null ],
-    [ "MINS_PER_HOUR", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a3f4160b1bb1b56fbd23f53e614bd0bad", null ],
-    [ "MINS_PER_DAY", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a890a5f1d86e152fc8c5d3ca4b6673207", null ],
-    [ "HOURS_PER_DAY", "classprism_1_1_time.html#a4f8bc7cc739ace83cbe9d7aff667d053a2321329da5265ab087381f8c0483403e", null ],
+    [ "Periods", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1", [
+      [ "MS_PER_SECOND", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a936aeb84b0e60cf062adb25a35cf2fda", null ],
+      [ "MS_PER_MINUTE", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a91c834280bbe9c6ce2ea438f0132ca60", null ],
+      [ "MS_PER_HOUR", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1aed67b9c928af60c5cad839b71253ad1c", null ],
+      [ "MS_PER_DAY", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1aab960bfe4c84e6bd79bd4fd5b038bffd", null ],
+      [ "SECS_PER_MINUTE", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a0e58469de7dd0d126a53b68db3e35ee0", null ],
+      [ "SECS_PER_HOUR", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a43bac766fad2dce180ae4fff8a66441f", null ],
+      [ "SECS_PER_DAY", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a73e1d097f17207730eb6935270e05c05", null ],
+      [ "MINS_PER_HOUR", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a3f4160b1bb1b56fbd23f53e614bd0bad", null ],
+      [ "MINS_PER_DAY", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a890a5f1d86e152fc8c5d3ca4b6673207", null ],
+      [ "HOURS_PER_DAY", "classprism_1_1_time.html#abad93f9bcf24f92363779ceea634fba1a2321329da5265ab087381f8c0483403e", null ]
+    ] ],
     [ "Time", "classprism_1_1_time.html#a9cb33724bd39863cec83613c089d6f12", null ],
     [ "Time", "classprism_1_1_time.html#acdee4966daaf75f9b735744881481372", null ],
     [ "~Time", "classprism_1_1_time.html#a07e1c6bf7205b4451ac717a833b65968", null ],

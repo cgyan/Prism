@@ -18,7 +18,7 @@ var searchData=
   ['allocator_5ftype',['allocator_type',['../structprism_1_1_allocator_traits.html#a6d687c073652db923f1808e67f550fcd',1,'prism::AllocatorTraits']]],
   ['allocatortraits',['AllocatorTraits',['../structprism_1_1_allocator_traits.html',1,'prism']]],
   ['angle',['angle',['../classprism_1_1_circle.html#ad4b91cf13b593a67abf9782db3fec5d9',1,'prism::Circle::angle(const float x, const float y) const '],['../classprism_1_1_circle.html#aeee2c0f59b94feb4dd3535950157d614',1,'prism::Circle::angle(const Pointf &amp;position) const ']]],
-  ['anglemode',['AngleMode',['../classprism_1_1_circle.html#a74c7c532b4eb120b9227b7fabeffe6ac',1,'prism::Circle::AngleMode()'],['../classprism_1_1_circle.html#a0aa261d16ff55088e5695820fa95e09b',1,'prism::Circle::angleMode() const ']]],
+  ['anglemode',['angleMode',['../classprism_1_1_circle.html#a0aa261d16ff55088e5695820fa95e09b',1,'prism::Circle::angleMode() const '],['../classprism_1_1_circle.html#a74c7c532b4eb120b9227b7fabeffe6ac',1,'prism::Circle::AngleMode()']]],
   ['any',['any',['../classprism_1_1_bitvector.html#ad055160febd837c0c7b5586821c383f0',1,'prism::Bitvector']]],
   ['any_5fof',['any_of',['../namespaceprism.html#a5d0e3ddb9f698759635572f1220ec0ca',1,'prism']]],
   ['any_5fof_5faux',['any_of_aux',['../namespaceprism.html#aae3105c7afbb375201f4691b7ea966b4',1,'prism']]],

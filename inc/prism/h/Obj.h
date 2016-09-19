@@ -45,7 +45,7 @@ public:
 		if (p) delete p;
 	}
 
-	friend ostream& operator<<(ostream& out, const Obj& o) {
+	friend std::ostream& operator<<(std::ostream& out, const Obj& o) {
 //		out << "Obj[" << &o << "] o.p:" << o.p << " ";
 		if (o.p) out << " *p:" << *(o.p);
 		else out << " p:0";

@@ -16,7 +16,6 @@ var searchData=
   ['topleft',['topLeft',['../classprism_1_1_rect.html#a2900a6e837124886d2e6aa500fba5bde',1,'prism::Rect']]],
   ['topoint',['toPoint',['../classprism_1_1_vector2.html#a8865c6f53a7d20f078db0105f9eedcf1',1,'prism::Vector2::toPoint()'],['../classprism_1_1_vector3.html#adad7647133bf35b64789b0418f2d1c67',1,'prism::Vector3::toPoint()'],['../classprism_1_1_vector4.html#a8df7c9df36666029ea8ec11bc60ac770',1,'prism::Vector4::toPoint()']]],
   ['topright',['topRight',['../classprism_1_1_rect.html#a0a5e7ccdaeb397649e1e9331110a7343',1,'prism::Rect']]],
-  ['tostddeque',['toStdDeque',['../namespaceprism.html#a770640a1fe99095d96e9295b225ac93d',1,'prism']]],
   ['tostdforwardlist',['toStdForwardList',['../classprism_1_1_list.html#ab628c77e4598e1055a8b832367a31997',1,'prism::List']]],
   ['tostdstring',['toStdString',['../classprism_1_1_string.html#ad1018741610a6723a38ab52255147ac4',1,'prism::String']]],
   ['tostdvector',['toStdVector',['../classprism_1_1_vector.html#ae84be49ceac4011b35dd81218324b7df',1,'prism::Vector']]],

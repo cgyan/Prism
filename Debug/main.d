@@ -54,11 +54,11 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pair \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/LoggerAllocator \
@@ -175,8 +175,6 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Deque:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:
-
 /Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
@@ -184,6 +182,8 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/memory:
 

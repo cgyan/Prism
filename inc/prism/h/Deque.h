@@ -7,7 +7,6 @@
  */
 
 /*TODO
- *  Add copy-on-write support
 	Functions to add:
 		static Deque<T, Alloc> fromList(const List<T>& list);
 		void squeeze();
@@ -16,22 +15,9 @@
 #ifndef PRISM_DEQUE_H_
 #define PRISM_DEQUE_H_
 
-#include <prism/SharedData>
-#include <prism/SharedDataPointer>
-#include <prism/utilities> // for prism::conditional
-#include <prism/algorithms>
-#include <prism/OutOfBoundsException>
-#include <prism/List>
-#include <prism/Allocator>
-#include <ostream>
-#include <cstddef> // for std::ptrdiff_t
-#include <initializer_list>
-#include <deque>
-using namespace std;
-
 namespace prism {
 
-static const int prism_deque_bucket_size = 10;
+static const int prism_deque_bucket_size = 20;
 //================================================================================
 // DequeIterator
 //================================================================================
@@ -1372,9 +1358,9 @@ public:
 		out << "Deque [" << &d << "]\n"
 				"----size:           " << d.size() << "\n" <<
 				"----capacity:       " << d.capacity() << "\n" <<
-				"----numBuckets:     " << d.d->storage.numBuckets() << endl;
-		out << "----storage.start:  [" << d.d->storage.start << "]" << endl;
-		out << "----storage.finish: [" << d.d->storage.finish << "]" << endl;
+				"----numBuckets:     " << d.d->storage.numBuckets() << std::endl;
+		out << "----storage.start:  [" << d.d->storage.start << "]" << std::endl;
+		out << "----storage.finish: [" << d.d->storage.finish << "]" << std::endl;
 		out << "----begin:\n" <<
 			   "      [buckets address: " << d.d->begin.buckets << "]\n" <<
 			   "      [buckets index: " << d.d->begin.buckets-d.d->storage.start << "] \n" <<
@@ -1394,15 +1380,17 @@ public:
 
 		for (int i=0; i<d.capacity(); i++) {
 			if (i % prism_deque_bucket_size == 0) {
-				cout << "---------------------------------" << endl;
-				cout << "Bucket " << (cit.buckets-d.d->storage.start) << ": " << cit.buckets << endl;
-				cout << "---------------------------------" << endl;
+				out << "---------------------------------" << std::endl;
+				out << "Bucket " << (cit.buckets-d.d->storage.start) << ": \n" <<
+						"--- storage address: " << cit.buckets << "\n" <<
+						"--- bucket address:  " << *cit.buckets << std::endl;
+				out << "---------------------------------" << std::endl;
 			}
 
 			if (i < startIndex || i >= startIndex+d.size())
-				out << "[-] *" << endl;
+				out << "[-] *" << std::endl;
 			else
-				out << "[" << (cit-d.cbegin()) << "] " << *cit++ << endl;
+				out << "[" << (cit-d.cbegin()) << "] " << *cit++ << std::endl;
 		}
 
 		return out;
