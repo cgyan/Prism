@@ -37,10 +37,12 @@ public:
 
 	~LogAllocator() {
 		if (pointers.size() != 0) {
-			std::cerr << "LoggerAllocator: " << pointers.size() << " pointers not freed\n";
+			std::cerr << "LogAllocator Report: " << pointers.size() << " pointers not freed\n";
 			for (int i=0; i<pointers.size(); i++)
 				std::cerr << "[" << i+1 << "] " << pointers.at(i) << "\n";
 		}
+		else
+			std::cerr << "LogAllocator Report: all memory freed successfully!" << std::endl;
 	}
 
 	template <class U>

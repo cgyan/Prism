@@ -80,13 +80,22 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	typedef tmp::List<int, LogAllocator<int>> 	List;
-	typedef List::iterator	 					Iterator;
-	typedef List::const_iterator				ConstIterator;
-	typedef tmp::ListNode<int> 					Node;
+	typedef tmp::List<int, LogAllocator<int>> 	IntList;
+	typedef tmp::List<Obj, LogAllocator<Obj>> 	ObjList;
 
-	List list;
+	IntList list({1,2,3,4,5,6,7,8,9});
+	IntList::iterator bit = list.begin();
+	IntList::iterator eit = list.begin();
+	bit++;
+	eit++;
+	eit++;
+	eit++;
+	eit++;
+	IntList::iterator it = list.erase(bit);
+	cout << *it << endl;
+
 	cout << list << endl;
+	cout << "!" << endl;
 
 
 

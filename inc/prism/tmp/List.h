@@ -12,36 +12,68 @@
 #include <prism/SharedData>
 #include <prism/SharedDataPointer>
 #include <prism/Allocator>
+#include <prism/algorithms>
 #include <prism/utilities> // for prism::conditional_type
-#include <ostream>
 #include <cstddef> // for std::ptrdiff_t
+#include <ostream>
+
+#include <initializer_list>
 using namespace std;
 
 namespace prism {
 namespace tmp {
 
 //============================================================
+// ListNode
+//============================================================
+template <class T>
+struct ListNode {
+	typedef ListNode<T> 	Node;
+	T 						value;
+	Node* 					next;
+	Node* 					previous;
+
+	ListNode()
+	: value(),
+	  next(0),
+	  previous(0)
+	{}
+
+	ListNode(const T& value)
+	: value(value),
+	  next(nullptr),
+	  previous(nullptr)
+	{}
+
+	friend std::ostream& operator<<(std::ostream& out, ListNode<T>& node) {
+		out << "ListNode [" << &node;
+		return out;
+	}
+};
+
+//============================================================
 // ListIterator
 //============================================================
-template <class T, class Node, bool isConst=true>
+template <class T, bool isConst>
 struct ListIterator {
-
 	typedef T 								value_type;
 	typedef std::ptrdiff_t 					difference_type;
 	typedef bidirectional_iterator_tag 		iterator_category;
-	typedef ListIterator<T, Node, false> 	iterator;
-	typedef ListIterator<T, Node, true> 	const_iterator;
+	typedef ListNode<T>*					NodePtr;
+	typedef ListIterator<T, false> 			iterator;
+	typedef ListIterator<T, true> 			const_iterator;
+
 	typedef typename prism::conditional_type<isConst, const T*, T*>::type pointer;
 	typedef typename prism::conditional_type<isConst, const T&, T&>::type reference;
 	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type Self;
 
-	Node* np;
+	NodePtr np;
 
 	ListIterator()
 	: np(nullptr)
 	{}
 
-	ListIterator(Node* np)
+	ListIterator(NodePtr np)
 	: np(np)
 	{}
 
@@ -69,7 +101,7 @@ struct ListIterator {
 
 	Self
 	operator++(int junk) {
-		Node* tmp = np;
+		NodePtr tmp = np;
 		np = np->next;
 		return tmp;
 	}
@@ -82,7 +114,7 @@ struct ListIterator {
 
 	Self
 	operator--(int junk) {
-		Node* tmp = np;
+		NodePtr tmp = np;
 		np = np->previous;
 		return tmp;
 	}
@@ -123,43 +155,14 @@ struct ListIterator {
 	{ return this->np >= rhs.np; }
 };
 
-
-//============================================================
-// ListNode
-//============================================================
-template <class T>
-struct ListNode {
-	typedef ListNode<T> 	Node;
-	T 						value;
-	Node* 					next;
-	Node* 					previous;
-
-	ListNode()
-	: value(T()),
-	  next(0),
-	  previous(0)
-	{}
-
-	ListNode(const T& value)
-	: value(value),
-	  next(nullptr),
-	  previous(nullptr)
-	{}
-};
-
 //============================================================
 // ListMemory
 //============================================================
-template <class T, class Node, class NodeAllocator>
+template <class NodeAllocator>
 struct ListMemory {
-	typedef typename NodeAllocator::pointer 			NodePtr;
-	typedef typename NodeAllocator::reference			reference;
-	typedef typename NodeAllocator::const_pointer		const_pointer;
-	typedef typename NodeAllocator::const_reference		const_reference;
-	typedef ListIterator<T, Node, false>				iterator;
-	typedef ListIterator<T, Node, true>					const_iterator;
+	typedef typename NodeAllocator::pointer 					NodePtr;
 
-	NodeAllocator m_nodeAllocator;
+	NodeAllocator 												m_nodeAllocator;
 
 	/**
 	 *
@@ -179,10 +182,15 @@ struct ListMemory {
 	 *
 	 */
 	void
-	destroyNodes(iterator first, iterator last) {
-		while (first != last) {
-			deallocateNode(first.np);
-			++first;
+	destroyNodes(NodePtr first, NodePtr last) {
+
+		NodePtr currentNode = first;
+
+		while (currentNode != last) {
+			NodePtr thisNode = currentNode;
+			NodePtr nextNode = thisNode->next;
+			deallocateNode(thisNode);
+			currentNode = nextNode;
 		}
 	}
 };
@@ -190,30 +198,69 @@ struct ListMemory {
 //============================================================
 // ListData
 //============================================================
-template <class T, class Node, class NodeAllocator>
+//template <class T, class Node, class NodeAllocator>
+template <class T, class NodeAllocator>
 struct ListData : public SharedData {
-	typedef ListMemory<T, Node, NodeAllocator> 			Memory;
-	typedef typename NodeAllocator::pointer 			NodePtr;
-	typedef typename NodeAllocator::reference			reference;
-	typedef typename NodeAllocator::const_pointer		const_pointer;
-	typedef typename NodeAllocator::const_reference		const_reference;
-	typedef ListIterator<T, Node, false>				iterator;
-	typedef ListIterator<T, Node, true>					const_iterator;
+//	typedef typename TAllocator::value_type								T;
 
-	Memory	m_storage;
-	NodePtr m_header;
-	NodePtr	m_tailer;
-	int 	m_size;
+	typedef ListMemory<NodeAllocator> 									Memory;
+	typedef typename Memory::NodePtr		 							NodePtr;
+
+	Memory		m_storage;
+	NodePtr 	m_header;
+	NodePtr		m_tailer;
+	int 		m_size;
+
+	/**
+	 * Creates an empty list with the header and tailer nodes
+	 */
+	ListData()
+	: m_storage(),
+	  m_header(nullptr),
+	  m_tailer(nullptr),
+	  m_size(0)
+	{ initializeStorage(); }
 
 	/**
 	 *
 	 */
-	ListData()
-	: m_header(0),
-	  m_tailer(0),
+	ListData(const int numElements, const T& value)
+	: m_storage(),
+	  m_header(nullptr),
+	  m_tailer(nullptr),
 	  m_size(0)
 	{
 		initializeStorage();
+		fillInitialize(numElements, value);
+	}
+
+	/**
+	 *
+	 */
+	template <class ForwardIterator>
+	ListData(ForwardIterator first, ForwardIterator last)
+	: m_storage(),
+	  m_header(nullptr),
+	  m_tailer(nullptr),
+	  m_size(0)
+	{
+		cout << "ListData::ListData(iterator, iterator)" << endl;
+		initializeStorage();
+		rangeInsert(m_header, first, last);
+	}
+
+	/**
+	 *
+	 */
+	ListData(const std::initializer_list<T>& il)
+	: m_storage(),
+	  m_header(nullptr),
+	  m_tailer(nullptr),
+	  m_size(0)
+	{
+		cout << "ListData::ListData(initializer_list)" << endl;
+		initializeStorage();
+		rangeInsert(m_header, il.begin(), il.end());
 	}
 
 	/**
@@ -225,21 +272,59 @@ struct ListData : public SharedData {
 	  m_size(copy.m_size)
 	{
 		initializeStorage();
-		// copy data from copy to this
+		rangeInsert(m_header, copy.begin(), copy.end());
 	}
 
 	/**
 	 *
 	 */
 	~ListData() {
-		iterator begin(m_header);
-		iterator end(m_tailer);
-		++end;
-		m_storage.destroyNodes(begin, end);
+		m_storage.m_nodeAllocator.destroy(m_header);
+		m_storage.m_nodeAllocator.destroy(m_tailer);
+
+		m_storage.destroyNodes(m_header, m_tailer);
+		m_storage.deallocateNode(m_tailer);
 	}
 
 	/**
 	 *
+	 */
+	template <class InputIterator>
+	void
+	appendList(InputIterator first, InputIterator last) {
+		rangeInsert(m_tailer->previous, first, last);
+	}
+
+	/**
+	 *
+	 */
+	void
+	appendValue(const T& value) {
+		NodePtr newNode = m_storage.allocateNode();
+		m_storage.m_nodeAllocator.construct(newNode, value);
+		insertNode(m_tailer->previous, newNode);
+	}
+
+	/**
+	 *
+	 */
+	NodePtr
+	begin() const
+	{ return m_header->next; }
+
+	/**
+	 *
+	 */
+	void
+	clear() {
+		m_storage.destroyNodes(m_header->next, m_tailer);
+		m_header->next = m_tailer;
+		m_tailer->previous = m_header;
+		m_size = 0;
+	}
+
+	/**
+	 * Allocates and constructs a node without assigning it a value.
 	 */
 	NodePtr
 	createHeaderOrTailerNode() {
@@ -252,32 +337,36 @@ struct ListData : public SharedData {
 	 *
 	 */
 	NodePtr
-	createNode(const T& value=T()) {
-		NodePtr node = m_storage.allocateNode();
-		m_storage.m_nodeAllocator.construct(node, value);
-		return node;
-	}
+	end() const
+	{ return m_tailer; }
 
 	/**
-	 *
+	 * Called by ListData(numElements, value) constructor.
+	 * The list is empty, only the header and tailer nodes exist.
 	 */
 	void
-	destroyElements(iterator first, iterator last) {
-		while (first != last) {
-			m_storage.m_nodeAllocator.destroy(&*first);
-			++first;
+	fillInitialize(const int numElements, const T& value) {
+		NodePtr currentNode = m_header;
+
+		for (int i=0; i<numElements; i++) {
+			NodePtr newNode = m_storage.allocateNode();
+			m_storage.m_nodeAllocator.construct(newNode, value);
+			insertNode(currentNode, newNode);
+			currentNode = newNode;
 		}
 	}
 
 	/**
 	 *
 	 */
-	NodeAllocator
-	getNodeAllocator() const
-	{ return m_storage.m_nodeAllocator; }
+//	NodeAllocator
+//	getNodeAllocator() const
+//	{ return m_storage.getNodeAllocator(); }
 
 	/**
-	 *
+	 * Creates the header and tailer nodes and links them together.
+	 * Also sets the begin and end iterators to the header and
+	 * tailer nodes respectively.
 	 */
 	void
 	initializeStorage() {
@@ -285,6 +374,58 @@ struct ListData : public SharedData {
 		m_tailer = createHeaderOrTailerNode();
 		m_header->next = m_tailer;
 		m_tailer->previous = m_header;
+	}
+
+	/**
+	 * Inserts \em newNode after \em pos.
+	 */
+	void
+	insertNode(NodePtr pos, NodePtr newNode) {
+		newNode->previous = pos;
+		newNode->next = pos->next;
+		pos->next = newNode;
+		newNode->next->previous = newNode;
+		++m_size;
+	}
+
+	/**
+	 * Erases all nodes in the range [first,last] but not including last.
+	 * Returns the node that follows the last erased node (could be m_tailer).
+	 */
+	NodePtr
+	rangeErase(NodePtr first, NodePtr last) {
+		NodePtr nodeToErase = first;
+
+		while (nodeToErase != last) {
+			NodePtr nextNode = nodeToErase->next;
+			NodePtr previousNode = nodeToErase->previous;
+
+			previousNode->next = nextNode;
+			nextNode->previous = previousNode;
+
+			m_storage.deallocateNode(nodeToErase);
+			nodeToErase = nextNode;
+			--m_size;
+		}
+		return last;
+	}
+
+	/**
+	 * Inserts the elements from the range [first,last] in this List
+	 * starting at the position after \em pos.
+	 */
+	template <class ForwardIterator>
+	void
+	rangeInsert(NodePtr pos, ForwardIterator first, ForwardIterator last) {
+		NodePtr currentNode = pos;
+
+		while (first != last) {
+			NodePtr newNode = m_storage.allocateNode();
+			m_storage.m_nodeAllocator.construct(newNode, *first);
+			insertNode(currentNode, newNode);
+			++first;
+			currentNode = newNode;
+		}
 	}
 
 	/**
@@ -298,14 +439,14 @@ struct ListData : public SharedData {
 //============================================================
 // List
 //============================================================
-template <class T, class Alloc = prism::Allocator<T>>
+template <class T, class TAllocator = prism::Allocator<T>>
 class List {
 public:
-	typedef ListNode<T>										Node;
-	typedef typename Alloc::template rebind<Node>::other 	NodeAllocator;
-	typedef ListData<T, Node, NodeAllocator>				Data;
-	typedef ListIterator<T, Node,false> 					iterator;
-	typedef ListIterator<T, Node, true> 					const_iterator;
+	typedef typename TAllocator::template rebind<ListNode<T>>::other 	NodeAllocator;
+	typedef ListData<T, NodeAllocator>									Data;
+	typedef typename ListIterator<T,false>::iterator					iterator;
+	typedef typename ListIterator<T,true>::const_iterator				const_iterator;
+
 private:
 	SharedDataPointer<Data> d;
 public:
@@ -314,6 +455,28 @@ public:
 	 */
 	List()
 	: d(new Data)
+	{}
+
+	/**
+	 *
+	 */
+	List(const int numElements, const T& value=T())
+	: d(new Data(numElements, value))
+	{}
+
+	/**
+	 *
+	 */
+	template <class InputIterator>
+	List(InputIterator first, InputIterator last)
+	: d(new Data(first, last))
+	{}
+
+	/**
+	 *
+	 */
+	List(const std::initializer_list<T>& il)
+	: d(new Data(il))
 	{}
 
 	/**
@@ -332,19 +495,221 @@ public:
 	/**
 	 *
 	 */
+	void
+	append(const T& value)
+	{ d->appendValue(value); }
+
+	/**
+	 *
+	 */
+	void
+	append(const List& list)
+	{ d->appendList(list.begin(), list.end()); }
+
+	/**
+	 *
+	 */
+	T&
+	back()
+	{ return *(--end()); }
+
+	/**
+	 *
+	 */
+	const T&
+	back() const
+	{ return *(--end()); }
+
+	/**
+	 *
+	 */
+	iterator
+	begin()
+	{ return d->begin(); }
+
+	/**
+	 *
+	 */
+	iterator
+	begin() const
+	{ return d->begin(); }
+
+	/**
+	 *
+	 */
+	const_iterator
+	cbegin() const
+	{ return d->begin(); }
+
+	/**
+	 *
+	 */
+	iterator
+	cend() const
+	{ return d->end(); }
+
+	/**
+	 *
+	 */
+	void
+	clear()
+	{ d->clear(); }
+
+	/**
+	 *
+	 */
+	const_iterator
+	constBegin() const
+	{ return d->begin(); }
+
+	/**
+	 *
+	 */
+	iterator
+	constEnd() const
+	{ return d->end(); }
+
+	/**
+	 *
+	 */
+	const bool
+	contains(const T& value) const
+	{ return prism::count(this->begin(), this->end(), value); }
+
+	/**
+	 *
+	 */
 	const int
-	size() const {
-		return d->size();
+	count(const T& value) const
+	{ return prism::count(this->begin(), this->end(), value); }
+
+	/**
+	 *
+	 */
+	const bool
+	empty()
+	{ return d->size() == 0; }
+
+	/**
+	 *
+	 */
+	iterator
+	end()
+	{ return d->end(); }
+
+	/**
+	 *
+	 */
+	iterator
+	end() const
+	{ return d->end(); }
+
+	/**
+	 *
+	 */
+	const bool
+	endsWith(const T& value) const
+	{ return back() == value; }
+
+	/**
+	 *
+	 */
+	iterator
+	erase(iterator pos)
+	{ return d->rangeErase(pos.np, pos.np->next); }
+
+	/**
+	 *
+	 */
+	iterator
+	erase(iterator first, iterator last)
+	{ return d->rangeErase(first.np, last.np); }
+
+	/**
+	 *
+	 */
+	T&
+	first()
+	{ return *begin(); }
+
+	/**
+	 *
+	 */
+	const T&
+	first() const
+	{ return *begin(); }
+
+	/**
+	 *
+	 */
+	T&
+	front()
+	{ return *begin(); }
+
+	/**
+	 *
+	 */
+	const T&
+	front() const
+	{ return *begin(); }
+
+	/**
+	 *
+	 */
+	T&
+	last()
+	{ return *(--end()); }
+
+	/**
+	 *
+	 */
+	const T&
+	last() const
+	{ return *(--end()); }
+
+	/**
+	 *
+	 */
+	const int
+	size() const
+	{ return d->size(); }
+
+	/**
+	 *
+	 */
+	const bool
+	startsWith(const T& value)
+	{ return first() == value; }
+
+	/**
+	 *
+	 */
+	List<T,TAllocator>&
+	operator<<(const T& value) {
+		d->appendValue(value);
+		return *this;
 	}
 
 	/**
 	 *
 	 */
-	friend std::ostream& operator<<(std::ostream& out, const List<T, Alloc>& list) {
+	List<T,TAllocator>&
+	operator<<(const List<T,TAllocator>& other) {
+		d->appendList(other.begin(), other.end());
+		return *this;
+	}
+
+	/**
+	 *
+	 */
+	friend std::ostream& operator<<(std::ostream& out, const List<T, TAllocator>& list) {
 		out << "List [" << &list << "] size=" << list.size() << "\n";
 		out << "--- header node: " << list.d->m_header << "\n";
 		out << "--- tailer node: " << list.d->m_tailer << "\n";
 
+		int i = 0;
+		for (List<T, TAllocator>::const_iterator it = list.cbegin(); it != list.cend(); it++)
+			out << "--- [" << i++ << "] " << *it << endl;
 
 		return out;
 	}
