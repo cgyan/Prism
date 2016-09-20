@@ -16,6 +16,7 @@
 #include <prism/utilities> // for prism::conditional_type
 #include <cstddef> // for std::ptrdiff_t
 #include <ostream>
+#include <utility> // for std::forward
 
 #include <initializer_list>
 using namespace std;
@@ -209,7 +210,7 @@ struct ListData : public SharedData {
 	Memory		m_storage;
 	NodePtr 	m_header;
 	NodePtr		m_tailer;
-	int 		m_size;
+	int 		m_nodeCount;
 
 	/**
 	 * Creates an empty list with the header and tailer nodes
@@ -218,7 +219,7 @@ struct ListData : public SharedData {
 	: m_storage(),
 	  m_header(nullptr),
 	  m_tailer(nullptr),
-	  m_size(0)
+	  m_nodeCount(0)
 	{ initializeStorage(); }
 
 	/**
@@ -228,10 +229,11 @@ struct ListData : public SharedData {
 	: m_storage(),
 	  m_header(nullptr),
 	  m_tailer(nullptr),
-	  m_size(0)
+	  m_nodeCount(0)
 	{
 		initializeStorage();
-		fillInitialize(numElements, value);
+		initializeFill(numElements, value);
+		increaseNodeCount(numElements);
 	}
 
 	/**
@@ -242,11 +244,11 @@ struct ListData : public SharedData {
 	: m_storage(),
 	  m_header(nullptr),
 	  m_tailer(nullptr),
-	  m_size(0)
+	  m_nodeCount(0)
 	{
-		cout << "ListData::ListData(iterator, iterator)" << endl;
 		initializeStorage();
 		rangeInsert(m_header, first, last);
+		increaseNodeCount(last-first);
 	}
 
 	/**
@@ -256,11 +258,11 @@ struct ListData : public SharedData {
 	: m_storage(),
 	  m_header(nullptr),
 	  m_tailer(nullptr),
-	  m_size(0)
+	  m_nodeCount(0)
 	{
-		cout << "ListData::ListData(initializer_list)" << endl;
 		initializeStorage();
 		rangeInsert(m_header, il.begin(), il.end());
+		increaseNodeCount(il.end()-il.begin());
 	}
 
 	/**
@@ -269,10 +271,11 @@ struct ListData : public SharedData {
 	ListData(const ListData& copy)
 	: m_header(0),
 	  m_tailer(0),
-	  m_size(copy.m_size)
+	  m_nodeCount(copy.m_nodeCount)
 	{
 		initializeStorage();
 		rangeInsert(m_header, copy.begin(), copy.end());
+		increaseNodeCount(copy.nodeCount());
 	}
 
 	/**
@@ -289,20 +292,11 @@ struct ListData : public SharedData {
 	/**
 	 *
 	 */
-	template <class InputIterator>
-	void
-	appendList(InputIterator first, InputIterator last) {
-		rangeInsert(m_tailer->previous, first, last);
-	}
-
-	/**
-	 *
-	 */
 	void
 	appendValue(const T& value) {
-		NodePtr newNode = m_storage.allocateNode();
-		m_storage.m_nodeAllocator.construct(newNode, value);
+		NodePtr newNode = createNode(value);
 		insertNode(m_tailer->previous, newNode);
+		increaseNodeCount(1);
 	}
 
 	/**
@@ -320,18 +314,26 @@ struct ListData : public SharedData {
 		m_storage.destroyNodes(m_header->next, m_tailer);
 		m_header->next = m_tailer;
 		m_tailer->previous = m_header;
-		m_size = 0;
+		setNodeCount(0);
 	}
 
 	/**
-	 * Allocates and constructs a node without assigning it a value.
+	 *
 	 */
+	template <typename ...Args>
 	NodePtr
-	createHeaderOrTailerNode() {
-		NodePtr node = m_storage.allocateNode();
-		m_storage.m_nodeAllocator.construct(node);
-		return node;
+	createNode(Args&&... args) {
+		NodePtr newNode = m_storage.allocateNode();
+		m_storage.m_nodeAllocator.construct(newNode, std::forward<Args>(args)...);
+		return newNode;
 	}
+
+	/**
+	 *
+	 */
+	void
+	decreaseNodeCount(const int amount)
+	{ m_nodeCount -= amount; }
 
 	/**
 	 *
@@ -341,20 +343,11 @@ struct ListData : public SharedData {
 	{ return m_tailer; }
 
 	/**
-	 * Called by ListData(numElements, value) constructor.
-	 * The list is empty, only the header and tailer nodes exist.
+	 *
 	 */
 	void
-	fillInitialize(const int numElements, const T& value) {
-		NodePtr currentNode = m_header;
-
-		for (int i=0; i<numElements; i++) {
-			NodePtr newNode = m_storage.allocateNode();
-			m_storage.m_nodeAllocator.construct(newNode, value);
-			insertNode(currentNode, newNode);
-			currentNode = newNode;
-		}
-	}
+	increaseNodeCount(const int amount)
+	{ m_nodeCount += amount; }
 
 	/**
 	 *
@@ -364,20 +357,35 @@ struct ListData : public SharedData {
 //	{ return m_storage.getNodeAllocator(); }
 
 	/**
+	 * Called by ListData(numElements, value) constructor.
+	 * The list is empty, only the header and tailer nodes exist.
+	 */
+	void
+	initializeFill(const int numElements, const T& value) {
+		NodePtr currentNode = m_header;
+
+		for (int i=0; i<numElements; i++) {
+			NodePtr newNode = createNode(value);
+			insertNode(currentNode, newNode);
+			currentNode = newNode;
+		}
+	}
+
+	/**
 	 * Creates the header and tailer nodes and links them together.
-	 * Also sets the begin and end iterators to the header and
-	 * tailer nodes respectively.
 	 */
 	void
 	initializeStorage() {
-		m_header = createHeaderOrTailerNode();
-		m_tailer = createHeaderOrTailerNode();
+		m_header = createNode();
+		m_tailer = createNode();
 		m_header->next = m_tailer;
 		m_tailer->previous = m_header;
+		setNodeCount(0);
 	}
 
 	/**
 	 * Inserts \em newNode after \em pos.
+	 * Hooks the new node up in the middle of the previous and the next node.
 	 */
 	void
 	insertNode(NodePtr pos, NodePtr newNode) {
@@ -385,7 +393,23 @@ struct ListData : public SharedData {
 		newNode->next = pos->next;
 		pos->next = newNode;
 		newNode->next->previous = newNode;
-		++m_size;
+	}
+
+	/**
+	 *
+	 */
+	const int
+	nodeCount() const
+	{ return m_nodeCount; }
+
+	/**
+	 *
+	 */
+	template <class InputIterator>
+	void
+	rangeAppend(InputIterator first, InputIterator last) {
+		rangeInsert(m_tailer->previous, first, last);
+		increaseNodeCount(last-first);
 	}
 
 	/**
@@ -395,6 +419,7 @@ struct ListData : public SharedData {
 	NodePtr
 	rangeErase(NodePtr first, NodePtr last) {
 		NodePtr nodeToErase = first;
+		int numErasedNodes = 0;
 
 		while (nodeToErase != last) {
 			NodePtr nextNode = nodeToErase->next;
@@ -405,8 +430,10 @@ struct ListData : public SharedData {
 
 			m_storage.deallocateNode(nodeToErase);
 			nodeToErase = nextNode;
-			--m_size;
+			numErasedNodes++;
 		}
+
+		decreaseNodeCount(numErasedNodes);
 		return last;
 	}
 
@@ -420,8 +447,7 @@ struct ListData : public SharedData {
 		NodePtr currentNode = pos;
 
 		while (first != last) {
-			NodePtr newNode = m_storage.allocateNode();
-			m_storage.m_nodeAllocator.construct(newNode, *first);
+			NodePtr newNode = createNode(*first);
 			insertNode(currentNode, newNode);
 			++first;
 			currentNode = newNode;
@@ -431,9 +457,9 @@ struct ListData : public SharedData {
 	/**
 	 *
 	 */
-	const int
-	size() const
-	{ return m_size; }
+	void
+	setNodeCount(const int size)
+	{ m_nodeCount = size; }
 };
 
 //============================================================
@@ -441,11 +467,20 @@ struct ListData : public SharedData {
 //============================================================
 template <class T, class TAllocator = prism::Allocator<T>>
 class List {
-public:
+private:
 	typedef typename TAllocator::template rebind<ListNode<T>>::other 	NodeAllocator;
 	typedef ListData<T, NodeAllocator>									Data;
+public:
 	typedef typename ListIterator<T,false>::iterator					iterator;
 	typedef typename ListIterator<T,true>::const_iterator				const_iterator;
+	typedef typename TAllocator::value_type								value_type;
+	typedef typename TAllocator::pointer								pointer;
+	typedef typename TAllocator::reference								reference;
+	typedef typename const_iterator::pointer							const_pointer;
+	typedef typename const_iterator::reference							const_reference;
+	typedef typename TAllocator::size_type								size_type;
+	typedef typename TAllocator::difference_type						difference_type;
+
 
 private:
 	SharedDataPointer<Data> d;
@@ -504,7 +539,7 @@ public:
 	 */
 	void
 	append(const List& list)
-	{ d->appendList(list.begin(), list.end()); }
+	{ d->rangeAppend(list.begin(), list.end()); }
 
 	/**
 	 *
@@ -672,7 +707,7 @@ public:
 	 */
 	const int
 	size() const
-	{ return d->size(); }
+	{ return d->nodeCount(); }
 
 	/**
 	 *
@@ -695,7 +730,7 @@ public:
 	 */
 	List<T,TAllocator>&
 	operator<<(const List<T,TAllocator>& other) {
-		d->appendList(other.begin(), other.end());
+		d->rangeAppend(other.begin(), other.end());
 		return *this;
 	}
 

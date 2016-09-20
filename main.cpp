@@ -84,15 +84,9 @@ int main(int argc, char * argv[]) {
 	typedef tmp::List<Obj, LogAllocator<Obj>> 	ObjList;
 
 	IntList list({1,2,3,4,5,6,7,8,9});
-	IntList::iterator bit = list.begin();
-	IntList::iterator eit = list.begin();
-	bit++;
-	eit++;
-	eit++;
-	eit++;
-	eit++;
-	IntList::iterator it = list.erase(bit);
-	cout << *it << endl;
+	IntList list2({10,11,12});
+
+	list.append(list2);
 
 	cout << list << endl;
 	cout << "!" << endl;
