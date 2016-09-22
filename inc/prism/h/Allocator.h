@@ -64,7 +64,8 @@ public:
 
 	template <class U>
 	struct rebind { typedef Allocator<U> other; };
-	/* example usage (using an int allocator to create a String allocator):
+	/*
+	 * example usage (using an int allocator to create a String allocator):
 	 * 	typedef typename Allocator<int>::template rebind<String>::other StringAllocator;
 	 */
 
@@ -121,19 +122,18 @@ public:
 	/**
 	 *
 	 */
+//	template <class U, typename ...Args>
 	template <typename ...Args>
 	void
-	construct(pointer p, Args&& ...args) {
-		::new (static_cast<void*>(p)) T(std::forward<Args>(args)...);
-	}
+	construct(pointer p, Args&& ...args)
+	{ ::new (static_cast<void*>(p)) T(std::forward<Args>(args)...); }
 
 	/**
 	 *
 	 */
 	void
-	deallocate(pointer p, const size_type num=0) {
-		::operator delete(p);
-	}
+	deallocate(pointer p, const size_type num=0)
+	{ ::operator delete(p); }
 
 	/**
 	 *

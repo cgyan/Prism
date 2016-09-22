@@ -1,747 +1,1092 @@
 /*
  * List.h
- * v1
+ * v2
  *
- *  Created on: Jan 10, 2015
+ *  Created on: Sep 19, 2016
  *      Author: iainhemstock
+ */
+
+/**
+ * todo
  *
- *  List is a template-based container where each value is "linked" to the following value.
- *  It is implemented as a doubly linked list.
+ * functions to add:
+ * -- move constructor and move assignment operator
+ * -- TAllocator allocator();
+ * -- prism::sort() needs a specialization for List
  */
 
-/*
- * todo add support for move constructor
- */
+#ifndef PRISM_TMP_LIST_H_
+#define PRISM_TMP_LIST_H_
 
-#ifndef PRISM_LIST_H_
-#define PRISM_LIST_H_
-
-#include <prism/Iterator> // for bidirectional_iterator_tag
+#include <prism/SharedData>
+#include <prism/SharedDataPointer>
+#include <prism/Allocator>
 #include <prism/algorithms>
+#include <prism/utilities> // for prism::conditional_type
+#include <cstddef> // for std::ptrdiff_t
 #include <ostream>
-#include <forward_list>
+#include <utility> // for std::forward
+#include <initializer_list>
+#include <list>
+using namespace std;
 
 namespace prism {
-//
-/****************************************************************************************************************
- * Special iterator for the List container (implemented as a bidirectional iterator.
- * A list contains a linked list of nodes and each node contains the actual values
- * stored by the user. As such the iterator needs to return that value and not the
- * node as that is part of the private implementation.
- ****************************************************************************************************************/
-// \cond DO_NOT_DOCUMENT
-template <class Node, class T>
-struct ListIterator {
-	typedef T							value_type;
-	typedef T&							reference;
-	typedef T*							pointer;
-	typedef bidirectional_iterator_tag 	iterator_category;
-	typedef std::ptrdiff_t 				difference_type;
 
-										Node * node;
-										ListIterator() : node(0) {}
-										ListIterator(Node * node) : node(node) {}
-										ListIterator(const ListIterator & copy) { node = copy.node; }
-	reference 							operator*() { return node->value; }
-	pointer 							operator->() { return &node->value; }
-	ListIterator & 						operator++() { node = node->next; return *this; }
-	ListIterator   						operator++(int junk) { Node * n = node; node = node->next; return n; }
-	ListIterator & 						operator--() { node = node->prev; return *this; }
-	ListIterator  						operator--(int junk) { Node * n = node; node = node->prev; return n; }
-	ListIterator & 						operator=(const ListIterator & rhs) { node = rhs.node; return *this;}
-	bool 								operator!=(const ListIterator & rhs) { return node != rhs.node; }
-	bool 								operator==(const ListIterator & rhs) const { return node == rhs.node; }
-
-	// Related non-members
-	friend inline difference_type 		operator-(const ListIterator & lhs, const ListIterator & rhs) { return lhs.node - rhs.node; }
-	friend inline const bool 			operator<(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs < 0; }
-	friend inline const bool 			operator>(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs > 0; }
-	friend inline const bool 			operator<=(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs <= 0; }
-	friend inline const bool 			operator>=(const ListIterator & lhs, const ListIterator & rhs) { return lhs-rhs >= 0; }
-};
-// \endcond
-/****************************************************************************************************************
- * Const List iterator
- ****************************************************************************************************************/
-// \cond DO_NOT_DOCUMENT
-template <class Node, class T>
-struct ListConstIterator {
-	typedef const T						value_type;
-	typedef const T&					reference;
-	typedef const T*					pointer;
-	typedef bidirectional_iterator_tag 	iterator_category;
-	typedef std::ptrdiff_t 				difference_type;
-
-										Node * node;
-										ListConstIterator() : node(0) {}
-										ListConstIterator(Node * node) : node(node) {}
-										ListConstIterator(const ListConstIterator & copy) { node = copy.node; }
-	reference 							operator*() { return node->value; }
-	pointer 							operator->() { return &node->value; }
-	ListConstIterator & 				operator++() { node = node->next; return *this; }
-	ListConstIterator   				operator++(int junk) { Node * n = node; node = node->next; return n; }
-	ListConstIterator & 				operator--() { node = node->prev; return *this; }
-	ListConstIterator 	 				operator--(int junk) { Node * n = node; node = node->prev; return n; }
-	ListConstIterator & 				operator=(const ListConstIterator & rhs) { node = rhs.node; return *this;}
-	bool 								operator!=(const ListConstIterator & rhs) { return node != rhs.node; }
-	bool 								operator==(const ListConstIterator & rhs) const { return node == rhs.node; }
-
-	// Related non-members
-	friend inline difference_type 		operator-(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs.node - rhs.node; }
-	friend inline const bool 			operator<(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs < 0; }
-	friend inline const bool 			operator>(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs > 0; }
-	friend inline const bool 			operator<=(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs <= 0; }
-	friend inline const bool 			operator>=(const ListConstIterator & lhs, const ListConstIterator & rhs) { return lhs-rhs >= 0; }
-};
-// \endcond
-/****************************************************************************************************************
- *
- ****************************************************************************************************************/
-// \cond DO_NOT_DOCUMENT
+//============================================================
+// ListNode
+//============================================================
 template <class T>
 struct ListNode {
-	T value;
-	ListNode * next;
-	ListNode * prev;
-	ListNode(const T & value=T()) : value(value), next(0), prev(0) {}
-};
-// \endcond
+	typedef ListNode<T> 	Node;
+	T 						value;
+	Node* 					next;
+	Node* 					previous;
 
-/****************************************************************************************************************
- *
- ****************************************************************************************************************/
-template <class T>
-class List {
-	typedef ListNode<T>	Node;
-public:
-	typedef ListIterator<Node, T> 				iterator;
-	typedef ListConstIterator<Node, T> 			const_iterator;
-	typedef typename iterator::reference		reference;
-	typedef typename const_iterator::reference	const_reference;
-	typedef typename iterator::pointer			pointer;
-	typedef typename const_iterator::pointer	const_pointer;
-	typedef typename iterator::value_type		value_type;
-	typedef typename iterator::difference_type	difference_type;
-	typedef int									size_type;
+	ListNode()
+	: value(),
+	  next(0),
+	  previous(0)
+	{}
 
-protected:
-	Node * 					m_header; // Imaginary node before the first node
-	Node *					m_tailer; // Imaginary node following the last node
-	int 					m_size;
-public:
-							List();
-							List(std::initializer_list<T> il);
-							List(const List<T> & copy);
-	virtual 				~List();
-	iterator 				append(const T & value);
-	T& 						back();
-	const T& 				back() const;
-	iterator 				begin();
-	const_iterator 			begin() const;
-	const_iterator			cbegin() const;
-	const_iterator			cend() const;
-	const_iterator 			constBegin() const;
-	const_iterator 			constEnd() const;
-	const bool				contains(const T & value) const;
-	const int				count(const T & value) const;
-	void 					clear();
-	const bool				empty() const;
-	iterator 				end();
-	const_iterator 			end() const;
-	const bool				endsWith(const T & value) const;
-	iterator 				erase(iterator pos);
-	T&						first();
-	const T&				first() const;
-	T& 						front();
-	const T& 				front() const;
-	iterator 				insert(const iterator & pos, const T & value);
-	const bool 				isEmpty() const;
-	T&						last();
-	const T&				last() const;
-	void					pop_back();
-	void					pop_front();
-	void 					push_back(const T & value);
-	void 					push_front(const T & value);
-	iterator 				prepend(const T & value);
-	void					removeAll(const T & value);
-	void					removeFirst();
-	void					removeFirstOf(const T & value);
-	void 					removeLast();
-	const int 				size() const;
-	const bool				startsWith(const T & value) const;
-	std::forward_list<T> 	toStdForwardList() const;
+	ListNode(const T& value)
+	: value(value),
+	  next(nullptr),
+	  previous(nullptr)
+	{}
 
-	List<T>& 				operator<<(const T & value);
-	List<T>&				operator<<(const List<T> & list);
-	const bool				operator==(const List<T> & rhs) const;
-	const bool				operator!=(const List<T> & rhs) const;
-	List<T>&				operator=(const List<T> & rhs);
-	List<T>					operator+(const List<T> & rhs) const;
-	List<T>&				operator+=(const List<T> & rhs);
-	List<T>&				operator+=(const T & value);
-
-	static List<T>			fromStdForwardList(const std::forward_list<T> & fl);
-
-};
-
-/**
- * Constructs an empty list.
- */
-template <class T>
-List<T>::List() : m_header(new Node()), m_tailer(new Node()), m_size(0) {
-	m_header->next = m_tailer;
-	m_tailer->prev = m_header;
-}
-
-/**
- * Constructs a list from the elements contained in the initializer list.
- */
-template <class T>
-List<T>::List(std::initializer_list<T> il)
-	: m_header(new Node()), m_tailer(new Node()), m_size(0)
-{
-	m_header->next = m_tailer;
-	m_tailer->prev = m_header;
-
-	for (auto it = il.begin(); it != il.end(); it++)
-		insert(--end(), *it);
-}
-
-/**
- * Copy-constructs a new list from \em copy.
- */
-template <class T>
-List<T>::List(const List<T> & copy) : m_header(new Node()), m_tailer(new Node()), m_size(0) {
-	m_header->next = m_tailer;
-	m_tailer->prev = m_header;
-
-	const_iterator itCopy = copy.constBegin();
-	iterator itThis = begin();
-	while (itCopy != copy.constEnd()) {
-		itThis = append(*itCopy);
-		itCopy++;
+	friend std::ostream& operator<<(std::ostream& out, ListNode<T>& node) {
+		out << "ListNode [" << &node << "]";
+		return out;
 	}
-}
+};
 
+//============================================================
+// ListIterator
+//============================================================
+template <class T, bool isConst>
+struct ListIterator {
+	typedef T 								value_type;
+	typedef std::ptrdiff_t 					difference_type;
+	typedef bidirectional_iterator_tag 		iterator_category;
+	typedef ListNode<T>*					NodePtr;
+	typedef ListIterator<T, false> 			iterator;
+	typedef ListIterator<T, true> 			const_iterator;
+
+	typedef typename prism::conditional_type<isConst, const T*, T*>::type pointer;
+	typedef typename prism::conditional_type<isConst, const T&, T&>::type reference;
+	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type Self;
+
+	NodePtr np;
+
+	ListIterator()
+	: np(nullptr)
+	{}
+
+	ListIterator(NodePtr np)
+	: np(np)
+	{}
+
+	ListIterator(const iterator& copy)
+	: np(copy.np)
+	{}
+
+	virtual
+	~ListIterator()
+	{}
+
+	reference
+	operator*()
+	{ return np->value; }
+
+	pointer
+	operator->()
+	{ return &np->value; };
+
+	Self&
+	operator++() {
+		np = np->next;
+		return *this;
+	}
+
+	Self
+	operator++(int junk) {
+		NodePtr tmp = np;
+		np = np->next;
+		return tmp;
+	}
+
+	Self&
+	operator--() {
+		np = np->previous;
+		return *this;
+	}
+
+	Self
+	operator--(int junk) {
+		NodePtr tmp = np;
+		np = np->previous;
+		return tmp;
+	}
+
+	Self&
+	operator=(const iterator& other) {
+		if (this->np != other.np)
+			this->np = other.np;
+		return *this;
+	}
+
+	const bool
+	operator==(const Self& rhs)
+	{ return this->np == rhs.np; }
+
+	const bool
+	operator!=(const Self& rhs)
+	{ return !(*this == rhs); }
+
+	difference_type
+	operator-(const Self& rhs)
+	{ return this->np - rhs.np; }
+
+	const bool
+	operator<(const Self& rhs)
+	{ return this->np < rhs.np; }
+
+	const bool
+	operator>(const Self& rhs)
+	{ return this->np > rhs.np; }
+
+	const bool
+	operator<=(const Self& rhs)
+	{ return this->np <= rhs.np; }
+
+	const bool
+	operator>=(const Self& rhs)
+	{ return this->np >= rhs.np; }
+};
+
+//============================================================
+// ListMemory
+//============================================================
+template <class NodeAllocator>
+struct ListMemory {
+	typedef typename NodeAllocator::pointer 	NodePtr;
+	NodeAllocator 								m_nodeAllocator;
+
+	/**
+	 *
+	 */
+	NodePtr
+	allocateNode()
+	{ return m_nodeAllocator.allocate(1); }
+
+	/**
+	 *
+	 */
+	void
+	deallocateNode(NodePtr np)
+	{ m_nodeAllocator.deallocate(np); }
+
+	/**
+	 *
+	 */
+	void
+	deallocateNodes(NodePtr first, NodePtr last) {
+		NodePtr currentNode = first;
+
+		while (currentNode != last) {
+			NodePtr thisNode = currentNode;
+			NodePtr nextNode = thisNode->next;
+			deallocateNode(thisNode);
+			currentNode = nextNode;
+		}
+	}
+};
 /**
- * Destroys this list.
+ *
  */
-template <class T>
-List<T>::~List<T>() {
-	clear();
 
-	delete m_header;
-	delete m_tailer;
-}
+//============================================================
+// ListData
+//============================================================
+//template <class T, class Node, class NodeAllocator>
+template <class T, class NodeAllocator>
+struct ListData : public SharedData {
+	typedef typename NodeAllocator::template rebind<T>::other 			TAllocator;
+	typedef ListMemory<NodeAllocator> 									Memory;
+	typedef typename Memory::NodePtr									NodePtr;
+	typedef ListIterator<T,false>										iterator;
+	typedef ListIterator<T,true>										const_iterator;
 
-/**
- * Appends \em value at the end of this list.
- * Returns an iterator pointing to the item just inserted.
- */
-template <class T>
-typename List<T>::iterator List<T>::append(const T & value) {
-	return insert(--end(), value);
-}
+	Memory		m_storage;
+	NodePtr 	m_header;
+	NodePtr		m_tailer;
+	int 		m_nodeCount;
 
-/**
- * Returns a reference to the last item in the list. Added for STL-compatibility.
- */
-template <class T>
-T & List<T>::back() {
-	const_iterator it = --constEnd();
-	return it.node->value;
-}
+	/**
+	 * Creates an empty list with the header and tailer nodes
+	 */
+	ListData()
+	: m_storage(),
+	  m_header(nullptr),
+	  m_tailer(nullptr),
+	  m_nodeCount(0)
+	{ initializeStorage(); }
 
-/**
- * Returns a const reference to the last item in the list. Added for STL-compatibility.
- */
-template <class T>
-const T & List<T>::back() const {
-	const_iterator it = --constEnd();
-	return it.node->value;
-}
+	/**
+	 *
+	 */
+	ListData(const int numElements, const T& value)
+	: m_storage(),
+	  m_header(nullptr),
+	  m_tailer(nullptr),
+	  m_nodeCount(0)
+	{
+		initializeStorage();
+		initializeFill(numElements, value);
+	}
 
-/**
- * Returns an iterator to the first item in the list. If the list is empty then the returned iterator is equal to end().
- */
-template <class T>
-typename List<T>::iterator List<T>::begin() {
-	return iterator(m_header->next);
-}
+	/**
+	 *
+	 */
+	template <class ForwardIterator>
+	ListData(ForwardIterator first, ForwardIterator last)
+	: m_storage(),
+	  m_header(nullptr),
+	  m_tailer(nullptr),
+	  m_nodeCount(0)
+	{
+		initializeStorage();
+		rangeInsert(m_header->next, first, last);
+	}
 
-/**
- * Returns an iterator to the first item in the list. If the list is empty then the returned iterator is equal to end().
- */
-template <class T>
-typename List<T>::const_iterator List<T>::begin() const {
-	return const_iterator(m_header->next);
-}
+	/**
+	 *
+	 */
+	ListData(const ListData& copy)
+	: m_header(0),
+	  m_tailer(0),
+	  m_nodeCount(0)
+	{
+		initializeStorage();
+		rangeInsert(this->endNode(), const_iterator(copy.beginNode()),
+										const_iterator(copy.endNode()));
+	}
 
-/**
- * Returns a const_iterator that points to the first item in the list.
- */
-template <class T>
-typename List<T>::const_iterator List<T>::cbegin() const {
-	return const_iterator(m_header->next);
-}
+	/**
+	 *
+	 */
+	~ListData() {
+		m_storage.m_nodeAllocator.destroy(m_header);
+		m_storage.m_nodeAllocator.destroy(m_tailer);
 
-/**
- * Returns an iterator to the imaginary position one past the last item.
- * This iterator should not be dereferenced.
- */
-template <class T>
-typename List<T>::const_iterator List<T>::cend() const {
-	return const_iterator(m_tailer);
-}
+		m_storage.deallocateNodes(m_header, m_tailer);
+		m_storage.deallocateNode(m_tailer);
+	}
 
-/**
- * Removes every item from this list.
- */
-template <class T>
-void List<T>::clear() {
-	while (m_header->next != m_tailer) {
+	/**
+	 * The first valid node containing an element.
+	 */
+	NodePtr
+	beginNode() const
+	{ return m_header->next; }
+
+	/**
+	 *
+	 */
+	void
+	clear_aux()
+	{ rangeErase(beginNode(), endNode()); }
+
+	/**
+	 *
+	 */
+	template <typename ...Args>
+	NodePtr
+	createNode(Args&&... args) {
+		NodePtr newNode = m_storage.allocateNode();
+		m_storage.m_nodeAllocator.construct(newNode, std::forward<Args>(args)...);
+		return newNode;
+	}
+
+	/**
+	 * Decreases the node count by \em amount.
+	 */
+	void
+	decreaseNodeCount(const int amount)
+	{ m_nodeCount -= amount; }
+
+	/**
+	 *
+	 */
+	const int
+	distanceBetweenNodes(NodePtr first, NodePtr last) {
+		int count = 0;
+		while (first != last) {
+			++count;
+			first = first->next;
+		}
+		return count;
+	}
+
+	/**
+	 *
+	 */
+	NodePtr
+	endNode() const
+	{ return m_tailer; }
+
+	/**
+	 *
+	 */
+	iterator
+	eraseNode(const_iterator node) {
+		NodePtr previousNode = node.np->previous;
+		NodePtr nextNode = node.np->next;
+
+		linkNodes(previousNode, nextNode);
+
+		m_storage.deallocateNode(node.np);
+//		NodeAllocTraits::deallocate(m_storage.m_nodeAllocator, node.np);
+		decreaseNodeCount(1);
+
+		return iterator(nextNode);
+	}
+
+	/**
+	 *
+	 */
+	void
+	increaseNodeCount(const int amount)
+	{ m_nodeCount += amount; }
+
+	/**
+	 *
+	 */
+//	NodeAllocator
+//	getNodeAllocator() const
+//	{ return m_storage.getNodeAllocator(); }
+
+	/**
+	 * Called by ListData(numElements, value) constructor.
+	 * The list is empty, only the header and tailer nodes exist.
+	 */
+	void
+	initializeFill(const int numElements, const T& value) {
+		NodePtr currentNode = m_header;
+		NodePtr newNode = nullptr;
+
+		for (int i=0; i<numElements; i++) {
+			newNode = createNode(value);
+			insertNode(currentNode, newNode);
+			currentNode = newNode;
+		}
+		increaseNodeCount(numElements);
+	}
+
+	/**
+	 * Creates the header and tailer nodes and links them together.
+	 */
+	void
+	initializeStorage() {
+		m_header = createNode();
+		m_tailer = createNode();
+		linkNodes(m_header, m_tailer);
+		setNodeCount(0);
+	}
+
+	/**
+	 * Inserts new node before pos.
+	 * Returns the last node inserted.
+	 */
+	iterator
+	insert_aux(const_iterator pos, const int count, const T& value) {
+		NodePtr newNode = nullptr;
+		for (int i=0; i<count; i++) {
+			newNode = createNode(value);
+			insertNode(pos.np->previous, newNode);
+		}
+		return iterator(newNode);
+	}
+
+	/**
+	 *
+	 */
+	void
+	insertAtBack(const T& value) {
+		NodePtr newNode = createNode(value);
+		insertNode(m_tailer->previous, newNode);
+	}
+
+	/**
+	 *
+	 */
+	void
+	insertAtFront(const T& value) {
+		NodePtr newNode = createNode(value);
+		insertNode(m_header, newNode);
+	}
+
+	/**
+	 * Inserts \em newNode after \em pos.
+	 * Hooks the new node up in the middle of the previous and the next node.
+	 */
+	void
+	insertNode(NodePtr pos, NodePtr newNode) {
+		newNode->previous = pos;
+		newNode->next = pos->next;
+		pos->next = newNode;
+		newNode->next->previous = newNode;
+		increaseNodeCount(1);
+	}
+
+	/**
+	 *
+	 */
+	void
+	linkNodes(NodePtr node1, NodePtr node2) {
+		node1->next = node2;
+		node2->previous = node1;
+	}
+
+	/**
+	 * All nodes except the header and tailer nodes.
+	 */
+	const int
+	nodeCount() const
+	{ return m_nodeCount; }
+
+	/**
+	 * ForwardIterator could be an iterator of a type other than a ListIterator
+	 * i.e. Vector iterator, std::initializer_list etc
+	 * Appends the values in the range [first, last] to the end of the list.
+	 */
+	template <class ForwardIterator>
+	void
+	rangeAppend(ForwardIterator first, ForwardIterator last)
+	{ rangeInsert(m_tailer, first, last); }
+
+	/**
+	 * Erases all nodes in the range [first,last] but not including last.
+	 * Returns the node that follows the last erased node (could be m_tailer).
+	 */
+	iterator
+	rangeErase(const_iterator first, const_iterator last) {
+		const int distance = distanceBetweenNodes(first.np, last.np);
+		decreaseNodeCount(distance);
+		linkNodes(first.np->previous, last.np);
+		m_storage.deallocateNodes(first.np, last.np);
+
+		return iterator(last.np);
+	}
+
+	/**
+	 * ForwardIterator could be an iterator of a type other than a ListIterator
+	 * i.e. Vector iterator, std::initializer_list etc
+	 * Inserts the elements from the range [first,last] in this List
+	 * starting at the position before \em pos.
+	 * Returns a pointer to the first of inserted nodes.
+	 */
+	template <class ForwardIterator>
+	iterator
+	rangeInsert(const_iterator pos, ForwardIterator first, ForwardIterator last) {
+		NodePtr nodeBeforeInsert = pos.np->previous;
+		NodePtr currentNode = pos.np;
+		NodePtr newNode = nullptr;
+
+		while (first != last) {
+			newNode = createNode(*first);
+			insertNode(currentNode->previous, newNode);
+			++first;
+		}
+
+		return iterator(nodeBeforeInsert->next);
+	}
+
+	/**
+	 *
+	 */
+	void
+	resize_aux(const int newSize, const T& value) {
+		int size = nodeCount();
+
+		if (newSize == size)
+			return;
+
+		else if (newSize < size) {
+			NodePtr currentNode = beginNode();
+			int counter = 0;
+
+			while (counter < newSize) {
+				currentNode = currentNode->next;
+				++counter;
+			}
+
+			rangeErase(currentNode, m_tailer);
+		}
+		else { // newSize > size
+			int numNewNodes = newSize - size;
+			insert_aux(m_tailer, numNewNodes, value);
+		}
+	}
+
+	/**
+	 *
+	 */
+	void
+	setNodeCount(const int size)
+	{ m_nodeCount = size; }
+};
+
+//============================================================
+// List
+//============================================================
+template <class T, class TAllocator = prism::Allocator<T>>
+class List {
+private:
+	typedef typename TAllocator::template rebind<ListNode<T>>::other 	NodeAllocator;
+	typedef ListData<T, NodeAllocator>									Data;
+public:
+	typedef typename ListIterator<T,false>::iterator					iterator;
+	typedef typename ListIterator<T,true>::const_iterator				const_iterator;
+	typedef typename TAllocator::value_type								value_type;
+	typedef typename TAllocator::pointer								pointer;
+	typedef typename TAllocator::reference								reference;
+	typedef typename const_iterator::pointer							const_pointer;
+	typedef typename const_iterator::reference							const_reference;
+	typedef typename TAllocator::size_type								size_type;
+	typedef typename TAllocator::difference_type						difference_type;
+private:
+	SharedDataPointer<Data> d;
+public:
+	/**
+	 *
+	 */
+	List()
+	: d(new Data)
+	{}
+
+	/**
+	 *
+	 */
+	List(const int numElements, const_reference value=T())
+	: d(new Data(numElements, value))
+	{}
+
+	/**
+	 *
+	 */
+	template <class InputIterator>
+	List(InputIterator first, InputIterator last)
+	: d(new Data(first, last))
+	{}
+
+	/**
+	 *
+	 */
+	List(const std::initializer_list<T>& il)
+	: d(new Data(il.begin(), il.end()))
+	{}
+
+	/**
+	 *
+	 */
+	List(const List<T,TAllocator>& copy)
+	: d(copy.d)
+	{}
+
+	/**
+	 *
+	 */
+	~List()
+	{}
+
+	/**
+	 *
+	 */
+	void
+	append(const_reference value) {
+		d.detach();
+		d->insertAtBack(value);
+	}
+
+	/**
+	 *
+	 */
+	reference
+	back() {
+		d.detach();
+		return *(--end());
+	}
+
+	/**
+	 *
+	 */
+	const_reference
+	back() const
+	{ return *(--end()); }
+
+	/**
+	 *
+	 */
+	iterator
+	begin() {
+		d.detach();
+		return d->beginNode();
+	}
+
+	/**
+	 *
+	 */
+	iterator
+	begin() const
+	{ return d->beginNode(); }
+
+	/**
+	 *
+	 */
+	const_iterator
+	cbegin() const
+	{ return begin(); }
+
+	/**
+	 *
+	 */
+	iterator
+	cend() const
+	{ return end(); }
+
+	/**
+	 *
+	 */
+	void
+	clear() {
+		d.detach();
+		d->clear_aux();
+	}
+
+	/**
+	 *
+	 */
+	const_iterator
+	constBegin() const
+	{ return begin(); }
+
+	/**
+	 *
+	 */
+	iterator
+	constEnd() const
+	{ return end(); }
+
+	/**
+	 *
+	 */
+	const bool
+	contains(const_reference value) const
+	{ return prism::count(this->begin(), this->end(), value); }
+
+	/**
+	 *
+	 */
+	const int
+	count(const_reference value) const
+	{ return prism::count(this->begin(), this->end(), value); }
+
+	/**
+	 *
+	 */
+	const bool
+	empty()
+	{ return d->nodeCount() == 0; }
+
+	/**
+	 *
+	 */
+	iterator
+	end() {
+		d.detach();
+		return d->endNode();
+	}
+
+	/**
+	 *
+	 */
+	iterator
+	end() const
+	{ return d->endNode(); }
+
+	/**
+	 *
+	 */
+	const bool
+	endsWith(const_reference value) const
+	{ return back() == value; }
+
+	/**
+     * This function only erases the element, and that if the element
+     * is itself a pointer, the pointed-to memory is not touched in
+     * any way.  Managing the pointer is the user's responsibility.
+	 */
+	iterator
+	erase(const_iterator pos) {
+		d.detach();
+		return d->eraseNode(pos);
+	}
+
+	/**
+     * This function only erases the element, and that if the element
+     * is itself a pointer, the pointed-to memory is not touched in
+     * any way.  Managing the pointer is the user's responsibility.
+	 */
+	iterator
+	erase(const_iterator first, const_iterator last) {
+		d.detach();
+		return d->rangeErase(first.np, last.np);
+	}
+
+	/**
+	 *
+	 */
+	reference
+	first() {
+		d.detach();
+		return *begin();
+	}
+
+	/**
+	 *
+	 */
+	const_reference
+	first() const
+	{ return *begin(); }
+
+	/**
+	 *
+	 */
+	reference
+	front() {
+		d.detach();
+		return *begin();
+	}
+
+	/**
+	 *
+	 */
+	const_reference
+	front() const
+	{ return *begin(); }
+
+	/**
+	 * Inserts \em value after the value pointed to be \em pos.
+	 * @return Returns an iterator that points to the newly inserted value.
+	 */
+	iterator
+	insert(const_iterator insertBefore, const_reference value) {
+		d.detach();
+		return d->insert_aux(insertBefore, 1, value);
+	}
+
+	/**
+	 *
+	 */
+	iterator
+	insert(const_iterator insertBefore, const int count, const_reference value) {
+		d.detach();
+		return d->insert_aux(insertBefore, count, value);
+	}
+
+	/**
+	 *
+	 */
+	template <class InputIterator>
+	iterator
+	insert(const_iterator insertBefore, InputIterator first, InputIterator last) {
+		d.detach();
+		return d->rangeInsert(insertBefore, first, last);
+	}
+
+	/**
+	 *
+	 */
+	iterator
+	insert(const_iterator insertBefore, std::initializer_list<T>& il) {
+		d.detach();
+		return d->rangeInsert(insertBefore, il.begin(), il.end());
+	}
+
+	/**
+	 *
+	 */
+	const bool
+	isEmpty() const
+	{ return d->nodeCount() == 0; }
+
+	/**
+	 *
+	 */
+	reference
+	last() {
+		d.detach();
+		return *(--end());
+	}
+
+	/**
+	 *
+	 */
+	const_reference
+	last() const
+	{ return *(--end()); }
+
+	/**
+	 *
+	 */
+	void
+	pop_back() {
+		d.detach();
+		d->eraseNode(--end());
+	}
+
+	/**
+	 *
+	 */
+	void
+	pop_front() {
+		d.detach();
+		d->eraseNode(begin());
+	}
+
+	/**
+	 *
+	 */
+	void
+	prepend(const_reference value) {
+		d.detach();
+		d->insertAtFront(value);
+	}
+
+	/**
+	 *
+	 */
+	void
+	push_back(const_reference value) {
+		d.detach();
+		d->insertAtBack(value);
+	}
+
+	/**
+	 *
+	 */
+	void
+	push_front(const_reference value)
+	{ d->insertAtFront(value); }
+
+
+
+	/**
+	 * The remove... family of functions remove the elements based on value whereas
+	 * the erase... family of functions remove the elements based on iterators.
+	 */
+	void
+	removeAll(const_reference value) {
+		d.detach();
+		const_iterator bit = cbegin();
+		while (bit != cend()) {
+			if (*bit == value) {
+				d->eraseNode(bit);
+			}
+			++bit;
+		}
+	}
+
+	/**
+	 *
+	 */
+	void
+	removeFirst() {
+		d.detach();
 		erase(begin());
 	}
-}
 
-/**
- * Returns a const_iterator that points to the first item in the list.
- */
-template <class T>
-typename List<T>::const_iterator List<T>::constBegin() const {
-	return const_iterator(m_header->next);
-}
-
-/**
- * Returns an iterator to the imaginary position one past the last item.
- * This iterator should not be dereferenced.
- */
-template <class T>
-typename List<T>::const_iterator List<T>::constEnd() const {
-	return const_iterator(m_tailer);
-}
-
-/**
- * Returns true if this list contains \em value, false otherwise.
- * The value type should have an implementation of operator==().
- */
-template <class T>
-const bool List<T>::contains(const T & value) const {
-	const_iterator it = constBegin();
-	while (it != constEnd()) {
-		if (it.node->value == value) {
-			return true;
+	/**
+	 *
+	 */
+	template <class Predicate>
+	void
+	removeIf(Predicate pred) {
+		d.detach();
+		const_iterator bit = cbegin();
+		while (bit != cend()) {
+			if (pred(*bit)) {
+				d->eraseNode(bit);
+			}
+			++bit;
 		}
-		it++;
 	}
-	return false;
-}
 
-/**
- * Counts and returns the number of occurrences of \em value in this list.
- * The value type should have an implementation of operator==().
- */
-template <class T>
-const int List<T>::count(const T & value) const {
-	int i = 0;
-	const_iterator it = constBegin();
-	while (it != constEnd()) {
-		if (it.node->value == value) i++;
-		it++;
+	/**
+	 *
+	 */
+	void
+	removeLast() {
+		d.detach();
+		erase(--end());
 	}
-	return i;
-}
 
-/**
- * Returns true if the list contains no items, false otherwise.
- * Equivalent to isEmpty(). Added for STL-compatibility.
- */
-template <class T>
-const bool List<T>::empty() const {
-	return isEmpty();
-}
+	/**
+	 *
+	 */
+	void
+	resize(const int newSize, const_reference value=value_type())
+	{ d->resize_aux(newSize, value); }
 
-/**
- * Returns an iterator to the imaginary position one past the last item.
- * This iterator should not be dereferenced.
- */
-template <class T>
-typename List<T>::iterator List<T>::end() {
-	return iterator(m_tailer);
-}
+	/**
+	 *
+	 */
+	const int
+	size() const
+	{ return d->nodeCount(); }
 
-/**
- * Returns a const_iterator to the imaginary item one past the last item.
- */
-template <class T>
-typename List<T>::const_iterator List<T>::end() const {
-	return const_iterator(m_tailer);
-}
+	/**
+	 *
+	 */
+	const bool
+	startsWith(const_reference value)
+	{ return first() == value; }
 
-/**
- * Returns true if the list is not empty and the last item is equal to \em value, false otherwise.
- * The value type should have an implementation of operator==().
- */
-template <class T>
-const bool List<T>::endsWith(const T & value) const {
-	if (m_header->next == m_tailer) return false; // empty list
-	if (back() == value) return true;
-	return false;
-}
-
-/**
- * Removes the item from the list pointed to by \em pos.
- * If \em pos is equal to end() then nothing is removed and \em pos is returned.
- * Otherwise an iterator to the item after the one just removed is returned instead which could be
- * equal to end() if the list is now empty.
- */
-template <class T>
-typename List<T>::iterator List<T>::erase(iterator pos) {
-	if (pos.node == m_header || pos.node == m_tailer) return pos;
-
-	Node* nbefore = pos.node->prev;
-	Node* nafter = pos.node->next;
-
-	nbefore->next = nafter;
-	nafter->prev = nbefore;
-
-	delete pos.node;
-	m_size--;
-
-	return iterator(nafter);
-}
-
-/**
- * Returns a reference to the first item in the list.
- * Equivalent to front().
- */
-template <class T>
-T & List<T>::first() {
-	return m_header->next->value;
-}
-
-/**
- * Returns a const reference to the first item in the list.
- * Equivalent to front().
- */
-template <class T>
-const T & List<T>::first() const {
-	return m_header->next->value;
-}
-
-/**
- * Returns a reference to the first item in the list. Added for STL-compatibility.
- * Equivalent to first().
- */
-template <class T>
-T & List<T>::front() {
-	return m_header->next->value;
-}
-
-/**
- * Returns a const reference to the first item in the list. Added for STL-compatibility.
- * Equivalent to first().
- */
-template <class T>
-const T & List<T>::front() const {
-	return m_header->next->value;
-}
-
-/**
- * Inserts \em value at one position after the item at \em pos.
- * Returns an iterator to the item just inserted.
- */
-template <class T>
-typename List<T>::iterator List<T>::insert(const iterator & pos, const T & value) {
-	Node* n = new Node(value);
-	Node* nbefore = pos.node;
-	Node* nafter = nbefore->next;
-
-	n->next = nafter;
-	n->prev = nbefore;
-	nbefore->next = n;
-	nafter->prev = n;
-
-	m_size++;
-	return iterator(n);
-}
-
-/**
- * Returns true if the list contains no items, false otherwise.
- */
-template <class T>
-const bool List<T>::isEmpty() const {
-	return m_header->next == m_tailer;
-}
-
-/**
- * Returns a reference to the last item in the list. Equivalent to back();
- */
-template <class T>
-T & List<T>::last() {
-	return back();
-}
-
-/**
- * Returns a const reference to the last item in the list. Equivalent to back();
- */
-template <class T>
-const T & List<T>::last() const {
-	return back();
-}
-
-/**
- * Removes the last item in the list. Equivalent to removeLast(). Added for STL-compatibility.
- */
-template <class T>
-void List<T>::pop_back() {
-	erase(--end());
-}
-
-/**
- * Removes the first item in the list. Equivalent to removeFirst(). Added for STL-compatibility.
- */
-template <class T>
-void List<T>::pop_front() {
-	erase(begin());
-}
-
-/**
- * Adds \em value to the start of the list.
- * Returns an iterator to the item just inserted.
- */
-template <class T>
-typename List<T>::iterator List<T>::prepend(const T & value) {
-	return insert(--begin(), value);
-}
-
-/**
- * Appends \em value to the end of the list and is equivalent to append(). Added for STL-compatibility.
- */
-template <class T>
-void List<T>::push_back(const T & value) {
-	insert(--end(), value);
-}
-
-/**
- * Prepends \em value at the beginning of the list and is equivalent to prepend(). Added for STL-compatibility.
- */
-template <class T>
-void List<T>::push_front(const T & value) {
-	insert(--begin(), value);
-}
-
-/**
- * Removes all occurrences of \em value from the list. To remove all items from the list use clear().
- * The value type should have an implementation of operator==().
- */
-template <class T>
-void List<T>::removeAll(const T & value) {
-	iterator it = begin();
-	while (it != end()) {
-		if (it.node->value == value) erase(iterator(it.node));
-		it++;
+	/**
+	 *
+	 */
+	value_type
+	takeFirst() {
+		d.detach();
+		T ret = first();
+		d->eraseNode(begin());
+		return ret;
 	}
-}
 
-/**
- * Removes the first item in the list. Equivalent to pop_front().
- */
-template <class T>
-void List<T>::removeFirst() {
-	pop_front();
-}
+	/**
+	 *
+	 */
+	value_type
+	takeLast() {
+		d.detach();
+		T ret = last();
+		d->eraseNode(--end());
+		return ret;
+	}
 
-/**
- * Removes the first occurrence of \em value from the list.
- * The value type should have an implementation of operator==().
- */
-template <class T>
-void List<T>::removeFirstOf(const T & value) {
-	iterator it = begin();
-	while (it != end()) {
-		if (it.node->value == value) {
-			erase(it);
-			break;
+	/**
+	 *
+	 */
+	std::list<T>
+	toStdList() const {
+		std::list<T> list;
+		const_iterator bit = cbegin();
+		while (bit != cend()) {
+			list.push_back(*bit);
+			++bit;
 		}
-		it++;
-	}
-}
-
-/**
- * Removes the last item in the list. Equivalent to pop_back().
- */
-template <class T>
-void List<T>::removeLast() {
-	pop_back();
-}
-
-/**
- * Returns the number of items contained in the list.
- */
-template <class T>
-const int List<T>::size() const {
-	return m_size;
-}
-
-/**
- * Returns true if the list is not empty and the first item equals \em value.
- */
-template <class T>
-const bool List<T>::startsWith(const T & value) const {
-	if (m_header->next == m_tailer) return false; // empty list?
-	if (m_header->next->value != value) return false;
-	return true;
-
-}
-
-/**
- * Creates and returns a std::forward_list containing the items from this list.
- */
-template <class T>
-std::forward_list<T> List<T>::toStdForwardList() const {
-	std::forward_list<T> fl;
-	typename std::forward_list<T>::iterator itFl = fl.before_begin();
-	const_iterator itThis = constBegin();
-
-	while (itThis != constEnd()) {
-		itFl = fl.insert_after(itFl, *itThis++);
+		return list;
 	}
 
-	return fl;
-}
+	/**
+	 *
+	 */
+	const bool
+	operator==(const List<T,TAllocator>& rhs) {
+		if (this->size() != rhs.size())
+			return false;
 
-/**
- * Appends \em value to the end of the list. Equivalent to append() and is useful to chain appends together
- * i.e. list << 1 << 2 << 3 etc.
- */
-template <class T>
-List<T> & List<T>::operator<<(const T& value) {
-	append(value);
-	return *this;
-}
-
-/**
- * Appends the items in \em list to the end of this list.
- * Returns a reference to this list.
- */
-template <class T>
-List<T> & List<T>::operator <<(const List<T> & list) {
-	*this += list;
-}
-
-/**
- * Returns true if this list is equal to the other list \em rhs.
- * They are considered equal if they are the same size and have the same values in the same order.
- */
-template <class T>
-const bool List<T>::operator==(const List<T> & rhs) const {
-	if (m_size != rhs.size()) return false;
-
-	const_iterator thisIt = constBegin();
-	const_iterator rhsIt = rhs.constBegin();
-
-	while (thisIt != constEnd()) {
-		if (*thisIt++ != *rhsIt++) return false;
+		return prism::equal(this->begin(), this->end(), rhs.begin());
 	}
-	return true;
-}
 
-/**
- * Returns true if this list is equal to the other list \em rhs.
- * They are considered equal if they are the same size and have the same values in the same order.
- */
-template <class T>
-const bool List<T>::operator!=(const List<T> & rhs) const {
-	return !(*this==rhs);
-}
+	/**
+	 *
+	 */
+	const bool
+	operator!=(const List<T,TAllocator>& rhs)
+	{ return !(*this == rhs); }
 
-/**
- * Assigns the list \em rhs to this list.
- * Returns a reference to this list.
- */
-template <class T>
-List<T> & List<T>::operator=(const List<T> & rhs) {
-	if (m_header != rhs.m_header) { // don't assign to self
-		*this = List<T>(rhs);
+	/**
+	 *
+	 */
+	List<T,TAllocator>
+	operator+(const List<T,TAllocator>& rhs) {
+		d.detach();
+		List<T,TAllocator> list(*this);
+		list << rhs;
+		return list;
 	}
-}
 
-/**
- * Creates and returns a new list that starts with this list followed by the list \em rhs.
- */
-template <class T>
-List<T> List<T>::operator+(const List<T> & rhs) const {
-	List<T> list = List<T>(*this);
-	const_iterator itRhs = rhs.constBegin();
-
-	while (itRhs != rhs.constEnd()) {
-		list.insert(--list.end(), itRhs.node->value);
-		itRhs++;
+	/**
+	 *
+	 */
+	List<T,TAllocator>&
+	operator+=(const List<T,TAllocator>& rhs) {
+		d.detach();
+		return *this << rhs;
 	}
-	return list;
-}
 
-/**
- * Appends the contents of the list \em rhs to the end of this list.
- * Returns a reference to this list.
- */
-template <class T>
-List<T> & List<T>::operator +=(const List<T> & rhs) {
-	const_iterator itRhs = rhs.constBegin();
-	while (itRhs != rhs.end()) {
-		insert(--end(), itRhs.node->value);
-		itRhs++;
+	/**
+	 *
+	 */
+	List<T,TAllocator>&
+	operator+=(const_reference value) {
+		d.detach();
+		*this << value;
+		return *this;
 	}
-	return *this;
-}
 
-/**
- * Appends \em value to the end of the list.
- * Returns a reference to this list.
- */
-template <class T>
-List<T> & List<T>::operator +=(const T & value) {
-	insert(--end(), value);
-}
-
-/**
- * Static method that creates and returns a new list from a std::forward_list.
- */
-template <class T>
-List<T> List<T>::fromStdForwardList(const std::forward_list<T> & fl) {
-	List<T> list;
-	typename std::forward_list<T>::const_iterator it = fl.cbegin();
-
-	while (it != fl.cend())
-		list.append(*it++);
-
-	return list;
-}
-
-/**
- * Outputs a human-friendly summary of \em list to the stream \em out.
- */
-template <class T>
-std::ostream & operator<<(std::ostream & out, const List<T> & list) {
-	typename List<T>::const_iterator it = list.constBegin();
-	int i = 0;
-
-//	out << "------------------ \n";
-	out << "List (" << &list << ") size:" << list.size() << "\n";
-//	out << "------------------ \n";
-
-	if (list.isEmpty()) out << "(empty)" << std::endl;
-
-	while (it != list.constEnd()) {
-		out << "-- [" << i++ << "] " << *it;
-		out << std::endl;
-		it++;
+	/**
+	 *
+	 */
+	List<T,TAllocator>&
+	operator<<(const_reference value) {
+		d.detach();
+		d->insertAtBack(value);
+		return *this;
 	}
-//	out << "------------------ \n";
-	return out;
-}
 
-}
+	/**
+	 *
+	 */
+	List<T,TAllocator>&
+	operator<<(const List<T,TAllocator>& other) {
+		d.detach();
+		d->rangeAppend(other.begin(), other.end());
+		return *this;
+	}
 
-#endif /* PRISM_LIST_H_ */
+	/**
+	 *
+	 */
+	List<T,TAllocator>&
+	operator=(const List<T,TAllocator>& rhs) {
+		if (this->d != rhs.d)
+			this->d = rhs.d;
+
+		return *this;
+	}
+
+	/**
+	 *
+	 */
+	friend std::ostream& operator<<(std::ostream& out, const List<T, TAllocator>& list) {
+		out << "List [" << &list << "] size=" << list.size() << "\n";
+		out << "--- ListData: " << list.d.data() << "\n";
+		out << "--- header node: " << list.d->m_header << "\n";
+		out << "--- tailer node: " << list.d->m_tailer << "\n";
+
+		int i = 0;
+		for (List<T, TAllocator>::const_iterator it = list.cbegin(); it != list.cend(); it++)
+			out << "--- [" << i++ << "] " << *it << endl;
+
+		return out;
+	}
+};
+
+} // end namespace prism
+
+
+
+#endif /* PRISM_TMP_LIST_H_ */

@@ -13,14 +13,18 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedDataPointer.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Queue \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Queue.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Point \
@@ -54,17 +58,12 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pair \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/LogAllocator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/tmp/List.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -94,14 +93,6 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/Exception:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h:
-
 /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h:
@@ -109,6 +100,22 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedDataPointer.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Exception:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Queue:
 
@@ -176,14 +183,6 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Deque:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
-
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/memory:
@@ -195,5 +194,3 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/LogAllocator.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Obj.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/tmp/List.h:

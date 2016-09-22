@@ -313,18 +313,6 @@ search(ForwardIterator1 first, ForwardIterator1 last,
 { return search_aux(first, last, otherFirst, otherLast); }
 
 /**
- * Sorts the elements in the range \em [first,last] in ascending order using the quicksort algorithm.
- * The range used is [first1,last1], which contains all the elements between first1 and last1,
- * including the element pointed by first1 but not the element pointed by last1. \n
- * Currently \em sort() is implemented using the quicksort algorithm which averages
- * a reasonable O(n log(n)) complexity.
- */
-template <class ForwardIterator>
-void
-sort(ForwardIterator first, ForwardIterator last)
-{ sort_aux(first, last); }
-
-/**
  * Sorts the elements in the range \em [first, last] in ascending order using the Bubble Sort algorithm. \n
  * The range used is \em [first,last], which contains all the elements between \em first and \em last,
  * including the element pointed by \em first but not the element pointed by \em last.
@@ -357,6 +345,18 @@ template <class ForwardIterator>
 void
 sort_quicksort(ForwardIterator first, ForwardIterator last)
 { sort_quicksort_aux(first, last); }
+
+/**
+ * Sorts the elements in the range \em [first,last] in ascending order using the quicksort algorithm.
+ * The range used is [first1,last1], which contains all the elements between first1 and last1,
+ * including the element pointed by first1 but not the element pointed by last1. \n
+ * Currently \em sort() is implemented using the quicksort algorithm which averages
+ * a reasonable O(n log(n)) complexity.
+ */
+template <class ForwardIterator>
+void
+sort(ForwardIterator first, ForwardIterator last)
+{ sort_aux(first, last); }
 
 /**
  * Exchanges the values of \em a and \em b.

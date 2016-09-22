@@ -1,6 +1,6 @@
 test/ListTest.d: ../test/ListTest.cpp \
   /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/tmp/List.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer \
@@ -17,7 +17,7 @@ test/ListTest.d: ../test/ListTest.cpp \
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/tmp/List.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData:
 

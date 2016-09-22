@@ -10,6 +10,7 @@
 	Functions to add:
 		static Deque<T, Alloc> fromList(const List<T>& list);
 		void squeeze();
+		iterator insert(const_iterator insertBefore, std::initializer_list<T>& il)
 */
 
 #ifndef PRISM_DEQUE_H_

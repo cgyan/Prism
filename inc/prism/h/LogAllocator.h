@@ -23,7 +23,7 @@ namespace prism {
 
 template <class T>
 class LogAllocator : public Allocator<T> {
-private:
+public:
 	Vector<T*> pointers;
 public:
 	typedef Allocator<T>						Alloc;
@@ -35,14 +35,28 @@ public:
 	typedef typename Alloc::size_type 			size_type;
 	typedef typename Alloc::difference_type 	difference_type;
 
+	LogAllocator()
+	{}
+
+	LogAllocator(const LogAllocator<T>& copy)
+	{}
+
+	template <class U>
+	LogAllocator(const LogAllocator<U>& copy)
+	{}
+
 	~LogAllocator() {
 		if (pointers.size() != 0) {
-			std::cerr << "LogAllocator Report: " << pointers.size() << " pointers not freed\n";
+			std::cerr << "---------------------------------------------------\n";
+			std::cerr << "LogAllocator report: " << pointers.size() << " pointers not freed\n";
+			std::cerr << "---------------------------------------------------\n";
 			for (int i=0; i<pointers.size(); i++)
-				std::cerr << "[" << i+1 << "] " << pointers.at(i) << "\n";
+				std::cerr << "--- [" << i+1 << "] " << pointers.at(i) << "\n";
 		}
 		else
-			std::cerr << "LogAllocator Report: all memory freed successfully!" << std::endl;
+			std::cerr << "---------------------------------------------------\n"
+						 "LogAllocator report: all memory freed successfully!\n"
+						 "---------------------------------------------------" << std::endl;
 	}
 
 	template <class U>

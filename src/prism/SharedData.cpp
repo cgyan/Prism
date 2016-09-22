@@ -14,77 +14,63 @@ namespace prism {
  *
  */
 SharedData::SharedData()
-	: m_refCount(0), m_shareable(true)
-{
-
-}
+: m_refCount(0), m_shareable(true)
+{}
 
 /**
  *
  */
 SharedData::SharedData(const SharedData & copy)
-	: m_refCount(0), m_shareable(true)
-{
-
-}
+: m_refCount(0), m_shareable(true)
+{}
 
 /**
  *
  */
-SharedData::~SharedData() {
-
-}
-
-/**
- *
- */
-void SharedData::decRef() {
-	--m_refCount;
-//	if (--m_refCount == 0)
-//		delete this;  // deletes the SharedData subclass
-}
+SharedData::~SharedData()
+{}
 
 /**
  *
  */
-void SharedData::incRef() {
-	++m_refCount;
-}
+void SharedData::decRef()
+{ --m_refCount; }
 
 /**
  *
  */
-const bool SharedData::isShareable() const {
-	return m_shareable;
-}
+void SharedData::incRef()
+{ ++m_refCount; }
 
 /**
  *
  */
-const bool SharedData::isShared() const {
-	return m_refCount > 1;
-}
+const bool SharedData::isShareable() const
+{ return m_shareable; }
 
 /**
  *
  */
-const int SharedData::refCount() const {
-	return m_refCount;
-}
+const bool SharedData::isShared() const
+{ return m_refCount > 1; }
 
 /**
  *
  */
-void SharedData::setUnshareable() {
-	m_shareable = false;
-}
+const int SharedData::refCount() const
+{ return m_refCount; }
 
 /**
  *
  */
-SharedData & SharedData::operator=(const SharedData & rhs) {
-	return *this;
-}
+void SharedData::setUnshareable()
+{ m_shareable = false; }
+
+/**
+ *
+ */
+SharedData & SharedData::operator=(const SharedData & rhs)
+{ return *this; }
 
 }
 

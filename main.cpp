@@ -25,6 +25,7 @@
 #include <utility>
 #include <type_traits>
 #include <new>
+#include <memory>
 #include <prism/Array>
 #include <prism/Stack>
 #include <prism/List>
@@ -52,8 +53,6 @@
 #include <prism/Allocator>
 #include <prism/LogAllocator>
 #include <prism/h/Obj.h>
-#include <prism/tmp/List.h>
-
 
 using namespace prism;
 using namespace std;
@@ -68,7 +67,7 @@ std::ostream& printRange(std::ostream& out, ForwardIterator start, ForwardIterat
 	return out;
 }
 
-struct IsOdd {
+struct IsOddPredicate {
 	bool operator()(int n) {
 		return n%2==1;
 	}
@@ -80,16 +79,14 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*Deque*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	typedef tmp::List<int, LogAllocator<int>> 	IntList;
-	typedef tmp::List<Obj, LogAllocator<Obj>> 	ObjList;
+	typedef List<int, LogAllocator<int>> 	IntList;
+	typedef List<Obj, LogAllocator<Obj>> 	ObjList;
 
-	IntList list({1,2,3,4,5,6,7,8,9});
-	IntList list2({10,11,12});
-
-	list.append(list2);
+	std::initializer_list<int> il = {4,2,3,5,6,1};
+	IntList list(il);
 
 	cout << list << endl;
-	cout << "!" << endl;
+
 
 
 
