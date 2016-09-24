@@ -16,12 +16,100 @@
 #include <iostream>
 #include <vector>
 #include <initializer_list>
-#include <prism/Iterator>
+#include <prism/iterator>
 #include <prism/List>
 #include <prism/OutOfBoundsException>
 #include <prism/algorithms>
+#include <prism/utilities>
 
 namespace prism {
+
+/******************************************************************************
+ * VectorIterator
+ *****************************************************************************/
+template <class T, bool isConst>
+struct VectorIterator {
+	typedef T 							value_type;
+	typedef const T* 					const_pointer;
+	typedef const T&					const_reference;
+	typedef random_access_iterator_tag 	iterator_category;
+	typedef size_t 						size_type;
+	typedef std::ptrdiff_t 				difference_type;
+	typedef VectorIterator<T, false>	iterator;
+	typedef VectorIterator<T, true>		const_iterator;
+	typedef typename prism::conditional_type<isConst, const T*, T*>::type 	pointer;
+	typedef typename prism::conditional_type<isConst, const T&, T&>::type 	reference;
+	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type Self;
+
+	pointer p;
+
+	VectorIterator()
+	: p(nullptr)
+	{}
+
+	VectorIterator(pointer p)
+	: p(p)
+	{}
+
+	VectorIterator(const iterator& copy)
+	: p(copy.p)
+	{}
+
+	~VectorIterator()
+	{}
+
+	reference
+	operator*()
+	{ return *p; }
+
+	pointer
+	operator->()
+	{ return p; }
+
+	Self&
+	operator++()
+	{ p++; return *this; }
+
+	Self
+	operator++(int junk)
+	{ value_type* tmp = p; p++; return tmp; }
+
+	Self&
+	operator--()
+	{ return p--; return *this; }
+
+	Self
+	operator--(int junk)
+	{ value_type* tmp = p; p--; return tmp; }
+
+	Self&
+	operator+=(const int i)
+	{ p += i; return *this; }
+
+	Self&
+	operator-=(const int i)
+	{ return *this += -i; }
+
+	Self
+	operator+(const int i)
+	{ Self tmp = *this; return tmp += i; }
+
+	Self
+	operator-(const int i)
+	{ Self tmp = *this; return tmp += -i; }
+
+	Self&
+	operator=(const iterator& it)
+	{ if (it.p != this->p) this->p = it.p; return *this; }
+
+	const bool
+	operator==(const iterator& rhs)
+	{ return this->p == rhs.p; }
+
+	const bool
+	operator!=(const iterator& rhs)
+	{ return !(*this == rhs); }
+};
 
 /******************************************************************************
  * VectorData

@@ -22,7 +22,7 @@
 #include <prism/SharedDataPointer>
 #include <prism/Allocator>
 #include <prism/algorithms>
-#include <prism/Iterator>
+#include <prism/iterator>
 #include <prism/utilities> // for prism::conditional_type
 #include <cstddef> // for std::ptrdiff_t
 #include <ostream>

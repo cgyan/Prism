@@ -84,21 +84,18 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 
+	int* p = new int(3);
+	p[0] = 1;
+	p[1] = 2;
+	p[2] = 3;
 
-	typedef prism::List<int, LogAllocator<int>> 	IntList;
-	typedef prism::List<Obj, LogAllocator<Obj>>		ObjList;
+	VectorIterator<int, false> it(p);
+	it = it+1;
+	it = it -1;
 
-	List<int> c({5,4,3,2,1});
-	prism::sort_quicksort(c.begin(), c.end());
-	cout << c << endl;
+	cout << *it << endl;
 
-//	std::initializer_list<int> il = {4,2,3,5,6,1,8,9};
-//	ObjList list;
-//	list.push_back(Obj(1));
-//	list.push_back(Obj(2));
-//	list.push_back(Obj(3));
-//	list.push_back(Obj(4));
-//	cout << list << endl;
+//	delete p;
 
 
 //	printRange(cout, c.begin(), c.end());

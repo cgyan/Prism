@@ -10,7 +10,7 @@
 #define PRISM_STRING_H_
 
 #include <prism/Char>
-#include <prism/Iterator>
+#include <prism/iterator>
 #include <prism/List>
 #include <ostream>
 #include <string>

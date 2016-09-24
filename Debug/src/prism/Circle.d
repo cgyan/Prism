@@ -3,8 +3,8 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Circle.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Vector \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Iterator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
@@ -37,9 +37,9 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/Iterator:
+/Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Iterator.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 

@@ -5,8 +5,8 @@ src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/String.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Char \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Char.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Iterator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
@@ -41,9 +41,9 @@ src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Char.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/Iterator:
+/Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Iterator.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 

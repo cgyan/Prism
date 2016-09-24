@@ -37,6 +37,37 @@ struct iterator_traits  {
 	typedef typename IterType::reference 			reference;
 };
 
+/**
+ * Returns the distance between two RandomAccessIterators.
+ */
+template <class RandomAccessIterator>
+typename prism::iterator_traits<RandomAccessIterator>::difference_type
+distance_aux(RandomAccessIterator first, RandomAccessIterator last, random_access_iterator_tag) {
+	return last - first;
+}
+
+/**
+ * Returns the distance between two ForwardIterators.
+ */
+template <class ForwardIterator>
+typename prism::iterator_traits<ForwardIterator>::difference_type
+distance_aux(ForwardIterator first, ForwardIterator last, forward_iterator_tag) {
+	int count = 0;
+	while (first++ != last)
+		++count;
+	return count;
+}
+
+/**
+ * Returns the distance between two iterators.
+ */
+template <class InputIterator>
+typename prism::iterator_traits<InputIterator>::difference_type
+distance(InputIterator first, InputIterator last) {
+	typedef typename prism::iterator_traits<InputIterator>::iterator_category it_cat;
+	return distance_aux(first, last, it_cat());
+}
+
 /****************************************************************************************************************
  *
  ****************************************************************************************************************/

@@ -10,8 +10,8 @@ test/DequeTest.d: ../test/DequeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Iterator \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Iterator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
@@ -44,9 +44,9 @@ test/DequeTest.d: ../test/DequeTest.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/Iterator:
+/Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Iterator.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException:
 

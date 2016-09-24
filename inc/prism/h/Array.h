@@ -13,7 +13,7 @@
  * todo add support for move constructor
  */
 
-#include <prism/Iterator>
+#include <prism/iterator>
 #include <prism/algorithms>
 #include <iostream>
 #include <initializer_list>
@@ -24,8 +24,16 @@ namespace prism {
 template <class T>
 class Array {
 public:
-	typedef RandomAccessIterator<T> iterator;
-	typedef RandomAccessConstIterator<T> const_iterator;
+	typedef T 								value_type;
+	typedef T* 								pointer;
+	typedef T& 								reference;
+	typedef const pointer 					const_pointer;
+	typedef const reference 				const_reference;
+	typedef size_t 							size_type;
+	typedef std::ptrdiff_t 					difference_type;
+	typedef random_access_iterator_tag		iterator_category;
+	typedef RandomAccessIterator<T> 		iterator;
+	typedef RandomAccessConstIterator<T> 	const_iterator;
 
 private:
 	T * m_array;

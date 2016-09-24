@@ -9,7 +9,7 @@
 #ifndef PRISM_ALGORITHMS_AUX_H_
 #define PRISM_ALGORITHMS_AUX_H_
 
-#include <prism/Iterator>
+#include <prism/iterator>
 #include <iostream> // todo remove this
 #include <cmath>
 
@@ -593,13 +593,13 @@ void
 sort_heap_aux(RandomAccessIterator first, RandomAccessIterator last) {
 	if (first == last) return;
 
-	make_heap(first, last);
+	make_heap_aux(first, last);
 
 	RandomAccessIterator currentNode = last;
 
 	while (--currentNode >= first) {
 		swap(*currentNode, *first);
-		p_heapify(first, first, currentNode);
+		p_heapify_aux(first, first, currentNode);
 	}
 }
 
