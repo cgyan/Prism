@@ -59,20 +59,32 @@ struct AllocatorTraits {
 template <class T>
 class Allocator {
 public:
-	typedef T 			value_type;
-	typedef T* 			pointer;
-	typedef T& 			reference;
-	typedef const T* 	const_pointer;
-	typedef const T& 	const_reference;
-	typedef size_t 		size_type;
-	typedef ptrdiff_t 	difference_type;
+	typedef T 					value_type;
+	typedef T*	 				pointer;
+	typedef T& 					reference;
+	typedef const T*	 		const_pointer;
+	typedef const T&	 		const_reference;
+	typedef size_t	 			size_type;
+	typedef std::ptrdiff_t	 	difference_type;
 
-	template <class U>
-	struct rebind { typedef Allocator<U> other; };
 	/*
 	 * example usage (using an int allocator to create a String allocator):
 	 * 	typedef typename Allocator<int>::template rebind<String>::other StringAllocator;
 	 */
+	template <class U>
+	struct rebind { typedef Allocator<U> other; };
+
+    struct propagate_on_container_copy_assignment
+    : std::true_type
+    {};
+
+    struct propagate_on_container_move_assignment
+    : std::true_type
+    {};
+
+    struct propagate_on_container_swap
+    : std::true_type
+    {};
 
 	/*
 	 *
@@ -175,21 +187,46 @@ public:
 	operator!=(const Allocator<T2>& rhs)
 	{ return false; }
 
-private:
+	/**
+	 *
+	 */
 	void operator=(const Allocator<T>& rhs)
-	{/* don't allow assignment*/}
+	{/* nothing to copy*/}
 
+	/**
+	 *
+	 */
 	void operator=(const Allocator<T>&& rhs)
-		{/* don't allow assignment*/}
+	{/* nothing to move*/}
 
+	/**
+	 *
+	 */
 	template <class U>
 	void operator=(const Allocator<U>& rhs)
-	{/* don't allow assignment*/}
+	{/* nothing to assign */}
 
+	/**
+	 *
+	 */
 	template <class U>
 	void operator=(const Allocator<U>&& rhs)
-		{/* don't allow assignment*/}
+	{/* nothing to move */}
+
+	/**
+	 *
+	 */
+    Allocator select_on_container_copy_construction(const Allocator &a)
+    { return a; }
 };
+
+/**
+ *
+ */
+template<class T>
+bool
+operator==(const Allocator<T> &a1, const Allocator<T> &a2)
+{ return true; }
 
 } /* namespace prism */
 

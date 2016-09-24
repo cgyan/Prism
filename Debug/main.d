@@ -21,7 +21,6 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/debug/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
@@ -109,8 +108,6 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/debug/List.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException:
 

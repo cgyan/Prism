@@ -85,15 +85,23 @@ int main(int argc, char * argv[]) {
 
 
 
-	typedef List<int, LogAllocator<int>> 	IntList;
-	typedef List<Obj, LogAllocator<Obj>> 	ObjList;
+	typedef prism::List<int, LogAllocator<int>> 	IntList;
+	typedef prism::List<Obj, LogAllocator<Obj>>		ObjList;
 
-	std::initializer_list<int> il = {4,2,3,5,6,1};
-//	IntList list(il);
+	List<int> c({5,4,3,2,1});
+	prism::sort_quicksort(c.begin(), c.end());
+	cout << c << endl;
+
+//	std::initializer_list<int> il = {4,2,3,5,6,1,8,9};
+//	ObjList list;
+//	list.push_back(Obj(1));
+//	list.push_back(Obj(2));
+//	list.push_back(Obj(3));
+//	list.push_back(Obj(4));
 //	cout << list << endl;
 
-	std::vector<int, LogAllocator<int>> c(il);
-	printRange(cout, c.begin(), c.end());
+
+//	printRange(cout, c.begin(), c.end());
 
 
 

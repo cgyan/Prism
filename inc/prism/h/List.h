@@ -65,12 +65,12 @@ struct ListNode {
 //============================================================
 template <class T, bool isConst>
 struct ListIterator {
-	typedef T 								value_type;
-	typedef std::ptrdiff_t 					difference_type;
+	typedef T 										value_type;
+	typedef std::ptrdiff_t 							difference_type;
 	typedef prism::bidirectional_iterator_tag 		iterator_category;
-	typedef ListNode<T>*					NodePtr;
-	typedef ListIterator<T, false> 			iterator;
-	typedef ListIterator<T, true> 			const_iterator;
+	typedef ListNode<T>*							NodePtr;
+	typedef ListIterator<T, false> 					iterator;
+	typedef ListIterator<T, true> 					const_iterator;
 
 	typedef typename prism::conditional_type<isConst, const T*, T*>::type pointer;
 	typedef typename prism::conditional_type<isConst, const T&, T&>::type reference;
@@ -142,26 +142,6 @@ struct ListIterator {
 	const bool
 	operator!=(const Self& rhs)
 	{ return !(*this == rhs); }
-
-	difference_type
-	operator-(const Self& rhs)
-	{ return this->np - rhs.np; }
-
-	const bool
-	operator<(const Self& rhs)
-	{ return this->np < rhs.np; }
-
-	const bool
-	operator>(const Self& rhs)
-	{ return this->np > rhs.np; }
-
-	const bool
-	operator<=(const Self& rhs)
-	{ return this->np <= rhs.np; }
-
-	const bool
-	operator>=(const Self& rhs)
-	{ return this->np >= rhs.np; }
 };
 
 //============================================================

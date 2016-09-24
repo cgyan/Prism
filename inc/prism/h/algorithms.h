@@ -318,10 +318,12 @@ search(ForwardIterator1 first, ForwardIterator1 last,
  * including the element pointed by \em first but not the element pointed by \em last.
  * \note The objects being sorted must support operator>().
  */
-template <class RandomAccessIterator>
+template <class BidirectionalIterator>
 void
-sort_bubble(RandomAccessIterator first, RandomAccessIterator last)
-{ sort_bubble_aux(first, last); }
+sort_bubble(BidirectionalIterator first, BidirectionalIterator last) {
+	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
+	sort_bubble_aux(first, last, it_cat());
+}
 
 /**
  * Sorts the elements in the range \em [first,last] using the heapsort algorithm. \n
@@ -341,10 +343,12 @@ sort_heap(RandomAccessIterator first, RandomAccessIterator last)
  * including the element pointed by \em first but not the element pointed by \em last.
  * \note The objects being sorted must support operator<=().
  */
-template <class ForwardIterator>
+template <class BidirectionalIterator>
 void
-sort_quicksort(ForwardIterator first, ForwardIterator last)
-{ sort_quicksort_aux(first, last); }
+sort_quicksort(BidirectionalIterator first, BidirectionalIterator last) {
+	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
+	sort_quicksort_aux(first, last, it_cat());
+}
 
 /**
  * Sorts the elements in the range \em [first,last] in ascending order using the quicksort algorithm.
@@ -353,10 +357,11 @@ sort_quicksort(ForwardIterator first, ForwardIterator last)
  * Currently \em sort() is implemented using the quicksort algorithm which averages
  * a reasonable O(n log(n)) complexity.
  */
-template <class ForwardIterator>
+template <class BidirectionalIterator>
 void
-sort(ForwardIterator first, ForwardIterator last)
-{ sort_aux(first, last); }
+sort(BidirectionalIterator first, BidirectionalIterator last) {
+	sort_aux(first, last);
+}
 
 /**
  * Exchanges the values of \em a and \em b.

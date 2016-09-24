@@ -514,17 +514,13 @@ search_aux(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 fir
 }
 
 /**
- * Sorts the elements in the range \em [first, last] in ascending order using
- * the Bubble Sort algorithm. \n
- * The range used is \em [first,last], which contains all the elements between
- * \em first and \em last, including the element pointed by \em first but not
- * the element pointed by \em last. \n
- * \note The objects being sorted must support operator>().
+ * Bubble sort for random access iterators
  */
 template <class RandomAccessIterator>
 void
-sort_bubble_aux(RandomAccessIterator first, RandomAccessIterator last) {
-
+sort_bubble_aux(RandomAccessIterator first, RandomAccessIterator last,
+		prism::random_access_iterator_tag)
+{
 	RandomAccessIterator thisElement = first;
 	RandomAccessIterator nextElement = thisElement+1;
 	RandomAccessIterator bit = first;
@@ -545,6 +541,42 @@ sort_bubble_aux(RandomAccessIterator first, RandomAccessIterator last) {
 		if (!swapped) break; // already in sorted order
 		thisElement = first;
 		nextElement = thisElement+1;
+		++bit;
+	}
+}
+
+/**
+ * Bubble sort for bidirectional iterators
+ */
+template <class BidirectionalIterator>
+void
+sort_bubble_aux(BidirectionalIterator first, BidirectionalIterator last,
+		prism::bidirectional_iterator_tag)
+{
+	BidirectionalIterator thisElement = first;
+	BidirectionalIterator nextElement = ++first;
+	--first;
+	BidirectionalIterator lastElement = --last;
+	++last;
+	BidirectionalIterator bit = first;
+
+	bool swapped = false;
+
+	while (bit != lastElement) {
+		swapped = false;
+		while (thisElement != lastElement) {
+
+			if (*thisElement > *nextElement) {
+				swap(*thisElement, *nextElement);
+				swapped = true;
+			}
+			++thisElement;
+			++nextElement;
+		}
+		if (!swapped) break; // already in sorted order
+		thisElement = first;
+		nextElement = ++thisElement;
+		--thisElement;
 		++bit;
 	}
 }
@@ -572,18 +604,16 @@ sort_heap_aux(RandomAccessIterator first, RandomAccessIterator last) {
 }
 
 /**
- * Sorts the elements in the range \em [first, last] in ascending order using the Quicksort algorithm. \n
- * The range used is \em [first,last], which contains all the elements between \em first and \em last,
- * including the element pointed by \em first but not the element pointed by \em last.
- * \note The objects being sorted must support operator<=().
+ * Quicksort for random access iterators
  */
-template <class ForwardIterator>
+template <class RandomAccessIterator>
 void
-sort_quicksort_aux(ForwardIterator first, ForwardIterator last) {
-
-	ForwardIterator wall = first;
-	ForwardIterator pivot = last - 1;
-	ForwardIterator cachedFirst = first;
+sort_quicksort_aux(RandomAccessIterator first, RandomAccessIterator last,
+		prism::random_access_iterator_tag it_cat)
+{
+	RandomAccessIterator wall = first;
+	RandomAccessIterator pivot = last - 1;
+	RandomAccessIterator cachedFirst = first;
 
 	while (first <= pivot) {
 
@@ -598,9 +628,43 @@ sort_quicksort_aux(ForwardIterator first, ForwardIterator last) {
 	}
 
 	if (cachedFirst == wall || cachedFirst+1 == wall) {}
-	else sort_quicksort(cachedFirst, wall);
+	else sort_quicksort_aux(cachedFirst, wall, it_cat);
 	if (last - 1 == wall) {}
-	else sort_quicksort(wall, last);
+	else sort_quicksort_aux(wall, last, it_cat);
+}
+
+/**
+ * Quicksort for bidirectional iterators
+ * todo
+ * Not a great solution for quicksorting a bidirectional iterator based container!
+ * Currently copies the elements into an array, then sorts using the random access
+ * quicksort then copies the sorted elements back into the original container.... :-(
+ */
+template <class BidirectionalIterator>
+void
+sort_quicksort_aux(BidirectionalIterator first, BidirectionalIterator last,
+		prism::bidirectional_iterator_tag)
+{
+	int count = 0;
+	BidirectionalIterator it = first;
+	while (it != last) {
+		++count;
+		++it;
+	}
+
+	typedef typename prism::iterator_traits<BidirectionalIterator>::value_type T;
+	T * array = new T[count];
+	prism::copy_aux(first, last, array);
+
+	prism::sort_quicksort_aux(array, array+count, prism::random_access_iterator_tag());
+
+	count = 0;
+	while (first != last) {
+		*first = array[count++];
+		++first;
+	}
+
+	delete array;
 }
 
 /**
@@ -611,10 +675,12 @@ sort_quicksort_aux(ForwardIterator first, ForwardIterator last) {
  * Currently \em sort() is implemented using the quicksort algorithm which averages
  * a reasonable O(n log(n)) complexity.
  */
-template <class ForwardIterator>
+template <class BidirectionalIterator>
 void
-sort_aux(ForwardIterator first, ForwardIterator last) {
-	sort_quicksort_aux(first, last);
+sort_aux(BidirectionalIterator first, BidirectionalIterator last)
+{
+	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
+	sort_quicksort_aux(first, last, it_cat());
 }
 
 /**
