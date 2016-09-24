@@ -36,16 +36,30 @@ public:
 	typedef typename Alloc::difference_type 	difference_type;
 
 	LogAllocator()
+	: Allocator<T>()
 	{}
 
 	LogAllocator(const LogAllocator<T>& copy)
+	: Allocator<T>(copy)
+	{}
+
+	LogAllocator(const LogAllocator<T>&& copy)
+	: LogAllocator(copy)
 	{}
 
 	template <class U>
 	LogAllocator(const LogAllocator<U>& copy)
+	: Allocator<U>(copy)
 	{}
 
-	~LogAllocator() {
+	template <class U>
+	LogAllocator(const LogAllocator<U>&& copy)
+	: Allocator<U>(copy)
+	{}
+
+
+
+	~LogAllocator(){
 		if (pointers.size() != 0) {
 			std::cerr << "---------------------------------------------------\n";
 			std::cerr << "LogAllocator report: " << pointers.size() << " pointers not freed\n";

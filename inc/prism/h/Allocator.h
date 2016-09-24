@@ -14,6 +14,9 @@
 
 namespace prism {
 
+//================================================================
+// AllocatorTraits
+//================================================================
 template <class Alloc>
 struct AllocatorTraits {
 	typedef Alloc							allocator_type;
@@ -50,7 +53,9 @@ struct AllocatorTraits {
 		alloc.construct(p, args...);
 	}
 };
-
+//================================================================
+// Allocator
+//================================================================
 template <class T>
 class Allocator {
 public:
@@ -91,6 +96,13 @@ public:
 	/**
 	 *
 	 */
+	template <class U>
+	Allocator(const Allocator<U>&& copy)
+	{/* nothing to move */}
+
+	/**
+	 *
+	 */
 	virtual ~Allocator()
 	{/* nothing to destruct */}
 
@@ -98,17 +110,15 @@ public:
 	 *
 	 */
 	pointer
-	address(const_reference value) {
-		return &value;
-	}
+	address(const_reference value)
+	{ return &value; }
 
 	/**
 	 *
 	 */
 	const_pointer
-	address(const_reference value) const {
-		return &value;
-	}
+	address(const_reference value) const
+	{ return &value; }
 
 	/**
 	 *
@@ -139,39 +149,46 @@ public:
 	 *
 	 */
 	void
-	destroy(pointer p) {
-		p->~T();
-	}
+	destroy(pointer p)
+	{ p->~T(); }
 
 	/**
 	 *
 	 */
 	size_type
-	max_size() const {
-		return static_cast<size_type>(-1) / sizeof(value_type);
-	}
+	max_size() const
+	{ return static_cast<size_type>(-1) / sizeof(value_type); }
 
 	/**
 	 *
 	 */
 	template <class T2>
 	const bool
-	operator==(const Allocator<T2>& rhs) {
-		return true;
-	}
+	operator==(const Allocator<T2>& rhs)
+	{ return true; }
 
 	/**
 	 *
 	 */
 	template <class T2>
 	const bool
-	operator!=(const Allocator<T2>& rhs) {
-		return false;
-	}
+	operator!=(const Allocator<T2>& rhs)
+	{ return false; }
 
 private:
 	void operator=(const Allocator<T>& rhs)
 	{/* don't allow assignment*/}
+
+	void operator=(const Allocator<T>&& rhs)
+		{/* don't allow assignment*/}
+
+	template <class U>
+	void operator=(const Allocator<U>& rhs)
+	{/* don't allow assignment*/}
+
+	template <class U>
+	void operator=(const Allocator<U>&& rhs)
+		{/* don't allow assignment*/}
 };
 
 } /* namespace prism */

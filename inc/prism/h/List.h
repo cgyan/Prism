@@ -22,13 +22,13 @@
 #include <prism/SharedDataPointer>
 #include <prism/Allocator>
 #include <prism/algorithms>
+#include <prism/Iterator>
 #include <prism/utilities> // for prism::conditional_type
 #include <cstddef> // for std::ptrdiff_t
 #include <ostream>
 #include <utility> // for std::forward
 #include <initializer_list>
 #include <list>
-using namespace std;
 
 namespace prism {
 
@@ -67,7 +67,7 @@ template <class T, bool isConst>
 struct ListIterator {
 	typedef T 								value_type;
 	typedef std::ptrdiff_t 					difference_type;
-	typedef bidirectional_iterator_tag 		iterator_category;
+	typedef prism::bidirectional_iterator_tag 		iterator_category;
 	typedef ListNode<T>*					NodePtr;
 	typedef ListIterator<T, false> 			iterator;
 	typedef ListIterator<T, true> 			const_iterator;
@@ -563,7 +563,7 @@ public:
 	 */
 	List()
 	: d(new Data)
-	{}
+	{std::cout << "List\n";}
 
 	/**
 	 *
@@ -1079,11 +1079,11 @@ public:
 
 		int i = 0;
 		for (List<T, TAllocator>::const_iterator it = list.cbegin(); it != list.cend(); it++)
-			out << "--- [" << i++ << "] " << *it << endl;
+			out << "--- [" << i++ << "] " << *it << "\n";
 
 		return out;
 	}
-};
+}; // end List class
 
 } // end namespace prism
 

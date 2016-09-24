@@ -5,6 +5,8 @@
  *      Author: iainhemstock
  */
 
+#define PRISM_DEBUG_
+
 #include "gtest/gtest.h"
 #include <iostream>
 #include <string>
@@ -73,19 +75,25 @@ struct IsOddPredicate {
 	}
 };
 
+
+
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "*Deque*";
+	::testing::GTEST_FLAG(filter) = "*List*";
 	::testing::InitGoogleTest(&argc, argv);
+
+
 
 	typedef List<int, LogAllocator<int>> 	IntList;
 	typedef List<Obj, LogAllocator<Obj>> 	ObjList;
 
 	std::initializer_list<int> il = {4,2,3,5,6,1};
-	IntList list(il);
+//	IntList list(il);
+//	cout << list << endl;
 
-	cout << list << endl;
+	std::vector<int, LogAllocator<int>> c(il);
+	printRange(cout, c.begin(), c.end());
 
 
 
