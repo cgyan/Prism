@@ -84,16 +84,18 @@ int main(int argc, char * argv[]) {
 	::testing::InitGoogleTest(&argc, argv);
 
 
-	int* p = new int(3);
-	p[0] = 1;
-	p[1] = 2;
-	p[2] = 3;
-
-	VectorIterator<int, false> it(p);
-	it = it+1;
-	it = it -1;
-
+	Vector<int> c = {1,2,3,4,5};
+	Vector<int>::iterator it = c.begin();
+	prism::sort(c.begin(), c.end());
+	prism::advance(it, 3);
+	prism::advance(it, -1);
 	cout << *it << endl;
+
+//	while (it != c.end())
+//		cout << *it++ << endl;
+
+
+
 
 //	delete p;
 

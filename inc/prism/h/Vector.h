@@ -37,9 +37,9 @@ struct VectorIterator {
 	typedef std::ptrdiff_t 				difference_type;
 	typedef VectorIterator<T, false>	iterator;
 	typedef VectorIterator<T, true>		const_iterator;
-	typedef typename prism::conditional_type<isConst, const T*, T*>::type 	pointer;
-	typedef typename prism::conditional_type<isConst, const T&, T&>::type 	reference;
-	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type Self;
+	typedef typename prism::conditional_type<isConst, const T*, T*>::type 				pointer;
+	typedef typename prism::conditional_type<isConst, const T&, T&>::type 				reference;
+	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type 	Self;
 
 	pointer p;
 
@@ -72,7 +72,7 @@ struct VectorIterator {
 
 	Self
 	operator++(int junk)
-	{ value_type* tmp = p; p++; return tmp; }
+	{ pointer tmp = p; p++; return tmp; }
 
 	Self&
 	operator--()
@@ -80,7 +80,7 @@ struct VectorIterator {
 
 	Self
 	operator--(int junk)
-	{ value_type* tmp = p; p--; return tmp; }
+	{ pointer tmp = p; p--; return tmp; }
 
 	Self&
 	operator+=(const int i)
@@ -98,6 +98,10 @@ struct VectorIterator {
 	operator-(const int i)
 	{ Self tmp = *this; return tmp += -i; }
 
+	difference_type
+	operator-(const Self& rhs)
+	{ return static_cast<difference_type>(this->p - rhs.p); }
+
 	Self&
 	operator=(const iterator& it)
 	{ if (it.p != this->p) this->p = it.p; return *this; }
@@ -109,6 +113,22 @@ struct VectorIterator {
 	const bool
 	operator!=(const iterator& rhs)
 	{ return !(*this == rhs); }
+
+	const bool
+	operator<(const Self& rhs)
+	{ return this->p < rhs.p; }
+
+	const bool
+	operator>(const Self& rhs)
+	{ return this->p > rhs.p; }
+
+	const bool
+	operator<=(const Self& rhs)
+	{ return this->p <= rhs.p; }
+
+	const bool
+	operator>=(const Self& rhs)
+	{ return this->p >= rhs.p; }
 };
 
 /******************************************************************************
@@ -134,8 +154,10 @@ struct VectorData {
 template <class T>
 class Vector {
 public:
-	typedef RandomAccessIterator<T> 			iterator;
-	typedef RandomAccessConstIterator<T>		const_iterator;
+//	typedef RandomAccessIterator<T> 			iterator;
+//	typedef RandomAccessConstIterator<T>		const_iterator;
+	typedef VectorIterator<T, false>			iterator;
+	typedef VectorIterator<T, true>				const_iterator;
 	typedef typename iterator::reference		reference;
 	typedef typename const_iterator::reference	const_reference;
 	typedef typename iterator::pointer			pointer;

@@ -9,7 +9,7 @@
 #ifndef PRISM_ALGORITHMS_H_
 #define PRISM_ALGORITHMS_H_
 
-#include <prism/h/algorithms_aux.h>
+#include <prism/aux/algorithms_aux.h>
 
 namespace prism {
 

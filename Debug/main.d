@@ -4,9 +4,14 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Array.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_tags.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_traits.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/aux/iterator_aux.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/aux/algorithms_aux.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Stack \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Vector \
@@ -19,8 +24,6 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedDataPointer.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Exception \
@@ -75,11 +78,21 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
+/Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_tags.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_traits.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/aux/iterator_aux.h:
+
 /Users/iainhemstock/GitHub/Prism/inc/prism/algorithms:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms_aux.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/aux/algorithms_aux.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Stack:
 
@@ -104,10 +117,6 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/OutOfBoundsException:
 

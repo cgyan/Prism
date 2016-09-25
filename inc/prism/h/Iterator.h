@@ -9,53 +9,21 @@
 #ifndef PRISM_ITERATOR_H_
 #define PRISM_ITERATOR_H_
 
+#include <prism/h/iterator_tags.h>
+#include <prism/h/iterator_traits.h>
+#include <prism/aux/iterator_aux.h>
 #include <cstddef> // for std::ptrdiff_t
 
 namespace prism {
 
-/****************************************************************************************************************
- * Tags to describe what kind of iterator a particular iterator type is. They are used in the container algorithms
- * to determine which is the best algorithm to use for that particular type of iterator.
- ****************************************************************************************************************/
-struct input_iterator_tag {};
-struct output_iterator_tag {};
-struct forward_iterator_tag : public input_iterator_tag {};
-struct bidirectional_iterator_tag : public forward_iterator_tag {};
-struct random_access_iterator_tag : public bidirectional_iterator_tag {};
-
-/****************************************************************************************************************
- * A useful way to extract types from an iterator
- * i.e. Stack<int> * p = iterator_traits<Stack<int> >::pointer;
- * i.e. Vector<float> * p = iterator_traits<RandomAccessIterator>::pointer;
- ****************************************************************************************************************/
-template <class IterType>
-struct iterator_traits  {
-	typedef typename IterType::value_type 			value_type;
-	typedef typename IterType::difference_type 		difference_type;
-	typedef typename IterType::iterator_category 	iterator_category;
-	typedef typename IterType::pointer 				pointer;
-	typedef typename IterType::reference 			reference;
-};
-
 /**
- * Returns the distance between two RandomAccessIterators.
+ * Moves the iterator forwards by numSteps (or backwards if numSteps is negative).
  */
-template <class RandomAccessIterator>
-typename prism::iterator_traits<RandomAccessIterator>::difference_type
-distance_aux(RandomAccessIterator first, RandomAccessIterator last, random_access_iterator_tag) {
-	return last - first;
-}
-
-/**
- * Returns the distance between two ForwardIterators.
- */
-template <class ForwardIterator>
-typename prism::iterator_traits<ForwardIterator>::difference_type
-distance_aux(ForwardIterator first, ForwardIterator last, forward_iterator_tag) {
-	int count = 0;
-	while (first++ != last)
-		++count;
-	return count;
+template <class InputIterator>
+void
+advance(InputIterator& iterator, const int numSteps) {
+	typedef typename prism::iterator_traits<InputIterator>::iterator_category it_cat;
+	advance_aux(iterator, numSteps, it_cat());
 }
 
 /**
