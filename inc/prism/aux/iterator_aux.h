@@ -68,6 +68,17 @@ distance_aux(RandomAccessIterator first, RandomAccessIterator last, random_acces
 	return last - first;
 }
 
+/**
+ *
+ */
+template <class BidirectionalIterator>
+BidirectionalIterator
+previous_aux(BidirectionalIterator it, int numSteps=1) {
+	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
+	prism::advance_aux(it, -numSteps, it_cat());
+	return it;
+}
+
 
 
 } // end namespace prism
@@ -75,3 +86,12 @@ distance_aux(RandomAccessIterator first, RandomAccessIterator last, random_acces
 
 
 #endif /* PRISM_ITERATOR_AUX_H_ */
+
+
+
+
+
+
+
+
+

@@ -7,10 +7,10 @@
  *      Author: iainhemstock
  */
 
-#include <prism/Circle>
-#include <prism/Pointf>
-#include <prism/Mathf>
-#include <prism/Algorithms>
+#include <prism/h/Circle.h>
+#include <prism/h/Pointf.h>
+#include <prism/h/Mathf.h>
+#include <prism/h/algorithms.h>
 #include <cmath>
 #include <iostream>
 

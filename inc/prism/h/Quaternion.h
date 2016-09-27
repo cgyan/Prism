@@ -1,8 +1,6 @@
 #ifndef PRISM_QUATERNION_H_
 #define PRISM_QUATERNION_H_
 
-#include <ostream>
-
 /*!
 A Quaternion is made up of four components (w, x, y and z) which are a scalar (w) and a 3d vector (x, y and z).
 It does not suffer from gimbal lock and yet can represent any orientation possible.
@@ -36,6 +34,8 @@ and then rotating that result by quaternion b would be as follows:
 	   = (b * a) * v * (b * a).inverse
 So, rotating by a and then by b is equivalent to the single rotation of the product of ba.
 */
+
+#include <ostream>
 
 namespace prism {
 

@@ -6,7 +6,8 @@
  *      Author: iainhemstock
  */
 
-#include <prism/Time>
+#include <prism/h/Time.h>
+#include <prism/h/String.h>
 #include <chrono>
 
 namespace prism {

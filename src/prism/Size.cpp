@@ -6,7 +6,7 @@
  *      Author: iainhemstock
  */
 
-#include <prism/Size>
+#include <prism/h/Size.h>
 #include <iostream>
 
 

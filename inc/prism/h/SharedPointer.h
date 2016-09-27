@@ -10,7 +10,7 @@
 #define PRISM_SHAREDPOINTER_H_
 
 #include <ostream>
-#include <prism/ReferenceCounter>
+#include <prism/h/ReferenceCounter.h>
 
 namespace prism {
 

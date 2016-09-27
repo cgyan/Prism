@@ -6,8 +6,8 @@
  *      Author: iainhemstock
  */
 
-#include <prism/Fraction>
-#include <prism/Algorithms>
+#include <prism/h/Fraction.h>
+#include <prism/h/algorithms.h>
 
 namespace prism {
 

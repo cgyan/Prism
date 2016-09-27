@@ -1,6 +1,6 @@
 /*
  * Char.h
- * v0.*
+ * v1
  *
  *  Created on: Jul 18, 2016
  *      Author: iainhemstock

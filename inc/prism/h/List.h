@@ -18,12 +18,12 @@
 #ifndef PRISM_TMP_LIST_H_
 #define PRISM_TMP_LIST_H_
 
-#include <prism/SharedData>
-#include <prism/SharedDataPointer>
-#include <prism/Allocator>
-#include <prism/algorithms>
-#include <prism/iterator>
-#include <prism/utilities> // for prism::conditional_type
+#include <prism/h/SharedData.h>
+#include <prism/h/SharedDataPointer.h>
+#include <prism/h/Allocator.h>
+#include <prism/h/algorithms.h>
+#include <prism/h/iterator.h>
+#include <prism/h/utilities.h> // for prism::conditional_type
 #include <cstddef> // for std::ptrdiff_t
 #include <ostream>
 #include <utility> // for std::forward

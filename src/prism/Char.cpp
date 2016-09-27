@@ -6,7 +6,7 @@
  *      Author: iainhemstock
  */
 
-#include <prism/Char>
+#include <prism/h/Char.h>
 
 namespace prism {
 

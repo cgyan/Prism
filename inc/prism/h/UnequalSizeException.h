@@ -9,7 +9,7 @@
 #ifndef UNEQUALSIZEEXCEPTION_H_
 #define UNEQUALSIZEEXCEPTION_H_
 
-#include <prism/Exception>
+#include <prism/h/Exception.h>
 #include <string>
 #include <sstream>
 

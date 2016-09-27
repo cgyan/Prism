@@ -1,5 +1,5 @@
-#include <prism/Pointf>
-#include <prism/Point>
+#include <prism/h/Pointf.h>
+#include <prism/h/Point.h>
 
 namespace prism {
 

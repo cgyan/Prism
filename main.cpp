@@ -5,9 +5,8 @@
  *      Author: iainhemstock
  */
 
-#define PRISM_DEBUG_
 
-#include "gtest/gtest.h"
+//#include "gtest/gtest.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -33,7 +32,7 @@
 #include <prism/List>
 #include <prism/Queue>
 #include <prism/Vector>
-#include <prism/Iterator>
+#include <prism/iterator>
 #include <prism/Point>
 #include <prism/Pointf>
 #include <prism/OutOfBoundsException>
@@ -54,56 +53,38 @@
 #include <prism/memory>
 #include <prism/Allocator>
 #include <prism/LogAllocator>
-#include <prism/h/Obj.h>
+//#include <prism/h/Obj.h>
 
 using namespace prism;
 using namespace std;
 
 //bool isOdd(int n) { return n%2 == 1; }
-bool isEven(int n) { return n%2 == 0; }
-bool isNegative(int n) { return n<0; }
-void print(int n) { cout << n << endl; }
-template <class ForwardIterator>
-std::ostream& printRange(std::ostream& out, ForwardIterator start, ForwardIterator end) {
-	while (start != end) out << *start++ << endl;
-	return out;
-}
-
-struct IsOddPredicate {
-	bool operator()(int n) {
-		return n%2==1;
-	}
-};
+//bool isEven(int n) { return n%2 == 0; }
+//bool isNegative(int n) { return n<0; }
+//void print(int n) { cout << n << endl; }
+//template <class ForwardIterator>
+//std::ostream& printRange(std::ostream& out, ForwardIterator start, ForwardIterator end) {
+//	while (start != end) out << *start++ << endl;
+//	return out;
+//}
+//
+//struct IsOddPredicate {
+//	bool operator()(int n) {
+//		return n%2==1;
+//	}
+//};
 
 
 
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "*List*";
-	::testing::InitGoogleTest(&argc, argv);
-
-
-	Vector<int> c = {1,2,3,4,5};
-	Vector<int>::iterator it = c.begin();
-	prism::sort(c.begin(), c.end());
-	prism::advance(it, 3);
-	prism::advance(it, -1);
-	cout << *it << endl;
-
-//	while (it != c.end())
-//		cout << *it++ << endl;
+//	::testing::GTEST_FLAG(filter) = "*String*";
+//	::testing::InitGoogleTest(&argc, argv);
 
 
 
-
-//	delete p;
-
-
-//	printRange(cout, c.begin(), c.end());
-
-
-
+	// matrix4 point pointf rect vector2 vector3 vector4
 
 //	return RUN_ALL_TESTS();
 //	return 0;

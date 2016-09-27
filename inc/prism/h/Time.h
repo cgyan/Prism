@@ -9,10 +9,11 @@
 #ifndef PRISM_TIME_H_
 #define PRISM_TIME_H_
 
-#include <prism/String>
+//#include <prism/h/String.h>
 #include <ostream>
 
 namespace prism {
+class String;
 
 /*! This is the detailed description of Time.
  *

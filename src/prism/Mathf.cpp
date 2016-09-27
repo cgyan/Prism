@@ -1,4 +1,4 @@
-#include <prism/Mathf>
+#include <prism/h/Mathf.h>
 #include <cmath>
 
 namespace prism {

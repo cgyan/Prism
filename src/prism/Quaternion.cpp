@@ -1,8 +1,8 @@
-#include <prism/Quaternion>
-#include <prism/Vector3>
-#include <prism/Vector4>
-#include <prism/Matrix4>
-#include <prism/Mathf>
+#include <prism/h/Quaternion.h>
+#include <prism/h/Vector3.h>
+#include <prism/h/Vector4.h>
+#include <prism/h/Matrix4.h>
+#include <prism/h/Mathf.h>
 #include <cmath>
 
 namespace prism {

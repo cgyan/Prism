@@ -1,4 +1,4 @@
-#include <prism/Point>
+#include <prism/h/Point.h>
 #include <math.h>
 
 namespace prism {

@@ -9,10 +9,11 @@
 #ifndef PRISM_BITVECTOR_H_
 #define PRISM_BITVECTOR_H_
 
-#include <prism/String>
+//#include <prism/h/String.h>
 #include <ostream>
 
 namespace prism {
+class String;
 /******************************************************************************
  * BitvectorData
  *****************************************************************************/

@@ -1,17 +1,17 @@
 /*
  * Rect.cpp
- * v0.1
+ * v1
  *
  *  Created on: Jul 1, 2016
  *      Author: iainhemstock
  */
 
-#include <prism/Rect>
-#include <prism/Size>
-#include <prism/Point>
+#include <prism/h/Rect.h>
+#include <prism/h/Size.h>
+#include <prism/h/Point.h>
+#include <prism/h/algorithms.h>
 #include <iostream>
 #include <cmath>
-#include <prism/Algorithms>
 
 namespace prism {
 

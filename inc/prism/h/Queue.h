@@ -25,7 +25,7 @@
 #ifndef PRISM_QUEUE_H_
 #define PRISM_QUEUE_H_
 
-#include <prism/Vector>
+#include <prism/h/Vector.h>
 #include <ostream>
 
 namespace prism {

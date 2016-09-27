@@ -16,7 +16,7 @@
  * still pointers in the vector then an error message is printed to the console.
  */
 
-#include <prism/Vector>
+#include <prism/h/Vector.h>
 #include <utility>
 
 namespace prism {

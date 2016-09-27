@@ -1,10 +1,10 @@
-#include <prism/Matrix4>
-#include <prism/Vector3>
-#include <prism/Vector4>
+#include <prism/h/Matrix4.h>
+#include <prism/h/Vector3.h>
+#include <prism/h/Vector4.h>
+#include <prism/h/Point.h>
+#include <prism/h/Mathf.h>
 #include <iostream>
 #include <math.h>
-#include <prism/Point>
-#include <prism/Mathf>
 
 namespace prism {
 

@@ -9,14 +9,12 @@
 #ifndef PRISM_STRING_H_
 #define PRISM_STRING_H_
 
-#include <prism/Char>
-#include <prism/iterator>
-#include <prism/List>
+#include <prism/h/iterator.h>
+#include <prism/h/List.h>
 #include <ostream>
 #include <string>
 
 namespace prism {
-
 /******************************************************************************
  * StringData
  *****************************************************************************/
@@ -41,10 +39,9 @@ struct StringData {
 class String {
 private:
 	StringData * d;
-
 public:
-	typedef RandomAccessIterator<char> 			iterator;
-	typedef RandomAccessConstIterator<char>		const_iterator;
+	typedef SequenceIterator<char,false> 		iterator;
+	typedef SequenceIterator<char,true>			const_iterator;
 	typedef typename iterator::reference		reference;
 	typedef typename const_iterator::reference	const_reference;
 	typedef typename iterator::pointer			pointer;

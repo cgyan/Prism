@@ -6,8 +6,8 @@
  *      Author: iainhemstock
  */
 
-#ifndef PRISM_TYPES_H_
-#define PRISM_TYPES_H_
+#ifndef PRISM_UTILITIES_H_
+#define PRISM_UTILITIES_H_
 
 namespace prism {
 
@@ -28,4 +28,4 @@ struct conditional_type<false, Type1, Type2> { typedef Type2 type; };
 
 
 
-#endif /* PRISM_TYPES_H_ */
+#endif /* PRISM_UTILITIES_H_ */

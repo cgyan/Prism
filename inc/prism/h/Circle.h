@@ -10,8 +10,8 @@
 #define PRISM_CIRCLE_H_
 
 #include <ostream>
-#include <prism/Vector>
-#include <prism/Flags>
+#include <prism/h/Vector.h>
+#include <prism/h/Flags.h>
 
 namespace prism {
 

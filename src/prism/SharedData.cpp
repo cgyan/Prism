@@ -6,7 +6,7 @@
  *      Author: iainhemstock
  */
 // todo comment each method in this class
-#include <prism/SharedData>
+#include <prism/h/SharedData.h>
 
 namespace prism {
 

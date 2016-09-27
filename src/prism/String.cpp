@@ -6,9 +6,10 @@
  *      Author: iainhemstock
  */
 
-#include <prism/String>
-#include <prism/Algorithms>
-#include <prism/OutOfBoundsException>
+#include <prism/h/String.h>
+#include <prism/h/Char.h>
+#include <prism/h/algorithms.h>
+#include <prism/h/OutOfBoundsException.h>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -971,15 +972,15 @@ const int String::toInt() const {
  */
 String String::toLower() const {
 	String s(*this);
-	const_iterator cit = s.constBegin();
+	iterator it = s.begin();
 
-	while (cit != s.constEnd()) {
-		Char c(*cit);
+	while (it != s.end()) {
+		Char c(*it);
 		if (c.isLetter() && c.isUpper()) {
 			c += 32;
-			*cit = c.tochar();
+			*it = c.tochar();
 		}
-		++cit;
+		++it;
 	}
 	return s;
 }
@@ -1000,15 +1001,15 @@ std::string String::toStdString() const {
  */
 String String::toUpper() const {
 	String s(*this);
-	const_iterator cit = s.constBegin();
+	iterator it = s.begin();
 
-	while (cit != s.constEnd()) {
-		Char c(*cit);
+	while (it != s.end()) {
+		Char c(*it);
 		if (c.isLetter() && c.isLower()) {
 			c -= 32;
-			*cit = c.tochar();
+			*it = c.tochar();
 		}
-		++cit;
+		++it;
 	}
 	return s;
 }

@@ -9,11 +9,11 @@
 #ifndef STACK_H_
 #define STACK_H_
 
-#include <prism/algorithms>
-#include <prism/Vector>
-#include <prism/List>
-#include <prism/SharedData>
-#include <prism/SharedDataPointer>
+#include <prism/h/algorithms.h>
+#include <prism/h/Vector.h>
+#include <prism/h/List.h>
+#include <prism/h/SharedData.h>
+#include <prism/h/SharedDataPointer.h>
 #include <ostream>
 
 namespace prism {

@@ -9,7 +9,7 @@
 #ifndef PRISM_OUTOFBOUNDSEXCEPTION_H_
 #define PRISM_OUTOFBOUNDSEXCEPTION_H_
 
-#include <prism/Exception>
+#include <prism/h/Exception.h>
 #include <string>
 #include <sstream>
 

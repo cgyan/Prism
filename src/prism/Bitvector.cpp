@@ -6,12 +6,13 @@
  *      Author: iainhemstock
  */
 
-#include <prism/Bitvector>
-#include <prism/Char>
-#include <prism/algorithms>
-#include <prism/OutOfBoundsException>
-#include <prism/UnequalSizeException>
-#include <prism/OverflowException>
+#include <prism/h/Bitvector.h>
+#include <prism/h/String.h>
+#include <prism/h/Char.h>
+#include <prism/h/algorithms.h>
+#include <prism/h/OutOfBoundsException.h>
+#include <prism/h/UnequalSizeException.h>
+#include <prism/h/OverflowException.h>
 #include <cmath>
 
 namespace prism {

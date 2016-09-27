@@ -9,7 +9,7 @@
 #ifndef PRISM_OVERFLOWEXCEPTION_H_
 #define PRISM_OVERFLOWEXCEPTION_H_
 
-#include <prism/Exception>
+#include <prism/h/Exception.h>
 #include <string>
 #include <sstream>
 

@@ -13,12 +13,16 @@
  * todo add support for move constructor
  */
 
-#include <prism/iterator>
-#include <prism/algorithms>
+#include <prism/h/iterator.h>
+#include <prism/h/algorithms.h>
 #include <iostream>
 #include <initializer_list>
 
 namespace prism {
+
+/******************************************************************************
+ * Array
+ *****************************************************************************/
 /*! Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence.
  */
 template <class T>
@@ -32,8 +36,8 @@ public:
 	typedef size_t 							size_type;
 	typedef std::ptrdiff_t 					difference_type;
 	typedef random_access_iterator_tag		iterator_category;
-	typedef RandomAccessIterator<T> 		iterator;
-	typedef RandomAccessConstIterator<T> 	const_iterator;
+	typedef SequenceIterator<T,false> 		iterator;
+	typedef SequenceIterator<T,true>		 const_iterator;
 
 private:
 	T * m_array;
