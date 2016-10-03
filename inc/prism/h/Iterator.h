@@ -12,7 +12,7 @@
 #include <prism/h/iterator_tags.h>
 #include <prism/h/iterator_traits.h>
 #include <prism/aux/iterator_aux.h>
-#include <prism/h/utilities.h>
+#include <prism/h/utility.h>
 #include <cstddef> // for std::ptrdiff_t
 
 namespace prism {

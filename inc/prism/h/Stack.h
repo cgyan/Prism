@@ -9,7 +9,7 @@
 #ifndef STACK_H_
 #define STACK_H_
 
-#include <prism/h/algorithms.h>
+#include <prism/h/algorithm.h>
 #include <prism/h/Vector.h>
 #include <prism/h/List.h>
 #include <prism/h/SharedData.h>

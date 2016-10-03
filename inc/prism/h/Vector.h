@@ -16,7 +16,7 @@
 #include <prism/h/iterator.h>
 #include <prism/h/List.h>
 #include <prism/h/OutOfBoundsException.h>
-#include <prism/h/algorithms.h>
+#include <prism/h/algorithm.h>
 #include <iostream>
 #include <vector>
 #include <initializer_list>

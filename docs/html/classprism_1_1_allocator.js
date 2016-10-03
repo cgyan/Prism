@@ -1,9 +1,12 @@
 var classprism_1_1_allocator =
 [
+    [ "propagate_on_container_copy_assignment", "structprism_1_1_allocator_1_1propagate__on__container__copy__assignment.html", null ],
+    [ "propagate_on_container_move_assignment", "structprism_1_1_allocator_1_1propagate__on__container__move__assignment.html", null ],
+    [ "propagate_on_container_swap", "structprism_1_1_allocator_1_1propagate__on__container__swap.html", null ],
     [ "rebind", "structprism_1_1_allocator_1_1rebind.html", "structprism_1_1_allocator_1_1rebind" ],
     [ "const_pointer", "classprism_1_1_allocator.html#af6a4a91dfc203203ecc319a457ce4dce", null ],
     [ "const_reference", "classprism_1_1_allocator.html#a89911899c97ae877a81b798957a2d899", null ],
-    [ "difference_type", "classprism_1_1_allocator.html#a1769ae6e60e970a4d30ee15275f7ac6d", null ],
+    [ "difference_type", "classprism_1_1_allocator.html#a39ca38c4c741bbc51d3c6e26603102ef", null ],
     [ "pointer", "classprism_1_1_allocator.html#ad3c6706a7243bd3ef489e16d34d5750f", null ],
     [ "reference", "classprism_1_1_allocator.html#a5dde9876d2ed0ca292d8a2019ac2836f", null ],
     [ "size_type", "classprism_1_1_allocator.html#a47cb9435e4e9ff4c934ea3d4b4338d52", null ],
@@ -11,6 +14,7 @@ var classprism_1_1_allocator =
     [ "Allocator", "classprism_1_1_allocator.html#a23e9458b3637d24fcb4d0a4feadac646", null ],
     [ "Allocator", "classprism_1_1_allocator.html#a974f6bcc97b9ad8cd3cba142f5c51ccf", null ],
     [ "Allocator", "classprism_1_1_allocator.html#a87ddac6131f7b88ae2ff9bad3997a154", null ],
+    [ "Allocator", "classprism_1_1_allocator.html#a4863b97f388493584befc0131857ebb1", null ],
     [ "~Allocator", "classprism_1_1_allocator.html#a3c220f4ea1fdb82ba53817cac0132c20", null ],
     [ "address", "classprism_1_1_allocator.html#afb90329306f4d3c8a29b3e715caa580c", null ],
     [ "address", "classprism_1_1_allocator.html#a2607cb18ace08eb0a509ec6bb5da74f0", null ],
@@ -20,5 +24,10 @@ var classprism_1_1_allocator =
     [ "destroy", "classprism_1_1_allocator.html#a660832107a9bc094324adf9da718fa43", null ],
     [ "max_size", "classprism_1_1_allocator.html#adc3d03562ab64759d8a48a191ff344d8", null ],
     [ "operator!=", "classprism_1_1_allocator.html#aa1b7baa61a8e3938861dc0e9e9d369a5", null ],
-    [ "operator==", "classprism_1_1_allocator.html#a6e4d64dc74ef98bae3cb13eef532116c", null ]
+    [ "operator=", "classprism_1_1_allocator.html#a58dd5e4718b753f0e64b1d9c00089b46", null ],
+    [ "operator=", "classprism_1_1_allocator.html#ae35090442e453eec485e61afd3959a04", null ],
+    [ "operator=", "classprism_1_1_allocator.html#ae723165ce5bf6f080ec58f45e16acf5c", null ],
+    [ "operator=", "classprism_1_1_allocator.html#a17b523e405b81ddc67a68b028c4d5da9", null ],
+    [ "operator==", "classprism_1_1_allocator.html#a6e4d64dc74ef98bae3cb13eef532116c", null ],
+    [ "select_on_container_copy_construction", "classprism_1_1_allocator.html#ae1359cd2729046151b42c55365e57139", null ]
 ];

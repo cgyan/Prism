@@ -1,13 +1,13 @@
 /*
- * types.h
+ * utility.h
  * v1
  *
  *  Created on: Sep 5, 2016
  *      Author: iainhemstock
  */
 
-#ifndef PRISM_UTILITIES_H_
-#define PRISM_UTILITIES_H_
+#ifndef PRISM_UTILITY_H_
+#define PRISM_UTILITY_H_
 
 namespace prism {
 
@@ -28,4 +28,4 @@ struct conditional_type<false, Type1, Type2> { typedef Type2 type; };
 
 
 
-#endif /* PRISM_UTILITIES_H_ */
+#endif /* PRISM_UTILITY_H_ */

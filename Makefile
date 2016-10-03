@@ -1,15 +1,17 @@
-CC		= g++
+CC = g++
 
-CFLAGS	= -Wall -std=c++11 -g
+CFLAGS = -Wall -std=c++11 -g
 
-VPATH	= \
+VPATH = \
           inc/prism \
           inc/prism/h \
           src/prism
 
-INC		= -I inc 
+INC = \
+         -I inc \
+         -I external
 
-OBJS	= \
+OBJS = \
           main.o \
           Bitvector.o \
           Char.o \
@@ -28,9 +30,8 @@ OBJS	= \
           Vector2.o \
           Vector3.o \
           Vector4.o
-          
-HEADERS	=\
-         inc/prism/algorithms \
+
+HEADERS =\
          inc/prism/Allocator\
          inc/prism/Array \
          inc/prism/Bitvector\
@@ -55,43 +56,79 @@ HEADERS	=\
          inc/prism/String \
          inc/prism/Time \
          inc/prism/utilities \
-         inc/prism/Vector 
-         
-all : prism
+         inc/prism/Vector
+
+SOURCES = \
+         main.cpp \
+         Bitvector.cpp \
+         Char.cpp \
+         Circle.cpp \
+         Fraction.cpp \
+         Mathf.cpp \
+         Matrix4.cpp \
+         Point.cpp \
+         Pointf.cpp \
+         Quaternion.cpp \
+         Rect.cpp \
+         SharedData.cpp \
+         Size.cpp \
+         String.cpp \
+         Time.cpp \
+         Vector2.cpp \
+         Vector3.cpp \
+         Vector4.cpp
+
+EXE = prism
+
+default : $(EXE)
 
 library : $(OBJS)
 	g++ -dynamiclib -o libprism.so $(OBJS) -headerpad_max_install_names
 
-prism : $(OBJS)
-	@echo Building target: prism
-	$(CC) -o prism $(OBJS)
-	@echo Finished building target: prism
+documentation :
+	doxygen Doxyfile
+
+valgrind :
+	valgrind --leak-check=full ./$(EXE)
+
+#include $(SOURCES:.c=.d)
+
+#%.d: %.c
+#	@set -e; rm -f $@; \
+	$(CC) -M $(CFLAGS) $< > $@.$$$$; \
+	sed ’s,\($*\)\.o[ :]*,\1.o $@ : ,g’ < $@.$$$$ > $@; \
+	rm -f $@.$$$$
+
+$(EXE) : $(OBJS)
+	@echo Building target: $@
+	$(CC) -o $(EXE) $(OBJS)
+	@echo Finished building target: $@
 	@echo ''
-	
+
 main.o : main.cpp $(HEADERS)
 	@echo Building file: main.cpp
 	$(CC) $(CFLAGS) $(INC) -c main.cpp
 	@echo Finished building file: main.cpp
 	@echo ''
-	
+
 Bitvector.o : Bitvector.cpp Bitvector.h algorithms.h OutOfBoundsException.h UnequalSizeException.h OverflowException.h Char.h
 	@echo Building file: src/prism/Bitvector.cpp
 	$(CC) $(CFLAGS) $(INC) -c src/prism/Bitvector.cpp
 	@echo Finished building file: src/prism/Bitvector.cpp
 	@echo ''
-	
+
 Char.o : Char.cpp Char.h
 	@echo Building file: src/prism/Char.cpp
 	$(CC) $(CFLAGS) $(INC) -c src/prism/Char.cpp
 	@echo Finished building file: src/prism/Char.cpp
 	@echo ''
-	
-Circle.o : Circle.cpp Circle.h Pointf.h Mathf.h algorithms.h 
+
+Circle.o : Circle.cpp Circle.h Pointf.h Mathf.h algorithms.h
 	@echo Building file: src/prism/Circle.cpp
 	$(CC) $(CFLAGS) $(INC) -c src/prism/Circle.cpp
 	@echo Finished building file: src/prism/Circle.cpp
 	@echo ''
-	
+
 Fraction.o : Fraction.cpp Fraction.h algorithms.h
 	@echo Building file: src/prism/Fraction.cpp
 	$(CC) $(CFLAGS) $(INC) -c src/prism/Fraction.cpp
@@ -140,7 +177,7 @@ SharedData.o : SharedData.cpp SharedData.h
 	@echo Finished building file: src/prism/SharedData.cpp
 	@echo ''
 
-Size.o : Size.cpp Size.h 
+Size.o : Size.cpp Size.h
 	@echo Building file: src/prism/Size.cpp
 	$(CC) $(CFLAGS) $(INC) -c src/prism/Size.cpp
 	@echo Finished building file: src/prism/Size.cpp
@@ -152,7 +189,7 @@ String.o : String.cpp String.h Char.h algorithms.h OutOfBoundsException.h iterat
 	@echo Finished building file: src/prism/String.cpp
 	@echo ''
 
-Time.o : Time.cpp Time.h 
+Time.o : Time.cpp Time.h
 	@echo Building file: src/prism/Time.cpp
 	$(CC) $(CFLAGS) $(INC) -c src/prism/Time.cpp
 	@echo Finished building file: src/prism/Time.cpp
@@ -175,6 +212,6 @@ Vector4.o : Vector4.cpp Vector4.h Vector2.h Vector3.h Point.h
 	$(CC) $(CFLAGS) $(INC) -c src/prism/Vector4.cpp
 	@echo Finished building file: src/prism/Vector4.cpp
 	@echo ''
-	
+
 clean :
-	rm -rf $(OBJS) prism
+	rm -rf $(OBJS) $(EXE) libprism.so

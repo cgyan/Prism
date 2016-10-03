@@ -59,5 +59,6 @@ var _deque_8h =
     [ "size", "_deque_8h.html#acd3c0f96adf158a29387191d79c4d874", null ],
     [ "startsWith", "_deque_8h.html#a92e90ca54b9fa627213076f93d44ca2d", null ],
     [ "toList", "_deque_8h.html#a07654e91e7474a3ccdcd95bb5e57baea", null ],
+    [ "toStdDeque", "_deque_8h.html#a770640a1fe99095d96e9295b225ac93d", null ],
     [ "~Deque", "_deque_8h.html#a331c22c8877ca45c3f9504b1fbfb711c", null ]
 ];

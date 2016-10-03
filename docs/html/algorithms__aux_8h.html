@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: inc/prism/h/algorithms_aux.h File Reference</title>
+<title>Prism: inc/prism/aux/algorithms_aux.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('algorithms__aux_8h.html','');});
 <div class="title">algorithms_aux.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;prism/Iterator&gt;</code><br />
+<div class="textblock"><code>#include &lt;prism/iterator&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 </div>
@@ -223,18 +223,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ab6f8ed8b450ff281e02218e10d5643a7"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator1 , class ForwardIterator2 &gt; </td></tr>
 <tr class="memitem:ab6f8ed8b450ff281e02218e10d5643a7"><td class="memTemplItemLeft" align="right" valign="top">ForwardIterator1&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#ab6f8ed8b450ff281e02218e10d5643a7">prism::search_aux</a> (ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2, ForwardIterator2 last2)</td></tr>
 <tr class="separator:ab6f8ed8b450ff281e02218e10d5643a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e7b2f97895db323cbefbc4af311ccb9"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator &gt; </td></tr>
-<tr class="memitem:a9e7b2f97895db323cbefbc4af311ccb9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a9e7b2f97895db323cbefbc4af311ccb9">prism::sort_aux</a> (ForwardIterator first, ForwardIterator last)</td></tr>
-<tr class="separator:a9e7b2f97895db323cbefbc4af311ccb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3a66e1051c4c7874f305ad2a5f0b37e"><td class="memTemplParams" colspan="2">template&lt;class RandomAccessIterator &gt; </td></tr>
-<tr class="memitem:af3a66e1051c4c7874f305ad2a5f0b37e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#af3a66e1051c4c7874f305ad2a5f0b37e">prism::sort_bubble_aux</a> (RandomAccessIterator first, RandomAccessIterator last)</td></tr>
-<tr class="separator:af3a66e1051c4c7874f305ad2a5f0b37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e22fc5d6e1e94cf7d9d76cee8dcb281"><td class="memTemplParams" colspan="2">template&lt;class RandomAccessIterator &gt; </td></tr>
+<tr class="memitem:a1e22fc5d6e1e94cf7d9d76cee8dcb281"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a1e22fc5d6e1e94cf7d9d76cee8dcb281">prism::sort_bubble_aux</a> (RandomAccessIterator first, RandomAccessIterator last, <a class="el" href="structprism_1_1random__access__iterator__tag.html">prism::random_access_iterator_tag</a>)</td></tr>
+<tr class="separator:a1e22fc5d6e1e94cf7d9d76cee8dcb281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8132b98c9ee1d630059074e1779341b2"><td class="memTemplParams" colspan="2">template&lt;class BidirectionalIterator &gt; </td></tr>
+<tr class="memitem:a8132b98c9ee1d630059074e1779341b2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a8132b98c9ee1d630059074e1779341b2">prism::sort_bubble_aux</a> (BidirectionalIterator first, BidirectionalIterator last, <a class="el" href="structprism_1_1bidirectional__iterator__tag.html">prism::bidirectional_iterator_tag</a>)</td></tr>
+<tr class="separator:a8132b98c9ee1d630059074e1779341b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab289bdf7cde130b0aeea21a9711770f4"><td class="memTemplParams" colspan="2">template&lt;class RandomAccessIterator &gt; </td></tr>
 <tr class="memitem:ab289bdf7cde130b0aeea21a9711770f4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#ab289bdf7cde130b0aeea21a9711770f4">prism::sort_heap_aux</a> (RandomAccessIterator first, RandomAccessIterator last)</td></tr>
 <tr class="separator:ab289bdf7cde130b0aeea21a9711770f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46e0e235fa71938e5ebf29387b917057"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator &gt; </td></tr>
-<tr class="memitem:a46e0e235fa71938e5ebf29387b917057"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a46e0e235fa71938e5ebf29387b917057">prism::sort_quicksort_aux</a> (ForwardIterator first, ForwardIterator last)</td></tr>
-<tr class="separator:a46e0e235fa71938e5ebf29387b917057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5aebde51f8677c6608cf202e02eac6c"><td class="memTemplParams" colspan="2">template&lt;class RandomAccessIterator &gt; </td></tr>
+<tr class="memitem:ae5aebde51f8677c6608cf202e02eac6c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#ae5aebde51f8677c6608cf202e02eac6c">prism::sort_quicksort_aux</a> (RandomAccessIterator first, RandomAccessIterator last, <a class="el" href="structprism_1_1random__access__iterator__tag.html">prism::random_access_iterator_tag</a> it_cat)</td></tr>
+<tr class="separator:ae5aebde51f8677c6608cf202e02eac6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b96350afdd8de11aac6b0c74f78c99"><td class="memTemplParams" colspan="2">template&lt;class BidirectionalIterator &gt; </td></tr>
+<tr class="memitem:a49b96350afdd8de11aac6b0c74f78c99"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a49b96350afdd8de11aac6b0c74f78c99">prism::sort_quicksort_aux</a> (BidirectionalIterator first, BidirectionalIterator last, <a class="el" href="structprism_1_1bidirectional__iterator__tag.html">prism::bidirectional_iterator_tag</a>)</td></tr>
+<tr class="separator:a49b96350afdd8de11aac6b0c74f78c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f1533ec8a11842db47a4d70cdbd056"><td class="memTemplParams" colspan="2">template&lt;class BidirectionalIterator &gt; </td></tr>
+<tr class="memitem:a79f1533ec8a11842db47a4d70cdbd056"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a79f1533ec8a11842db47a4d70cdbd056">prism::sort_aux</a> (BidirectionalIterator first, BidirectionalIterator last)</td></tr>
+<tr class="separator:a79f1533ec8a11842db47a4d70cdbd056"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d3a7129cc6ab5d9a80301436e4d2e48"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a6d3a7129cc6ab5d9a80301436e4d2e48"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a6d3a7129cc6ab5d9a80301436e4d2e48">prism::swap_aux</a> (T &amp;a, T &amp;b)</td></tr>
 <tr class="separator:a6d3a7129cc6ab5d9a80301436e4d2e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,7 +268,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_5ee054a0bd514c9ebd20d9d51922438b.html">prism</a></li><li class="navelem"><a class="el" href="dir_aafb5e7074281cb47ca99873a43321d0.html">h</a></li><li class="navelem"><a class="el" href="algorithms__aux_8h.html">algorithms_aux.h</a></li>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_5ee054a0bd514c9ebd20d9d51922438b.html">prism</a></li><li class="navelem"><a class="el" href="dir_75df29686c94595c8d3f492f97a1cce4.html">aux</a></li><li class="navelem"><a class="el" href="algorithms__aux_8h.html">algorithms_aux.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

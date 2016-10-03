@@ -9,7 +9,7 @@
 #include <prism/h/Rect.h>
 #include <prism/h/Size.h>
 #include <prism/h/Point.h>
-#include <prism/h/algorithms.h>
+#include <prism/h/algorithm.h>
 #include <iostream>
 #include <cmath>
 

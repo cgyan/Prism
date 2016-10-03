@@ -11,8 +11,8 @@
 
 #include <prism/SharedData>
 #include <prism/SharedDataPointer>
-#include <prism/utilities> // for prism::conditional
-#include <prism/algorithms>
+#include <prism/utility> // for prism::conditional
+#include <prism/algorithm>
 #include <prism/OutOfBoundsException>
 #include <prism/List>
 #include <prism/Allocator>

@@ -1,6 +1,5 @@
 \hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
 \label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
-{\ttfamily \#include \char`\"{}gtest/gtest.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include $<$cstring$>$}\\*
@@ -20,12 +19,13 @@
 {\ttfamily \#include $<$utility$>$}\\*
 {\ttfamily \#include $<$type\+\_\+traits$>$}\\*
 {\ttfamily \#include $<$new$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
 {\ttfamily \#include $<$prism/\+Array$>$}\\*
 {\ttfamily \#include $<$prism/\+Stack$>$}\\*
 {\ttfamily \#include $<$prism/\+List$>$}\\*
 {\ttfamily \#include $<$prism/\+Queue$>$}\\*
 {\ttfamily \#include $<$prism/\+Vector$>$}\\*
-{\ttfamily \#include $<$prism/\+Iterator$>$}\\*
+{\ttfamily \#include $<$prism/iterator$>$}\\*
 {\ttfamily \#include $<$prism/\+Point$>$}\\*
 {\ttfamily \#include $<$prism/\+Pointf$>$}\\*
 {\ttfamily \#include $<$prism/\+Out\+Of\+Bounds\+Exception$>$}\\*
@@ -45,52 +45,15 @@
 {\ttfamily \#include $<$prism/utilities$>$}\\*
 {\ttfamily \#include $<$prism/memory$>$}\\*
 {\ttfamily \#include $<$prism/\+Allocator$>$}\\*
-{\ttfamily \#include $<$prism/\+Logger\+Allocator$>$}\\*
-{\ttfamily \#include $<$prism/h/\+Obj.\+h$>$}\\*
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{struct_is_odd}{Is\+Odd}
-\end{DoxyCompactItemize}
+{\ttfamily \#include $<$prism/\+Log\+Allocator$>$}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
-\item 
-bool \hyperlink{main_8cpp_afdeb4bcdb506aed270b96fe63038419d}{is\+Even} (int n)
-\item 
-bool \hyperlink{main_8cpp_a446d75696e46ba72f62b2e4b7263ff64}{is\+Negative} (int n)
-\item 
-void \hyperlink{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}{print} (int n)
-\item 
-{\footnotesize template$<$class Forward\+Iterator $>$ }\\std\+::ostream \& \hyperlink{main_8cpp_af7f4df177025da81821de0efeba9aaa4}{print\+Range} (std\+::ostream \&out, Forward\+Iterator start, Forward\+Iterator end)
-\item 
-{\footnotesize template$<$typename Alloc\+Type , class T $>$ }\\void \hyperlink{main_8cpp_a4054c28a46c06f86ef08303f73c6dba5}{do\+Allocator\+Stuff} (const T \&value)
 \item 
 int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\index{main.\+cpp@{main.\+cpp}!do\+Allocator\+Stuff@{do\+Allocator\+Stuff}}
-\index{do\+Allocator\+Stuff@{do\+Allocator\+Stuff}!main.\+cpp@{main.\+cpp}}
-\subsubsection[{\texorpdfstring{do\+Allocator\+Stuff(const T \&value)}{doAllocatorStuff(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Alloc\+Type , class T $>$ void do\+Allocator\+Stuff (
-\begin{DoxyParamCaption}
-\item[{const T \&}]{value}
-\end{DoxyParamCaption}
-)}\hypertarget{main_8cpp_a4054c28a46c06f86ef08303f73c6dba5}{}\label{main_8cpp_a4054c28a46c06f86ef08303f73c6dba5}
-\index{main.\+cpp@{main.\+cpp}!is\+Even@{is\+Even}}
-\index{is\+Even@{is\+Even}!main.\+cpp@{main.\+cpp}}
-\subsubsection[{\texorpdfstring{is\+Even(int n)}{isEven(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Even (
-\begin{DoxyParamCaption}
-\item[{int}]{n}
-\end{DoxyParamCaption}
-)}\hypertarget{main_8cpp_afdeb4bcdb506aed270b96fe63038419d}{}\label{main_8cpp_afdeb4bcdb506aed270b96fe63038419d}
-\index{main.\+cpp@{main.\+cpp}!is\+Negative@{is\+Negative}}
-\index{is\+Negative@{is\+Negative}!main.\+cpp@{main.\+cpp}}
-\subsubsection[{\texorpdfstring{is\+Negative(int n)}{isNegative(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Negative (
-\begin{DoxyParamCaption}
-\item[{int}]{n}
-\end{DoxyParamCaption}
-)}\hypertarget{main_8cpp_a446d75696e46ba72f62b2e4b7263ff64}{}\label{main_8cpp_a446d75696e46ba72f62b2e4b7263ff64}
 \index{main.\+cpp@{main.\+cpp}!main@{main}}
 \index{main@{main}!main.\+cpp@{main.\+cpp}}
 \subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
@@ -99,19 +62,3 @@ int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, cha
 \item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
 \end{DoxyParamCaption}
 )}\hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
-\index{main.\+cpp@{main.\+cpp}!print@{print}}
-\index{print@{print}!main.\+cpp@{main.\+cpp}}
-\subsubsection[{\texorpdfstring{print(int n)}{print(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void print (
-\begin{DoxyParamCaption}
-\item[{int}]{n}
-\end{DoxyParamCaption}
-)}\hypertarget{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}{}\label{main_8cpp_a99ed1c00a6bcb150111479e48d730f18}
-\index{main.\+cpp@{main.\+cpp}!print\+Range@{print\+Range}}
-\index{print\+Range@{print\+Range}!main.\+cpp@{main.\+cpp}}
-\subsubsection[{\texorpdfstring{print\+Range(std\+::ostream \&out, Forward\+Iterator start, Forward\+Iterator end)}{printRange(std::ostream &out, ForwardIterator start, ForwardIterator end)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Forward\+Iterator $>$ std\+::ostream\& print\+Range (
-\begin{DoxyParamCaption}
-\item[{std\+::ostream \&}]{out, }
-\item[{Forward\+Iterator}]{start, }
-\item[{Forward\+Iterator}]{end}
-\end{DoxyParamCaption}
-)}\hypertarget{main_8cpp_af7f4df177025da81821de0efeba9aaa4}{}\label{main_8cpp_af7f4df177025da81821de0efeba9aaa4}

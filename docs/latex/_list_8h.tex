@@ -1,21 +1,31 @@
 \hypertarget{_list_8h}{}\section{inc/prism/h/\+List.h File Reference}
 \label{_list_8h}\index{inc/prism/h/\+List.\+h@{inc/prism/h/\+List.\+h}}
-{\ttfamily \#include $<$prism/\+Iterator$>$}\\*
-{\ttfamily \#include $<$prism/algorithms$>$}\\*
+{\ttfamily \#include $<$prism/h/\+Shared\+Data.\+h$>$}\\*
+{\ttfamily \#include $<$prism/h/\+Shared\+Data\+Pointer.\+h$>$}\\*
+{\ttfamily \#include $<$prism/h/\+Allocator.\+h$>$}\\*
+{\ttfamily \#include $<$prism/h/algorithms.\+h$>$}\\*
+{\ttfamily \#include $<$prism/h/iterator.\+h$>$}\\*
+{\ttfamily \#include $<$prism/h/utilities.\+h$>$}\\*
+{\ttfamily \#include $<$cstddef$>$}\\*
 {\ttfamily \#include $<$ostream$>$}\\*
-{\ttfamily \#include $<$forward\+\_\+list$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$initializer\+\_\+list$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classprism_1_1_list}{prism\+::\+List$<$ T $>$}
+struct \hyperlink{structprism_1_1_list_node}{prism\+::\+List\+Node$<$ T $>$}
+\item 
+struct \hyperlink{structprism_1_1_list_iterator}{prism\+::\+List\+Iterator$<$ T, is\+Const $>$}
+\item 
+struct \hyperlink{structprism_1_1_list_memory}{prism\+::\+List\+Memory$<$ Node\+Allocator $>$}
+\item 
+struct \hyperlink{structprism_1_1_list_data}{prism\+::\+List\+Data$<$ T, Node\+Allocator $>$}
+\item 
+class \hyperlink{classprism_1_1_list}{prism\+::\+List$<$ T, T\+Allocator $>$}
 \end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \hyperlink{namespaceprism}{prism}
-\end{DoxyCompactItemize}
-\subsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$class T $>$ }\\std\+::ostream \& \hyperlink{namespaceprism_a50da64555d454821545fe0311fde6a62}{prism\+::operator$<$$<$} (std\+::ostream \&out, const List$<$ T $>$ \&list)
 \end{DoxyCompactItemize}

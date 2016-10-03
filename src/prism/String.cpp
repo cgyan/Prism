@@ -8,7 +8,7 @@
 
 #include <prism/h/String.h>
 #include <prism/h/Char.h>
-#include <prism/h/algorithms.h>
+#include <prism/h/algorithm.h>
 #include <prism/h/OutOfBoundsException.h>
 #include <iostream>
 #include <sstream>

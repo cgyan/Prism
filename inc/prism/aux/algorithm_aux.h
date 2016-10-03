@@ -1,13 +1,13 @@
 /*
- * algorithms.cpp
+ * algorithm_aux.h
  * v1
  *
  *  Created on: Jul 13, 2016
  *      Author: iainhemstock
  */
 
-#ifndef PRISM_ALGORITHMS_AUX_H_
-#define PRISM_ALGORITHMS_AUX_H_
+#ifndef PRISM_ALGORITHM_AUX_H_
+#define PRISM_ALGORITHM_AUX_H_
 
 #include <prism/iterator>
 #include <iostream> // todo remove this
@@ -816,7 +816,7 @@ p_heapify_aux(RandomAccessIterator node, RandomAccessIterator first, RandomAcces
 
 } // namespace prism
 
-#endif /* PRISM_ALGORITHMS_AUX_H_ */
+#endif /* PRISM_ALGORITHM_AUX_H_ */
 
 
 
