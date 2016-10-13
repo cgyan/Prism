@@ -21,7 +21,7 @@ CPP_SRCS += \
 ../src/prism/Vector2.cpp \
 ../src/prism/Vector3.cpp \
 ../src/prism/Vector4.cpp \
-../src/prism/algorithm.cpp 
+../src/prism/Version.cpp 
 
 OBJS += \
 ./src/prism/Bitvector.o \
@@ -41,7 +41,7 @@ OBJS += \
 ./src/prism/Vector2.o \
 ./src/prism/Vector3.o \
 ./src/prism/Vector4.o \
-./src/prism/algorithm.o 
+./src/prism/Version.o 
 
 CPP_DEPS += \
 ./src/prism/Bitvector.d \
@@ -61,7 +61,7 @@ CPP_DEPS += \
 ./src/prism/Vector2.d \
 ./src/prism/Vector3.d \
 ./src/prism/Vector4.d \
-./src/prism/algorithm.d 
+./src/prism/Version.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -5,11 +5,12 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_tags.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_traits.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/aux/iterator_aux.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_aux.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/../../../src/prism/algorithm.cpp \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/aux/algorithm_aux.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Stack \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack.h \
@@ -18,8 +19,11 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedDataPointer.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/List_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Queue \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Queue.h \
@@ -53,13 +57,13 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Time \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Time.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pair \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
   /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer \
   /Users/iainhemstock/GitHub/Prism/inc/prism/utility \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator \
@@ -67,7 +71,13 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/functor \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/functor.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Map \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Map.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Map.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/BinarySearchTree.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/AbstractTree.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Version \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Version.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/PrismVersion \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/PrismVersion.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -81,15 +91,17 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_traits.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/aux/iterator_aux.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_aux.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h:
 
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
+
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/../../../src/prism/algorithm.cpp:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/aux/algorithm_aux.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 
@@ -107,9 +119,15 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
 
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/List_priv.h:
+
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 
@@ -177,8 +195,6 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Pair:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
-
 /Users/iainhemstock/GitHub/Prism/inc/prism/Deque:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData:
@@ -190,6 +206,8 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/memory:
 
@@ -206,3 +224,15 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/Map:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Map.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/BinarySearchTree.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/AbstractTree.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Version:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Version.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/PrismVersion:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/PrismVersion.h:

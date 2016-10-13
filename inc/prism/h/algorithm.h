@@ -394,6 +394,6 @@ uninitialized_copy_n(ForwardIterator1 first,
 
 } // end namespace prism
 
-#include "../../../src/prism/algorithm.cpp"
+#include <prism/h/algorithm_priv.h>
 
 #endif /* PRISM_ALGORITHM_H_ */

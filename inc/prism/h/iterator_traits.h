@@ -16,13 +16,15 @@ namespace prism {
  * i.e. Stack<int> * p = iterator_traits<Stack<int> >::pointer;
  * i.e. Vector<float> * p = iterator_traits<RandomAccessIterator>::pointer;
  ****************************************************************************************************************/
-template <class IterType>
+template <class Iterator>
 struct iterator_traits  {
-	typedef typename IterType::value_type 			value_type;
-	typedef typename IterType::difference_type 		difference_type;
-	typedef typename IterType::iterator_category 	iterator_category;
-	typedef typename IterType::pointer 				pointer;
-	typedef typename IterType::reference 			reference;
+	typedef typename Iterator::value_type 			value_type;
+	typedef typename Iterator::difference_type 		difference_type;
+	typedef typename Iterator::iterator_category 	iterator_category;
+	typedef typename Iterator::pointer 				pointer;
+	typedef typename Iterator::const_pointer		const_pointer;
+	typedef typename Iterator::reference 			reference;
+	typedef typename Iterator::const_reference 		const_reference;
 };
 
 } // end namespace prism

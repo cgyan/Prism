@@ -1,12 +1,15 @@
 /*
- * algorithm.cpp
+ * algorithm_priv.h
  * v1
  *
  *  Created on: Sep 28, 2016
  *      Author: iainhemstock
  */
 
-#include <prism/aux/algorithm_aux.h>
+#ifndef PRISM_ALGORITHM_PRIV_H_
+#define PRISM_ALGORITHM_PRIV_H_
+
+#include <prism/h/algorithm_aux.h>
 
 namespace prism {
 
@@ -353,7 +356,7 @@ uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 ot
 } // end namespace prism
 
 
-
+#endif // PRISM_ALGORITHM_PRIV_H_
 
 
 

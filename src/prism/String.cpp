@@ -9,6 +9,7 @@
 #include <prism/h/String.h>
 #include <prism/h/Char.h>
 #include <prism/h/algorithm.h>
+#include <prism/h/List.h>
 #include <prism/h/OutOfBoundsException.h>
 #include <iostream>
 #include <sstream>
@@ -16,6 +17,25 @@
 
 namespace prism {
 
+/******************************************************************************
+ * StringData
+ *****************************************************************************/
+// \cond DO_NOT_DOCUMENT
+struct StringData {
+	struct memory {
+		char * start; 	// the start of the memory
+		char * end; 	// one position after the last value
+		char * finish;	 	// the end of the storage
+		int exponent;		// the rate at which to grow the storage
+		memory() : start(0), end(0), finish(0), exponent(2) {}
+		~memory() { delete [] start; start=0; end=0; finish=0; }
+	};
+	memory storage;
+};
+// \endcond
+/******************************************************************************
+ * String
+ *****************************************************************************/
 /**
  * Creates a new empty string i.e. ""
  */
@@ -828,7 +848,8 @@ const int String::size() const {
  * @return Returns a List of strings. If \em delimeter does not occur then a List
  * containing one string (this string) will be returned instead.
  */
-List<String> String::split(const char delimeter) const {
+template <class Allocator>
+List<String,Allocator> String::split(const char delimeter) const {
 	List<String> list;
 	const_iterator loopBit = constBegin();
 	const_iterator loopEit = constEnd();
@@ -1121,6 +1142,11 @@ String & String::operator +=(const char * other) {
 String & String::operator +=(const char c) {
 	return insert(end(), c);
 }
+
+/**
+ *
+ */
+
 // ========================================================================
 // Static
 // ========================================================================
