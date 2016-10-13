@@ -8,7 +8,7 @@
 
 
 #include <gtest/gtest.h>
-#include <prism/algorithms>
+#include <prism/algorithm>
 #include <iostream>
 #include <cstdlib> // srand()
 #include <ctime> // time()

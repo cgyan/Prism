@@ -11,8 +11,9 @@
 
 #include <prism/h/iterator_tags.h>
 #include <prism/h/iterator_traits.h>
-#include <prism/aux/iterator_aux.h>
-#include <prism/h/utilities.h>
+#include <prism/h/iterator_aux.h>
+#include <prism/h/utility.h>
+#include <prism/h/pair.h>
 #include <cstddef> // for std::ptrdiff_t
 
 namespace prism {
@@ -230,6 +231,149 @@ struct SequenceIterator {
 	const bool
 	operator>=(const Self& rhs)
 	{ return this->p >= rhs.p; }
+};//====================================================================================
+// AssociativeIterator
+// --- for associative containers such as Map and Set and
+// --- binary search and red-black trees
+//====================================================================================
+/**
+ *
+ */
+template <class NodePointer>
+NodePointer
+minimumNodeInSubTree(NodePointer node) {
+	while (node->left != nullptr)
+		node = node->left;
+	return node;
+}
+
+/**
+ *
+ */
+template <class NodePointer>
+NodePointer
+maximumNodeInSubTree(NodePointer node) {
+	while (node->right != nullptr)
+		node = node->right;
+	return node;
+}
+
+template <	class Key,
+			class Value,
+			class Node,
+			bool isConst>
+struct AssociativeIterator {
+	typedef AssociativeIterator<Key,Value,Node,false>	iterator;
+	typedef AssociativeIterator<Key,Value,Node,true>	const_iterator;
+	typedef Node*										node_pointer;
+
+	typedef prism::pair<Key,Value>						value_type;
+	typedef const value_type							const_reference;
+	typedef const value_type*							const_pointer;
+	typedef size_t										size_type;
+	typedef std::ptrdiff_t								difference_type;
+	typedef prism::bidirectional_iterator_tag			iterator_category;
+
+	typedef typename prism::conditional_type<	isConst,
+												const value_type*,
+												value_type*>
+												::type 				pointer;
+	typedef typename prism::conditional_type<	isConst,
+												const value_type&,
+												value_type&>
+												::type 				reference;
+	typedef typename prism::conditional_type<	isConst,
+												const_iterator,
+												iterator>
+												::type 				Self;
+
+	node_pointer np;
+
+	AssociativeIterator()
+	: np(nullptr)
+	{}
+
+	AssociativeIterator(node_pointer node)
+	: np(node)
+	{}
+
+	AssociativeIterator(const iterator& copy)
+	: np(copy.np)
+	{}
+
+	~AssociativeIterator()
+	{}
+
+	reference
+	operator*() const
+	{ return np->value; }
+
+	pointer
+	operator->() const
+	{ return &np->value; }
+
+	// adapted from Introduction to Algorithms (1990, page 292)
+	Self&
+	operator++() {
+		if (np->right != nullptr) {
+			np = minimumNodeInSubTree(np->right);
+		}
+		else {
+			node_pointer parent = np->parent;
+			while (parent != nullptr && np == parent->right) {
+				np = parent;
+				parent = parent->parent;
+			}
+			np = parent;
+		}
+		return *this;
+	}
+
+	Self
+	operator++(int junk) {
+		Self tmp(*this);
+		this->operator++();
+		return tmp;
+	}
+
+	// adapted from Introduction to Algorithms (1990, page 292)
+	Self&
+	operator--() {
+		if (np->left != nullptr) {
+			np = maximumNodeInSubTree(np->left);
+		}
+		else {
+			node_pointer parent = np->parent;
+			while (parent != nullptr && np == parent->left) {
+				np = parent;
+				parent = parent->parent;
+			}
+			np = parent;
+		}
+		return *this;
+	}
+
+	Self
+	operator--(int junk) {
+		Self tmp(*this);
+		this->operator--();
+		return tmp;
+	}
+
+	Self&
+	operator=(const iterator& rhs) {
+		if (*this != rhs)
+			np = rhs.np;
+		return *this;
+	}
+
+	const bool
+	operator==(const Self& other)
+	{ return this->np == other.np; }
+
+	const bool
+	operator!=(const Self& other)
+	{ return !(*this == other); }
 };
 
 /****************************************************************************************************************

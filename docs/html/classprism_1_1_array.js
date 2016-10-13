@@ -1,7 +1,15 @@
 var classprism_1_1_array =
 [
-    [ "const_iterator", "classprism_1_1_array.html#ab78c83a88959a72d59e5f930540be94a", null ],
-    [ "iterator", "classprism_1_1_array.html#a6814c2af67e8b3fc48b02319f5e63d50", null ],
+    [ "const_iterator", "classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7", null ],
+    [ "const_pointer", "classprism_1_1_array.html#a42db67aa315835ceb28016cedc9fc300", null ],
+    [ "const_reference", "classprism_1_1_array.html#a84d3a2c653830c8005e959d99faf0f06", null ],
+    [ "difference_type", "classprism_1_1_array.html#abae2669a2cdeba360b37d2f872af9208", null ],
+    [ "iterator", "classprism_1_1_array.html#acf99b1f921727cf61cf9d5b66acc66b8", null ],
+    [ "iterator_category", "classprism_1_1_array.html#a68b5c70152e822463f8d2a3c0c5bebcb", null ],
+    [ "pointer", "classprism_1_1_array.html#a391b8bb39ab945786ca33a0110fc163c", null ],
+    [ "reference", "classprism_1_1_array.html#a1ebfd26a4f219fcb24eb7f068704d9aa", null ],
+    [ "size_type", "classprism_1_1_array.html#a8ceacda8c2a68bf5b54e07a8c4f5f8e3", null ],
+    [ "value_type", "classprism_1_1_array.html#a7b6dc8358fdfe216f4477a361190c9af", null ],
     [ "Array", "classprism_1_1_array.html#aab128f1ed5a4547a04812b921dc75897", null ],
     [ "Array", "classprism_1_1_array.html#ac696e19a99b7a601f013352617689098", null ],
     [ "Array", "classprism_1_1_array.html#ada5fda23d2713ee3b2875495c77948b2", null ],

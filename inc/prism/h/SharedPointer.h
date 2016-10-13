@@ -101,7 +101,6 @@ SharedPointer<T>::SharedPointer(const SharedPointer<T> & copy)
 template <class T>
 SharedPointer<T>::~SharedPointer() {
 	if (m_ref->deref() == 0) { delete d; delete m_ref; }
-	std::cout << "destructing SharedPointer" << std::endl;
 }
 
 /**
@@ -175,7 +174,7 @@ const bool SharedPointer<T>::operator!() const { return isNull(); }
  */
 template <class T>
 SharedPointer<T> & SharedPointer<T>::operator=(const SharedPointer & rhs) {
-	std::cout << "assignment" << std::endl;
+//	std::cout << "assignment" << std::endl;
 	if (d != rhs.d) { // don't assign to itself
 		d = rhs.d;
 		m_ref = rhs.m_ref;

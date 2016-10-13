@@ -8,6 +8,7 @@
 
 #include <gtest/gtest.h>
 #include <prism/Time>
+#include <prism/String>
 #include <iostream>
 using namespace std;
 

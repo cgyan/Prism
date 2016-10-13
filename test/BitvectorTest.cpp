@@ -8,6 +8,7 @@
 #include <gtest/gtest.h>
 #include <prism/Bitvector>
 #include <prism/OutOfBoundsException>
+#include <prism/String>
 #include <iostream> // todo remove this
 using namespace std; // todo remove this
 

@@ -7,7 +7,7 @@
  */
 
 #include <prism/h/Fraction.h>
-#include <prism/h/algorithms.h>
+#include <prism/h/algorithm.h>
 
 namespace prism {
 

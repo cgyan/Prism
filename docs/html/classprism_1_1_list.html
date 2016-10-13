@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: prism::List&lt; T &gt; Class Template Reference</title>
+<title>Prism: prism::List&lt; T, TAllocator &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,11 +109,10 @@ $(document).ready(function(){initNavTree('classprism_1_1_list.html','');});
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classprism_1_1_list-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">prism::List&lt; T &gt; Class Template Reference</div>  </div>
+<div class="title">prism::List&lt; T, TAllocator &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -121,261 +120,273 @@ $(document).ready(function(){initNavTree('classprism_1_1_list.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6cf00c98a428ed325fe9ccc60d7ef95a"><td class="memItemLeft" align="right" valign="top">typedef ListIterator&lt; Node, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a></td></tr>
-<tr class="separator:a6cf00c98a428ed325fe9ccc60d7ef95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a038bd36af263a85110467528db8305d5"><td class="memItemLeft" align="right" valign="top">typedef ListConstIterator&lt; Node, T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a></td></tr>
-<tr class="separator:a038bd36af263a85110467528db8305d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace7abca3cacb471bba9f04bba680fc3"><td class="memItemLeft" align="right" valign="top">typedef iterator::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aace7abca3cacb471bba9f04bba680fc3">reference</a></td></tr>
-<tr class="separator:aace7abca3cacb471bba9f04bba680fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a908620eac035bd6d020d69919aeffcbe"><td class="memItemLeft" align="right" valign="top">typedef const_iterator::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a908620eac035bd6d020d69919aeffcbe">const_reference</a></td></tr>
-<tr class="separator:a908620eac035bd6d020d69919aeffcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed257df5c1db1015841de21318b6c5c2"><td class="memItemLeft" align="right" valign="top">typedef iterator::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aed257df5c1db1015841de21318b6c5c2">pointer</a></td></tr>
-<tr class="separator:aed257df5c1db1015841de21318b6c5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7be76433c8a90f198e268a0918e8a6b"><td class="memItemLeft" align="right" valign="top">typedef const_iterator::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab7be76433c8a90f198e268a0918e8a6b">const_pointer</a></td></tr>
-<tr class="separator:ab7be76433c8a90f198e268a0918e8a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f20672ea7b8f748420548308e07dbc1"><td class="memItemLeft" align="right" valign="top">typedef iterator::value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1">value_type</a></td></tr>
-<tr class="separator:a7f20672ea7b8f748420548308e07dbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98f5a94db7ed98f032ee32ee34bbc8c8"><td class="memItemLeft" align="right" valign="top">typedef iterator::difference_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a98f5a94db7ed98f032ee32ee34bbc8c8">difference_type</a></td></tr>
-<tr class="separator:a98f5a94db7ed98f032ee32ee34bbc8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d3fe26a6fe0ec8f6a63e70bb59979bd"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd">size_type</a></td></tr>
-<tr class="separator:a1d3fe26a6fe0ec8f6a63e70bb59979bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95cb21a8754f91406f53bd0315513af"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_list_iterator.html">ListIterator</a>&lt; T, false &gt;::<a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a></td></tr>
+<tr class="separator:aa95cb21a8754f91406f53bd0315513af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82987892223347376baec1efd26aa655"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_list_iterator.html">ListIterator</a>&lt; T, true &gt;::<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a></td></tr>
+<tr class="separator:a82987892223347376baec1efd26aa655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e9cab77c935e6bc2e96bcb00006382e"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a></td></tr>
+<tr class="separator:a3e9cab77c935e6bc2e96bcb00006382e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9c2d25c50b4ebfb02687eeb4e9668bc"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ac9c2d25c50b4ebfb02687eeb4e9668bc">pointer</a></td></tr>
+<tr class="separator:ac9c2d25c50b4ebfb02687eeb4e9668bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87113fe9cf2580e395e3d9f2962f4e81"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a></td></tr>
+<tr class="separator:a87113fe9cf2580e395e3d9f2962f4e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7510b11c3c426f8504ddf024be7aaa89"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_list_iterator.html#adb94db3cc26f2df6b6962b756b6fa3c3">const_iterator::pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a7510b11c3c426f8504ddf024be7aaa89">const_pointer</a></td></tr>
+<tr class="separator:a7510b11c3c426f8504ddf024be7aaa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c013c3f9135c28c3c4bf489fbeb322"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_list_iterator.html#a8a07c86e6d1ef38b0f7d390ad7c05c22">const_iterator::reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a></td></tr>
+<tr class="separator:a31c013c3f9135c28c3c4bf489fbeb322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dbc0ff68e25381f32639b7ba2ba390d"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a1dbc0ff68e25381f32639b7ba2ba390d">size_type</a></td></tr>
+<tr class="separator:a1dbc0ff68e25381f32639b7ba2ba390d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ec6617f6c1782af39c85431c6803ab"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::difference_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a02ec6617f6c1782af39c85431c6803ab">difference_type</a></td></tr>
+<tr class="separator:a02ec6617f6c1782af39c85431c6803ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af81334fa20cb34b36a40d0ac4c36e2a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#af81334fa20cb34b36a40d0ac4c36e2a5">List</a> ()</td></tr>
-<tr class="separator:af81334fa20cb34b36a40d0ac4c36e2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a344a7102226e251cc039476e7680c3b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a344a7102226e251cc039476e7680c3b8">List</a> (std::initializer_list&lt; T &gt; il)</td></tr>
-<tr class="separator:a344a7102226e251cc039476e7680c3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f2ff5a39c10ca4f57b5d3794e72cf93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a8f2ff5a39c10ca4f57b5d3794e72cf93">List</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
-<tr class="separator:a8f2ff5a39c10ca4f57b5d3794e72cf93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa8567cc4eb408e62117f1a9782629ba"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aaa8567cc4eb408e62117f1a9782629ba">~List</a> ()</td></tr>
-<tr class="separator:aaa8567cc4eb408e62117f1a9782629ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e6584f87eee4371e308e1aa9c3da6c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a5e6584f87eee4371e308e1aa9c3da6c8">append</a> (const T &amp;value)</td></tr>
-<tr class="separator:a5e6584f87eee4371e308e1aa9c3da6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557466129db60dc92eaa68b18012900e"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a557466129db60dc92eaa68b18012900e">back</a> ()</td></tr>
-<tr class="separator:a557466129db60dc92eaa68b18012900e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6031d94f7c8a88224364523d10a2eff4"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a6031d94f7c8a88224364523d10a2eff4">back</a> () const </td></tr>
-<tr class="separator:a6031d94f7c8a88224364523d10a2eff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac86cc19f89e9913ea93f3b212d531954"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ac86cc19f89e9913ea93f3b212d531954">begin</a> ()</td></tr>
-<tr class="separator:ac86cc19f89e9913ea93f3b212d531954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d4e4d463be411b27307dcf3cdc49422"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a9d4e4d463be411b27307dcf3cdc49422">begin</a> () const </td></tr>
-<tr class="separator:a9d4e4d463be411b27307dcf3cdc49422"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55b460a5a5e00aeee87df83e8559349c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a55b460a5a5e00aeee87df83e8559349c">cbegin</a> () const </td></tr>
-<tr class="separator:a55b460a5a5e00aeee87df83e8559349c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b526719a7f63a47482ff0b293d36ad1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a1b526719a7f63a47482ff0b293d36ad1">cend</a> () const </td></tr>
-<tr class="separator:a1b526719a7f63a47482ff0b293d36ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19923a3ef18676b387972dcb78f5a131"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a19923a3ef18676b387972dcb78f5a131">constBegin</a> () const </td></tr>
-<tr class="separator:a19923a3ef18676b387972dcb78f5a131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8f11fb293ac9961acf72e76c4128473"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#af8f11fb293ac9961acf72e76c4128473">constEnd</a> () const </td></tr>
-<tr class="separator:af8f11fb293ac9961acf72e76c4128473"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b6d05cd9d1911861c7a440c291ccc26"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a3b6d05cd9d1911861c7a440c291ccc26">contains</a> (const T &amp;value) const </td></tr>
-<tr class="separator:a3b6d05cd9d1911861c7a440c291ccc26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e274e926be4ac7664e8b1ba79cf3db9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a3e274e926be4ac7664e8b1ba79cf3db9">count</a> (const T &amp;value) const </td></tr>
-<tr class="separator:a3e274e926be4ac7664e8b1ba79cf3db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af51ed8f35ae20cc4639962a2dead76d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#af51ed8f35ae20cc4639962a2dead76d3">clear</a> ()</td></tr>
-<tr class="separator:af51ed8f35ae20cc4639962a2dead76d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d58db1d27cc01ce3036d448f232ced4"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a8d58db1d27cc01ce3036d448f232ced4">empty</a> () const </td></tr>
-<tr class="separator:a8d58db1d27cc01ce3036d448f232ced4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47ef0b3d04fa49bd05f00a13bdfb2b93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a47ef0b3d04fa49bd05f00a13bdfb2b93">end</a> ()</td></tr>
-<tr class="separator:a47ef0b3d04fa49bd05f00a13bdfb2b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaa7fffb63e4f955b0f77cf9899c924c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#acaa7fffb63e4f955b0f77cf9899c924c">end</a> () const </td></tr>
-<tr class="separator:acaa7fffb63e4f955b0f77cf9899c924c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8575a0221bf51275ac186406d656a4f3"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a8575a0221bf51275ac186406d656a4f3">endsWith</a> (const T &amp;value) const </td></tr>
-<tr class="separator:a8575a0221bf51275ac186406d656a4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6440bbb53502f6e689c1c9274ffa6f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab6440bbb53502f6e689c1c9274ffa6f8">erase</a> (<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> pos)</td></tr>
-<tr class="separator:ab6440bbb53502f6e689c1c9274ffa6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c20cbafe00fff084b1c48016a0b04f8"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a5c20cbafe00fff084b1c48016a0b04f8">first</a> ()</td></tr>
-<tr class="separator:a5c20cbafe00fff084b1c48016a0b04f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ff7747c0784e8f8f71a9365a241601e"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a2ff7747c0784e8f8f71a9365a241601e">first</a> () const </td></tr>
-<tr class="separator:a2ff7747c0784e8f8f71a9365a241601e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64abe6201e00a727d55299242b0f5aee"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a64abe6201e00a727d55299242b0f5aee">front</a> ()</td></tr>
-<tr class="separator:a64abe6201e00a727d55299242b0f5aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5319d6f066eaa794399d36177275f800"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a5319d6f066eaa794399d36177275f800">front</a> () const </td></tr>
-<tr class="separator:a5319d6f066eaa794399d36177275f800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94237ea84df5f1e804ab6ff2717a5634"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a94237ea84df5f1e804ab6ff2717a5634">insert</a> (const <a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> &amp;pos, const T &amp;value)</td></tr>
-<tr class="separator:a94237ea84df5f1e804ab6ff2717a5634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0f60893564ab12f9c9974ba685db2b0"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ac0f60893564ab12f9c9974ba685db2b0">isEmpty</a> () const </td></tr>
-<tr class="separator:ac0f60893564ab12f9c9974ba685db2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16681bef913b82d9951330c7526cdb3f"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a16681bef913b82d9951330c7526cdb3f">last</a> ()</td></tr>
-<tr class="separator:a16681bef913b82d9951330c7526cdb3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf84da5c22f8fe60c182de1f29171ea1"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#acf84da5c22f8fe60c182de1f29171ea1">last</a> () const </td></tr>
-<tr class="separator:acf84da5c22f8fe60c182de1f29171ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac8b29572cd691890a82846b35799e36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aac8b29572cd691890a82846b35799e36">pop_back</a> ()</td></tr>
-<tr class="separator:aac8b29572cd691890a82846b35799e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8a836a10bc37479fbbc458299d68569"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab8a836a10bc37479fbbc458299d68569">pop_front</a> ()</td></tr>
-<tr class="separator:ab8a836a10bc37479fbbc458299d68569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabc7020d0f04bc29412d2ff2cb632958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aabc7020d0f04bc29412d2ff2cb632958">push_back</a> (const T &amp;value)</td></tr>
-<tr class="separator:aabc7020d0f04bc29412d2ff2cb632958"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9af267cdacc311662e39630da33f4431"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a9af267cdacc311662e39630da33f4431">push_front</a> (const T &amp;value)</td></tr>
-<tr class="separator:a9af267cdacc311662e39630da33f4431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01773efbec8bef23c7a37edb9ea7a93f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a01773efbec8bef23c7a37edb9ea7a93f">prepend</a> (const T &amp;value)</td></tr>
-<tr class="separator:a01773efbec8bef23c7a37edb9ea7a93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85937bf298db8c1c8f8017fff492b374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a85937bf298db8c1c8f8017fff492b374">removeAll</a> (const T &amp;value)</td></tr>
-<tr class="separator:a85937bf298db8c1c8f8017fff492b374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e19c548f9f8205bea45d394ddcb9ccb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a3e19c548f9f8205bea45d394ddcb9ccb">removeFirst</a> ()</td></tr>
-<tr class="separator:a3e19c548f9f8205bea45d394ddcb9ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ee7eadb17120e6fa267278d0d58c13f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a8ee7eadb17120e6fa267278d0d58c13f">removeFirstOf</a> (const T &amp;value)</td></tr>
-<tr class="separator:a8ee7eadb17120e6fa267278d0d58c13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6b68a4de2134c159b8e35a2f4bb935d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab6b68a4de2134c159b8e35a2f4bb935d">removeLast</a> ()</td></tr>
-<tr class="separator:ab6b68a4de2134c159b8e35a2f4bb935d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90855d0c971c394fabf612c02dce4d3a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a90855d0c971c394fabf612c02dce4d3a">size</a> () const </td></tr>
-<tr class="separator:a90855d0c971c394fabf612c02dce4d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac129dafdb80ae13cfc914dc0668e6b39"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ac129dafdb80ae13cfc914dc0668e6b39">startsWith</a> (const T &amp;value) const </td></tr>
-<tr class="separator:ac129dafdb80ae13cfc914dc0668e6b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab628c77e4598e1055a8b832367a31997"><td class="memItemLeft" align="right" valign="top">std::forward_list&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab628c77e4598e1055a8b832367a31997">toStdForwardList</a> () const </td></tr>
-<tr class="separator:ab628c77e4598e1055a8b832367a31997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86dfdf909c7151a54d231d15315acca1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a86dfdf909c7151a54d231d15315acca1">operator&lt;&lt;</a> (const T &amp;value)</td></tr>
-<tr class="separator:a86dfdf909c7151a54d231d15315acca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed7d35e45035b24e4a684f0b1c228086"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aed7d35e45035b24e4a684f0b1c228086">operator&lt;&lt;</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;list)</td></tr>
-<tr class="separator:aed7d35e45035b24e4a684f0b1c228086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c14c11fdcb43c27a1035fccbe0f7b4d"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a4c14c11fdcb43c27a1035fccbe0f7b4d">operator==</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;rhs) const </td></tr>
-<tr class="separator:a4c14c11fdcb43c27a1035fccbe0f7b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a026cc068bceff4e74fd991e3940b76d7"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a026cc068bceff4e74fd991e3940b76d7">operator!=</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;rhs) const </td></tr>
-<tr class="separator:a026cc068bceff4e74fd991e3940b76d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb977e2c0b880c7a381ea14f25417e4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#abb977e2c0b880c7a381ea14f25417e4f">operator=</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;rhs)</td></tr>
-<tr class="separator:abb977e2c0b880c7a381ea14f25417e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad578cb4c80ff86d9edb989ade883c18f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ad578cb4c80ff86d9edb989ade883c18f">operator+</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;rhs) const </td></tr>
-<tr class="separator:ad578cb4c80ff86d9edb989ade883c18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84972c1e847fdf2c2ca197d7812af3a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a84972c1e847fdf2c2ca197d7812af3a0">operator+=</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;rhs)</td></tr>
-<tr class="separator:a84972c1e847fdf2c2ca197d7812af3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e68dad596d72d1c00f9d12bb21479d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a5e68dad596d72d1c00f9d12bb21479d6">operator+=</a> (const T &amp;value)</td></tr>
-<tr class="separator:a5e68dad596d72d1c00f9d12bb21479d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3608d1ce797df492ee7d90a3c340515f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a3608d1ce797df492ee7d90a3c340515f">List</a> ()</td></tr>
+<tr class="separator:a3608d1ce797df492ee7d90a3c340515f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f2cec1b8d7fecec86297fee77e499a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ae1f2cec1b8d7fecec86297fee77e499a">List</a> (const int numElements, <a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value=T())</td></tr>
+<tr class="separator:ae1f2cec1b8d7fecec86297fee77e499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae663f8e68894b024ce46a5e8d2c56d90"><td class="memTemplParams" colspan="2">template&lt;class InputIterator &gt; </td></tr>
+<tr class="memitem:ae663f8e68894b024ce46a5e8d2c56d90"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ae663f8e68894b024ce46a5e8d2c56d90">List</a> (InputIterator <a class="el" href="classprism_1_1_list.html#a403997c37906888fb96e612557fc7a05">first</a>, InputIterator <a class="el" href="classprism_1_1_list.html#a674a1f2acb2580b63ec54964334721dd">last</a>)</td></tr>
+<tr class="separator:ae663f8e68894b024ce46a5e8d2c56d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6096b7c959368bf0e35162959464d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a7d6096b7c959368bf0e35162959464d0">List</a> (const std::initializer_list&lt; T &gt; &amp;il)</td></tr>
+<tr class="separator:a7d6096b7c959368bf0e35162959464d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043cd0e81a37f8c23e08673939fe8f91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a043cd0e81a37f8c23e08673939fe8f91">List</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
+<tr class="separator:a043cd0e81a37f8c23e08673939fe8f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1a463b75d19bf6fa6416783f8be842"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a5b1a463b75d19bf6fa6416783f8be842">~List</a> ()</td></tr>
+<tr class="separator:a5b1a463b75d19bf6fa6416783f8be842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a0d0ad9f3d7008affbb33c59788973"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a52a0d0ad9f3d7008affbb33c59788973">append</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:a52a0d0ad9f3d7008affbb33c59788973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17253058099ff3db0ff1c59ab9aaa062"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a17253058099ff3db0ff1c59ab9aaa062">back</a> ()</td></tr>
+<tr class="separator:a17253058099ff3db0ff1c59ab9aaa062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f4adb4b98aaea022b44fc46dcedc39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aa3f4adb4b98aaea022b44fc46dcedc39">back</a> () const </td></tr>
+<tr class="separator:aa3f4adb4b98aaea022b44fc46dcedc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79b38b4f00cd52875c043a236d8d5d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#af79b38b4f00cd52875c043a236d8d5d1">begin</a> ()</td></tr>
+<tr class="separator:af79b38b4f00cd52875c043a236d8d5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1c717e7a1cd1ab2b30ba0701158dad4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ac1c717e7a1cd1ab2b30ba0701158dad4">begin</a> () const </td></tr>
+<tr class="separator:ac1c717e7a1cd1ab2b30ba0701158dad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a305be84975076ea140f6f32be946225f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a305be84975076ea140f6f32be946225f">cbegin</a> () const </td></tr>
+<tr class="separator:a305be84975076ea140f6f32be946225f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab544551cf58b5ce23584c4f16d00d7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aab544551cf58b5ce23584c4f16d00d7e">cend</a> () const </td></tr>
+<tr class="separator:aab544551cf58b5ce23584c4f16d00d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e7dd9642cde1dca8834c8771560cd6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a1e7dd9642cde1dca8834c8771560cd6b">clear</a> ()</td></tr>
+<tr class="separator:a1e7dd9642cde1dca8834c8771560cd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af83c7a275d29cb26b5807c3b4cbbebf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#af83c7a275d29cb26b5807c3b4cbbebf4">constBegin</a> () const </td></tr>
+<tr class="separator:af83c7a275d29cb26b5807c3b4cbbebf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6464c9488a804007b2953a6a21b6e46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab6464c9488a804007b2953a6a21b6e46">constEnd</a> () const </td></tr>
+<tr class="separator:ab6464c9488a804007b2953a6a21b6e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47cd243e9c5db6058481d63ecc6ed5b7"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a47cd243e9c5db6058481d63ecc6ed5b7">contains</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value) const </td></tr>
+<tr class="separator:a47cd243e9c5db6058481d63ecc6ed5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbdab274aecfdc26b7d208f80772a78"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a7dbdab274aecfdc26b7d208f80772a78">count</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value) const </td></tr>
+<tr class="separator:a7dbdab274aecfdc26b7d208f80772a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b3ff8409a6548b695a9173a8bd4555"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ae6b3ff8409a6548b695a9173a8bd4555">empty</a> ()</td></tr>
+<tr class="separator:ae6b3ff8409a6548b695a9173a8bd4555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e9cfc2a547294304d4fae086297bec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a66e9cfc2a547294304d4fae086297bec">end</a> ()</td></tr>
+<tr class="separator:a66e9cfc2a547294304d4fae086297bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36cedb2a64bbbe94da0c8e275132497c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a36cedb2a64bbbe94da0c8e275132497c">end</a> () const </td></tr>
+<tr class="separator:a36cedb2a64bbbe94da0c8e275132497c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff95005df96b82ff2b190c09a4845b30"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aff95005df96b82ff2b190c09a4845b30">endsWith</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value) const </td></tr>
+<tr class="separator:aff95005df96b82ff2b190c09a4845b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcece97613f71fd9fac75d65f741ab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a9dcece97613f71fd9fac75d65f741ab4">erase</a> (<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> pos)</td></tr>
+<tr class="separator:a9dcece97613f71fd9fac75d65f741ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a632ad7eb2a121216e2cd9d3b810819fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a632ad7eb2a121216e2cd9d3b810819fc">erase</a> (<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> <a class="el" href="classprism_1_1_list.html#a403997c37906888fb96e612557fc7a05">first</a>, <a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> <a class="el" href="classprism_1_1_list.html#a674a1f2acb2580b63ec54964334721dd">last</a>)</td></tr>
+<tr class="separator:a632ad7eb2a121216e2cd9d3b810819fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403997c37906888fb96e612557fc7a05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a403997c37906888fb96e612557fc7a05">first</a> ()</td></tr>
+<tr class="separator:a403997c37906888fb96e612557fc7a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d014004df46b9997ce81bbc490dac0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a40d014004df46b9997ce81bbc490dac0">first</a> () const </td></tr>
+<tr class="separator:a40d014004df46b9997ce81bbc490dac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a389a92c786597aa0fc0918189491cd64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a389a92c786597aa0fc0918189491cd64">front</a> ()</td></tr>
+<tr class="separator:a389a92c786597aa0fc0918189491cd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3082476c9130719533c961b46e09762d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a3082476c9130719533c961b46e09762d">front</a> () const </td></tr>
+<tr class="separator:a3082476c9130719533c961b46e09762d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a313a60ae219854247f2dfa464ac30b8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a313a60ae219854247f2dfa464ac30b8e">insert</a> (<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> insertBefore, <a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:a313a60ae219854247f2dfa464ac30b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92c8e2076807ea6ecc2fce099e6a3e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab92c8e2076807ea6ecc2fce099e6a3e7">insert</a> (<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> insertBefore, const int <a class="el" href="classprism_1_1_list.html#a7dbdab274aecfdc26b7d208f80772a78">count</a>, <a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:ab92c8e2076807ea6ecc2fce099e6a3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c26970ac36446b3b9321ee55d869a1"><td class="memTemplParams" colspan="2">template&lt;class InputIterator &gt; </td></tr>
+<tr class="memitem:a79c26970ac36446b3b9321ee55d869a1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a79c26970ac36446b3b9321ee55d869a1">insert</a> (<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> insertBefore, InputIterator <a class="el" href="classprism_1_1_list.html#a403997c37906888fb96e612557fc7a05">first</a>, InputIterator <a class="el" href="classprism_1_1_list.html#a674a1f2acb2580b63ec54964334721dd">last</a>)</td></tr>
+<tr class="separator:a79c26970ac36446b3b9321ee55d869a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1548ebff73252fd1fb2663320ebddf8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a1548ebff73252fd1fb2663320ebddf8a">insert</a> (<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> insertBefore, std::initializer_list&lt; T &gt; &amp;il)</td></tr>
+<tr class="separator:a1548ebff73252fd1fb2663320ebddf8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cbe32ef6d447cc36d004da93df4da12"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a7cbe32ef6d447cc36d004da93df4da12">isEmpty</a> () const </td></tr>
+<tr class="separator:a7cbe32ef6d447cc36d004da93df4da12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a674a1f2acb2580b63ec54964334721dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a674a1f2acb2580b63ec54964334721dd">last</a> ()</td></tr>
+<tr class="separator:a674a1f2acb2580b63ec54964334721dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8f4bd3584cf4bafe29d250a767021c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#abb8f4bd3584cf4bafe29d250a767021c">last</a> () const </td></tr>
+<tr class="separator:abb8f4bd3584cf4bafe29d250a767021c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f54a3db3eedf861270b833862fef46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a22f54a3db3eedf861270b833862fef46">pop_back</a> ()</td></tr>
+<tr class="separator:a22f54a3db3eedf861270b833862fef46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa469f22e4ccc944268f984258e680ca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aa469f22e4ccc944268f984258e680ca3">pop_front</a> ()</td></tr>
+<tr class="separator:aa469f22e4ccc944268f984258e680ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1a0dd2a6218345b50b119deb962813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a1c1a0dd2a6218345b50b119deb962813">prepend</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:a1c1a0dd2a6218345b50b119deb962813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9bf40a902b9628c1f1f07f1e7518d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#adf9bf40a902b9628c1f1f07f1e7518d9">push_back</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:adf9bf40a902b9628c1f1f07f1e7518d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8612f5facddec737ddaa81ab6c9cec6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ad8612f5facddec737ddaa81ab6c9cec6">push_front</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:ad8612f5facddec737ddaa81ab6c9cec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145f3905ff40c221d95cb858943aa8a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a145f3905ff40c221d95cb858943aa8a6">removeAll</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:a145f3905ff40c221d95cb858943aa8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a80ca6c53cc3b6cde47b5b11ee4c1aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a8a80ca6c53cc3b6cde47b5b11ee4c1aa">removeFirst</a> ()</td></tr>
+<tr class="separator:a8a80ca6c53cc3b6cde47b5b11ee4c1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cab3235676030fbd9b238be252fb2c9"><td class="memTemplParams" colspan="2">template&lt;class Predicate &gt; </td></tr>
+<tr class="memitem:a0cab3235676030fbd9b238be252fb2c9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a0cab3235676030fbd9b238be252fb2c9">removeIf</a> (Predicate pred)</td></tr>
+<tr class="separator:a0cab3235676030fbd9b238be252fb2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9878e43f08ed5ca8379703342d1f02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a7b9878e43f08ed5ca8379703342d1f02">removeLast</a> ()</td></tr>
+<tr class="separator:a7b9878e43f08ed5ca8379703342d1f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4119f722dcf464610fbfa45b51247912"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a4119f722dcf464610fbfa45b51247912">resize</a> (const int newSize, <a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value=<a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a>())</td></tr>
+<tr class="separator:a4119f722dcf464610fbfa45b51247912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6655ac493bd63dd8d7dda060b556cbcf"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a6655ac493bd63dd8d7dda060b556cbcf">size</a> () const </td></tr>
+<tr class="separator:a6655ac493bd63dd8d7dda060b556cbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0919b9f4f0312e5124cdc4eeb491114"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ac0919b9f4f0312e5124cdc4eeb491114">startsWith</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:ac0919b9f4f0312e5124cdc4eeb491114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24aaa71bcfa3cfb80c1b466704a9b21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ac24aaa71bcfa3cfb80c1b466704a9b21">takeFirst</a> ()</td></tr>
+<tr class="separator:ac24aaa71bcfa3cfb80c1b466704a9b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520735132b94b8cf7feaf3f0bbba2ca7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a520735132b94b8cf7feaf3f0bbba2ca7">takeLast</a> ()</td></tr>
+<tr class="separator:a520735132b94b8cf7feaf3f0bbba2ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a185229de116456a6ccb911e1b4599f8a"><td class="memItemLeft" align="right" valign="top">std::list&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a185229de116456a6ccb911e1b4599f8a">toStdList</a> () const </td></tr>
+<tr class="separator:a185229de116456a6ccb911e1b4599f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ff0643ac1abebaed89ff72ff45e233"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ae7ff0643ac1abebaed89ff72ff45e233">operator==</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:ae7ff0643ac1abebaed89ff72ff45e233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d0ce745cf5ec6514a70a96dec8c2fb"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a41d0ce745cf5ec6514a70a96dec8c2fb">operator!=</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:a41d0ce745cf5ec6514a70a96dec8c2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf0b0a42de4cd250ec07943fb1255173"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#aaf0b0a42de4cd250ec07943fb1255173">operator+</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:aaf0b0a42de4cd250ec07943fb1255173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e5e6a5c6f80f1b116810049ada54f95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a7e5e6a5c6f80f1b116810049ada54f95">operator+=</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:a7e5e6a5c6f80f1b116810049ada54f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c98e10fe7476af0b6b0fc539dd8f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ab0c98e10fe7476af0b6b0fc539dd8f16">operator+=</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:ab0c98e10fe7476af0b6b0fc539dd8f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4420d770c7a0cb6dc31fb4c8e68fc047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a4420d770c7a0cb6dc31fb4c8e68fc047">operator&lt;&lt;</a> (<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> value)</td></tr>
+<tr class="separator:a4420d770c7a0cb6dc31fb4c8e68fc047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b01ded233254d4b12fd5e501c30f01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ae7b01ded233254d4b12fd5e501c30f01">operator&lt;&lt;</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;other)</td></tr>
+<tr class="separator:ae7b01ded233254d4b12fd5e501c30f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cfa274e9550ac47e36577adb7472d74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a8cfa274e9550ac47e36577adb7472d74">operator=</a> (const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:a8cfa274e9550ac47e36577adb7472d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a5dd072cd1d777dd751fc2d0deee00e31"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a5dd072cd1d777dd751fc2d0deee00e31">fromStdForwardList</a> (const std::forward_list&lt; T &gt; &amp;fl)</td></tr>
-<tr class="separator:a5dd072cd1d777dd751fc2d0deee00e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:ade9dd1234d468fdcbcddb16eb490d296"><td class="memItemLeft" align="right" valign="top">Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ade9dd1234d468fdcbcddb16eb490d296">m_header</a></td></tr>
-<tr class="separator:ade9dd1234d468fdcbcddb16eb490d296"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0740989f0d5af2bad19850fac850947e"><td class="memItemLeft" align="right" valign="top">Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a0740989f0d5af2bad19850fac850947e">m_tailer</a></td></tr>
-<tr class="separator:a0740989f0d5af2bad19850fac850947e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae86f48e50ec12239597de98deb36b4a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#ae86f48e50ec12239597de98deb36b4a4">m_size</a></td></tr>
-<tr class="separator:ae86f48e50ec12239597de98deb36b4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a45cd60cf5029dcfd4b3f6175878008d0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_list.html#a45cd60cf5029dcfd4b3f6175878008d0">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;list)</td></tr>
+<tr class="separator:a45cd60cf5029dcfd4b3f6175878008d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a038bd36af263a85110467528db8305d5"></a>
+<a class="anchor" id="a82987892223347376baec1efd26aa655"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef ListConstIterator&lt;Node, T&gt; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a></td>
+          <td class="memname">typedef <a class="el" href="structprism_1_1_list_iterator.html">ListIterator</a>&lt;T,true&gt;::<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ab7be76433c8a90f198e268a0918e8a6b"></a>
+<a class="anchor" id="a7510b11c3c426f8504ddf024be7aaa89"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef const_iterator::pointer <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#ab7be76433c8a90f198e268a0918e8a6b">const_pointer</a></td>
+          <td class="memname">typedef <a class="el" href="structprism_1_1_list_iterator.html#adb94db3cc26f2df6b6962b756b6fa3c3">const_iterator::pointer</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#a7510b11c3c426f8504ddf024be7aaa89">const_pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a908620eac035bd6d020d69919aeffcbe"></a>
+<a class="anchor" id="a31c013c3f9135c28c3c4bf489fbeb322"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef const_iterator::reference <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a908620eac035bd6d020d69919aeffcbe">const_reference</a></td>
+          <td class="memname">typedef <a class="el" href="structprism_1_1_list_iterator.html#a8a07c86e6d1ef38b0f7d390ad7c05c22">const_iterator::reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a98f5a94db7ed98f032ee32ee34bbc8c8"></a>
+<a class="anchor" id="a02ec6617f6c1782af39c85431c6803ab"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef iterator::difference_type <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a98f5a94db7ed98f032ee32ee34bbc8c8">difference_type</a></td>
+          <td class="memname">typedef TAllocator::difference_type <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#a02ec6617f6c1782af39c85431c6803ab">difference_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a6cf00c98a428ed325fe9ccc60d7ef95a"></a>
+<a class="anchor" id="aa95cb21a8754f91406f53bd0315513af"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef ListIterator&lt;Node, T&gt; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a></td>
+          <td class="memname">typedef <a class="el" href="structprism_1_1_list_iterator.html">ListIterator</a>&lt;T,false&gt;::<a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aed257df5c1db1015841de21318b6c5c2"></a>
+<a class="anchor" id="ac9c2d25c50b4ebfb02687eeb4e9668bc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef iterator::pointer <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#aed257df5c1db1015841de21318b6c5c2">pointer</a></td>
+          <td class="memname">typedef TAllocator::pointer <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#ac9c2d25c50b4ebfb02687eeb4e9668bc">pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aace7abca3cacb471bba9f04bba680fc3"></a>
+<a class="anchor" id="a87113fe9cf2580e395e3d9f2962f4e81"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef iterator::reference <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#aace7abca3cacb471bba9f04bba680fc3">reference</a></td>
+          <td class="memname">typedef TAllocator::reference <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a1d3fe26a6fe0ec8f6a63e70bb59979bd"></a>
+<a class="anchor" id="a1dbc0ff68e25381f32639b7ba2ba390d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef int <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a1d3fe26a6fe0ec8f6a63e70bb59979bd">size_type</a></td>
+          <td class="memname">typedef TAllocator::size_type <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#a1dbc0ff68e25381f32639b7ba2ba390d">size_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a7f20672ea7b8f748420548308e07dbc1"></a>
+<a class="anchor" id="a3e9cab77c935e6bc2e96bcb00006382e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef iterator::value_type <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a7f20672ea7b8f748420548308e07dbc1">value_type</a></td>
+          <td class="memname">typedef TAllocator::value_type <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -383,73 +394,17 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af81334fa20cb34b36a40d0ac4c36e2a5"></a>
+<a class="anchor" id="a3608d1ce797df492ee7d90a3c340515f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Constructs an empty list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a344a7102226e251cc039476e7680c3b8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
-          <td class="paramname"><em>il</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Constructs a list from the elements contained in the initializer list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8f2ff5a39c10ca4f57b5d3794e72cf93"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>copy</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Copy-constructs a new list from <em>copy</em>. </p>
-
-</div>
-</div>
-<a class="anchor" id="aaa8567cc4eb408e62117f1a9782629ba"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::~<a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; </td>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -457,441 +412,752 @@ template&lt;class T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Destroys this list. </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a5e6584f87eee4371e308e1aa9c3da6c8"></a>
+<a class="anchor" id="ae1f2cec1b8d7fecec86297fee77e499a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::append </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Appends <em>value</em> at the end of this list. Returns an iterator pointing to the item just inserted. </p>
-
-</div>
-</div>
-<a class="anchor" id="a557466129db60dc92eaa68b18012900e"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::back </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a reference to the last item in the list. Added for STL-compatibility. </p>
-
-</div>
-</div>
-<a class="anchor" id="a6031d94f7c8a88224364523d10a2eff4"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::back </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a const reference to the last item in the list. Added for STL-compatibility. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac86cc19f89e9913ea93f3b212d531954"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::begin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns an iterator to the first item in the list. If the list is empty then the returned iterator is equal to <a class="el" href="classprism_1_1_list.html#a47ef0b3d04fa49bd05f00a13bdfb2b93">end()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9d4e4d463be411b27307dcf3cdc49422"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::begin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns an iterator to the first item in the list. If the list is empty then the returned iterator is equal to <a class="el" href="classprism_1_1_list.html#a47ef0b3d04fa49bd05f00a13bdfb2b93">end()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a55b460a5a5e00aeee87df83e8559349c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::cbegin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a const_iterator that points to the first item in the list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1b526719a7f63a47482ff0b293d36ad1"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::cend </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns an iterator to the imaginary position one past the last item. This iterator should not be dereferenced. </p>
-
-</div>
-</div>
-<a class="anchor" id="af51ed8f35ae20cc4639962a2dead76d3"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::clear </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes every item from this list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a19923a3ef18676b387972dcb78f5a131"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::constBegin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a const_iterator that points to the first item in the list. </p>
-
-</div>
-</div>
-<a class="anchor" id="af8f11fb293ac9961acf72e76c4128473"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::constEnd </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns an iterator to the imaginary position one past the last item. This iterator should not be dereferenced. </p>
-
-</div>
-</div>
-<a class="anchor" id="a3b6d05cd9d1911861c7a440c291ccc26"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::contains </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns true if this list contains <em>value</em>, false otherwise. The value type should have an implementation of <a class="el" href="classprism_1_1_list.html#a4c14c11fdcb43c27a1035fccbe0f7b4d">operator==()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a3e274e926be4ac7664e8b1ba79cf3db9"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::count </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Counts and returns the number of occurrences of <em>value</em> in this list. The value type should have an implementation of <a class="el" href="classprism_1_1_list.html#a4c14c11fdcb43c27a1035fccbe0f7b4d">operator==()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8d58db1d27cc01ce3036d448f232ced4"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::empty </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns true if the list contains no items, false otherwise. Equivalent to <a class="el" href="classprism_1_1_list.html#ac0f60893564ab12f9c9974ba685db2b0">isEmpty()</a>. Added for STL-compatibility. </p>
-
-</div>
-</div>
-<a class="anchor" id="a47ef0b3d04fa49bd05f00a13bdfb2b93"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns an iterator to the imaginary position one past the last item. This iterator should not be dereferenced. </p>
-
-</div>
-</div>
-<a class="anchor" id="acaa7fffb63e4f955b0f77cf9899c924c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a038bd36af263a85110467528db8305d5">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a const_iterator to the imaginary item one past the last item. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8575a0221bf51275ac186406d656a4f3"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::endsWith </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns true if the list is not empty and the last item is equal to <em>value</em>, false otherwise. The value type should have an implementation of <a class="el" href="classprism_1_1_list.html#a4c14c11fdcb43c27a1035fccbe0f7b4d">operator==()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab6440bbb53502f6e689c1c9274ffa6f8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::erase </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a>&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes the item from the list pointed to by <em>pos</em>. If <em>pos</em> is equal to <a class="el" href="classprism_1_1_list.html#a47ef0b3d04fa49bd05f00a13bdfb2b93">end()</a> then nothing is removed and <em>pos</em> is returned. Otherwise an iterator to the item after the one just removed is returned instead which could be equal to <a class="el" href="classprism_1_1_list.html#a47ef0b3d04fa49bd05f00a13bdfb2b93">end()</a> if the list is now empty. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5c20cbafe00fff084b1c48016a0b04f8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::first </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a reference to the first item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#a64abe6201e00a727d55299242b0f5aee">front()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a2ff7747c0784e8f8f71a9365a241601e"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::first </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a const reference to the first item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#a64abe6201e00a727d55299242b0f5aee">front()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5dd072cd1d777dd751fc2d0deee00e31"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::fromStdForwardList </td>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
           <td>(</td>
-          <td class="paramtype">const std::forward_list&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Static method that creates and returns a new list from a std::forward_list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a64abe6201e00a727d55299242b0f5aee"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::front </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a reference to the first item in the list. Added for STL-compatibility. Equivalent to <a class="el" href="classprism_1_1_list.html#a5c20cbafe00fff084b1c48016a0b04f8">first()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5319d6f066eaa794399d36177275f800"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::front </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a const reference to the first item in the list. Added for STL-compatibility. Equivalent to <a class="el" href="classprism_1_1_list.html#a5c20cbafe00fff084b1c48016a0b04f8">first()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a94237ea84df5f1e804ab6ff2717a5634"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::insert </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> &amp;&#160;</td>
-          <td class="paramname"><em>pos</em>, </td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>numElements</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae663f8e68894b024ce46a5e8d2c56d90"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class InputIterator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
+          <td>(</td>
+          <td class="paramtype">InputIterator&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIterator&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7d6096b7c959368bf0e35162959464d0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::initializer_list&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>il</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a043cd0e81a37f8c23e08673939fe8f91"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_list.html">List</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>copy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b1a463b75d19bf6fa6416783f8be842"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::~<a class="el" href="classprism_1_1_list.html">List</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a52a0d0ad9f3d7008affbb33c59788973"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17253058099ff3db0ff1c59ab9aaa062"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa3f4adb4b98aaea022b44fc46dcedc39"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af79b38b4f00cd52875c043a236d8d5d1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac1c717e7a1cd1ab2b30ba0701158dad4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a305be84975076ea140f6f32be946225f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aab544551cf58b5ce23584c4f16d00d7e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1e7dd9642cde1dca8834c8771560cd6b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af83c7a275d29cb26b5807c3b4cbbebf4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::constBegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab6464c9488a804007b2953a6a21b6e46"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::constEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a47cd243e9c5db6058481d63ecc6ed5b7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7dbdab274aecfdc26b7d208f80772a78"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae6b3ff8409a6548b695a9173a8bd4555"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a66e9cfc2a547294304d4fae086297bec"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a36cedb2a64bbbe94da0c8e275132497c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff95005df96b82ff2b190c09a4845b30"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::endsWith </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9dcece97613f71fd9fac75d65f741ab4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This function only erases the element, and that if the element is itself a pointer, the pointed-to memory is not touched in any way. Managing the pointer is the user's responsibility. </p>
+
+</div>
+</div>
+<a class="anchor" id="a632ad7eb2a121216e2cd9d3b810819fc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This function only erases the element, and that if the element is itself a pointer, the pointed-to memory is not touched in any way. Managing the pointer is the user's responsibility. </p>
+
+</div>
+</div>
+<a class="anchor" id="a403997c37906888fb96e612557fc7a05"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a40d014004df46b9997ce81bbc490dac0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a389a92c786597aa0fc0918189491cd64"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3082476c9130719533c961b46e09762d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a313a60ae219854247f2dfa464ac30b8e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>insertBefore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -900,500 +1166,847 @@ template&lt;class T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Inserts <em>value</em> at one position after the item at <em>pos</em>. Returns an iterator to the item just inserted. </p>
+<p>Inserts <em>value</em> after the value pointed to be <em>pos</em>. </p><dl class="section return"><dt>Returns</dt><dd>Returns an iterator that points to the newly inserted value. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ac0f60893564ab12f9c9974ba685db2b0"></a>
+<a class="anchor" id="ab92c8e2076807ea6ecc2fce099e6a3e7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::isEmpty </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns true if the list contains no items, false otherwise. </p>
-
-</div>
-</div>
-<a class="anchor" id="a16681bef913b82d9951330c7526cdb3f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::last </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a reference to the last item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#a557466129db60dc92eaa68b18012900e">back()</a>; </p>
-
-</div>
-</div>
-<a class="anchor" id="acf84da5c22f8fe60c182de1f29171ea1"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const T &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::last </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns a const reference to the last item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#a557466129db60dc92eaa68b18012900e">back()</a>; </p>
-
-</div>
-</div>
-<a class="anchor" id="a026cc068bceff4e74fd991e3940b76d7"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns true if this list is equal to the other list <em>rhs</em>. They are considered equal if they are the same size and have the same values in the same order. </p>
-
-</div>
-</div>
-<a class="anchor" id="ad578cb4c80ff86d9edb989ade883c18f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Creates and returns a new list that starts with this list followed by the list <em>rhs</em>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a84972c1e847fdf2c2ca197d7812af3a0"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator+= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Appends the contents of the list <em>rhs</em> to the end of this list. Returns a reference to this list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a5e68dad596d72d1c00f9d12bb21479d6"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator+= </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Appends <em>value</em> to the end of the list. Returns a reference to this list. </p>
-
-</div>
-</div>
-<a class="anchor" id="aed7d35e45035b24e4a684f0b1c228086"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>list</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Appends the items in <em>list</em> to the end of this list. Returns a reference to this list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a86dfdf909c7151a54d231d15315acca1"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Appends <em>value</em> to the end of the list. Equivalent to <a class="el" href="classprism_1_1_list.html#a5e6584f87eee4371e308e1aa9c3da6c8">append()</a> and is useful to chain appends together i.e. list &lt;&lt; 1 &lt;&lt; 2 &lt;&lt; 3 etc. </p>
-
-</div>
-</div>
-<a class="anchor" id="abb977e2c0b880c7a381ea14f25417e4f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Assigns the list <em>rhs</em> to this list. Returns a reference to this list. </p>
-
-</div>
-</div>
-<a class="anchor" id="a4c14c11fdcb43c27a1035fccbe0f7b4d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns true if this list is equal to the other list <em>rhs</em>. They are considered equal if they are the same size and have the same values in the same order. </p>
-
-</div>
-</div>
-<a class="anchor" id="aac8b29572cd691890a82846b35799e36"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::pop_back </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes the last item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#ab6b68a4de2134c159b8e35a2f4bb935d">removeLast()</a>. Added for STL-compatibility. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab8a836a10bc37479fbbc458299d68569"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::pop_front </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes the first item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#a3e19c548f9f8205bea45d394ddcb9ccb">removeFirst()</a>. Added for STL-compatibility. </p>
-
-</div>
-</div>
-<a class="anchor" id="a01773efbec8bef23c7a37edb9ea7a93f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;::<a class="el" href="classprism_1_1_list.html#a6cf00c98a428ed325fe9ccc60d7ef95a">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::prepend </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Adds <em>value</em> to the start of the list. Returns an iterator to the item just inserted. </p>
-
-</div>
-</div>
-<a class="anchor" id="aabc7020d0f04bc29412d2ff2cb632958"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::push_back </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Appends <em>value</em> to the end of the list and is equivalent to <a class="el" href="classprism_1_1_list.html#a5e6584f87eee4371e308e1aa9c3da6c8">append()</a>. Added for STL-compatibility. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9af267cdacc311662e39630da33f4431"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::push_front </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Prepends <em>value</em> at the beginning of the list and is equivalent to <a class="el" href="classprism_1_1_list.html#a01773efbec8bef23c7a37edb9ea7a93f">prepend()</a>. Added for STL-compatibility. </p>
-
-</div>
-</div>
-<a class="anchor" id="a85937bf298db8c1c8f8017fff492b374"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::removeAll </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes all occurrences of <em>value</em> from the list. To remove all items from the list use <a class="el" href="classprism_1_1_list.html#af51ed8f35ae20cc4639962a2dead76d3">clear()</a>. The value type should have an implementation of <a class="el" href="classprism_1_1_list.html#a4c14c11fdcb43c27a1035fccbe0f7b4d">operator==()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a3e19c548f9f8205bea45d394ddcb9ccb"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::removeFirst </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes the first item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#ab8a836a10bc37479fbbc458299d68569">pop_front()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a8ee7eadb17120e6fa267278d0d58c13f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::removeFirstOf </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes the first occurrence of <em>value</em> from the list. The value type should have an implementation of <a class="el" href="classprism_1_1_list.html#a4c14c11fdcb43c27a1035fccbe0f7b4d">operator==()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab6b68a4de2134c159b8e35a2f4bb935d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::removeLast </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Removes the last item in the list. Equivalent to <a class="el" href="classprism_1_1_list.html#aac8b29572cd691890a82846b35799e36">pop_back()</a>. </p>
-
-</div>
-</div>
-<a class="anchor" id="a90855d0c971c394fabf612c02dce4d3a"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns the number of items contained in the list. </p>
-
-</div>
-</div>
-<a class="anchor" id="ac129dafdb80ae13cfc914dc0668e6b39"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::startsWith </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Returns true if the list is not empty and the first item equals <em>value</em>. </p>
-
-</div>
-</div>
-<a class="anchor" id="ab628c77e4598e1055a8b832367a31997"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::forward_list&lt; T &gt; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::toStdForwardList </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Creates and returns a std::forward_list containing the items from this list. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ade9dd1234d468fdcbcddb16eb490d296"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Node* <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::m_header</td>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>insertBefore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ae86f48e50ec12239597de98deb36b4a4"></a>
+<a class="anchor" id="a79c26970ac36446b3b9321ee55d869a1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class InputIterator &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::m_size</td>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>insertBefore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIterator&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIterator&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a0740989f0d5af2bad19850fac850947e"></a>
+<a class="anchor" id="a1548ebff73252fd1fb2663320ebddf8a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Node* <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T &gt;::m_tailer</td>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#aa95cb21a8754f91406f53bd0315513af">iterator</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>insertBefore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>il</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7cbe32ef6d447cc36d004da93df4da12"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a674a1f2acb2580b63ec54964334721dd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a87113fe9cf2580e395e3d9f2962f4e81">reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abb8f4bd3584cf4bafe29d250a767021c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a41d0ce745cf5ec6514a70a96dec8c2fb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf0b0a42de4cd250ec07943fb1255173"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt;T,TAllocator&gt; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7e5e6a5c6f80f1b116810049ada54f95"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt;T,TAllocator&gt;&amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab0c98e10fe7476af0b6b0fc539dd8f16"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt;T,TAllocator&gt;&amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4420d770c7a0cb6dc31fb4c8e68fc047"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt;T,TAllocator&gt;&amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae7b01ded233254d4b12fd5e501c30f01"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt;T,TAllocator&gt;&amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8cfa274e9550ac47e36577adb7472d74"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt;T,TAllocator&gt;&amp; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae7ff0643ac1abebaed89ff72ff45e233"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a22f54a3db3eedf861270b833862fef46"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::pop_back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa469f22e4ccc944268f984258e680ca3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::pop_front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1c1a0dd2a6218345b50b119deb962813"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::prepend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adf9bf40a902b9628c1f1f07f1e7518d9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad8612f5facddec737ddaa81ab6c9cec6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a145f3905ff40c221d95cb858943aa8a6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::removeAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The remove... family of functions remove the elements based on value whereas the erase... family of functions remove the elements based on iterators. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8a80ca6c53cc3b6cde47b5b11ee4c1aa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::removeFirst </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0cab3235676030fbd9b238be252fb2c9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class Predicate &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::removeIf </td>
+          <td>(</td>
+          <td class="paramtype">Predicate&#160;</td>
+          <td class="paramname"><em>pred</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b9878e43f08ed5ca8379703342d1f02"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::removeLast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4119f722dcf464610fbfa45b51247912"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>newSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6655ac493bd63dd8d7dda060b556cbcf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac0919b9f4f0312e5124cdc4eeb491114"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::startsWith </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac24aaa71bcfa3cfb80c1b466704a9b21"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::takeFirst </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a520735132b94b8cf7feaf3f0bbba2ca7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html#a3e9cab77c935e6bc2e96bcb00006382e">value_type</a> <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::takeLast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a185229de116456a6ccb911e1b4599f8a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;T&gt; <a class="el" href="classprism_1_1_list.html">prism::List</a>&lt; T, TAllocator &gt;::toStdList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="a45cd60cf5029dcfd4b3f6175878008d0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_list.html">List</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

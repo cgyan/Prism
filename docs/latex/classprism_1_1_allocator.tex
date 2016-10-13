@@ -4,14 +4,14 @@
 
 {\ttfamily \#include $<$Allocator.\+h$>$}
 
-Inheritance diagram for prism\+:\+:Allocator$<$ T $>$\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classprism_1_1_allocator}
-\end{center}
-\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structprism_1_1_allocator_1_1propagate__on__container__copy__assignment}{propagate\+\_\+on\+\_\+container\+\_\+copy\+\_\+assignment}
+\item 
+struct \hyperlink{structprism_1_1_allocator_1_1propagate__on__container__move__assignment}{propagate\+\_\+on\+\_\+container\+\_\+move\+\_\+assignment}
+\item 
+struct \hyperlink{structprism_1_1_allocator_1_1propagate__on__container__swap}{propagate\+\_\+on\+\_\+container\+\_\+swap}
 \item 
 struct \hyperlink{structprism_1_1_allocator_1_1rebind}{rebind}
 \end{DoxyCompactItemize}
@@ -30,7 +30,7 @@ typedef const T \& \hyperlink{classprism_1_1_allocator_a89911899c97ae877a81b7989
 \item 
 typedef size\+\_\+t \hyperlink{classprism_1_1_allocator_a47cb9435e4e9ff4c934ea3d4b4338d52}{size\+\_\+type}
 \item 
-typedef ptrdiff\+\_\+t \hyperlink{classprism_1_1_allocator_a1769ae6e60e970a4d30ee15275f7ac6d}{difference\+\_\+type}
+typedef std\+::ptrdiff\+\_\+t \hyperlink{classprism_1_1_allocator_a39ca38c4c741bbc51d3c6e26603102ef}{difference\+\_\+type}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -40,6 +40,8 @@ typedef ptrdiff\+\_\+t \hyperlink{classprism_1_1_allocator_a1769ae6e60e970a4d30e
 \hyperlink{classprism_1_1_allocator_a974f6bcc97b9ad8cd3cba142f5c51ccf}{Allocator} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ T $>$ \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
 \item 
 {\footnotesize template$<$class U $>$ }\\\hyperlink{classprism_1_1_allocator_a87ddac6131f7b88ae2ff9bad3997a154}{Allocator} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ U $>$ \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
+\item 
+{\footnotesize template$<$class U $>$ }\\\hyperlink{classprism_1_1_allocator_a4863b97f388493584befc0131857ebb1}{Allocator} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ U $>$ \&\&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
 \item 
 virtual \hyperlink{classprism_1_1_allocator_a3c220f4ea1fdb82ba53817cac0132c20}{$\sim$\+Allocator} ()
 \item 
@@ -60,6 +62,16 @@ void \hyperlink{classprism_1_1_allocator_a660832107a9bc094324adf9da718fa43}{dest
 {\footnotesize template$<$class T2 $>$ }\\const bool \hyperlink{classprism_1_1_allocator_a6e4d64dc74ef98bae3cb13eef532116c}{operator==} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ T2 $>$ \&rhs)
 \item 
 {\footnotesize template$<$class T2 $>$ }\\const bool \hyperlink{classprism_1_1_allocator_aa1b7baa61a8e3938861dc0e9e9d369a5}{operator!=} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ T2 $>$ \&rhs)
+\item 
+void \hyperlink{classprism_1_1_allocator_a58dd5e4718b753f0e64b1d9c00089b46}{operator=} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ T $>$ \&rhs)
+\item 
+void \hyperlink{classprism_1_1_allocator_ae35090442e453eec485e61afd3959a04}{operator=} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ T $>$ \&\&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\void \hyperlink{classprism_1_1_allocator_ae723165ce5bf6f080ec58f45e16acf5c}{operator=} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ U $>$ \&rhs)
+\item 
+{\footnotesize template$<$class U $>$ }\\void \hyperlink{classprism_1_1_allocator_a17b523e405b81ddc67a68b028c4d5da9}{operator=} (const \hyperlink{classprism_1_1_allocator}{Allocator}$<$ U $>$ \&\&rhs)
+\item 
+\hyperlink{classprism_1_1_allocator}{Allocator} \hyperlink{classprism_1_1_allocator_ae1359cd2729046151b42c55365e57139}{select\+\_\+on\+\_\+container\+\_\+copy\+\_\+construction} (const \hyperlink{classprism_1_1_allocator}{Allocator} \&a)
 \end{DoxyCompactItemize}
 
 
@@ -72,7 +84,7 @@ void \hyperlink{classprism_1_1_allocator_a660832107a9bc094324adf9da718fa43}{dest
 \subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef const T\& {\bf prism\+::\+Allocator}$<$ T $>$\+::{\bf const\+\_\+reference}}\hypertarget{classprism_1_1_allocator_a89911899c97ae877a81b798957a2d899}{}\label{classprism_1_1_allocator_a89911899c97ae877a81b798957a2d899}
 \index{prism\+::\+Allocator@{prism\+::\+Allocator}!difference\+\_\+type@{difference\+\_\+type}}
 \index{difference\+\_\+type@{difference\+\_\+type}!prism\+::\+Allocator@{prism\+::\+Allocator}}
-\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef ptrdiff\+\_\+t {\bf prism\+::\+Allocator}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1_allocator_a1769ae6e60e970a4d30ee15275f7ac6d}{}\label{classprism_1_1_allocator_a1769ae6e60e970a4d30ee15275f7ac6d}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef std\+::ptrdiff\+\_\+t {\bf prism\+::\+Allocator}$<$ T $>$\+::{\bf difference\+\_\+type}}\hypertarget{classprism_1_1_allocator_a39ca38c4c741bbc51d3c6e26603102ef}{}\label{classprism_1_1_allocator_a39ca38c4c741bbc51d3c6e26603102ef}
 \index{prism\+::\+Allocator@{prism\+::\+Allocator}!pointer@{pointer}}
 \index{pointer@{pointer}!prism\+::\+Allocator@{prism\+::\+Allocator}}
 \subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef T$\ast$ {\bf prism\+::\+Allocator}$<$ T $>$\+::{\bf pointer}}\hypertarget{classprism_1_1_allocator_ad3c6706a7243bd3ef489e16d34d5750f}{}\label{classprism_1_1_allocator_ad3c6706a7243bd3ef489e16d34d5750f}
@@ -109,6 +121,13 @@ void \hyperlink{classprism_1_1_allocator_a660832107a9bc094324adf9da718fa43}{dest
 \item[{const {\bf Allocator}$<$ U $>$ \&}]{copy}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_a87ddac6131f7b88ae2ff9bad3997a154}{}\label{classprism_1_1_allocator_a87ddac6131f7b88ae2ff9bad3997a154}
+\index{prism\+::\+Allocator@{prism\+::\+Allocator}!Allocator@{Allocator}}
+\index{Allocator@{Allocator}!prism\+::\+Allocator@{prism\+::\+Allocator}}
+\subsubsection[{\texorpdfstring{Allocator(const Allocator$<$ U $>$ \&\&copy)}{Allocator(const Allocator< U > &&copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ {\bf prism\+::\+Allocator}$<$ T $>$\+::{\bf Allocator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Allocator}$<$ U $>$ \&\&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_a4863b97f388493584befc0131857ebb1}{}\label{classprism_1_1_allocator_a4863b97f388493584befc0131857ebb1}
 \index{prism\+::\+Allocator@{prism\+::\+Allocator}!````~Allocator@{$\sim$\+Allocator}}
 \index{````~Allocator@{$\sim$\+Allocator}!prism\+::\+Allocator@{prism\+::\+Allocator}}
 \subsubsection[{\texorpdfstring{$\sim$\+Allocator()}{~Allocator()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf prism\+::\+Allocator}$<$ T $>$\+::$\sim${\bf Allocator} (
@@ -178,6 +197,34 @@ void \hyperlink{classprism_1_1_allocator_a660832107a9bc094324adf9da718fa43}{dest
 \item[{const {\bf Allocator}$<$ T2 $>$ \&}]{rhs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_aa1b7baa61a8e3938861dc0e9e9d369a5}{}\label{classprism_1_1_allocator_aa1b7baa61a8e3938861dc0e9e9d369a5}
+\index{prism\+::\+Allocator@{prism\+::\+Allocator}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+Allocator@{prism\+::\+Allocator}}
+\subsubsection[{\texorpdfstring{operator=(const Allocator$<$ T $>$ \&rhs)}{operator=(const Allocator< T > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Allocator}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Allocator}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_a58dd5e4718b753f0e64b1d9c00089b46}{}\label{classprism_1_1_allocator_a58dd5e4718b753f0e64b1d9c00089b46}
+\index{prism\+::\+Allocator@{prism\+::\+Allocator}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+Allocator@{prism\+::\+Allocator}}
+\subsubsection[{\texorpdfstring{operator=(const Allocator$<$ T $>$ \&\&rhs)}{operator=(const Allocator< T > &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf prism\+::\+Allocator}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Allocator}$<$ T $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_ae35090442e453eec485e61afd3959a04}{}\label{classprism_1_1_allocator_ae35090442e453eec485e61afd3959a04}
+\index{prism\+::\+Allocator@{prism\+::\+Allocator}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+Allocator@{prism\+::\+Allocator}}
+\subsubsection[{\texorpdfstring{operator=(const Allocator$<$ U $>$ \&rhs)}{operator=(const Allocator< U > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ void {\bf prism\+::\+Allocator}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Allocator}$<$ U $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_ae723165ce5bf6f080ec58f45e16acf5c}{}\label{classprism_1_1_allocator_ae723165ce5bf6f080ec58f45e16acf5c}
+\index{prism\+::\+Allocator@{prism\+::\+Allocator}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+Allocator@{prism\+::\+Allocator}}
+\subsubsection[{\texorpdfstring{operator=(const Allocator$<$ U $>$ \&\&rhs)}{operator=(const Allocator< U > &&rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class U $>$ void {\bf prism\+::\+Allocator}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Allocator}$<$ U $>$ \&\&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_a17b523e405b81ddc67a68b028c4d5da9}{}\label{classprism_1_1_allocator_a17b523e405b81ddc67a68b028c4d5da9}
 \index{prism\+::\+Allocator@{prism\+::\+Allocator}!operator==@{operator==}}
 \index{operator==@{operator==}!prism\+::\+Allocator@{prism\+::\+Allocator}}
 \subsubsection[{\texorpdfstring{operator==(const Allocator$<$ T2 $>$ \&rhs)}{operator==(const Allocator< T2 > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ template$<$class T2 $>$ const bool {\bf prism\+::\+Allocator}$<$ T $>$\+::operator== (
@@ -185,6 +232,13 @@ void \hyperlink{classprism_1_1_allocator_a660832107a9bc094324adf9da718fa43}{dest
 \item[{const {\bf Allocator}$<$ T2 $>$ \&}]{rhs}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_a6e4d64dc74ef98bae3cb13eef532116c}{}\label{classprism_1_1_allocator_a6e4d64dc74ef98bae3cb13eef532116c}
+\index{prism\+::\+Allocator@{prism\+::\+Allocator}!select\+\_\+on\+\_\+container\+\_\+copy\+\_\+construction@{select\+\_\+on\+\_\+container\+\_\+copy\+\_\+construction}}
+\index{select\+\_\+on\+\_\+container\+\_\+copy\+\_\+construction@{select\+\_\+on\+\_\+container\+\_\+copy\+\_\+construction}!prism\+::\+Allocator@{prism\+::\+Allocator}}
+\subsubsection[{\texorpdfstring{select\+\_\+on\+\_\+container\+\_\+copy\+\_\+construction(const Allocator \&a)}{select_on_container_copy_construction(const Allocator &a)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Allocator} {\bf prism\+::\+Allocator}$<$ T $>$\+::select\+\_\+on\+\_\+container\+\_\+copy\+\_\+construction (
+\begin{DoxyParamCaption}
+\item[{const {\bf Allocator}$<$ T $>$ \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classprism_1_1_allocator_ae1359cd2729046151b42c55365e57139}{}\label{classprism_1_1_allocator_ae1359cd2729046151b42c55365e57139}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

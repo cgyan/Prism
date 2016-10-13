@@ -1,6 +1,6 @@
-\hypertarget{algorithms__aux_8h}{}\section{inc/prism/h/algorithms\+\_\+aux.h File Reference}
-\label{algorithms__aux_8h}\index{inc/prism/h/algorithms\+\_\+aux.\+h@{inc/prism/h/algorithms\+\_\+aux.\+h}}
-{\ttfamily \#include $<$prism/\+Iterator$>$}\\*
+\hypertarget{algorithms__aux_8h}{}\section{inc/prism/aux/algorithms\+\_\+aux.h File Reference}
+\label{algorithms__aux_8h}\index{inc/prism/aux/algorithms\+\_\+aux.\+h@{inc/prism/aux/algorithms\+\_\+aux.\+h}}
+{\ttfamily \#include $<$prism/iterator$>$}\\*
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$cmath$>$}\\*
 \subsection*{Namespaces}
@@ -77,13 +77,17 @@
 \item 
 {\footnotesize template$<$class Forward\+Iterator1 , class Forward\+Iterator2 $>$ }\\Forward\+Iterator1 \hyperlink{namespaceprism_ab6f8ed8b450ff281e02218e10d5643a7}{prism\+::search\+\_\+aux} (Forward\+Iterator1 first1, Forward\+Iterator1 last1, Forward\+Iterator2 first2, Forward\+Iterator2 last2)
 \item 
-{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a9e7b2f97895db323cbefbc4af311ccb9}{prism\+::sort\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last)
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_a1e22fc5d6e1e94cf7d9d76cee8dcb281}{prism\+::sort\+\_\+bubble\+\_\+aux} (Random\+Access\+Iterator first, Random\+Access\+Iterator last, \hyperlink{structprism_1_1random__access__iterator__tag}{prism\+::random\+\_\+access\+\_\+iterator\+\_\+tag})
 \item 
-{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_af3a66e1051c4c7874f305ad2a5f0b37e}{prism\+::sort\+\_\+bubble\+\_\+aux} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
+{\footnotesize template$<$class Bidirectional\+Iterator $>$ }\\void \hyperlink{namespaceprism_a8132b98c9ee1d630059074e1779341b2}{prism\+::sort\+\_\+bubble\+\_\+aux} (Bidirectional\+Iterator first, Bidirectional\+Iterator last, \hyperlink{structprism_1_1bidirectional__iterator__tag}{prism\+::bidirectional\+\_\+iterator\+\_\+tag})
 \item 
 {\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_ab289bdf7cde130b0aeea21a9711770f4}{prism\+::sort\+\_\+heap\+\_\+aux} (Random\+Access\+Iterator first, Random\+Access\+Iterator last)
 \item 
-{\footnotesize template$<$class Forward\+Iterator $>$ }\\void \hyperlink{namespaceprism_a46e0e235fa71938e5ebf29387b917057}{prism\+::sort\+\_\+quicksort\+\_\+aux} (Forward\+Iterator first, Forward\+Iterator last)
+{\footnotesize template$<$class Random\+Access\+Iterator $>$ }\\void \hyperlink{namespaceprism_ae5aebde51f8677c6608cf202e02eac6c}{prism\+::sort\+\_\+quicksort\+\_\+aux} (Random\+Access\+Iterator first, Random\+Access\+Iterator last, \hyperlink{structprism_1_1random__access__iterator__tag}{prism\+::random\+\_\+access\+\_\+iterator\+\_\+tag} it\+\_\+cat)
+\item 
+{\footnotesize template$<$class Bidirectional\+Iterator $>$ }\\void \hyperlink{namespaceprism_a49b96350afdd8de11aac6b0c74f78c99}{prism\+::sort\+\_\+quicksort\+\_\+aux} (Bidirectional\+Iterator first, Bidirectional\+Iterator last, \hyperlink{structprism_1_1bidirectional__iterator__tag}{prism\+::bidirectional\+\_\+iterator\+\_\+tag})
+\item 
+{\footnotesize template$<$class Bidirectional\+Iterator $>$ }\\void \hyperlink{namespaceprism_a79f1533ec8a11842db47a4d70cdbd056}{prism\+::sort\+\_\+aux} (Bidirectional\+Iterator first, Bidirectional\+Iterator last)
 \item 
 {\footnotesize template$<$class T $>$ }\\void \hyperlink{namespaceprism_a6d3a7129cc6ab5d9a80301436e4d2e48}{prism\+::swap\+\_\+aux} (T \&a, T \&b)
 \item 

@@ -117,18 +117,15 @@ $(document).ready(function(){initNavTree('classprism_1_1_allocator.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_allocator_8h_source.html">Allocator.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for prism::Allocator&lt; T &gt;:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classprism_1_1_allocator.png" usemap="#prism::Allocator_3C_20T_20_3E_map" alt=""/>
-  <map id="prism::Allocator_3C_20T_20_3E_map" name="prism::Allocator&lt; T &gt;_map">
-<area href="classprism_1_1_logger_allocator.html" alt="prism::LoggerAllocator&lt; T &gt;" shape="rect" coords="0,56,170,80"/>
-</map>
- </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_allocator_1_1propagate__on__container__copy__assignment.html">propagate_on_container_copy_assignment</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_allocator_1_1propagate__on__container__move__assignment.html">propagate_on_container_move_assignment</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_allocator_1_1propagate__on__container__swap.html">propagate_on_container_swap</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_allocator_1_1rebind.html">rebind</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -146,8 +143,8 @@ Public Types</h2></td></tr>
 <tr class="separator:a89911899c97ae877a81b798957a2d899"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47cb9435e4e9ff4c934ea3d4b4338d52"><td class="memItemLeft" align="right" valign="top">typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a47cb9435e4e9ff4c934ea3d4b4338d52">size_type</a></td></tr>
 <tr class="separator:a47cb9435e4e9ff4c934ea3d4b4338d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1769ae6e60e970a4d30ee15275f7ac6d"><td class="memItemLeft" align="right" valign="top">typedef ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a1769ae6e60e970a4d30ee15275f7ac6d">difference_type</a></td></tr>
-<tr class="separator:a1769ae6e60e970a4d30ee15275f7ac6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ca38c4c741bbc51d3c6e26603102ef"><td class="memItemLeft" align="right" valign="top">typedef std::ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a39ca38c4c741bbc51d3c6e26603102ef">difference_type</a></td></tr>
+<tr class="separator:a39ca38c4c741bbc51d3c6e26603102ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -158,6 +155,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a87ddac6131f7b88ae2ff9bad3997a154"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
 <tr class="memitem:a87ddac6131f7b88ae2ff9bad3997a154"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a87ddac6131f7b88ae2ff9bad3997a154">Allocator</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
 <tr class="separator:a87ddac6131f7b88ae2ff9bad3997a154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4863b97f388493584befc0131857ebb1"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:a4863b97f388493584befc0131857ebb1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a4863b97f388493584befc0131857ebb1">Allocator</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;&amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
+<tr class="separator:a4863b97f388493584befc0131857ebb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c220f4ea1fdb82ba53817cac0132c20"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a3c220f4ea1fdb82ba53817cac0132c20">~Allocator</a> ()</td></tr>
 <tr class="separator:a3c220f4ea1fdb82ba53817cac0132c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb90329306f4d3c8a29b3e715caa580c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_allocator.html#ad3c6706a7243bd3ef489e16d34d5750f">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#afb90329306f4d3c8a29b3e715caa580c">address</a> (<a class="el" href="classprism_1_1_allocator.html#a89911899c97ae877a81b798957a2d899">const_reference</a> value)</td></tr>
@@ -181,6 +181,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1b7baa61a8e3938861dc0e9e9d369a5"><td class="memTemplParams" colspan="2">template&lt;class T2 &gt; </td></tr>
 <tr class="memitem:aa1b7baa61a8e3938861dc0e9e9d369a5"><td class="memTemplItemLeft" align="right" valign="top">const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#aa1b7baa61a8e3938861dc0e9e9d369a5">operator!=</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T2 &gt; &amp;rhs)</td></tr>
 <tr class="separator:aa1b7baa61a8e3938861dc0e9e9d369a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58dd5e4718b753f0e64b1d9c00089b46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a58dd5e4718b753f0e64b1d9c00089b46">operator=</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T &gt; &amp;rhs)</td></tr>
+<tr class="separator:a58dd5e4718b753f0e64b1d9c00089b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35090442e453eec485e61afd3959a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#ae35090442e453eec485e61afd3959a04">operator=</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T &gt; &amp;&amp;rhs)</td></tr>
+<tr class="separator:ae35090442e453eec485e61afd3959a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae723165ce5bf6f080ec58f45e16acf5c"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:ae723165ce5bf6f080ec58f45e16acf5c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#ae723165ce5bf6f080ec58f45e16acf5c">operator=</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;rhs)</td></tr>
+<tr class="separator:ae723165ce5bf6f080ec58f45e16acf5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b523e405b81ddc67a68b028c4d5da9"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:a17b523e405b81ddc67a68b028c4d5da9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#a17b523e405b81ddc67a68b028c4d5da9">operator=</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;&amp;rhs)</td></tr>
+<tr class="separator:a17b523e405b81ddc67a68b028c4d5da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1359cd2729046151b42c55365e57139"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_allocator.html">Allocator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_allocator.html#ae1359cd2729046151b42c55365e57139">select_on_container_copy_construction</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a> &amp;a)</td></tr>
+<tr class="separator:ae1359cd2729046151b42c55365e57139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="af6a4a91dfc203203ecc319a457ce4dce"></a>
@@ -211,14 +223,14 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1769ae6e60e970a4d30ee15275f7ac6d"></a>
+<a class="anchor" id="a39ca38c4c741bbc51d3c6e26603102ef"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef ptrdiff_t <a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::<a class="el" href="classprism_1_1_allocator.html#a1769ae6e60e970a4d30ee15275f7ac6d">difference_type</a></td>
+          <td class="memname">typedef std::ptrdiff_t <a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::<a class="el" href="classprism_1_1_allocator.html#a39ca38c4c741bbc51d3c6e26603102ef">difference_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -348,6 +360,34 @@ template&lt;class U &gt; </div>
           <td class="memname"><a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::<a class="el" href="classprism_1_1_allocator.html">Allocator</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>copy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4863b97f388493584befc0131857ebb1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::<a class="el" href="classprism_1_1_allocator.html">Allocator</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>copy</em></td><td>)</td>
           <td></td>
         </tr>
@@ -628,6 +668,114 @@ template&lt;class T2 &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a58dd5e4718b753f0e64b1d9c00089b46"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae35090442e453eec485e61afd3959a04"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae723165ce5bf6f080ec58f45e16acf5c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17b523e405b81ddc67a68b028c4d5da9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<div class="memtemplate">
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; U &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a6e4d64dc74ef98bae3cb13eef532116c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -644,6 +792,32 @@ template&lt;class T2 &gt; </div>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T2 &gt; &amp;&#160;</td>
           <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae1359cd2729046151b42c55365e57139"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_allocator.html">Allocator</a> <a class="el" href="classprism_1_1_allocator.html">prism::Allocator</a>&lt; T &gt;::select_on_container_copy_construction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

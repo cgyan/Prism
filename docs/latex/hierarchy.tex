@@ -1,9 +1,6 @@
 \section{Class Hierarchy}
 This inheritance list is sorted roughly, but not completely, alphabetically\+:\begin{DoxyCompactList}
 \item \contentsline{section}{prism\+:\+:Allocator$<$ T $>$}{\pageref{classprism_1_1_allocator}}{}
-\begin{DoxyCompactList}
-\item \contentsline{section}{prism\+:\+:Logger\+Allocator$<$ T $>$}{\pageref{classprism_1_1_logger_allocator}}{}
-\end{DoxyCompactList}
 \item \contentsline{section}{prism\+:\+:Allocator\+Traits$<$ Alloc $>$}{\pageref{structprism_1_1_allocator_traits}}{}
 \item \contentsline{section}{prism\+:\+:Array$<$ T $>$}{\pageref{classprism_1_1_array}}{}
 \item \contentsline{section}{prism\+:\+:Bitvector}{\pageref{classprism_1_1_bitvector}}{}
@@ -12,6 +9,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{prism\+:\+:Circle}{\pageref{classprism_1_1_circle}}{}
 \item \contentsline{section}{prism\+:\+:conditional\+\_\+type$<$ condition, Type1, Type2 $>$}{\pageref{structprism_1_1conditional__type}}{}
 \item \contentsline{section}{prism\+:\+:conditional\+\_\+type$<$ false, Type1, Type2 $>$}{\pageref{structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4}}{}
+\item \contentsline{section}{prism\+:\+:conditional\+\_\+type$<$ is\+Const, const T $\ast$, T $\ast$ $>$}{\pageref{structprism_1_1conditional__type}}{}
 \item \contentsline{section}{prism\+:\+:Exception}{\pageref{classprism_1_1_exception}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{prism\+:\+:Out\+Of\+Bounds\+Exception}{\pageref{classprism_1_1_out_of_bounds_exception}}{}
@@ -21,29 +19,57 @@ This inheritance list is sorted roughly, but not completely, alphabetically\+:\b
 \item \contentsline{section}{prism\+:\+:Flag}{\pageref{classprism_1_1_flag}}{}
 \item \contentsline{section}{prism\+:\+:Flags$<$ Enum $>$}{\pageref{classprism_1_1_flags}}{}
 \item \contentsline{section}{prism\+:\+:Fraction}{\pageref{classprism_1_1_fraction}}{}
-\item \contentsline{section}{Is\+Odd}{\pageref{struct_is_odd}}{}
-\item \contentsline{section}{prism\+:\+:List$<$ T $>$}{\pageref{classprism_1_1_list}}{}
+\item \contentsline{section}{prism\+:\+:input\+\_\+iterator\+\_\+tag}{\pageref{structprism_1_1input__iterator__tag}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{prism\+:\+:forward\+\_\+iterator\+\_\+tag}{\pageref{structprism_1_1forward__iterator__tag}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{prism\+:\+:bidirectional\+\_\+iterator\+\_\+tag}{\pageref{structprism_1_1bidirectional__iterator__tag}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{prism\+:\+:random\+\_\+access\+\_\+iterator\+\_\+tag}{\pageref{structprism_1_1random__access__iterator__tag}}{}
+\end{DoxyCompactList}
+\end{DoxyCompactList}
+\end{DoxyCompactList}
+\item \contentsline{section}{prism\+:\+:iterator\+\_\+traits$<$ Iter\+Type $>$}{\pageref{structprism_1_1iterator__traits}}{}
+\item \contentsline{section}{prism\+:\+:List$<$ T, T\+Allocator $>$}{\pageref{classprism_1_1_list}}{}
+\item \contentsline{section}{prism\+:\+:List\+Iterator$<$ T, is\+Const $>$}{\pageref{structprism_1_1_list_iterator}}{}
+\item \contentsline{section}{prism\+:\+:List\+Memory$<$ Node\+Allocator $>$}{\pageref{structprism_1_1_list_memory}}{}
+\item \contentsline{section}{prism\+:\+:List\+Node$<$ T $>$}{\pageref{structprism_1_1_list_node}}{}
+\item \contentsline{section}{prism\+:\+:Log\+Allocator$<$ T $>$}{\pageref{classprism_1_1_log_allocator}}{}
 \item \contentsline{section}{prism\+:\+:Mathf}{\pageref{classprism_1_1_mathf}}{}
 \item \contentsline{section}{prism\+:\+:Matrix4}{\pageref{classprism_1_1_matrix4}}{}
 \item \contentsline{section}{prism\+:\+:Bitvector\+Data\+:\+:memory}{\pageref{structprism_1_1_bitvector_data_1_1memory}}{}
 \item \contentsline{section}{prism\+:\+:Obj}{\pageref{classprism_1_1_obj}}{}
+\item \contentsline{section}{prism\+:\+:output\+\_\+iterator\+\_\+tag}{\pageref{structprism_1_1output__iterator__tag}}{}
 \item \contentsline{section}{prism\+:\+:Pair$<$ T1, T2 $>$}{\pageref{structprism_1_1_pair}}{}
 \item \contentsline{section}{prism\+:\+:Point}{\pageref{classprism_1_1_point}}{}
 \item \contentsline{section}{prism\+:\+:Pointf}{\pageref{classprism_1_1_pointf}}{}
 \item \contentsline{section}{prism\+:\+:Quaternion}{\pageref{classprism_1_1_quaternion}}{}
 \item \contentsline{section}{prism\+:\+:Queue$<$ T, Container\+Type $>$}{\pageref{classprism_1_1_queue}}{}
-\item \contentsline{section}{prism\+:\+:Logger\+Allocator$<$ T $>$\+:\+:rebind$<$ U $>$}{\pageref{structprism_1_1_logger_allocator_1_1rebind}}{}
 \item \contentsline{section}{prism\+:\+:Allocator$<$ T $>$\+:\+:rebind$<$ U $>$}{\pageref{structprism_1_1_allocator_1_1rebind}}{}
+\item \contentsline{section}{prism\+:\+:Log\+Allocator$<$ T $>$\+:\+:rebind$<$ U $>$}{\pageref{structprism_1_1_log_allocator_1_1rebind}}{}
 \item \contentsline{section}{prism\+:\+:Rect}{\pageref{classprism_1_1_rect}}{}
 \item \contentsline{section}{prism\+:\+:Reference\+Counter}{\pageref{classprism_1_1_reference_counter}}{}
+\item \contentsline{section}{prism\+:\+:Sequence\+Iterator$<$ T, is\+Const $>$}{\pageref{structprism_1_1_sequence_iterator}}{}
 \item \contentsline{section}{prism\+:\+:Shared\+Data}{\pageref{classprism_1_1_shared_data}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{prism\+:\+:List\+Data$<$ T, Node\+Allocator $>$}{\pageref{structprism_1_1_list_data}}{}
+\end{DoxyCompactList}
 \item \contentsline{section}{prism\+:\+:Shared\+Data\+Pointer$<$ Shared\+Data\+Type $>$}{\pageref{classprism_1_1_shared_data_pointer}}{}
+\item \contentsline{section}{prism\+:\+:Shared\+Data\+Pointer$<$ prism\+:\+:List\+Data $>$}{\pageref{classprism_1_1_shared_data_pointer}}{}
 \item \contentsline{section}{prism\+:\+:Shared\+Data\+Pointer$<$ Stack\+Data$<$ T $>$ $>$}{\pageref{classprism_1_1_shared_data_pointer}}{}
 \item \contentsline{section}{prism\+:\+:Shared\+Pointer$<$ T $>$}{\pageref{classprism_1_1_shared_pointer}}{}
 \item \contentsline{section}{prism\+:\+:Size}{\pageref{classprism_1_1_size}}{}
 \item \contentsline{section}{prism\+:\+:Stack$<$ T $>$}{\pageref{classprism_1_1_stack}}{}
 \item \contentsline{section}{prism\+:\+:String}{\pageref{classprism_1_1_string}}{}
 \item \contentsline{section}{prism\+:\+:Time}{\pageref{classprism_1_1_time}}{}
+\item true\+\_\+type\begin{DoxyCompactList}
+\item \contentsline{section}{prism\+:\+:Allocator$<$ T $>$\+:\+:propagate\+\_\+on\+\_\+container\+\_\+copy\+\_\+assignment}{\pageref{structprism_1_1_allocator_1_1propagate__on__container__copy__assignment}}{}
+\item \contentsline{section}{prism\+:\+:Allocator$<$ T $>$\+:\+:propagate\+\_\+on\+\_\+container\+\_\+move\+\_\+assignment}{\pageref{structprism_1_1_allocator_1_1propagate__on__container__move__assignment}}{}
+\item \contentsline{section}{prism\+:\+:Allocator$<$ T $>$\+:\+:propagate\+\_\+on\+\_\+container\+\_\+swap}{\pageref{structprism_1_1_allocator_1_1propagate__on__container__swap}}{}
+\item \contentsline{section}{prism\+:\+:Log\+Allocator$<$ T $>$\+:\+:propagate\+\_\+on\+\_\+container\+\_\+copy\+\_\+assignment}{\pageref{structprism_1_1_log_allocator_1_1propagate__on__container__copy__assignment}}{}
+\item \contentsline{section}{prism\+:\+:Log\+Allocator$<$ T $>$\+:\+:propagate\+\_\+on\+\_\+container\+\_\+move\+\_\+assignment}{\pageref{structprism_1_1_log_allocator_1_1propagate__on__container__move__assignment}}{}
+\item \contentsline{section}{prism\+:\+:Log\+Allocator$<$ T $>$\+:\+:propagate\+\_\+on\+\_\+container\+\_\+swap}{\pageref{structprism_1_1_log_allocator_1_1propagate__on__container__swap}}{}
+\end{DoxyCompactList}
 \item \contentsline{section}{prism\+:\+:Vector$<$ T $>$}{\pageref{classprism_1_1_vector}}{}
 \item \contentsline{section}{prism\+:\+:Vector2}{\pageref{classprism_1_1_vector2}}{}
 \item \contentsline{section}{prism\+:\+:Vector3}{\pageref{classprism_1_1_vector3}}{}

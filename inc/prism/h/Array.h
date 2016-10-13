@@ -14,7 +14,7 @@
  */
 
 #include <prism/h/iterator.h>
-#include <prism/h/algorithms.h>
+#include <prism/h/algorithm.h>
 #include <iostream>
 #include <initializer_list>
 

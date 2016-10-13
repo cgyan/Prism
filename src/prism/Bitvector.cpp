@@ -9,7 +9,7 @@
 #include <prism/h/Bitvector.h>
 #include <prism/h/String.h>
 #include <prism/h/Char.h>
-#include <prism/h/algorithms.h>
+#include <prism/h/algorithm.h>
 #include <prism/h/OutOfBoundsException.h>
 #include <prism/h/UnequalSizeException.h>
 #include <prism/h/OverflowException.h>

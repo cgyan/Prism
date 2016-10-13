@@ -17,39 +17,39 @@ namespace prism {
 //================================================================
 // AllocatorTraits
 //================================================================
-template <class Alloc>
+template <class Allocator>
 struct AllocatorTraits {
-	typedef Alloc							allocator_type;
-	typedef typename Alloc::value_type 		value_type;
-	typedef typename Alloc::pointer 		pointer;
-	typedef typename Alloc::reference 		reference;
-	typedef typename Alloc::const_pointer 	const_pointer;
-	typedef typename Alloc::const_reference const_reference;
-	typedef typename Alloc::size_type  		size_type;
-	typedef typename Alloc::difference_type difference_type;
+	typedef Allocator							allocator_type;
+	typedef typename Allocator::value_type 		value_type;
+	typedef typename Allocator::pointer 		pointer;
+	typedef typename Allocator::reference 		reference;
+	typedef typename Allocator::const_pointer 	const_pointer;
+	typedef typename Allocator::const_reference const_reference;
+	typedef typename Allocator::size_type  		size_type;
+	typedef typename Allocator::difference_type difference_type;
 
 	static
 	pointer
-	allocate(Alloc& alloc, const size_type num) {
+	allocate(Allocator& alloc, const size_type num) {
 		return alloc.allocate(num);
 	}
 
 	static
 	void
-	deallocate(Alloc& alloc, pointer p) {
+	deallocate(Allocator& alloc, pointer p) {
 		alloc.deallocate(p);
 	}
 
 	static
 	void
-	destroy(Alloc& alloc, pointer p) {
+	destroy(Allocator& alloc, pointer p) {
 		alloc.destroy(p);
 	}
 
 	template <typename ...Args>
 	static
 	void
-	construct(Alloc& alloc, pointer p, Args&& ...args) {
+	construct(Allocator& alloc, pointer p, Args&& ...args) {
 		alloc.construct(p, args...);
 	}
 };

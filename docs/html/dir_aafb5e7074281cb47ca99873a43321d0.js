@@ -1,12 +1,7 @@
 var dir_aafb5e7074281cb47ca99873a43321d0 =
 [
     [ "algorithms.h", "algorithms_8h.html", "algorithms_8h" ],
-    [ "algorithms_aux.h", "algorithms__aux_8h.html", "algorithms__aux_8h" ],
-    [ "Allocator.h", "_allocator_8h.html", [
-      [ "AllocatorTraits", "structprism_1_1_allocator_traits.html", "structprism_1_1_allocator_traits" ],
-      [ "Allocator", "classprism_1_1_allocator.html", "classprism_1_1_allocator" ],
-      [ "rebind", "structprism_1_1_allocator_1_1rebind.html", "structprism_1_1_allocator_1_1rebind" ]
-    ] ],
+    [ "Allocator.h", "_allocator_8h.html", "_allocator_8h" ],
     [ "Array.h", "_array_8h.html", "_array_8h" ],
     [ "Bitvector.h", "_bitvector_8h.html", [
       [ "BitvectorData", "structprism_1_1_bitvector_data.html", "structprism_1_1_bitvector_data" ],
@@ -27,11 +22,25 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
     [ "Fraction.h", "_fraction_8h.html", [
       [ "Fraction", "classprism_1_1_fraction.html", "classprism_1_1_fraction" ]
     ] ],
-    [ "List.h", "_list_8h.html", "_list_8h" ],
-    [ "LoggerAllocator.h", "_logger_allocator_8h.html", [
-      [ "LoggerAllocator", "classprism_1_1_logger_allocator.html", "classprism_1_1_logger_allocator" ],
-      [ "rebind", "structprism_1_1_logger_allocator_1_1rebind.html", "structprism_1_1_logger_allocator_1_1rebind" ]
+    [ "iterator.h", "iterator_8h.html", "iterator_8h" ],
+    [ "iterator_tags.h", "iterator__tags_8h.html", [
+      [ "input_iterator_tag", "structprism_1_1input__iterator__tag.html", null ],
+      [ "output_iterator_tag", "structprism_1_1output__iterator__tag.html", null ],
+      [ "forward_iterator_tag", "structprism_1_1forward__iterator__tag.html", null ],
+      [ "bidirectional_iterator_tag", "structprism_1_1bidirectional__iterator__tag.html", null ],
+      [ "random_access_iterator_tag", "structprism_1_1random__access__iterator__tag.html", null ]
     ] ],
+    [ "iterator_traits.h", "iterator__traits_8h.html", [
+      [ "iterator_traits", "structprism_1_1iterator__traits.html", "structprism_1_1iterator__traits" ]
+    ] ],
+    [ "List.h", "_list_8h.html", [
+      [ "ListNode", "structprism_1_1_list_node.html", "structprism_1_1_list_node" ],
+      [ "ListIterator", "structprism_1_1_list_iterator.html", "structprism_1_1_list_iterator" ],
+      [ "ListMemory", "structprism_1_1_list_memory.html", "structprism_1_1_list_memory" ],
+      [ "ListData", "structprism_1_1_list_data.html", "structprism_1_1_list_data" ],
+      [ "List", "classprism_1_1_list.html", "classprism_1_1_list" ]
+    ] ],
+    [ "LogAllocator.h", "_log_allocator_8h.html", "_log_allocator_8h" ],
     [ "Mathf.h", "_mathf_8h.html", [
       [ "Mathf", "classprism_1_1_mathf.html", null ]
     ] ],
@@ -82,7 +91,6 @@ var dir_aafb5e7074281cb47ca99873a43321d0 =
     [ "Stack.h", "_stack_8h.html", [
       [ "Stack", "classprism_1_1_stack.html", "classprism_1_1_stack" ]
     ] ],
-    [ "StdDeque.h", "_std_deque_8h.html", "_std_deque_8h" ],
     [ "String.h", "_string_8h.html", [
       [ "String", "classprism_1_1_string.html", "classprism_1_1_string" ]
     ] ],

@@ -1,26 +1,23 @@
 src/prism/Fraction.d: ../src/prism/Fraction.cpp \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Fraction \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Fraction.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/aux/algorithms_aux.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_tags.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_traits.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/aux/iterator_aux.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/utilities \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/Fraction:
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_aux.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Fraction.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/Algorithms:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithms.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/aux/algorithms_aux.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 
@@ -30,8 +27,8 @@ src/prism/Fraction.d: ../src/prism/Fraction.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_traits.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/aux/iterator_aux.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator_aux.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/utilities:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/utilities.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
