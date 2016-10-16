@@ -4,18 +4,10 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: Class Members</title>
+<title>Prism API: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -30,8 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.jpeg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Prism
+   <div id="projectname">Prism API
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -98,6 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_g.html#index_g"><span>g</span></a></li>
       <li><a href="functions_h.html#index_h"><span>h</span></a></li>
       <li><a href="functions_i.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_k.html#index_k"><span>k</span></a></li>
       <li><a href="functions_l.html#index_l"><span>l</span></a></li>
       <li><a href="functions_m.html#index_m"><span>m</span></a></li>
       <li><a href="functions_n.html#index_n"><span>n</span></a></li>
@@ -117,20 +113,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('functions_c.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -150,17 +132,20 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>capacity()
-: <a class="el" href="classprism_1_1_stack.html#a0933dadf5810c98d2e7c0c6ea1b65a56">prism::Stack&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_deque.html#ad7454c44d9bfae3df4d0aed803605380">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_stack.html#a0933dadf5810c98d2e7c0c6ea1b65a56">prism::Stack&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a79a0e1b2a185376d36935ff637ba5678">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#aa6bfbb4672a51177c6fafbd503e90a92">prism::Vector&lt; T &gt;</a>
 </li>
 <li>cbegin()
-: <a class="el" href="classprism_1_1_list.html#a305be84975076ea140f6f32be946225f">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="classprism_1_1_vector.html#a3cb4a9878dfd0b58b8e0a5c01f5d37f5">prism::Vector&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_deque.html#a675899011620fb6ba6bfbdc886ffdc5d">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#a305be84975076ea140f6f32be946225f">prism::List&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_vector.html#a51c94069390154f500dec700c95115f4">prism::Vector&lt; T &gt;</a>
 </li>
 <li>cend()
-: <a class="el" href="classprism_1_1_list.html#aab544551cf58b5ce23584c4f16d00d7e">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="classprism_1_1_vector.html#a3ac39de85562660281a0fd7601ef203b">prism::Vector&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_deque.html#a5e0f8be0a4c64389a41a1c2f6f0467c2">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#aab544551cf58b5ce23584c4f16d00d7e">prism::List&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_vector.html#aebc4d15b59e500f50bce862a15313475">prism::Vector&lt; T &gt;</a>
 </li>
 <li>centralAngle()
 : <a class="el" href="classprism_1_1_circle.html#aee1d224313e23f96ae2fcff7abeaf336">prism::Circle</a>
@@ -170,46 +155,56 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 , <a class="el" href="classprism_1_1_rect.html#aacf848f3301590ab85fd803d72301af7">prism::Rect</a>
 </li>
 <li>Char()
-: <a class="el" href="classprism_1_1_char.html#ae5e69d2f43f9c357cd2abcbf96c835cb">prism::Char</a>
+: <a class="el" href="classprism_1_1_char.html#ae2087acf4d77029720cbaecc86f0d8a6">prism::Char</a>
 </li>
 <li>chop()
 : <a class="el" href="classprism_1_1_string.html#a6a0006f4412961eab5625d6366f60137">prism::String</a>
 </li>
 <li>Circle()
-: <a class="el" href="classprism_1_1_circle.html#a4101ea55c7d90b63648742ef22460150">prism::Circle</a>
+: <a class="el" href="classprism_1_1_circle.html#aff41793f64e90d15a4d89851b1a6b011">prism::Circle</a>
 </li>
 <li>circumference()
 : <a class="el" href="classprism_1_1_circle.html#ad32df9ed83620dd55e9541af31258899">prism::Circle</a>
 </li>
 <li>clear()
-: <a class="el" href="classprism_1_1_list.html#a1e7dd9642cde1dca8834c8771560cd6b">prism::List&lt; T, TAllocator &gt;</a>
+: <a class="el" href="classprism_1_1_abstract_tree.html#a6c286774c61d70e75d4897b989bc4be0">prism::AbstractTree&lt; Key, Value, AssociativeIterator, Compare, Allocator &gt;</a>
+, <a class="el" href="classprism_1_1_binary_search_tree.html#a014cbb1184b3028fdd0407301bdf6478">prism::BinarySearchTree&lt; Key, Value, Compare, Allocator &gt;</a>
+, <a class="el" href="structprism_1_1_b_s_t_data.html#a2537da968412165d17c4e4b96cda6a35">prism::BSTData&lt; Key, Value, Compare, NodeAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#a7bd2f8032b34a0db5dc6e9eeacf62137">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#a1e7dd9642cde1dca8834c8771560cd6b">prism::List&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_shared_pointer.html#a70f571a23e5c800d43f309cea9857360">prism::SharedPointer&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#adcfa3f36badcb9e84c2c956a6b29c865">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#acb8a681b958856d257b145930014c6fa">prism::Vector&lt; T &gt;</a>
 </li>
-<li>clear_aux()
-: <a class="el" href="structprism_1_1_list_data.html#a262712b0f5abb93b55d65dc2fec24f24">prism::ListData&lt; T, NodeAllocator &gt;</a>
-</li>
 <li>column()
 : <a class="el" href="classprism_1_1_matrix4.html#ab7eaeaa15cc37f55e745ea864965e7ab">prism::Matrix4</a>
+</li>
+<li>compare()
+: <a class="el" href="classprism_1_1_version.html#a34ab9ec7bde23621c26fe96c63c94328">prism::Version</a>
 </li>
 <li>conjugate()
 : <a class="el" href="classprism_1_1_quaternion.html#a62430c8b98581769edbc6d339b4ea17b">prism::Quaternion</a>
 </li>
 <li>const_iterator
 : <a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_list.html#a82987892223347376baec1efd26aa655">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="structprism_1_1_list_data.html#adf50481f89392e64eb3de1fbffd20c63">prism::ListData&lt; T, NodeAllocator &gt;</a>
-, <a class="el" href="structprism_1_1_list_iterator.html#aec39e76f7b988d0718fa4e2aea52ed34">prism::ListIterator&lt; T, isConst &gt;</a>
+, <a class="el" href="structprism_1_1_associative_iterator.html#ab372de0dedeecc03d00f577af3380ef2">prism::AssociativeIterator&lt; Key, Value, Node, isConst &gt;</a>
+, <a class="el" href="classprism_1_1_binary_search_tree.html#ae72115785a3c50de35a62aa5ef102afd">prism::BinarySearchTree&lt; Key, Value, Compare, Allocator &gt;</a>
+, <a class="el" href="structprism_1_1_b_s_t_data.html#ae697fd0ffd6d0bbd6744baa8882fb812">prism::BSTData&lt; Key, Value, Compare, NodeAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#aafd1fe9c849b0369c3bf7bb0d456e0a3">prism::List&lt; T, TAllocator &gt;</a>
 , <a class="el" href="structprism_1_1_sequence_iterator.html#a8be80243dfbbc36132e108a7858eafd0">prism::SequenceIterator&lt; T, isConst &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a929e2e3a6de2c4ce3bb87c1e92472854">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a4ae2d663b42920c426b768119bf9c770">prism::Vector&lt; T &gt;</a>
 </li>
 <li>const_pointer
 : <a class="el" href="classprism_1_1_allocator.html#af6a4a91dfc203203ecc319a457ce4dce">prism::Allocator&lt; T &gt;</a>
-, <a class="el" href="structprism_1_1_allocator_traits.html#ae9bcf74e2770e54eb99f29edfce5f81e">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#abce8f3352b34f42a7a81bff1b5546b48">prism::AllocatorTraits&lt; Allocator &gt;</a>
 , <a class="el" href="classprism_1_1_array.html#a42db67aa315835ceb28016cedc9fc300">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_list.html#a7510b11c3c426f8504ddf024be7aaa89">prism::List&lt; T, TAllocator &gt;</a>
+, <a class="el" href="structprism_1_1_associative_iterator.html#ae3b9ad6e27c4f13d0585adf4484e986a">prism::AssociativeIterator&lt; Key, Value, Node, isConst &gt;</a>
+, <a class="el" href="classprism_1_1_binary_search_tree.html#a165bd59f5169479a5208e1c746943e2e">prism::BinarySearchTree&lt; Key, Value, Compare, Allocator &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#a569958f4e74279b18ec0964d820ebded">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="structprism_1_1iterator__traits.html#a6acb84b2431eb855d4e51c8dd16cb5e5">prism::iterator_traits&lt; Iterator &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#adf013407d4299ad4a1ca8db6e8d7c16e">prism::List&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_log_allocator.html#a3533183bc11b2c633d54d7504b515c77">prism::LogAllocator&lt; T &gt;</a>
 , <a class="el" href="structprism_1_1_sequence_iterator.html#a4c3367cd1e3aacc1cd902bab256ee6b2">prism::SequenceIterator&lt; T, isConst &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#adbea4cbf0f4f62948eb2accf7d402456">prism::String</a>
@@ -217,9 +212,13 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 </li>
 <li>const_reference
 : <a class="el" href="classprism_1_1_allocator.html#a89911899c97ae877a81b798957a2d899">prism::Allocator&lt; T &gt;</a>
-, <a class="el" href="structprism_1_1_allocator_traits.html#a5054d2fa3ac8a0a1d6d1885143107963">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#a136b98e2698754b03398194f80edbf33">prism::AllocatorTraits&lt; Allocator &gt;</a>
 , <a class="el" href="classprism_1_1_array.html#a84d3a2c653830c8005e959d99faf0f06">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_list.html#a31c013c3f9135c28c3c4bf489fbeb322">prism::List&lt; T, TAllocator &gt;</a>
+, <a class="el" href="structprism_1_1_associative_iterator.html#af94d581c385f29b0bf624dc03118132d">prism::AssociativeIterator&lt; Key, Value, Node, isConst &gt;</a>
+, <a class="el" href="classprism_1_1_binary_search_tree.html#aab75e547e4f5dd8e7f1518ec7b200937">prism::BinarySearchTree&lt; Key, Value, Compare, Allocator &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="structprism_1_1iterator__traits.html#a27032f81f31f64773f63693623fd4023">prism::iterator_traits&lt; Iterator &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#aa263682b12cb5ca200c1b30f85fac524">prism::List&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_log_allocator.html#a8dd85b419a302b7d9cf946726a240a4d">prism::LogAllocator&lt; T &gt;</a>
 , <a class="el" href="structprism_1_1_sequence_iterator.html#a7739d968cd075878171e063d7a60d2e2">prism::SequenceIterator&lt; T, isConst &gt;</a>
 , <a class="el" href="classprism_1_1_string.html#a7825c62cb2047e36ec704a17ef94f299">prism::String</a>
@@ -227,69 +226,70 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 </li>
 <li>constBegin()
 : <a class="el" href="classprism_1_1_array.html#a08b8bf28cf5ee167e240792923c90415">prism::Array&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#a7cd21cc80cca9ca1486ff4143dc5c4e1">prism::Deque&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#af83c7a275d29cb26b5807c3b4cbbebf4">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="classprism_1_1_string.html#a1c06ffe23cc1c0d552a2f5a32e40ba89">prism::String</a>
-, <a class="el" href="classprism_1_1_vector.html#a6d03b3bb9cc1292e1698674080ff3334">prism::Vector&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_string.html#a05365b15945515a99b7934542f4c58a1">prism::String</a>
+, <a class="el" href="classprism_1_1_vector.html#a38edad28aad5976c79ce9a29efac482d">prism::Vector&lt; T &gt;</a>
 </li>
 <li>constData()
 : <a class="el" href="classprism_1_1_array.html#af6e860868e38d2779f0839e1815ea0bd">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_matrix4.html#a69244d86a13dce29f8f0a55f236b38fb">prism::Matrix4</a>
+, <a class="el" href="classprism_1_1_matrix4.html#a0485348f17954d5bd7d8bd1c6c9bb752">prism::Matrix4</a>
 , <a class="el" href="classprism_1_1_shared_data_pointer.html#a4748e8c520ac7cc9d73d2c763cbad7fb">prism::SharedDataPointer&lt; SharedDataType &gt;</a>
-, <a class="el" href="classprism_1_1_string.html#ac336a0e353c9e8f27c9867171d70dd5d">prism::String</a>
-, <a class="el" href="classprism_1_1_vector.html#a6e6fee098958130862af58cafeb27d65">prism::Vector&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_string.html#ac07b5507ac0678e1e9e2be3904e3b395">prism::String</a>
+, <a class="el" href="classprism_1_1_vector.html#af051d250f2917b7e0a63e817321d57cc">prism::Vector&lt; T &gt;</a>
 </li>
 <li>constEnd()
 : <a class="el" href="classprism_1_1_array.html#a275ef3df386f5f8c3c785a0eba0f15a0">prism::Array&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#a543ef97bd3a666d069bc1e495cd85dda">prism::Deque&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#ab6464c9488a804007b2953a6a21b6e46">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="classprism_1_1_string.html#a650b471cb36e6918361136895abef8bb">prism::String</a>
-, <a class="el" href="classprism_1_1_vector.html#a99331f9557172b3e3e34fb36f23e5cc5">prism::Vector&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_string.html#aa3cfb83b88e3e78705e976636d8c803d">prism::String</a>
+, <a class="el" href="classprism_1_1_vector.html#a089945b39104d140d7bc49308e81b8f1">prism::Vector&lt; T &gt;</a>
 </li>
 <li>construct()
 : <a class="el" href="classprism_1_1_allocator.html#a499d6a8214f4ee6e094168ad5cf15a71">prism::Allocator&lt; T &gt;</a>
-, <a class="el" href="structprism_1_1_allocator_traits.html#a95a22de48ba7899a021f1f1fb4420e8f">prism::AllocatorTraits&lt; Alloc &gt;</a>
+, <a class="el" href="structprism_1_1_allocator_traits.html#a1dce5d5dce5ada6c42a31b87a8d5520b">prism::AllocatorTraits&lt; Allocator &gt;</a>
 , <a class="el" href="classprism_1_1_log_allocator.html#a2f924d050e45903f29aa054950689e85">prism::LogAllocator&lt; T &gt;</a>
 </li>
 <li>contains()
 : <a class="el" href="classprism_1_1_array.html#ab1dbaaa25fdd52114ecf83764d07dd32">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_circle.html#a652c895f7e3822a5bb2109ec4763deeb">prism::Circle</a>
+, <a class="el" href="classprism_1_1_circle.html#aafcedb559b7bbba00cfd84fab7378801">prism::Circle</a>
+, <a class="el" href="classprism_1_1_deque.html#ad748d77c8008715e50a48a9243481706">prism::Deque&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#a47cd243e9c5db6058481d63ecc6ed5b7">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="classprism_1_1_rect.html#ab92f880c4cb90b1aa382d8217d19d391">prism::Rect</a>
-, <a class="el" href="classprism_1_1_string.html#a6c449b65e60b931cbb9c951e442f1153">prism::String</a>
+, <a class="el" href="classprism_1_1_rect.html#a64af57e3a62339a8b1760b51d5a76809">prism::Rect</a>
+, <a class="el" href="classprism_1_1_string.html#ade50c4d728c1d7dfce7713a9c48e4033">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#a6b21bf92cde4f91cb8d14efb4e315ea0">prism::Vector&lt; T &gt;</a>
 </li>
 <li>copyDataTo()
 : <a class="el" href="classprism_1_1_matrix4.html#a03e5bcf5cf9a158588c375ed2e926cfd">prism::Matrix4</a>
 </li>
 <li>correctFloatingPointError()
-: <a class="el" href="classprism_1_1_mathf.html#ad97b3775f919367abc7ad8726ecd97d2">prism::Mathf</a>
+: <a class="el" href="classprism_1_1_mathf.html#a722d4699cb2d9c95ea370c4d39f8db9f">prism::Mathf</a>
 </li>
 <li>count()
 : <a class="el" href="classprism_1_1_array.html#a17090694f8652c186aef26882a387c05">prism::Array&lt; T &gt;</a>
 , <a class="el" href="classprism_1_1_bitvector.html#a62458e0b7d104c8897124ba7e858b34c">prism::Bitvector</a>
+, <a class="el" href="classprism_1_1_deque.html#afbd3bd892ee68247cb75a7bfb8b168e2">prism::Deque&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#a7dbdab274aecfdc26b7d208f80772a78">prism::List&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_reference_counter.html#a18e28845491bc0d8632a4075c8f341a9">prism::ReferenceCounter</a>
 , <a class="el" href="classprism_1_1_string.html#adde5ee34a762ec89df4354f562cb4c39">prism::String</a>
 , <a class="el" href="classprism_1_1_vector.html#ad40e1dc908502680797f37312dda7a4f">prism::Vector&lt; T &gt;</a>
 </li>
 <li>createNode()
-: <a class="el" href="structprism_1_1_list_data.html#a327056451f320f8f01283ad62542a436">prism::ListData&lt; T, NodeAllocator &gt;</a>
+: <a class="el" href="structprism_1_1_b_s_t_data.html#ae962d4b902646a46ca9394807a4fcfdd">prism::BSTData&lt; Key, Value, Compare, NodeAllocator &gt;</a>
 </li>
 <li>crossProduct()
 : <a class="el" href="classprism_1_1_vector3.html#a1d921241365dbcd6d97ff3f048303774">prism::Vector3</a>
 </li>
 <li>currentTime()
-: <a class="el" href="classprism_1_1_time.html#ae440b8eee979a64a49fd026087d8bd5a">prism::Time</a>
+: <a class="el" href="classprism_1_1_time.html#acdaca1f67006f7be503752ce46add985">prism::Time</a>
 </li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
 </body>
 </html>

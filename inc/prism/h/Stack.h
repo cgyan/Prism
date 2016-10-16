@@ -117,7 +117,7 @@ public:
 
 } // end namespace prism
 
-#include <prism/h/Stack_priv.h>
+#include <prism/h/priv/Stack_priv.h>
 
 #endif /* STACK_H_ */
 

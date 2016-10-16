@@ -4,18 +4,10 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: Class Members</title>
+<title>Prism API: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -30,8 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.jpeg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Prism
+   <div id="projectname">Prism API
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -98,6 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_g.html#index_g"><span>g</span></a></li>
       <li><a href="functions_h.html#index_h"><span>h</span></a></li>
       <li><a href="functions_i.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_k.html#index_k"><span>k</span></a></li>
       <li><a href="functions_l.html#index_l"><span>l</span></a></li>
       <li><a href="functions_m.html#index_m"><span>m</span></a></li>
       <li><a href="functions_n.html#index_n"><span>n</span></a></li>
@@ -117,20 +113,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('functions_b.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -151,21 +133,26 @@ $(document).ready(function(){initNavTree('functions_b.html','');});
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
 <li>back()
 : <a class="el" href="classprism_1_1_array.html#a23345041d2c537ad6cffc7e2a3afcfe4">prism::Array&lt; T &gt;</a>
-, <a class="el" href="classprism_1_1_list.html#aa3f4adb4b98aaea022b44fc46dcedc39">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="classprism_1_1_queue.html#aec36e33bfdca9864e6d306858aae280d">prism::Queue&lt; T, ContainerType &gt;</a>
-, <a class="el" href="classprism_1_1_vector.html#abae5f68837ada40afa65d7ff492cc79f">prism::Vector&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#a878213e7411751aceae1d7f3850815e4">prism::Deque&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_list.html#a17253058099ff3db0ff1c59ab9aaa062">prism::List&lt; T, TAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_queue.html#affa363ef43576ea8cafe181044ffa608">prism::Queue&lt; T, ContainerType &gt;</a>
+, <a class="el" href="classprism_1_1_vector.html#ae629aba27dd49118bcd1af5bd7d2b600">prism::Vector&lt; T &gt;</a>
 </li>
 <li>begin()
-: <a class="el" href="classprism_1_1_array.html#a2458620d3d5270c7ce2cb6413b65e731">prism::Array&lt; T &gt;</a>
+: <a class="el" href="classprism_1_1_abstract_tree.html#a8e03e5f6793880f0da7eaf55d6711d86">prism::AbstractTree&lt; Key, Value, AssociativeIterator, Compare, Allocator &gt;</a>
+, <a class="el" href="classprism_1_1_array.html#a2458620d3d5270c7ce2cb6413b65e731">prism::Array&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_binary_search_tree.html#af2ccdb9d334119a433ae95c747a3f150">prism::BinarySearchTree&lt; Key, Value, Compare, Allocator &gt;</a>
+, <a class="el" href="structprism_1_1_b_s_t_data.html#a54d85dcf54692e74cbf0a3987c31cab5">prism::BSTData&lt; Key, Value, Compare, NodeAllocator &gt;</a>
+, <a class="el" href="classprism_1_1_deque.html#a525d396476dc97cc6064792d83e2837f">prism::Deque&lt; T, TAllocator &gt;</a>
 , <a class="el" href="classprism_1_1_list.html#af79b38b4f00cd52875c043a236d8d5d1">prism::List&lt; T, TAllocator &gt;</a>
-, <a class="el" href="classprism_1_1_string.html#ae8f176fbe590422a3061552b8ed36ec5">prism::String</a>
-, <a class="el" href="classprism_1_1_vector.html#a4cd1ca2ba159fd073127be98b37f6ba2">prism::Vector&lt; T &gt;</a>
+, <a class="el" href="classprism_1_1_string.html#a57dfe55073c4dbd7a54cae0b3c5dc051">prism::String</a>
+, <a class="el" href="classprism_1_1_vector.html#a89860cd9c113ac3f0a5f066604fcd528">prism::Vector&lt; T &gt;</a>
 </li>
-<li>beginNode()
-: <a class="el" href="structprism_1_1_list_data.html#a91c29217093354ea42fac17ef776f24a">prism::ListData&lt; T, NodeAllocator &gt;</a>
+<li>BinarySearchTree()
+: <a class="el" href="classprism_1_1_binary_search_tree.html#a5aac58388c15e1b8bf15f7a18fff2027">prism::BinarySearchTree&lt; Key, Value, Compare, Allocator &gt;</a>
 </li>
 <li>Bitvector()
-: <a class="el" href="classprism_1_1_bitvector.html#a41d5de4bbd7bf193121a1614cf6b3b3b">prism::Bitvector</a>
+: <a class="el" href="classprism_1_1_bitvector.html#aaf4223cb87ea463a8f329a5599644314">prism::Bitvector</a>
 </li>
 <li>bottom()
 : <a class="el" href="classprism_1_1_circle.html#a88c4958371f4e07082c3b28527b67d4b">prism::Circle</a>
@@ -177,16 +164,19 @@ $(document).ready(function(){initNavTree('functions_b.html','');});
 <li>bottomRight()
 : <a class="el" href="classprism_1_1_rect.html#a97eb5a66441a49c7e149229376aba6a0">prism::Rect</a>
 </li>
+<li>BSTData()
+: <a class="el" href="structprism_1_1_b_s_t_data.html#a1b8209d72c9f9d20af5cd9a3437b1e31">prism::BSTData&lt; Key, Value, Compare, NodeAllocator &gt;</a>
+</li>
+<li>BSTNode()
+: <a class="el" href="structprism_1_1_b_s_t_node.html#a3a102e04479ebfe4359bbbbaf4e468ac">prism::BSTNode&lt; Key, Value &gt;</a>
+</li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
 </body>
 </html>

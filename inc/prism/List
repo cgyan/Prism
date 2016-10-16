@@ -6,8 +6,8 @@
  *      Author: iainhemstock
  */
 
-#ifndef PRISM_LIST_
-#define PRISM_LIST_
+#ifndef PRISM_LIST_H_
+#define PRISM_LIST_H_
 
 #include <prism/h/List.h>
 
@@ -15,4 +15,6 @@
 //#include <prism/debug/List.h>
 //#endif
 
-#endif // PRISM_LIST_
+#endif // PRISM_LIST_H_
+
+

@@ -1,6 +1,8 @@
 var structprism_1_1_list_iterator =
 [
     [ "const_iterator", "structprism_1_1_list_iterator.html#aec39e76f7b988d0718fa4e2aea52ed34", null ],
+    [ "const_pointer", "structprism_1_1_list_iterator.html#a26d33cfdcd623863581237968e482a60", null ],
+    [ "const_reference", "structprism_1_1_list_iterator.html#a81228a805df7388c2eb9e6500a36ee34", null ],
     [ "difference_type", "structprism_1_1_list_iterator.html#a81d24e551a1b9ef7397d37b7d92511cf", null ],
     [ "iterator", "structprism_1_1_list_iterator.html#a91ccdd8512cbc8314d784e39ed4597dd", null ],
     [ "iterator_category", "structprism_1_1_list_iterator.html#ae5286e35b86909c6990d328423bf3641", null ],

@@ -30,8 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Prism
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +49,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -116,7 +119,7 @@ $(document).ready(function(){initNavTree('structprism_1_1_list_memory.html','');
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_list_8h_source.html">List.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_list__priv_8h_source.html">List_priv.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -129,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3becac9851123f78b06efeaf25cb09f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc9d0b7ac9c4a7af6c0430780c0cf02c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_list_memory.html#afc9d0b7ac9c4a7af6c0430780c0cf02c">deallocateNode</a> (<a class="el" href="structprism_1_1_list_memory.html#a9e7b9eaaf60c96090da1d52221a944f1">NodePtr</a> np)</td></tr>
 <tr class="separator:afc9d0b7ac9c4a7af6c0430780c0cf02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff3dc132e9cb4f03f1a16fde5a3b5534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_list_memory.html#aff3dc132e9cb4f03f1a16fde5a3b5534">deallocateNodes</a> (<a class="el" href="structprism_1_1_list_memory.html#a9e7b9eaaf60c96090da1d52221a944f1">NodePtr</a> <a class="el" href="namespaceprism.html#ae3fb7a1926a9e8e59300cd5e370470da">first</a>, <a class="el" href="structprism_1_1_list_memory.html#a9e7b9eaaf60c96090da1d52221a944f1">NodePtr</a> <a class="el" href="namespaceprism.html#abe4956c4e865f55ca126b7fb973b5078">last</a>)</td></tr>
+<tr class="memitem:aff3dc132e9cb4f03f1a16fde5a3b5534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_list_memory.html#aff3dc132e9cb4f03f1a16fde5a3b5534">deallocateNodes</a> (<a class="el" href="structprism_1_1_list_memory.html#a9e7b9eaaf60c96090da1d52221a944f1">NodePtr</a> first, <a class="el" href="structprism_1_1_list_memory.html#a9e7b9eaaf60c96090da1d52221a944f1">NodePtr</a> last)</td></tr>
 <tr class="separator:aff3dc132e9cb4f03f1a16fde5a3b5534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -256,7 +259,7 @@ template&lt;class NodeAllocator &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>inc/prism/h/<a class="el" href="_list_8h_source.html">List.h</a></li>
+<li><a class="el" href="_list__priv_8h_source.html">List_priv.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

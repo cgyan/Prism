@@ -9,8 +9,7 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Stack \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack.h \
@@ -19,11 +18,11 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedDataPointer.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/List_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/List_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector_priv.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Vector_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Stack_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/List \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Queue \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Queue.h \
@@ -58,14 +57,12 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Time.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Pair \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedData \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/utility \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Deque_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/utility \
   /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/LogAllocator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/functor \
@@ -99,9 +96,7 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 
@@ -119,15 +114,15 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/List_priv.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/List_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector_priv.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Vector_priv.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Stack_priv.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Stack_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/List:
 
@@ -197,21 +192,17 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Deque:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/SharedData:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/SharedDataPointer:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/utility:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
-
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque_priv.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Deque_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/utility:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/memory:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator:
 

@@ -6,6 +6,12 @@
  *      Author: iainhemstock
  */
 
+/// @file List.h
+///
+/// @brief A container suitable for fast insertion and deletion
+///
+/// @since 1.0.0
+
 /**
  * todo
  *
@@ -32,19 +38,31 @@
 
 namespace prism {
 
+/// @cond DO_NOT_DOCUMENT
 template <class T, class TAllocator>
 struct ListData;
+
+template <class T, bool isConst>
+struct ListIterator;
+/// @endcond
 
 //============================================================
 // List
 //============================================================
+/// @class 	List prism/h/List.h prism/List
+///
+/// @brief 	A node-based container
+///
+/// 		More detailed description here
+///
+/// @since	1.0.0
 template <class T, class TAllocator = prism::Allocator<T>>
 class List {
 private:
 	typedef ListData<T, TAllocator>					Data;
 public:
-	typedef typename Data::iterator					iterator;
-	typedef typename Data::const_iterator			const_iterator;
+	typedef ListIterator<T, false>					iterator;
+	typedef ListIterator<T, true>					const_iterator;
 	typedef typename TAllocator::value_type			value_type;
 	typedef typename TAllocator::pointer			pointer;
 	typedef typename TAllocator::reference			reference;
@@ -419,6 +437,6 @@ public:
 
 } // end namespace prism
 
-#include <prism/h/List_priv.h>
+#include <prism/h/priv/List_priv.h>
 
 #endif /* PRISM_LIST_H_ */

@@ -9,8 +9,7 @@ src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Char.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h \
@@ -37,9 +36,7 @@ src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_priv.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm_aux.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 

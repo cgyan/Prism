@@ -16,6 +16,9 @@
 #ifndef PRISM_DEQUE_H_
 #define PRISM_DEQUE_H_
 
+#include <prism/h/List.h>
+#include <deque>
+
 namespace prism {
 
 template <class T, class TAllocator>
@@ -520,7 +523,7 @@ public:
 
 } // namespace prism
 
-#include <prism/h/Deque_priv.h>
+#include <prism/h/priv/Deque_priv.h>
 
 #endif // PRISM_DEQUE_H
 

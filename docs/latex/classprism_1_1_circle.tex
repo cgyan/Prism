@@ -2,7 +2,8 @@
 \label{classprism_1_1_circle}\index{prism\+::\+Circle@{prism\+::\+Circle}}
 
 
-{\ttfamily \#include $<$Circle.\+h$>$}
+A class that represents a circle.  
+
 
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
@@ -15,18 +16,18 @@ enum \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6ac}{Angle\+
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classprism_1_1_circle_aff41793f64e90d15a4d89851b1a6b011}{Circle} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor that creates a default circle. \end{DoxyCompactList}\item 
 \hyperlink{classprism_1_1_circle_a4101ea55c7d90b63648742ef22460150}{Circle} (const float \hyperlink{classprism_1_1_circle_a75afa2c59f92909d6b6edcec338030fb}{radius})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor that creates a circle. \end{DoxyCompactList}\item 
 \hyperlink{classprism_1_1_circle_aa6252ad78c2f76a1a4e15f93087bb2c6}{Circle} (const float \hyperlink{classprism_1_1_circle_ae1f729f8fa34605123628e67b230b6be}{x}, const float \hyperlink{classprism_1_1_circle_a6edc045d912b0d278bd0673af028290e}{y})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor that creates a circle. \end{DoxyCompactList}\item 
 \hyperlink{classprism_1_1_circle_afb53c6e58fcd6cbc9effbe082c580892}{Circle} (const float \hyperlink{classprism_1_1_circle_a75afa2c59f92909d6b6edcec338030fb}{radius}, const float \hyperlink{classprism_1_1_circle_ae1f729f8fa34605123628e67b230b6be}{x}, const float \hyperlink{classprism_1_1_circle_a6edc045d912b0d278bd0673af028290e}{y})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor that creates a circle. \end{DoxyCompactList}\item 
 \hyperlink{classprism_1_1_circle_af972289bbd2440b0436ad024634fb8d8}{Circle} (const float \hyperlink{classprism_1_1_circle_a75afa2c59f92909d6b6edcec338030fb}{radius}, const \hyperlink{classprism_1_1_pointf}{Pointf} \&position)
 \item 
 \hyperlink{classprism_1_1_circle_a95651a90ca498f4b811b8dee5c56dfba}{Circle} (const \hyperlink{classprism_1_1_circle}{Circle} \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
 \item 
-virtual \hyperlink{classprism_1_1_circle_aff162a19ac60d0cefc5e5cc2ea397de7}{$\sim$\+Circle} ()
+virtual \hyperlink{classprism_1_1_circle_afd2b70b3774cc92caf8c8a4b7af0fcd2}{$\sim$\+Circle} ()
 \item 
 const float \hyperlink{classprism_1_1_circle_ad4b91cf13b593a67abf9782db3fec5d9}{angle} (const float \hyperlink{classprism_1_1_circle_ae1f729f8fa34605123628e67b230b6be}{x}, const float \hyperlink{classprism_1_1_circle_a6edc045d912b0d278bd0673af028290e}{y}) const 
 \item 
@@ -78,7 +79,7 @@ void \hyperlink{classprism_1_1_circle_a6ed1dd2554b297751bb29c22eae26038}{move\+T
 \item 
 \hyperlink{classprism_1_1_pointf}{Pointf} \hyperlink{classprism_1_1_circle_a42e70e1d37414bf4c22500b80b168c9d}{point} (const float \hyperlink{classprism_1_1_circle_ad4b91cf13b593a67abf9782db3fec5d9}{angle}) const 
 \item 
-\hyperlink{classprism_1_1_vector}{Vector}$<$ \hyperlink{classprism_1_1_pointf}{Pointf} $>$ \hyperlink{classprism_1_1_circle_a1443add46fe3c7d3e6c938cf0a43ba57}{points} (const int divisions) const 
+\hyperlink{classprism_1_1_vector}{Vector}$<$ \hyperlink{classprism_1_1_pointf}{Pointf} $>$ \hyperlink{classprism_1_1_circle_ad6916936a346137cdf93227edfb1cbaf}{points} (const int divisions) const 
 \item 
 const float \hyperlink{classprism_1_1_circle_a75afa2c59f92909d6b6edcec338030fb}{radius} () const 
 \item 
@@ -120,7 +121,7 @@ const float \hyperlink{classprism_1_1_circle_ae1f729f8fa34605123628e67b230b6be}{
 \item 
 const float \hyperlink{classprism_1_1_circle_a6edc045d912b0d278bd0673af028290e}{y} () const 
 \item 
-\hyperlink{classprism_1_1_circle}{Circle} \& \hyperlink{classprism_1_1_circle_a140275f8908e38d63bf2524b23887730}{operator=} (const \hyperlink{classprism_1_1_circle}{Circle} \&other)
+\hyperlink{classprism_1_1_circle}{Circle} \& \hyperlink{classprism_1_1_circle_a5d06dde86a136d7ddda2b5db211e4392}{operator=} (const \hyperlink{classprism_1_1_circle}{Circle} \&other)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -138,6 +139,8 @@ std\+::ostream \& \hyperlink{classprism_1_1_circle_a4deb656103c2fc1ea9258fc37bfd
 
 
 \subsection{Detailed Description}
+A class that represents a circle. 
+
 The \hyperlink{classprism_1_1_circle}{Circle} class defines a circle using floating point precision.
 
 \paragraph*{Construction}
@@ -254,7 +257,7 @@ theta = c.centralAngle(p1,p2); \textcolor{comment}{// 180 (in degrees mode)}
 
 \subparagraph*{Points}
 
-If you want the point on the circumference at a certain angle use \hyperlink{classprism_1_1_circle_a42e70e1d37414bf4c22500b80b168c9d}{point()} or to acquire a vector containing evenly spaced points around the circumference use \hyperlink{classprism_1_1_circle_a1443add46fe3c7d3e6c938cf0a43ba57}{points()}.
+If you want the point on the circumference at a certain angle use \hyperlink{classprism_1_1_circle_a42e70e1d37414bf4c22500b80b168c9d}{point()} or to acquire a vector containing evenly spaced points around the circumference use \hyperlink{classprism_1_1_circle_ad6916936a346137cdf93227edfb1cbaf}{points()}.
 
 
 \begin{DoxyCode}
@@ -343,7 +346,10 @@ r^2       |   π              |
 --- times |θ ---  minus sin θ|
  2        |  180             |
 \end{DoxyCode}
- 
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
+
 
 \subsection{Member Enumeration Documentation}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!Angle\+Mode@{Angle\+Mode}}
@@ -368,14 +374,32 @@ R\+A\+D\+I\+A\+NS\hypertarget{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabef
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_aff41793f64e90d15a4d89851b1a6b011}{}\label{classprism_1_1_circle_aff41793f64e90d15a4d89851b1a6b011}
-Creates a unit circle i.\+e. a circle with a radius of 1. This is a constructor. \index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
+
+
+Constructor that creates a default circle. 
+
+Creates a unit circle i.\+e. a circle with a radius of 1
+
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
 \index{Circle@{Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{Circle(const float radius)}{Circle(const float radius)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Circle\+::\+Circle (
 \begin{DoxyParamCaption}
 \item[{const float}]{radius}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a4101ea55c7d90b63648742ef22460150}{}\label{classprism_1_1_circle_a4101ea55c7d90b63648742ef22460150}
-Creates a circle with a radius of {\itshape radius} and its centre (x,y) set to 0. \index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
+
+
+Constructor that creates a circle. 
+
+Creates a circle with a radius of {\itshape radius} and its centre (x,y) set to 0.
+
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
 \index{Circle@{Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{Circle(const float x, const float y)}{Circle(const float x, const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Circle\+::\+Circle (
 \begin{DoxyParamCaption}
@@ -383,7 +407,16 @@ Creates a circle with a radius of {\itshape radius} and its centre (x,y) set to 
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_aa6252ad78c2f76a1a4e15f93087bb2c6}{}\label{classprism_1_1_circle_aa6252ad78c2f76a1a4e15f93087bb2c6}
-Creates a unit circle with a radius of 1 and its centre point set to {\itshape }(x,y). \index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
+
+
+Constructor that creates a circle. 
+
+Creates a unit circle with a radius of 1 and its centre point set to {\itshape }(x,y)
+
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
 \index{Circle@{Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{Circle(const float radius, const float x, const float y)}{Circle(const float radius, const float x, const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Circle\+::\+Circle (
 \begin{DoxyParamCaption}
@@ -392,7 +425,16 @@ Creates a unit circle with a radius of 1 and its centre point set to {\itshape }
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_afb53c6e58fcd6cbc9effbe082c580892}{}\label{classprism_1_1_circle_afb53c6e58fcd6cbc9effbe082c580892}
-Creates a circle with a radius of {\itshape radius} and its centre point set to {\itshape }(x,y). \index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
+
+
+Constructor that creates a circle. 
+
+Creates a circle with a radius of {\itshape radius} and its centre point set to {\itshape }(x,y).
+
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
 \index{Circle@{Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{Circle(const float radius, const Pointf \&position)}{Circle(const float radius, const Pointf &position)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Circle\+::\+Circle (
 \begin{DoxyParamCaption}
@@ -400,21 +442,21 @@ Creates a circle with a radius of {\itshape radius} and its centre point set to 
 \item[{const {\bf Pointf} \&}]{position}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_af972289bbd2440b0436ad024634fb8d8}{}\label{classprism_1_1_circle_af972289bbd2440b0436ad024634fb8d8}
-Creates a circle with a radius of {\itshape radius} and its centre point set to {\itshape position}. \index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!Circle@{Circle}}
 \index{Circle@{Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{Circle(const Circle \&copy)}{Circle(const Circle &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Circle\+::\+Circle (
 \begin{DoxyParamCaption}
 \item[{const {\bf Circle} \&}]{copy}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a95651a90ca498f4b811b8dee5c56dfba}{}\label{classprism_1_1_circle_a95651a90ca498f4b811b8dee5c56dfba}
-Creates a copy of the circle {\itshape copy}. \index{prism\+::\+Circle@{prism\+::\+Circle}!````~Circle@{$\sim$\+Circle}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!````~Circle@{$\sim$\+Circle}}
 \index{````~Circle@{$\sim$\+Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
-\subsubsection[{\texorpdfstring{$\sim$\+Circle()}{~Circle()}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Circle\+::$\sim$\+Circle (
+\subsubsection[{\texorpdfstring{$\sim$\+Circle()}{~Circle()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual prism\+::\+Circle\+::$\sim$\+Circle (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1_circle_aff162a19ac60d0cefc5e5cc2ea397de7}{}\label{classprism_1_1_circle_aff162a19ac60d0cefc5e5cc2ea397de7}
-Destroys this circle 
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1_circle_afd2b70b3774cc92caf8c8a4b7af0fcd2}{}\label{classprism_1_1_circle_afd2b70b3774cc92caf8c8a4b7af0fcd2}
+
 
 \subsection{Member Function Documentation}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!angle@{angle}}
@@ -425,13 +467,6 @@ Destroys this circle
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_ad4b91cf13b593a67abf9782db3fec5d9}{}\label{classprism_1_1_circle_ad4b91cf13b593a67abf9782db3fec5d9}
-Returns the angle of the coordinate {\itshape }(x,y).~\newline
-\begin{DoxyNote}{Note}
-The angle will be expressed either in degrees or radians depending on which mode is set in \hyperlink{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}{set\+Angle\+Mode()}. By default D\+E\+G\+R\+E\+ES mode is set.
-\end{DoxyNote}
-\begin{DoxyReturn}{Returns}
-Returns the angle of the coordinate {\itshape }(x,y).  
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!angle@{angle}}
 \index{angle@{angle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{angle(const Pointf \&position) const }{angle(const Pointf &position) const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::angle (
@@ -439,14 +474,6 @@ Returns the angle of the coordinate {\itshape }(x,y).
 \item[{const {\bf Pointf} \&}]{position}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_aeee2c0f59b94feb4dd3535950157d614}{}\label{classprism_1_1_circle_aeee2c0f59b94feb4dd3535950157d614}
-This is an overloaded function.~\newline
-Returns the angle of the \hyperlink{classprism_1_1_pointf}{Pointf} {\itshape position}.~\newline
-\begin{DoxyNote}{Note}
-The angle will be expressed either in degrees or radians depending on which mode is set in \hyperlink{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}{set\+Angle\+Mode()}. By default D\+E\+G\+R\+E\+ES mode is set.
-\end{DoxyNote}
-\begin{DoxyReturn}{Returns}
-Returns the angle of the \hyperlink{classprism_1_1_pointf}{Pointf} {\itshape position}. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!angle\+Mode@{angle\+Mode}}
 \index{angle\+Mode@{angle\+Mode}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{angle\+Mode() const }{angleMode() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle\+::\+Angle\+Mode} prism\+::\+Circle\+::angle\+Mode (
@@ -454,9 +481,6 @@ Returns the angle of the \hyperlink{classprism_1_1_pointf}{Pointf} {\itshape pos
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a0aa261d16ff55088e5695820fa95e09b}{}\label{classprism_1_1_circle_a0aa261d16ff55088e5695820fa95e09b}
-\begin{DoxyReturn}{Returns}
-Returns \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6aca38d734252b9b86d558359698434cf5d4}{Circle\+::\+D\+E\+G\+R\+E\+ES} or \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6aca4e738ac91c0d446d1cd6c0ee11a7baaf}{Circle\+::\+R\+A\+D\+I\+A\+NS} depending on which mode is set. By default a circle is set to D\+E\+G\+R\+E\+ES mode. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!arc\+Length@{arc\+Length}}
 \index{arc\+Length@{arc\+Length}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{arc\+Length(const Pointf \&p1, const Pointf \&p2) const }{arcLength(const Pointf &p1, const Pointf &p2) const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::arc\+Length (
@@ -465,10 +489,6 @@ Returns \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6aca38d73
 \item[{const {\bf Pointf} \&}]{p2}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a8784d12fcb2c2a2ca679635afba4c15e}{}\label{classprism_1_1_circle_a8784d12fcb2c2a2ca679635afba4c15e}
-An arc is the section of the circumference that sits between two points.~\newline
-The major arc can be found by subtracting the minor arc length from the circumference. \begin{DoxyReturn}{Returns}
-Returns the length of the minor arc between the points {\itshape p1} and {\itshape p2}.  
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!area@{area}}
 \index{area@{area}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{area() const }{area() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::area (
@@ -476,9 +496,6 @@ Returns the length of the minor arc between the points {\itshape p1} and {\itsha
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a2fd1893972ad8b267bebfdc59efafb84}{}\label{classprism_1_1_circle_a2fd1893972ad8b267bebfdc59efafb84}
-\begin{DoxyReturn}{Returns}
-Returns the area of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!bottom@{bottom}}
 \index{bottom@{bottom}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{bottom() const }{bottom() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::bottom (
@@ -486,9 +503,6 @@ Returns the area of the circle.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a88c4958371f4e07082c3b28527b67d4b}{}\label{classprism_1_1_circle_a88c4958371f4e07082c3b28527b67d4b}
-\begin{DoxyReturn}{Returns}
-Returns the y-\/coordinate of the bottom edge of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!central\+Angle@{central\+Angle}}
 \index{central\+Angle@{central\+Angle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{central\+Angle(const Pointf \&p1, const Pointf \&p2) const }{centralAngle(const Pointf &p1, const Pointf &p2) const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::central\+Angle (
@@ -497,15 +511,6 @@ Returns the y-\/coordinate of the bottom edge of the circle.
 \item[{const {\bf Pointf} \&}]{p2}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_aee1d224313e23f96ae2fcff7abeaf336}{}\label{classprism_1_1_circle_aee1d224313e23f96ae2fcff7abeaf336}
-A central angle is formed by two radii extending from the centre point of the circle to the circumference.~\newline
-The angle will be expressed either in degrees or radians depending on which mode is set in \hyperlink{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}{set\+Angle\+Mode()}. By default D\+E\+G\+R\+E\+ES mode is set. \begin{DoxyNote}{Note}
-Note that the smallest angle will be returned and is always positive ~\newline
-i.\+e. if moving in one direction from point to point around the circle gives an angle of 270º and moving in the opposite direction gives an angle of 90º then 90º is returned.~\newline
- 
-\end{DoxyNote}
-\begin{DoxyReturn}{Returns}
-Returns the central angle formed by two points on the circumference.  
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!centre@{centre}}
 \index{centre@{centre}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{centre() const }{centre() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pointf} prism\+::\+Circle\+::centre (
@@ -513,9 +518,6 @@ Returns the central angle formed by two points on the circumference.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_acecd853a1b505fc0c847b7172974d669}{}\label{classprism_1_1_circle_acecd853a1b505fc0c847b7172974d669}
-\begin{DoxyReturn}{Returns}
-Returns a \hyperlink{classprism_1_1_pointf}{Pointf} representing the centre point of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!circumference@{circumference}}
 \index{circumference@{circumference}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{circumference() const }{circumference() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::circumference (
@@ -523,9 +525,6 @@ Returns a \hyperlink{classprism_1_1_pointf}{Pointf} representing the centre poin
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_ad32df9ed83620dd55e9541af31258899}{}\label{classprism_1_1_circle_ad32df9ed83620dd55e9541af31258899}
-\begin{DoxyReturn}{Returns}
-Returns the circumference of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!contains@{contains}}
 \index{contains@{contains}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{contains(const float x, const float y) const }{contains(const float x, const float y) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Circle\+::contains (
@@ -534,9 +533,6 @@ Returns the circumference of the circle.
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_aafcedb559b7bbba00cfd84fab7378801}{}\label{classprism_1_1_circle_aafcedb559b7bbba00cfd84fab7378801}
-\begin{DoxyReturn}{Returns}
-Returns true if the circle contains (or is on the circumference) the point {\itshape }(x,y), false otherwise. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!contains@{contains}}
 \index{contains@{contains}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{contains(const Pointf \&position) const }{contains(const Pointf &position) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Circle\+::contains (
@@ -544,10 +540,6 @@ Returns true if the circle contains (or is on the circumference) the point {\its
 \item[{const {\bf Pointf} \&}]{position}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a040d5d38d68e652ae948459f60352db8}{}\label{classprism_1_1_circle_a040d5d38d68e652ae948459f60352db8}
-This is an overloaded function.~\newline
-\begin{DoxyReturn}{Returns}
-Returns true if the circle contains (or is on the circumference) the point {\itshape position}, false otherwise. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!contains@{contains}}
 \index{contains@{contains}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{contains(const Circle \&other\+Circle) const }{contains(const Circle &otherCircle) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Circle\+::contains (
@@ -555,9 +547,6 @@ Returns true if the circle contains (or is on the circumference) the point {\its
 \item[{const {\bf Circle} \&}]{other\+Circle}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a652c895f7e3822a5bb2109ec4763deeb}{}\label{classprism_1_1_circle_a652c895f7e3822a5bb2109ec4763deeb}
-This is an overloaded function. \begin{DoxyReturn}{Returns}
-Returns true if the circle contains (or is on the circumference) the circle represented by {\itshape other\+Circle}, false otherwise. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!diameter@{diameter}}
 \index{diameter@{diameter}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{diameter() const }{diameter() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::diameter (
@@ -565,9 +554,6 @@ Returns true if the circle contains (or is on the circumference) the circle repr
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a9157a21edb3cf02e2eae06d97fe7dec4}{}\label{classprism_1_1_circle_a9157a21edb3cf02e2eae06d97fe7dec4}
-\begin{DoxyReturn}{Returns}
-Returns the diameter of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!get\+Circle@{get\+Circle}}
 \index{get\+Circle@{get\+Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{get\+Circle(float $\ast$radius, float $\ast$x, float $\ast$y)}{getCircle(float *radius, float *x, float *y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::get\+Circle (
@@ -577,16 +563,13 @@ Returns the diameter of the circle.
 \item[{float $\ast$}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a84de2ca47dc084e49cc6645e7e723b9d}{}\label{classprism_1_1_circle_a84de2ca47dc084e49cc6645e7e723b9d}
-Extracts the radius and centre x and y coordinates and assigns them to {\itshape radius}, {\itshape x} and {\itshape y}. \index{prism\+::\+Circle@{prism\+::\+Circle}!intersects@{intersects}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!intersects@{intersects}}
 \index{intersects@{intersects}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{intersects(const Circle \&other\+Circle) const }{intersects(const Circle &otherCircle) const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Circle\+::intersects (
 \begin{DoxyParamCaption}
 \item[{const {\bf Circle} \&}]{other\+Circle}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a2c9d9c17e0e094eac55f74398986b940}{}\label{classprism_1_1_circle_a2c9d9c17e0e094eac55f74398986b940}
-\begin{DoxyReturn}{Returns}
-Returns true if this circle intersects with {\itshape other\+Circle}, false otherwise. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!is\+Valid@{is\+Valid}}
 \index{is\+Valid@{is\+Valid}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{is\+Valid() const }{isValid() const }}]{\setlength{\rightskip}{0pt plus 5cm}const bool prism\+::\+Circle\+::is\+Valid (
@@ -594,9 +577,6 @@ Returns true if this circle intersects with {\itshape other\+Circle}, false othe
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_adbc46c944f02c028ec95acd1a9b69c5b}{}\label{classprism_1_1_circle_adbc46c944f02c028ec95acd1a9b69c5b}
-A valid circle is one which has a radius larger than 0. \begin{DoxyReturn}{Returns}
-Returns true if the circle is valid, false otherwise. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!left@{left}}
 \index{left@{left}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{left() const }{left() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::left (
@@ -604,9 +584,6 @@ Returns true if the circle is valid, false otherwise.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a8bcb92c5bf29227e2ef5ab0f15b479b2}{}\label{classprism_1_1_circle_a8bcb92c5bf29227e2ef5ab0f15b479b2}
-\begin{DoxyReturn}{Returns}
-Returns the x-\/coordinate of the left edge of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Bottom@{move\+Bottom}}
 \index{move\+Bottom@{move\+Bottom}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{move\+Bottom(const float y)}{moveBottom(const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::move\+Bottom (
@@ -614,7 +591,7 @@ Returns the x-\/coordinate of the left edge of the circle.
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a6392112dd312ec8564596fe00b1e48fa}{}\label{classprism_1_1_circle_a6392112dd312ec8564596fe00b1e48fa}
-Moves the circle on the y-\/axis so that its bottom-\/most point sits at {\itshape y}. \index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Centre@{move\+Centre}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Centre@{move\+Centre}}
 \index{move\+Centre@{move\+Centre}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{move\+Centre(const float x, const float y)}{moveCentre(const float x, const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::move\+Centre (
 \begin{DoxyParamCaption}
@@ -622,75 +599,62 @@ Moves the circle on the y-\/axis so that its bottom-\/most point sits at {\itsha
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a1ba209c5aed82199e76427311e4781d2}{}\label{classprism_1_1_circle_a1ba209c5aed82199e76427311e4781d2}
-Moves the centre point of the circle to {\itshape }(x,y). \index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Centre@{move\+Centre}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Centre@{move\+Centre}}
 \index{move\+Centre@{move\+Centre}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{move\+Centre(const Pointf \&position)}{moveCentre(const Pointf &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::move\+Centre (
 \begin{DoxyParamCaption}
 \item[{const {\bf Pointf} \&}]{position}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_aad52d595e31c43a9dc8a3b6ea210a285}{}\label{classprism_1_1_circle_aad52d595e31c43a9dc8a3b6ea210a285}
-This is an overloaded function.~\newline
-Moves the centre point of the circle to {\itshape position}. \index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Left@{move\+Left}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Left@{move\+Left}}
 \index{move\+Left@{move\+Left}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{move\+Left(const float x)}{moveLeft(const float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::move\+Left (
 \begin{DoxyParamCaption}
 \item[{const float}]{x}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a68a4710fab3752158a149bd9be64f393}{}\label{classprism_1_1_circle_a68a4710fab3752158a149bd9be64f393}
-Moves the circle on the x-\/axis so that its left-\/most point sits at {\itshape x}; \index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Right@{move\+Right}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Right@{move\+Right}}
 \index{move\+Right@{move\+Right}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{move\+Right(const float x)}{moveRight(const float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::move\+Right (
 \begin{DoxyParamCaption}
 \item[{const float}]{x}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_ae7d7bbe94f43d61ae8adc764e6cf0e9a}{}\label{classprism_1_1_circle_ae7d7bbe94f43d61ae8adc764e6cf0e9a}
-Moves the circle on the x-\/axis so that its right-\/most point sits at {\itshape x}; \index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Top@{move\+Top}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!move\+Top@{move\+Top}}
 \index{move\+Top@{move\+Top}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{move\+Top(const float y)}{moveTop(const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::move\+Top (
 \begin{DoxyParamCaption}
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a6ed1dd2554b297751bb29c22eae26038}{}\label{classprism_1_1_circle_a6ed1dd2554b297751bb29c22eae26038}
-Moves the circle so that its top-\/most point sits at {\itshape y}. \index{prism\+::\+Circle@{prism\+::\+Circle}!normalised@{normalised}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!normalised@{normalised}}
 \index{normalised@{normalised}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{normalised() const }{normalised() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle} prism\+::\+Circle\+::normalised (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a6216b04502cff2b3367d417b1c4b3c5a}{}\label{classprism_1_1_circle_a6216b04502cff2b3367d417b1c4b3c5a}
-If a circle has a negative value for a radius it can be normalised so that its radius is positive again by flipping the negative value to a positive one. For e.\+g. a radius of -\/5 will become 5 after normalisation. \begin{DoxyReturn}{Returns}
-Returns a normalised copy of this circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!operator=@{operator=}}
 \index{operator=@{operator=}!prism\+::\+Circle@{prism\+::\+Circle}}
-\subsubsection[{\texorpdfstring{operator=(const Circle \&other)}{operator=(const Circle &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle} \& prism\+::\+Circle\+::operator= (
+\subsubsection[{\texorpdfstring{operator=(const Circle \&other)}{operator=(const Circle &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle}\& prism\+::\+Circle\+::operator= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Circle} \&}]{other}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_circle_a140275f8908e38d63bf2524b23887730}{}\label{classprism_1_1_circle_a140275f8908e38d63bf2524b23887730}
-Assigns {\itshape other} to this circle. \index{prism\+::\+Circle@{prism\+::\+Circle}!point@{point}}
+)}\hypertarget{classprism_1_1_circle_a5d06dde86a136d7ddda2b5db211e4392}{}\label{classprism_1_1_circle_a5d06dde86a136d7ddda2b5db211e4392}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!point@{point}}
 \index{point@{point}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{point(const float angle) const }{point(const float angle) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pointf} prism\+::\+Circle\+::point (
 \begin{DoxyParamCaption}
 \item[{const float}]{angle}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a42e70e1d37414bf4c22500b80b168c9d}{}\label{classprism_1_1_circle_a42e70e1d37414bf4c22500b80b168c9d}
-\begin{DoxyReturn}{Returns}
-Returns the (x,y) coordinate on the circumference at an angle of {\itshape angle}. The angle argument can either be in degrees or radians depending on which mode is set in \hyperlink{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}{set\+Angle\+Mode()}.
-\end{DoxyReturn}
- \index{prism\+::\+Circle@{prism\+::\+Circle}!points@{points}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!points@{points}}
 \index{points@{points}!prism\+::\+Circle@{prism\+::\+Circle}}
-\subsubsection[{\texorpdfstring{points(const int divisions) const }{points(const int divisions) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf prism\+::\+Vector}$<$ {\bf Pointf} $>$ prism\+::\+Circle\+::points (
+\subsubsection[{\texorpdfstring{points(const int divisions) const }{points(const int divisions) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector}$<${\bf Pointf}$>$ prism\+::\+Circle\+::points (
 \begin{DoxyParamCaption}
 \item[{const int}]{divisions}
 \end{DoxyParamCaption}
-) const}\hypertarget{classprism_1_1_circle_a1443add46fe3c7d3e6c938cf0a43ba57}{}\label{classprism_1_1_circle_a1443add46fe3c7d3e6c938cf0a43ba57}
-This calculates {\itshape divisions} amount of evenly spaced points around the circumference in a clockwise direction. ~\newline
-For example, passing in 12 as the argument means that the vector will contain 12 evenly spaced points exactly like the notches on a clock face.
-
-\begin{DoxyReturn}{Returns}
-A vector containing {\itshape divisions} amount of points.  
-\end{DoxyReturn}
+) const}\hypertarget{classprism_1_1_circle_ad6916936a346137cdf93227edfb1cbaf}{}\label{classprism_1_1_circle_ad6916936a346137cdf93227edfb1cbaf}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!radius@{radius}}
 \index{radius@{radius}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{radius() const }{radius() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::radius (
@@ -698,9 +662,6 @@ A vector containing {\itshape divisions} amount of points.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a75afa2c59f92909d6b6edcec338030fb}{}\label{classprism_1_1_circle_a75afa2c59f92909d6b6edcec338030fb}
-\begin{DoxyReturn}{Returns}
-Returns the radius of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!right@{right}}
 \index{right@{right}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{right() const }{right() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::right (
@@ -708,9 +669,6 @@ Returns the radius of the circle.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a3b8cdbb5ad090615534c09543afadf88}{}\label{classprism_1_1_circle_a3b8cdbb5ad090615534c09543afadf88}
-\begin{DoxyReturn}{Returns}
-Returns the x-\/coordinate of the right edge of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!sector\+Area@{sector\+Area}}
 \index{sector\+Area@{sector\+Area}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{sector\+Area(const Pointf \&p1, const Pointf \&p2) const }{sectorArea(const Pointf &p1, const Pointf &p2) const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::sector\+Area (
@@ -719,12 +677,6 @@ Returns the x-\/coordinate of the right edge of the circle.
 \item[{const {\bf Pointf} \&}]{p2}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a0218baa72b2668f116058928c495cf00}{}\label{classprism_1_1_circle_a0218baa72b2668f116058928c495cf00}
-A sector visually is like a slice of pizza. Its base is the centre point of the circle with two radii extending from the centre to the circumference.~\newline
-The major sector area can be found by subtracting the area of the minor sector from the total area of the circle.
-
-\begin{DoxyReturn}{Returns}
-Returns the area of the minor sector formed by the centre point of the circle and points {\itshape p1} and {\itshape p2} located on the circumference.  
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!segment\+Area@{segment\+Area}}
 \index{segment\+Area@{segment\+Area}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{segment\+Area(const Pointf \&p1, const Pointf \&p2) const }{segmentArea(const Pointf &p1, const Pointf &p2) const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::segment\+Area (
@@ -733,13 +685,6 @@ Returns the area of the minor sector formed by the centre point of the circle an
 \item[{const {\bf Pointf} \&}]{p2}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a454311b6f7a7db3f0cea53971abfdbdc}{}\label{classprism_1_1_circle_a454311b6f7a7db3f0cea53971abfdbdc}
-A segment is formed by drawing a line (known as a chord) from one point on the circumference to another point (effectively splitting the circle in two). ~\newline
-The area of the major segment can be found by subtracting the minor segment area from the total area of the circle.
-
-\begin{DoxyReturn}{Returns}
-Returns the area of the minor segment formed by the points {\itshape p1} and {\itshape p2}. ~\newline
- 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Angle\+Mode@{set\+Angle\+Mode}}
 \index{set\+Angle\+Mode@{set\+Angle\+Mode}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{set\+Angle\+Mode(\+Circle\+::\+Angle\+Mode mode)}{setAngleMode(Circle::AngleMode mode)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::set\+Angle\+Mode (
@@ -747,7 +692,7 @@ Returns the area of the minor segment formed by the points {\itshape p1} and {\i
 \item[{{\bf Circle\+::\+Angle\+Mode}}]{mode}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}{}\label{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}
-Sets the angle mode of the circle to work with degrees or radians. By default the circle is set to D\+E\+G\+R\+E\+ES mode. The mode can be changed by passing in \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6aca38d734252b9b86d558359698434cf5d4}{Circle\+::\+D\+E\+G\+R\+E\+ES} or \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6aca4e738ac91c0d446d1cd6c0ee11a7baaf}{Circle\+::\+R\+A\+D\+I\+A\+NS}. \index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Circle@{set\+Circle}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Circle@{set\+Circle}}
 \index{set\+Circle@{set\+Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{set\+Circle(const float radius, const float x, const float y)}{setCircle(const float radius, const float x, const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::set\+Circle (
 \begin{DoxyParamCaption}
@@ -756,7 +701,7 @@ Sets the angle mode of the circle to work with degrees or radians. By default th
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a4d04a2dd0e3a9df5ff6a93e5f67ebcb8}{}\label{classprism_1_1_circle_a4d04a2dd0e3a9df5ff6a93e5f67ebcb8}
-Sets the radius to {\itshape radius} and positions the centre of the circle at {\itshape }(x,y). \index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Circle@{set\+Circle}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Circle@{set\+Circle}}
 \index{set\+Circle@{set\+Circle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{set\+Circle(const float radius, const Pointf \&position)}{setCircle(const float radius, const Pointf &position)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::set\+Circle (
 \begin{DoxyParamCaption}
@@ -764,45 +709,41 @@ Sets the radius to {\itshape radius} and positions the centre of the circle at {
 \item[{const {\bf Pointf} \&}]{position}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a0c5a789447b499bac21009c913974bfc}{}\label{classprism_1_1_circle_a0c5a789447b499bac21009c913974bfc}
-This is an overloaded function.~\newline
-Sets the radius to {\itshape radius} and positions the centre of the circle at {\itshape position}. \index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Diameter@{set\+Diameter}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Diameter@{set\+Diameter}}
 \index{set\+Diameter@{set\+Diameter}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{set\+Diameter(const float diamter)}{setDiameter(const float diamter)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::set\+Diameter (
 \begin{DoxyParamCaption}
-\item[{const float}]{diameter}
+\item[{const float}]{diamter}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a170c17969d402d01ace2b756c2eec16b}{}\label{classprism_1_1_circle_a170c17969d402d01ace2b756c2eec16b}
-Sets the diameter of the circle to {\itshape diameter}. \index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Radius@{set\+Radius}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!set\+Radius@{set\+Radius}}
 \index{set\+Radius@{set\+Radius}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{set\+Radius(const float radius)}{setRadius(const float radius)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::set\+Radius (
 \begin{DoxyParamCaption}
 \item[{const float}]{radius}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_ad32152033f280f8c32aebf6791c59fcd}{}\label{classprism_1_1_circle_ad32152033f280f8c32aebf6791c59fcd}
-Sets the radius of the circle to {\itshape radius}. \index{prism\+::\+Circle@{prism\+::\+Circle}!setX@{setX}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!setX@{setX}}
 \index{setX@{setX}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{set\+X(const float x)}{setX(const float x)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::setX (
 \begin{DoxyParamCaption}
 \item[{const float}]{x}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a9f584b9f7d780975557d6293b18cc051}{}\label{classprism_1_1_circle_a9f584b9f7d780975557d6293b18cc051}
-Sets the centre of the circle to {\itshape x} in the x-\/axis. \index{prism\+::\+Circle@{prism\+::\+Circle}!setY@{setY}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!setY@{setY}}
 \index{setY@{setY}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{set\+Y(const float y)}{setY(const float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::setY (
 \begin{DoxyParamCaption}
 \item[{const float}]{y}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_add9bf882d06da81faa8063c9a3fec8ae}{}\label{classprism_1_1_circle_add9bf882d06da81faa8063c9a3fec8ae}
-Sets the centre of the circle to {\itshape y} in the y-\/axis. \index{prism\+::\+Circle@{prism\+::\+Circle}!top@{top}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!top@{top}}
 \index{top@{top}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{top() const }{top() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::top (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a2c1851a017d5379d8ddf2a80d7bd1b1b}{}\label{classprism_1_1_circle_a2c1851a017d5379d8ddf2a80d7bd1b1b}
-\begin{DoxyReturn}{Returns}
-Returns the y-\/coordinate of the top edge of the circle. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!translate@{translate}}
 \index{translate@{translate}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{translate(const float dx, const float dy)}{translate(const float dx, const float dy)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::translate (
@@ -811,15 +752,14 @@ Returns the y-\/coordinate of the top edge of the circle.
 \item[{const float}]{dy}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_ab11cd4ad2acffd0b55989c32a04a8e2d}{}\label{classprism_1_1_circle_ab11cd4ad2acffd0b55989c32a04a8e2d}
-Translates the circle relative to its current position by {\itshape dx} on the x-\/axis and {\itshape dy} on the y-\/axis. \index{prism\+::\+Circle@{prism\+::\+Circle}!translate@{translate}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!translate@{translate}}
 \index{translate@{translate}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{translate(const Pointf \&offset)}{translate(const Pointf &offset)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Circle\+::translate (
 \begin{DoxyParamCaption}
 \item[{const {\bf Pointf} \&}]{offset}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_circle_a067a3baa023abff5e033b04efffe9f3b}{}\label{classprism_1_1_circle_a067a3baa023abff5e033b04efffe9f3b}
-This is an overloaded function.~\newline
-Translates the circle relative to its current position by the amount of {\itshape offset}. \index{prism\+::\+Circle@{prism\+::\+Circle}!translated@{translated}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!translated@{translated}}
 \index{translated@{translated}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{translated(const float dx, const float dy) const }{translated(const float dx, const float dy) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle} prism\+::\+Circle\+::translated (
 \begin{DoxyParamCaption}
@@ -827,9 +767,6 @@ Translates the circle relative to its current position by the amount of {\itshap
 \item[{const float}]{dy}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a255dcfc157fc52c83e0cbd9e54a65b89}{}\label{classprism_1_1_circle_a255dcfc157fc52c83e0cbd9e54a65b89}
-\begin{DoxyReturn}{Returns}
-Returns a copy of this circle which has been translated relative to its current position by {\itshape dx} and {\itshape dy}. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!translated@{translated}}
 \index{translated@{translated}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{translated(const Pointf \&offset) const }{translated(const Pointf &offset) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle} prism\+::\+Circle\+::translated (
@@ -837,10 +774,6 @@ Returns a copy of this circle which has been translated relative to its current 
 \item[{const {\bf Pointf} \&}]{offset}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a7592ecc319feeaa2b446505b975b97c5}{}\label{classprism_1_1_circle_a7592ecc319feeaa2b446505b975b97c5}
-This is an overloaded function.~\newline
-\begin{DoxyReturn}{Returns}
-Returns a copy of this circle which has been translated relative to its current position by {\itshape offset}. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!unit@{unit}}
 \index{unit@{unit}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{unit() const }{unit() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle} prism\+::\+Circle\+::unit (
@@ -848,9 +781,6 @@ Returns a copy of this circle which has been translated relative to its current 
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a9b5c163bfdb6d39fb890fa3a21a77a20}{}\label{classprism_1_1_circle_a9b5c163bfdb6d39fb890fa3a21a77a20}
-A unit circle is one which has a radius of 1. \begin{DoxyReturn}{Returns}
-Returns a copy of this circle which has been converted to a unit circle. This does not affect the circle\textquotesingle{}s position as it retains its (x,y) coordinates. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!united@{united}}
 \index{united@{united}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{united(const Circle \&other\+Circle) const }{united(const Circle &otherCircle) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle} prism\+::\+Circle\+::united (
@@ -858,9 +788,6 @@ Returns a copy of this circle which has been converted to a unit circle. This do
 \item[{const {\bf Circle} \&}]{other\+Circle}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a8e34ff5188e91cfe080264e106909f6e}{}\label{classprism_1_1_circle_a8e34ff5188e91cfe080264e106909f6e}
-\begin{DoxyReturn}{Returns}
-Returns a new bounding circle that contains this circle and {\itshape other\+Circle}. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!x@{x}}
 \index{x@{x}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{x() const }{x() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::x (
@@ -868,9 +795,6 @@ Returns a new bounding circle that contains this circle and {\itshape other\+Cir
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_ae1f729f8fa34605123628e67b230b6be}{}\label{classprism_1_1_circle_ae1f729f8fa34605123628e67b230b6be}
-\begin{DoxyReturn}{Returns}
-Returns the centre of the circle in the x-\/axis. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!y@{y}}
 \index{y@{y}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{y() const }{y() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::y (
@@ -878,9 +802,6 @@ Returns the centre of the circle in the x-\/axis.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a6edc045d912b0d278bd0673af028290e}{}\label{classprism_1_1_circle_a6edc045d912b0d278bd0673af028290e}
-\begin{DoxyReturn}{Returns}
-Returns the centre of the circle in the y-\/axis. 
-\end{DoxyReturn}
 
 
 \subsection{Friends And Related Function Documentation}
@@ -892,9 +813,6 @@ Returns the centre of the circle in the y-\/axis.
 \item[{const {\bf Circle} \&}]{c2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_circle_ac1093de6b8dac6c9df82db5b72148634}{}\label{classprism_1_1_circle_ac1093de6b8dac6c9df82db5b72148634}
-\begin{DoxyReturn}{Returns}
-Returns true if both circles are not equal, false otherwsie. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{operator$<$}{operator<}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator$<$ (
@@ -903,9 +821,6 @@ Returns true if both circles are not equal, false otherwsie.
 \item[{const {\bf Circle} \&}]{c2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_circle_a3aaa7d08426b0e4aa5f51f1839eb3bb1}{}\label{classprism_1_1_circle_a3aaa7d08426b0e4aa5f51f1839eb3bb1}
-\begin{DoxyReturn}{Returns}
-Returns true if {\itshape c1} has a smaller radius than {\itshape c2}, false otherwise. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
@@ -914,7 +829,7 @@ Returns true if {\itshape c1} has a smaller radius than {\itshape c2}, false oth
 \item[{const {\bf Circle} \&}]{c}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_circle_a4deb656103c2fc1ea9258fc37bfdcc6c}{}\label{classprism_1_1_circle_a4deb656103c2fc1ea9258fc37bfdcc6c}
-Allows an instance of \hyperlink{classprism_1_1_circle}{Circle} to be written to the ostream and returns a reference to the ostream. \index{prism\+::\+Circle@{prism\+::\+Circle}!operator==@{operator==}}
+\index{prism\+::\+Circle@{prism\+::\+Circle}!operator==@{operator==}}
 \index{operator==@{operator==}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator== (
 \begin{DoxyParamCaption}
@@ -922,9 +837,6 @@ Allows an instance of \hyperlink{classprism_1_1_circle}{Circle} to be written to
 \item[{const {\bf Circle} \&}]{c2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_circle_aea4bcef75428f13320f5c8148869d7ac}{}\label{classprism_1_1_circle_aea4bcef75428f13320f5c8148869d7ac}
-\begin{DoxyReturn}{Returns}
-Returns true if both circles have the same radius and (x,y) centre point, false otherwise. 
-\end{DoxyReturn}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{operator$>$}{operator>}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator$>$ (
@@ -933,12 +845,8 @@ Returns true if both circles have the same radius and (x,y) centre point, false 
 \item[{const {\bf Circle} \&}]{c2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_circle_a519af3a911c5ccd13d0c711d0adfef79}{}\label{classprism_1_1_circle_a519af3a911c5ccd13d0c711d0adfef79}
-\begin{DoxyReturn}{Returns}
-Returns true if {\itshape c1} has a greater radius than {\itshape c2}, false otherwise. 
-\end{DoxyReturn}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-inc/prism/h/\hyperlink{_circle_8h}{Circle.\+h}\item 
-src/prism/\hyperlink{_circle_8cpp}{Circle.\+cpp}\end{DoxyCompactItemize}
+\hyperlink{_circle_8h}{Circle.\+h}\end{DoxyCompactItemize}

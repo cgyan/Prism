@@ -4,18 +4,10 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: prism::Deque&lt; T &gt; Class Template Reference</title>
+<title>Prism API: prism::Deque&lt; T, TAllocator &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -30,8 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.jpeg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Prism
+   <div id="projectname">Prism API
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -76,21 +71,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('classprism_1_1_deque.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -105,70 +85,1416 @@ $(document).ready(function(){initNavTree('classprism_1_1_deque.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceprism.html">prism</a></li><li class="navelem"><a class="el" href="classprism_1_1_deque.html">Deque</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classprism_1_1_deque-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">prism::Deque&lt; T &gt; Class Template Reference</div>  </div>
+<div class="title">prism::Deque&lt; T, TAllocator &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_deque__old_8h_source.html">Deque_old.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a17bc7f491baf38861449e99635636d2f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_deque_data.html">DequeData</a>&lt; T, TAllocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a17bc7f491baf38861449e99635636d2f">Data</a></td></tr>
+<tr class="separator:a17bc7f491baf38861449e99635636d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263fd8daf307719cd101c97028fe68a1"><td class="memItemLeft" align="right" valign="top">typedef Data::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a></td></tr>
+<tr class="separator:a263fd8daf307719cd101c97028fe68a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a264ab74c18a153ed1d225cb7b29d8f17"><td class="memItemLeft" align="right" valign="top">typedef Data::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a></td></tr>
+<tr class="separator:a264ab74c18a153ed1d225cb7b29d8f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04c90c07b76fc822d266d7fcea147f01"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a04c90c07b76fc822d266d7fcea147f01">value_type</a></td></tr>
+<tr class="separator:a04c90c07b76fc822d266d7fcea147f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0678b4b8619b996e2b3de3b8134b6b9f"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::difference_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a0678b4b8619b996e2b3de3b8134b6b9f">difference_type</a></td></tr>
+<tr class="separator:a0678b4b8619b996e2b3de3b8134b6b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3ced98e358577ca5730800a04184dc"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a6f3ced98e358577ca5730800a04184dc">pointer</a></td></tr>
+<tr class="separator:a6f3ced98e358577ca5730800a04184dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035cdb869f46870d62d403d9ff5e3691"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a></td></tr>
+<tr class="separator:a035cdb869f46870d62d403d9ff5e3691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a569958f4e74279b18ec0964d820ebded"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::const_pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a569958f4e74279b18ec0964d820ebded">const_pointer</a></td></tr>
+<tr class="separator:a569958f4e74279b18ec0964d820ebded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa26df70d5123f79a59386056e920c3"><td class="memItemLeft" align="right" valign="top">typedef TAllocator::const_reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a></td></tr>
+<tr class="separator:affa26df70d5123f79a59386056e920c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ecd23455d0619cbe070eb91b340f37"><td class="memItemLeft" align="right" valign="top">typedef iterator::iterator_category&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a10ecd23455d0619cbe070eb91b340f37">iterator_category</a></td></tr>
+<tr class="separator:a10ecd23455d0619cbe070eb91b340f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae8fcffd4a0cf7dba0e33a6983641efc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ae8fcffd4a0cf7dba0e33a6983641efc2">Deque</a> ()</td></tr>
-<tr class="separator:ae8fcffd4a0cf7dba0e33a6983641efc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaa7ff51e27ef7acb0ca1afe523e7976"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#abaa7ff51e27ef7acb0ca1afe523e7976">Deque</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T &gt; &amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
-<tr class="separator:abaa7ff51e27ef7acb0ca1afe523e7976"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a06b6247712d843c6f23df8ba807ca7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a2a06b6247712d843c6f23df8ba807ca7">~Deque</a> ()</td></tr>
-<tr class="separator:a2a06b6247712d843c6f23df8ba807ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d34d381cb969723a6d5b4fd014faf2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a90d34d381cb969723a6d5b4fd014faf2">Deque</a> ()</td></tr>
+<tr class="separator:a90d34d381cb969723a6d5b4fd014faf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2a6f29fa001dbc44af3aac3a0518940"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad2a6f29fa001dbc44af3aac3a0518940">Deque</a> (const int <a class="el" href="classprism_1_1_deque.html#a16c6d7b9640486229fd379e60e026098">size</a>, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value=T())</td></tr>
+<tr class="separator:ad2a6f29fa001dbc44af3aac3a0518940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac624703ab651ef2f3f85e31b4ba410"><td class="memTemplParams" colspan="2">template&lt;class ForwardIterator &gt; </td></tr>
+<tr class="memitem:abac624703ab651ef2f3f85e31b4ba410"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#abac624703ab651ef2f3f85e31b4ba410">Deque</a> (ForwardIterator <a class="el" href="classprism_1_1_deque.html#ab33aa2e2ebb794b5a9beabee1b41c8f1">first</a>, ForwardIterator <a class="el" href="classprism_1_1_deque.html#a2ee25a04680e547ae11c165a087e6806">last</a>)</td></tr>
+<tr class="separator:abac624703ab651ef2f3f85e31b4ba410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28fe7a13e1cb730eac228b462d1ad2ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a28fe7a13e1cb730eac228b462d1ad2ac">Deque</a> (std::initializer_list&lt; T &gt; list)</td></tr>
+<tr class="separator:a28fe7a13e1cb730eac228b462d1ad2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba87284e87cfedecedc0311a08639334"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#aba87284e87cfedecedc0311a08639334">Deque</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
+<tr class="separator:aba87284e87cfedecedc0311a08639334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1de2312a57209a9b6305f3ec5d7564d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad1de2312a57209a9b6305f3ec5d7564d">~Deque</a> ()</td></tr>
+<tr class="separator:ad1de2312a57209a9b6305f3ec5d7564d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa767dd5352954f58b1b057bc8b0610bc"><td class="memItemLeft" align="right" valign="top">TAllocator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#aa767dd5352954f58b1b057bc8b0610bc">allocator</a> () const </td></tr>
+<tr class="separator:aa767dd5352954f58b1b057bc8b0610bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31093dc317b3f3f2743a8e79c2c40429"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a31093dc317b3f3f2743a8e79c2c40429">append</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a31093dc317b3f3f2743a8e79c2c40429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad232dfa2adb856791d896b464d210900"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad232dfa2adb856791d896b464d210900">at</a> (const int i)</td></tr>
+<tr class="separator:ad232dfa2adb856791d896b464d210900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc87a01382135599fa3b5aba1579475"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a2fc87a01382135599fa3b5aba1579475">at</a> (const int i) const </td></tr>
+<tr class="separator:a2fc87a01382135599fa3b5aba1579475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad89f5089c397b35579622df71a7c5a20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad89f5089c397b35579622df71a7c5a20">back</a> ()</td></tr>
+<tr class="separator:ad89f5089c397b35579622df71a7c5a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878213e7411751aceae1d7f3850815e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a878213e7411751aceae1d7f3850815e4">back</a> () const </td></tr>
+<tr class="separator:a878213e7411751aceae1d7f3850815e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525d396476dc97cc6064792d83e2837f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a525d396476dc97cc6064792d83e2837f">begin</a> ()</td></tr>
+<tr class="separator:a525d396476dc97cc6064792d83e2837f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00798c9fa03181f3ec34d5394c0be0ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a00798c9fa03181f3ec34d5394c0be0ec">begin</a> () const </td></tr>
+<tr class="separator:a00798c9fa03181f3ec34d5394c0be0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7454c44d9bfae3df4d0aed803605380"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad7454c44d9bfae3df4d0aed803605380">capacity</a> () const </td></tr>
+<tr class="separator:ad7454c44d9bfae3df4d0aed803605380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675899011620fb6ba6bfbdc886ffdc5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a675899011620fb6ba6bfbdc886ffdc5d">cbegin</a> () const </td></tr>
+<tr class="separator:a675899011620fb6ba6bfbdc886ffdc5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e0f8be0a4c64389a41a1c2f6f0467c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a5e0f8be0a4c64389a41a1c2f6f0467c2">cend</a> () const </td></tr>
+<tr class="separator:a5e0f8be0a4c64389a41a1c2f6f0467c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd2f8032b34a0db5dc6e9eeacf62137"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a7bd2f8032b34a0db5dc6e9eeacf62137">clear</a> ()</td></tr>
+<tr class="separator:a7bd2f8032b34a0db5dc6e9eeacf62137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd21cc80cca9ca1486ff4143dc5c4e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a7cd21cc80cca9ca1486ff4143dc5c4e1">constBegin</a> () const </td></tr>
+<tr class="separator:a7cd21cc80cca9ca1486ff4143dc5c4e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543ef97bd3a666d069bc1e495cd85dda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a543ef97bd3a666d069bc1e495cd85dda">constEnd</a> () const </td></tr>
+<tr class="separator:a543ef97bd3a666d069bc1e495cd85dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad748d77c8008715e50a48a9243481706"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad748d77c8008715e50a48a9243481706">contains</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value) const </td></tr>
+<tr class="separator:ad748d77c8008715e50a48a9243481706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd3bd892ee68247cb75a7bfb8b168e2"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#afbd3bd892ee68247cb75a7bfb8b168e2">count</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value) const </td></tr>
+<tr class="separator:afbd3bd892ee68247cb75a7bfb8b168e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9464fc0d35991fa28963aa88851b2f5d"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a9464fc0d35991fa28963aa88851b2f5d">empty</a> () const </td></tr>
+<tr class="separator:a9464fc0d35991fa28963aa88851b2f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d9c6b0cca8df115d1ebd26cf4da965"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ae5d9c6b0cca8df115d1ebd26cf4da965">end</a> ()</td></tr>
+<tr class="separator:ae5d9c6b0cca8df115d1ebd26cf4da965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e4dd36f2946a18dfb261edf0d989d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a70e4dd36f2946a18dfb261edf0d989d9">end</a> () const </td></tr>
+<tr class="separator:a70e4dd36f2946a18dfb261edf0d989d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0b64d24b0c8920edc0507d57e9f75f"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a4b0b64d24b0c8920edc0507d57e9f75f">endsWith</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value) const </td></tr>
+<tr class="separator:a4b0b64d24b0c8920edc0507d57e9f75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebfefa05dfd3e23ddd57b2134dce14ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#aebfefa05dfd3e23ddd57b2134dce14ab">erase</a> (<a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> pos)</td></tr>
+<tr class="separator:aebfefa05dfd3e23ddd57b2134dce14ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60dd9d124f6fc1f0ab521b4a7829028f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a60dd9d124f6fc1f0ab521b4a7829028f">erase</a> (<a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html#ab33aa2e2ebb794b5a9beabee1b41c8f1">first</a>, <a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html#a2ee25a04680e547ae11c165a087e6806">last</a>)</td></tr>
+<tr class="separator:a60dd9d124f6fc1f0ab521b4a7829028f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09750fd8b4c0d6ecaa911ae9aac64d43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a09750fd8b4c0d6ecaa911ae9aac64d43">fill</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a09750fd8b4c0d6ecaa911ae9aac64d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab33aa2e2ebb794b5a9beabee1b41c8f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ab33aa2e2ebb794b5a9beabee1b41c8f1">first</a> ()</td></tr>
+<tr class="separator:ab33aa2e2ebb794b5a9beabee1b41c8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af93b742eda49f83ae4c5b9480ac45214"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#af93b742eda49f83ae4c5b9480ac45214">first</a> () const </td></tr>
+<tr class="separator:af93b742eda49f83ae4c5b9480ac45214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6e4e77cbb62109dd2f9f4afd1d3e26e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad6e4e77cbb62109dd2f9f4afd1d3e26e">front</a> ()</td></tr>
+<tr class="separator:ad6e4e77cbb62109dd2f9f4afd1d3e26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc8bc5fd39fee04d64668d719aec19fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#afc8bc5fd39fee04d64668d719aec19fe">front</a> () const </td></tr>
+<tr class="separator:afc8bc5fd39fee04d64668d719aec19fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b6296452ceef1bc946a22f6eb56daa"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#af4b6296452ceef1bc946a22f6eb56daa">indexOf</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value, const int from=0) const </td></tr>
+<tr class="separator:af4b6296452ceef1bc946a22f6eb56daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915f9b6aa4549701d319c078d465c6f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a915f9b6aa4549701d319c078d465c6f1">insert</a> (const int index, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a915f9b6aa4549701d319c078d465c6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f5af22defad53952b2bf3f2d0ea1c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ae9f5af22defad53952b2bf3f2d0ea1c8">insert</a> (const int index, const int <a class="el" href="classprism_1_1_deque.html#afbd3bd892ee68247cb75a7bfb8b168e2">count</a>, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:ae9f5af22defad53952b2bf3f2d0ea1c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c516c158e0de1a543bbbc581fd0cd54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a3c516c158e0de1a543bbbc581fd0cd54">insert</a> (<a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> insertBefore, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a3c516c158e0de1a543bbbc581fd0cd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56df006dd5f795817ef3b715a232b14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ae56df006dd5f795817ef3b715a232b14">insert</a> (<a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> insertBefore, const int <a class="el" href="classprism_1_1_deque.html#afbd3bd892ee68247cb75a7bfb8b168e2">count</a>, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:ae56df006dd5f795817ef3b715a232b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37fbed8a2b810f251a4381b50a2f15dc"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a37fbed8a2b810f251a4381b50a2f15dc">isEmpty</a> () const </td></tr>
+<tr class="separator:a37fbed8a2b810f251a4381b50a2f15dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee25a04680e547ae11c165a087e6806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a2ee25a04680e547ae11c165a087e6806">last</a> ()</td></tr>
+<tr class="separator:a2ee25a04680e547ae11c165a087e6806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d19340d733fb878b86ad6ac2f2554d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a4d19340d733fb878b86ad6ac2f2554d9">last</a> () const </td></tr>
+<tr class="separator:a4d19340d733fb878b86ad6ac2f2554d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654016a092e317b6281819635af4d4db"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a654016a092e317b6281819635af4d4db">lastIndexOf</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value, int from=-1) const </td></tr>
+<tr class="separator:a654016a092e317b6281819635af4d4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d73340eb546ce62b86fd0a6bab6d01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ab6d73340eb546ce62b86fd0a6bab6d01">mid</a> (const int startIndex, const int <a class="el" href="classprism_1_1_deque.html#afbd3bd892ee68247cb75a7bfb8b168e2">count</a>) const </td></tr>
+<tr class="separator:ab6d73340eb546ce62b86fd0a6bab6d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78321ac88433e61fdb05728e0939c94a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a78321ac88433e61fdb05728e0939c94a">pop_back</a> ()</td></tr>
+<tr class="separator:a78321ac88433e61fdb05728e0939c94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5cf88ede4df7c69eae99be9a68696f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ae5cf88ede4df7c69eae99be9a68696f8">pop_front</a> ()</td></tr>
+<tr class="separator:ae5cf88ede4df7c69eae99be9a68696f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a041ad68dab4d12f1865def610bee8afd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a041ad68dab4d12f1865def610bee8afd">prepend</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a041ad68dab4d12f1865def610bee8afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f4d73989d4c20334c9b08f1b2102a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a58f4d73989d4c20334c9b08f1b2102a5">push_back</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a58f4d73989d4c20334c9b08f1b2102a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6022cf0af9cccf6bee0b7354abaa095e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a6022cf0af9cccf6bee0b7354abaa095e">push_front</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a6022cf0af9cccf6bee0b7354abaa095e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca9d240f53aec7b80ecaa66b1e91556"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a0ca9d240f53aec7b80ecaa66b1e91556">remove</a> (const int index)</td></tr>
+<tr class="separator:a0ca9d240f53aec7b80ecaa66b1e91556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed7d989e9381b64255cd6ce7b1ae4c45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#aed7d989e9381b64255cd6ce7b1ae4c45">remove</a> (const int index, const int <a class="el" href="classprism_1_1_deque.html#afbd3bd892ee68247cb75a7bfb8b168e2">count</a>)</td></tr>
+<tr class="separator:aed7d989e9381b64255cd6ce7b1ae4c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad50a492081c41da88978315e4be3e228"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ad50a492081c41da88978315e4be3e228">removeAll</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:ad50a492081c41da88978315e4be3e228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaedd5fa8d2d99a31dff5c114317313c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#acaedd5fa8d2d99a31dff5c114317313c">removeFirst</a> ()</td></tr>
+<tr class="separator:acaedd5fa8d2d99a31dff5c114317313c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ea6bcbec4ef0f754c4ff66c70a81af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a34ea6bcbec4ef0f754c4ff66c70a81af">removeLast</a> ()</td></tr>
+<tr class="separator:a34ea6bcbec4ef0f754c4ff66c70a81af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac285d3f092073cfecd8a6664c2b2068c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ac285d3f092073cfecd8a6664c2b2068c">replace</a> (const int index, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:ac285d3f092073cfecd8a6664c2b2068c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156f37e7e13442dd57365ede5d9fa959"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a156f37e7e13442dd57365ede5d9fa959">resize</a> (const int newSize, <a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value=T())</td></tr>
+<tr class="separator:a156f37e7e13442dd57365ede5d9fa959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c6d7b9640486229fd379e60e026098"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a16c6d7b9640486229fd379e60e026098">size</a> () const </td></tr>
+<tr class="separator:a16c6d7b9640486229fd379e60e026098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d509b6377cbbe0064d9996c9f75a04"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ac2d509b6377cbbe0064d9996c9f75a04">startsWith</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value) const </td></tr>
+<tr class="separator:ac2d509b6377cbbe0064d9996c9f75a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df8a426af257dea3fe759acec3811f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_list.html">List</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a7df8a426af257dea3fe759acec3811f7">toList</a> () const </td></tr>
+<tr class="separator:a7df8a426af257dea3fe759acec3811f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a784590b8cde3bd103fb125c25793c578"><td class="memItemLeft" align="right" valign="top">std::deque&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a784590b8cde3bd103fb125c25793c578">toStdDeque</a> () const </td></tr>
+<tr class="separator:a784590b8cde3bd103fb125c25793c578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ffb93619daf49eddfdeccb4903e61fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a8ffb93619daf49eddfdeccb4903e61fe">operator[]</a> (const int i)</td></tr>
+<tr class="separator:a8ffb93619daf49eddfdeccb4903e61fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7393a2fb9c8ea2592700274e90263f68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a7393a2fb9c8ea2592700274e90263f68">operator[]</a> (const int i) const </td></tr>
+<tr class="separator:a7393a2fb9c8ea2592700274e90263f68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbff553ddf93e50faaff25777a19315b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#adbff553ddf93e50faaff25777a19315b">operator=</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:adbff553ddf93e50faaff25777a19315b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b37db6e9e97285885771ea2bb0f2d6"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a45b37db6e9e97285885771ea2bb0f2d6">operator==</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;rhs) const </td></tr>
+<tr class="separator:a45b37db6e9e97285885771ea2bb0f2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c4b22091aa448ffd1c9da4b9373b73"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a53c4b22091aa448ffd1c9da4b9373b73">operator!=</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;rhs) const </td></tr>
+<tr class="separator:a53c4b22091aa448ffd1c9da4b9373b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4094f8cf6188a808247fc71a2f7823fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a4094f8cf6188a808247fc71a2f7823fb">operator+</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:a4094f8cf6188a808247fc71a2f7823fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac89b0d7b999755c3f7032898157c524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#aac89b0d7b999755c3f7032898157c524">operator+=</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:aac89b0d7b999755c3f7032898157c524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8faca1628aeead734466460b5f9d381e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a8faca1628aeead734466460b5f9d381e">operator&lt;&lt;</a> (<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> value)</td></tr>
+<tr class="separator:a8faca1628aeead734466460b5f9d381e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5eb565c122f033dbf7d4627ee55163e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#ae5eb565c122f033dbf7d4627ee55163e">operator&lt;&lt;</a> (const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;rhs)</td></tr>
+<tr class="separator:ae5eb565c122f033dbf7d4627ee55163e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a1755aa277c5a41927bb96ce8a0a31299"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_deque.html#a1755aa277c5a41927bb96ce8a0a31299">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;d)</td></tr>
+<tr class="separator:a1755aa277c5a41927bb96ce8a0a31299"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ae8fcffd4a0cf7dba0e33a6983641efc2"></a>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a264ab74c18a153ed1d225cb7b29d8f17"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T &gt;::<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef Data::const_iterator <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="abaa7ff51e27ef7acb0ca1afe523e7976"></a>
+<a class="anchor" id="a569958f4e74279b18ec0964d820ebded"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T &gt;::<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
+          <td class="memname">typedef TAllocator::const_pointer <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a569958f4e74279b18ec0964d820ebded">const_pointer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="affa26df70d5123f79a59386056e920c3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef TAllocator::const_reference <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a17bc7f491baf38861449e99635636d2f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structprism_1_1_deque_data.html">DequeData</a>&lt;T, TAllocator&gt; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a17bc7f491baf38861449e99635636d2f">Data</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0678b4b8619b996e2b3de3b8134b6b9f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef TAllocator::difference_type <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a0678b4b8619b996e2b3de3b8134b6b9f">difference_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a263fd8daf307719cd101c97028fe68a1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Data::iterator <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10ecd23455d0619cbe070eb91b340f37"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef iterator::iterator_category <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a10ecd23455d0619cbe070eb91b340f37">iterator_category</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6f3ced98e358577ca5730800a04184dc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef TAllocator::pointer <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a6f3ced98e358577ca5730800a04184dc">pointer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a035cdb869f46870d62d403d9ff5e3691"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef TAllocator::reference <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a04c90c07b76fc822d266d7fcea147f01"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef TAllocator::value_type <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html#a04c90c07b76fc822d266d7fcea147f01">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a90d34d381cb969723a6d5b4fd014faf2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates an empty <a class="el" href="classprism_1_1_deque.html">Deque</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad2a6f29fa001dbc44af3aac3a0518940"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a <a class="el" href="classprism_1_1_deque.html">Deque</a> that contains <em>size</em> amount of elements initialized to <em>value</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="abac624703ab651ef2f3f85e31b4ba410"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class ForwardIterator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
+          <td>(</td>
+          <td class="paramtype">ForwardIterator&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ForwardIterator&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a28fe7a13e1cb730eac228b462d1ad2ac"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a <a class="el" href="classprism_1_1_deque.html">Deque</a> and assigns the elements in the initializer list to the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="aba87284e87cfedecedc0311a08639334"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
           <td class="paramname"><em>copy</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates a new <a class="el" href="classprism_1_1_deque.html">Deque</a> which is a copy of <em>copy</em>. </p>
 
 </div>
 </div>
-<a class="anchor" id="a2a06b6247712d843c6f23df8ba807ca7"></a>
+<a class="anchor" id="ad1de2312a57209a9b6305f3ec5d7564d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T &gt;::~<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::~<a class="el" href="classprism_1_1_deque.html">Deque</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Destroys this <a class="el" href="classprism_1_1_deque.html">Deque</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa767dd5352954f58b1b057bc8b0610bc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">TAllocator <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::allocator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a31093dc317b3f3f2743a8e79c2c40429"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad232dfa2adb856791d896b464d210900"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the the element at index <em>i</em>. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Throws</td><td>an <a class="el" href="classprism_1_1_out_of_bounds_exception.html">OutOfBoundsException</a> if <em>i</em> is less than 0 or greater than or equal to <em><a class="el" href="classprism_1_1_deque.html#a16c6d7b9640486229fd379e60e026098">size()</a></em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2fc87a01382135599fa3b5aba1579475"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const reference to the the element at index <em>i</em>. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Throws</td><td>an <a class="el" href="classprism_1_1_out_of_bounds_exception.html">OutOfBoundsException</a> if <em>i</em> is less than 0 or greater than or equal to <em><a class="el" href="classprism_1_1_deque.html#a16c6d7b9640486229fd379e60e026098">size()</a></em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad89f5089c397b35579622df71a7c5a20"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a878213e7411751aceae1d7f3850815e4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::back </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const reference to the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a525d396476dc97cc6064792d83e2837f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns an iterator that points to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a00798c9fa03181f3ec34d5394c0be0ec"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const_iterator that points to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad7454c44d9bfae3df4d0aed803605380"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::capacity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the capacity of the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a675899011620fb6ba6bfbdc886ffdc5d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const_iterator that points to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5e0f8be0a4c64389a41a1c2f6f0467c2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const_iterator that points to one position past the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7bd2f8032b34a0db5dc6e9eeacf62137"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clears all elements from the <a class="el" href="classprism_1_1_deque.html">Deque</a> so that its size is 0. <br />
+Note that this does not affect the capacity. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7cd21cc80cca9ca1486ff4143dc5c4e1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::constBegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const_iterator that points to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a543ef97bd3a666d069bc1e495cd85dda"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::constEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const_iterator that points to one position past the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad748d77c8008715e50a48a9243481706"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::contains </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the <a class="el" href="classprism_1_1_deque.html">Deque</a> contains <em>value</em>, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afbd3bd892ee68247cb75a7bfb8b168e2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9464fc0d35991fa28963aa88851b2f5d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the <a class="el" href="classprism_1_1_deque.html">Deque</a> is empty i.e. size == 0, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae5d9c6b0cca8df115d1ebd26cf4da965"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns an iterator that points to one position past the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a70e4dd36f2946a18dfb261edf0d989d9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const_iterator that points to one position past the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4b0b64d24b0c8920edc0507d57e9f75f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::endsWith </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aebfefa05dfd3e23ddd57b2134dce14ab"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a60dd9d124f6fc1f0ab521b4a7829028f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns an iterator to the new position of the element that follows the last element erased. <div class="fragment"><div class="line">Deque&lt;int&gt; d({1,2,3,4,5,6});</div><div class="line"><a class="code" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> it = d.erase(d.begin()+2, d.begin()+5);</div><div class="line"><span class="comment">// *it == 6 since the integers 3, 4 and 5 were erased</span></div></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a09750fd8b4c0d6ecaa911ae9aac64d43"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::fill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets each element in the <a class="el" href="classprism_1_1_deque.html">Deque</a> to <em>value</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab33aa2e2ebb794b5a9beabee1b41c8f1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af93b742eda49f83ae4c5b9480ac45214"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const reference to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad6e4e77cbb62109dd2f9f4afd1d3e26e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afc8bc5fd39fee04d64668d719aec19fe"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const reference to the first element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af4b6296452ceef1bc946a22f6eb56daa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::indexOf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>from</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Searches for the first index starting from index <em>from</em> that contains <em>value</em>. </p><dl class="section return"><dt>Returns</dt><dd>Returns the index of of the first occurrence of <em>value</em> or -1 if <em>value</em> does not occur in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a915f9b6aa4549701d319c078d465c6f1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae9f5af22defad53952b2bf3f2d0ea1c8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c516c158e0de1a543bbbc581fd0cd54"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td>
+          <td class="paramname"><em>insertBefore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae56df006dd5f795817ef3b715a232b14"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a>&#160;</td>
+          <td class="paramname"><em>insertBefore</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a37fbed8a2b810f251a4381b50a2f15dc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::isEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the <a class="el" href="classprism_1_1_deque.html">Deque</a> is empty i.e. size == 0, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ee25a04680e547ae11c165a087e6806"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d19340d733fb878b86ad6ac2f2554d9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const reference to the last element in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a654016a092e317b6281819635af4d4db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::lastIndexOf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>from</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab6d73340eb546ce62b86fd0a6bab6d01"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt;T, TAllocator&gt; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::mid </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>startIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a53c4b22091aa448ffd1c9da4b9373b73"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4094f8cf6188a808247fc71a2f7823fb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt;T, TAllocator&gt; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aac89b0d7b999755c3f7032898157c524"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt;T, TAllocator&gt;&amp; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae5eb565c122f033dbf7d4627ee55163e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt;T, TAllocator&gt;&amp; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8faca1628aeead734466460b5f9d381e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt;T, TAllocator&gt;&amp; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adbff553ddf93e50faaff25777a19315b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html">Deque</a>&lt;T, TAllocator&gt;&amp; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a45b37db6e9e97285885771ea2bb0f2d6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8ffb93619daf49eddfdeccb4903e61fe"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the element at index <em>i</em>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Note that no bounds checking is performed on <em>i</em>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7393a2fb9c8ea2592700274e90263f68"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns a const reference to the element at index <em>i</em>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Note that no bounds checking is performed on <em>i</em>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78321ac88433e61fdb05728e0939c94a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::pop_back </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -178,19 +1504,347 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ae5cf88ede4df7c69eae99be9a68696f8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::pop_front </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a041ad68dab4d12f1865def610bee8afd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::prepend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a58f4d73989d4c20334c9b08f1b2102a5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6022cf0af9cccf6bee0b7354abaa095e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::push_front </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0ca9d240f53aec7b80ecaa66b1e91556"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aed7d989e9381b64255cd6ce7b1ae4c45"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad50a492081c41da88978315e4be3e228"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::removeAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acaedd5fa8d2d99a31dff5c114317313c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::removeFirst </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a34ea6bcbec4ef0f754c4ff66c70a81af"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::removeLast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac285d3f092073cfecd8a6664c2b2068c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::replace </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a156f37e7e13442dd57365ede5d9fa959"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>newSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>T()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a16c6d7b9640486229fd379e60e026098"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const int <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Returns the number of elements currently in the <a class="el" href="classprism_1_1_deque.html">Deque</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac2d509b6377cbbe0064d9996c9f75a04"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::startsWith </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7df8a426af257dea3fe759acec3811f7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_list.html">List</a>&lt;T&gt; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::toList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a784590b8cde3bd103fb125c25793c578"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;T&gt; <a class="el" href="classprism_1_1_deque.html">prism::Deque</a>&lt; T, TAllocator &gt;::toStdDeque </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="a1755aa277c5a41927bb96ce8a0a31299"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T, class TAllocator = prism::Allocator&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_deque.html">Deque</a>&lt; T, TAllocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>inc/prism/h/<a class="el" href="_deque__old_8h_source.html">Deque_old.h</a></li>
+<li><a class="el" href="_deque_8h_source.html">Deque.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespaceprism.html">prism</a></li><li class="navelem"><a class="el" href="classprism_1_1_deque.html">Deque</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
 </body>
 </html>

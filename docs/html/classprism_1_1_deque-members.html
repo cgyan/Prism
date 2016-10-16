@@ -4,18 +4,10 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: Member List</title>
+<title>Prism API: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -30,8 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.jpeg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Prism
+   <div id="projectname">Prism API
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -76,21 +71,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('classprism_1_1_deque.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -105,26 +85,104 @@ $(document).ready(function(){initNavTree('classprism_1_1_deque.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceprism.html">prism</a></li><li class="navelem"><a class="el" href="classprism_1_1_deque.html">Deque</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">prism::Deque&lt; T &gt; Member List</div>  </div>
+<div class="title">prism::Deque&lt; T, TAllocator &gt; Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T &gt;</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ae8fcffd4a0cf7dba0e33a6983641efc2">Deque</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#abaa7ff51e27ef7acb0ca1afe523e7976">Deque</a>(const Deque&lt; T &gt; &amp;copy)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a2a06b6247712d843c6f23df8ba807ca7">~Deque</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#aa767dd5352954f58b1b057bc8b0610bc">allocator</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a31093dc317b3f3f2743a8e79c2c40429">append</a>(const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad232dfa2adb856791d896b464d210900">at</a>(const int i)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a2fc87a01382135599fa3b5aba1579475">at</a>(const int i) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad89f5089c397b35579622df71a7c5a20">back</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a878213e7411751aceae1d7f3850815e4">back</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a525d396476dc97cc6064792d83e2837f">begin</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a00798c9fa03181f3ec34d5394c0be0ec">begin</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad7454c44d9bfae3df4d0aed803605380">capacity</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a675899011620fb6ba6bfbdc886ffdc5d">cbegin</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a5e0f8be0a4c64389a41a1c2f6f0467c2">cend</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a7bd2f8032b34a0db5dc6e9eeacf62137">clear</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a264ab74c18a153ed1d225cb7b29d8f17">const_iterator</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a569958f4e74279b18ec0964d820ebded">const_pointer</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#affa26df70d5123f79a59386056e920c3">const_reference</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a7cd21cc80cca9ca1486ff4143dc5c4e1">constBegin</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a543ef97bd3a666d069bc1e495cd85dda">constEnd</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad748d77c8008715e50a48a9243481706">contains</a>(const_reference value) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#afbd3bd892ee68247cb75a7bfb8b168e2">count</a>(const_reference value) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a17bc7f491baf38861449e99635636d2f">Data</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a90d34d381cb969723a6d5b4fd014faf2">Deque</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad2a6f29fa001dbc44af3aac3a0518940">Deque</a>(const int size, const_reference value=T())</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#abac624703ab651ef2f3f85e31b4ba410">Deque</a>(ForwardIterator first, ForwardIterator last)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a28fe7a13e1cb730eac228b462d1ad2ac">Deque</a>(std::initializer_list&lt; T &gt; list)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#aba87284e87cfedecedc0311a08639334">Deque</a>(const Deque&lt; T, TAllocator &gt; &amp;copy)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a0678b4b8619b996e2b3de3b8134b6b9f">difference_type</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a9464fc0d35991fa28963aa88851b2f5d">empty</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ae5d9c6b0cca8df115d1ebd26cf4da965">end</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a70e4dd36f2946a18dfb261edf0d989d9">end</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a4b0b64d24b0c8920edc0507d57e9f75f">endsWith</a>(const_reference value) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#aebfefa05dfd3e23ddd57b2134dce14ab">erase</a>(iterator pos)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a60dd9d124f6fc1f0ab521b4a7829028f">erase</a>(iterator first, iterator last)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a09750fd8b4c0d6ecaa911ae9aac64d43">fill</a>(const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ab33aa2e2ebb794b5a9beabee1b41c8f1">first</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#af93b742eda49f83ae4c5b9480ac45214">first</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad6e4e77cbb62109dd2f9f4afd1d3e26e">front</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#afc8bc5fd39fee04d64668d719aec19fe">front</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#af4b6296452ceef1bc946a22f6eb56daa">indexOf</a>(const_reference value, const int from=0) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a915f9b6aa4549701d319c078d465c6f1">insert</a>(const int index, const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ae9f5af22defad53952b2bf3f2d0ea1c8">insert</a>(const int index, const int count, const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a3c516c158e0de1a543bbbc581fd0cd54">insert</a>(iterator insertBefore, const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ae56df006dd5f795817ef3b715a232b14">insert</a>(iterator insertBefore, const int count, const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a37fbed8a2b810f251a4381b50a2f15dc">isEmpty</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a263fd8daf307719cd101c97028fe68a1">iterator</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a10ecd23455d0619cbe070eb91b340f37">iterator_category</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a2ee25a04680e547ae11c165a087e6806">last</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a4d19340d733fb878b86ad6ac2f2554d9">last</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a654016a092e317b6281819635af4d4db">lastIndexOf</a>(const_reference value, int from=-1) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ab6d73340eb546ce62b86fd0a6bab6d01">mid</a>(const int startIndex, const int count) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a53c4b22091aa448ffd1c9da4b9373b73">operator!=</a>(const Deque&lt; T, TAllocator &gt; &amp;rhs) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a4094f8cf6188a808247fc71a2f7823fb">operator+</a>(const Deque&lt; T, TAllocator &gt; &amp;rhs)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#aac89b0d7b999755c3f7032898157c524">operator+=</a>(const Deque&lt; T, TAllocator &gt; &amp;rhs)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a8faca1628aeead734466460b5f9d381e">operator&lt;&lt;</a>(const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ae5eb565c122f033dbf7d4627ee55163e">operator&lt;&lt;</a>(const Deque&lt; T, TAllocator &gt; &amp;rhs)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a1755aa277c5a41927bb96ce8a0a31299">operator&lt;&lt;</a>(std::ostream &amp;out, const Deque&lt; T, TAllocator &gt; &amp;d)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#adbff553ddf93e50faaff25777a19315b">operator=</a>(const Deque&lt; T, TAllocator &gt; &amp;rhs)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a45b37db6e9e97285885771ea2bb0f2d6">operator==</a>(const Deque&lt; T, TAllocator &gt; &amp;rhs) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a8ffb93619daf49eddfdeccb4903e61fe">operator[]</a>(const int i)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a7393a2fb9c8ea2592700274e90263f68">operator[]</a>(const int i) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a6f3ced98e358577ca5730800a04184dc">pointer</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a78321ac88433e61fdb05728e0939c94a">pop_back</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ae5cf88ede4df7c69eae99be9a68696f8">pop_front</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a041ad68dab4d12f1865def610bee8afd">prepend</a>(const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a58f4d73989d4c20334c9b08f1b2102a5">push_back</a>(const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a6022cf0af9cccf6bee0b7354abaa095e">push_front</a>(const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a035cdb869f46870d62d403d9ff5e3691">reference</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a0ca9d240f53aec7b80ecaa66b1e91556">remove</a>(const int index)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#aed7d989e9381b64255cd6ce7b1ae4c45">remove</a>(const int index, const int count)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad50a492081c41da88978315e4be3e228">removeAll</a>(const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#acaedd5fa8d2d99a31dff5c114317313c">removeFirst</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a34ea6bcbec4ef0f754c4ff66c70a81af">removeLast</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#ac285d3f092073cfecd8a6664c2b2068c">replace</a>(const int index, const_reference value)</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a156f37e7e13442dd57365ede5d9fa959">resize</a>(const int newSize, const_reference value=T())</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a16c6d7b9640486229fd379e60e026098">size</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ac2d509b6377cbbe0064d9996c9f75a04">startsWith</a>(const_reference value) const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a7df8a426af257dea3fe759acec3811f7">toList</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#a784590b8cde3bd103fb125c25793c578">toStdDeque</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_deque.html#a04c90c07b76fc822d266d7fcea147f01">value_type</a> typedef</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_deque.html#ad1de2312a57209a9b6305f3ec5d7564d">~Deque</a>()</td><td class="entry"><a class="el" href="classprism_1_1_deque.html">prism::Deque&lt; T, TAllocator &gt;</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
 </body>
 </html>

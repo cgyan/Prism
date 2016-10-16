@@ -19,34 +19,34 @@ public:
 	Matrix4(const float * values);
 	Matrix4(const float r1c1, const float r1c2, const float r1c3, const float r1c4,
 			  const float r2c1, const float r2c2, const float r2c3, const float r2c4,
-			  const float r3c1, const float r3c2, const float r3c3, const float r3c4, 
-			  const float r4c1, const float r4c2, const float r4c3, const float r4c4); 
+			  const float r3c1, const float r3c2, const float r3c3, const float r3c4,
+			  const float r4c1, const float r4c2, const float r4c3, const float r4c4);
 	Matrix4(const Matrix4 & copy);
 	virtual ~Matrix4(void);
 
-	Vector4 column(const int index) const;
-	const float * constData() const;
-	void copyDataTo(float * destMatrix);
-	float * data();
-	const float determinant() const;
-	void fill(const float value);
-	const bool hasInverse() const;
-	Matrix4 inverted() const;
-	const bool isIdentity() const;
-	void rotate(Vector3 & axis, const float degrees);
-	void rotate(const float xAxis, const float yAxis, const float zAxis, const float degrees);
-	Vector4 row(const int index) const;
-	void scale(const float factor);
-	void scale(const float x, const float y, const float z=1);
-	void setColumn(const int col, const Vector4 & vec);
-	void setRow(const int row, const Vector4 & vec);
-	void setIdentity();
-	void translate(const float x, const float y, const float z=0);
-	Matrix4 transposed() const;
+	Vector4 		column(const int index) const;
+	const float * 	constData() const;
+	void 			copyDataTo(float * destMatrix);
+	float * 		data();
+	const float 	determinant() const;
+	void 			fill(const float value);
+	const bool 		hasInverse() const;
+	Matrix4 		inverted() const;
+	const bool 		isIdentity() const;
+	void 			rotate(Vector3 & axis, const float degrees);
+	void 			rotate(const float xAxis, const float yAxis, const float zAxis, const float degrees);
+	Vector4 		row(const int index) const;
+	void 			scale(const float factor);
+	void 			scale(const float x, const float y, const float z=1);
+	void 			setColumn(const int col, const Vector4 & vec);
+	void 			setRow(const int row, const Vector4 & vec);
+	void 			setIdentity();
+	void 			translate(const float x, const float y, const float z=0);
+	Matrix4 		transposed() const;
 
-	float & operator()(const int row, const int col);
-	const float & operator()(const int row, const int col) const;
-	Matrix4 & operator=(const Matrix4 & copy);
+	float & 		operator()(const int row, const int col);
+	const float & 	operator()(const int row, const int col) const;
+	Matrix4 & 		operator=(const Matrix4 & copy);
 
 //  Related non-members
 //  ===================

@@ -15,11 +15,13 @@
 
 namespace prism {
 
-using namespace prism;
-
 class Pointf;
 
-/*! The Circle class defines a circle using floating point precision.
+/// @class 	Circle prism/h/Circle.h prism/Circle
+///
+/// @brief 	A class that represents a circle
+///
+/*!The Circle class defines a circle using floating point precision.
 
 <h3>Construction</h3>
 
@@ -200,8 +202,9 @@ Segment area (degrees formula)
  --- times |θ ---  minus sin θ|
   2        |  180             |
 \endcode
- */
-
+*/
+///
+/// @since	1.0.0
 class Circle {
 public:
 	enum AngleMode { DEGREES = 0x1, RADIANS = 0x2 };
@@ -215,59 +218,132 @@ private:
 	const float PI = 3.14159;
 
 public:
+	/// @brief		Constructor that creates a default circle
+	///
+	///				Creates a unit circle i.e. a circle with a radius of 1
+	///
+	/// @since 1.0.0
 	Circle();
+
+	/// @brief 		Constructor that creates a circle
+	///
+	///				Creates a circle with a radius of \em radius and its centre (x,y) set to 0.
+	///
+	/// @since		1.0.0
 	Circle(const float radius);
+
+	/// @brief		Constructor that creates a circle
+	///
+	///				Creates a unit circle with a radius of 1 and its centre point
+	///				set to \em (x,y)
+	///
+	/// @since		1.0.0
 	Circle(const float x, const float y);
+
+	/// @brief		Constructor that creates a circle
+	///
+	///				Creates a circle with a radius of \em radius and its centre point
+	///				set to \em (x,y).
+	///
+	/// @since		1.0.0
 	Circle(const float radius, const float x, const float y);
+
 	Circle(const float radius, const Pointf &position);
+
 	Circle(const Circle &copy);
+
 	virtual ~Circle();
 
 	const float			angle(const float x, const float y) const;
+
 	const float			angle(const Pointf &position) const;
+
 	Circle::AngleMode	angleMode() const;
+
 	const float 		arcLength(const Pointf &p1, const Pointf &p2) const;
+
 	const float			area() const;
+
 	const float			bottom() const;
+
 	const float 		centralAngle(const Pointf &p1, const Pointf &p2) const;
+
 	Pointf 				centre() const;
+
 	const bool			contains(const float x, const float y) const;
+
 	const bool			contains(const Pointf &position) const;
+
 	const bool			contains(const Circle &otherCircle) const;
+
 	const float			circumference() const;
+
 	const float			diameter() const;
+
 	void				getCircle(float *radius, float *x, float *y);
+
 	const bool			intersects(const Circle &otherCircle) const;
+
 	const bool 			isValid() const;
+
 	const float			left() const;
+
 	void				moveBottom(const float y);
+
 	void				moveCentre(const float x, const float y);
+
 	void				moveCentre(const Pointf &position);
+
 	void				moveLeft(const float x);
+
 	void				moveRight(const float x);
+
 	void				moveTop(const float y);
+
 	Circle 				normalised() const;
+
 	Pointf				point(const float angle) const;
+
 	Vector<Pointf>		points(const int divisions) const;
+
 	const float 		radius() const;
+
 	const float			right() const;
+
 	const float			sectorArea(const Pointf &p1, const Pointf &p2) const;
+
 	const float			segmentArea(const Pointf &p1, const Pointf &p2) const;
+
 	void				setAngleMode(Circle::AngleMode mode);
+
 	void				setCircle(const float radius, const float x, const float y);
+
 	void				setCircle(const float radius, const Pointf &position);
+
 	void				setDiameter(const float diamter);
+
 	void 				setRadius(const float radius);
+
 	void				setX(const float x);
+
 	void				setY(const float y);
+
 	const float			top() const;
+
 	void				translate(const float dx, const float dy);
+
 	void				translate(const Pointf &offset);
+
 	Circle				translated(const float dx, const float dy) const;
+
 	Circle				translated(const Pointf &offset) const;
+
 	Circle				unit() const;
+
 	Circle				united(const Circle &otherCircle) const;
+
 	const float			x() const;
+
 	const float 		y() const;
 
 
@@ -275,9 +351,13 @@ public:
 
 	// related non-members
 	friend const bool operator==(const Circle &c1, const Circle &c2);
+
 	friend const bool operator!=(const Circle &c1, const Circle &c2);
+
 	friend const bool operator<(const Circle &c1, const Circle &c2);
+
 	friend const bool operator>(const Circle &c1, const Circle &c2);
+
 	friend std::ostream& operator<<(std::ostream &out, const Circle &c);
 };
 

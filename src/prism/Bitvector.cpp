@@ -14,9 +14,67 @@
 #include <prism/h/UnequalSizeException.h>
 #include <prism/h/OverflowException.h>
 #include <cmath>
+#include <ostream>
 
 namespace prism {
 
+/******************************************************************************
+ * BitvectorData
+ *****************************************************************************/
+struct BitvectorData {
+	struct memory  {
+		unsigned long long int * start; // unsigned long long ints are 64 bits each
+		unsigned long long int * finish;
+		int nBits;
+		memory() : start(0), finish(0), nBits(0) {}
+		~memory() { delete []start; start=0; finish=0; nBits=0; }
+	};
+	memory storage;
+
+	const int 	numChunks(const int nBits) const;
+	const bool 	rangeCheck(const int n) const;
+	void 		reserve(const int nChunks);
+};
+
+/**
+ * Method that returns the number of chunks needed to hold \em nBits.
+ */
+const int BitvectorData::numChunks(const int nBits) const {
+	int nBitsInChunk = sizeof(unsigned long long int) * 8;
+	int nChunks;
+
+	if (nBits % nBitsInChunk == 0) nChunks = nBits / nBitsInChunk;
+	else nChunks = nBits / nBitsInChunk + 1;
+
+	return nChunks;
+}
+
+/**
+ * Method that performs a bounds check on the index \em n.
+ * Returns true if \em n is is within bounds and false if not.
+ */
+const bool BitvectorData::rangeCheck(const int n) const {
+	if (n < 0 || n >= storage.nBits) return false;
+	return true;
+}
+
+/**
+ * Method that reserves enough memory to contain the bits required.
+ */
+void BitvectorData::reserve(const int nChunks) {
+	if (nChunks > storage.finish - storage.start) {
+		unsigned long long int * newChunks = new unsigned long long int[nChunks];
+		prism::copy(storage.start, storage.finish, newChunks);
+
+		delete []storage.start;
+		storage.start = newChunks;
+		storage.finish = storage.start + nChunks;
+
+	}
+}
+/******************************************************************************
+ * Bitvector
+ *****************************************************************************/
 /**
  * Creates a new Bitvector that contains by default 64 bits.
  */
@@ -24,7 +82,7 @@ Bitvector::Bitvector()
 	: d(new BitvectorData)
 {
 	d->storage.nBits = sizeof(unsigned long long int) * 8;
-	reserve(1);
+	d->reserve(1);
 	resetAll();
 }
 
@@ -39,7 +97,7 @@ Bitvector::Bitvector(const int nBits)
 	: d(new BitvectorData)
 {
 	d->storage.nBits = nBits;
-	reserve(numChunks(nBits));
+	d->reserve(d->numChunks(nBits));
 	resetAll();
 }
 
@@ -55,8 +113,8 @@ Bitvector::Bitvector(const String & bitString)
 	: d(new BitvectorData)
 {
 	d->storage.nBits = bitString.size();
-	int nChunks = numChunks(d->storage.nBits);
-	reserve(nChunks);
+	int nChunks = d->numChunks(d->storage.nBits);
+	d->reserve(nChunks);
 	resetAll();
 
 	String bs(bitString);
@@ -74,7 +132,7 @@ Bitvector::Bitvector(const String & bitString)
 Bitvector::Bitvector(const Bitvector & other)
 	: d(new BitvectorData)
 {
-	reserve(other.d->storage.finish-other.d->storage.start);
+	d->reserve(other.d->storage.finish-other.d->storage.start);
 	resetAll();
 	prism::copy(other.d->storage.start, other.d->storage.finish, this->d->storage.start);
 	d->storage.nBits = other.d->storage.nBits;
@@ -143,7 +201,7 @@ void Bitvector::flipAll() {
  * \endcode
  */
 const bool Bitvector::get(int bit) const {
-	if (!rangeCheck(bit))
+	if (!d->rangeCheck(bit))
 		throw OutOfBoundsException(bit);
 
 	int cell = bit / (8 * sizeof(unsigned long long int));
@@ -164,28 +222,6 @@ const bool Bitvector::none() const {
 }
 
 /**
- * Private method that returns the number of chunks needed to hold \em nBits.
- */
-const int Bitvector::numChunks(const int nBits) const {
-	int nBitsInChunk = sizeof(unsigned long long int) * 8;
-	int nChunks;
-
-	if (nBits % nBitsInChunk == 0) nChunks = nBits / nBitsInChunk;
-	else nChunks = nBits / nBitsInChunk + 1;
-
-	return nChunks;
-}
-
-/**
- * Private method that performs a bounds check on the index \em n.
- * Returns true if \em n is is within bounds and false if not.
- */
-const bool Bitvector::rangeCheck(const int n) const {
-	if (n < 0 || n >= d->storage.nBits) return false;
-	return true;
-}
-
-/**
  * Resets all the bits in the Bitvector to 0.
  */
 void Bitvector::resetAll() {
@@ -193,21 +229,6 @@ void Bitvector::resetAll() {
 	while (chunkIt != d->storage.finish) {
 		*chunkIt = *chunkIt & 0;
 		++chunkIt;
-	}
-}
-
-/**
- * Private method that reserves enough memory to contain the bits required.
- */
-void Bitvector::reserve(const int nChunks) {
-	if (nChunks > d->storage.finish - d->storage.start) {
-		unsigned long long int * newChunks = new unsigned long long int[nChunks];
-		prism::copy(d->storage.start, d->storage.finish, newChunks);
-
-		delete []d->storage.start;
-		d->storage.start = newChunks;
-		d->storage.finish = d->storage.start + nChunks;
-
 	}
 }
 
@@ -221,7 +242,7 @@ void Bitvector::reserve(const int nChunks) {
  * \endcode
  */
 void Bitvector::set(int bit, const bool b) {
-	if (!rangeCheck(bit))
+	if (!d->rangeCheck(bit))
 		throw OutOfBoundsException(bit);
 
 	int cell = bit / (8 * sizeof(unsigned long long int));
@@ -409,7 +430,7 @@ Bitvector & Bitvector::operator ^=(const Bitvector & other) {
 Bitvector & Bitvector::operator =(const Bitvector & other) {
 	if (*this == other) return *this;
 
-	reserve(numChunks(d->storage.nBits));
+	d->reserve(d->numChunks(d->storage.nBits));
 	prism::copy(other.d->storage.start, other.d->storage.finish, this->d->storage.start);
 	d->storage.finish = d->storage.start + other.size();
 
@@ -500,9 +521,10 @@ const bool operator!=(const Bitvector & bv1, const Bitvector & bv2) {
 /**
  * Allows an instance of Bitvector to be written to the ostream and returns a reference to the ostream.
  */
-std::ostream & operator<<(std::ostream & out, const Bitvector & bv) {
+std::ostream&
+operator<<(std::ostream & out, const Bitvector & bv) {
 	out << "Bitvector [" << &bv << "] (size:" << bv.size() << " bits) ";
-	for (int bit=bv.d->storage.nBits-1; bit>=0; bit--) {
+	for (int bit = bv.size()-1; bit >= 0; bit--) {
 		out << bv.get(bit);
 	}
 

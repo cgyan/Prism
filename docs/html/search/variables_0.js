@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['count',['count',['../classprism_1_1_reference_counter.html#a18e28845491bc0d8632a4075c8f341a9',1,'prism::ReferenceCounter']]]
+  ['alloc',['alloc',['../structprism_1_1_b_s_t_memory.html#a6fd7c2062bd20f0aca58d21ad2a06fc1',1,'prism::BSTMemory']]]
 ];

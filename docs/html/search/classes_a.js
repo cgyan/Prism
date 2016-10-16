@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['quaternion',['Quaternion',['../classprism_1_1_quaternion.html',1,'prism']]],
-  ['queue',['Queue',['../classprism_1_1_queue.html',1,'prism']]]
+  ['negative',['negative',['../structprism_1_1negative.html',1,'prism']]]
 ];

@@ -1,15 +1,25 @@
 var hierarchy =
 [
+    [ "prism::AbstractTree< Key, Value, AssociativeIterator, Compare, Allocator >", "classprism_1_1_abstract_tree.html", null ],
+    [ "prism::AbstractTree< Key, Value, AssociativeIterator< Key, Value, BSTNode< Key, Value >, false >, Compare, Allocator >", "classprism_1_1_abstract_tree.html", [
+      [ "prism::BinarySearchTree< Key, Value, Compare, Allocator >", "classprism_1_1_binary_search_tree.html", null ]
+    ] ],
     [ "prism::Allocator< T >", "classprism_1_1_allocator.html", null ],
-    [ "prism::AllocatorTraits< Alloc >", "structprism_1_1_allocator_traits.html", null ],
+    [ "prism::AllocatorTraits< Allocator >", "structprism_1_1_allocator_traits.html", null ],
     [ "prism::Array< T >", "classprism_1_1_array.html", null ],
+    [ "prism::AssociativeIterator< Key, Value, Node, isConst >", "structprism_1_1_associative_iterator.html", null ],
     [ "prism::Bitvector", "classprism_1_1_bitvector.html", null ],
-    [ "prism::BitvectorData", "structprism_1_1_bitvector_data.html", null ],
+    [ "prism::BSTData< Key, Value, Compare, NodeAllocator >", "structprism_1_1_b_s_t_data.html", null ],
+    [ "prism::BSTMemory< Key, Value, NodeAllocator >", "structprism_1_1_b_s_t_memory.html", null ],
+    [ "prism::BSTNode< Key, Value >", "structprism_1_1_b_s_t_node.html", null ],
     [ "prism::Char", "classprism_1_1_char.html", null ],
     [ "prism::Circle", "classprism_1_1_circle.html", null ],
     [ "prism::conditional_type< condition, Type1, Type2 >", "structprism_1_1conditional__type.html", null ],
     [ "prism::conditional_type< false, Type1, Type2 >", "structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4.html", null ],
     [ "prism::conditional_type< isConst, const T *, T * >", "structprism_1_1conditional__type.html", null ],
+    [ "prism::Deque< T, TAllocator >", "classprism_1_1_deque.html", null ],
+    [ "prism::DequeData< T, TAllocator >", "structprism_1_1_deque_data.html", null ],
+    [ "prism::even< T >", "structprism_1_1even.html", null ],
     [ "prism::Exception", "classprism_1_1_exception.html", [
       [ "prism::OutOfBoundsException", "classprism_1_1_out_of_bounds_exception.html", null ],
       [ "prism::OverflowException", "classprism_1_1_overflow_exception.html", null ],
@@ -18,6 +28,7 @@ var hierarchy =
     [ "prism::Flag", "classprism_1_1_flag.html", null ],
     [ "prism::Flags< Enum >", "classprism_1_1_flags.html", null ],
     [ "prism::Fraction", "classprism_1_1_fraction.html", null ],
+    [ "prism::greater< T >", "structprism_1_1greater.html", null ],
     [ "prism::input_iterator_tag", "structprism_1_1input__iterator__tag.html", [
       [ "prism::forward_iterator_tag", "structprism_1_1forward__iterator__tag.html", [
         [ "prism::bidirectional_iterator_tag", "structprism_1_1bidirectional__iterator__tag.html", [
@@ -25,20 +36,24 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
-    [ "prism::iterator_traits< IterType >", "structprism_1_1iterator__traits.html", null ],
+    [ "prism::iterator_traits< Iterator >", "structprism_1_1iterator__traits.html", null ],
+    [ "prism::less< T >", "structprism_1_1less.html", null ],
     [ "prism::List< T, TAllocator >", "classprism_1_1_list.html", null ],
-    [ "prism::ListIterator< T, isConst >", "structprism_1_1_list_iterator.html", null ],
-    [ "prism::ListMemory< NodeAllocator >", "structprism_1_1_list_memory.html", null ],
-    [ "prism::ListNode< T >", "structprism_1_1_list_node.html", null ],
+    [ "prism::ListData< T, TAllocator >", "structprism_1_1_list_data.html", null ],
     [ "prism::LogAllocator< T >", "classprism_1_1_log_allocator.html", null ],
+    [ "prism::Map< Key, T, Compare, Allocator, Tree >", "classprism_1_1_map.html", null ],
     [ "prism::Mathf", "classprism_1_1_mathf.html", null ],
     [ "prism::Matrix4", "classprism_1_1_matrix4.html", null ],
-    [ "prism::BitvectorData::memory", "structprism_1_1_bitvector_data_1_1memory.html", null ],
+    [ "prism::negative< T >", "structprism_1_1negative.html", null ],
     [ "prism::Obj", "classprism_1_1_obj.html", null ],
+    [ "prism::odd< T >", "structprism_1_1odd.html", null ],
     [ "prism::output_iterator_tag", "structprism_1_1output__iterator__tag.html", null ],
-    [ "prism::Pair< T1, T2 >", "structprism_1_1_pair.html", null ],
+    [ "prism::pair< T1, T2 >", "structprism_1_1pair.html", null ],
+    [ "prism::pair< Key, Value >", "structprism_1_1pair.html", null ],
     [ "prism::Point", "classprism_1_1_point.html", null ],
     [ "prism::Pointf", "classprism_1_1_pointf.html", null ],
+    [ "prism::positive< T >", "structprism_1_1positive.html", null ],
+    [ "prism::PrismVersion", "classprism_1_1_prism_version.html", null ],
     [ "prism::Quaternion", "classprism_1_1_quaternion.html", null ],
     [ "prism::Queue< T, ContainerType >", "classprism_1_1_queue.html", null ],
     [ "prism::Allocator< T >::rebind< U >", "structprism_1_1_allocator_1_1rebind.html", null ],
@@ -46,13 +61,13 @@ var hierarchy =
     [ "prism::Rect", "classprism_1_1_rect.html", null ],
     [ "prism::ReferenceCounter", "classprism_1_1_reference_counter.html", null ],
     [ "prism::SequenceIterator< T, isConst >", "structprism_1_1_sequence_iterator.html", null ],
-    [ "prism::SharedData", "classprism_1_1_shared_data.html", [
-      [ "prism::ListData< T, NodeAllocator >", "structprism_1_1_list_data.html", null ]
-    ] ],
+    [ "prism::SharedData", "classprism_1_1_shared_data.html", null ],
     [ "prism::SharedDataPointer< SharedDataType >", "classprism_1_1_shared_data_pointer.html", null ],
+    [ "prism::SharedDataPointer< prism::DequeData >", "classprism_1_1_shared_data_pointer.html", null ],
     [ "prism::SharedDataPointer< prism::ListData >", "classprism_1_1_shared_data_pointer.html", null ],
     [ "prism::SharedDataPointer< StackData< T > >", "classprism_1_1_shared_data_pointer.html", null ],
     [ "prism::SharedPointer< T >", "classprism_1_1_shared_pointer.html", null ],
+    [ "prism::SharedPointer< VersionData >", "classprism_1_1_shared_pointer.html", null ],
     [ "prism::Size", "classprism_1_1_size.html", null ],
     [ "prism::Stack< T >", "classprism_1_1_stack.html", null ],
     [ "prism::String", "classprism_1_1_string.html", null ],
@@ -69,5 +84,8 @@ var hierarchy =
     [ "prism::Vector2", "classprism_1_1_vector2.html", null ],
     [ "prism::Vector3", "classprism_1_1_vector3.html", null ],
     [ "prism::Vector4", "classprism_1_1_vector4.html", null ],
-    [ "prism::Vector< T * >", "classprism_1_1_vector.html", null ]
+    [ "prism::Vector< T * >", "classprism_1_1_vector.html", null ],
+    [ "prism::VectorData< T >", "structprism_1_1_vector_data.html", null ],
+    [ "prism::VectorData< T * >", "structprism_1_1_vector_data.html", null ],
+    [ "prism::Version", "classprism_1_1_version.html", null ]
 ];

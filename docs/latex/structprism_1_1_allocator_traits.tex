@@ -1,104 +1,100 @@
-\hypertarget{structprism_1_1_allocator_traits}{}\section{prism\+:\+:Allocator\+Traits$<$ Alloc $>$ Struct Template Reference}
-\label{structprism_1_1_allocator_traits}\index{prism\+::\+Allocator\+Traits$<$ Alloc $>$@{prism\+::\+Allocator\+Traits$<$ Alloc $>$}}
-
-
-{\ttfamily \#include $<$Allocator.\+h$>$}
-
+\hypertarget{structprism_1_1_allocator_traits}{}\section{prism\+:\+:Allocator\+Traits$<$ Allocator $>$ Struct Template Reference}
+\label{structprism_1_1_allocator_traits}\index{prism\+::\+Allocator\+Traits$<$ Allocator $>$@{prism\+::\+Allocator\+Traits$<$ Allocator $>$}}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef Alloc \hyperlink{structprism_1_1_allocator_traits_a6d687c073652db923f1808e67f550fcd}{allocator\+\_\+type}
+typedef \hyperlink{classprism_1_1_allocator}{Allocator} \hyperlink{structprism_1_1_allocator_traits_a5c6a9e92c53ee13c947265f07e633324}{allocator\+\_\+type}
 \item 
-typedef Alloc\+::value\+\_\+type \hyperlink{structprism_1_1_allocator_traits_a02838686d063e89d7c497fef69592265}{value\+\_\+type}
+typedef \hyperlink{classprism_1_1_allocator_a45426ee64e0aba097a532e0ef5ff5700}{Allocator\+::value\+\_\+type} \hyperlink{structprism_1_1_allocator_traits_ab733362182b9f46d27ca6bdddaa23d67}{value\+\_\+type}
 \item 
-typedef Alloc\+::pointer \hyperlink{structprism_1_1_allocator_traits_aed8a12c05f82e96f45db30e9511fa62d}{pointer}
+typedef \hyperlink{classprism_1_1_allocator_ad3c6706a7243bd3ef489e16d34d5750f}{Allocator\+::pointer} \hyperlink{structprism_1_1_allocator_traits_ae6cca8a97ab96e399c40b5774f425d6f}{pointer}
 \item 
-typedef Alloc\+::reference \hyperlink{structprism_1_1_allocator_traits_aa134d981ab397b1bb691af2da23b1ad6}{reference}
+typedef \hyperlink{classprism_1_1_allocator_a5dde9876d2ed0ca292d8a2019ac2836f}{Allocator\+::reference} \hyperlink{structprism_1_1_allocator_traits_aee67923dfcf22628468bf2faacc31cb3}{reference}
 \item 
-typedef Alloc\+::const\+\_\+pointer \hyperlink{structprism_1_1_allocator_traits_ae9bcf74e2770e54eb99f29edfce5f81e}{const\+\_\+pointer}
+typedef \hyperlink{classprism_1_1_allocator_af6a4a91dfc203203ecc319a457ce4dce}{Allocator\+::const\+\_\+pointer} \hyperlink{structprism_1_1_allocator_traits_abce8f3352b34f42a7a81bff1b5546b48}{const\+\_\+pointer}
 \item 
-typedef Alloc\+::const\+\_\+reference \hyperlink{structprism_1_1_allocator_traits_a5054d2fa3ac8a0a1d6d1885143107963}{const\+\_\+reference}
+typedef \hyperlink{classprism_1_1_allocator_a89911899c97ae877a81b798957a2d899}{Allocator\+::const\+\_\+reference} \hyperlink{structprism_1_1_allocator_traits_a136b98e2698754b03398194f80edbf33}{const\+\_\+reference}
 \item 
-typedef Alloc\+::size\+\_\+type \hyperlink{structprism_1_1_allocator_traits_a7cf55823ae63bccb9cf50b1e08619363}{size\+\_\+type}
+typedef \hyperlink{classprism_1_1_allocator_a47cb9435e4e9ff4c934ea3d4b4338d52}{Allocator\+::size\+\_\+type} \hyperlink{structprism_1_1_allocator_traits_a4de8d85d17a31ddc325c2ac079ea1910}{size\+\_\+type}
 \item 
-typedef Alloc\+::difference\+\_\+type \hyperlink{structprism_1_1_allocator_traits_a8cb6d0ad1c318af0984ce70b71b4f459}{difference\+\_\+type}
+typedef \hyperlink{classprism_1_1_allocator_a39ca38c4c741bbc51d3c6e26603102ef}{Allocator\+::difference\+\_\+type} \hyperlink{structprism_1_1_allocator_traits_ac5e3111044ebe0f5c85c24b0ae9a2875}{difference\+\_\+type}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{structprism_1_1_allocator_traits_aed8a12c05f82e96f45db30e9511fa62d}{pointer} \hyperlink{structprism_1_1_allocator_traits_abef54ae79a32109024e69589b0de3a52}{allocate} (Alloc \&alloc, const \hyperlink{structprism_1_1_allocator_traits_a7cf55823ae63bccb9cf50b1e08619363}{size\+\_\+type} num)
+static \hyperlink{structprism_1_1_allocator_traits_ae6cca8a97ab96e399c40b5774f425d6f}{pointer} \hyperlink{structprism_1_1_allocator_traits_ad8369f7f86381855bc0cfa4f53acfc0e}{allocate} (\hyperlink{classprism_1_1_allocator}{Allocator} \&alloc, const \hyperlink{structprism_1_1_allocator_traits_a4de8d85d17a31ddc325c2ac079ea1910}{size\+\_\+type} num)
 \item 
-static void \hyperlink{structprism_1_1_allocator_traits_a3db6e004fc0b1c373cb732f659dea2f3}{deallocate} (Alloc \&alloc, \hyperlink{structprism_1_1_allocator_traits_aed8a12c05f82e96f45db30e9511fa62d}{pointer} p)
+static void \hyperlink{structprism_1_1_allocator_traits_a19a8de127d4cba707c6612b840e124bb}{deallocate} (\hyperlink{classprism_1_1_allocator}{Allocator} \&alloc, \hyperlink{structprism_1_1_allocator_traits_ae6cca8a97ab96e399c40b5774f425d6f}{pointer} p)
 \item 
-static void \hyperlink{structprism_1_1_allocator_traits_a2de651b66415d19edd979914c194b599}{destroy} (Alloc \&alloc, \hyperlink{structprism_1_1_allocator_traits_aed8a12c05f82e96f45db30e9511fa62d}{pointer} p)
+static void \hyperlink{structprism_1_1_allocator_traits_aa86eefa7ad0ad07e8a8dd8b41135f390}{destroy} (\hyperlink{classprism_1_1_allocator}{Allocator} \&alloc, \hyperlink{structprism_1_1_allocator_traits_ae6cca8a97ab96e399c40b5774f425d6f}{pointer} p)
 \item 
-{\footnotesize template$<$typename... Args$>$ }\\static void \hyperlink{structprism_1_1_allocator_traits_a95a22de48ba7899a021f1f1fb4420e8f}{construct} (Alloc \&alloc, \hyperlink{structprism_1_1_allocator_traits_aed8a12c05f82e96f45db30e9511fa62d}{pointer} p, Args \&\&...args)
+{\footnotesize template$<$typename... Args$>$ }\\static void \hyperlink{structprism_1_1_allocator_traits_a1dce5d5dce5ada6c42a31b87a8d5520b}{construct} (\hyperlink{classprism_1_1_allocator}{Allocator} \&alloc, \hyperlink{structprism_1_1_allocator_traits_ae6cca8a97ab96e399c40b5774f425d6f}{pointer} p, Args \&\&...args)
 \end{DoxyCompactItemize}
 
 
 \subsection{Member Typedef Documentation}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!allocator\+\_\+type@{allocator\+\_\+type}}
 \index{allocator\+\_\+type@{allocator\+\_\+type}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{allocator\+\_\+type}{allocator_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf allocator\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_a6d687c073652db923f1808e67f550fcd}{}\label{structprism_1_1_allocator_traits_a6d687c073652db923f1808e67f550fcd}
+\subsubsection[{\texorpdfstring{allocator\+\_\+type}{allocator_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf allocator\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_a5c6a9e92c53ee13c947265f07e633324}{}\label{structprism_1_1_allocator_traits_a5c6a9e92c53ee13c947265f07e633324}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!const\+\_\+pointer@{const\+\_\+pointer}}
 \index{const\+\_\+pointer@{const\+\_\+pointer}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc\+::const\+\_\+pointer {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf const\+\_\+pointer}}\hypertarget{structprism_1_1_allocator_traits_ae9bcf74e2770e54eb99f29edfce5f81e}{}\label{structprism_1_1_allocator_traits_ae9bcf74e2770e54eb99f29edfce5f81e}
+\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator\+::const\+\_\+pointer} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf const\+\_\+pointer}}\hypertarget{structprism_1_1_allocator_traits_abce8f3352b34f42a7a81bff1b5546b48}{}\label{structprism_1_1_allocator_traits_abce8f3352b34f42a7a81bff1b5546b48}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!const\+\_\+reference@{const\+\_\+reference}}
 \index{const\+\_\+reference@{const\+\_\+reference}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc\+::const\+\_\+reference {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf const\+\_\+reference}}\hypertarget{structprism_1_1_allocator_traits_a5054d2fa3ac8a0a1d6d1885143107963}{}\label{structprism_1_1_allocator_traits_a5054d2fa3ac8a0a1d6d1885143107963}
+\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator\+::const\+\_\+reference} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf const\+\_\+reference}}\hypertarget{structprism_1_1_allocator_traits_a136b98e2698754b03398194f80edbf33}{}\label{structprism_1_1_allocator_traits_a136b98e2698754b03398194f80edbf33}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!difference\+\_\+type@{difference\+\_\+type}}
 \index{difference\+\_\+type@{difference\+\_\+type}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc\+::difference\+\_\+type {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf difference\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_a8cb6d0ad1c318af0984ce70b71b4f459}{}\label{structprism_1_1_allocator_traits_a8cb6d0ad1c318af0984ce70b71b4f459}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator\+::difference\+\_\+type} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf difference\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_ac5e3111044ebe0f5c85c24b0ae9a2875}{}\label{structprism_1_1_allocator_traits_ac5e3111044ebe0f5c85c24b0ae9a2875}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!pointer@{pointer}}
 \index{pointer@{pointer}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc\+::pointer {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf pointer}}\hypertarget{structprism_1_1_allocator_traits_aed8a12c05f82e96f45db30e9511fa62d}{}\label{structprism_1_1_allocator_traits_aed8a12c05f82e96f45db30e9511fa62d}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator\+::pointer} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf pointer}}\hypertarget{structprism_1_1_allocator_traits_ae6cca8a97ab96e399c40b5774f425d6f}{}\label{structprism_1_1_allocator_traits_ae6cca8a97ab96e399c40b5774f425d6f}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!reference@{reference}}
 \index{reference@{reference}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc\+::reference {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf reference}}\hypertarget{structprism_1_1_allocator_traits_aa134d981ab397b1bb691af2da23b1ad6}{}\label{structprism_1_1_allocator_traits_aa134d981ab397b1bb691af2da23b1ad6}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator\+::reference} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf reference}}\hypertarget{structprism_1_1_allocator_traits_aee67923dfcf22628468bf2faacc31cb3}{}\label{structprism_1_1_allocator_traits_aee67923dfcf22628468bf2faacc31cb3}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!size\+\_\+type@{size\+\_\+type}}
 \index{size\+\_\+type@{size\+\_\+type}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc\+::size\+\_\+type {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf size\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_a7cf55823ae63bccb9cf50b1e08619363}{}\label{structprism_1_1_allocator_traits_a7cf55823ae63bccb9cf50b1e08619363}
+\subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator\+::size\+\_\+type} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf size\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_a4de8d85d17a31ddc325c2ac079ea1910}{}\label{structprism_1_1_allocator_traits_a4de8d85d17a31ddc325c2ac079ea1910}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!value\+\_\+type@{value\+\_\+type}}
 \index{value\+\_\+type@{value\+\_\+type}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ typedef Alloc\+::value\+\_\+type {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::{\bf value\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_a02838686d063e89d7c497fef69592265}{}\label{structprism_1_1_allocator_traits_a02838686d063e89d7c497fef69592265}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ typedef {\bf Allocator\+::value\+\_\+type} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::{\bf value\+\_\+type}}\hypertarget{structprism_1_1_allocator_traits_ab733362182b9f46d27ca6bdddaa23d67}{}\label{structprism_1_1_allocator_traits_ab733362182b9f46d27ca6bdddaa23d67}
 
 
 \subsection{Member Function Documentation}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!allocate@{allocate}}
 \index{allocate@{allocate}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{allocate(\+Alloc \&alloc, const size\+\_\+type num)}{allocate(Alloc &alloc, const size_type num)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ static {\bf pointer} {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::allocate (
+\subsubsection[{\texorpdfstring{allocate(\+Allocator \&alloc, const size\+\_\+type num)}{allocate(Allocator &alloc, const size_type num)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ static {\bf pointer} {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::allocate (
 \begin{DoxyParamCaption}
-\item[{Alloc \&}]{alloc, }
+\item[{{\bf Allocator} \&}]{alloc, }
 \item[{const {\bf size\+\_\+type}}]{num}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_abef54ae79a32109024e69589b0de3a52}{}\label{structprism_1_1_allocator_traits_abef54ae79a32109024e69589b0de3a52}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_ad8369f7f86381855bc0cfa4f53acfc0e}{}\label{structprism_1_1_allocator_traits_ad8369f7f86381855bc0cfa4f53acfc0e}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!construct@{construct}}
 \index{construct@{construct}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{construct(\+Alloc \&alloc, pointer p, Args \&\&...\+args)}{construct(Alloc &alloc, pointer p, Args &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ template$<$typename... Args$>$ static void {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::construct (
+\subsubsection[{\texorpdfstring{construct(\+Allocator \&alloc, pointer p, Args \&\&...\+args)}{construct(Allocator &alloc, pointer p, Args &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ template$<$typename... Args$>$ static void {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::construct (
 \begin{DoxyParamCaption}
-\item[{Alloc \&}]{alloc, }
+\item[{{\bf Allocator} \&}]{alloc, }
 \item[{{\bf pointer}}]{p, }
 \item[{Args \&\&...}]{args}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_a95a22de48ba7899a021f1f1fb4420e8f}{}\label{structprism_1_1_allocator_traits_a95a22de48ba7899a021f1f1fb4420e8f}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_a1dce5d5dce5ada6c42a31b87a8d5520b}{}\label{structprism_1_1_allocator_traits_a1dce5d5dce5ada6c42a31b87a8d5520b}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!deallocate@{deallocate}}
 \index{deallocate@{deallocate}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{deallocate(\+Alloc \&alloc, pointer p)}{deallocate(Alloc &alloc, pointer p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ static void {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::deallocate (
+\subsubsection[{\texorpdfstring{deallocate(\+Allocator \&alloc, pointer p)}{deallocate(Allocator &alloc, pointer p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ static void {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::deallocate (
 \begin{DoxyParamCaption}
-\item[{Alloc \&}]{alloc, }
+\item[{{\bf Allocator} \&}]{alloc, }
 \item[{{\bf pointer}}]{p}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_a3db6e004fc0b1c373cb732f659dea2f3}{}\label{structprism_1_1_allocator_traits_a3db6e004fc0b1c373cb732f659dea2f3}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_a19a8de127d4cba707c6612b840e124bb}{}\label{structprism_1_1_allocator_traits_a19a8de127d4cba707c6612b840e124bb}
 \index{prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}!destroy@{destroy}}
 \index{destroy@{destroy}!prism\+::\+Allocator\+Traits@{prism\+::\+Allocator\+Traits}}
-\subsubsection[{\texorpdfstring{destroy(\+Alloc \&alloc, pointer p)}{destroy(Alloc &alloc, pointer p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Alloc $>$ static void {\bf prism\+::\+Allocator\+Traits}$<$ Alloc $>$\+::destroy (
+\subsubsection[{\texorpdfstring{destroy(\+Allocator \&alloc, pointer p)}{destroy(Allocator &alloc, pointer p)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Allocator $>$ static void {\bf prism\+::\+Allocator\+Traits}$<$ {\bf Allocator} $>$\+::destroy (
 \begin{DoxyParamCaption}
-\item[{Alloc \&}]{alloc, }
+\item[{{\bf Allocator} \&}]{alloc, }
 \item[{{\bf pointer}}]{p}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_a2de651b66415d19edd979914c194b599}{}\label{structprism_1_1_allocator_traits_a2de651b66415d19edd979914c194b599}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{structprism_1_1_allocator_traits_aa86eefa7ad0ad07e8a8dd8b41135f390}{}\label{structprism_1_1_allocator_traits_aa86eefa7ad0ad07e8a8dd8b41135f390}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-inc/prism/h/\hyperlink{_allocator_8h}{Allocator.\+h}\end{DoxyCompactItemize}
+\hyperlink{_allocator_8h}{Allocator.\+h}\end{DoxyCompactItemize}

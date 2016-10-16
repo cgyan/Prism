@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['input_5fiterator_5ftag',['input_iterator_tag',['../structprism_1_1input__iterator__tag.html',1,'prism']]],
-  ['iterator_5ftraits',['iterator_traits',['../structprism_1_1iterator__traits.html',1,'prism']]]
+  ['flag',['Flag',['../classprism_1_1_flag.html',1,'prism']]],
+  ['flags',['Flags',['../classprism_1_1_flags.html',1,'prism']]],
+  ['forward_5fiterator_5ftag',['forward_iterator_tag',['../structprism_1_1forward__iterator__tag.html',1,'prism']]],
+  ['fraction',['Fraction',['../classprism_1_1_fraction.html',1,'prism']]]
 ];

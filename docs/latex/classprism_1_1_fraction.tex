@@ -1,9 +1,5 @@
 \hypertarget{classprism_1_1_fraction}{}\section{prism\+:\+:Fraction Class Reference}
 \label{classprism_1_1_fraction}\index{prism\+::\+Fraction@{prism\+::\+Fraction}}
-
-
-{\ttfamily \#include $<$Fraction.\+h$>$}
-
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,7 +7,7 @@
 \item 
 \hyperlink{classprism_1_1_fraction_ae6458e0578c2ddd59ce718b7808ca0ec}{Fraction} (const int \hyperlink{classprism_1_1_fraction_a1991d357549c20236a7e3008ddcc10a7}{numerator}, const int \hyperlink{classprism_1_1_fraction_af0f39f599394258c248f375c88e9c9d4}{denominator})
 \item 
-virtual \hyperlink{classprism_1_1_fraction_a1a7170988796417122c670c2139dc933}{$\sim$\+Fraction} (void)
+virtual \hyperlink{classprism_1_1_fraction_a4aca65c4a95dbfbe0c6c0588782f4813}{$\sim$\+Fraction} (void)
 \item 
 const int \hyperlink{classprism_1_1_fraction_af0f39f599394258c248f375c88e9c9d4}{denominator} () const 
 \item 
@@ -23,7 +19,7 @@ void \hyperlink{classprism_1_1_fraction_aeaa287cd1b228f2038b13e2bd54d5c96}{set\+
 \item 
 void \hyperlink{classprism_1_1_fraction_ac4ab0a9b891910381813f16ebc0261fa}{set\+Denominator} (const int \hyperlink{classprism_1_1_fraction_af0f39f599394258c248f375c88e9c9d4}{denominator})
 \item 
-\hyperlink{classprism_1_1_fraction}{Fraction} \& \hyperlink{classprism_1_1_fraction_ab30164e43aa9ce13ad3dc364b8711473}{simplify} ()
+\hyperlink{classprism_1_1_fraction}{Fraction} \& \hyperlink{classprism_1_1_fraction_a475407e9d049019e4de6b700ef196ef7}{simplify} ()
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -60,7 +56,7 @@ std\+::ostream \& \hyperlink{classprism_1_1_fraction_aae68a18403f22736f297b86717
 \item[{void}]{}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_fraction_ae66446d8d2130582811d17e547dd25e4}{}\label{classprism_1_1_fraction_ae66446d8d2130582811d17e547dd25e4}
-Creates a \hyperlink{classprism_1_1_fraction}{Fraction} object and sets its numerator and denominator to 1. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!Fraction@{Fraction}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!Fraction@{Fraction}}
 \index{Fraction@{Fraction}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{Fraction(const int numerator, const int denominator)}{Fraction(const int numerator, const int denominator)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Fraction\+::\+Fraction (
 \begin{DoxyParamCaption}
@@ -68,14 +64,14 @@ Creates a \hyperlink{classprism_1_1_fraction}{Fraction} object and sets its nume
 \item[{const int}]{denominator}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_fraction_ae6458e0578c2ddd59ce718b7808ca0ec}{}\label{classprism_1_1_fraction_ae6458e0578c2ddd59ce718b7808ca0ec}
-Creates a \hyperlink{classprism_1_1_fraction}{Fraction} object setting the numerator and denominator to the values passed in. The class will attempt to simplify the fraction. i.\+e. 4 1 --- becomes --- 8 2 \index{prism\+::\+Fraction@{prism\+::\+Fraction}!````~Fraction@{$\sim$\+Fraction}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!````~Fraction@{$\sim$\+Fraction}}
 \index{````~Fraction@{$\sim$\+Fraction}!prism\+::\+Fraction@{prism\+::\+Fraction}}
-\subsubsection[{\texorpdfstring{$\sim$\+Fraction(void)}{~Fraction(void)}}]{\setlength{\rightskip}{0pt plus 5cm}prism\+::\+Fraction\+::$\sim$\+Fraction (
+\subsubsection[{\texorpdfstring{$\sim$\+Fraction(void)}{~Fraction(void)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual prism\+::\+Fraction\+::$\sim$\+Fraction (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1_fraction_a1a7170988796417122c670c2139dc933}{}\label{classprism_1_1_fraction_a1a7170988796417122c670c2139dc933}
-Destroys this \hyperlink{classprism_1_1_fraction}{Fraction}. 
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classprism_1_1_fraction_a4aca65c4a95dbfbe0c6c0588782f4813}{}\label{classprism_1_1_fraction_a4aca65c4a95dbfbe0c6c0588782f4813}
+
 
 \subsection{Member Function Documentation}
 \index{prism\+::\+Fraction@{prism\+::\+Fraction}!denominator@{denominator}}
@@ -85,44 +81,42 @@ Destroys this \hyperlink{classprism_1_1_fraction}{Fraction}.
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_fraction_af0f39f599394258c248f375c88e9c9d4}{}\label{classprism_1_1_fraction_af0f39f599394258c248f375c88e9c9d4}
-Returns this \hyperlink{classprism_1_1_fraction}{Fraction}\textquotesingle{}s denominator. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!numerator@{numerator}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!numerator@{numerator}}
 \index{numerator@{numerator}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{numerator() const }{numerator() const }}]{\setlength{\rightskip}{0pt plus 5cm}const int prism\+::\+Fraction\+::numerator (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_fraction_a1991d357549c20236a7e3008ddcc10a7}{}\label{classprism_1_1_fraction_a1991d357549c20236a7e3008ddcc10a7}
-Returns this \hyperlink{classprism_1_1_fraction}{Fraction}\textquotesingle{}s numerator. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!reciprocal@{reciprocal}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!reciprocal@{reciprocal}}
 \index{reciprocal@{reciprocal}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{reciprocal() const }{reciprocal() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} prism\+::\+Fraction\+::reciprocal (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_fraction_aab12f13967ca16e8956618f9d0641c31}{}\label{classprism_1_1_fraction_aab12f13967ca16e8956618f9d0641c31}
-Returns a new \hyperlink{classprism_1_1_fraction}{Fraction} that is the reciprocal of this fraction. i.\+e. the numerator and denominator are swapped around. 1 2 The reciprocal of --- is --- 2 1 Any fraction multiplied by its own reciprocal will always equal 1. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!set\+Denominator@{set\+Denominator}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!set\+Denominator@{set\+Denominator}}
 \index{set\+Denominator@{set\+Denominator}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{set\+Denominator(const int denominator)}{setDenominator(const int denominator)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Fraction\+::set\+Denominator (
 \begin{DoxyParamCaption}
 \item[{const int}]{denominator}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_fraction_ac4ab0a9b891910381813f16ebc0261fa}{}\label{classprism_1_1_fraction_ac4ab0a9b891910381813f16ebc0261fa}
-Sets this \hyperlink{classprism_1_1_fraction}{Fraction}\textquotesingle{}s denominator to /em denominator. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!set\+Numerator@{set\+Numerator}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!set\+Numerator@{set\+Numerator}}
 \index{set\+Numerator@{set\+Numerator}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{set\+Numerator(const int numerator)}{setNumerator(const int numerator)}}]{\setlength{\rightskip}{0pt plus 5cm}void prism\+::\+Fraction\+::set\+Numerator (
 \begin{DoxyParamCaption}
 \item[{const int}]{numerator}
 \end{DoxyParamCaption}
 )}\hypertarget{classprism_1_1_fraction_aeaa287cd1b228f2038b13e2bd54d5c96}{}\label{classprism_1_1_fraction_aeaa287cd1b228f2038b13e2bd54d5c96}
-Sets this \hyperlink{classprism_1_1_fraction}{Fraction}\textquotesingle{}s numerator to /em numerator. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!simplify@{simplify}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!simplify@{simplify}}
 \index{simplify@{simplify}!prism\+::\+Fraction@{prism\+::\+Fraction}}
-\subsubsection[{\texorpdfstring{simplify()}{simplify()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} \& prism\+::\+Fraction\+::simplify (
+\subsubsection[{\texorpdfstring{simplify()}{simplify()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction}\& prism\+::\+Fraction\+::simplify (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}\hypertarget{classprism_1_1_fraction_ab30164e43aa9ce13ad3dc364b8711473}{}\label{classprism_1_1_fraction_ab30164e43aa9ce13ad3dc364b8711473}
-\subsubsection*{8 }
+)}\hypertarget{classprism_1_1_fraction_a475407e9d049019e4de6b700ef196ef7}{}\label{classprism_1_1_fraction_a475407e9d049019e4de6b700ef196ef7}
 
-16 
 
 \subsection{Friends And Related Function Documentation}
 \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator"!=@{operator"!=}}
@@ -133,7 +127,7 @@ Sets this \hyperlink{classprism_1_1_fraction}{Fraction}\textquotesingle{}s numer
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a2469410854b8425a70b1489afa5651d5}{}\label{classprism_1_1_fraction_a2469410854b8425a70b1489afa5651d5}
-Returns true if /em f1 does not equal /em f2 in value, false otherwise. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$\ast$@{operator$\ast$}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -141,7 +135,7 @@ Returns true if /em f1 does not equal /em f2 in value, false otherwise. \index{p
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_ad106ee756801021779f14e992439db4a}{}\label{classprism_1_1_fraction_ad106ee756801021779f14e992439db4a}
-Multiplies /em f1 and /em f2 together and returns a new \hyperlink{classprism_1_1_fraction}{Fraction}. \hyperlink{classprism_1_1_fraction}{Fraction} multiplication is the easiest arithmetical operation. Simply multiply the two numerators together to form the new numerator and multiply the two denominators together to form the new denominator. e.\+g. 2 8 2x8 16 4 --- x --- = --- = --- = --- 5 4 5x4 20 5 \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$\ast$@{operator$\ast$}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -149,7 +143,7 @@ Multiplies /em f1 and /em f2 together and returns a new \hyperlink{classprism_1_
 \item[{const int}]{i}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a00eb461e6959195ce533d9d8f9b0855d}{}\label{classprism_1_1_fraction_a00eb461e6959195ce533d9d8f9b0855d}
-Multiplies the \hyperlink{classprism_1_1_fraction}{Fraction} /em fraction by the whole number /em i. Returns a new \hyperlink{classprism_1_1_fraction}{Fraction}. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$\ast$@{operator$\ast$}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$\ast$@{operator$\ast$}}
 \index{operator$\ast$@{operator$\ast$}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator$\ast$}{operator*}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator$\ast$ (
 \begin{DoxyParamCaption}
@@ -157,7 +151,7 @@ Multiplies the \hyperlink{classprism_1_1_fraction}{Fraction} /em fraction by the
 \item[{const {\bf Fraction} \&}]{fraction}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a2f76d38f8274375542a97c3154af16eb}{}\label{classprism_1_1_fraction_a2f76d38f8274375542a97c3154af16eb}
-Multiplies the whole number /em i by the \hyperlink{classprism_1_1_fraction}{Fraction} /em fraction. Returns a new \hyperlink{classprism_1_1_fraction}{Fraction}. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator+@{operator+}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator+@{operator+}}
 \index{operator+@{operator+}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator+}{operator+}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator+ (
 \begin{DoxyParamCaption}
@@ -165,7 +159,7 @@ Multiplies the whole number /em i by the \hyperlink{classprism_1_1_fraction}{Fra
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a225c4aec1a9cdd366b04be2642ecf3bc}{}\label{classprism_1_1_fraction_a225c4aec1a9cdd366b04be2642ecf3bc}
-Adds the fractions /em f1 and /em f2 together and returns a new \hyperlink{classprism_1_1_fraction}{Fraction}. If the two denominators are the same then the two numerators are added together to form the new numerator and the original denominator is kept the same. e.\+g. 1 1 2 --- + --- = --- 4 4 4 If the denominators are different then we alter the fractions in order to make both denominators the same value. We make a whole fraction out of the second fraction\textquotesingle{}s denominator and multiply it by the first fraction. Then make a whole fraction from the first fraction\textquotesingle{}s denominator and multiply it by the second fraction. Now we can simply add together the two numerators and keep the denominator the same. 1 1 $\vert$ 4 1 $\vert$ $\vert$ 1 2 $\vert$ 4 2 6 3 --- + --- = $\vert$--- x ---$\vert$ + $\vert$--- x ---$\vert$ = --- + --- = --- = --- 2 4 $\vert$ 4 2 $\vert$ $\vert$ 4 2 $\vert$ 8 8 8 4 \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator-\/@{operator-\/}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator-\/@{operator-\/}}
 \index{operator-\/@{operator-\/}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator-\/}{operator-}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator-\/ (
 \begin{DoxyParamCaption}
@@ -173,7 +167,7 @@ Adds the fractions /em f1 and /em f2 together and returns a new \hyperlink{class
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_aa93e0ab89fa477f3b044cf5826df7c14}{}\label{classprism_1_1_fraction_aa93e0ab89fa477f3b044cf5826df7c14}
-Subtracts the fractions /em f1 and /em f2 and returns a new \hyperlink{classprism_1_1_fraction}{Fraction}. If the two denominators are the same then the two numerators are subtracted to form the new numerator and the original denominator is kept the same. e.\+g. 3 1 2 --- -\/ --- = --- 4 4 4 If the denominators are different then we alter the fractions in order to make both denominators the same value. We make a whole fraction out of the second fraction\textquotesingle{}s denominator and multiply it by the first fraction. Then make a whole fraction from the first fraction\textquotesingle{}s denominator and multiply it by the second fraction. Now we can simply subtract the two numerators and keep the denominator the same. 3 1 $\vert$ 2 3 $\vert$ $\vert$ 1 4 $\vert$ 6 4 2 1 --- -\/ --- = $\vert$--- x ---$\vert$ -\/ $\vert$--- x ---$\vert$ = --- -\/ --- = --- = --- 4 2 $\vert$ 2 4 $\vert$ $\vert$ 2 4 $\vert$ 8 8 8 4 \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator/@{operator/}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator/@{operator/}}
 \index{operator/@{operator/}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator/}{operator/}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Fraction} operator/ (
 \begin{DoxyParamCaption}
@@ -181,7 +175,7 @@ Subtracts the fractions /em f1 and /em f2 and returns a new \hyperlink{classpris
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a2a185031bd64d6b227509aeacf3b5c69}{}\label{classprism_1_1_fraction_a2a185031bd64d6b227509aeacf3b5c69}
-Divides /em f1 by /em f2 and returns a new \hyperlink{classprism_1_1_fraction}{Fraction}. \hyperlink{classprism_1_1_fraction}{Fraction} division is achieved by taking the reciprocal of the second fraction and multiplying it against the first fraction. See /em \hyperlink{classprism_1_1_fraction_aab12f13967ca16e8956618f9d0641c31}{Fraction\+::reciprocal()} for more information. 3 2 3 7 21 --- / --- = --- $\ast$ --- = --- 4 7 4 2 8 \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$<$@{operator$<$}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator$<$}{operator<}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator$<$ (
 \begin{DoxyParamCaption}
@@ -189,7 +183,7 @@ Divides /em f1 by /em f2 and returns a new \hyperlink{classprism_1_1_fraction}{F
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a557b4641e321113411fe440a2bc4e9cb}{}\label{classprism_1_1_fraction_a557b4641e321113411fe440a2bc4e9cb}
-Returns true if /em f1 is less than /em f2, false otherwise. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$<$$<$@{operator$<$$<$}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
 \begin{DoxyParamCaption}
@@ -197,7 +191,7 @@ Returns true if /em f1 is less than /em f2, false otherwise. \index{prism\+::\+F
 \item[{const {\bf Fraction} \&}]{f}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_aae68a18403f22736f297b8671746f144}{}\label{classprism_1_1_fraction_aae68a18403f22736f297b8671746f144}
-Allows an instance of \hyperlink{classprism_1_1_fraction}{Fraction} to be written to the ostream and returns a reference to the ostream. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator==@{operator==}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator==@{operator==}}
 \index{operator==@{operator==}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator==}{operator==}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator== (
 \begin{DoxyParamCaption}
@@ -205,7 +199,7 @@ Allows an instance of \hyperlink{classprism_1_1_fraction}{Fraction} to be writte
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a061d9325f891c3601d892edce079652b}{}\label{classprism_1_1_fraction_a061d9325f891c3601d892edce079652b}
-Returns true if /em f1 and /em f2 are equal in value. \index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$>$@{operator$>$}}
+\index{prism\+::\+Fraction@{prism\+::\+Fraction}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!prism\+::\+Fraction@{prism\+::\+Fraction}}
 \subsubsection[{\texorpdfstring{operator$>$}{operator>}}]{\setlength{\rightskip}{0pt plus 5cm}const bool operator$>$ (
 \begin{DoxyParamCaption}
@@ -213,9 +207,8 @@ Returns true if /em f1 and /em f2 are equal in value. \index{prism\+::\+Fraction
 \item[{const {\bf Fraction} \&}]{f2}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classprism_1_1_fraction_a4307a97fd1a744418e8e2d64fb05ffd5}{}\label{classprism_1_1_fraction_a4307a97fd1a744418e8e2d64fb05ffd5}
-Returns true if /em f1 is less than /em f2, false otherwise. 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-inc/prism/h/\hyperlink{_fraction_8h}{Fraction.\+h}\item 
-src/prism/\hyperlink{_fraction_8cpp}{Fraction.\+cpp}\end{DoxyCompactItemize}
+\hyperlink{_fraction_8h}{Fraction.\+h}\end{DoxyCompactItemize}

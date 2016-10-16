@@ -4,18 +4,10 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism: Member List</title>
+<title>Prism API: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -30,8 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.jpeg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Prism
+   <div id="projectname">Prism API
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -76,21 +71,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('classprism_1_1_bitvector.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -105,6 +85,11 @@ $(document).ready(function(){initNavTree('classprism_1_1_bitvector.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceprism.html">prism</a></li><li class="navelem"><a class="el" href="classprism_1_1_bitvector.html">Bitvector</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">prism::Bitvector Member List</div>  </div>
@@ -126,20 +111,20 @@ $(document).ready(function(){initNavTree('classprism_1_1_bitvector.html','');});
   <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a33d1e72acbab4fb32eb24ddf72adc0cd">none</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a085f70a7612a9fc1dd410533d09fa6fc">operator!=</a>(const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#aacc3670e298003822cf25f68fce7cbe0">operator&amp;</a>(const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#add4358afe6add8467aa32428cb13f823">operator&amp;=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#afd47ac6d8d5fbf7df4d023e7c9372910">operator&amp;=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a0d5163be9867dee195648df83273076a">operator&lt;&lt;</a>(const int pos) const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a5082ad1e850f0d821b1310ab1ff1dc60">operator&lt;&lt;</a>(std::ostream &amp;out, const Bitvector &amp;bv)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#acf4750aad13fcdb2c1cc3f301ec6debf">operator&lt;&lt;=</a>(const int pos)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a84f45db3420a5ef90d64997823924dc9">operator=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ad319cf0952bce359ff96064b3a416236">operator&lt;&lt;</a>(ostream &amp;out, const Bitvector &amp;bv)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ada3bdffa3bca43fb6b5e7d96406a9dc9">operator&lt;&lt;=</a>(const int pos)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#add25f2ac860e58eaa9b8a72acba0c268">operator=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ab73504943fa9f2b6d0bbaef200ba4088">operator==</a>(const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a8cb5d12bfecf59503a0e9d9e4bbfa0e8">operator&gt;&gt;</a>(const int pos) const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a540f30c24a85e912c2a5d1d37241b89a">operator&gt;&gt;=</a>(const int pos)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ada0c61efb01e9df44e8fab30788cd1fc">operator&gt;&gt;=</a>(const int pos)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ab73a3eac53e5df3dc80486eddd1b8f3c">operator[]</a>(const int bit)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a2fcdd5ed5190df6a211e85c0b77a125a">operator[]</a>(const int bit) const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a774fe42b1254399adc7b8c6646f7cab3">operator^</a>(const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a5b4ba0d10a0b620cebc0d8676180ed72">operator^=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#af09a9046b02c3f55db4f68b6d8b3ca67">operator^=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a7da9252d437ed366b78e5f728f20ab8d">operator|</a>(const Bitvector &amp;bv1, const Bitvector &amp;bv2)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ab11cf7a1216570e16f90f4390eb623ff">operator|=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a09b0870c2040786f6fbb0e261760fa2c">operator|=</a>(const Bitvector &amp;other)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ad5b9a350288e1f843f905de537215248">operator~</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#abdf123d4a94086c5525ce7d8eed8a6e3">resetAll</a>()</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#af6dd4b91e57bb6a95f30c55fdb1ce6a5">set</a>(int bit, const bool b=true)</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
@@ -147,16 +132,13 @@ $(document).ready(function(){initNavTree('classprism_1_1_bitvector.html','');});
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#aefc31462d8a52013191e0df4f45ccae4">size</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#abc220bdae95129cf71bb8ec70a877899">string</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#a63cc622f069e65f1b55e920927c3dc66">ull</a>() const </td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#ac68d7732ae33ccded5b5ef5971280c6d">~Bitvector</a>()</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classprism_1_1_bitvector.html#af3156224afd596027bf9dca1171bd9a5">~Bitvector</a>()</td><td class="entry"><a class="el" href="classprism_1_1_bitvector.html">prism::Bitvector</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
 </body>
 </html>

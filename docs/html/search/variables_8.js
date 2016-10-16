@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['m_5fheader',['m_header',['../classprism_1_1_list.html#ade9dd1234d468fdcbcddb16eb490d296',1,'prism::List']]],
-  ['m_5fsize',['m_size',['../classprism_1_1_list.html#ae86f48e50ec12239597de98deb36b4a4',1,'prism::List']]],
-  ['m_5ftailer',['m_tailer',['../classprism_1_1_list.html#a0740989f0d5af2bad19850fac850947e',1,'prism::List']]],
-  ['message',['message',['../structtesting_1_1internal_1_1_trace_info.html#a39e74f39ce6d5fdbac799abdb1c27f90',1,'testing::internal::TraceInfo']]],
-  ['msg',['msg',['../classprism_1_1_exception.html#ab768e96bc8a3f617b3420e19a18caf9f',1,'prism::Exception']]]
+  ['right',['right',['../structprism_1_1_b_s_t_node.html#a4d29a1dc9bcb5f6fb5b73e0bdfc1ace0',1,'prism::BSTNode']]]
 ];

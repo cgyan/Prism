@@ -1,0 +1,204 @@
+\hypertarget{structprism_1_1_b_s_t_data}{}\section{prism\+:\+:B\+S\+T\+Data$<$ Key, Value, Compare, Node\+Allocator $>$ Struct Template Reference}
+\label{structprism_1_1_b_s_t_data}\index{prism\+::\+B\+S\+T\+Data$<$ Key, Value, Compare, Node\+Allocator $>$@{prism\+::\+B\+S\+T\+Data$<$ Key, Value, Compare, Node\+Allocator $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structprism_1_1_associative_iterator}{Associative\+Iterator}$<$ Key, Value, \hyperlink{structprism_1_1_b_s_t_node}{Node}, false $>$ \hyperlink{structprism_1_1_b_s_t_data_a45bbf30d426440d4c346529f898b840c}{iterator}
+\item 
+typedef \hyperlink{structprism_1_1_associative_iterator}{Associative\+Iterator}$<$ Key, Value, \hyperlink{structprism_1_1_b_s_t_node}{Node}, true $>$ \hyperlink{structprism_1_1_b_s_t_data_ae697fd0ffd6d0bbd6744baa8882fb812}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structprism_1_1_b_s_t_data_a1b8209d72c9f9d20af5cd9a3437b1e31}{B\+S\+T\+Data} ()
+\item 
+\hyperlink{structprism_1_1_b_s_t_data_a81aec41313ed886f7a644426e0fbb085}{$\sim$\+B\+S\+T\+Data} ()
+\item 
+\hyperlink{structprism_1_1_b_s_t_data_a45bbf30d426440d4c346529f898b840c}{iterator} \hyperlink{structprism_1_1_b_s_t_data_a54d85dcf54692e74cbf0a3987c31cab5}{begin} () const 
+\item 
+void \hyperlink{structprism_1_1_b_s_t_data_a2537da968412165d17c4e4b96cda6a35}{clear} ()
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\\hyperlink{structprism_1_1_b_s_t_node}{node\+\_\+pointer} \hyperlink{structprism_1_1_b_s_t_data_ae962d4b902646a46ca9394807a4fcfdd}{create\+Node} (Args \&\&...args)
+\item 
+void \hyperlink{structprism_1_1_b_s_t_data_a5a1650da477520956d376d76c246109b}{destroy\+Node} (\hyperlink{structprism_1_1_b_s_t_node}{node\+\_\+pointer} node)
+\item 
+void \hyperlink{structprism_1_1_b_s_t_data_abb77a6927e5acadc24ce02c151ce7689}{decrement\+Node\+Count} ()
+\item 
+\hyperlink{structprism_1_1_b_s_t_data_a45bbf30d426440d4c346529f898b840c}{iterator} \hyperlink{structprism_1_1_b_s_t_data_a0e48ef085fdd00273752b145fe4c1b08}{end} () const 
+\item 
+void \hyperlink{structprism_1_1_b_s_t_data_acd7c184bc02a244c67b983465be72a21}{erase} (const Key \&key)
+\item 
+void \hyperlink{structprism_1_1_b_s_t_data_a652a5f6f0936ce186ccd9c282ecf7ec6}{erase} (\hyperlink{structprism_1_1_b_s_t_node}{node\+\_\+pointer} node)
+\item 
+\hyperlink{structprism_1_1_b_s_t_data_a45bbf30d426440d4c346529f898b840c}{iterator} \hyperlink{structprism_1_1_b_s_t_data_ae4cec2adf1600132604e17aa1fc5a872}{find} (const Key \&key)
+\item 
+\hyperlink{structprism_1_1_b_s_t_node}{node\+\_\+pointer} \hyperlink{structprism_1_1_b_s_t_data_a220dbf271545ae3163b22a7e0403c397}{find\+Node} (const Key \&key)
+\item 
+void \hyperlink{structprism_1_1_b_s_t_data_a60dc1cbae77145e214a06009babfef4a}{increment\+Node\+Count} ()
+\item 
+\hyperlink{structprism_1_1_b_s_t_data_a45bbf30d426440d4c346529f898b840c}{iterator} \hyperlink{structprism_1_1_b_s_t_data_a791c56b40962b32cd4df9e30e6b95267}{insert} (const Key \&key, const Value \&value)
+\item 
+int \hyperlink{structprism_1_1_b_s_t_data_ae212f01cf0e019d0359b28e88d91d2d2}{node\+Count} () const 
+\item 
+void \hyperlink{structprism_1_1_b_s_t_data_a4f8fa8ab8515c3b77b7bbc02c60aef50}{transplant} (\hyperlink{structprism_1_1_b_s_t_node}{node\+\_\+pointer} u, \hyperlink{structprism_1_1_b_s_t_node}{node\+\_\+pointer} v)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structprism_1_1_b_s_t_node}{node\+\_\+pointer} \hyperlink{structprism_1_1_b_s_t_data_afb5f96097c1713e1d86b1c38d831d5fe}{m\+\_\+root}
+\item 
+int \hyperlink{structprism_1_1_b_s_t_data_a99e476b247ff0230b1ce077634e5b445}{m\+\_\+nodecount}
+\item 
+\hyperlink{structprism_1_1_b_s_t_memory}{Memory} \hyperlink{structprism_1_1_b_s_t_data_aa6f2a5e9475beddec8574677bb8ee997}{m\+\_\+storage}
+\item 
+Compare \hyperlink{structprism_1_1_b_s_t_data_a95cbe7359527a366839716a1d173d0a7}{m\+\_\+key\+Compare}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{const\+\_\+iterator}{const_iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ typedef {\bf Associative\+Iterator}$<$Key,Value,{\bf Node},true$>$ {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::{\bf const\+\_\+iterator}}\hypertarget{structprism_1_1_b_s_t_data_ae697fd0ffd6d0bbd6744baa8882fb812}{}\label{structprism_1_1_b_s_t_data_ae697fd0ffd6d0bbd6744baa8882fb812}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!iterator@{iterator}}
+\index{iterator@{iterator}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ typedef {\bf Associative\+Iterator}$<$Key,Value,{\bf Node},false$>$ {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::{\bf iterator}}\hypertarget{structprism_1_1_b_s_t_data_a45bbf30d426440d4c346529f898b840c}{}\label{structprism_1_1_b_s_t_data_a45bbf30d426440d4c346529f898b840c}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!B\+S\+T\+Data@{B\+S\+T\+Data}}
+\index{B\+S\+T\+Data@{B\+S\+T\+Data}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{B\+S\+T\+Data()}{BSTData()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::{\bf B\+S\+T\+Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a1b8209d72c9f9d20af5cd9a3437b1e31}{}\label{structprism_1_1_b_s_t_data_a1b8209d72c9f9d20af5cd9a3437b1e31}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!````~B\+S\+T\+Data@{$\sim$\+B\+S\+T\+Data}}
+\index{````~B\+S\+T\+Data@{$\sim$\+B\+S\+T\+Data}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{$\sim$\+B\+S\+T\+Data()}{~BSTData()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::$\sim${\bf B\+S\+T\+Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a81aec41313ed886f7a644426e0fbb085}{}\label{structprism_1_1_b_s_t_data_a81aec41313ed886f7a644426e0fbb085}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!begin@{begin}}
+\index{begin@{begin}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{begin() const }{begin() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf iterator} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a54d85dcf54692e74cbf0a3987c31cab5}{}\label{structprism_1_1_b_s_t_data_a54d85dcf54692e74cbf0a3987c31cab5}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!clear@{clear}}
+\index{clear@{clear}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ void {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a2537da968412165d17c4e4b96cda6a35}{}\label{structprism_1_1_b_s_t_data_a2537da968412165d17c4e4b96cda6a35}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!create\+Node@{create\+Node}}
+\index{create\+Node@{create\+Node}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{create\+Node(\+Args \&\&...\+args)}{createNode(Args &&...args)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ template$<$typename... Args$>$ {\bf node\+\_\+pointer} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::create\+Node (
+\begin{DoxyParamCaption}
+\item[{Args \&\&...}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_ae962d4b902646a46ca9394807a4fcfdd}{}\label{structprism_1_1_b_s_t_data_ae962d4b902646a46ca9394807a4fcfdd}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!decrement\+Node\+Count@{decrement\+Node\+Count}}
+\index{decrement\+Node\+Count@{decrement\+Node\+Count}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{decrement\+Node\+Count()}{decrementNodeCount()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ void {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::decrement\+Node\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_abb77a6927e5acadc24ce02c151ce7689}{}\label{structprism_1_1_b_s_t_data_abb77a6927e5acadc24ce02c151ce7689}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!destroy\+Node@{destroy\+Node}}
+\index{destroy\+Node@{destroy\+Node}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{destroy\+Node(node\+\_\+pointer node)}{destroyNode(node_pointer node)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ void {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::destroy\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf node\+\_\+pointer}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a5a1650da477520956d376d76c246109b}{}\label{structprism_1_1_b_s_t_data_a5a1650da477520956d376d76c246109b}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!end@{end}}
+\index{end@{end}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{end() const }{end() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf iterator} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a0e48ef085fdd00273752b145fe4c1b08}{}\label{structprism_1_1_b_s_t_data_a0e48ef085fdd00273752b145fe4c1b08}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!erase@{erase}}
+\index{erase@{erase}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{erase(const Key \&key)}{erase(const Key &key)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ void {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const Key \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_acd7c184bc02a244c67b983465be72a21}{}\label{structprism_1_1_b_s_t_data_acd7c184bc02a244c67b983465be72a21}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!erase@{erase}}
+\index{erase@{erase}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{erase(node\+\_\+pointer node)}{erase(node_pointer node)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ void {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{{\bf node\+\_\+pointer}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a652a5f6f0936ce186ccd9c282ecf7ec6}{}\label{structprism_1_1_b_s_t_data_a652a5f6f0936ce186ccd9c282ecf7ec6}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!find@{find}}
+\index{find@{find}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{find(const Key \&key)}{find(const Key &key)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf iterator} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const Key \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_ae4cec2adf1600132604e17aa1fc5a872}{}\label{structprism_1_1_b_s_t_data_ae4cec2adf1600132604e17aa1fc5a872}
+Returns an iterator to the node containing {\itshape key} or an iterator pointing to {\itshape \hyperlink{structprism_1_1_b_s_t_data_a0e48ef085fdd00273752b145fe4c1b08}{end()}} if a matching key is not found. \index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!find\+Node@{find\+Node}}
+\index{find\+Node@{find\+Node}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{find\+Node(const Key \&key)}{findNode(const Key &key)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf node\+\_\+pointer} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::find\+Node (
+\begin{DoxyParamCaption}
+\item[{const Key \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a220dbf271545ae3163b22a7e0403c397}{}\label{structprism_1_1_b_s_t_data_a220dbf271545ae3163b22a7e0403c397}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!increment\+Node\+Count@{increment\+Node\+Count}}
+\index{increment\+Node\+Count@{increment\+Node\+Count}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{increment\+Node\+Count()}{incrementNodeCount()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ void {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::increment\+Node\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a60dc1cbae77145e214a06009babfef4a}{}\label{structprism_1_1_b_s_t_data_a60dc1cbae77145e214a06009babfef4a}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!insert@{insert}}
+\index{insert@{insert}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{insert(const Key \&key, const Value \&value)}{insert(const Key &key, const Value &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf iterator} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const Key \&}]{key, }
+\item[{const Value \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a791c56b40962b32cd4df9e30e6b95267}{}\label{structprism_1_1_b_s_t_data_a791c56b40962b32cd4df9e30e6b95267}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!node\+Count@{node\+Count}}
+\index{node\+Count@{node\+Count}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{node\+Count() const }{nodeCount() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ int {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::node\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_ae212f01cf0e019d0359b28e88d91d2d2}{}\label{structprism_1_1_b_s_t_data_ae212f01cf0e019d0359b28e88d91d2d2}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!transplant@{transplant}}
+\index{transplant@{transplant}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{transplant(node\+\_\+pointer u, node\+\_\+pointer v)}{transplant(node_pointer u, node_pointer v)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ void {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::transplant (
+\begin{DoxyParamCaption}
+\item[{{\bf node\+\_\+pointer}}]{u, }
+\item[{{\bf node\+\_\+pointer}}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_b_s_t_data_a4f8fa8ab8515c3b77b7bbc02c60aef50}{}\label{structprism_1_1_b_s_t_data_a4f8fa8ab8515c3b77b7bbc02c60aef50}
+
+
+\subsection{Member Data Documentation}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!m\+\_\+key\+Compare@{m\+\_\+key\+Compare}}
+\index{m\+\_\+key\+Compare@{m\+\_\+key\+Compare}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{m\+\_\+key\+Compare}{m_keyCompare}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ Compare {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::m\+\_\+key\+Compare}\hypertarget{structprism_1_1_b_s_t_data_a95cbe7359527a366839716a1d173d0a7}{}\label{structprism_1_1_b_s_t_data_a95cbe7359527a366839716a1d173d0a7}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!m\+\_\+nodecount@{m\+\_\+nodecount}}
+\index{m\+\_\+nodecount@{m\+\_\+nodecount}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{m\+\_\+nodecount}{m_nodecount}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ int {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::m\+\_\+nodecount}\hypertarget{structprism_1_1_b_s_t_data_a99e476b247ff0230b1ce077634e5b445}{}\label{structprism_1_1_b_s_t_data_a99e476b247ff0230b1ce077634e5b445}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!m\+\_\+root@{m\+\_\+root}}
+\index{m\+\_\+root@{m\+\_\+root}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{m\+\_\+root}{m_root}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf node\+\_\+pointer} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::m\+\_\+root}\hypertarget{structprism_1_1_b_s_t_data_afb5f96097c1713e1d86b1c38d831d5fe}{}\label{structprism_1_1_b_s_t_data_afb5f96097c1713e1d86b1c38d831d5fe}
+\index{prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}!m\+\_\+storage@{m\+\_\+storage}}
+\index{m\+\_\+storage@{m\+\_\+storage}!prism\+::\+B\+S\+T\+Data@{prism\+::\+B\+S\+T\+Data}}
+\subsubsection[{\texorpdfstring{m\+\_\+storage}{m_storage}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Compare , class Node\+Allocator $>$ {\bf Memory} {\bf prism\+::\+B\+S\+T\+Data}$<$ Key, Value, Compare, Node\+Allocator $>$\+::m\+\_\+storage}\hypertarget{structprism_1_1_b_s_t_data_aa6f2a5e9475beddec8574677bb8ee997}{}\label{structprism_1_1_b_s_t_data_aa6f2a5e9475beddec8574677bb8ee997}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_binary_search_tree_8h}{Binary\+Search\+Tree.\+h}\end{DoxyCompactItemize}

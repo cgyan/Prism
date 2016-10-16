@@ -30,8 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Prism
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +49,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -108,25 +111,85 @@ $(document).ready(function(){initNavTree('structprism_1_1_bitvector_data.html','
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structprism_1_1_bitvector_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">prism::BitvectorData Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_bitvector_8h_source.html">Bitvector.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_bitvector_data_1_1memory.html">memory</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a64584940a3ca3556048e95b22ac4d5dd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_bitvector_data.html#a64584940a3ca3556048e95b22ac4d5dd">numChunks</a> (const int nBits) const </td></tr>
+<tr class="separator:a64584940a3ca3556048e95b22ac4d5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d6a154da2f0734439a21694119834fa"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_bitvector_data.html#a0d6a154da2f0734439a21694119834fa">rangeCheck</a> (const int n) const </td></tr>
+<tr class="separator:a0d6a154da2f0734439a21694119834fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40f25a068b90247edcbd4f34fa2a18f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_bitvector_data.html#ae40f25a068b90247edcbd4f34fa2a18f">reserve</a> (const int nChunks)</td></tr>
+<tr class="separator:ae40f25a068b90247edcbd4f34fa2a18f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:abcf70b2679d4c52bf398a1a308aca5c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structprism_1_1_bitvector_data_1_1memory.html">memory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_bitvector_data.html#abcf70b2679d4c52bf398a1a308aca5c2">storage</a></td></tr>
 <tr class="separator:abcf70b2679d4c52bf398a1a308aca5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a64584940a3ca3556048e95b22ac4d5dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int prism::BitvectorData::numChunks </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nBits</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method that returns the number of chunks needed to hold <em>nBits</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0d6a154da2f0734439a21694119834fa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::BitvectorData::rangeCheck </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method that performs a bounds check on the index <em>n</em>. Returns true if <em>n</em> is is within bounds and false if not. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae40f25a068b90247edcbd4f34fa2a18f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void prism::BitvectorData::reserve </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nChunks</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method that reserves enough memory to contain the bits required. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="abcf70b2679d4c52bf398a1a308aca5c2"></a>
 <div class="memitem">
@@ -141,7 +204,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>inc/prism/h/<a class="el" href="_bitvector_8h_source.html">Bitvector.h</a></li>
+<li><a class="el" href="_bitvector_8cpp.html">Bitvector.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

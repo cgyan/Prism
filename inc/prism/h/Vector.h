@@ -131,6 +131,6 @@ private:
 
 } // end namespace prism
 
-#include <prism/h/Vector_priv.h>
+#include <prism/h/priv/Vector_priv.h>
 
 #endif /* PRISM_VECTOR_H_ */

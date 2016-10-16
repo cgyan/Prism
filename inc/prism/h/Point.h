@@ -16,15 +16,15 @@ public:
 	Point(const Point & copy);
 	~Point(void);
 
-	void reset();
-	const bool isReset() const;
-	void set(const int x, const int y);
-	void setX(const int x);
-	void setY(const int y);
-	const int x() const;
-	const int y() const;
-	int & rx();
-	int & ry();
+	void 		reset();
+	const bool 	isReset() const;
+	void 		set(const int x, const int y);
+	void 		setX(const int x);
+	void 		setY(const int y);
+	const int 	x() const;
+	const int 	y() const;
+	int & 		rx();
+	int & 		ry();
 	
 	Point & operator=(const Point & p);
 	Point & operator+=(const Point & p);

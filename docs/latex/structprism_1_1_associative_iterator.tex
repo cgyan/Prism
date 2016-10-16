@@ -1,0 +1,210 @@
+\hypertarget{structprism_1_1_associative_iterator}{}\section{prism\+:\+:Associative\+Iterator$<$ Key, Value, Node, is\+Const $>$ Struct Template Reference}
+\label{structprism_1_1_associative_iterator}\index{prism\+::\+Associative\+Iterator$<$ Key, Value, Node, is\+Const $>$@{prism\+::\+Associative\+Iterator$<$ Key, Value, Node, is\+Const $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structprism_1_1_associative_iterator}{Associative\+Iterator}$<$ Key, Value, Node, false $>$ \hyperlink{structprism_1_1_associative_iterator_a1c18ef8b4a02324bfdbf541b023ecc6b}{iterator}
+\item 
+typedef \hyperlink{structprism_1_1_associative_iterator}{Associative\+Iterator}$<$ Key, Value, Node, true $>$ \hyperlink{structprism_1_1_associative_iterator_ab372de0dedeecc03d00f577af3380ef2}{const\+\_\+iterator}
+\item 
+typedef Node $\ast$ \hyperlink{structprism_1_1_associative_iterator_a73a0ddce41b285bf48fb0ef3411f6557}{node\+\_\+pointer}
+\item 
+typedef \hyperlink{structprism_1_1pair}{prism\+::pair}$<$ Key, Value $>$ \hyperlink{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{value\+\_\+type}
+\item 
+typedef const \hyperlink{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{value\+\_\+type} \hyperlink{structprism_1_1_associative_iterator_af94d581c385f29b0bf624dc03118132d}{const\+\_\+reference}
+\item 
+typedef const \hyperlink{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{value\+\_\+type} $\ast$ \hyperlink{structprism_1_1_associative_iterator_ae3b9ad6e27c4f13d0585adf4484e986a}{const\+\_\+pointer}
+\item 
+typedef size\+\_\+t \hyperlink{structprism_1_1_associative_iterator_af2e25b2482537eb7d89dbf497befd607}{size\+\_\+type}
+\item 
+typedef std\+::ptrdiff\+\_\+t \hyperlink{structprism_1_1_associative_iterator_a9ecd67af2f6f28f29ece181d452f162a}{difference\+\_\+type}
+\item 
+typedef \hyperlink{structprism_1_1bidirectional__iterator__tag}{prism\+::bidirectional\+\_\+iterator\+\_\+tag} \hyperlink{structprism_1_1_associative_iterator_ac502de0ddebd90f614e6de73ffbedde7}{iterator\+\_\+category}
+\item 
+typedef \hyperlink{structprism_1_1conditional__type}{prism\+::conditional\+\_\+type}$<$ is\+Const, const \hyperlink{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{value\+\_\+type} $\ast$, \hyperlink{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{value\+\_\+type} $\ast$ $>$\+::type \hyperlink{structprism_1_1_associative_iterator_a50b40598e0da0364f809450010172dd2}{pointer}
+\item 
+typedef \hyperlink{structprism_1_1conditional__type}{prism\+::conditional\+\_\+type}$<$ is\+Const, const \hyperlink{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{value\+\_\+type} \&, \hyperlink{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{value\+\_\+type} \& $>$\+::type \hyperlink{structprism_1_1_associative_iterator_a3e7953b18f39af18e7cac9b95c9709e7}{reference}
+\item 
+typedef \hyperlink{structprism_1_1conditional__type}{prism\+::conditional\+\_\+type}$<$ is\+Const, \hyperlink{structprism_1_1_associative_iterator_ab372de0dedeecc03d00f577af3380ef2}{const\+\_\+iterator}, \hyperlink{structprism_1_1_associative_iterator_a1c18ef8b4a02324bfdbf541b023ecc6b}{iterator} $>$\+::type \hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structprism_1_1_associative_iterator_aa3820be28f7421449eb7334aa64a1c49}{Associative\+Iterator} ()
+\item 
+\hyperlink{structprism_1_1_associative_iterator_a5d1fcaa6ea1a58deb5802a58d9ebb8dc}{Associative\+Iterator} (\hyperlink{structprism_1_1_associative_iterator_a73a0ddce41b285bf48fb0ef3411f6557}{node\+\_\+pointer} node)
+\item 
+\hyperlink{structprism_1_1_associative_iterator_a152cedf6acccc8e4ad546a16447a442c}{Associative\+Iterator} (const \hyperlink{structprism_1_1_associative_iterator_a1c18ef8b4a02324bfdbf541b023ecc6b}{iterator} \&\hyperlink{namespaceprism_ae776f4cd825f79e7af1cf6ee1d90a209}{copy})
+\item 
+\hyperlink{structprism_1_1_associative_iterator_a24d17d692a4b78f0a8332449ab1ff99d}{$\sim$\+Associative\+Iterator} ()
+\item 
+\hyperlink{structprism_1_1_associative_iterator_a3e7953b18f39af18e7cac9b95c9709e7}{reference} \hyperlink{structprism_1_1_associative_iterator_a75187c65867cab0cfc187dcbc41456e9}{operator$\ast$} () const 
+\item 
+\hyperlink{structprism_1_1_associative_iterator_a50b40598e0da0364f809450010172dd2}{pointer} \hyperlink{structprism_1_1_associative_iterator_a64e845db1d51bd8cf83bae26a17f4bbb}{operator-\/$>$} () const 
+\item 
+\hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self} \& \hyperlink{structprism_1_1_associative_iterator_a0930051edd8c13d9fd5b3f71f1e0f0ae}{operator++} ()
+\item 
+\hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self} \hyperlink{structprism_1_1_associative_iterator_a781b8cbbbf43f0c5fe8abd63f36638c5}{operator++} (int junk)
+\item 
+\hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self} \& \hyperlink{structprism_1_1_associative_iterator_a5954c73a236399a5faedfa27b1ae2118}{operator-\/-\/} ()
+\item 
+\hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self} \hyperlink{structprism_1_1_associative_iterator_a061cedeb49bb827fd2594a8b9fb99d4e}{operator-\/-\/} (int junk)
+\item 
+\hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self} \& \hyperlink{structprism_1_1_associative_iterator_a1ff6e793e83d8008121ebd5d864a43d8}{operator=} (const \hyperlink{structprism_1_1_associative_iterator_a1c18ef8b4a02324bfdbf541b023ecc6b}{iterator} \&rhs)
+\item 
+const bool \hyperlink{structprism_1_1_associative_iterator_a4bc7b60448c2a982b29f0742218271bb}{operator==} (const \hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self} \&other)
+\item 
+const bool \hyperlink{structprism_1_1_associative_iterator_aa697ef95776d617daa0a87e7ec96e624}{operator!=} (const \hyperlink{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{Self} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structprism_1_1_associative_iterator_a73a0ddce41b285bf48fb0ef3411f6557}{node\+\_\+pointer} \hyperlink{structprism_1_1_associative_iterator_a5a71d66646a56ad2d60e2db2b881061b}{np}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{const\+\_\+iterator}{const_iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef {\bf Associative\+Iterator}$<$Key,Value,Node,true$>$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf const\+\_\+iterator}}\hypertarget{structprism_1_1_associative_iterator_ab372de0dedeecc03d00f577af3380ef2}{}\label{structprism_1_1_associative_iterator_ab372de0dedeecc03d00f577af3380ef2}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!const\+\_\+pointer@{const\+\_\+pointer}}
+\index{const\+\_\+pointer@{const\+\_\+pointer}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{const\+\_\+pointer}{const_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef const {\bf value\+\_\+type}$\ast$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf const\+\_\+pointer}}\hypertarget{structprism_1_1_associative_iterator_ae3b9ad6e27c4f13d0585adf4484e986a}{}\label{structprism_1_1_associative_iterator_ae3b9ad6e27c4f13d0585adf4484e986a}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!const\+\_\+reference@{const\+\_\+reference}}
+\index{const\+\_\+reference@{const\+\_\+reference}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{const\+\_\+reference}{const_reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef const {\bf value\+\_\+type} {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf const\+\_\+reference}}\hypertarget{structprism_1_1_associative_iterator_af94d581c385f29b0bf624dc03118132d}{}\label{structprism_1_1_associative_iterator_af94d581c385f29b0bf624dc03118132d}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!difference\+\_\+type@{difference\+\_\+type}}
+\index{difference\+\_\+type@{difference\+\_\+type}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{difference\+\_\+type}{difference_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef std\+::ptrdiff\+\_\+t {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf difference\+\_\+type}}\hypertarget{structprism_1_1_associative_iterator_a9ecd67af2f6f28f29ece181d452f162a}{}\label{structprism_1_1_associative_iterator_a9ecd67af2f6f28f29ece181d452f162a}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{iterator}{iterator}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef {\bf Associative\+Iterator}$<$Key,Value,Node,false$>$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf iterator}}\hypertarget{structprism_1_1_associative_iterator_a1c18ef8b4a02324bfdbf541b023ecc6b}{}\label{structprism_1_1_associative_iterator_a1c18ef8b4a02324bfdbf541b023ecc6b}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!iterator\+\_\+category@{iterator\+\_\+category}}
+\index{iterator\+\_\+category@{iterator\+\_\+category}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{iterator\+\_\+category}{iterator_category}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef {\bf prism\+::bidirectional\+\_\+iterator\+\_\+tag} {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf iterator\+\_\+category}}\hypertarget{structprism_1_1_associative_iterator_ac502de0ddebd90f614e6de73ffbedde7}{}\label{structprism_1_1_associative_iterator_ac502de0ddebd90f614e6de73ffbedde7}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!node\+\_\+pointer@{node\+\_\+pointer}}
+\index{node\+\_\+pointer@{node\+\_\+pointer}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{node\+\_\+pointer}{node_pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef Node$\ast$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf node\+\_\+pointer}}\hypertarget{structprism_1_1_associative_iterator_a73a0ddce41b285bf48fb0ef3411f6557}{}\label{structprism_1_1_associative_iterator_a73a0ddce41b285bf48fb0ef3411f6557}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!pointer@{pointer}}
+\index{pointer@{pointer}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{pointer}{pointer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef {\bf prism\+::conditional\+\_\+type}$<$ is\+Const, const {\bf value\+\_\+type}$\ast$, {\bf value\+\_\+type}$\ast$$>$\+::type {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf pointer}}\hypertarget{structprism_1_1_associative_iterator_a50b40598e0da0364f809450010172dd2}{}\label{structprism_1_1_associative_iterator_a50b40598e0da0364f809450010172dd2}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!reference@{reference}}
+\index{reference@{reference}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{reference}{reference}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef {\bf prism\+::conditional\+\_\+type}$<$ is\+Const, const {\bf value\+\_\+type}\&, {\bf value\+\_\+type}\&$>$\+::type {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf reference}}\hypertarget{structprism_1_1_associative_iterator_a3e7953b18f39af18e7cac9b95c9709e7}{}\label{structprism_1_1_associative_iterator_a3e7953b18f39af18e7cac9b95c9709e7}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!Self@{Self}}
+\index{Self@{Self}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{Self}{Self}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef {\bf prism\+::conditional\+\_\+type}$<$ is\+Const, {\bf const\+\_\+iterator}, {\bf iterator}$>$\+::type {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf Self}}\hypertarget{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}{}\label{structprism_1_1_associative_iterator_acec023aedf7a8097250179b1de84d78d}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{size\+\_\+type}{size_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef size\+\_\+t {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf size\+\_\+type}}\hypertarget{structprism_1_1_associative_iterator_af2e25b2482537eb7d89dbf497befd607}{}\label{structprism_1_1_associative_iterator_af2e25b2482537eb7d89dbf497befd607}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{value\+\_\+type}{value_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ typedef {\bf prism\+::pair}$<$Key,Value$>$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf value\+\_\+type}}\hypertarget{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}{}\label{structprism_1_1_associative_iterator_a9708a3c0f7299fcdb2c668a3366b304a}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!Associative\+Iterator@{Associative\+Iterator}}
+\index{Associative\+Iterator@{Associative\+Iterator}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{Associative\+Iterator()}{AssociativeIterator()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf Associative\+Iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_aa3820be28f7421449eb7334aa64a1c49}{}\label{structprism_1_1_associative_iterator_aa3820be28f7421449eb7334aa64a1c49}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!Associative\+Iterator@{Associative\+Iterator}}
+\index{Associative\+Iterator@{Associative\+Iterator}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{Associative\+Iterator(node\+\_\+pointer node)}{AssociativeIterator(node_pointer node)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf Associative\+Iterator} (
+\begin{DoxyParamCaption}
+\item[{{\bf node\+\_\+pointer}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a5d1fcaa6ea1a58deb5802a58d9ebb8dc}{}\label{structprism_1_1_associative_iterator_a5d1fcaa6ea1a58deb5802a58d9ebb8dc}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!Associative\+Iterator@{Associative\+Iterator}}
+\index{Associative\+Iterator@{Associative\+Iterator}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{Associative\+Iterator(const iterator \&copy)}{AssociativeIterator(const iterator &copy)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::{\bf Associative\+Iterator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator} \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a152cedf6acccc8e4ad546a16447a442c}{}\label{structprism_1_1_associative_iterator_a152cedf6acccc8e4ad546a16447a442c}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!````~Associative\+Iterator@{$\sim$\+Associative\+Iterator}}
+\index{````~Associative\+Iterator@{$\sim$\+Associative\+Iterator}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{$\sim$\+Associative\+Iterator()}{~AssociativeIterator()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::$\sim${\bf Associative\+Iterator} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a24d17d692a4b78f0a8332449ab1ff99d}{}\label{structprism_1_1_associative_iterator_a24d17d692a4b78f0a8332449ab1ff99d}
+
+
+\subsection{Member Function Documentation}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator"!=(const Self \&other)}{operator!=(const Self &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ const bool {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Self} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_aa697ef95776d617daa0a87e7ec96e624}{}\label{structprism_1_1_associative_iterator_aa697ef95776d617daa0a87e7ec96e624}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator$\ast$() const }{operator*() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf reference} {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a75187c65867cab0cfc187dcbc41456e9}{}\label{structprism_1_1_associative_iterator_a75187c65867cab0cfc187dcbc41456e9}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator++()}{operator++()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf Self}\& {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a0930051edd8c13d9fd5b3f71f1e0f0ae}{}\label{structprism_1_1_associative_iterator_a0930051edd8c13d9fd5b3f71f1e0f0ae}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator++(int junk)}{operator++(int junk)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf Self} {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{junk}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a781b8cbbbf43f0c5fe8abd63f36638c5}{}\label{structprism_1_1_associative_iterator_a781b8cbbbf43f0c5fe8abd63f36638c5}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/-\/()}{operator--()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf Self}\& {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a5954c73a236399a5faedfa27b1ae2118}{}\label{structprism_1_1_associative_iterator_a5954c73a236399a5faedfa27b1ae2118}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/-\/(int junk)}{operator--(int junk)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf Self} {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator-\/-\/ (
+\begin{DoxyParamCaption}
+\item[{int}]{junk}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a061cedeb49bb827fd2594a8b9fb99d4e}{}\label{structprism_1_1_associative_iterator_a061cedeb49bb827fd2594a8b9fb99d4e}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator-\/$>$() const }{operator->() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf pointer} {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a64e845db1d51bd8cf83bae26a17f4bbb}{}\label{structprism_1_1_associative_iterator_a64e845db1d51bd8cf83bae26a17f4bbb}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator=(const iterator \&rhs)}{operator=(const iterator &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf Self}\& {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf iterator} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a1ff6e793e83d8008121ebd5d864a43d8}{}\label{structprism_1_1_associative_iterator_a1ff6e793e83d8008121ebd5d864a43d8}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{operator==(const Self \&other)}{operator==(const Self &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ const bool {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Self} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structprism_1_1_associative_iterator_a4bc7b60448c2a982b29f0742218271bb}{}\label{structprism_1_1_associative_iterator_a4bc7b60448c2a982b29f0742218271bb}
+
+
+\subsection{Member Data Documentation}
+\index{prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}!np@{np}}
+\index{np@{np}!prism\+::\+Associative\+Iterator@{prism\+::\+Associative\+Iterator}}
+\subsubsection[{\texorpdfstring{np}{np}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Key , class Value , class Node , bool is\+Const$>$ {\bf node\+\_\+pointer} {\bf prism\+::\+Associative\+Iterator}$<$ Key, Value, Node, is\+Const $>$\+::np}\hypertarget{structprism_1_1_associative_iterator_a5a71d66646a56ad2d60e2db2b881061b}{}\label{structprism_1_1_associative_iterator_a5a71d66646a56ad2d60e2db2b881061b}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{iterator_8h}{iterator.\+h}\end{DoxyCompactItemize}

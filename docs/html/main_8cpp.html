@@ -30,8 +30,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Prism
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -47,6 +49,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -110,7 +113,8 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<div class="textblock"><code>#include &quot;gtest/gtest.h&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -130,6 +134,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;new&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
 <code>#include &lt;prism/Array&gt;</code><br />
 <code>#include &lt;prism/Stack&gt;</code><br />
 <code>#include &lt;prism/List&gt;</code><br />
@@ -147,15 +152,20 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 <code>#include &lt;prism/Circle&gt;</code><br />
 <code>#include &lt;prism/String&gt;</code><br />
 <code>#include &lt;prism/Char&gt;</code><br />
-<code>#include &lt;prism/algorithms&gt;</code><br />
+<code>#include &lt;prism/algorithm&gt;</code><br />
 <code>#include &lt;prism/Bitvector&gt;</code><br />
 <code>#include &lt;prism/Time&gt;</code><br />
 <code>#include &lt;prism/Pair&gt;</code><br />
 <code>#include &lt;prism/Deque&gt;</code><br />
-<code>#include &lt;prism/utilities&gt;</code><br />
+<code>#include &lt;prism/utility&gt;</code><br />
 <code>#include &lt;prism/memory&gt;</code><br />
 <code>#include &lt;prism/Allocator&gt;</code><br />
 <code>#include &lt;prism/LogAllocator&gt;</code><br />
+<code>#include &lt;prism/functor&gt;</code><br />
+<code>#include &lt;prism/Map&gt;</code><br />
+<code>#include &lt;<a class="el" href="_binary_search_tree_8h_source.html">prism/h/BinarySearchTree.h</a>&gt;</code><br />
+<code>#include &lt;prism/Version&gt;</code><br />
+<code>#include &lt;prism/PrismVersion&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
