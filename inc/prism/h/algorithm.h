@@ -78,9 +78,9 @@ adjacent_find(ForwardIterator first, ForwardIterator last);
 /// @see 					any_of()
 ///
 /// @since 					1.0.0
-template <class InputIterator, class Predicate>
+template <class InputIterator, class UnaryPredicate>
 bool
-all_of(InputIterator first, InputIterator last, Predicate pred);
+all_of(InputIterator first, InputIterator last, UnaryPredicate pred);
 
 /// @brief 					Checks if any elements match a condition in a range
 ///
@@ -116,9 +116,9 @@ all_of(InputIterator first, InputIterator last, Predicate pred);
 /// @see 					all_of()
 ///
 /// @since 					1.0.0
-template <class InputIterator, class Predicate>
+template <class InputIterator, class UnaryPredicate>
 bool
-any_of(InputIterator first, InputIterator last, Predicate pred);
+any_of(InputIterator first, InputIterator last, UnaryPredicate pred);
 
 /// @brief 					Copies the elements from one range to another range
 ///
@@ -155,16 +155,16 @@ template <class InputIterator, class OutputIterator>
 OutputIterator
 copy(InputIterator first, InputIterator last, OutputIterator otherFirst);
 
-/**
 
- */
+
 /// @brief					Copies a range to another range backwards
 ///
 ///							Copies the elements in the range @em [first,last] starting from
-///							@em last to the range ending at @em otherLast. The elements copied
-///							are between @em first and @em last, including @em first but not
-///							@em last. @em otherFirst should point to the past-the-end position
-///							of the destination range.
+///							@em last to the range ending at @em otherLast.
+
+///							The elements copied are between @em first and @em last, including
+///							@em first but not @em last. @em otherLast should point to the
+///							past-the-end position of the destination range.
 ///
 /// @param [in] first		An iterator that points to the start of the range to be copied
 /// @param [in] last		An iterator that points to the position after the last element
@@ -181,6 +181,8 @@ BidirectionalIterator2
 copy_backward(BidirectionalIterator1 first,
 				BidirectionalIterator1 last,
 				BidirectionalIterator2 otherLast);
+
+
 
 /// @brief					Copies elements from a range to another range only if they meet
 ///							a condition
@@ -206,12 +208,12 @@ copy_backward(BidirectionalIterator1 first,
 ///							the destination range
 ///
 /// @since 					1.0.0
-template <class InputIterator, class OutputIterator, class Predicate>
+template <class InputIterator, class OutputIterator, class UnaryPredicate>
 OutputIterator
 copy_if(InputIterator first,
 		InputIterator last,
 		OutputIterator otherFirst,
-		Predicate pred);
+		UnaryPredicate pred);
 
 /// @brief 					Copies a specified number of elements from one range to another range
 ///
@@ -256,9 +258,6 @@ template <class InputIterator, class T>
 int
 count(InputIterator first, InputIterator last, const T& value);
 
-/**
- * Returns the number of elements in the range \em [first,last] for which \em pred is true.
- */
 /// @brief 					Counts the number of occurrences of a value that meets a condition
 ///							in a range
 ///
@@ -276,38 +275,15 @@ count(InputIterator first, InputIterator last, const T& value);
 /// @param [in]	first		An iterator that points to the start of the range to be counted
 /// @param [in]	last		An iterator that points to the position after the last element of
 ///							the range to be counted
-/// @param [in] value		The value to be counted
+/// @param [in] pred		A unary function that returns true or false
 ///
 /// @return					The number of elements that match the condition in
 ///							@em pred
 ///
 /// @since 					1.0.0
-template <class InputIterator, class Predicate>
+template <class InputIterator, class UnaryPredicate>
 int
-count_if(InputIterator first, InputIterator last, Predicate pred);
-
-/// @brief 					Deletes the elements in a range
-///
-///							Each element in the range [first,last] will be deleted with the
-///							use of the c++ delete operator. Therefore each element must be a
-///							pointer.
-///
-///							The range is @em [first,last], which
-///							contains all the elements  between @em first
-///							and @em last, including the element pointed to
-///							by @em first but not the element pointed to by
-///							@em last.
-///
-/// @param [in]	first		An iterator that points to the start of the range to be deleted
-/// @param [in] last		An iterator that points to one position past the last element to
-///							be deleted
-///
-/// @return					Nothing
-///
-/// @since 					1.0.0
-template <class ForwardIterator>
-void
-delete_range(ForwardIterator first, ForwardIterator last);
+count_if(InputIterator first, InputIterator last, UnaryPredicate pred);
 
 /// @brief 					Compares two ranges for equality
 ///
@@ -405,9 +381,9 @@ find(InputIterator first, InputIterator last, const T& value);
 ///							@em pred return true or @em last if no element is found
 ///
 /// @since 					1.0.0
-template <class InputIterator, class Predicate>
+template <class InputIterator, class UnaryPredicate>
 InputIterator
-find_if(InputIterator first, InputIterator last, Predicate pred);
+find_if(InputIterator first, InputIterator last, UnaryPredicate pred);
 
 /// @brief 					Finds the last value in a range that matches a specified value
 ///
@@ -448,9 +424,9 @@ find_last(InputIterator first, InputIterator last, const T& value);
 /// @return					The function @em func
 ///
 /// @since 					1.0.0
-template <class InputIterator, class Function>
-Function
-for_each(InputIterator first, InputIterator last, Function func);
+template <class InputIterator, class UnaryFunction>
+UnaryFunction
+for_each(InputIterator first, InputIterator last, UnaryFunction func);
 
 /// @brief 					Checks if a range is sorted in ascending order
 ///
@@ -465,6 +441,7 @@ for_each(InputIterator first, InputIterator last, Function func);
 /// @param [in] first		An iterator that points to the start of the range
 /// @param [in] last		An iterator that points to the position past the last element in
 ///							the range
+/// @param [in] func		A unary function that takes an argument from the range [frst,last]
 ///
 /// @return					True if the range is sorted in ascending order or false otherwise
 ///
@@ -475,6 +452,7 @@ is_sorted(ForwardIterator first, ForwardIterator last);
 
 /// @brief					Rearranges a range into a heap order
 ///
+///							todo WRITE A BETTER EXPLANATION OF WHAT A HEAP IS
 ///							Transforms a range [first,last] in such a way that it forms a heap.
 ///							This makes retrieving the element with the highest value very fast.
 ///
@@ -535,19 +513,24 @@ min(const T& a, const T& b);
 /// @param [in] first		An iterator that points to the start of the range
 /// @param [in] last		An iterator that points to the position past the last element in
 ///							the range
+/// @param [in] pred		A unary predicate that returns true or false
 /// @return					True if @em pred returns false for all elements or if the range is
 ///							empty, false otherwise
 ///
 /// @since 					1.0.0
-template <class InputIterator, class Predicate>
+template <class InputIterator, class UnaryPredicate>
 bool
-none_of(InputIterator first, InputIterator last, Predicate pred);
+none_of(InputIterator first, InputIterator last, UnaryPredicate pred);
 
 /// @brief					Removes all elements that equal a value in a range
 ///
 ///							Transforms a range [first,last] into a range where all elements
 ///							that equal @em value are removed. The element type must support
 ///							operator==().
+///
+///							The order of the elements not removed are preserved but note that
+///							any element between the returned iterator and @em last are
+///							still valid but in an unspecified state.
 ///
 ///							The range is @em [first,last], which contains all the elements
 ///							between @em first and @em last, including the element pointed to
@@ -592,8 +575,8 @@ OutputIterator
 remove_copy (InputIterator first, InputIterator last,
 		OutputIterator otherFirst, const T& value);
 
-/// @brief 					Copies all elements from a range (except for those elements for
-///							which a predicate returns true) into another range
+/// @brief 					Copies elements from a range for which a predicate returns false
+///							into another range
 ///
 ///							Iterates through a range [first,last] and copies all elements
 ///							(except those for which @em pred returns true) into the range
@@ -614,10 +597,10 @@ remove_copy (InputIterator first, InputIterator last,
 ///							copied into the destination range
 ///
 /// @since 					1.0.0
-template <class InputIterator, class OutputIterator, class Predicate>
+template <class InputIterator, class OutputIterator, class UnaryPredicate>
 OutputIterator
 remove_copy_if (InputIterator first, InputIterator last,
-		OutputIterator otherFirst, Predicate pred);
+		OutputIterator otherFirst, UnaryPredicate pred);
 
 /// @brief					Removes all elements from a range for which a predicate returns true
 ///
@@ -637,9 +620,9 @@ remove_copy_if (InputIterator first, InputIterator last,
 ///							range
 ///
 /// @since 					1.0.0
-template <class ForwardIterator, class Predicate>
+template <class ForwardIterator, class UnaryPredicate>
 ForwardIterator
-remove_if(ForwardIterator first, ForwardIterator last, Predicate pred);
+remove_if(ForwardIterator first, ForwardIterator last, UnaryPredicate pred);
 
 /// @brief 					Replaces all occurrences of a value with a new value in a range
 ///
@@ -716,13 +699,14 @@ replace_copy(InputIterator first, InputIterator last,
 ///							copied into the destination range
 ///
 /// @since 					1.0.0
-template <class InputIterator, class OutputIterator, class Predicate, class T>
+template <class InputIterator, class OutputIterator, class UnaryPredicate, class T>
 OutputIterator
 replace_copy_if(InputIterator first, InputIterator last,
 		OutputIterator otherFirst,
-		Predicate pred, const T& newValue);
+		UnaryPredicate pred, const T& newValue);
 
-/// @brief 					Assigns a new value to all elements for which a predicate returns true
+/// @brief 					Assigns a new value to all elements for which a predicate returns
+///							true
 ///
 ///							Iterates through the range [first,last] and replaces any element
 ///							for which the predicate @em pred returns true with @em newValue.
@@ -741,10 +725,10 @@ replace_copy_if(InputIterator first, InputIterator last,
 /// @return					Nothing
 ///
 /// @since	 				1.0.0
-template <class ForwardIterator, class Predicate, class T>
+template <class ForwardIterator, class UnaryPredicate, class T>
 void
 replace_if(ForwardIterator first, ForwardIterator last,
-		Predicate pred, const T& newValue);
+		UnaryPredicate pred, const T& newValue);
 
 /// @brief 					Searches a range for a sub-range
 ///
@@ -869,10 +853,6 @@ template <class T>
 void
 swap(T& a, T& b);
 
-/**
- * Exchanges the values of each of the elements in the range \em [first1,last1]
- * with those of their respective elements in the range beginning at \em otherFirst.
- */
 /// @brief 					Swaps the elements in two ranges
 ///
 ///							All of the elements in the range [first,last] are swapped with the
@@ -894,9 +874,7 @@ swap(T& a, T& b);
 /// @since 					1.0.0
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
-swap_ranges(ForwardIterator1 first,
-		ForwardIterator1 last,
-		ForwardIterator2 otherFirst);
+swap_ranges(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst);
 
 /// @brief 					Fills an uninitialized range with a value
 ///
@@ -946,10 +924,10 @@ uninitialized_fill_n(ForwardIterator first, const int size, const T& value);
 ///							The range [first,last] represents a block of memory that has been
 ///							allocated but not initialized i.e. no elements have been constructed
 ///							yet. This means that the allocated memory cannot be dereferenced
-///							yet through an iterator (as in the prism::fill algorithm). This
+///							yet through an iterator (as in the prism::copy algorithm). This
 ///							algorithm takes that memory block and initializes each element by
 ///							copy-constructing each element in place. This algorithm differs
-///							from prism::fill because that algorithm dereferences the iterator
+///							from prism::copy because that algorithm dereferences the iterator
 ///							to assign the new value whereas this algorithm doesn't. It
 ///							copy-constructs in place instead.
 ///
@@ -964,9 +942,7 @@ uninitialized_fill_n(ForwardIterator first, const int size, const T& value);
 /// @since 					1.0.0
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
-uninitialized_copy(ForwardIterator1 first,
-					ForwardIterator1 last,
-					ForwardIterator2 otherFirst);
+uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst);
 
 /// @brief 					Copies a number of elements from a range into an uninitialized range
 ///
@@ -990,9 +966,7 @@ uninitialized_copy(ForwardIterator1 first,
 /// @since 					1.0.0
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
-uninitialized_copy_n(ForwardIterator1 first,
-					const int size,
-					ForwardIterator2 otherFirst);
+uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst);
 
 } // end namespace prism
 

@@ -9,98 +9,123 @@
 #ifndef PRISM_ITERATOR_H_
 #define PRISM_ITERATOR_H_
 
-#include <prism/h/iterator_tags.h>
-#include <prism/h/iterator_traits.h>
-#include <prism/h/iterator_aux.h>
 #include <prism/h/utility.h>
 #include <prism/h/pair.h>
 #include <cstddef> // for std::ptrdiff_t
 
 namespace prism {
 
+/**********************************************************************************************
+ * Tags to describe what kind of iterator a particular iterator type is. They are used in the
+ * container algorithms to determine which is the best algorithm to use for that particular
+ * type of iterator.
+ *********************************************************************************************/
+struct input_iterator_tag {};
+struct output_iterator_tag {};
+struct forward_iterator_tag : public input_iterator_tag {};
+struct bidirectional_iterator_tag : public forward_iterator_tag {};
+struct random_access_iterator_tag : public bidirectional_iterator_tag {};
+
+/**********************************************************************************************
+ * A useful way to extract types from an iterator
+ * i.e. Stack<int> * p = iterator_traits<Stack<int> >::pointer;
+ * i.e. Vector<float> * p = iterator_traits<RandomAccessIterator>::pointer;
+ *********************************************************************************************/
+template <class Iterator>
+struct iterator_traits  {
+	typedef typename Iterator::value_type 			value_type;
+	typedef typename Iterator::difference_type 		difference_type;
+	typedef typename Iterator::iterator_category 	iterator_category;
+	typedef typename Iterator::pointer 				pointer;
+	typedef typename Iterator::const_pointer		const_pointer;
+	typedef typename Iterator::reference 			reference;
+	typedef typename Iterator::const_reference 		const_reference;
+};
+
+// specialization for arrays
+template<class T>
+struct iterator_traits<T*> {
+    typedef T 										value_type;
+    typedef std::ptrdiff_t 							difference_type;
+    typedef prism::random_access_iterator_tag 		iterator_category;
+    typedef T* 										pointer;
+    typedef const T*								const_pointer;
+    typedef T& 										reference;
+    typedef const T&								const_reference;
+};
+
+/**********************************************************************************************
+ * iterator helper functions
+ *********************************************************************************************/
 /**
  * Moves the iterator forwards by numSteps (or backwards if numSteps is negative).
  */
 template <class InputIterator>
 void
-advance(InputIterator& iterator, const int numSteps) {
-	typedef typename prism::iterator_traits<InputIterator>::iterator_category it_cat;
-	advance_aux(iterator, numSteps, it_cat());
-}
+advance(InputIterator& iterator, const int numSteps);
 
 /**
  * Returns an iterator pointing to the beginning of \em con.
  */
 template <class Container>
 auto
-begin(Container& con) -> decltype (con.begin())
-{ return con.begin(); }
+begin(Container& con) -> decltype (con.begin());
 
 /**
  * Returns a const iterator pointing to the beginning of \em con.
  */
 template <class Container>
 auto
-begin(const Container& con) -> decltype (con.begin())
-{ return con.begin(); }
+begin(const Container& con) -> decltype (con.begin());
 
 /**
  * Array specialization.
  */
 template <class T, int Size>
 T*
-begin(T(&array)[Size])
-{ return array; }
+begin(T(&array)[Size]);
 
 /**
  * Returns the distance between two iterators.
  */
 template <class InputIterator>
 typename prism::iterator_traits<InputIterator>::difference_type
-distance(InputIterator first, InputIterator last) {
-	typedef typename prism::iterator_traits<InputIterator>::iterator_category it_cat;
-	return distance_aux(first, last, it_cat());
-}
+distance(InputIterator first, InputIterator last);
 
 /**
  * Returns an iterator pointing to the end of \em con.
  */
 template <class Container>
 auto
-end(Container& con) -> decltype (con.end())
-{ return con.end(); }
+end(Container& con) -> decltype (con.end());
 
 /**
  * Returns a const iterator pointing to the end of \em con.
  */
 template <class Container>
 auto
-end(const Container& con) -> decltype (con.end())
-{ return con.end(); }
+end(const Container& con) -> decltype (con.end());
 
 /**
  * Array specialization.
  */
 template <class T, int Size>
 T*
-end(T(&array)[Size])
-{ return array+Size; }
+end(T(&array)[Size]);
 
 /**
  *
  */
 template <class InputIterator, class Container>
 const bool
-has_next(InputIterator& it, Container& con)
-{ return !(it == con.end()); }
+has_next(InputIterator& it, Container& con);
 
 /**
  *
  */
 template <class InputIterator, class Container>
 const bool
-has_previous(InputIterator& it, Container& con)
-{ return !(it == con.begin()); }
+has_previous(InputIterator& it, Container& con);
 
 /**
  * Advances the iterator \em it by \em numSteps (1 by default).
@@ -108,11 +133,7 @@ has_previous(InputIterator& it, Container& con)
  */
 template <class ForwardIterator>
 ForwardIterator
-next(ForwardIterator it, int numSteps=1) {
-	typedef typename prism::iterator_traits<ForwardIterator>::iterator_category it_cat;
-	prism::advance_aux(it, numSteps, it_cat());
-	return it;
-}
+next(ForwardIterator it, int numSteps=1);
 
 /**
  * Moves the iterator \em it back by \em numSteps.
@@ -120,8 +141,7 @@ next(ForwardIterator it, int numSteps=1) {
  */
 template <class BidirectionalIterator>
 BidirectionalIterator
-previous(BidirectionalIterator it, int numSteps=1)
-{ return prism::previous_aux(it, numSteps); }
+previous(BidirectionalIterator it, int numSteps=1);
 
 /******************************************************************************
  * SequenceIterator (random access)
@@ -231,7 +251,9 @@ struct SequenceIterator {
 	const bool
 	operator>=(const Self& rhs)
 	{ return this->p >= rhs.p; }
-};//====================================================================================
+};
+
+//====================================================================================
 // AssociativeIterator
 // --- for associative containers such as Map and Set and
 // --- binary search and red-black trees
@@ -274,18 +296,13 @@ struct AssociativeIterator {
 	typedef std::ptrdiff_t								difference_type;
 	typedef prism::bidirectional_iterator_tag			iterator_category;
 
-	typedef typename prism::conditional_type<	isConst,
-												const value_type*,
-												value_type*>
-												::type 				pointer;
-	typedef typename prism::conditional_type<	isConst,
-												const value_type&,
-												value_type&>
-												::type 				reference;
-	typedef typename prism::conditional_type<	isConst,
-												const_iterator,
-												iterator>
-												::type 				Self;
+	typedef typename prism::conditional_type<	isConst, const value_type*,
+												value_type*>::type pointer;
+
+	typedef typename prism::conditional_type<	isConst, const value_type&,
+												value_type&>::type reference;
+
+	typedef typename prism::conditional_type<	isConst, const_iterator, iterator>::type Self;
 
 	node_pointer np;
 
@@ -376,148 +393,8 @@ struct AssociativeIterator {
 	{ return !(*this == other); }
 };
 
-/****************************************************************************************************************
- *
- ****************************************************************************************************************/
-//template <class T>
-//class ForwardIterator {
-//public:
-//	typedef T								value_type;
-//	typedef std::ptrdiff_t 					difference_type;
-//	typedef forward_iterator_tag 			iterator_category;
-//	typedef T& 								reference;
-//	typedef T* 								pointer;
-//
-//	T * p;
-//	inline 									ForwardIterator() : p(0) {}
-//	inline 									ForwardIterator(T * p) : p(p) {}
-//	inline 									ForwardIterator(const ForwardIterator<T> & copy) { p = copy.p; }
-//	virtual									~ForwardIterator() {}
-//	virtual inline reference 				operator*() { return *p; }
-//	virtual inline pointer 					operator->() { return p; }
-//	virtual inline ForwardIterator & 		operator++() { p++; return *this; }
-//	virtual inline ForwardIterator   		operator++(int junk) { T* v=p; p++; return v; }
-//	virtual inline ForwardIterator & 		operator=(ForwardIterator rhs) { p = rhs.p; return *this;}
-//	virtual inline bool 					operator!=(const ForwardIterator rhs) { return p != rhs.p; }
-//	virtual inline bool 					operator==(const ForwardIterator rhs) { return p == rhs.p; }
-//
-//	// Related non-members
-//	friend inline difference_type 			operator-(const ForwardIterator & lhs, const ForwardIterator & rhs) { return lhs.p - rhs.p; }
-//	friend inline const bool 				operator<(const ForwardIterator & lhs, const ForwardIterator & rhs) { return lhs-rhs < 0; }
-//	friend inline const bool 				operator>(const ForwardIterator & lhs, const ForwardIterator & rhs) { return lhs-rhs > 0; }
-//	friend inline const bool 				operator<=(const ForwardIterator & lhs, const ForwardIterator & rhs) { return lhs-rhs <= 0; }
-//	friend inline const bool 				operator>=(const ForwardIterator & lhs, const ForwardIterator & rhs) { return lhs-rhs >= 0; }
-//};
-//
-///****************************************************************************************************************
-// *
-// ****************************************************************************************************************/
-//template <class T>
-//class ForwardConstIterator {
-//public:
-//	typedef T								value_type;
-//	typedef std::ptrdiff_t 					difference_type;
-//	typedef forward_iterator_tag 			iterator_category;
-//	typedef T& 								reference;
-//	typedef T* 								pointer;
-//
-//	T * p;
-//	inline 									ForwardConstIterator() : p(0) {}
-//	inline 									ForwardConstIterator(T * p) : p(p) {}
-//	inline 									ForwardConstIterator(const ForwardConstIterator<T> & copy) { p = copy.p; }
-//	virtual									~ForwardConstIterator() {}
-//	virtual inline reference 				operator*() { return *p; }
-//	virtual inline pointer 					operator->() { return p; }
-//	virtual inline ForwardConstIterator & 	operator++() { p++; return *this; }
-//	virtual inline ForwardConstIterator   	operator++(int junk) { T* v=p; p++; return v; }
-//	virtual inline ForwardConstIterator & 	operator=(ForwardConstIterator rhs) { p = rhs.p; return *this;}
-//	virtual inline bool 					operator!=(const ForwardConstIterator rhs) { return p != rhs.p; }
-//	virtual inline bool 					operator==(const ForwardConstIterator rhs) { return p == rhs.p; }
-//
-//	// Related non-members
-//	friend inline difference_type 			operator-(const ForwardConstIterator & lhs, const ForwardConstIterator & rhs) { return lhs.p - rhs.p; }
-//	friend inline const bool 				operator<(const ForwardConstIterator & lhs, const ForwardConstIterator & rhs) { return lhs-rhs < 0; }
-//	friend inline const bool 				operator>(const ForwardConstIterator & lhs, const ForwardConstIterator & rhs) { return lhs-rhs > 0; }
-//	friend inline const bool 				operator<=(const ForwardConstIterator & lhs, const ForwardConstIterator & rhs) { return lhs-rhs <= 0; }
-//	friend inline const bool 				operator>=(const ForwardConstIterator & lhs, const ForwardConstIterator & rhs) { return lhs-rhs >= 0; }
-//};
-//
-///****************************************************************************************************************
-// *
-// ****************************************************************************************************************/
-//template <class T>
-//class BidirectionalIterator : public ForwardIterator<T> {
-//public:
-//	typedef bidirectional_iterator_tag 		iterator_category;
-//
-//	inline 									BidirectionalIterator() : ForwardIterator<T>() {}
-//	inline 									BidirectionalIterator(T * p) : ForwardIterator<T>(p) {}
-//	inline 									BidirectionalIterator(const BidirectionalIterator<T> & copy) : ForwardIterator<T>(copy) {}
-//	virtual									~BidirectionalIterator() {}
-//	virtual inline BidirectionalIterator & 	operator--() { this->p--; return *this; }
-//	virtual inline BidirectionalIterator  	operator--(int junk) { T* v=this->p; --this->p; return v; }
-//};
-//
-///****************************************************************************************************************
-// *
-// ****************************************************************************************************************/
-//template <class T>
-//class BidirectionalConstIterator : public ForwardConstIterator<T> {
-//public:
-//	typedef bidirectional_iterator_tag 				iterator_category;
-//
-//	inline 											BidirectionalConstIterator() : ForwardConstIterator<T>() {}
-//	inline 											BidirectionalConstIterator(T * p) : ForwardConstIterator<T>(p) {}
-//	inline 											BidirectionalConstIterator(const BidirectionalConstIterator<T> & copy) : ForwardConstIterator<T>(copy) {}
-//	virtual											~BidirectionalConstIterator() {}
-//	virtual inline BidirectionalConstIterator & 	operator--() { this->p--; return *this; }
-//	virtual inline BidirectionalConstIterator 	 	operator--(int junk) { T* v=this->p; --this->p; return v; }
-//};
-//
-///****************************************************************************************************************
-// *
-// ****************************************************************************************************************/
-//template <class T>
-//class RandomAccessIterator : public BidirectionalIterator<T> {
-//public:
-//	typedef random_access_iterator_tag 	iterator_category;
-//
-//	inline 								RandomAccessIterator() : BidirectionalIterator<T>() {}
-//	inline 								RandomAccessIterator(T * p) : BidirectionalIterator<T>(p) {}
-//	inline 								RandomAccessIterator(const RandomAccessIterator<T> & copy) : BidirectionalIterator<T>(copy) {}
-//	inline RandomAccessIterator			operator+(const int i) { return RandomAccessIterator(this->p+i); }
-//	inline RandomAccessIterator & 		operator+=(int i) { this->p += i; return *this; }
-//	inline RandomAccessIterator 		operator-(const int i) { return RandomAccessIterator(this->p-i); }
-//	inline RandomAccessIterator & 		operator-=(int i) { this->p -= i; return *this; }
-//
-//	// Related non-members
-//	friend inline RandomAccessIterator 	operator+(const int i, RandomAccessIterator & it) { return RandomAccessIterator(it.p + i); }
-//	friend inline RandomAccessIterator 	operator-(const int i, RandomAccessIterator & it) { return RandomAccessIterator(it.p - i); }
-//};
-//
-///****************************************************************************************************************
-// *
-// ****************************************************************************************************************/
-//template <class T>
-//class RandomAccessConstIterator : public BidirectionalConstIterator<T> {
-//public:
-//	typedef random_access_iterator_tag 			iterator_category;
-//
-//	inline 										RandomAccessConstIterator() : BidirectionalConstIterator<T>() {}
-//	inline 										RandomAccessConstIterator(T * p) : BidirectionalConstIterator<T>(p) {}
-//	inline 										RandomAccessConstIterator(const RandomAccessConstIterator<T> & copy) : BidirectionalConstIterator<T>(copy) {}
-//	inline RandomAccessConstIterator			operator+(const int i) { return RandomAccessConstIterator(this->p+i); }
-//	inline RandomAccessConstIterator & 			operator+=(int i) { this->p += i; return *this; }
-//	inline RandomAccessConstIterator 			operator-(const int i) { return RandomAccessConstIterator(this->p-i); }
-//	inline RandomAccessConstIterator & 			operator-=(int i) { this->p -= i; return *this; }
-//
-//	// Related non-members
-//	friend inline RandomAccessConstIterator 	operator+(const int i, RandomAccessConstIterator & it) { return RandomAccessConstIterator(it.p + i); }
-//	friend inline RandomAccessConstIterator 	operator-(const int i, RandomAccessConstIterator & it) { return RandomAccessConstIterator(it.p - i); }
-//};
+} // end namespace prism
 
-}
-
-
+#include <prism/h/priv/iterator_priv.h>
 
 #endif /* PRISM_ITERATOR_H_ */

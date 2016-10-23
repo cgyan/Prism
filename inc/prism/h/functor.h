@@ -39,30 +39,12 @@ struct less {
 };
 
 /**
- * Returns true if i is negative, false otherwise.
- */
-template <class T>
-struct negative {
-	bool operator()(const T& value)
-	{ return value < 1; }
-};
-
-/**
  * Returns true if \em i is odd, false otherwise.
  */
 template <class T>
 struct odd {
 	bool operator()(const T& value)
 	{ return value % 2 == 1; }
-};
-
-/**
- * Returns true if i is positive, false otherwise.
- */
-template <class T>
-struct positive {
-	bool operator()(const T& value)
-	{ return value > 0; }
 };
 
 } // end namespace prism

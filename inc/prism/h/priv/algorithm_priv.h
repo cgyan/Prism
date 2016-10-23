@@ -16,6 +16,187 @@
 
 namespace prism {
 
+//============================================================================================
+// private stuff
+//============================================================================================
+namespace priv {
+
+/**
+ * Private recursive function called by make_heap().
+ * Compares a node with its two children (if it has any) and ensures that the largest of the three
+ * nodes is the parent node.
+ */
+template <class RandomAccessIterator>
+void
+heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last) {
+
+	int nodeIndex = node-first;
+	int leftIndex = 2 * nodeIndex + 1;
+	int rightIndex = 2 * nodeIndex + 2;
+
+	RandomAccessIterator leftNode = first + leftIndex;
+	RandomAccessIterator rightNode = first + rightIndex;
+	RandomAccessIterator largestNode = node;
+
+	if (leftNode < last && *largestNode < *leftNode)
+		largestNode = leftNode;
+
+	if (rightNode < last && *largestNode < *rightNode)
+		largestNode = rightNode;
+
+	if (node != largestNode) {
+		swap(*node, *largestNode);
+		priv::heapify(largestNode, first, last);
+	}
+
+}
+
+/**
+ * Bubble sort for random access iterators
+ */
+template <class RandomAccessIterator>
+void
+sort_bubble(RandomAccessIterator first, RandomAccessIterator last,
+		prism::random_access_iterator_tag)
+{
+	RandomAccessIterator thisElement = first;
+	RandomAccessIterator nextElement = thisElement+1;
+	RandomAccessIterator bit = first;
+
+	bool swapped = false;
+
+	while (bit != last-1) {
+		swapped = false;
+		while (thisElement != last-1) {
+
+			if (*thisElement > *nextElement) {
+				swap(*thisElement, *nextElement);
+				swapped = true;
+			}
+			++thisElement;
+			++nextElement;
+		}
+		if (!swapped) break; // already in sorted order
+		thisElement = first;
+		nextElement = thisElement+1;
+		++bit;
+	}
+}
+
+/**
+ * Bubble sort for bidirectional iterators
+ */
+template <class BidirectionalIterator>
+void
+sort_bubble(BidirectionalIterator first, BidirectionalIterator last,
+		prism::bidirectional_iterator_tag)
+{
+	BidirectionalIterator thisElement = first;
+	BidirectionalIterator nextElement = ++first;
+	--first;
+	BidirectionalIterator lastElement = --last;
+	++last;
+	BidirectionalIterator bit = first;
+
+	bool swapped = false;
+
+	while (bit != lastElement) {
+		swapped = false;
+		while (thisElement != lastElement) {
+
+			if (*thisElement > *nextElement) {
+				swap(*thisElement, *nextElement);
+				swapped = true;
+			}
+			++thisElement;
+			++nextElement;
+		}
+		if (!swapped) break; // already in sorted order
+		thisElement = first;
+		nextElement = ++thisElement;
+		--thisElement;
+		++bit;
+	}
+}
+
+/**
+ * Quicksort for random access iterators
+ */
+template <class RandomAccessIterator>
+void
+sort_quicksort(RandomAccessIterator first, RandomAccessIterator last,
+		prism::random_access_iterator_tag it_cat)
+{
+	RandomAccessIterator wall = first;
+	RandomAccessIterator pivot = last - 1;
+	RandomAccessIterator cachedFirst = first;
+
+	while (first <= pivot) {
+
+		if (first == pivot)
+			swap(*first, *wall);
+
+		else if (*first <= *pivot) {
+			swap(*first, *wall);
+			++wall;
+		}
+		++first;
+	}
+
+	if (cachedFirst == wall || cachedFirst+1 == wall) {}
+	else sort_quicksort(cachedFirst, wall, it_cat);
+	if (last - 1 == wall) {}
+	else sort_quicksort(wall, last, it_cat);
+}
+
+/**
+ * Quicksort for bidirectional iterators
+ * todo
+ * Not a great solution for quicksorting a bidirectional iterator based container!
+ * Currently copies the elements into an array, then sorts using the random access
+ * quicksort then copies the sorted elements back into the original container.... :-(
+ */
+template <class BidirectionalIterator>
+void
+sort_quicksort(BidirectionalIterator first, BidirectionalIterator last,
+		prism::bidirectional_iterator_tag)
+{
+	int count = 0;
+	BidirectionalIterator it = first;
+	while (it != last) {
+		++count;
+		++it;
+	}
+
+	typedef typename prism::iterator_traits<BidirectionalIterator>::value_type T;
+	T * array = new T[count];
+	prism::copy(first, last, array);
+
+	priv::sort_quicksort(array, array+count, prism::random_access_iterator_tag());
+
+	count = 0;
+	while (first != last) {
+		*first = array[count++];
+		++first;
+	}
+
+	delete array;
+}
+
+/**
+ *
+ */
+template <class BidirectionalIterator>
+void
+sort_quicksort(BidirectionalIterator first, BidirectionalIterator last) {
+	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
+	sort_quicksort(first, last, it_cat());
+}
+
+} // end namespace priv
+//============================================================================================
+// public implementations
+//============================================================================================
 /**
  *
  */
@@ -147,18 +328,6 @@ count_if(InputIterator first, InputIterator last, Predicate pred) {
 /**
  *
  */
-template <class ForwardIterator>
-void
-delete_range(ForwardIterator first, ForwardIterator last) {
-	while (first != last) {
-		delete *first;
-		first++;
-	}
-}
-
-/**
- *
- */
 template <class InputIterator1, class InputIterator2>
 bool
 equal(InputIterator1 first, InputIterator1 last, InputIterator2 otherFirst) {
@@ -276,7 +445,7 @@ make_heap(RandomAccessIterator first, RandomAccessIterator last) {
 	RandomAccessIterator node = first + heapSize/2 - 1;
 
 	while (node >= first) {
-		p_heapify(node, first, last);
+		priv::heapify(node, first, last);
 		--node;
 	}
 }
@@ -473,73 +642,7 @@ search(ForwardIterator1 first, ForwardIterator1 last,
 	return last;
 }
 
-/**
- * Bubble sort for random access iterators
- */
-template <class RandomAccessIterator>
-void
-sort_bubble(RandomAccessIterator first, RandomAccessIterator last,
-		prism::random_access_iterator_tag)
-{
-	RandomAccessIterator thisElement = first;
-	RandomAccessIterator nextElement = thisElement+1;
-	RandomAccessIterator bit = first;
 
-	bool swapped = false;
-
-	while (bit != last-1) {
-		swapped = false;
-		while (thisElement != last-1) {
-
-			if (*thisElement > *nextElement) {
-				swap(*thisElement, *nextElement);
-				swapped = true;
-			}
-			++thisElement;
-			++nextElement;
-		}
-		if (!swapped) break; // already in sorted order
-		thisElement = first;
-		nextElement = thisElement+1;
-		++bit;
-	}
-}
-
-/**
- * Bubble sort for bidirectional iterators
- */
-template <class BidirectionalIterator>
-void
-sort_bubble(BidirectionalIterator first, BidirectionalIterator last,
-		prism::bidirectional_iterator_tag)
-{
-	BidirectionalIterator thisElement = first;
-	BidirectionalIterator nextElement = ++first;
-	--first;
-	BidirectionalIterator lastElement = --last;
-	++last;
-	BidirectionalIterator bit = first;
-
-	bool swapped = false;
-
-	while (bit != lastElement) {
-		swapped = false;
-		while (thisElement != lastElement) {
-
-			if (*thisElement > *nextElement) {
-				swap(*thisElement, *nextElement);
-				swapped = true;
-			}
-			++thisElement;
-			++nextElement;
-		}
-		if (!swapped) break; // already in sorted order
-		thisElement = first;
-		nextElement = ++thisElement;
-		--thisElement;
-		++bit;
-	}
-}
 
 /**
  *
@@ -559,79 +662,7 @@ sort_heap(RandomAccessIterator first, RandomAccessIterator last) {
 	}
 }
 
-/**
- * Quicksort for random access iterators
- */
-template <class RandomAccessIterator>
-void
-sort_quicksort(RandomAccessIterator first, RandomAccessIterator last,
-		prism::random_access_iterator_tag it_cat)
-{
-	RandomAccessIterator wall = first;
-	RandomAccessIterator pivot = last - 1;
-	RandomAccessIterator cachedFirst = first;
 
-	while (first <= pivot) {
-
-		if (first == pivot)
-			swap(*first, *wall);
-
-		else if (*first <= *pivot) {
-			swap(*first, *wall);
-			++wall;
-		}
-		++first;
-	}
-
-	if (cachedFirst == wall || cachedFirst+1 == wall) {}
-	else sort_quicksort(cachedFirst, wall, it_cat);
-	if (last - 1 == wall) {}
-	else sort_quicksort(wall, last, it_cat);
-}
-
-/**
- * Quicksort for bidirectional iterators
- * todo
- * Not a great solution for quicksorting a bidirectional iterator based container!
- * Currently copies the elements into an array, then sorts using the random access
- * quicksort then copies the sorted elements back into the original container.... :-(
- */
-template <class BidirectionalIterator>
-void
-sort_quicksort(BidirectionalIterator first, BidirectionalIterator last,
-		prism::bidirectional_iterator_tag)
-{
-	int count = 0;
-	BidirectionalIterator it = first;
-	while (it != last) {
-		++count;
-		++it;
-	}
-
-	typedef typename prism::iterator_traits<BidirectionalIterator>::value_type T;
-	T * array = new T[count];
-	prism::copy(first, last, array);
-
-	prism::sort_quicksort(array, array+count, prism::random_access_iterator_tag());
-
-	count = 0;
-	while (first != last) {
-		*first = array[count++];
-		++first;
-	}
-
-	delete array;
-}
-
-/**
- *
- */
-template <class BidirectionalIterator>
-void
-sort_quicksort(BidirectionalIterator first, BidirectionalIterator last) {
-	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
-	sort_quicksort(first, last, it_cat());
-}
 
 /**
  *
@@ -640,7 +671,7 @@ template <class BidirectionalIterator>
 void
 sort(BidirectionalIterator first, BidirectionalIterator last) {
 	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
-	sort_quicksort(first, last, it_cat());
+	priv::sort_quicksort(first, last, it_cat());
 }
 
 /**
@@ -715,36 +746,6 @@ uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 ot
 		++otherFirst;
 	}
 	return otherFirst;
-}
-
-/**
- * Private recursive function called by make_heap().
- * Compares a node with its two children (if it has any) and ensures that the largest of the three
- * nodes is the parent node.
- */
-template <class RandomAccessIterator>
-void
-p_heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAccessIterator last) {
-
-	int nodeIndex = node-first;
-	int leftIndex = 2 * nodeIndex + 1;
-	int rightIndex = 2 * nodeIndex + 2;
-
-	RandomAccessIterator leftNode = first + leftIndex;
-	RandomAccessIterator rightNode = first + rightIndex;
-	RandomAccessIterator largestNode = node;
-
-	if (leftNode < last && *largestNode < *leftNode)
-		largestNode = leftNode;
-
-	if (rightNode < last && *largestNode < *rightNode)
-		largestNode = rightNode;
-
-	if (node != largestNode) {
-		swap(*node, *largestNode);
-		p_heapify(largestNode, first, last);
-	}
-
 }
 
 } // end namespace prism

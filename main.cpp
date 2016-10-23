@@ -28,6 +28,7 @@
 #include <new>
 #include <memory>
 #include <map>
+#include <functional>
 #include <prism/Array>
 #include <prism/Stack>
 #include <prism/List>
@@ -64,36 +65,18 @@
 using namespace prism;
 using namespace std;
 
-template <class InputIterator>
-void printRange(InputIterator first, InputIterator last) {
-	while (first != last)
-		cout << *first++ << endl;
-}
+
 
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-//	::testing::GTEST_FLAG(filter) = "*List*";
-//	::testing::InitGoogleTest(&argc, argv);
+	::testing::GTEST_FLAG(filter) = "*algorithm*";
+	::testing::InitGoogleTest(&argc, argv);
 
-	Vector<int> v = {5,4,3,2,1};
-	prism::sort_heap(v.begin(), v.end());
+	prism::sort_quicksort_aux()
 
-	printRange(v.begin(), v.end());
-
-//	return RUN_ALL_TESTS();
+	return RUN_ALL_TESTS();
 //	return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
