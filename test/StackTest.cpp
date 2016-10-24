@@ -11,6 +11,7 @@
 #include <prism/List>
 
 namespace prism {
+namespace test {
 
 class StackTest : public ::testing::Test {
 
@@ -285,7 +286,8 @@ TEST_F(StackTest, copyOnWriteOpInsertion) {
 	ASSERT_EQ(6, s2.size());
 }
 
-}
+} // end namespace test
+} // end namespace prism
 
 
 

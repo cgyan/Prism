@@ -74,18 +74,6 @@ public:
 	template <class U>
 	struct rebind { typedef Allocator<U> other; };
 
-    struct propagate_on_container_copy_assignment
-    : std::true_type
-    {};
-
-    struct propagate_on_container_move_assignment
-    : std::true_type
-    {};
-
-    struct propagate_on_container_swap
-    : std::true_type
-    {};
-
 	/*
 	 *
 	 */
@@ -212,12 +200,6 @@ public:
 	template <class U>
 	void operator=(const Allocator<U>&& rhs)
 	{/* nothing to move */}
-
-	/**
-	 *
-	 */
-    Allocator select_on_container_copy_construction(const Allocator &a)
-    { return a; }
 };
 
 /**

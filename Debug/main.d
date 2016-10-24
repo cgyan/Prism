@@ -58,8 +58,6 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Deque_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/utility \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/memory \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/LogAllocator.h \
@@ -191,10 +189,6 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Deque_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/utility:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/memory:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/memory.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 

@@ -11,27 +11,16 @@
 using namespace std;
 
 namespace prism {
+namespace test {
 
 class DequeTest : public ::testing::Test {
 
 };
 
-/**
- * Test: Deque<T>()
- */
-TEST_F(DequeTest, default_ctor)
-{
-
-//	DequeIterator<int> begin(buckets, *buckets+4);
-//	DequeIterator<int> end(buckets+1, *(buckets+1)+bucketSize);
-//	DequeIterator<int> it = end;
-//
-//	cout << (end-begin) << endl;
-
-}
 
 
-}
+} // end namespace test
+} // end namespace prism
 
 
 

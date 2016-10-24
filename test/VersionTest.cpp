@@ -10,6 +10,7 @@
 #include <prism/Version>
 
 namespace prism {
+namespace test {
 
 class VersionTest : public ::testing::Test {
 
@@ -245,7 +246,9 @@ TEST_F(VersionTest, op_greaterEqual) {
 	ASSERT_TRUE(v4 >= v);
 }
 
-}  // end namespace prism
+} // end namespace test
+} // end namespace prism
+
 
 
 

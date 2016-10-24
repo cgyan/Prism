@@ -1,5 +1,5 @@
 /*
- * iterator_aux.h
+ * iterator_priv.h
  * v1
  *
  *  Created on: Sep 25, 2016
@@ -10,6 +10,7 @@
 #define PRISM_ITERATOR_PRIV_H_
 
 namespace prism {
+namespace priv {
 
 /**
  * Advance function for input iterators.
@@ -47,6 +48,29 @@ void
 advance_aux(RandomAccessIterator& iterator, int numSteps, prism::random_access_iterator_tag)
 { iterator += numSteps; }
 
+/**
+ * Returns the distance between two ForwardIterators.
+ */
+template <class ForwardIterator>
+typename prism::iterator_traits<ForwardIterator>::difference_type
+distance_aux(ForwardIterator first, ForwardIterator last, forward_iterator_tag) {
+	int count = 0;
+	while (first++ != last)
+		++count;
+	return count;
+}
+
+/**
+ * Returns the distance between two RandomAccessIterators.
+ */
+template <class RandomAccessIterator>
+typename prism::iterator_traits<RandomAccessIterator>::difference_type
+distance_aux(RandomAccessIterator first, RandomAccessIterator last, random_access_iterator_tag) {
+	return last - first;
+}
+
+} // end namespace priv
+
 /*
  *
  */
@@ -80,27 +104,6 @@ template <class T, int Size>
 T*
 begin(T(&array)[Size])
 { return array; }
-
-/**
- * Returns the distance between two ForwardIterators.
- */
-template <class ForwardIterator>
-typename prism::iterator_traits<ForwardIterator>::difference_type
-distance_aux(ForwardIterator first, ForwardIterator last, forward_iterator_tag) {
-	int count = 0;
-	while (first++ != last)
-		++count;
-	return count;
-}
-
-/**
- * Returns the distance between two RandomAccessIterators.
- */
-template <class RandomAccessIterator>
-typename prism::iterator_traits<RandomAccessIterator>::difference_type
-distance_aux(RandomAccessIterator first, RandomAccessIterator last, random_access_iterator_tag) {
-	return last - first;
-}
 
 /*
  *
@@ -159,7 +162,7 @@ template <class ForwardIterator>
 ForwardIterator
 next(ForwardIterator it, int numSteps) {
 	typedef typename prism::iterator_traits<ForwardIterator>::iterator_category it_cat;
-	prism::advance_aux(it, numSteps, it_cat());
+	prism::priv::advance_aux(it, numSteps, it_cat());
 	return it;
 }
 
@@ -170,11 +173,9 @@ template <class BidirectionalIterator>
 BidirectionalIterator
 previous(BidirectionalIterator it, int numSteps) {
 	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
-	prism::advance_aux(it, -numSteps, it_cat());
+	prism::priv::advance_aux(it, -numSteps, it_cat());
 	return it;
 }
-
-
 
 } // end namespace prism
 

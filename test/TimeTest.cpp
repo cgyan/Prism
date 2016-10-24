@@ -13,6 +13,7 @@
 using namespace std;
 
 namespace prism {
+namespace test {
 
 class TimeTest : public ::testing::Test {
 
@@ -369,8 +370,8 @@ TEST_F(TimeTest, opMinus) {
 	ASSERT_EQ(450, time.msec());
 }
 
-
-}
+} // end namespace test
+} // end namespace prism
 
 
 

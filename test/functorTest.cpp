@@ -10,6 +10,7 @@
 #include <prism/functor>
 
 namespace prism {
+namespace test {
 
 class functorTest : public ::testing::Test {
 
@@ -68,5 +69,5 @@ TEST_F(functorTest, odd) {
 }
 
 
-
+} // end namespace test
 } // end nsmaespace prism

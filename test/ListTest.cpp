@@ -9,6 +9,7 @@
 #include <prism/h/List.h>
 
 namespace prism {
+namespace test {
 
 class ListTest : public ::testing::Test {
 
@@ -42,4 +43,5 @@ TEST_F(ListTest, clear) {
 	ASSERT_TRUE(list.size() == 0);
 }
 
+} // end namespace test
 } // end namespace prism

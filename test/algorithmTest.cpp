@@ -9,11 +9,6 @@
 
 #include <gtest/gtest.h>
 #include <prism/algorithm>
-#include <algorithm> // todo remove this
-#include <prism/functor>
-#include <iostream>
-#include <cstdlib> // srand()
-#include <ctime> // time()
 #include <functional> // std::function<>
 
 namespace prism {
@@ -22,14 +17,6 @@ namespace test {
 class algorithmTest : public ::testing::Test {
 
 };
-
-/**
- * Predicates for tests
- */
-bool algorithmTest_isOdd(const int n) { return n%2 == 1; }
-bool algorithmTest_isEven(int n) { return n%2 == 0; }
-bool algorithmTest_isNegative(int n) { return n<0; }
-void algorithmTest_double(int& i) { i *= 2; }
 // ============================================================
 // TESTS
 // ============================================================
@@ -51,8 +38,18 @@ TEST_F(algorithmTest, adjacentFind) {
  */
 TEST_F(algorithmTest, all_of) {
 	int a[5] = {2,4,6,8,10};
-	bool allEven = all_of(a, a+5, prism::even<int>());
-	bool allOdd = all_of(a, a+5, prism::odd<int>());
+
+	std::function<bool(int)> predEven = [](int i) {
+		return i%2==0;
+	};
+
+	std::function<bool(int)> predOdd = [](int i) {
+		return i%2==1;
+	};
+
+	bool allEven = prism::all_of(a, a+5, predEven);
+	bool allOdd = prism::all_of(a, a+5, predOdd);
+
 	ASSERT_TRUE(allEven);
 	ASSERT_FALSE(allOdd);
 }
@@ -62,8 +59,18 @@ TEST_F(algorithmTest, all_of) {
  */
 TEST_F(algorithmTest, any_of) {
 	int a[6] = {2,4,6,-12,8,10};
-	bool anyEven = any_of(a, a+6, prism::even<int>());
-	bool anyOdd = any_of(a, a+6, prism::odd<int>());
+
+	std::function<bool(int)> predEven = [](int i) {
+		return i%2==0;
+	};
+
+	std::function<bool(int)> predOdd = [](int i) {
+		return i%2==1;
+	};
+
+	bool anyEven = prism::any_of(a, a+6, predEven);
+	bool anyOdd = prism::any_of(a, a+6, predOdd);
+
 	ASSERT_TRUE(anyEven);
 	ASSERT_FALSE(anyOdd);
 }

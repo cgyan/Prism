@@ -12,6 +12,7 @@
 using namespace std;
 
 namespace prism {
+namespace test {
 
 class SharedDataPointerTest : public ::testing::Test {
 
@@ -226,7 +227,8 @@ TEST_F(SharedDataPointerTest, opEqualsEquals)
 	ASSERT_TRUE(p3 == p2);
 }
 
-}
+} // end namespace test
+} // end namespace prism
 
 
 

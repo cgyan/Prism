@@ -10,6 +10,7 @@
 #include <prism/String>
 
 namespace prism {
+namespace test {
 
 class pairTest : public ::testing::Test {
 
@@ -64,7 +65,8 @@ TEST_F(pairTest, opNotEquals) {
 	ASSERT_TRUE(p != p3);
 }
 
-}
+} // end namespace test
+} // end namespace prism
 
 
 

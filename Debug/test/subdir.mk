@@ -14,7 +14,7 @@ CPP_SRCS += \
 ../test/StringTest.cpp \
 ../test/TimeTest.cpp \
 ../test/VersionTest.cpp \
-../test/algorithmsTest.cpp \
+../test/algorithmTest.cpp \
 ../test/functorTest.cpp 
 
 OBJS += \
@@ -28,7 +28,7 @@ OBJS += \
 ./test/StringTest.o \
 ./test/TimeTest.o \
 ./test/VersionTest.o \
-./test/algorithmsTest.o \
+./test/algorithmTest.o \
 ./test/functorTest.o 
 
 CPP_DEPS += \
@@ -42,7 +42,7 @@ CPP_DEPS += \
 ./test/StringTest.d \
 ./test/TimeTest.d \
 ./test/VersionTest.d \
-./test/algorithmsTest.d \
+./test/algorithmTest.d \
 ./test/functorTest.d 
 
 

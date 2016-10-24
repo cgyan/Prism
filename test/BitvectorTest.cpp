@@ -13,6 +13,7 @@
 using namespace std; // todo remove this
 
 namespace prism {
+namespace test {
 
 class BitvectorTest : public ::testing::Test {
 };
@@ -429,7 +430,8 @@ TEST_F(BitvectorTest, opNotEquals) {
 	ASSERT_TRUE(bv1 != bv3);
 }
 
-}
+} // end namespace test
+} // end namespace prism
 
 
 

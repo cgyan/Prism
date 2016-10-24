@@ -9,6 +9,7 @@
 #include <prism/SharedData>
 
 namespace prism {
+namespace test {
 
 class SharedDataTest : public ::testing::Test {
 
@@ -105,7 +106,8 @@ TEST_F(SharedDataTest, setUnshareable) {
 	ASSERT_FALSE(d.isShareable());
 }
 
-} // end namespace
+} // end namespace test
+} // end namespace prism
 
 
 

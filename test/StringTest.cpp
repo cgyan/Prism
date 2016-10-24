@@ -13,6 +13,7 @@
 #include <prism/String>
 
 namespace prism {
+namespace test {
 
 class StringTest : public ::testing::Test {
 
@@ -1410,7 +1411,8 @@ TEST_F(StringTest, opPlus_string_char) {
 	ASSERT_EQ(s.size(), 6);
 }
 
-}
+} // end namespace test
+} // end namespace prism
 
 
 
