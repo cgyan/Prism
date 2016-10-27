@@ -102,6 +102,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_allocator_traits.html">AllocatorTraits</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html">Array</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fixed size sequence based container.  <a href="classprism_1_1_array.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_associative_iterator.html">AssociativeIterator</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -387,6 +388,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a1faf99d35e2cbb2b8c0644aa0b777e9b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a1faf99d35e2cbb2b8c0644aa0b777e9b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a1faf99d35e2cbb2b8c0644aa0b777e9b">operator==</a> (const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T &gt; &amp;a1, const <a class="el" href="classprism_1_1_allocator.html">Allocator</a>&lt; T &gt; &amp;a2)</td></tr>
 <tr class="separator:a1faf99d35e2cbb2b8c0644aa0b777e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23cc68e19002deb7797ff9eaa10523db"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t size&gt; </td></tr>
+<tr class="memitem:a23cc68e19002deb7797ff9eaa10523db"><td class="memTemplItemLeft" align="right" valign="top">const bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a23cc68e19002deb7797ff9eaa10523db">operator==</a> (const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, size &gt; &amp;lhs, const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, size &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:a23cc68e19002deb7797ff9eaa10523db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two arrays for equality.  <a href="#a23cc68e19002deb7797ff9eaa10523db">More...</a><br /></td></tr>
+<tr class="separator:a23cc68e19002deb7797ff9eaa10523db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff86329b54a13cb753f2c79156f68bb4"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t Size&gt; </td></tr>
+<tr class="memitem:aff86329b54a13cb753f2c79156f68bb4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#aff86329b54a13cb753f2c79156f68bb4">swap</a> (<a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;a, <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;b)</td></tr>
+<tr class="separator:aff86329b54a13cb753f2c79156f68bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ec96a679831176af1c6f2b7480226e1"><td class="memTemplParams" colspan="2">template&lt;class NodePointer &gt; </td></tr>
 <tr class="memitem:a3ec96a679831176af1c6f2b7480226e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a3ec96a679831176af1c6f2b7480226e1">printTree</a> (NodePointer p, int indent=0)</td></tr>
 <tr class="separator:a3ec96a679831176af1c6f2b7480226e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -692,7 +700,7 @@ template&lt;class T , int Size&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classprism_1_1_array.html">Array</a> specialization. </p>
+<p><a class="el" href="classprism_1_1_array.html" title="A fixed size sequence based container. ">Array</a> specialization. </p>
 
 </div>
 </div>
@@ -1072,7 +1080,7 @@ template&lt;class T , int Size&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classprism_1_1_array.html">Array</a> specialization. </p>
+<p><a class="el" href="classprism_1_1_array.html" title="A fixed size sequence based container. ">Array</a> specialization. </p>
 
 </div>
 </div>
@@ -1972,6 +1980,45 @@ template&lt;class U &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a23cc68e19002deb7797ff9eaa10523db"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t size&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool prism::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, size &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, size &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compares two arrays for equality. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>The first array </td></tr>
+    <tr><td class="paramname">rhs</td><td>The second array</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the arrays are equal or false otherwise. Two arrays are equivalent if they have the same size and the same elements in the same order</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a8370841f58d9898247afa42c49a7658d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2685,6 +2732,34 @@ template&lt;class BidirectionalIterator &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Nothing</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aff86329b54a13cb753f2c79156f68bb4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t Size&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void prism::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

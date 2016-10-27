@@ -6,7 +6,7 @@ var searchData=
   ['max',['max',['../namespaceprism.html#a812456273adfa37979e79f07e731d412',1,'prism']]],
   ['max_5fsize',['max_size',['../classprism_1_1_allocator.html#adc3d03562ab64759d8a48a191ff344d8',1,'prism::Allocator::max_size()'],['../classprism_1_1_log_allocator.html#a4cc5f21a926cfda070093c0d6e20ea8d',1,'prism::LogAllocator::max_size()']]],
   ['maximumnodeinsubtree',['maximumNodeInSubTree',['../namespaceprism.html#a6db5694fde99b39da76f51463f300c4a',1,'prism']]],
-  ['mid',['mid',['../classprism_1_1_array.html#affc7647f404c928edf9521abdfbcf88b',1,'prism::Array::mid()'],['../classprism_1_1_deque.html#ab6d73340eb546ce62b86fd0a6bab6d01',1,'prism::Deque::mid()'],['../classprism_1_1_vector.html#a19bd353d0943d4c6b962982e8c85a9c4',1,'prism::Vector::mid()']]],
+  ['mid',['mid',['../classprism_1_1_deque.html#ab6d73340eb546ce62b86fd0a6bab6d01',1,'prism::Deque::mid()'],['../classprism_1_1_vector.html#a19bd353d0943d4c6b962982e8c85a9c4',1,'prism::Vector::mid()']]],
   ['min',['min',['../classprism_1_1_time.html#afd27e4b1e093fed8253b10090c6090aa',1,'prism::Time::min()'],['../namespaceprism.html#a10aff0aca673fb1837069dd8967e4738',1,'prism::min()']]],
   ['minimumnodeinsubtree',['minimumNodeInSubTree',['../namespaceprism.html#a8aab2862319b55b02ddcb6b9659b3699',1,'prism']]],
   ['minor',['minor',['../classprism_1_1_prism_version.html#a9e72e770a3e8441d30e43935ef5d3c7e',1,'prism::PrismVersion::minor()'],['../classprism_1_1_version.html#a82875687fdccdd2dd21bbc3670155eff',1,'prism::Version::minor()']]],

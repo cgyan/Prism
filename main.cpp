@@ -28,6 +28,7 @@
 #include <new>
 #include <memory>
 #include <map>
+#include <array>
 #include <functional>
 #include <prism/Array>
 #include <prism/Stack>
@@ -71,12 +72,9 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "ArrayTest*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	int a[5];
-	cout << sizeof(a) << endl;
-	Array<int> aa(5);
-	cout << sizeof(aa) << endl;
 
-//	return RUN_ALL_TESTS();
+
+	return RUN_ALL_TESTS();
 //	return 0;
 }
 

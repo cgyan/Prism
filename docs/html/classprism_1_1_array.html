@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Prism API: prism::Array&lt; T &gt; Class Template Reference</title>
+<title>Prism API: prism::Array&lt; T, Size &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,257 +96,264 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classprism_1_1_array-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">prism::Array&lt; T &gt; Class Template Reference</div>  </div>
+<div class="title">prism::Array&lt; T, Size &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A fixed size sequence based container.  
+ <a href="classprism_1_1_array.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a7b6dc8358fdfe216f4477a361190c9af"><td class="memItemLeft" align="right" valign="top">typedef T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a7b6dc8358fdfe216f4477a361190c9af">value_type</a></td></tr>
-<tr class="separator:a7b6dc8358fdfe216f4477a361190c9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a391b8bb39ab945786ca33a0110fc163c"><td class="memItemLeft" align="right" valign="top">typedef T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a391b8bb39ab945786ca33a0110fc163c">pointer</a></td></tr>
-<tr class="separator:a391b8bb39ab945786ca33a0110fc163c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ebfd26a4f219fcb24eb7f068704d9aa"><td class="memItemLeft" align="right" valign="top">typedef T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a1ebfd26a4f219fcb24eb7f068704d9aa">reference</a></td></tr>
-<tr class="separator:a1ebfd26a4f219fcb24eb7f068704d9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a555c4123ec8e113e5ff25e0e5a3525d0"><td class="memItemLeft" align="right" valign="top">typedef const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a555c4123ec8e113e5ff25e0e5a3525d0">const_pointer</a></td></tr>
-<tr class="separator:a555c4123ec8e113e5ff25e0e5a3525d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7736e6455cfc2e330981405251756394"><td class="memItemLeft" align="right" valign="top">typedef const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a7736e6455cfc2e330981405251756394">const_reference</a></td></tr>
-<tr class="separator:a7736e6455cfc2e330981405251756394"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ceacda8c2a68bf5b54e07a8c4f5f8e3"><td class="memItemLeft" align="right" valign="top">typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a8ceacda8c2a68bf5b54e07a8c4f5f8e3">size_type</a></td></tr>
-<tr class="separator:a8ceacda8c2a68bf5b54e07a8c4f5f8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae2669a2cdeba360b37d2f872af9208"><td class="memItemLeft" align="right" valign="top">typedef std::ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#abae2669a2cdeba360b37d2f872af9208">difference_type</a></td></tr>
-<tr class="separator:abae2669a2cdeba360b37d2f872af9208"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68b5c70152e822463f8d2a3c0c5bebcb"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1random__access__iterator__tag.html">random_access_iterator_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a68b5c70152e822463f8d2a3c0c5bebcb">iterator_category</a></td></tr>
-<tr class="separator:a68b5c70152e822463f8d2a3c0c5bebcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf99b1f921727cf61cf9d5b66acc66b8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt; T, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#acf99b1f921727cf61cf9d5b66acc66b8">iterator</a></td></tr>
-<tr class="separator:acf99b1f921727cf61cf9d5b66acc66b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1654729fe986281be9c0064999caf3d7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt; T, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a></td></tr>
-<tr class="separator:a1654729fe986281be9c0064999caf3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903dc381b1e02970d00be6002dc15d3e"><td class="memItemLeft" align="right" valign="top">typedef T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a903dc381b1e02970d00be6002dc15d3e">value_type</a></td></tr>
+<tr class="separator:a903dc381b1e02970d00be6002dc15d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06cca3e8ac92f77d0068246d715bb0e4"><td class="memItemLeft" align="right" valign="top">typedef T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a06cca3e8ac92f77d0068246d715bb0e4">pointer</a></td></tr>
+<tr class="separator:a06cca3e8ac92f77d0068246d715bb0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00d78e61fb0a47489aff55b88ae9ebaa"><td class="memItemLeft" align="right" valign="top">typedef T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a></td></tr>
+<tr class="separator:a00d78e61fb0a47489aff55b88ae9ebaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa9af8079a0a39654775076cc9d16e2"><td class="memItemLeft" align="right" valign="top">typedef const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a5aa9af8079a0a39654775076cc9d16e2">const_pointer</a></td></tr>
+<tr class="separator:a5aa9af8079a0a39654775076cc9d16e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16161ca6c0027dfa1a7c678e820eedc3"><td class="memItemLeft" align="right" valign="top">typedef const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a></td></tr>
+<tr class="separator:a16161ca6c0027dfa1a7c678e820eedc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b64c4713d73faa944ecd7b0e3f648a8"><td class="memItemLeft" align="right" valign="top">typedef std::ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a0b64c4713d73faa944ecd7b0e3f648a8">difference_type</a></td></tr>
+<tr class="separator:a0b64c4713d73faa944ecd7b0e3f648a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c89205e41d0e7825562343bfde3f1b"><td class="memItemLeft" align="right" valign="top">typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a></td></tr>
+<tr class="separator:a91c89205e41d0e7825562343bfde3f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a097ed322849188b1c8a8697405160638"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt; T, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a097ed322849188b1c8a8697405160638">iterator</a></td></tr>
+<tr class="separator:a097ed322849188b1c8a8697405160638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a187e11a8ec836c0b69b96b51fba73164"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt; T, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a></td></tr>
+<tr class="separator:a187e11a8ec836c0b69b96b51fba73164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab128f1ed5a4547a04812b921dc75897"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aab128f1ed5a4547a04812b921dc75897">Array</a> (const int <a class="el" href="classprism_1_1_array.html#a83c88f0f351ac35798f40ed4e922e187">size</a>)</td></tr>
-<tr class="memdesc:aab128f1ed5a4547a04812b921dc75897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array of size <em>size</em> and fills each element with default-constructed values.  <a href="#aab128f1ed5a4547a04812b921dc75897">More...</a><br /></td></tr>
-<tr class="separator:aab128f1ed5a4547a04812b921dc75897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac696e19a99b7a601f013352617689098"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ac696e19a99b7a601f013352617689098">Array</a> (const int <a class="el" href="classprism_1_1_array.html#a83c88f0f351ac35798f40ed4e922e187">size</a>, const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>)</td></tr>
-<tr class="memdesc:ac696e19a99b7a601f013352617689098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array of size <em>size</em> and fills each element with <em>value</em>.  <a href="#ac696e19a99b7a601f013352617689098">More...</a><br /></td></tr>
-<tr class="separator:ac696e19a99b7a601f013352617689098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada5fda23d2713ee3b2875495c77948b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ada5fda23d2713ee3b2875495c77948b2">Array</a> (std::initializer_list&lt; T &gt; il)</td></tr>
-<tr class="memdesc:ada5fda23d2713ee3b2875495c77948b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an array populated from the elements of the initializer list.  <a href="#ada5fda23d2713ee3b2875495c77948b2">More...</a><br /></td></tr>
-<tr class="separator:ada5fda23d2713ee3b2875495c77948b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f0a0b32b4d95975fd15f0c1321d144"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a15f0a0b32b4d95975fd15f0c1321d144">Array</a> (const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T &gt; &amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
-<tr class="memdesc:a15f0a0b32b4d95975fd15f0c1321d144"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-constructs this array from another array.  <a href="#a15f0a0b32b4d95975fd15f0c1321d144">More...</a><br /></td></tr>
-<tr class="separator:a15f0a0b32b4d95975fd15f0c1321d144"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a359ddd91014d3a49b903cbb0ea207418"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a359ddd91014d3a49b903cbb0ea207418">~Array</a> ()</td></tr>
-<tr class="memdesc:a359ddd91014d3a49b903cbb0ea207418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this array. If the elements are pointers then it is the user's responsibility to destroy the memory they point to.  <a href="#a359ddd91014d3a49b903cbb0ea207418">More...</a><br /></td></tr>
-<tr class="separator:a359ddd91014d3a49b903cbb0ea207418"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38eee56b6b29542cc8fc809bcdf88adc"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a38eee56b6b29542cc8fc809bcdf88adc">at</a> (const int index)</td></tr>
-<tr class="separator:a38eee56b6b29542cc8fc809bcdf88adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ea8ce39540e7a18dcfe3057eff40f66"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a5ea8ce39540e7a18dcfe3057eff40f66">at</a> (const int index) const </td></tr>
-<tr class="separator:a5ea8ce39540e7a18dcfe3057eff40f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98c1726b4d71648e2ca593837c4dc4a"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aa98c1726b4d71648e2ca593837c4dc4a">back</a> ()</td></tr>
-<tr class="separator:aa98c1726b4d71648e2ca593837c4dc4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a205c800e2f974616f682b5d8f5f07926"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a205c800e2f974616f682b5d8f5f07926">back</a> () const </td></tr>
-<tr class="separator:a205c800e2f974616f682b5d8f5f07926"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68c79391a86abea8d2d756f9cef6ceb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#acf99b1f921727cf61cf9d5b66acc66b8">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a68c79391a86abea8d2d756f9cef6ceb5">begin</a> ()</td></tr>
-<tr class="separator:a68c79391a86abea8d2d756f9cef6ceb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea8c7e7aaeef5e9de7ad0609c3df60c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aea8c7e7aaeef5e9de7ad0609c3df60c8">begin</a> () const </td></tr>
-<tr class="separator:aea8c7e7aaeef5e9de7ad0609c3df60c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8365be504a6fc5067b7faa35422f5e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#af8365be504a6fc5067b7faa35422f5e0">constBegin</a> () const </td></tr>
-<tr class="separator:af8365be504a6fc5067b7faa35422f5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02182d46b5dae8319de11a30041a670f"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a02182d46b5dae8319de11a30041a670f">constData</a> () const </td></tr>
-<tr class="separator:a02182d46b5dae8319de11a30041a670f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01c0540cbafb06cc4bca50f17b76235e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a01c0540cbafb06cc4bca50f17b76235e">constEnd</a> () const </td></tr>
-<tr class="separator:a01c0540cbafb06cc4bca50f17b76235e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1dbaaa25fdd52114ecf83764d07dd32"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ab1dbaaa25fdd52114ecf83764d07dd32">contains</a> (const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>) const </td></tr>
-<tr class="separator:ab1dbaaa25fdd52114ecf83764d07dd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17090694f8652c186aef26882a387c05"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a17090694f8652c186aef26882a387c05">count</a> (const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>) const </td></tr>
-<tr class="separator:a17090694f8652c186aef26882a387c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32ac66258d8a1c8e7d89d87ae4276bdc"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a32ac66258d8a1c8e7d89d87ae4276bdc">data</a> ()</td></tr>
-<tr class="separator:a32ac66258d8a1c8e7d89d87ae4276bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe5c375e7b01f51c1c3bc1f95268428a"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#abe5c375e7b01f51c1c3bc1f95268428a">data</a> () const </td></tr>
-<tr class="separator:abe5c375e7b01f51c1c3bc1f95268428a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeadc3ca6d7ea12af461b5c6a7fcedd47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#acf99b1f921727cf61cf9d5b66acc66b8">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aeadc3ca6d7ea12af461b5c6a7fcedd47">end</a> ()</td></tr>
-<tr class="separator:aeadc3ca6d7ea12af461b5c6a7fcedd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44f1f427aefb6f98f5e45efc1d78b4ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a44f1f427aefb6f98f5e45efc1d78b4ae">end</a> () const </td></tr>
-<tr class="separator:a44f1f427aefb6f98f5e45efc1d78b4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f8ecd4d34589f7cbc28d6f14fd3de9a"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a8f8ecd4d34589f7cbc28d6f14fd3de9a">endsWith</a> (const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>) const </td></tr>
-<tr class="separator:a8f8ecd4d34589f7cbc28d6f14fd3de9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a366f1c9b89d2133171a0ed2bb54534ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a366f1c9b89d2133171a0ed2bb54534ce">fill</a> (const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>)</td></tr>
-<tr class="separator:a366f1c9b89d2133171a0ed2bb54534ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a694e4a3fe9be1096b8ad954e2bd189d6"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a694e4a3fe9be1096b8ad954e2bd189d6">first</a> ()</td></tr>
-<tr class="separator:a694e4a3fe9be1096b8ad954e2bd189d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d24022c7737524c96caea7435948ab8"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a3d24022c7737524c96caea7435948ab8">first</a> () const </td></tr>
-<tr class="separator:a3d24022c7737524c96caea7435948ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3eca6ff8f386eed2ddfcf615e1f4bc1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aa3eca6ff8f386eed2ddfcf615e1f4bc1">indexOf</a> (const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>, const int from=0) const </td></tr>
-<tr class="separator:aa3eca6ff8f386eed2ddfcf615e1f4bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1994d3d47017ac66c1aacb39fd34be0b"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a1994d3d47017ac66c1aacb39fd34be0b">last</a> ()</td></tr>
-<tr class="separator:a1994d3d47017ac66c1aacb39fd34be0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94dd2e049b9740e20281cac225d7dee3"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a94dd2e049b9740e20281cac225d7dee3">last</a> () const </td></tr>
-<tr class="separator:a94dd2e049b9740e20281cac225d7dee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a59ebea7df1fd8789b8895f5e77d6ff"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a1a59ebea7df1fd8789b8895f5e77d6ff">lastIndexOf</a> (const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>, int index=-1) const </td></tr>
-<tr class="separator:a1a59ebea7df1fd8789b8895f5e77d6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7075e469a15ddfa81059842598fa9e89"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a7075e469a15ddfa81059842598fa9e89">length</a> () const </td></tr>
-<tr class="separator:a7075e469a15ddfa81059842598fa9e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc7647f404c928edf9521abdfbcf88b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#affc7647f404c928edf9521abdfbcf88b">mid</a> (const int index, const int <a class="el" href="classprism_1_1_array.html#a7075e469a15ddfa81059842598fa9e89">length</a>=-1) const </td></tr>
-<tr class="separator:affc7647f404c928edf9521abdfbcf88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0aff831c9d2c94fd834d8abbbe94d2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aa0aff831c9d2c94fd834d8abbbe94d2b">replace</a> (const int index, const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>)</td></tr>
-<tr class="separator:aa0aff831c9d2c94fd834d8abbbe94d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83c88f0f351ac35798f40ed4e922e187"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a83c88f0f351ac35798f40ed4e922e187">size</a> () const </td></tr>
-<tr class="separator:a83c88f0f351ac35798f40ed4e922e187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa80d5944d464d8de5f7b991b355e10b2"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aa80d5944d464d8de5f7b991b355e10b2">startsWith</a> (const T &amp;<a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a>) const </td></tr>
-<tr class="separator:aa80d5944d464d8de5f7b991b355e10b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c5690996975510eed7112066b936d8f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a2c5690996975510eed7112066b936d8f">value</a> (const int index) const </td></tr>
-<tr class="separator:a2c5690996975510eed7112066b936d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c12bfbaf8dd10fee4124d7a9d8683bb"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a5c12bfbaf8dd10fee4124d7a9d8683bb">operator[]</a> (const int index)</td></tr>
-<tr class="separator:a5c12bfbaf8dd10fee4124d7a9d8683bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30e0857225e5ee2712c4edca0e7462bf"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a30e0857225e5ee2712c4edca0e7462bf">operator[]</a> (const int index) const </td></tr>
-<tr class="separator:a30e0857225e5ee2712c4edca0e7462bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17fded803080c4eed55773ad07ed8740"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a17fded803080c4eed55773ad07ed8740">operator==</a> (const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T &gt; &amp;rhs) const </td></tr>
-<tr class="separator:a17fded803080c4eed55773ad07ed8740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ec48eaa032005ff6141481ac18e6e9f"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a8ec48eaa032005ff6141481ac18e6e9f">operator!=</a> (const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T &gt; &amp;rhs) const </td></tr>
-<tr class="separator:a8ec48eaa032005ff6141481ac18e6e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606b15825da3f7c1a4ac0e29a38457f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a606b15825da3f7c1a4ac0e29a38457f9">Array</a> ()</td></tr>
+<tr class="memdesc:a606b15825da3f7c1a4ac0e29a38457f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an array to a size of the template argument <em>size</em>.  <a href="#a606b15825da3f7c1a4ac0e29a38457f9">More...</a><br /></td></tr>
+<tr class="separator:a606b15825da3f7c1a4ac0e29a38457f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfb37348fd7c4fd21ea91e09b8bf127a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#adfb37348fd7c4fd21ea91e09b8bf127a">Array</a> (<a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a> value)</td></tr>
+<tr class="memdesc:adfb37348fd7c4fd21ea91e09b8bf127a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an array to a size of the template argument <em>size</em> amd fills it with a given value.  <a href="#adfb37348fd7c4fd21ea91e09b8bf127a">More...</a><br /></td></tr>
+<tr class="separator:adfb37348fd7c4fd21ea91e09b8bf127a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb91bc866a1f21b2b44afc2782d4da0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aeb91bc866a1f21b2b44afc2782d4da0d">Array</a> (const std::initializer_list&lt; T &gt; &amp;il)</td></tr>
+<tr class="memdesc:aeb91bc866a1f21b2b44afc2782d4da0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an array from the elements in an initializer list.  <a href="#aeb91bc866a1f21b2b44afc2782d4da0d">More...</a><br /></td></tr>
+<tr class="separator:aeb91bc866a1f21b2b44afc2782d4da0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc1d79efe914a00aad4ac9268ee2584"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#affc1d79efe914a00aad4ac9268ee2584">Array</a> (const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;<a class="el" href="namespaceprism.html#ae776f4cd825f79e7af1cf6ee1d90a209">copy</a>)</td></tr>
+<tr class="memdesc:affc1d79efe914a00aad4ac9268ee2584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy-constructs this array from another array.  <a href="#affc1d79efe914a00aad4ac9268ee2584">More...</a><br /></td></tr>
+<tr class="separator:affc1d79efe914a00aad4ac9268ee2584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94264422464c08b5c328938217ee4af9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a94264422464c08b5c328938217ee4af9">Array</a> (<a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&amp;other)</td></tr>
+<tr class="memdesc:a94264422464c08b5c328938217ee4af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move-constructs an array using the elements from <em>other</em>.  <a href="#a94264422464c08b5c328938217ee4af9">More...</a><br /></td></tr>
+<tr class="separator:a94264422464c08b5c328938217ee4af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d486886db0159ea668e8abb63a5f84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aa1d486886db0159ea668e8abb63a5f84">operator=</a> (const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:aa1d486886db0159ea668e8abb63a5f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns another array to this array.  <a href="#aa1d486886db0159ea668e8abb63a5f84">More...</a><br /></td></tr>
+<tr class="separator:aa1d486886db0159ea668e8abb63a5f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a943dfd330b23b5514441ba9cd24354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a8a943dfd330b23b5514441ba9cd24354">operator=</a> (<a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:a8a943dfd330b23b5514441ba9cd24354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the contents of another array into this array.  <a href="#a8a943dfd330b23b5514441ba9cd24354">More...</a><br /></td></tr>
+<tr class="separator:a8a943dfd330b23b5514441ba9cd24354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2cca8acf9276ac8087b73ccd91d51f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a6b2cca8acf9276ac8087b73ccd91d51f">~Array</a> ()</td></tr>
+<tr class="memdesc:a6b2cca8acf9276ac8087b73ccd91d51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys this array. If the elements are pointers then it is the user's responsibility to destroy the memory they point to.  <a href="#a6b2cca8acf9276ac8087b73ccd91d51f">More...</a><br /></td></tr>
+<tr class="separator:a6b2cca8acf9276ac8087b73ccd91d51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45794e68a66b0e7e53e900b3d8facf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ab45794e68a66b0e7e53e900b3d8facf7">at</a> (const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a> index)</td></tr>
+<tr class="memdesc:ab45794e68a66b0e7e53e900b3d8facf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the element at the given index.  <a href="#ab45794e68a66b0e7e53e900b3d8facf7">More...</a><br /></td></tr>
+<tr class="separator:ab45794e68a66b0e7e53e900b3d8facf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4ac3b4fbbd880595215a4c420c05bc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#af4ac3b4fbbd880595215a4c420c05bc0">at</a> (const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a> index) const </td></tr>
+<tr class="memdesc:af4ac3b4fbbd880595215a4c420c05bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the element at the given index.  <a href="#af4ac3b4fbbd880595215a4c420c05bc0">More...</a><br /></td></tr>
+<tr class="separator:af4ac3b4fbbd880595215a4c420c05bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52bf53de7bf1f19277aa61ff308c5c22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a52bf53de7bf1f19277aa61ff308c5c22">back</a> ()</td></tr>
+<tr class="memdesc:a52bf53de7bf1f19277aa61ff308c5c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the last element.  <a href="#a52bf53de7bf1f19277aa61ff308c5c22">More...</a><br /></td></tr>
+<tr class="separator:a52bf53de7bf1f19277aa61ff308c5c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16187f3748f5d37bd54157d27f051923"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a16187f3748f5d37bd54157d27f051923">back</a> () const </td></tr>
+<tr class="memdesc:a16187f3748f5d37bd54157d27f051923"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the last element.  <a href="#a16187f3748f5d37bd54157d27f051923">More...</a><br /></td></tr>
+<tr class="separator:a16187f3748f5d37bd54157d27f051923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3995bfc8f8ce2637562ef1415c4000c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a097ed322849188b1c8a8697405160638">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a3995bfc8f8ce2637562ef1415c4000c5">begin</a> () noexcept</td></tr>
+<tr class="memdesc:a3995bfc8f8ce2637562ef1415c4000c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator that points to the first element.  <a href="#a3995bfc8f8ce2637562ef1415c4000c5">More...</a><br /></td></tr>
+<tr class="separator:a3995bfc8f8ce2637562ef1415c4000c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73db0443f0f1d6056675959803fa1be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a73db0443f0f1d6056675959803fa1be2">begin</a> () const  noexcept</td></tr>
+<tr class="memdesc:a73db0443f0f1d6056675959803fa1be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const iterator that points to the first element.  <a href="#a73db0443f0f1d6056675959803fa1be2">More...</a><br /></td></tr>
+<tr class="separator:a73db0443f0f1d6056675959803fa1be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa300c54bcc563da2763f80a9eaace6ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aa300c54bcc563da2763f80a9eaace6ca">cbegin</a> () const  noexcept</td></tr>
+<tr class="memdesc:aa300c54bcc563da2763f80a9eaace6ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const iterator that points to the first element.  <a href="#aa300c54bcc563da2763f80a9eaace6ca">More...</a><br /></td></tr>
+<tr class="separator:aa300c54bcc563da2763f80a9eaace6ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3cf91d51cb3e2896ebb970c820bd61f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ae3cf91d51cb3e2896ebb970c820bd61f">constBegin</a> () const  noexcept</td></tr>
+<tr class="memdesc:ae3cf91d51cb3e2896ebb970c820bd61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const iterator that points to the first element.  <a href="#ae3cf91d51cb3e2896ebb970c820bd61f">More...</a><br /></td></tr>
+<tr class="separator:ae3cf91d51cb3e2896ebb970c820bd61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b49872b7a79bf1bef211d48321260ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a5aa9af8079a0a39654775076cc9d16e2">const_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a9b49872b7a79bf1bef211d48321260ba">constData</a> () const  noexcept</td></tr>
+<tr class="memdesc:a9b49872b7a79bf1bef211d48321260ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pointer to the underlying data.  <a href="#a9b49872b7a79bf1bef211d48321260ba">More...</a><br /></td></tr>
+<tr class="separator:a9b49872b7a79bf1bef211d48321260ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c8781299a9679ebfb5a22e0730ff5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a28c8781299a9679ebfb5a22e0730ff5f">cend</a> () const  noexcept</td></tr>
+<tr class="memdesc:a28c8781299a9679ebfb5a22e0730ff5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const iterator that points to the position past the last element.  <a href="#a28c8781299a9679ebfb5a22e0730ff5f">More...</a><br /></td></tr>
+<tr class="separator:a28c8781299a9679ebfb5a22e0730ff5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4c5da3794114938f06ae3a91b88356c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ab4c5da3794114938f06ae3a91b88356c">constEnd</a> () const  noexcept</td></tr>
+<tr class="memdesc:ab4c5da3794114938f06ae3a91b88356c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const iterator that points to the position past the last element.  <a href="#ab4c5da3794114938f06ae3a91b88356c">More...</a><br /></td></tr>
+<tr class="separator:ab4c5da3794114938f06ae3a91b88356c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e7f28deb0ba83598ca9a8272bcc054f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a06cca3e8ac92f77d0068246d715bb0e4">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a8e7f28deb0ba83598ca9a8272bcc054f">data</a> () noexcept</td></tr>
+<tr class="memdesc:a8e7f28deb0ba83598ca9a8272bcc054f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pointer to the start of the underlying data.  <a href="#a8e7f28deb0ba83598ca9a8272bcc054f">More...</a><br /></td></tr>
+<tr class="separator:a8e7f28deb0ba83598ca9a8272bcc054f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdd1a8d0150395cf1b4d6c772ba18b4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a5aa9af8079a0a39654775076cc9d16e2">const_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#afdd1a8d0150395cf1b4d6c772ba18b4d">data</a> () const  noexcept</td></tr>
+<tr class="memdesc:afdd1a8d0150395cf1b4d6c772ba18b4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a const pointer to the start of the underlying data.  <a href="#afdd1a8d0150395cf1b4d6c772ba18b4d">More...</a><br /></td></tr>
+<tr class="separator:afdd1a8d0150395cf1b4d6c772ba18b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa15d1e6c2dd28c472d09f6d3ba13651c"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#aa15d1e6c2dd28c472d09f6d3ba13651c">empty</a> () const  noexcept</td></tr>
+<tr class="memdesc:aa15d1e6c2dd28c472d09f6d3ba13651c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the array is empty or not.  <a href="#aa15d1e6c2dd28c472d09f6d3ba13651c">More...</a><br /></td></tr>
+<tr class="separator:aa15d1e6c2dd28c472d09f6d3ba13651c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f53b03b9dfbee6d506bcb4c1de8f46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a097ed322849188b1c8a8697405160638">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ae9f53b03b9dfbee6d506bcb4c1de8f46">end</a> () noexcept</td></tr>
+<tr class="memdesc:ae9f53b03b9dfbee6d506bcb4c1de8f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator that points to the position past the last element.  <a href="#ae9f53b03b9dfbee6d506bcb4c1de8f46">More...</a><br /></td></tr>
+<tr class="separator:ae9f53b03b9dfbee6d506bcb4c1de8f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdce2e9b31d2c17e3c63a378b9160989"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#afdce2e9b31d2c17e3c63a378b9160989">end</a> () const  noexcept</td></tr>
+<tr class="memdesc:afdce2e9b31d2c17e3c63a378b9160989"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const iterator that points to the position past the last element.  <a href="#afdce2e9b31d2c17e3c63a378b9160989">More...</a><br /></td></tr>
+<tr class="separator:afdce2e9b31d2c17e3c63a378b9160989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fbe9e37073c724df02379ee88e35386"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a2fbe9e37073c724df02379ee88e35386">fill</a> (<a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a> value)</td></tr>
+<tr class="memdesc:a2fbe9e37073c724df02379ee88e35386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the array with a given value.  <a href="#a2fbe9e37073c724df02379ee88e35386">More...</a><br /></td></tr>
+<tr class="separator:a2fbe9e37073c724df02379ee88e35386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65932e44ca21576c9f22b7e8de7ebe82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a65932e44ca21576c9f22b7e8de7ebe82">first</a> ()</td></tr>
+<tr class="memdesc:a65932e44ca21576c9f22b7e8de7ebe82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the first element.  <a href="#a65932e44ca21576c9f22b7e8de7ebe82">More...</a><br /></td></tr>
+<tr class="separator:a65932e44ca21576c9f22b7e8de7ebe82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf71e772e127cf0ccf836947fe72af0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#adf71e772e127cf0ccf836947fe72af0d">first</a> () const </td></tr>
+<tr class="memdesc:adf71e772e127cf0ccf836947fe72af0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the first element.  <a href="#adf71e772e127cf0ccf836947fe72af0d">More...</a><br /></td></tr>
+<tr class="separator:adf71e772e127cf0ccf836947fe72af0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d0ffad9ac8ec1c37f129656d4db63e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#ac1d0ffad9ac8ec1c37f129656d4db63e">last</a> ()</td></tr>
+<tr class="memdesc:ac1d0ffad9ac8ec1c37f129656d4db63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the last element.  <a href="#ac1d0ffad9ac8ec1c37f129656d4db63e">More...</a><br /></td></tr>
+<tr class="separator:ac1d0ffad9ac8ec1c37f129656d4db63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0f97e62e654d23531f805c54f67354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a0f0f97e62e654d23531f805c54f67354">last</a> () const </td></tr>
+<tr class="memdesc:a0f0f97e62e654d23531f805c54f67354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the last element.  <a href="#a0f0f97e62e654d23531f805c54f67354">More...</a><br /></td></tr>
+<tr class="separator:a0f0f97e62e654d23531f805c54f67354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6267b9849168f7abc2eb80764e3d71a4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a6267b9849168f7abc2eb80764e3d71a4">size</a> () const  noexcept</td></tr>
+<tr class="memdesc:a6267b9849168f7abc2eb80764e3d71a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of elements in the array.  <a href="#a6267b9849168f7abc2eb80764e3d71a4">More...</a><br /></td></tr>
+<tr class="separator:a6267b9849168f7abc2eb80764e3d71a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a1fcb058f5c434c92d57c33a3f552d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a2a1fcb058f5c434c92d57c33a3f552d7">swap</a> (<a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;other) noexcept</td></tr>
+<tr class="memdesc:a2a1fcb058f5c434c92d57c33a3f552d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swaps the elements of the two arrays.  <a href="#a2a1fcb058f5c434c92d57c33a3f552d7">More...</a><br /></td></tr>
+<tr class="separator:a2a1fcb058f5c434c92d57c33a3f552d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d5df6e36bc5744202e08721b27a009"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a36d5df6e36bc5744202e08721b27a009">operator[]</a> (const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a> index)</td></tr>
+<tr class="memdesc:a36d5df6e36bc5744202e08721b27a009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the element at a given index.  <a href="#a36d5df6e36bc5744202e08721b27a009">More...</a><br /></td></tr>
+<tr class="separator:a36d5df6e36bc5744202e08721b27a009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7afed59b3c1f6f621dd01131ce370539"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_array.html#a7afed59b3c1f6f621dd01131ce370539">operator[]</a> (const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a> index) const </td></tr>
+<tr class="memdesc:a7afed59b3c1f6f621dd01131ce370539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the element at a given index.  <a href="#a7afed59b3c1f6f621dd01131ce370539">More...</a><br /></td></tr>
+<tr class="separator:a7afed59b3c1f6f621dd01131ce370539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class T&gt;<br />
-class prism::Array&lt; T &gt;</h3>
+<div class="textblock"><h3>template&lt;typename T, size_t Size&gt;<br />
+class prism::Array&lt; T, Size &gt;</h3>
 
-<p>Arrays are fixed-size sequence containers: they hold a specific number of elements ordered in a strict linear sequence. </p>
+<p>A fixed size sequence based container. </p>
+<p>More detailed description here</p>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a1654729fe986281be9c0064999caf3d7"></a>
+<a class="anchor" id="a187e11a8ec836c0b69b96b51fba73164"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt;T,true&gt; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a></td>
+          <td class="memname">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt;T,true&gt; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a555c4123ec8e113e5ff25e0e5a3525d0"></a>
+<a class="anchor" id="a5aa9af8079a0a39654775076cc9d16e2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef const T* <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a555c4123ec8e113e5ff25e0e5a3525d0">const_pointer</a></td>
+          <td class="memname">typedef const T* <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a5aa9af8079a0a39654775076cc9d16e2">const_pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a7736e6455cfc2e330981405251756394"></a>
+<a class="anchor" id="a16161ca6c0027dfa1a7c678e820eedc3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef const T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a7736e6455cfc2e330981405251756394">const_reference</a></td>
+          <td class="memname">typedef const T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="abae2669a2cdeba360b37d2f872af9208"></a>
+<a class="anchor" id="a0b64c4713d73faa944ecd7b0e3f648a8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::ptrdiff_t <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#abae2669a2cdeba360b37d2f872af9208">difference_type</a></td>
+          <td class="memname">typedef std::ptrdiff_t <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a0b64c4713d73faa944ecd7b0e3f648a8">difference_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="acf99b1f921727cf61cf9d5b66acc66b8"></a>
+<a class="anchor" id="a097ed322849188b1c8a8697405160638"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt;T,false&gt; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#acf99b1f921727cf61cf9d5b66acc66b8">iterator</a></td>
+          <td class="memname">typedef <a class="el" href="structprism_1_1_sequence_iterator.html">SequenceIterator</a>&lt;T,false&gt; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a097ed322849188b1c8a8697405160638">iterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a68b5c70152e822463f8d2a3c0c5bebcb"></a>
+<a class="anchor" id="a06cca3e8ac92f77d0068246d715bb0e4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="structprism_1_1random__access__iterator__tag.html">random_access_iterator_tag</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a68b5c70152e822463f8d2a3c0c5bebcb">iterator_category</a></td>
+          <td class="memname">typedef T* <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a06cca3e8ac92f77d0068246d715bb0e4">pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a391b8bb39ab945786ca33a0110fc163c"></a>
+<a class="anchor" id="a00d78e61fb0a47489aff55b88ae9ebaa"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef T* <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a391b8bb39ab945786ca33a0110fc163c">pointer</a></td>
+          <td class="memname">typedef T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a1ebfd26a4f219fcb24eb7f068704d9aa"></a>
+<a class="anchor" id="a91c89205e41d0e7825562343bfde3f1b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a1ebfd26a4f219fcb24eb7f068704d9aa">reference</a></td>
+          <td class="memname">typedef size_t <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a8ceacda8c2a68bf5b54e07a8c4f5f8e3"></a>
+<a class="anchor" id="a903dc381b1e02970d00be6002dc15d3e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef size_t <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a8ceacda8c2a68bf5b54e07a8c4f5f8e3">size_type</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7b6dc8358fdfe216f4477a361190c9af"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef T <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html#a7b6dc8358fdfe216f4477a361190c9af">value_type</a></td>
+          <td class="memname">typedef T <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html#a903dc381b1e02970d00be6002dc15d3e">value_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -354,112 +361,115 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aab128f1ed5a4547a04812b921dc75897"></a>
+<a class="anchor" id="a606b15825da3f7c1a4ac0e29a38457f9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Creates an array of size <em>size</em> and fills each element with default-constructed values. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The number of elements to initialize the array with</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Constructs an array to a size of the template argument <em>size</em>. </p>
+<p>If the value type is a class then the default constructor is called for each element whereas if it is a fundamental type the elements are not initialized.</p>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ac696e19a99b7a601f013352617689098"></a>
+<a class="anchor" id="adfb37348fd7c4fd21ea91e09b8bf127a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Creates an array of size <em>size</em> and fills each element with <em>value</em>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The number of elements to initialize the array with </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value to initialize all new elements with</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Constructs an array to a size of the template argument <em>size</em> amd fills it with a given value. </p>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ada5fda23d2713ee3b2875495c77948b2"></a>
+<a class="anchor" id="aeb91bc866a1f21b2b44afc2782d4da0d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
           <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; T &gt;&#160;</td>
+          <td class="paramtype">const std::initializer_list&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>il</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Creates an array populated from the elements of the initializer list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">il</td><td>An initializer list to initialize the array with</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Constructs an array from the elements in an initializer list. </p>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a15f0a0b32b4d95975fd15f0c1321d144"></a>
+<a class="anchor" id="affc1d79efe914a00aad4ac9268ee2584"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>copy</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Copy-constructs this array from another array. </p>
@@ -473,17 +483,52 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a359ddd91014d3a49b903cbb0ea207418"></a>
+<a class="anchor" id="a94264422464c08b5c328938217ee4af9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::~<a class="el" href="classprism_1_1_array.html">Array</a> </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::<a class="el" href="classprism_1_1_array.html">Array</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move-constructs an array using the elements from <em>other</em>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>An array where the elements are moved into this array</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b2cca8acf9276ac8087b73ccd91d51f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::~<a class="el" href="classprism_1_1_array.html">Array</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -502,50 +547,76 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a38eee56b6b29542cc8fc809bcdf88adc"></a>
+<a class="anchor" id="ab45794e68a66b0e7e53e900b3d8facf7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::at </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::at </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Accesses the element at the given index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the element to be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Throws</td><td>an <a class="el" href="classprism_1_1_out_of_bounds_exception.html">OutOfBoundsException</a> if <em>index</em> is less than 0 or greater than / equal to the array's size</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the element at the given index</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a5ea8ce39540e7a18dcfe3057eff40f66"></a>
+<a class="anchor" id="af4ac3b4fbbd880595215a4c420c05bc0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::at </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::at </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Accesses the element at the given index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the element to be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the element at the given index</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="aa98c1726b4d71648e2ca593837c4dc4a"></a>
+<a class="anchor" id="a52bf53de7bf1f19277aa61ff308c5c22"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::back </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::back </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -553,16 +624,20 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Accesses the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a205c800e2f974616f682b5d8f5f07926"></a>
+<a class="anchor" id="a16187f3748f5d37bd54157d27f051923"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::back </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::back </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -570,137 +645,396 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Accesses the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a68c79391a86abea8d2d756f9cef6ceb5"></a>
+<a class="anchor" id="a3995bfc8f8ce2637562ef1415c4000c5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html#acf99b1f921727cf61cf9d5b66acc66b8">iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a097ed322849188b1c8a8697405160638">iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>An iterator that points to the first element. </p>
+<dl class="section return"><dt>Returns</dt><dd>An iterator that points to the first element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aea8c7e7aaeef5e9de7ad0609c3df60c8"></a>
+<a class="anchor" id="a73db0443f0f1d6056675959803fa1be2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>A const iterator that points to the first element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const iterator that points to the first element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af8365be504a6fc5067b7faa35422f5e0"></a>
+<a class="anchor" id="aa300c54bcc563da2763f80a9eaace6ca"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::constBegin </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::cbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>A const iterator that points to the first element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const iterator that points to the first element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a02182d46b5dae8319de11a30041a670f"></a>
+<a class="anchor" id="a28c8781299a9679ebfb5a22e0730ff5f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const T* <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::constData </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::cend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>A const iterator that points to the position past the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const iterator that points to the position past the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a01c0540cbafb06cc4bca50f17b76235e"></a>
+<a class="anchor" id="ae3cf91d51cb3e2896ebb970c820bd61f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::constEnd </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::constBegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>A const iterator that points to the first element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const iterator that points to the first element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ab1dbaaa25fdd52114ecf83764d07dd32"></a>
+<a class="anchor" id="a9b49872b7a79bf1bef211d48321260ba"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::contains </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a5aa9af8079a0a39654775076cc9d16e2">const_pointer</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::constData </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a pointer to the underlying data. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const pointer to the start of the underlying data</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab4c5da3794114938f06ae3a91b88356c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::constEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A const iterator that points to the position past the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const iterator that points to the position past the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e7f28deb0ba83598ca9a8272bcc054f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a06cca3e8ac92f77d0068246d715bb0e4">pointer</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a pointer to the start of the underlying data. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the start of the underlying data</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afdd1a8d0150395cf1b4d6c772ba18b4d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a5aa9af8079a0a39654775076cc9d16e2">const_pointer</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a const pointer to the start of the underlying data. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const pointer to the start of the underlying data</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa15d1e6c2dd28c472d09f6d3ba13651c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the array is empty or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the array size is 0 or false otherwise</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae9f53b03b9dfbee6d506bcb4c1de8f46"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a097ed322849188b1c8a8697405160638">iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An iterator that points to the position past the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>An iterator that points to the position past the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afdce2e9b31d2c17e3c63a378b9160989"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a187e11a8ec836c0b69b96b51fba73164">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A const iterator that points to the position past the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const iterator that points to the position past the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2fbe9e37073c724df02379ee88e35386"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, size_t Size&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::fill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a>&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a17090694f8652c186aef26882a387c05"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::count </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Fills the array with a given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to fill the array with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nothing</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a32ac66258d8a1c8e7d89d87ae4276bdc"></a>
+<a class="anchor" id="a65932e44ca21576c9f22b7e8de7ebe82"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::data </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::first </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -708,16 +1042,20 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Accesses the first element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the first element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="abe5c375e7b01f51c1c3bc1f95268428a"></a>
+<a class="anchor" id="adf71e772e127cf0ccf836947fe72af0d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const T* <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::data </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::first </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -725,16 +1063,20 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Accesses the first element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the first element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="aeadc3ca6d7ea12af461b5c6a7fcedd47"></a>
+<a class="anchor" id="ac1d0ffad9ac8ec1c37f129656d4db63e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html#acf99b1f921727cf61cf9d5b66acc66b8">iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::end </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::last </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -742,86 +1084,20 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a44f1f427aefb6f98f5e45efc1d78b4ae"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html#a1654729fe986281be9c0064999caf3d7">const_iterator</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Accesses the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a8f8ecd4d34589f7cbc28d6f14fd3de9a"></a>
+<a class="anchor" id="a0f0f97e62e654d23531f805c54f67354"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::endsWith </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a366f1c9b89d2133171a0ed2bb54534ce"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::fill </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a694e4a3fe9be1096b8ad954e2bd189d6"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::first </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3d24022c7737524c96caea7435948ab8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::first </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::last </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -829,293 +1105,187 @@ template&lt;class T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="aa3eca6ff8f386eed2ddfcf615e1f4bc1"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::indexOf </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>from</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Accesses the last element. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the last element</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a1994d3d47017ac66c1aacb39fd34be0b"></a>
+<a class="anchor" id="aa1d486886db0159ea668e8abb63a5f84"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::last </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html">Array</a>&lt;T,<a class="el" href="classprism_1_1_size.html">Size</a>&gt;&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::operator= </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a94dd2e049b9740e20281cac225d7dee3"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::last </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1a59ebea7df1fd8789b8895f5e77d6ff"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::lastIndexOf </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7075e469a15ddfa81059842598fa9e89"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const int <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::length </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="affc7647f404c928edf9521abdfbcf88b"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classprism_1_1_array.html">Array</a>&lt;T&gt; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::mid </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>length</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8ec48eaa032005ff6141481ac18e6e9f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::operator!= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Assigns another array to this array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The array to assign to this array</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to this array</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a17fded803080c4eed55773ad07ed8740"></a>
+<a class="anchor" id="a8a943dfd330b23b5514441ba9cd24354"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::operator== </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html">Array</a>&lt;T,<a class="el" href="classprism_1_1_size.html">Size</a>&gt;&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::operator= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html">Array</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&amp;&#160;</td>
           <td class="paramname"><em>rhs</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Moves the contents of another array into this array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The array to move its contents from</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to this array</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a5c12bfbaf8dd10fee4124d7a9d8683bb"></a>
+<a class="anchor" id="a36d5df6e36bc5744202e08721b27a009"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a00d78e61fb0a47489aff55b88ae9ebaa">reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Accesses the element at a given index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the element to be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the element at the given index</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a30e0857225e5ee2712c4edca0e7462bf"></a>
+<a class="anchor" id="a7afed59b3c1f6f621dd01131ce370539"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const T&amp; <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="classprism_1_1_array.html#a16161ca6c0027dfa1a7c678e820eedc3">const_reference</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
+          <td class="paramtype">const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="aa0aff831c9d2c94fd834d8abbbe94d2b"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::replace </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Accesses the element at a given index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the element to be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the element at the given index</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a83c88f0f351ac35798f40ed4e922e187"></a>
+<a class="anchor" id="a6267b9849168f7abc2eb80764e3d71a4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::size </td>
+          <td class="memname">const <a class="el" href="classprism_1_1_array.html#a91c89205e41d0e7825562343bfde3f1b">size_type</a> <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>The number of elements in the array. </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the array i.e. the number of elements stored</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa80d5944d464d8de5f7b991b355e10b2"></a>
+<a class="anchor" id="a2a1fcb058f5c434c92d57c33a3f552d7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
+template&lt;typename T, size_t Size&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const bool <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::startsWith </td>
+          <td class="memname">void <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt;::swap </td>
           <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype"><a class="el" href="classprism_1_1_array.html">Array</a>&lt; T, <a class="el" href="classprism_1_1_size.html">Size</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a2c5690996975510eed7112066b936d8f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">T <a class="el" href="classprism_1_1_array.html">prism::Array</a>&lt; T &gt;::value </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Swaps the elements of the two arrays. </p>
+<p>At the end of the function the contents of this array will be in the other array and the contents of the other array will be in this array.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The array to swap contents with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
