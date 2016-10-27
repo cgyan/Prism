@@ -1,13 +1,12 @@
 var searchData=
 [
   ['name',['name',['../classprism_1_1_version.html#a8b96b590aae378acb2a19a8259fa72de',1,'prism::Version']]],
-  ['negative',['negative',['../structprism_1_1negative.html',1,'prism']]],
   ['next',['next',['../namespaceprism.html#a16771cef03b7354150e188f4ce10f6b1',1,'prism']]],
   ['node',['Node',['../structprism_1_1_b_s_t_memory.html#aa1680fa24f59aef8cb051cf78b110faf',1,'prism::BSTMemory']]],
   ['node_5fpointer',['node_pointer',['../structprism_1_1_b_s_t_node.html#ab7dc1c7c13746f72ca849689b37f7ba9',1,'prism::BSTNode::node_pointer()'],['../structprism_1_1_b_s_t_memory.html#a78f59f5f10249be56ca8b3508486bfc0',1,'prism::BSTMemory::node_pointer()'],['../structprism_1_1_associative_iterator.html#a73a0ddce41b285bf48fb0ef3411f6557',1,'prism::AssociativeIterator::node_pointer()']]],
   ['nodecount',['nodeCount',['../structprism_1_1_b_s_t_data.html#ae212f01cf0e019d0359b28e88d91d2d2',1,'prism::BSTData']]],
   ['none',['none',['../classprism_1_1_bitvector.html#a33d1e72acbab4fb32eb24ddf72adc0cd',1,'prism::Bitvector']]],
-  ['none_5fof',['none_of',['../namespaceprism.html#a10c83b433c7f98fd4513f1b68c6db594',1,'prism']]],
+  ['none_5fof',['none_of',['../namespaceprism.html#a3c43dafd5926d3dc6ce698ae8938810d',1,'prism']]],
   ['normal',['normal',['../classprism_1_1_vector3.html#a3dea9d05ac3786470ecaaac2e9e1fbfb',1,'prism::Vector3::normal(const Vector3 &amp;otherVector) const '],['../classprism_1_1_vector3.html#a0153d875267f10f7e86613721eccefd3',1,'prism::Vector3::normal(const Vector3 &amp;a, const Vector3 &amp;b)'],['../classprism_1_1_vector3.html#a70badd06f791efe6bbe03c1d3c0948bb',1,'prism::Vector3::normal(const Vector3 &amp;a, const Vector3 &amp;b, const Vector3 &amp;c)']]],
   ['normalise',['normalise',['../classprism_1_1_quaternion.html#adce2473719f015c5e8def79cacf4a37c',1,'prism::Quaternion::normalise()'],['../classprism_1_1_vector2.html#a828a5663c78de16fcc714f5604d0668b',1,'prism::Vector2::normalise()'],['../classprism_1_1_vector3.html#a26d76e02209e76bc883ed8e4ba337dd8',1,'prism::Vector3::normalise()'],['../classprism_1_1_vector4.html#a8eb78b21b99dcc26a524bda2f281dd65',1,'prism::Vector4::normalise()']]],
   ['normalised',['normalised',['../classprism_1_1_circle.html#a6216b04502cff2b3367d417b1c4b3c5a',1,'prism::Circle::normalised()'],['../classprism_1_1_quaternion.html#ac9e4890f0614242dbcf2162b23dc483c',1,'prism::Quaternion::normalised()'],['../classprism_1_1_rect.html#ab08d9dbc02f86349530e0a2b6f6d05d6',1,'prism::Rect::normalised()'],['../classprism_1_1_vector2.html#a0e2e103ba688416d6343f41160484db3',1,'prism::Vector2::normalised()'],['../classprism_1_1_vector3.html#afb7639a382c2b249ea291731c2cb1ed3',1,'prism::Vector3::normalised()'],['../classprism_1_1_vector4.html#a453c323b488e145bf209852b9bbaf77a',1,'prism::Vector4::normalised()']]],

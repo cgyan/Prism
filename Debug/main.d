@@ -6,6 +6,7 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Array_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
@@ -85,6 +86,8 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Array_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h:
 

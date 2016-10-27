@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../test/ArrayTest.cpp \
 ../test/BitvectorTest.cpp \
 ../test/DequeTest.cpp \
 ../test/ListTest.cpp \
@@ -18,6 +19,7 @@ CPP_SRCS += \
 ../test/functorTest.cpp 
 
 OBJS += \
+./test/ArrayTest.o \
 ./test/BitvectorTest.o \
 ./test/DequeTest.o \
 ./test/ListTest.o \
@@ -32,6 +34,7 @@ OBJS += \
 ./test/functorTest.o 
 
 CPP_DEPS += \
+./test/ArrayTest.d \
 ./test/BitvectorTest.d \
 ./test/DequeTest.d \
 ./test/ListTest.d \
