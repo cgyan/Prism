@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time',['Time',['../classprism_1_1_time.html',1,'prism']]]
+  ['unequalsizeexception',['UnequalSizeException',['../classprism_1_1_unequal_size_exception.html',1,'prism']]]
 ];

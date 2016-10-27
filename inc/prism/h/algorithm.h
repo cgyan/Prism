@@ -288,7 +288,7 @@ count_if(InputIterator first, InputIterator last, UnaryPredicate pred);
 /// @brief 					Compares two ranges for equality
 ///
 ///							Compares all the elements in the range [first,last] against the
-///							elements in the range beginning from @ otherFirst. Comparison is
+///							elements in the range beginning from @em otherFirst. Comparison is
 ///							made using operator==() so the element must support that operator.
 ///
 /// @param [in]	first		An iterator that points to the start of the first range
