@@ -209,59 +209,128 @@ class Circle {
 public:
 	enum AngleMode { DEGREES = 0x1, RADIANS = 0x2 };
 	PRISM_DECLARE_FLAGS(AngleModeFlags, AngleMode)
-
-private:
-	float m_radius;
-	float m_x;
-	float m_y;
-	AngleMode m_angleMode;
-	const float PI = 3.14159;
+	static constexpr float PI = 3.14159;
 
 public:
-	/// @brief		Constructor that creates a default circle
+	/// 						Constructor that creates a default circle
 	///
-	///				Creates a unit circle i.e. a circle with a radius of 1
+	///							Creates a unit circle i.e. a circle with a radius of 1 with its
+	///							centre point x and y equal to 0
 	///
 	/// @since 1.0.0
 	Circle();
 
-	/// @brief 		Constructor that creates a circle
+	/// 	 					Constructor that creates a circle
 	///
-	///				Creates a circle with a radius of \em radius and its centre (x,y) set to 0.
+	///							Creates a circle with a radius of \em radius and its centre
+	///							(x,y) set to 0.
 	///
-	/// @since		1.0.0
-	Circle(const float radius);
+	///	@para, radius			The radius of the new circle
+	///
+	/// @since					1.0.0
+	explicit Circle(const float radius);
 
-	/// @brief		Constructor that creates a circle
+	///							Constructor that creates a circle
 	///
-	///				Creates a unit circle with a radius of 1 and its centre point
-	///				set to \em (x,y)
+	///							Creates a unit circle with a radius of 1 and its centre point
+	///							set to \em (x,y)
 	///
-	/// @since		1.0.0
+	/// @since					1.0.0
 	Circle(const float x, const float y);
 
-	/// @brief		Constructor that creates a circle
+	/// 						Constructor that creates a circle
 	///
-	///				Creates a circle with a radius of \em radius and its centre point
-	///				set to \em (x,y).
+	///							Creates a circle with a radius of \em radius and its centre
+	///							point set to \em (x,y).
 	///
 	/// @since		1.0.0
 	Circle(const float radius, const float x, const float y);
 
+	/// 	 					Constructs a circle with a given radius and position
+	///
+	/// @param radius			The radius of the new circle
+	/// @param position			The point (x,y) of the new circle
+	///
+	/// @since					1.0.0
 	Circle(const float radius, const Pointf &position);
 
+	/// 						Creates a copy of another Circle object
+	///
+	/// @param copy				The circle object to make a copy of
+	///
+	/// @since					1.0.0
 	Circle(const Circle &copy);
 
+	/// 						Destroys this circle
+	///
+	/// @since 					1.0.0
 	virtual ~Circle();
 
+	/// 						Returns the angle of the coordinate \em (x,y)
+	///
+	///							The angle will be expressed either in degrees or radians
+	///							depending on which mode is set in angleMode(). By default
+	///							DEGREES mode is set but can be changed with setAngleMode().
+	///
+	/// @param x				The x coordinate of the point
+	/// @param y				The y coordinate of the point
+	///
+	/// @return					Returns the angle of the point [x,y]
+	///
+	/// @see					angleMode(), setAngleMode()
+	///
+	/// @image					html circle_angle.png
+	///
+	/// @since					1.0.0
 	const float			angle(const float x, const float y) const;
 
+	/// 						Returns the angle of the coordinate \em (x,y) in @em position
+	///
+	///							The angle will be expressed either in degrees or radians
+	///							depending on which mode is set in angleMode(). By default
+	///							DEGREES mode is set but can be changed with setAngleMode().
+	///
+	/// @param position			The Pointf object that contains an x and y coordinate
+	///
+	/// @return					Returns the angle of the point [x,y]
+	///
+	/// @see					angleMode(), setAngleMode()
+	///
+	/// @since					1.0.0
 	const float			angle(const Pointf &position) const;
 
+	///							A circle object can run in radian or degree mode. By default
+	///							@em angleMode() is set to Circle::DEGREES but can be easily
+	///							changed via setAngleMode()
+	///
+	/// @return					The angle mode of the circle, either Circle::DEGREES (the
+	///							default) or Circle::RADIANS
+	///
+	/// @see					setAngleMode()
+	///
+	/// @since					1.0.0
 	Circle::AngleMode	angleMode() const;
 
+	///							An arc is the section of the circumference that sits between
+	///							two points. The major arc can be found by subtracting the minor
+	///							arc length from the circumference.
+	///
+	/// @param p1				The first point on the arc
+	/// @param p2				The second point on the arc
+	///
+	/// @return					Returns the length of the minor arc between the points \em p1
+	///							and \em p2
+	///
+	/// @image					html circle_arclength.png
+	///
+	/// @since					1.0.0
 	const float 		arcLength(const Pointf &p1, const Pointf &p2) const;
 
+	///							Finds the area of the circle
+	///
+	///	@return					The area of the circle
+	///
+	/// @since 					1.0.0
 	const float			area() const;
 
 	const float			bottom() const;
@@ -359,6 +428,10 @@ public:
 	friend const bool operator>(const Circle &c1, const Circle &c2);
 
 	friend std::ostream& operator<<(std::ostream &out, const Circle &c);
+
+private:
+	struct CircleData;
+	CircleData * d;
 };
 
 PRISM_DECLARE_OPERATORS_FOR_FLAGS(Circle::AngleModeFlags)

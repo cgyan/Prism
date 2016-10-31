@@ -11,6 +11,7 @@
 
 #include <prism/h/algorithm.h>
 #include <prism/h/OutOfBoundsException.h>
+#include <memory>
 
 namespace prism {
 
@@ -133,12 +134,8 @@ Array<T,Size>&
 Array<T,Size>::
 operator=(const Array<T,Size>& rhs)
 {
-	if (*this != rhs) {
-		ArrayData * newData = new ArrayData();
-		prism::copy(rhs.begin(), rhs.end(), newData->data());
-		delete this->d;
-		this->d = newData;
-	}
+	Array newArray(rhs);
+	prism::swap(this->d, newArray.d);
 	return *this;
 }
 
@@ -150,10 +147,8 @@ Array<T,Size>&
 Array<T,Size>::
 operator=(Array<T,Size>&& rhs)
 {
-	if (*this != rhs) {
-		using prism::swap;
-		swap(this->d, rhs.d);
-	}
+	using prism::swap;
+	swap(this->d, rhs.d);
 	return *this;
 }
 

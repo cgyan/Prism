@@ -4,5 +4,6 @@ var searchData=
   ['prism_5fapi_5fminor',['PRISM_API_MINOR',['../_prism_version_8h.html#a5bac0a526395240fbe8c34fa4a38c455',1,'PrismVersion.h']]],
   ['prism_5fapi_5fpatch',['PRISM_API_PATCH',['../_prism_version_8h.html#aa034cab37e443c63acf55280aa19b343',1,'PrismVersion.h']]],
   ['prism_5fdeclare_5fflags',['PRISM_DECLARE_FLAGS',['../_flags_8h.html#aa5aa2c9827ab949836e20999b9a068ec',1,'Flags.h']]],
-  ['prism_5fdeclare_5foperators_5ffor_5fflags',['PRISM_DECLARE_OPERATORS_FOR_FLAGS',['../_flags_8h.html#ae8aabb683a18b872a4449769b82e8e15',1,'Flags.h']]]
+  ['prism_5fdeclare_5foperators_5ffor_5fflags',['PRISM_DECLARE_OPERATORS_FOR_FLAGS',['../_flags_8h.html#ae8aabb683a18b872a4449769b82e8e15',1,'Flags.h']]],
+  ['prism_5ffundamental_5ftype',['PRISM_FUNDAMENTAL_TYPE',['../type_8h.html#ada310d85e77c635b3abce8bcd88e6108',1,'type.h']]]
 ];

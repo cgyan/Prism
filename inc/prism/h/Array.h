@@ -372,22 +372,31 @@ private:
 template <typename T, size_t size>
 const bool
 operator==(const Array<T,size>& lhs, const Array<T,size>& rhs);
-//
-/////
-///// @brief				Compares two arrays for inequality
-/////
-///// @param lhs			The first array
-///// @param rhs			The second array
-/////
-///// @return				Returns true if the arrays are not equal or false otherwise. Two arrays
-/////						are equivalent if they have the same size and the same elements in the
-/////						same order
-/////
-///// @since				1.0.0
-//template <typename T, size_t size>
-//const bool
-//operator!=(const Array<T,size>& lhs, const Array<T,size>& rhs);
 
+///
+/// @brief				Compares two arrays for inequality
+///
+/// @param lhs			The first array
+/// @param rhs			The second array
+///
+/// @return				Returns true if the arrays are not equal or false otherwise. Two arrays
+///						are equivalent if they have the same size and the same elements in the
+///						same order
+///
+/// @since				1.0.0
+template <typename T, size_t size>
+const bool
+operator!=(const Array<T,size>& lhs, const Array<T,size>& rhs);
+
+///
+/// @brief				Swaps the contents of two arrays
+///
+/// @param a			The first array
+/// @param b			The second array
+///
+/// @return				Nothing
+///
+/// @since				1.0.0
 template <typename T, size_t Size>
 void swap(Array<T,Size>& a, Array<T,Size>& b);
 

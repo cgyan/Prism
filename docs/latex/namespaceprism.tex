@@ -49,11 +49,15 @@ struct \hyperlink{structprism_1_1forward__iterator__tag}{forward\+\_\+iterator\+
 \item 
 class \hyperlink{classprism_1_1_fraction}{Fraction}
 \item 
+class \hyperlink{classprism_1_1_fundamental_type}{Fundamental\+Type}
+\item 
 struct \hyperlink{structprism_1_1greater}{greater}
 \item 
 struct \hyperlink{structprism_1_1input__iterator__tag}{input\+\_\+iterator\+\_\+tag}
 \item 
 struct \hyperlink{structprism_1_1iterator__traits}{iterator\+\_\+traits}
+\item 
+struct \hyperlink{structprism_1_1iterator__traits_3_01const_01_t_01_5_01_4}{iterator\+\_\+traits$<$ const T $\ast$ $>$}
 \item 
 struct \hyperlink{structprism_1_1iterator__traits_3_01_t_01_5_01_4}{iterator\+\_\+traits$<$ T $\ast$ $>$}
 \item 
@@ -214,8 +218,10 @@ class \hyperlink{classprism_1_1_version}{Version}
 \item 
 {\footnotesize template$<$typename T , size\+\_\+t size$>$ }\\const bool \hyperlink{namespaceprism_a23cc68e19002deb7797ff9eaa10523db}{operator==} (const \hyperlink{classprism_1_1_array}{Array}$<$ T, size $>$ \&lhs, const \hyperlink{classprism_1_1_array}{Array}$<$ T, size $>$ \&rhs)
 \begin{DoxyCompactList}\small\item\em Compares two arrays for equality. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , size\+\_\+t size$>$ }\\const bool \hyperlink{namespaceprism_ae176101945a65ff8a61af85fcf832221}{operator!=} (const \hyperlink{classprism_1_1_array}{Array}$<$ T, size $>$ \&lhs, const \hyperlink{classprism_1_1_array}{Array}$<$ T, size $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Compares two arrays for inequality. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , size\+\_\+t Size$>$ }\\void \hyperlink{namespaceprism_aff86329b54a13cb753f2c79156f68bb4}{swap} (\hyperlink{classprism_1_1_array}{Array}$<$ T, \hyperlink{classprism_1_1_size}{Size} $>$ \&a, \hyperlink{classprism_1_1_array}{Array}$<$ T, \hyperlink{classprism_1_1_size}{Size} $>$ \&b)
-\item 
+\begin{DoxyCompactList}\small\item\em Swaps the contents of two arrays. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Node\+Pointer $>$ }\\void \hyperlink{namespaceprism_a3ec96a679831176af1c6f2b7480226e1}{print\+Tree} (Node\+Pointer p, int indent=0)
 \item 
 {\footnotesize template$<$class Input\+Iterator $>$ }\\void \hyperlink{namespaceprism_a667eee76b54258f4f3530eaa7ef44d69}{advance} (Input\+Iterator \&iterator, const int num\+Steps)
@@ -1107,7 +1113,32 @@ Returns true if the managed pointer of p1 and the raw pointer p2 do not point to
 \item[{const {\bf Shared\+Pointer}$<$ U $>$ \&}]{p2}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_ab8792dbd5cac5678390843bacdb69daa}{}\label{namespaceprism_ab8792dbd5cac5678390843bacdb69daa}
-Returns true if the raw pointer p1 and the managed pointer of p2 do not point to the same data, false otherwise. \index{prism@{prism}!operator==@{operator==}}
+Returns true if the raw pointer p1 and the managed pointer of p2 do not point to the same data, false otherwise. \index{prism@{prism}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!prism@{prism}}
+\subsubsection[{\texorpdfstring{operator"!=(const Array$<$ T, size $>$ \&lhs, const Array$<$ T, size $>$ \&rhs)}{operator!=(const Array< T, size > &lhs, const Array< T, size > &rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , size\+\_\+t size$>$ const bool prism\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Array}$<$ T, size $>$ \&}]{lhs, }
+\item[{const {\bf Array}$<$ T, size $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceprism_ae176101945a65ff8a61af85fcf832221}{}\label{namespaceprism_ae176101945a65ff8a61af85fcf832221}
+
+
+Compares two arrays for inequality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The first array \\
+\hline
+{\em rhs} & The second array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the arrays are not equal or false otherwise. Two arrays are equivalent if they have the same size and the same elements in the same order
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
+\index{prism@{prism}!operator==@{operator==}}
 \index{operator==@{operator==}!prism@{prism}}
 \subsubsection[{\texorpdfstring{operator==(const Allocator$<$ T $>$ \&a1, const Allocator$<$ T $>$ \&a2)}{operator==(const Allocator< T > &a1, const Allocator< T > &a2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool prism\+::operator== (
 \begin{DoxyParamCaption}
@@ -1627,6 +1658,23 @@ Nothing
 \item[{{\bf Array}$<$ T, {\bf Size} $>$ \&}]{b}
 \end{DoxyParamCaption}
 )}\hypertarget{namespaceprism_aff86329b54a13cb753f2c79156f68bb4}{}\label{namespaceprism_aff86329b54a13cb753f2c79156f68bb4}
+
+
+Swaps the contents of two arrays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The first array \\
+\hline
+{\em b} & The second array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
 \index{prism@{prism}!swap@{swap}}
 \index{swap@{swap}!prism@{prism}}
 \subsubsection[{\texorpdfstring{swap(\+T \&a, T \&b)}{swap(T &a, T &b)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void prism\+::swap (

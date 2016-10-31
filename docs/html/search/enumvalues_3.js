@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['radians',['RADIANS',['../classprism_1_1_circle.html#a74c7c532b4eb120b9227b7fabeffe6aca4e738ac91c0d446d1cd6c0ee11a7baaf',1,'prism::Circle']]]
+  ['no',['NO',['../classprism_1_1_fundamental_type.html#ae83130851d5975bc5ba72692728e62bea8315675cfa73aab6de0691c9ecb697b1',1,'prism::FundamentalType']]]
 ];

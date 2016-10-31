@@ -37,9 +37,7 @@ struct iterator_traits  {
 	typedef typename Iterator::difference_type 		difference_type;
 	typedef typename Iterator::iterator_category 	iterator_category;
 	typedef typename Iterator::pointer 				pointer;
-	typedef typename Iterator::const_pointer		const_pointer;
 	typedef typename Iterator::reference 			reference;
-	typedef typename Iterator::const_reference 		const_reference;
 };
 
 // specialization for arrays
@@ -49,9 +47,17 @@ struct iterator_traits<T*> {
     typedef std::ptrdiff_t 							difference_type;
     typedef prism::random_access_iterator_tag 		iterator_category;
     typedef T* 										pointer;
-    typedef const T*								const_pointer;
     typedef T& 										reference;
-    typedef const T&								const_reference;
+};
+
+// specialization for arrays
+template<class T>
+struct iterator_traits<const T*> {
+    typedef T 										value_type;
+    typedef std::ptrdiff_t 							difference_type;
+    typedef prism::random_access_iterator_tag 		iterator_category;
+    typedef const T* 								pointer;
+    typedef const T& 								reference;
 };
 
 /**********************************************************************************************

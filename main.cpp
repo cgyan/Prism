@@ -60,16 +60,18 @@
 #include <prism/h/BinarySearchTree.h>
 #include <prism/Version>
 #include <prism/PrismVersion>
+#include <prism/type>
 //#include <prism/h/Obj.h>
 
 using namespace prism;
 using namespace std;
 
 
+
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "ArrayTest*";
+	::testing::GTEST_FLAG(filter) = "Circle*";
 	::testing::InitGoogleTest(&argc, argv);
 
 
@@ -77,5 +79,44 @@ int main(int argc, char * argv[]) {
 	return RUN_ALL_TESTS();
 //	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

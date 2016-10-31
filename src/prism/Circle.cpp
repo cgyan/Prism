@@ -15,28 +15,224 @@
 #include <iostream>
 
 namespace prism {
+//=============================================================================================
+// DegreePolicy
+//=============================================================================================
+struct DegreePolicy {
+	static
+	const float
+	angle(const float x, const float y) {
+		return atan2f(y,x) * 180/Circle::PI;
+	}
 
-using namespace prism;
+	static
+	const float
+	arcLength(const Pointf& p1, const Pointf& p2, const float radius) {
+		float theta = centralAngle(p1,p2,radius);
+		return theta * (Circle::PI/180) * radius;
+	}
 
+	static
+	const float
+	centralAngle(const Pointf& p1, const Pointf& p2, const float radius) {
+		Pointf p = p2-p1;
+		float cLength = sqrt(pow(p.x(),2) + pow(p.y(),2));
+		float cLengthSquared = pow(cLength, 2);
+		float twoRadiusSquared = 2 * pow(radius, 2);
+
+		float radianTheta = acosf((cLengthSquared - twoRadiusSquared) / twoRadiusSquared);
+		float degreeTheta = radianTheta * (180 / Circle::PI);
+
+		return 180-degreeTheta;
+	}
+};
+//=============================================================================================
+// RadianPolicy
+//=============================================================================================
+struct RadianPolicy {
+	static
+	const float
+	angle(const float x, const float y) {
+		return atan2f(y,x);
+	}
+
+	static
+	const float
+	arcLength(const Pointf& p1, const Pointf& p2, const float radius) {
+		float theta = centralAngle(p1,p2,radius);
+		return theta * radius;
+	}
+
+	static
+	const float
+	centralAngle(const Pointf& p1, const Pointf& p2, const float radius) {
+		Pointf p = p2-p1;
+		float cLength = sqrt(pow(p.x(),2) + pow(p.y(),2));
+		float cLengthSquared = pow(cLength, 2);
+		float twoRadiusSquared = 2 * pow(radius, 2);
+		float radianTheta = acosf((cLengthSquared - twoRadiusSquared) / twoRadiusSquared);
+
+		return Circle::PI - radianTheta;
+	}
+};
+//=============================================================================================
+// AngleArithmatic
+//=============================================================================================
+template <typename AnglePolicy>
+struct AngleArithmatic {
+	static
+	const float
+	angle(const float x, const float y)
+	{ return AnglePolicy::angle(x,y); }
+
+	static
+	const float
+	arcLength(const Pointf& p1, const Pointf& p2, const float radius)
+	{ return AnglePolicy::arcLength(p1,p2,radius); }
+
+	static
+	const float
+	centralAngle(const Pointf& p1, const Pointf& p2, const float radius)
+	{ return AnglePolicy::centralAngle(p1,p2,radius); }
+};
+//=============================================================================================
+// CircleData
+//=============================================================================================
+struct Circle::CircleData {
+	static const int DEFAULT_RADIUS = 1;
+	float 		m_radius;
+	float 		m_x;
+	float 		m_y;
+	AngleMode 	m_angleMode;
+
+	CircleData();
+	CircleData(const float radius);
+	CircleData(const float x, const float y);
+	CircleData(const float radius, const float x, const float y);
+	CircleData(const float radius, const Pointf& position);
+	CircleData(const CircleData& copy);
+
+	const float angle(const float x, const float y);
+	const float arcLength(const Pointf&p1, const Pointf& p2);
+	const float centralAngle(const Pointf& p1, const Pointf& p2);
+};
+/*
+ *
+ */
+Circle::CircleData::CircleData()
+: m_radius(DEFAULT_RADIUS),
+  m_x(0),
+  m_y(0),
+  m_angleMode(DEGREES)
+{}
+
+/*
+ *
+ */
+Circle::CircleData::CircleData(const float radius)
+: m_radius(radius),
+  m_x(0),
+  m_y(0),
+  m_angleMode(DEGREES)
+{}
+
+/*
+ *
+ */
+Circle::CircleData::CircleData(const float x, const float y)
+: m_radius(DEFAULT_RADIUS),
+  m_x(x),
+  m_y(y),
+  m_angleMode(DEGREES)
+{}
+
+/*
+ *
+ */
+Circle::CircleData::CircleData(const float radius, const float x, const float y)
+: m_radius(radius),
+  m_x(x),
+  m_y(y),
+  m_angleMode(DEGREES)
+{}
+
+/*
+ *
+ */
+Circle::CircleData::CircleData(const float radius, const Pointf& position)
+: m_radius(radius),
+  m_x(position.x()),
+  m_y(position.y()),
+  m_angleMode(DEGREES)
+{}
+
+/*
+ *
+ */
+Circle::CircleData::CircleData(const CircleData& copy)
+: m_radius(copy.m_radius),
+  m_x(copy.m_x),
+  m_y(copy.m_y),
+  m_angleMode(copy.m_angleMode)
+{}
+
+/*
+ *
+ */
+const float
+Circle::CircleData::
+angle(const float x, const float y) {
+	if (m_angleMode == Circle::DEGREES) {
+		return AngleArithmatic<DegreePolicy>::angle(x,y);
+	}
+	return AngleArithmatic<RadianPolicy>::angle(x, y);
+}
+
+/*
+ *
+ */
+const float
+Circle::CircleData::
+arcLength(const Pointf&p1, const Pointf& p2) {
+	if (m_angleMode == Circle::DEGREES) {
+		return AngleArithmatic<DegreePolicy>::arcLength(p1, p2, m_radius);
+	}
+	return AngleArithmatic<RadianPolicy>::arcLength(p1, p2, m_radius);
+}
+
+/*
+ *
+ */
+const float
+Circle::CircleData::
+centralAngle(const Pointf& p1, const Pointf& p2) {
+	if (m_angleMode == Circle::DEGREES) {
+		return AngleArithmatic<DegreePolicy>::centralAngle(p1, p2, m_radius);
+	}
+	return AngleArithmatic<RadianPolicy>::centralAngle(p1, p2, m_radius);
+}
+//=============================================================================================
+// Circle
+//=============================================================================================
 /**
  * Creates a unit circle i.e. a circle with a radius of 1.
  */
 Circle::Circle()
-	: m_radius(1), m_x(0), m_y(0), m_angleMode(DEGREES)
+	: d(new CircleData)
 {}
 
 /**
  * Creates a circle with a radius of \em radius and its centre (x,y) set to 0.
  */
 Circle::Circle(const float radius)
-	: m_radius(radius), m_x(0), m_y(0), m_angleMode(DEGREES)
+	: d(new CircleData(radius))
 {}
 
 /**
  * Creates a unit circle with a radius of 1 and its centre point set to \em (x,y).
  */
 Circle::Circle(const float x, const float y)
-	: m_radius(1), m_x(x), m_y(y), m_angleMode(DEGREES)
+	: d(new CircleData(x,y))
 {}
 
 /**
@@ -44,27 +240,28 @@ Circle::Circle(const float x, const float y)
  * set to \em (x,y).
  */
 Circle::Circle(const float radius, const float x, const float y)
-	: m_radius(radius), m_x(x), m_y(y), m_angleMode(DEGREES)
+	: d(new CircleData(radius,x,y))
 {}
 
 /**
  * Creates a circle with a radius of \em radius and its centre point set to \em position.
  */
 Circle::Circle(const float radius, const Pointf &position)
-	: m_radius(radius), m_x(position.x()), m_y(position.y()), m_angleMode(DEGREES)
+	: d(new CircleData(radius, position))
 {}
 
 /**
  * Creates a copy of the circle \em copy.
  */
 Circle::Circle(const Circle &copy)
-	: m_radius(copy.m_radius), m_x(copy.m_x), m_y(copy.m_y), m_angleMode(copy.m_angleMode)
+: d(new CircleData(*copy.d))
 {}
 
 /**
 * Destroys this circle
  */
-Circle::~Circle() {}
+Circle::~Circle()
+{ delete d; }
 
 /**
  * Returns the angle of the coordinate \em (x,y).\n
@@ -76,9 +273,12 @@ Circle::~Circle() {}
  */
 const float Circle::angle(const float x, const float y) const {
 	// the inverse tangent of 'opposite' over 'adjacent' (soh cah TOA)
-	return (m_angleMode == DEGREES)
-			? atan2f(y,x) * 180/PI
-			: atan2f(y,x);
+	return this->d->angle(x,y);
+//	return (d->m_angleMode == DEGREES)
+//			? CircleCalculations<DegreePolicy>::angle(x,y)
+//			: CircleCalculations<RadianPolicy>::angle(x,y);
+//			? atan2f(y,x) * 180/PI
+//			: atan2f(y,x);
 }
 
 /**
@@ -98,7 +298,7 @@ const float Circle::angle(const Pointf &position) const {
  * By default a circle is set to DEGREES mode.
  */
 Circle::AngleMode Circle::angleMode() const {
-	return m_angleMode;
+	return d->m_angleMode;
 }
 
 /**
@@ -108,67 +308,27 @@ Circle::AngleMode Circle::angleMode() const {
  * \image html circle_arclength.png
  */
 const float Circle::arcLength(const Pointf &p1, const Pointf &p2) const {
-	float theta = centralAngle(p1,p2);
-
-	if (m_angleMode == DEGREES) // degree formula
-		return theta * (PI/180) * m_radius;
-	else // radian formula
-		return theta * m_radius;
+	return d->arcLength(p1,p2);
+	//	float theta = centralAngle(p1,p2);
+//
+//	if (d->m_angleMode == DEGREES) // degree formula
+//		return theta * (PI/180) * d->m_radius;
+//	else // radian formula
+//		return theta * d->m_radius;
 }
 
 /**
  * @return Returns the area of the circle.
  */
 const float Circle::area() const {
-	return PI * pow(m_radius, 2);
+	return PI * pow(d->m_radius, 2);
 }
 
 /**
  * @return Returns the y-coordinate of the bottom edge of the circle.
  */
 const float Circle::bottom() const {
-	return m_y+m_radius;
-}
-
-/**
- * @return Returns true if the circle contains (or is on the circumference)
- * the point \em (x,y), false otherwise.
- */
-const bool Circle::contains(const float x, const float y) const {
-	return this->contains(Pointf(x,y));
-}
-
-/**
- * This is an overloaded function.\n
- * @return Returns true if the circle contains (or is on the circumference)
- * the point \em position, false otherwise.
- */
-const bool Circle::contains(const Pointf &position) const {
-	Pointf p = position - this->centre();
-	float x = p.x();
-	float y = p.y();
-	float distance = sqrt(x*x + y*y);
-
-	return distance <= m_radius;
-}
-
-/**
- * This is an overloaded function.
- * @return Returns true if the circle contains (or is on the circumference)
- * the circle represented by \em otherCircle, false otherwise.
- */
-const bool Circle::contains(const Circle &otherCircle) const {
-	Pointf p = otherCircle.centre() - this->centre();
-	float distance = sqrt(p.x()*p.x() + p.y()*p.y());
-
-	return distance + otherCircle.radius() <= this->m_radius;
-}
-
-/**
- * @return Returns the circumference of the circle.
- */
-const float Circle::circumference() const {
-	return 2*PI*m_radius;
+	return d->m_y + d->m_radius;
 }
 
 /**
@@ -190,29 +350,72 @@ const float Circle::centralAngle(const Pointf &p1, const Pointf &p2) const {
 	// Finally, c is the distance between the points p1 and p2.
 	// So after calculating c we just solve for theta.
 
-	Pointf p = p2-p1;
-	float cLength = sqrt(pow(p.x(),2) + pow(p.y(),2));
-	float cLengthSquared = pow(cLength, 2);
-	float twoRadiusSquared = 2 * pow(m_radius, 2);
+	return d->centralAngle(p1,p2);
 
-	float radianTheta = acosf((cLengthSquared - twoRadiusSquared) / twoRadiusSquared);
-	float degreeTheta = radianTheta * (180 / PI);
-
-	return (m_angleMode == DEGREES) ? 180-degreeTheta : PI-radianTheta;
+//	Pointf p = p2-p1;
+//	float cLength = sqrt(pow(p.x(),2) + pow(p.y(),2));
+//	float cLengthSquared = pow(cLength, 2);
+//	float twoRadiusSquared = 2 * pow(d->m_radius, 2);
+//
+//	float radianTheta = acosf((cLengthSquared - twoRadiusSquared) / twoRadiusSquared);
+//	float degreeTheta = radianTheta * (180 / PI);
+//
+//	return (d->m_angleMode == DEGREES) ? 180-degreeTheta : PI-radianTheta;
 }
 
 /**
  * @return Returns a Pointf representing the centre point of the circle.
  */
 Pointf Circle::centre() const {
-	return Pointf(m_x, m_y);
+	return Pointf(d->m_x, d->m_y);
+}
+
+/**
+ * @return Returns true if the circle contains (or is on the circumference)
+ * the point \em (x,y), false otherwise.
+ */
+const bool Circle::contains(const float x, const float y) const {
+	return this->contains(Pointf(x,y));
+}
+
+/**
+ * This is an overloaded function.\n
+ * @return Returns true if the circle contains (or is on the circumference)
+ * the point \em position, false otherwise.
+ */
+const bool Circle::contains(const Pointf &position) const {
+	Pointf p = position - this->centre();
+	float x = p.x();
+	float y = p.y();
+	float distance = sqrt(x*x + y*y);
+
+	return distance <= d->m_radius;
+}
+
+/**
+ * This is an overloaded function.
+ * @return Returns true if the circle contains (or is on the circumference)
+ * the circle represented by \em otherCircle, false otherwise.
+ */
+const bool Circle::contains(const Circle &otherCircle) const {
+	Pointf p = otherCircle.centre() - this->centre();
+	float distance = sqrt(p.x()*p.x() + p.y()*p.y());
+
+	return distance + otherCircle.radius() <= d->m_radius;
+}
+
+/**
+ * @return Returns the circumference of the circle.
+ */
+const float Circle::circumference() const {
+	return 2 * PI * d->m_radius;
 }
 
 /**
  * @return Returns the diameter of the circle.
  */
 const float Circle::diameter() const {
-	return 2*m_radius;
+	return 2 * d->m_radius;
 }
 
 /**
@@ -220,9 +423,9 @@ const float Circle::diameter() const {
  * them to \em radius, \em x and \em y.
  */
 void Circle::getCircle(float *radius, float *x, float *y) {
-	*radius = m_radius;
-	*x = m_x;
-	*y = m_y;
+	*radius = d->m_radius;
+	*x = d->m_x;
+	*y = d->m_y;
 }
 
 /**
@@ -232,7 +435,7 @@ const bool Circle::intersects(const Circle &otherCircle) const {
 	Pointf p = otherCircle.centre() - this->centre();
 	float distance = sqrt(p.x()*p.x() + p.y()*p.y());
 
-	return distance < (this->m_radius + otherCircle.radius());
+	return distance < (d->m_radius + otherCircle.radius());
 }
 
 /**
@@ -240,29 +443,29 @@ const bool Circle::intersects(const Circle &otherCircle) const {
  * @return Returns true if the circle is valid, false otherwise.
  */
 const bool Circle::isValid() const {
-	return m_radius > 0;
+	return d->m_radius > 0;
 }
 
 /**
  * @return Returns the x-coordinate of the left edge of the circle.
  */
 const float Circle::left() const {
-	return m_x-m_radius;
+	return d->m_x - d->m_radius;
 }
 
 /**
  * Moves the circle on the y-axis so that its bottom-most point sits at \em y.
  */
 void Circle::moveBottom(const float y) {
-	m_y = y-m_radius;
+	d->m_y = y - d->m_radius;
 }
 
 /**
  * Moves the centre point of the circle to \em (x,y).
  */
 void Circle::moveCentre(const float x, const float y) {
-	m_x = x;
-	m_y = y;
+	d->m_x = x;
+	d->m_y = y;
 }
 
 /**
@@ -277,21 +480,21 @@ void Circle::moveCentre(const Pointf &position) {
  * Moves the circle on the x-axis so that its left-most point sits at \em x;
  */
 void Circle::moveLeft(const float x) {
-	m_x = x+m_radius;
+	d->m_x = x + d->m_radius;
 }
 
 /**
  * Moves the circle on the x-axis so that its right-most point sits at \em x;
  */
 void Circle::moveRight(const float x) {
-	m_x = x-m_radius;
+	d->m_x = x - d->m_radius;
 }
 
 /**
  * Moves the circle so that its top-most point sits at \em y.
  */
 void Circle::moveTop(const float y) {
-	m_y = y+m_radius;
+	d->m_y = y + d->m_radius;
 }
 
 /**
@@ -303,8 +506,8 @@ void Circle::moveTop(const float y) {
 Circle Circle::normalised() const {
 	Circle c(*this);
 
-	if (m_radius < 0)
-		c.setRadius(m_radius * -1);
+	if (d->m_radius < 0)
+		c.setRadius(d->m_radius * -1);
 
 	return c;
 }
@@ -320,11 +523,11 @@ Pointf Circle::point(const float angle) const {
 	Pointf p;
 	float theta = angle;
 
-	if (m_angleMode == DEGREES)
+	if (d->m_angleMode == DEGREES)
 		theta = angle*PI/180;
 
-	p.setX((cos(theta) * m_radius) + m_x);
-	p.setY((sin(theta) * m_radius) + m_y);
+	p.setX((cos(theta) * d->m_radius) + d->m_x);
+	p.setY((sin(theta) * d->m_radius) + d->m_y);
 
 	return p;
 }
@@ -349,8 +552,8 @@ prism::Vector<Pointf> Circle::points(const int divisions) const {
     float py = 0;
 
     for (int i=0; i<divisions; i++) {
-        px = (cos(theta*PI/180) * m_radius) + m_x;
-        py = (sin(theta*PI/180) * m_radius) + m_y;
+        px = (cos(theta*PI/180) * d->m_radius) + d->m_x;
+        py = (sin(theta*PI/180) * d->m_radius) + d->m_y;
         theta += increment;
 
         v.push_back(Pointf(px, py));
@@ -363,14 +566,14 @@ prism::Vector<Pointf> Circle::points(const int divisions) const {
  * @return Returns the radius of the circle.
  */
 const float Circle::radius() const {
-	return m_radius;
+	return d->m_radius;
 }
 
 /**
  * @return Returns the x-coordinate of the right edge of the circle.
  */
 const float Circle::right() const {
-	return m_x+m_radius;
+	return d->m_x + d->m_radius;
 }
 
 /**
@@ -387,11 +590,11 @@ const float Circle::sectorArea(const Pointf &p1, const Pointf &p2) const {
 	float theta = centralAngle(p1,p2);
 
 	// degree formula
-	if (m_angleMode == DEGREES)
-		return theta/360 * PI * pow(m_radius,2);
+	if (d->m_angleMode == DEGREES)
+		return theta/360 * PI * pow(d->m_radius,2);
 
 	// radian formula
-	return  theta/2 * pow(m_radius,2);
+	return  theta/2 * pow(d->m_radius,2);
 }
 
 /**
@@ -406,10 +609,10 @@ const float Circle::sectorArea(const Pointf &p1, const Pointf &p2) const {
 const float Circle::segmentArea(const Pointf &p1, const Pointf &p2) const {
 	float theta = centralAngle(p1,p2);
 
-	if (m_angleMode == DEGREES)
+	if (d->m_angleMode == DEGREES)
 		theta = theta*PI/180; // converts theta from degrees to radians
 
-	return pow(m_radius,2)/2 * (theta-sin(theta));
+	return pow(d->m_radius,2)/2 * (theta-sin(theta));
 }
 
 /**
@@ -418,7 +621,7 @@ const float Circle::segmentArea(const Pointf &p1, const Pointf &p2) const {
  * The mode can be changed by passing in Circle::DEGREES or Circle::RADIANS.
  */
 void Circle::setAngleMode(Circle::AngleMode mode) {
-	m_angleMode = mode;
+	d->m_angleMode = mode;
 }
 
 /**
@@ -426,9 +629,9 @@ void Circle::setAngleMode(Circle::AngleMode mode) {
  * centre of the circle at \em (x,y).
  */
 void Circle::setCircle(const float radius, const float x, const float y) {
-	m_radius = radius;
-	m_x = x;
-	m_y = y;
+	d->m_radius = radius;
+	d->m_x = x;
+	d->m_y = y;
 }
 
 /**
@@ -437,44 +640,44 @@ void Circle::setCircle(const float radius, const float x, const float y) {
  * centre of the circle at \em position.
  */
 void Circle::setCircle(const float radius, const Pointf &position) {
-	m_radius = radius;
-	m_x = position.x();
-	m_y = position.y();
+	d->m_radius = radius;
+	d->m_x = position.x();
+	d->m_y = position.y();
 }
 
 /**
  * Sets the diameter of the circle to \em diameter.
  */
 void Circle::setDiameter(const float diameter) {
-	m_radius = diameter/2;
+	d->m_radius = diameter/2;
 }
 
 /**
  * Sets the radius of the circle to \em radius.
  */
 void Circle::setRadius(const float radius) {
-	m_radius = radius;
+	d->m_radius = radius;
 }
 
 /**
  * Sets the centre of the circle to \em x in the x-axis.
  */
 void Circle::setX(const float x) {
-	m_x = x;
+	d->m_x = x;
 }
 
 /**
  * Sets the centre of the circle to \em y in the y-axis.
  */
 void Circle::setY(const float y) {
-	m_y = y;
+	d->m_y = y;
 }
 
 /**
  * @return Returns the y-coordinate of the top edge of the circle.
  */
 const float Circle::top() const {
-	return m_y-m_radius;
+	return d->m_y - d->m_radius;
 }
 
 /**
@@ -482,8 +685,8 @@ const float Circle::top() const {
  * by \em dx on the x-axis and \em dy on the y-axis.
  */
 void Circle::translate(const float dx, const float dy) {
-	m_x += dx;
-	m_y += dy;
+	d->m_x += dx;
+	d->m_y += dy;
 }
 
 /**
@@ -522,7 +725,7 @@ Circle Circle::translated(const Pointf &offset) const {
  * This does not affect the circle's position as it retains its (x,y) coordinates.
  */
 Circle Circle::unit() const {
-	if (m_radius == 1)
+	if (d->m_radius == 1)
 		return Circle(*this);
 
 	Circle c(*this);
@@ -538,13 +741,13 @@ Circle Circle::unit() const {
 Circle Circle::united(const Circle &otherCircle) const {
 
 	Circle boundingCircle;
-	boundingCircle.m_x = ((otherCircle.m_x - this->m_x) / 2) + this->m_x;
-	boundingCircle.m_y = ((otherCircle.m_y - this->m_y) / 2) + this->m_y;
+	boundingCircle.d->m_x = ((otherCircle.d->m_x - d->m_x) / 2) + d->m_x;
+	boundingCircle.d->m_y = ((otherCircle.d->m_y - d->m_y) / 2) + d->m_y;
 
 	Pointf p = otherCircle.centre() - boundingCircle.centre();
 	float distance = sqrt(p.x()*p.x() + p.y()*p.y());
 
-	boundingCircle.m_radius = distance + prism::max(this->m_radius, otherCircle.m_radius);
+	boundingCircle.d->m_radius = distance + prism::max(d->m_radius, otherCircle.d->m_radius);
 
 	return boundingCircle;
 }
@@ -553,24 +756,24 @@ Circle Circle::united(const Circle &otherCircle) const {
  * @return Returns the centre of the circle in the x-axis.
  */
 const float Circle::x() const {
-	return m_x;
+	return d->m_x;
 }
 
 /**
  * @return Returns the centre of the circle in the y-axis.
  */
 const float Circle::y() const {
-	return m_y;
+	return d->m_y;
 }
 
 /**
  * Assigns \em other to this circle.
  */
 Circle& Circle::operator =(const Circle &other) {
-	m_radius = other.m_radius;
-	m_x = other.m_x;
-	m_y = other.m_y;
-	m_angleMode = other.m_angleMode;
+	d->m_radius = other.d->m_radius;
+	d->m_x = other.d->m_x;
+	d->m_y = other.d->m_y;
+	d->m_angleMode = other.d->m_angleMode;
 
 	return *this;
 }
@@ -582,7 +785,7 @@ Circle& Circle::operator =(const Circle &other) {
  * @return Returns true if both circles have the same radius and (x,y) centre point, false otherwise.
  */
 const bool operator==(const Circle &c1, const Circle &c2) {
-	return c1.m_radius == c2.m_radius && c1.m_x == c2.m_x && c1.m_y == c2.m_y;
+	return c1.d->m_radius == c2.d->m_radius && c1.d->m_x == c2.d->m_x && c1.d->m_y == c2.d->m_y;
 }
 
 /**
@@ -596,7 +799,7 @@ const bool operator!=(const Circle &c1, const Circle &c2) {
  * @return Returns true if \em c1 has a smaller radius than \em c2, false otherwise.
  */
 const bool operator<(const Circle &c1, const Circle &c2) {
-	return c1.m_radius < c2.m_radius;
+	return c1.d->m_radius < c2.d->m_radius;
 }
 
 /**
@@ -610,7 +813,7 @@ const bool operator>(const Circle &c1, const Circle &c2) {
  * Allows an instance of Circle to be written to the ostream and returns a reference to the ostream.
  */
 std::ostream& operator<<(std::ostream &out, const Circle &c) {
-	out << "Circle [" << &c << "]: radius=" << c.m_radius << ", centreX=" << c.m_x << ", centreY=" << c.m_y;
+	out << "Circle [" << &c << "]: radius=" << c.d->m_radius << ", centreX=" << c.d->m_x << ", centreY=" << c.d->m_y;
 	return out;
 }
 

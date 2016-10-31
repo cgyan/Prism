@@ -18,8 +18,8 @@ var searchData=
   ['for_5feach',['for_each',['../namespaceprism.html#a9f65de889707907c02a325d8a4ff4aec',1,'prism']]],
   ['forward',['forward',['../classprism_1_1_vector3.html#aaa4252d9203ddf25fd0cfefcb8b1b2b5',1,'prism::Vector3']]],
   ['forward_5fiterator_5ftag',['forward_iterator_tag',['../structprism_1_1forward__iterator__tag.html',1,'prism']]],
-  ['fraction',['Fraction',['../classprism_1_1_fraction.html',1,'prism']]],
   ['fraction',['Fraction',['../classprism_1_1_fraction.html#ae66446d8d2130582811d17e547dd25e4',1,'prism::Fraction::Fraction(void)'],['../classprism_1_1_fraction.html#ae6458e0578c2ddd59ce718b7808ca0ec',1,'prism::Fraction::Fraction(const int numerator, const int denominator)']]],
+  ['fraction',['Fraction',['../classprism_1_1_fraction.html',1,'prism']]],
   ['fraction_2eh',['Fraction.h',['../_fraction_8h.html',1,'']]],
   ['fromaxisandangle',['fromAxisAndAngle',['../classprism_1_1_quaternion.html#a1c7e89d8d53e4d64db8528dfb72e5e19',1,'prism::Quaternion::fromAxisAndAngle(const Vector3 &amp;axis, const float angle)'],['../classprism_1_1_quaternion.html#a9b672e780a381a00f309a3b5e6075809',1,'prism::Quaternion::fromAxisAndAngle(const float xAxis, const float yAxis, const float zAxis, const float angle)']]],
   ['fromchararray',['fromCharArray',['../classprism_1_1_string.html#a55a79b8da9ca03e4074307d5469ae7ec',1,'prism::String']]],
@@ -27,5 +27,6 @@ var searchData=
   ['fromstdstring',['fromStdString',['../classprism_1_1_string.html#a95591190927efbafd4d29991b1a3e517',1,'prism::String']]],
   ['fromstdvector',['fromStdVector',['../classprism_1_1_vector.html#a81bc5717530cbf13ad87627b2d05d26e',1,'prism::Vector']]],
   ['front',['front',['../classprism_1_1_deque.html#ad6e4e77cbb62109dd2f9f4afd1d3e26e',1,'prism::Deque::front()'],['../classprism_1_1_deque.html#afc8bc5fd39fee04d64668d719aec19fe',1,'prism::Deque::front() const '],['../classprism_1_1_list.html#a389a92c786597aa0fc0918189491cd64',1,'prism::List::front()'],['../classprism_1_1_list.html#a3082476c9130719533c961b46e09762d',1,'prism::List::front() const '],['../classprism_1_1_queue.html#a5dc211a8c79d1d089a678ebc7f2e43c4',1,'prism::Queue::front()'],['../classprism_1_1_queue.html#a22bd93b06bacca633756a149ba27bb06',1,'prism::Queue::front() const '],['../classprism_1_1_vector.html#adc1fe081f52da4fe01fa50e3a00837bf',1,'prism::Vector::front()'],['../classprism_1_1_vector.html#a5e2712583f42436c94210dadd31aa44c',1,'prism::Vector::front() const ']]],
-  ['functor_2eh',['functor.h',['../functor_8h.html',1,'']]]
+  ['functor_2eh',['functor.h',['../functor_8h.html',1,'']]],
+  ['fundamentaltype',['FundamentalType',['../classprism_1_1_fundamental_type.html',1,'prism']]]
 ];

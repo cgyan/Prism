@@ -9,20 +9,15 @@
 #ifndef PRISM_BITVECTOR_H_
 #define PRISM_BITVECTOR_H_
 
-//#include <ostream>
-
 namespace prism {
 
 class 	String;
-struct 	BitvectorData;
 class 	ostream;
 
 /*!
  * This is the class description for the Bitvector.
  */
 class Bitvector {
-private:
-	BitvectorData * d;
 public:
 	Bitvector();
 	Bitvector(const int nBits);
@@ -63,6 +58,9 @@ public:
 	friend const bool		operator==(const Bitvector & bv1, const Bitvector & bv2);
 	friend const bool		operator!=(const Bitvector & bv1, const Bitvector & bv2);
 	friend ostream & 		operator<<(ostream & out, const Bitvector& bv);
+private:
+	struct BitvectorData;
+	BitvectorData * d;
 };
 
 } /* namespace prism */

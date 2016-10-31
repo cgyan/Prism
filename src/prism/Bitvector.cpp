@@ -21,7 +21,7 @@ namespace prism {
 /******************************************************************************
  * BitvectorData
  *****************************************************************************/
-struct BitvectorData {
+struct Bitvector::BitvectorData {
 	struct memory  {
 		unsigned long long int * start; // unsigned long long ints are 64 bits each
 		unsigned long long int * finish;
@@ -39,7 +39,7 @@ struct BitvectorData {
 /**
  * Method that returns the number of chunks needed to hold \em nBits.
  */
-const int BitvectorData::numChunks(const int nBits) const {
+const int Bitvector::BitvectorData::numChunks(const int nBits) const {
 	int nBitsInChunk = sizeof(unsigned long long int) * 8;
 	int nChunks;
 
@@ -53,7 +53,7 @@ const int BitvectorData::numChunks(const int nBits) const {
  * Method that performs a bounds check on the index \em n.
  * Returns true if \em n is is within bounds and false if not.
  */
-const bool BitvectorData::rangeCheck(const int n) const {
+const bool Bitvector::BitvectorData::rangeCheck(const int n) const {
 	if (n < 0 || n >= storage.nBits) return false;
 	return true;
 }
@@ -61,7 +61,7 @@ const bool BitvectorData::rangeCheck(const int n) const {
 /**
  * Method that reserves enough memory to contain the bits required.
  */
-void BitvectorData::reserve(const int nChunks) {
+void Bitvector::BitvectorData::reserve(const int nChunks) {
 	if (nChunks > storage.finish - storage.start) {
 		unsigned long long int * newChunks = new unsigned long long int[nChunks];
 		prism::copy(storage.start, storage.finish, newChunks);

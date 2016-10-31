@@ -6,6 +6,7 @@
 CPP_SRCS += \
 ../test/ArrayTest.cpp \
 ../test/BitvectorTest.cpp \
+../test/CircleTest.cpp \
 ../test/DequeTest.cpp \
 ../test/ListTest.cpp \
 ../test/PairTest.cpp \
@@ -21,6 +22,7 @@ CPP_SRCS += \
 OBJS += \
 ./test/ArrayTest.o \
 ./test/BitvectorTest.o \
+./test/CircleTest.o \
 ./test/DequeTest.o \
 ./test/ListTest.o \
 ./test/PairTest.o \
@@ -36,6 +38,7 @@ OBJS += \
 CPP_DEPS += \
 ./test/ArrayTest.d \
 ./test/BitvectorTest.d \
+./test/CircleTest.d \
 ./test/DequeTest.d \
 ./test/ListTest.d \
 ./test/PairTest.d \
