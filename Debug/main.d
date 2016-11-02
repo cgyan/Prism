@@ -3,7 +3,7 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Array \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Array.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Array_priv.h \
@@ -58,7 +58,6 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Deque \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Deque.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Deque_priv.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/utility \
   /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/LogAllocator.h \
@@ -72,8 +71,7 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Version.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/PrismVersion \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/PrismVersion.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/type \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/type
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -83,7 +81,7 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
@@ -193,8 +191,6 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Deque_priv.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/utility:
-
 /Users/iainhemstock/GitHub/Prism/inc/prism/Allocator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/LogAllocator:
@@ -222,5 +218,3 @@ main.d: ../main.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/PrismVersion.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/type:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h:

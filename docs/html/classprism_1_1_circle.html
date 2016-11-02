@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classprism_1_1_circle-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -223,10 +223,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d06dde86a136d7ddda2b5db211e4392"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classprism_1_1_circle.html">Circle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_circle.html#a5d06dde86a136d7ddda2b5db211e4392">operator=</a> (const <a class="el" href="classprism_1_1_circle.html">Circle</a> &amp;other)</td></tr>
 <tr class="separator:a5d06dde86a136d7ddda2b5db211e4392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a271b9a742c518b86b678cb4cd5b8f22c"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_circle.html#a271b9a742c518b86b678cb4cd5b8f22c">PI</a> = 3.14159</td></tr>
-<tr class="separator:a271b9a742c518b86b678cb4cd5b8f22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a83124fb14e0f926a977d2b5e6b259bfa"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classprism_1_1_circle.html#a83124fb14e0f926a977d2b5e6b259bfa">PI</a> = 3.14159</td></tr>
+<tr class="separator:a83124fb14e0f926a977d2b5e6b259bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -563,6 +563,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>A circle object can run in radian or degree mode. By default <em><a class="el" href="classprism_1_1_circle.html#a0aa261d16ff55088e5695820fa95e09b">angleMode()</a></em> is set to <a class="el" href="classprism_1_1_circle.html#a74c7c532b4eb120b9227b7fabeffe6aca38d734252b9b86d558359698434cf5d4">Circle::DEGREES</a> but can be easily changed via <a class="el" href="classprism_1_1_circle.html#a499055061dc996d184dca570ebe8a8ff">setAngleMode()</a></p>
 <dl class="section return"><dt>Returns</dt><dd>The angle mode of the circle, either <a class="el" href="classprism_1_1_circle.html#a74c7c532b4eb120b9227b7fabeffe6aca38d734252b9b86d558359698434cf5d4">Circle::DEGREES</a> (the default) or <a class="el" href="classprism_1_1_circle.html#a74c7c532b4eb120b9227b7fabeffe6aca4e738ac91c0d446d1cd6c0ee11a7baaf">Circle::RADIANS</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classprism_1_1_circle.html#a499055061dc996d184dca570ebe8a8ff">setAngleMode()</a></dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
@@ -618,6 +619,9 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Finds the area of the circle</p>
+<dl class="section return"><dt>Returns</dt><dd>The area of the circle</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -633,6 +637,9 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Finds the global y coordinate of the bottom most point of the circle</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the y-coordinate of the bottom edge of the circle.</dd></dl>
+<dl class="section since"><dt>Since</dt><dd>1.0.0 </dd></dl>
 
 </div>
 </div>
@@ -659,7 +666,13 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<p>A central angle is formed by two radii extending from the centre point of the circle to the circumference.<br />
+ The angle will be expressed either in degrees or radians depending on which mode is set in <a class="el" href="classprism_1_1_circle.html#a499055061dc996d184dca570ebe8a8ff">setAngleMode()</a>. By default DEGREES mode is set. </p><dl class="section note"><dt>Note</dt><dd>Note that the smallest angle will be returned and is always positive i.e. if moving in one direction from point to point around the circle gives an angle of 270º and moving in the opposite direction gives an angle of 90º then 90º is returned.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the central angle formed by two points on the circumference.</dd></dl>
+<div class="image">
+<img src="circle_centralangle.png" alt="circle_centralangle.png"/>
+</div>
+ 
 </div>
 </div>
 <a class="anchor" id="acecd853a1b505fc0c847b7172974d669"></a>
@@ -1564,14 +1577,22 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a271b9a742c518b86b678cb4cd5b8f22c"></a>
+<a class="anchor" id="a83124fb14e0f926a977d2b5e6b259bfa"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const float prism::Circle::PI = 3.14159</td>
+          <td class="memname">constexpr float prism::Circle::PI = 3.14159</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

@@ -12,7 +12,6 @@
 #include <prism/h/functor.h>
 #include <prism/h/Allocator.h>
 #include <prism/h/pair.h>
-#include <prism/h/utility.h>
 #include <prism/h/iterator.h>
 #include <prism/h/AbstractTree.h>
 #include <ostream>

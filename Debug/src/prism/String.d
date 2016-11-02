@@ -1,7 +1,7 @@
 src/prism/String.d: ../src/prism/String.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/String.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Char.h \
@@ -20,7 +20,7 @@ src/prism/String.d: ../src/prism/String.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 

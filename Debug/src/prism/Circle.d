@@ -1,36 +1,48 @@
 src/prism/Circle.d: ../src/prism/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Circle.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Flags.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Pointf.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Mathf.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedDataPointer.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/List_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Vector_priv.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Flags.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Pointf.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/Mathf.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Vector_priv.h
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Circle.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Flags.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Pointf.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Mathf.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/utility.h:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h:
 
@@ -40,12 +52,6 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Allocator.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
-
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/List_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h:
@@ -53,9 +59,3 @@ src/prism/Circle.d: ../src/prism/Circle.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Vector_priv.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Flags.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Pointf.h:
-
-/Users/iainhemstock/GitHub/Prism/inc/prism/h/Mathf.h:

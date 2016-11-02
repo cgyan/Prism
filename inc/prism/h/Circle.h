@@ -9,13 +9,16 @@
 #ifndef PRISM_CIRCLE_H_
 #define PRISM_CIRCLE_H_
 
-#include <ostream>
-#include <prism/h/Vector.h>
+
 #include <prism/h/Flags.h>
+#include <ostream>
 
 namespace prism {
 
 class Pointf;
+
+template <typename Pointf>
+class Vector;
 
 /// @class 	Circle prism/h/Circle.h prism/Circle
 ///
@@ -282,7 +285,7 @@ public:
 	/// @image					html circle_angle.png
 	///
 	/// @since					1.0.0
-	const float			angle(const float x, const float y) const;
+	const float					angle(const float x, const float y) const;
 
 	/// 						Returns the angle of the coordinate \em (x,y) in @em position
 	///
@@ -297,7 +300,7 @@ public:
 	/// @see					angleMode(), setAngleMode()
 	///
 	/// @since					1.0.0
-	const float			angle(const Pointf &position) const;
+	const float					angle(const Pointf &position) const;
 
 	///							A circle object can run in radian or degree mode. By default
 	///							@em angleMode() is set to Circle::DEGREES but can be easily
@@ -309,7 +312,7 @@ public:
 	/// @see					setAngleMode()
 	///
 	/// @since					1.0.0
-	Circle::AngleMode	angleMode() const;
+	Circle::AngleMode			angleMode() const;
 
 	///							An arc is the section of the circumference that sits between
 	///							two points. The major arc can be found by subtracting the minor
@@ -324,20 +327,45 @@ public:
 	/// @image					html circle_arclength.png
 	///
 	/// @since					1.0.0
-	const float 		arcLength(const Pointf &p1, const Pointf &p2) const;
+	const float 				arcLength(const Pointf &p1, const Pointf &p2) const;
 
 	///							Finds the area of the circle
 	///
 	///	@return					The area of the circle
 	///
 	/// @since 					1.0.0
-	const float			area() const;
+	const float					area() const;
 
-	const float			bottom() const;
+	///							Finds the global y coordinate of the bottom most point of the
+	///							circle
+	///
+	/// @return 				Returns the y-coordinate of the bottom edge of the circle.
+	///
+	/// @since					1.0.0
+	const float					bottom() const;
 
-	const float 		centralAngle(const Pointf &p1, const Pointf &p2) const;
+	///							A central angle is formed by two radii extending from the
+	///							centre point of the circle to the circumference.\n
+	///							The angle will be expressed either in degrees or radians
+	///							depending on which mode is set in setAngleMode(). By default
+	///							DEGREES mode is set.
+	/// @note					Note that the smallest angle will be returned and is always
+	///							positive i.e. if moving in one direction from point to point
+	///							around the circle gives an angle of 270º and moving in the
+	///							opposite direction gives an angle of 90º then 90º is returned.
+	///
+	/// @return 				Returns the central angle formed by two points on the
+	///							circumference.
+	///
+	/// @image	 				html circle_centralangle.png
+	const float 				centralAngle(const Pointf &p1, const Pointf &p2) const;
 
-	Pointf 				centre() const;
+	///							Finds the centre x and y coordinates of the circle
+	///
+	/// @return 				Returns a Pointf representing the centre point of the circle.
+	///
+	/// @since 					1.0.0
+	Pointf 						centre() const;
 
 	const bool			contains(const float x, const float y) const;
 

@@ -52,7 +52,6 @@
 #include <prism/Time>
 #include <prism/Pair>
 #include <prism/Deque>
-#include <prism/utility>
 #include <prism/Allocator>
 #include <prism/LogAllocator>
 #include <prism/functor>
@@ -71,10 +70,13 @@ using namespace std;
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "Circle*";
+	::testing::GTEST_FLAG(filter) = "type*";
 	::testing::InitGoogleTest(&argc, argv);
 
-
+	typedef prism::conditional_type<true, int[2],int[6]>::type arr1;
+	typedef prism::conditional_type<false, int[2],int[6]>::type arr2;
+	cout << sizeof(arr1) << endl;
+	cout << sizeof(arr2) << endl;
 
 	return RUN_ALL_TESTS();
 //	return 0;

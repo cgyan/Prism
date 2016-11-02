@@ -123,10 +123,10 @@ const float \hyperlink{classprism_1_1_circle_a6edc045d912b0d278bd0673af028290e}{
 \item 
 \hyperlink{classprism_1_1_circle}{Circle} \& \hyperlink{classprism_1_1_circle_a5d06dde86a136d7ddda2b5db211e4392}{operator=} (const \hyperlink{classprism_1_1_circle}{Circle} \&other)
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
+\subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-const float \hyperlink{classprism_1_1_circle_a271b9a742c518b86b678cb4cd5b8f22c}{PI} = 3.\+14159
+static constexpr float \hyperlink{classprism_1_1_circle_a83124fb14e0f926a977d2b5e6b259bfa}{PI} = 3.\+14159
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -552,6 +552,9 @@ A circle object can run in radian or degree mode. By default {\itshape \hyperlin
 \begin{DoxyReturn}{Returns}
 The angle mode of the circle, either \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6aca38d734252b9b86d558359698434cf5d4}{Circle\+::\+D\+E\+G\+R\+E\+ES} (the default) or \hyperlink{classprism_1_1_circle_a74c7c532b4eb120b9227b7fabeffe6aca4e738ac91c0d446d1cd6c0ee11a7baaf}{Circle\+::\+R\+A\+D\+I\+A\+NS}
 \end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}{set\+Angle\+Mode()}
+\end{DoxySeeAlso}
 \begin{DoxySince}{Since}
 1.\+0.\+0 
 \end{DoxySince}
@@ -587,6 +590,14 @@ Returns the length of the minor arc between the points {\itshape p1} and {\itsha
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a2fd1893972ad8b267bebfdc59efafb84}{}\label{classprism_1_1_circle_a2fd1893972ad8b267bebfdc59efafb84}
+Finds the area of the circle
+
+\begin{DoxyReturn}{Returns}
+The area of the circle
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!bottom@{bottom}}
 \index{bottom@{bottom}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{bottom() const }{bottom() const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::bottom (
@@ -594,6 +605,14 @@ Returns the length of the minor arc between the points {\itshape p1} and {\itsha
 {}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_a88c4958371f4e07082c3b28527b67d4b}{}\label{classprism_1_1_circle_a88c4958371f4e07082c3b28527b67d4b}
+Finds the global y coordinate of the bottom most point of the circle
+
+\begin{DoxyReturn}{Returns}
+Returns the y-\/coordinate of the bottom edge of the circle.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!central\+Angle@{central\+Angle}}
 \index{central\+Angle@{central\+Angle}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{central\+Angle(const Pointf \&p1, const Pointf \&p2) const }{centralAngle(const Pointf &p1, const Pointf &p2) const }}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::central\+Angle (
@@ -602,7 +621,14 @@ Returns the length of the minor arc between the points {\itshape p1} and {\itsha
 \item[{const {\bf Pointf} \&}]{p2}
 \end{DoxyParamCaption}
 ) const}\hypertarget{classprism_1_1_circle_aee1d224313e23f96ae2fcff7abeaf336}{}\label{classprism_1_1_circle_aee1d224313e23f96ae2fcff7abeaf336}
-\index{prism\+::\+Circle@{prism\+::\+Circle}!centre@{centre}}
+A central angle is formed by two radii extending from the centre point of the circle to the circumference.~\newline
+ The angle will be expressed either in degrees or radians depending on which mode is set in \hyperlink{classprism_1_1_circle_a499055061dc996d184dca570ebe8a8ff}{set\+Angle\+Mode()}. By default D\+E\+G\+R\+E\+ES mode is set. \begin{DoxyNote}{Note}
+Note that the smallest angle will be returned and is always positive i.\+e. if moving in one direction from point to point around the circle gives an angle of 270º and moving in the opposite direction gives an angle of 90º then 90º is returned.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Returns the central angle formed by two points on the circumference.
+\end{DoxyReturn}
+ \index{prism\+::\+Circle@{prism\+::\+Circle}!centre@{centre}}
 \index{centre@{centre}!prism\+::\+Circle@{prism\+::\+Circle}}
 \subsubsection[{\texorpdfstring{centre() const }{centre() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pointf} prism\+::\+Circle\+::centre (
 \begin{DoxyParamCaption}
@@ -941,7 +967,7 @@ Returns the length of the minor arc between the points {\itshape p1} and {\itsha
 \subsection{Member Data Documentation}
 \index{prism\+::\+Circle@{prism\+::\+Circle}!PI@{PI}}
 \index{PI@{PI}!prism\+::\+Circle@{prism\+::\+Circle}}
-\subsubsection[{\texorpdfstring{PI}{PI}}]{\setlength{\rightskip}{0pt plus 5cm}const float prism\+::\+Circle\+::\+PI = 3.\+14159}\hypertarget{classprism_1_1_circle_a271b9a742c518b86b678cb4cd5b8f22c}{}\label{classprism_1_1_circle_a271b9a742c518b86b678cb4cd5b8f22c}
+\subsubsection[{\texorpdfstring{PI}{PI}}]{\setlength{\rightskip}{0pt plus 5cm}constexpr float prism\+::\+Circle\+::\+PI = 3.\+14159\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classprism_1_1_circle_a83124fb14e0f926a977d2b5e6b259bfa}{}\label{classprism_1_1_circle_a83124fb14e0f926a977d2b5e6b259bfa}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

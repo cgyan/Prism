@@ -28,5 +28,5 @@ var searchData=
   ['fromstdvector',['fromStdVector',['../classprism_1_1_vector.html#a81bc5717530cbf13ad87627b2d05d26e',1,'prism::Vector']]],
   ['front',['front',['../classprism_1_1_deque.html#ad6e4e77cbb62109dd2f9f4afd1d3e26e',1,'prism::Deque::front()'],['../classprism_1_1_deque.html#afc8bc5fd39fee04d64668d719aec19fe',1,'prism::Deque::front() const '],['../classprism_1_1_list.html#a389a92c786597aa0fc0918189491cd64',1,'prism::List::front()'],['../classprism_1_1_list.html#a3082476c9130719533c961b46e09762d',1,'prism::List::front() const '],['../classprism_1_1_queue.html#a5dc211a8c79d1d089a678ebc7f2e43c4',1,'prism::Queue::front()'],['../classprism_1_1_queue.html#a22bd93b06bacca633756a149ba27bb06',1,'prism::Queue::front() const '],['../classprism_1_1_vector.html#adc1fe081f52da4fe01fa50e3a00837bf',1,'prism::Vector::front()'],['../classprism_1_1_vector.html#a5e2712583f42436c94210dadd31aa44c',1,'prism::Vector::front() const ']]],
   ['functor_2eh',['functor.h',['../functor_8h.html',1,'']]],
-  ['fundamentaltype',['FundamentalType',['../classprism_1_1_fundamental_type.html',1,'prism']]]
+  ['fundamentaltype',['FundamentalType',['../structprism_1_1_fundamental_type.html',1,'prism']]]
 ];

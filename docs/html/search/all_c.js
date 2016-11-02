@@ -2,7 +2,7 @@ var searchData=
 [
   ['name',['name',['../classprism_1_1_version.html#a8b96b590aae378acb2a19a8259fa72de',1,'prism::Version']]],
   ['next',['next',['../namespaceprism.html#a16771cef03b7354150e188f4ce10f6b1',1,'prism']]],
-  ['no',['NO',['../classprism_1_1_fundamental_type.html#ae83130851d5975bc5ba72692728e62bea8315675cfa73aab6de0691c9ecb697b1',1,'prism::FundamentalType']]],
+  ['no',['NO',['../structprism_1_1_fundamental_type.html#ae83130851d5975bc5ba72692728e62bea8315675cfa73aab6de0691c9ecb697b1',1,'prism::FundamentalType']]],
   ['node',['Node',['../structprism_1_1_b_s_t_memory.html#aa1680fa24f59aef8cb051cf78b110faf',1,'prism::BSTMemory']]],
   ['node_5fpointer',['node_pointer',['../structprism_1_1_b_s_t_node.html#ab7dc1c7c13746f72ca849689b37f7ba9',1,'prism::BSTNode::node_pointer()'],['../structprism_1_1_b_s_t_memory.html#a78f59f5f10249be56ca8b3508486bfc0',1,'prism::BSTMemory::node_pointer()'],['../structprism_1_1_associative_iterator.html#a73a0ddce41b285bf48fb0ef3411f6557',1,'prism::AssociativeIterator::node_pointer()']]],
   ['nodecount',['nodeCount',['../structprism_1_1_b_s_t_data.html#ae212f01cf0e019d0359b28e88d91d2d2',1,'prism::BSTData']]],

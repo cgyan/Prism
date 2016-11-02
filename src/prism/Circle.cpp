@@ -1,6 +1,6 @@
 /*
  * Circle.cpp
- * v0.1
+ * v1
  *
  *
  *  Created on: Jul 3, 2016
@@ -11,8 +11,8 @@
 #include <prism/h/Pointf.h>
 #include <prism/h/Mathf.h>
 #include <prism/h/algorithm.h>
+#include <prism/h/Vector.h>
 #include <cmath>
-#include <iostream>
 
 namespace prism {
 //=============================================================================================
@@ -45,6 +45,21 @@ struct DegreePolicy {
 
 		return 180-degreeTheta;
 	}
+
+	static
+	const float
+	sectorArea(const Pointf& p1, const Pointf& p2, const float radius) {
+		float theta = centralAngle(p1, p2, radius);
+		return theta/360 * Circle::PI * pow(radius,2);
+	}
+
+	static
+	const float
+	segmentArea(const Pointf& p1, const Pointf& p2, const float radius) {
+		float theta = centralAngle(p1,p2,radius);
+		theta = theta * Circle::PI / 180;
+		return pow(radius,2)/2 * (theta-sin(theta));
+	}
 };
 //=============================================================================================
 // RadianPolicy
@@ -74,6 +89,20 @@ struct RadianPolicy {
 
 		return Circle::PI - radianTheta;
 	}
+
+	static
+	const float
+	sectorArea(const Pointf& p1, const Pointf& p2, const float radius) {
+		float theta = centralAngle(p1,p2,radius);
+		return  theta/2 * pow(radius,2);
+	}
+
+	static
+	const float
+	segmentArea(const Pointf& p1, const Pointf& p2, const float radius) {
+		float theta = centralAngle(p1,p2,radius);
+		return pow(radius,2)/2 * (theta-sin(theta));
+	}
 };
 //=============================================================================================
 // AngleArithmatic
@@ -94,6 +123,16 @@ struct AngleArithmatic {
 	const float
 	centralAngle(const Pointf& p1, const Pointf& p2, const float radius)
 	{ return AnglePolicy::centralAngle(p1,p2,radius); }
+
+	static
+	const float
+	sectorArea(const Pointf& p1, const Pointf& p2, const float radius)
+	{ return AnglePolicy::sectorArea(p1, p2, radius); }
+
+	static
+	const float
+	segmentArea(const Pointf& p1, const Pointf& p2, const float radius)
+	{ return AnglePolicy::segmentArea(p1, p2, radius); }
 };
 //=============================================================================================
 // CircleData
@@ -115,6 +154,8 @@ struct Circle::CircleData {
 	const float angle(const float x, const float y);
 	const float arcLength(const Pointf&p1, const Pointf& p2);
 	const float centralAngle(const Pointf& p1, const Pointf& p2);
+	const float sectorArea(const Pointf& p1, const Pointf& p2);
+	const float segmentArea(const Pointf& p1, const Pointf& p2);
 };
 /*
  *
@@ -182,10 +223,9 @@ Circle::CircleData::CircleData(const CircleData& copy)
 const float
 Circle::CircleData::
 angle(const float x, const float y) {
-	if (m_angleMode == Circle::DEGREES) {
-		return AngleArithmatic<DegreePolicy>::angle(x,y);
-	}
-	return AngleArithmatic<RadianPolicy>::angle(x, y);
+	return (m_angleMode == Circle::DEGREES)
+		? AngleArithmatic<DegreePolicy>::angle(x,y)
+		: AngleArithmatic<RadianPolicy>::angle(x, y);
 }
 
 /*
@@ -194,10 +234,9 @@ angle(const float x, const float y) {
 const float
 Circle::CircleData::
 arcLength(const Pointf&p1, const Pointf& p2) {
-	if (m_angleMode == Circle::DEGREES) {
-		return AngleArithmatic<DegreePolicy>::arcLength(p1, p2, m_radius);
-	}
-	return AngleArithmatic<RadianPolicy>::arcLength(p1, p2, m_radius);
+	return (m_angleMode == Circle::DEGREES)
+		? AngleArithmatic<DegreePolicy>::arcLength(p1, p2, m_radius)
+		: AngleArithmatic<RadianPolicy>::arcLength(p1, p2, m_radius);
 }
 
 /*
@@ -206,10 +245,31 @@ arcLength(const Pointf&p1, const Pointf& p2) {
 const float
 Circle::CircleData::
 centralAngle(const Pointf& p1, const Pointf& p2) {
-	if (m_angleMode == Circle::DEGREES) {
-		return AngleArithmatic<DegreePolicy>::centralAngle(p1, p2, m_radius);
-	}
-	return AngleArithmatic<RadianPolicy>::centralAngle(p1, p2, m_radius);
+	return (m_angleMode == Circle::DEGREES)
+		? AngleArithmatic<DegreePolicy>::centralAngle(p1, p2, m_radius)
+		: AngleArithmatic<RadianPolicy>::centralAngle(p1, p2, m_radius);
+}
+
+/*
+ *
+ */
+const float
+Circle::CircleData::
+sectorArea(const Pointf& p1, const Pointf& p2) {
+	return (m_angleMode == Circle::DEGREES)
+		? AngleArithmatic<DegreePolicy>::sectorArea(p1, p2, m_radius)
+		: AngleArithmatic<RadianPolicy>::sectorArea(p1, p2, m_radius);
+}
+
+/*
+ *
+ */
+const float
+Circle::CircleData::
+segmentArea(const Pointf& p1, const Pointf& p2) {
+	return (m_angleMode == Circle::DEGREES)
+		? AngleArithmatic<DegreePolicy>::segmentArea(p1, p2, m_radius)
+		: AngleArithmatic<RadianPolicy>::segmentArea(p1, p2, m_radius);
 }
 //=============================================================================================
 // Circle
@@ -587,14 +647,15 @@ const float Circle::right() const {
  * \image html circle_sectorarea.png
  */
 const float Circle::sectorArea(const Pointf &p1, const Pointf &p2) const {
-	float theta = centralAngle(p1,p2);
-
-	// degree formula
-	if (d->m_angleMode == DEGREES)
-		return theta/360 * PI * pow(d->m_radius,2);
-
-	// radian formula
-	return  theta/2 * pow(d->m_radius,2);
+	return d->sectorArea(p1, p2);
+//	float theta = centralAngle(p1,p2);
+//
+//	// degree formula
+//	if (d->m_angleMode == DEGREES)
+//		return theta/360 * PI * pow(d->m_radius,2);
+//
+//	// radian formula
+//	return  theta/2 * pow(d->m_radius,2);
 }
 
 /**
@@ -607,12 +668,13 @@ const float Circle::sectorArea(const Pointf &p1, const Pointf &p2) const {
  * \image html circle_segmentarea.png
  */
 const float Circle::segmentArea(const Pointf &p1, const Pointf &p2) const {
-	float theta = centralAngle(p1,p2);
-
-	if (d->m_angleMode == DEGREES)
-		theta = theta*PI/180; // converts theta from degrees to radians
-
-	return pow(d->m_radius,2)/2 * (theta-sin(theta));
+	return d->segmentArea(p1,p2);
+//	float theta = centralAngle(p1,p2);
+//
+//	if (d->m_angleMode == DEGREES)
+//		theta = theta*PI/180; // converts theta from degrees to radians
+//
+//	return pow(d->m_radius,2)/2 * (theta-sin(theta));
 }
 
 /**

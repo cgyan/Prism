@@ -32,7 +32,7 @@ void Mathf::degreeToRadian(float & angle) {
 }
 
 /**
- * Returns true if /em n is a prime number, false otherwise.
+ * Returns true if \em n is a prime number, false otherwise.
  * A prime number (or a prime) is a natural number greater than 1 that has
  * no positive divisors other than 1 and itself.
  */
