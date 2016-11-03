@@ -6,6 +6,7 @@ test/TimeTest.d: ../test/TimeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/String.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h
 
@@ -22,6 +23,8 @@ test/TimeTest.d: ../test/TimeTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 

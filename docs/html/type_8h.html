@@ -92,7 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">type.h File Reference</div>  </div>
 </div><!--header-->
@@ -102,7 +103,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_fundamental_type.html">prism::FundamentalType&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_integral_constant.html">prism::IntegralConstant&lt; T, v &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1conditional__type.html">prism::conditional_type&lt; condition, T1, T2 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1conditional__type_3_01false_00_01_t1_00_01_t2_01_4.html">prism::conditional_type&lt; false, T1, T2 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_is_floating_point.html">prism::IsFloatingPoint&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_is_integral.html">prism::IsIntegral&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_is_arithmetic.html">prism::IsArithmetic&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_is_fundamental.html">prism::IsFundamental&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprism_1_1_is_same__aux.html">prism::IsSame_aux&lt; typename, typename &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -112,16 +127,27 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ada310d85e77c635b3abce8bcd88e6108"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type_8h.html#ada310d85e77c635b3abce8bcd88e6108">PRISM_FUNDAMENTAL_TYPE</a>(T)</td></tr>
-<tr class="separator:ada310d85e77c635b3abce8bcd88e6108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9d6d3a9f1f7666bd42d68ae2eb531e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type_8h.html#add9d6d3a9f1f7666bd42d68ae2eb531e">PRISM_MAKE_IS_FLOATING_POINT</a>(T)</td></tr>
+<tr class="separator:add9d6d3a9f1f7666bd42d68ae2eb531e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ddab1ab267742a03dafae2ed9fe3af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type_8h.html#a87ddab1ab267742a03dafae2ed9fe3af">PRISM_MAKE_IS_INTEGRAL</a>(T)</td></tr>
+<tr class="separator:a87ddab1ab267742a03dafae2ed9fe3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0809fd88a008855c2f1d5b244753bdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="type_8h.html#ac0809fd88a008855c2f1d5b244753bdb">PRISM_MAKE_IS_FUNDAMENTAL</a>(T)</td></tr>
+<tr class="separator:ac0809fd88a008855c2f1d5b244753bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a7d28160dd23799e4294e2d705294f16f"><td class="memItemLeft" align="right" valign="top">typedef IntegralConstant&lt; bool, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#a7d28160dd23799e4294e2d705294f16f">prism::TrueType</a></td></tr>
+<tr class="separator:a7d28160dd23799e4294e2d705294f16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11baa40bd94b92172c01957db05a76f"><td class="memItemLeft" align="right" valign="top">typedef IntegralConstant&lt; bool, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceprism.html#ab11baa40bd94b92172c01957db05a76f">prism::FalseType</a></td></tr>
+<tr class="separator:ab11baa40bd94b92172c01957db05a76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ada310d85e77c635b3abce8bcd88e6108"></a>
+<a class="anchor" id="add9d6d3a9f1f7666bd42d68ae2eb531e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define PRISM_FUNDAMENTAL_TYPE</td>
+          <td class="memname">#define PRISM_MAKE_IS_FLOATING_POINT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">T</td><td>)</td>
@@ -129,7 +155,39 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                         \</div><div class="line">struct FundamentalType&lt;T&gt; {         \</div><div class="line">    enum { YES = 1, NO = 0 };       \</div><div class="line">};</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                                 \</div><div class="line">struct IsFloatingPoint&lt;T&gt; {                 \</div><div class="line">    enum { YES=1, NO=0 };                   \</div><div class="line">};</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ac0809fd88a008855c2f1d5b244753bdb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRISM_MAKE_IS_FUNDAMENTAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                                 \</div><div class="line">struct IsFundamental&lt;T&gt; {                   \</div><div class="line">    enum { YES = 1, NO = 0 };               \</div><div class="line">};</div></div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a87ddab1ab267742a03dafae2ed9fe3af"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRISM_MAKE_IS_INTEGRAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;&gt;                             \</div><div class="line">struct IsIntegral&lt;T&gt; {                  \</div><div class="line">    enum { YES=1, NO=0 };               \</div><div class="line">};</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

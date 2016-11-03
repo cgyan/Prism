@@ -31,7 +31,7 @@ class \hyperlink{classprism_1_1_circle}{Circle}
 \begin{DoxyCompactList}\small\item\em A class that represents a circle. \end{DoxyCompactList}\item 
 struct \hyperlink{structprism_1_1conditional__type}{conditional\+\_\+type}
 \item 
-struct \hyperlink{structprism_1_1conditional__type_3_01false_00_01_type1_00_01_type2_01_4}{conditional\+\_\+type$<$ false, Type1, Type2 $>$}
+struct \hyperlink{structprism_1_1conditional__type_3_01false_00_01_t1_00_01_t2_01_4}{conditional\+\_\+type$<$ false, T1, T2 $>$}
 \item 
 class \hyperlink{classprism_1_1_deque}{Deque}
 \item 
@@ -49,11 +49,21 @@ struct \hyperlink{structprism_1_1forward__iterator__tag}{forward\+\_\+iterator\+
 \item 
 class \hyperlink{classprism_1_1_fraction}{Fraction}
 \item 
-struct \hyperlink{structprism_1_1_fundamental_type}{Fundamental\+Type}
-\item 
 struct \hyperlink{structprism_1_1greater}{greater}
 \item 
 struct \hyperlink{structprism_1_1input__iterator__tag}{input\+\_\+iterator\+\_\+tag}
+\item 
+struct \hyperlink{structprism_1_1_integral_constant}{Integral\+Constant}
+\item 
+struct \hyperlink{structprism_1_1_is_arithmetic}{Is\+Arithmetic}
+\item 
+struct \hyperlink{structprism_1_1_is_floating_point}{Is\+Floating\+Point}
+\item 
+struct \hyperlink{structprism_1_1_is_fundamental}{Is\+Fundamental}
+\item 
+struct \hyperlink{structprism_1_1_is_integral}{Is\+Integral}
+\item 
+struct \hyperlink{structprism_1_1_is_same__aux}{Is\+Same\+\_\+aux}
 \item 
 struct \hyperlink{structprism_1_1iterator__traits}{iterator\+\_\+traits}
 \item 
@@ -130,6 +140,13 @@ class \hyperlink{classprism_1_1_vector4}{Vector4}
 struct \hyperlink{structprism_1_1_vector_data}{Vector\+Data}
 \item 
 class \hyperlink{classprism_1_1_version}{Version}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structprism_1_1_integral_constant}{Integral\+Constant}$<$ bool, true $>$ \hyperlink{namespaceprism_a7d28160dd23799e4294e2d705294f16f}{True\+Type}
+\item 
+typedef \hyperlink{structprism_1_1_integral_constant}{Integral\+Constant}$<$ bool, false $>$ \hyperlink{namespaceprism_ab11baa40bd94b92172c01957db05a76f}{False\+Type}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -298,6 +315,15 @@ c) the inverse of a quaternion product is equal to the product of the individual
 Rotating vectors\+: When rotating with a quaternion it is important that the quaternion be normalised i.\+e. be of unit length. This is because otherwise scaling will occur and since we only require rotations from our quaternions this won\textquotesingle{}t do. Rotating a vector using quaternions is done with the following equation\+: v\textquotesingle{} = q $\ast$ v $\ast$ q.\+inverse where vector v is represented as a quaternion.
 
 Concatenating rotational transforms together\+: Multiple quaternion rotations can be applied to a vector in one single action by concatenating the rotational quaternions together and then applying them to the vector using the above equation. For example, to rotate the vector v by quaternion a and then rotating that result by quaternion b would be as follows\+: v\textquotesingle{} = b $\ast$ (a $\ast$ v $\ast$ a.\+inverse) $\ast$ b.\+inverse = (b $\ast$ a) $\ast$ v $\ast$ (b.\+inverse $\ast$ a.\+inverse) = (b $\ast$ a) $\ast$ v $\ast$ (b $\ast$ a).inverse So, rotating by a and then by b is equivalent to the single rotation of the product of ba. 
+
+\subsection{Typedef Documentation}
+\index{prism@{prism}!False\+Type@{False\+Type}}
+\index{False\+Type@{False\+Type}!prism@{prism}}
+\subsubsection[{\texorpdfstring{False\+Type}{FalseType}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Integral\+Constant}$<$bool,false$>$ {\bf prism\+::\+False\+Type}}\hypertarget{namespaceprism_ab11baa40bd94b92172c01957db05a76f}{}\label{namespaceprism_ab11baa40bd94b92172c01957db05a76f}
+\index{prism@{prism}!True\+Type@{True\+Type}}
+\index{True\+Type@{True\+Type}!prism@{prism}}
+\subsubsection[{\texorpdfstring{True\+Type}{TrueType}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Integral\+Constant}$<$bool,true$>$ {\bf prism\+::\+True\+Type}}\hypertarget{namespaceprism_a7d28160dd23799e4294e2d705294f16f}{}\label{namespaceprism_a7d28160dd23799e4294e2d705294f16f}
+
 
 \subsection{Function Documentation}
 \index{prism@{prism}!adjacent\+\_\+find@{adjacent\+\_\+find}}

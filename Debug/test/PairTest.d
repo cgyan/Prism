@@ -6,6 +6,7 @@ test/PairTest.d: ../test/PairTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/String.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
@@ -21,5 +22,7 @@ test/PairTest.d: ../test/PairTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/type.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:

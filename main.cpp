@@ -73,10 +73,8 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "type*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	typedef prism::conditional_type<true, int[2],int[6]>::type arr1;
-	typedef prism::conditional_type<false, int[2],int[6]>::type arr2;
-	cout << sizeof(arr1) << endl;
-	cout << sizeof(arr2) << endl;
+
+
 
 	return RUN_ALL_TESTS();
 //	return 0;
