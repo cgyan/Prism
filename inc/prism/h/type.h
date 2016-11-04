@@ -11,12 +11,29 @@
 
 // https://howardhinnant.github.io/TypeHiearchy.pdf
 
-// conditional_type<>
-// IsFloatingPoint<>
-// IsIntegral<>
-// IsArithmetic<>
-// IsFundamental<>
-// IsSame<>
+/*
+is_class
+is_enum
+is_lvalue_reference
+is_rvalue_reference
+is_union
+is_compound
+is_object
+is_scalar
+
+is_abstract
+is_empty
+is_literal_type
+is_pod
+is_polymorphic
+is_signed
+is_standard_layout
+is_trivial
+is_trivially_copyable
+is_unsigned
+
+ *
+ */
 
 #include <cstddef> // for std::nullptr_t
 #include <prism/h/global.h>
@@ -61,8 +78,44 @@ struct RemoveVolatile<volatile T> {
 //============================================================================================
 template <typename T>
 struct RemoveConstVolatile {
-	typedef typename prism::RemoveVolatile<typename prism::RemoveConst<T>::type>::type type;
+	typedef typename prism::RemoveVolatile<
+				typename prism::RemoveConst<T>::type
+			>::type type;
 };
+//============================================================================================
+// IsConst
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsConst_aux : public FalseType
+{};
+template <typename T>
+struct IsConst_aux<const T> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsConst
+	: public priv::IsConst_aux<
+	  	  typename prism::RemoveVolatile<T>::type
+	  >::type
+{};
+//============================================================================================
+// IsVolatile
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsVolatile_aux : public FalseType
+{};
+template <typename T>
+struct IsVolatile_aux<volatile T> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsVolatile
+	: public priv::IsVolatile_aux<
+	  	  typename prism::RemoveConst<T>::type
+	  >::type
+{};
 //============================================================================================
 // conditional_type
 //============================================================================================
@@ -83,13 +136,14 @@ struct conditional_type<false, T1, T2> {
 };
 //============================================================================================
 // Or
-// -- B1 and B2 are templated type structs such as IsIntegral or IsVoid. If B1's value is
-// -- true then the conditional_type will resolve to that struct as a base class (and if
-// -- false will resolve to B2 as a base class). These structs are all subclasses of
-// -- TrueType or FalseType.
+// -- TraitClass1 and TraitClass2 are templated type structs such as IsIntegral or IsVoid. If
+// -- TraitClass1's value is true then the conditional_type will resolve to that struct as a
+// -- base class (and if false will resolve to B2 as a base class). These structs are all
+// -- subclasses of TrueType or FalseType.
 //============================================================================================
-template <typename B1, typename B2>
-struct Or : public prism::conditional_type<B1::value, B1, B2>::type
+template <typename TraitClass1, typename TraitClass2>
+struct Or
+	: public prism::conditional_type<TraitClass1::value, TraitClass1, TraitClass2>::type
 {};
 //============================================================================================
 // IsFloatingPoint
@@ -204,6 +258,37 @@ struct IsFundamental
 	  >::type
 {};
 //============================================================================================
+// IsSigned
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T, bool = prism::IsArithmetic<T>::value>
+struct IsSigned_aux : public FalseType
+{};
+template <typename T>
+struct IsSigned_aux<T,true> : public prism::IntegralConstant<bool, T(-1) < T(0)>
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsSigned
+	: public priv::IsSigned_aux<T>::type
+{};
+//============================================================================================
+// IsUnsigned
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T, bool = prism::IsArithmetic<T>::value>
+struct IsUnsigned_aux : FalseType
+{};
+template <typename T>
+struct IsUnsigned_aux<T,true>
+	: public prism::IntegralConstant<bool, !prism::IsSigned<T>::value>::type
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsUnsigned
+	: public priv::IsUnsigned_aux<T>::type
+{};
+//============================================================================================
 // AreSame
 //============================================================================================
 PRISM_BEGIN_PRIV_NS
@@ -218,10 +303,156 @@ template <typename T, typename U>
 struct AreSame
 		: public priv::AreSame_aux<T,U>::type
 {};
+//============================================================================================
+// IsPointer
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsPointer_aux : public FalseType
+{};
+template <typename T>
+struct IsPointer_aux<T*> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsPointer
+		: public priv::IsPointer_aux<
+		  	  typename prism::RemoveConstVolatile<T>::type
+		  >::type
+{};
+//============================================================================================
+// IsReference
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsReference_aux : public FalseType
+{};
+template <typename T>
+struct IsReference_aux<T&> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsReference
+		: public priv::IsReference_aux<
+		  	  typename prism::RemoveConstVolatile<T>::type
+		  >::type
+{};
+//============================================================================================
+// IsRValueReference
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsRValueReference_aux : public FalseType
+{};
+template <typename T>
+struct IsRValueReference_aux<T&&> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsRValueReference
+	: public priv::IsRValueReference_aux<
+	  	  typename prism::RemoveConstVolatile<T>::type
+	  >::type
+{};
+//============================================================================================
+// IsArray
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsArray_aux : public FalseType
+{};
+template <typename T, size_t num>
+struct IsArray_aux<T[num]> : public TrueType
+{};
+template <typename T> // support for zero sized array
+struct IsArray_aux<T[]> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsArray
+	: public priv::IsArray_aux<
+	  	  typename prism::RemoveConstVolatile<T>::type
+	  >::type
+{};
+//============================================================================================
+// IsFunction
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsFunction_aux : public FalseType
+{};
+template <typename Ret, typename ...Args>
+struct IsFunction_aux<Ret(Args...)> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsFunction
+	: public priv::IsFunction_aux<T>::type
+{};
+//============================================================================================
+// IsMemberPointer
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsMemberPointer_aux : public FalseType
+{};
+template <typename T, typename C>
+struct IsMemberPointer_aux<T C::*> : public TrueType
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsMemberPointer
+	: public priv::IsMemberPointer_aux<
+	  	  typename prism::RemoveConstVolatile<T>::type
+	  >::type
+{};
+//============================================================================================
+// IsMemberFunctionPointer
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsMemberFunctionPointer_aux : public FalseType
+{};
+template <typename T, typename C>
+struct IsMemberFunctionPointer_aux<T C::*>
+	: prism::IntegralConstant<bool, prism::IsFunction<T>::value>
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsMemberFunctionPointer
+	: priv::IsMemberFunctionPointer_aux<
+	  	  typename prism::RemoveConstVolatile<T>::type
+	  >::type
+{};
+//============================================================================================
+// IsMemberObjectPointer
+//============================================================================================
+PRISM_BEGIN_PRIV_NS
+template <typename T>
+struct IsMemberObjectPointer_aux : public FalseType
+{};
+template <typename T, typename C>
+struct IsMemberObjectPointer_aux<T C::*>
+	: prism::IntegralConstant<bool, !prism::IsFunction<T>::value>
+{};
+PRISM_END_PRIV_NS
+template <typename T>
+struct IsMemberObjectPointer
+	: priv::IsMemberObjectPointer_aux<
+	  	  typename prism::RemoveConstVolatile<T>::type
+	  >::type
+{};
 
 PRISM_END_NS
 
 
 
 #endif /* PRISM_TYPE_H_ */
+
+
+
+
+
+
+
 

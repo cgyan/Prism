@@ -16,6 +16,36 @@ class typeTest : public ::testing::Test {
 
 };
 
+/**
+ * Test: IsConst<>
+ */
+TEST_F(typeTest, IsConst) {
+	ASSERT_TRUE(prism::IsConst<const int>::value);
+	ASSERT_TRUE(prism::IsConst<const volatile int>::value);
+	ASSERT_TRUE(prism::IsConst<int* const>::value);
+
+	ASSERT_FALSE(prism::IsConst<int>::value);
+	ASSERT_FALSE(prism::IsConst<int*>::value);
+	ASSERT_FALSE(prism::IsConst<const int*>::value);
+	ASSERT_FALSE(prism::IsConst<int&>::value);
+	ASSERT_FALSE(prism::IsConst<int&&>::value);
+}
+
+/**
+ * Test: IsVolatile<>
+ */
+TEST_F(typeTest, IsVolatile) {
+	ASSERT_TRUE(prism::IsVolatile<volatile int>::value);
+	ASSERT_TRUE(prism::IsVolatile<const volatile int>::value);
+	ASSERT_TRUE(prism::IsVolatile<int * volatile>::value);
+
+	ASSERT_FALSE(prism::IsConst<int>::value);
+	ASSERT_FALSE(prism::IsConst<int*>::value);
+	ASSERT_FALSE(prism::IsConst<volatile  int*>::value);
+	ASSERT_FALSE(prism::IsConst<int&>::value);
+	ASSERT_FALSE(prism::IsConst<int&&>::value);
+}
+
 /*
  * Test: conditional_type<>
  * -- using two fundamental types
@@ -344,6 +374,137 @@ TEST_F(typeTest, IsFundamental) {
 	ASSERT_TRUE(prism::IsFundamental<const volatile unsigned long>::value);
 	ASSERT_TRUE(prism::IsFundamental<const volatile long long>::value);
 	ASSERT_TRUE(prism::IsFundamental<const volatile unsigned long long>::value);
+}
+
+/**
+ * Test: IsSigned<>
+ */
+TEST_F(typeTest, IsSigned) {
+		ASSERT_TRUE(prism::IsSigned<int>::value);
+		ASSERT_TRUE(prism::IsSigned<signed int>::value);
+		ASSERT_TRUE(prism::IsSigned<const signed int>::value);
+		ASSERT_TRUE(prism::IsSigned<volatile signed int>::value);
+		ASSERT_TRUE(prism::IsSigned<const volatile signed int>::value);
+
+		ASSERT_FALSE(prism::IsSigned<unsigned int>::value);
+}
+
+/**
+ * Test: IsUnsigned<>
+ */
+TEST_F(typeTest, IsUnsigned) {
+	ASSERT_TRUE(prism::IsUnsigned<unsigned int>::value);
+	ASSERT_TRUE(prism::IsUnsigned<const unsigned int>::value);
+	ASSERT_TRUE(prism::IsUnsigned<volatile unsigned int>::value);
+	ASSERT_TRUE(prism::IsUnsigned<const volatile unsigned int>::value);
+
+	ASSERT_FALSE(prism::IsUnsigned<int>::value);
+	ASSERT_FALSE(prism::IsUnsigned<signed int>::value);
+}
+
+/**
+ * Test: IsPointer<>
+ */
+TEST_F(typeTest, IsPointer) {
+	ASSERT_TRUE(prism::IsPointer<int*>::value);
+	ASSERT_TRUE(prism::IsPointer<const int*>::value);
+	ASSERT_TRUE(prism::IsPointer<volatile int*>::value);
+	ASSERT_TRUE(prism::IsPointer<const volatile int*>::value);
+
+	ASSERT_FALSE(prism::IsPointer<char>::value);
+	ASSERT_FALSE(prism::IsPointer<char&>::value);
+}
+
+/**
+ * Test: IsReference<>
+ */
+TEST_F(typeTest, IsReference) {
+	ASSERT_TRUE(prism::IsReference<int&>::value);
+	ASSERT_TRUE(prism::IsReference<const int&>::value);
+	ASSERT_TRUE(prism::IsReference<volatile int&>::value);
+	ASSERT_TRUE(prism::IsReference<const volatile int&>::value);
+
+	ASSERT_FALSE(prism::IsReference<char>::value);
+	ASSERT_FALSE(prism::IsReference<char*>::value);
+}
+
+/**
+ * Test: IsRValueReference<>
+ */
+TEST_F(typeTest, IsRValueReference) {
+	ASSERT_TRUE(prism::IsRValueReference<int&&>::value);
+	ASSERT_TRUE(prism::IsRValueReference<const int&&>::value);
+	ASSERT_TRUE(prism::IsRValueReference<volatile int&&>::value);
+	ASSERT_TRUE(prism::IsRValueReference<const volatile int&&>::value);
+
+	ASSERT_FALSE(prism::IsRValueReference<int&>::value);
+	ASSERT_FALSE(prism::IsRValueReference<int*>::value);
+	ASSERT_FALSE(prism::IsRValueReference<int>::value);
+}
+
+/**
+ * Test: IsArray<>
+ */
+TEST_F(typeTest, IsArray) {
+	ASSERT_TRUE(prism::IsArray<int[5]>::value);
+	ASSERT_TRUE(prism::IsArray<const int[5]>::value);
+	ASSERT_TRUE(prism::IsArray<volatile int[5]>::value);
+	ASSERT_TRUE(prism::IsArray<const volatile int[5]>::value);
+	ASSERT_TRUE(prism::IsArray<int*[5]>::value);
+	ASSERT_TRUE(prism::IsArray<const int*[5]>::value);
+	ASSERT_TRUE(prism::IsArray<volatile int*[5]>::value);
+	ASSERT_TRUE(prism::IsArray<const volatile int*[5]>::value);
+
+	ASSERT_FALSE(prism::IsArray<int>::value);
+	ASSERT_FALSE(prism::IsArray<int*>::value);
+	ASSERT_FALSE(prism::IsArray<int&>::value);
+}
+
+/**
+ * Test: IsMemberPointer<>
+ */
+TEST_F(typeTest, IsMemberPointer) {
+	struct A { int x;};
+	int A::* mfp = &A::x;
+
+	ASSERT_TRUE(prism::IsMemberPointer<int A::*>::value);
+	ASSERT_TRUE(prism::IsMemberPointer<void (A::*)()>::value);
+	ASSERT_TRUE(prism::IsMemberPointer<decltype(mfp)>::value);
+
+	ASSERT_FALSE(prism::IsMemberPointer<int>::value);
+	ASSERT_FALSE(prism::IsMemberPointer<int*>::value);
+	ASSERT_FALSE(prism::IsMemberPointer<int&>::value);
+}
+
+/**
+ * Test: IsMemberFunctionPointer<>
+ */
+TEST_F(typeTest, IsMemberFunctionPointer) {
+	struct A { int x; void func(){}; };
+	int A::* mop = &A::x;
+	void(A::*mfp)() = &A::func;
+
+	ASSERT_TRUE(prism::IsMemberFunctionPointer<void (A::*)()>::value);
+	ASSERT_TRUE(prism::IsMemberFunctionPointer<decltype(mfp)>::value);
+
+	ASSERT_FALSE(prism::IsMemberFunctionPointer<A*>::value);
+	ASSERT_FALSE(prism::IsMemberFunctionPointer<decltype(mop)>::value);
+}
+
+/**
+ * Test: IsMemberObjectPointer<>
+ */
+TEST_F(typeTest, IsMemberObjectPointer) {
+	struct A { int x; void func(){}; };
+	int A::* mop = &A::x;
+	void(A::*mfp)() = &A::func;
+
+	ASSERT_TRUE(prism::IsMemberObjectPointer<int A::*>::value);
+	ASSERT_TRUE(prism::IsMemberObjectPointer<decltype(mop)>::value);
+
+	ASSERT_FALSE(prism::IsMemberObjectPointer<void (A::*)()>::value);
+	ASSERT_FALSE(prism::IsMemberObjectPointer<decltype(mfp)>::value);
+
 }
 
 } // end namespace test
