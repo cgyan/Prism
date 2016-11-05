@@ -7,7 +7,7 @@
  */
 
 #include <gtest/gtest.h>
-#include <prism/type>
+#include <prism/h/type2.h>
 
 namespace prism {
 namespace test {
@@ -53,8 +53,8 @@ TEST_F(typeTest, IsVolatile) {
 TEST_F(typeTest, conditional_type_fundamental) {
 	typedef int	T1;
 	typedef char T2;
-	typename prism::conditional_type<true, T1, T2>::type IntType;
-	typename prism::conditional_type<false, T1, T2>::type CharType;
+	typename prism::ConditionalType_t<true, T1, T2> IntType;
+	typename prism::ConditionalType_t<false, T1, T2> CharType;
 
 	ASSERT_TRUE(typeid(IntType) 	== typeid(int));
 	ASSERT_TRUE(typeid(CharType) 	== typeid(char));
@@ -69,8 +69,8 @@ TEST_F(typeTest, conditional_type_fundamental) {
 TEST_F(typeTest, conditional_type_nonmember_pointers) {
 	typedef int* T1;
 	typedef char* T2;
-	typename prism::conditional_type<true,T1,T2>::type IntPtrType;
-	typename prism::conditional_type<false,T1,T2>::type CharPtrType;
+	typename prism::ConditionalType_t<true,T1,T2> IntPtrType;
+	typename prism::ConditionalType_t<false,T1,T2> CharPtrType;
 
 	ASSERT_TRUE(typeid(IntPtrType) == typeid(int*));
 	ASSERT_TRUE(typeid(CharPtrType) == typeid(char*));
@@ -85,8 +85,8 @@ TEST_F(typeTest, conditional_type_nonmember_pointers) {
 TEST_F(typeTest, conditional_type_unions) {
 	union U1 {};
 	union U2 {};
-	typename prism::conditional_type<true,U1,U2>::type UType1;
-	typename prism::conditional_type<false,U1,U2>::type UType2;
+	typename prism::ConditionalType_t<true,U1,U2> UType1;
+	typename prism::ConditionalType_t<false,U1,U2> UType2;
 
 	ASSERT_TRUE(typeid(UType1) == typeid(U1));
 	ASSERT_TRUE(typeid(UType2) == typeid(U2));
@@ -101,8 +101,8 @@ TEST_F(typeTest, conditional_type_unions) {
 TEST_F(typeTest, conditional_type_enums) {
 	enum E1 {};
 	enum E2 {};
-	typename prism::conditional_type<true,E1,E2>::type EType1;
-	typename prism::conditional_type<false,E1,E2>::type EType2;
+	typename prism::ConditionalType_t<true,E1,E2> EType1;
+	typename prism::ConditionalType_t<false,E1,E2> EType2;
 
 	ASSERT_TRUE(typeid(EType1) == typeid(E1));
 	ASSERT_TRUE(typeid(EType2) == typeid(E2));
@@ -124,8 +124,8 @@ TEST_F(typeTest, conditional_type_member_pointers) {
 	T t;
 	U u;
 
-	typedef typename prism::conditional_type<true,TMemPtr,UMemPtr>::type P1;
-	typedef typename prism::conditional_type<false,TMemPtr,UMemPtr>::type P2;
+	typedef typename prism::ConditionalType_t<true,TMemPtr,UMemPtr> P1;
+	typedef typename prism::ConditionalType_t<false,TMemPtr,UMemPtr> P2;
 
 	P1 p1 = &T::x; // p1 == pointer to member function T::x()
 	P2 p2 = &U::x; // p2 == pointer to member function U::x()
@@ -143,13 +143,82 @@ TEST_F(typeTest, conditional_type_member_pointers) {
  * -- using two array types
  */
 TEST_F(typeTest, conditional_type_arrays) {
-	typedef prism::conditional_type<true, char[1],int[1]>::type CharArrayType;
-	typedef prism::conditional_type<false, char[1],int[1]>::type IntArrayType;
+	typedef prism::ConditionalType_t<true, char[1],int[1]> CharArrayType;
+	typedef prism::ConditionalType_t<false, char[1],int[1]> IntArrayType;
 
 	// CharTypeArray holds 1 char so should be the size of 1 char
 	// IntTypeArray holds 1 int so should be the size of 1 int
 	ASSERT_EQ(sizeof(CharArrayType), sizeof(char));
 	ASSERT_EQ(sizeof(IntArrayType), sizeof(int));
+}
+
+/**
+ * Test: Or<>
+ */
+TEST_F(typeTest, Or) {
+	// first true, second false
+	typedef prism::Or<
+				prism::IsFloatingPoint<float>, 	// true
+				prism::IsIntegral<float> 		// false
+			>::type EitherConditionTrue1;
+
+	// first false, second true
+	typedef prism::Or<
+				prism::IsFloatingPoint<char>, 	// false
+				prism::IsIntegral<char> 		// true
+			>::type EitherConditionTrue2;
+
+	// both false
+	typedef prism::Or<
+				prism::IsFloatingPoint<void>, 	// false
+				prism::IsIntegral<void> 		// false
+			>::type EitherConditionTrue3;
+
+	// both true
+	typedef prism::Or<
+				prism::IsFloatingPoint<float>,	// true
+				prism::IsArithmetic<float>		// also true
+			>::type EitherConditionTrue4;
+
+	ASSERT_TRUE(EitherConditionTrue1::value);
+	ASSERT_TRUE(EitherConditionTrue2::value);
+	ASSERT_FALSE(EitherConditionTrue3::value);
+	ASSERT_TRUE(EitherConditionTrue4::value);
+}
+
+/**
+ * Test: And<>
+ */
+TEST_F(typeTest, And) {
+
+	// both true
+	typedef prism::And<
+				prism::IsConst<const int>,	 	// true
+				prism::IsIntegral<const int>	// true
+			>::type BothConditionTrue1;
+
+	// first true, second false
+	typedef prism::And<
+				prism::IsConst<const int>, 		// true
+				prism::IsFloatingPoint<const int>// false
+			>::type BothConditionTrue2;
+
+	// first false, second true
+	typedef prism::And<
+				prism::IsFloatingPoint<const int>,// false
+				prism::IsConst<const int> 		// true
+			>::type BothConditionTrue3;
+
+	// both false
+	typedef prism::And<
+				prism::IsFloatingPoint<const int>,	// false
+				prism::IsVoid<const int>		// also false
+			>::type BothConditionTrue4;
+
+	ASSERT_TRUE(BothConditionTrue1::value);
+	ASSERT_FALSE(BothConditionTrue2::value);
+	ASSERT_FALSE(BothConditionTrue3::value);
+	ASSERT_FALSE(BothConditionTrue4::value);
 }
 
 /**
@@ -423,6 +492,10 @@ TEST_F(typeTest, IsReference) {
 	ASSERT_TRUE(prism::IsReference<const int&>::value);
 	ASSERT_TRUE(prism::IsReference<volatile int&>::value);
 	ASSERT_TRUE(prism::IsReference<const volatile int&>::value);
+	ASSERT_TRUE(prism::IsReference<int&&>::value);
+	ASSERT_TRUE(prism::IsReference<const int&&>::value);
+	ASSERT_TRUE(prism::IsReference<volatile int&&>::value);
+	ASSERT_TRUE(prism::IsReference<const volatile int&&>::value);
 
 	ASSERT_FALSE(prism::IsReference<char>::value);
 	ASSERT_FALSE(prism::IsReference<char*>::value);
@@ -504,6 +577,64 @@ TEST_F(typeTest, IsMemberObjectPointer) {
 
 	ASSERT_FALSE(prism::IsMemberObjectPointer<void (A::*)()>::value);
 	ASSERT_FALSE(prism::IsMemberObjectPointer<decltype(mfp)>::value);
+}
+
+/**
+ * Test: IsClass<>
+ */
+TEST_F(typeTest, IsClass) {
+	class A {};
+	struct B {};
+	union C{};
+	ASSERT_TRUE(prism::IsClass<A>::value);
+	ASSERT_TRUE(prism::IsClass<B>::value);
+	ASSERT_TRUE(prism::IsClass<C>::value);
+
+	ASSERT_FALSE(prism::IsClass<int>::value);
+	ASSERT_FALSE(prism::IsClass<A*>::value);
+	ASSERT_FALSE(prism::IsClass<int A::*>::value);
+}
+
+/**
+ * Test: IsCompound<>
+ */
+TEST_F(typeTest, IsCompound) {
+	class A{ public: int x; int y(){return x;}};
+
+	ASSERT_TRUE(prism::IsCompound<int&>::value);			// l_reference
+	ASSERT_TRUE(prism::IsCompound<int&&>::value);			// r_reference
+	ASSERT_TRUE(prism::IsCompound<A>::value);				// class
+	ASSERT_TRUE(prism::IsCompound<int[5]>::value);			// array
+	ASSERT_TRUE(prism::IsCompound<int*>::value);			// pointer
+	ASSERT_TRUE(prism::IsCompound<int A::*>::value);		// member pointer
+	ASSERT_TRUE(prism::IsCompound<void (A::*)()>::value);	// member function pointer
+	ASSERT_TRUE(prism::IsCompound<const int *>::value);
+
+	ASSERT_FALSE(prism::IsCompound<int>::value);
+	ASSERT_FALSE(prism::IsCompound<bool>::value);
+	ASSERT_FALSE(prism::IsCompound<char>::value);
+	ASSERT_FALSE(prism::IsCompound<void>::value);
+}
+
+/**
+ * Test: IsScalar<>
+ */
+TEST_F(typeTest, IsScalar) {
+	class A{ public: int x; int y(){return x;}};
+
+	ASSERT_TRUE(prism::IsScalar<float>::value);
+	ASSERT_TRUE(prism::IsScalar<int>::value);
+	ASSERT_TRUE(prism::IsScalar<int A::*>::value);		// member pointer
+	ASSERT_TRUE(prism::IsScalar<void (A::*)()>::value);	// member function pointer
+	ASSERT_TRUE(prism::IsScalar<const int *>::value);
+	ASSERT_TRUE(prism::IsScalar<int*>::value);
+
+	ASSERT_FALSE(prism::IsScalar<void>::value);
+	ASSERT_FALSE(prism::IsScalar<int[5]>::value);
+	ASSERT_FALSE(prism::IsScalar<A>::value);
+	ASSERT_FALSE(prism::IsScalar<int&>::value);
+	ASSERT_FALSE(prism::IsScalar<int&&>::value);
+	ASSERT_FALSE(prism::IsScalar<int(int)>::value); // is function
 
 }
 

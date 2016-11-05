@@ -59,7 +59,7 @@
 #include <prism/h/BinarySearchTree.h>
 #include <prism/Version>
 #include <prism/PrismVersion>
-#include <prism/type>
+#include <prism/h/type2.h>
 //#include <prism/h/Obj.h>
 
 using namespace prism;
@@ -73,7 +73,6 @@ int main(int argc, char * argv[]) {
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
 	::testing::GTEST_FLAG(filter) = "type*";
 	::testing::InitGoogleTest(&argc, argv);
-
 
 
 

@@ -72,7 +72,7 @@ main.d: ../main.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Version.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/PrismVersion \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/PrismVersion.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/type
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/type2.h
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -220,4 +220,4 @@ main.d: ../main.cpp \
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/PrismVersion.h:
 
-/Users/iainhemstock/GitHub/Prism/inc/prism/type:
+/Users/iainhemstock/GitHub/Prism/inc/prism/h/type2.h:

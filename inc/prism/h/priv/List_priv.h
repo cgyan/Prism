@@ -51,11 +51,11 @@ struct ListIterator {
 	typedef ListIterator<T, false> 					iterator;
 	typedef ListIterator<T, true> 					const_iterator;
 
-	typedef typename prism::conditional_type<isConst, const T*, T*>::type 	pointer;
-	typedef typename prism::conditional_type<isConst, const T&, T&>::type 	reference;
-	typedef typename prism::conditional_type<true, const T*, T*>::type 		const_pointer;
-	typedef typename prism::conditional_type<true, const T&, T&>::type 		const_reference;
-	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type Self;
+	typedef typename prism::ConditionalType_t<isConst, const T*, T*> 	pointer;
+	typedef typename prism::ConditionalType_t<isConst, const T&, T&> 	reference;
+	typedef typename prism::ConditionalType_t<true, const T*, T*> 		const_pointer;
+	typedef typename prism::ConditionalType_t<true, const T&, T&> 		const_reference;
+	typedef typename prism::ConditionalType_t<isConst, const_iterator, iterator> Self;
 
 	NodePtr np;
 

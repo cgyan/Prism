@@ -34,11 +34,11 @@ public:
 	typedef T							value_type;
 	typedef std::ptrdiff_t 				difference_type;
 	typedef random_access_iterator_tag 	iterator_category;
-	typedef typename prism::conditional_type<isConst, const T*, T*>::type 	pointer;
-	typedef typename prism::conditional_type<isConst, const T&, T&>::type 	reference;
-	typedef typename prism::conditional_type<true, const T*, T*>::type 		const_pointer;
-	typedef typename prism::conditional_type<true, const T&, T&>::type 		const_reference;
-	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type Self;
+	typedef typename prism::ConditionalType_t<isConst, const T*, T*> 	pointer;
+	typedef typename prism::ConditionalType_t<isConst, const T&, T&> 	reference;
+	typedef typename prism::ConditionalType_t<true, const T*, T*> 		const_pointer;
+	typedef typename prism::ConditionalType_t<true, const T&, T&> 		const_reference;
+	typedef typename prism::ConditionalType_t<isConst, const_iterator, iterator> Self;
 public:
 	T** buckets; // (*buckets) is a pointer to one of the buckets i.e. T*
 	T* current;

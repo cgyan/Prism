@@ -164,9 +164,9 @@ struct SequenceIterator {
 	typedef std::ptrdiff_t 				difference_type;
 	typedef SequenceIterator<T, false>	iterator;
 	typedef SequenceIterator<T, true>	const_iterator;
-	typedef typename prism::conditional_type<isConst, const T*, T*>::type 				pointer;
-	typedef typename prism::conditional_type<isConst, const T&, T&>::type 			reference;
-	typedef typename prism::conditional_type<isConst, const_iterator, iterator>::type 	Self;
+	typedef typename prism::ConditionalType_t<isConst, const T*, T*> 				pointer;
+	typedef typename prism::ConditionalType_t<isConst, const T&, T&>				reference;
+	typedef typename prism::ConditionalType_t<isConst, const_iterator, iterator> 	Self;
 
 	pointer p;
 
@@ -302,13 +302,20 @@ struct AssociativeIterator {
 	typedef std::ptrdiff_t								difference_type;
 	typedef prism::bidirectional_iterator_tag			iterator_category;
 
-	typedef typename prism::conditional_type<	isConst, const value_type*,
-												value_type*>::type pointer;
+	typedef typename prism::ConditionalType_t<isConst,
+											  const value_type*,
+											  value_type*
+											  > pointer;
 
-	typedef typename prism::conditional_type<	isConst, const value_type&,
-												value_type&>::type reference;
+	typedef typename prism::ConditionalType_t<isConst,
+			                                  const value_type&,
+											  value_type&
+											  > reference;
 
-	typedef typename prism::conditional_type<	isConst, const_iterator, iterator>::type Self;
+	typedef typename prism::ConditionalType_t<isConst,
+											  const_iterator,
+											  iterator
+											  > Self;
 
 	node_pointer np;
 
