@@ -59,13 +59,13 @@
 #include <prism/h/BinarySearchTree.h>
 #include <prism/Version>
 #include <prism/PrismVersion>
-#include <prism/h/type2.h>
+#include <prism/type_traits>
 //#include <prism/h/Obj.h>
 
 using namespace prism;
 using namespace std;
 
-void myfunc(int i,char c){}
+prism::String myfunc(){ return String::number(20); }
 struct A { void x() {}; };
 
 int main(int argc, char * argv[]) {
@@ -74,7 +74,8 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "type*";
 	::testing::InitGoogleTest(&argc, argv);
 
-
+	decltype(myfunc()) s = "hello string";
+	cout << s << endl;
 
 
 
@@ -84,7 +85,42 @@ int main(int argc, char * argv[]) {
 
 
 
-
+/*
+	using ARRAY 							= int[1];
+	using CHAR								= char;
+	using CLASS								= C;
+	using DOUBLE							= double;
+	using LONG_DOUBLE						= long double;
+	using ENUM 								= E;
+	using CONST_ENUM 						= E const;
+	using VOLATILE_ENUM 					= E volatile;
+	using UNION 							= U;
+	using CONST_UNION						= U const;
+	using VOLATILE_UNION					= U volatile;
+	using FLOAT 							= float;
+	using CONST_FLOAT						= float const;
+	using VOLATILE_FLOAT					= float volatile;
+	using INTEGRAL 							= int;
+	using CONST_INTEGRAL 					= int const;
+	using VOLATILE_INTEGRAL					= int volatile;
+	using CONST_VOLATILE_INTEGRAL			= int volatile const;
+	using FUNCTION 							= int(int);
+	using MEMBER_FUNCTION_POINTER 			= int (C::*)();
+	using CONST_MEMBER_FUNCTION_POINTER 	= int (C::*)() const;
+	using MEMBER_OBJECT_POINTER 			= int C::*;
+	using CONST_MEMBER_OBJECT_POINTER 		= int C::* const;
+	using VOLATILE_MEMBER_OBJECT_POINTER 	= int C::* volatile;
+	using LREF 								= int&;
+	using RREF 								= int&&;
+	using POINTER 							= int*;
+	using CONST_POINTER_TO_T				= int* const;
+	using CONST_POINTER_TO_CONST_T			= const int* const;
+	using POINTER_TO_CONST_T				= const int*;
+	using VOLATILE_POINTER_TO_T				= int* volatile;
+	using VOLATILE_POINTER_TO_CONST_T		= const int* volatile;
+	using POINTER_TO_VOLATILE_T				= volatile int*;
+	using VOID								= void;
+ */
 
 
 

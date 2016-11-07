@@ -18,7 +18,7 @@ CPP_SRCS += \
 ../test/VersionTest.cpp \
 ../test/algorithmTest.cpp \
 ../test/functorTest.cpp \
-../test/typeTest.cpp 
+../test/type_traitsTest.cpp 
 
 OBJS += \
 ./test/ArrayTest.o \
@@ -35,7 +35,7 @@ OBJS += \
 ./test/VersionTest.o \
 ./test/algorithmTest.o \
 ./test/functorTest.o \
-./test/typeTest.o 
+./test/type_traitsTest.o 
 
 CPP_DEPS += \
 ./test/ArrayTest.d \
@@ -52,7 +52,7 @@ CPP_DEPS += \
 ./test/VersionTest.d \
 ./test/algorithmTest.d \
 ./test/functorTest.d \
-./test/typeTest.d 
+./test/type_traitsTest.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

@@ -9,7 +9,7 @@
 #ifndef PRISM_ITERATOR_H_
 #define PRISM_ITERATOR_H_
 
-#include <prism/h/type.h>
+#include <prism/h/type_traits.h> // for prism::ConditionalType
 #include <prism/h/pair.h>
 #include <cstddef> // for std::ptrdiff_t
 

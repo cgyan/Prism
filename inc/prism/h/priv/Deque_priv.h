@@ -11,7 +11,7 @@
 
 #include <prism/h/SharedData.h>
 #include <prism/h/SharedDataPointer.h>
-#include <prism/h/type.h> // for prism::conditional
+#include <prism/h/type_traits.h> // for prism::ConditionalType
 #include <prism/h/algorithm.h>
 #include <prism/h/OutOfBoundsException.h>
 #include <prism/h/Allocator.h>
