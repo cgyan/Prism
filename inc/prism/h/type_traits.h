@@ -724,22 +724,20 @@ constexpr bool IsObject_v = prism::IsObject<T>::value;
 //============================================================================================
 // AddLValueReference
 //============================================================================================
-//template <typename T>
-//struct AddLValueReference {
-//	typedef T& type;
-//};
-//template <typename T>
-//struct AddLValueReference<T&> {
-//	typedef T type;
-//};
-//template <typename T>
-//struct AddLValueReference<T&&> {
-//	typedef T& type;
-//};
-//template <typename T>
-//struct AddLValueReference<void> {
-//	typedef T type;
-//};
+PRISM_BEGIN_PRIVATE_NAMESPACE
+template <typename T, bool = prism::IsReferenceable<T>::value>
+struct AddLValueReference_aux {
+	typedef T type;
+};
+template <typename T>
+struct AddLValueReference_aux<T,true> {
+	typedef T& type;
+};
+PRISM_END_PRIVATE_NAMESPACE
+template <typename T>
+struct AddLValueReference
+	: public prism_private::AddLValueReference_aux<T>
+{};
 
 
 PRISM_END_NAMESPACE

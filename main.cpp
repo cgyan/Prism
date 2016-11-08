@@ -75,7 +75,8 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*type_traits*";
 	::testing::InitGoogleTest(&argc, argv);
 
-
+	using Type = std::add_lvalue_reference<int&>::type;
+	cout << (typeid(Type) == typeid(int&)) << endl;
 
 	return RUN_ALL_TESTS();
 //	return 0;

@@ -73,10 +73,28 @@ public:
 /**
  * Test: AddLValueReference<>
  */
-//TEST_F(type_traitsTest, AddLValueReference) {
-//	using Type = prism::AddLValueReference<int>::type;
-//	ASSERT_EQ(typeid(Type), typeid(int&));
-//}
+TEST_F(type_traitsTest, AddLValueReference) {
+	ASSERT_EQ(
+			typeid(prism::AddLValueReference<INTEGRAL>::type),
+			typeid(INTEGRAL&)
+	);
+	ASSERT_EQ(
+			typeid(prism::AddLValueReference<INTEGRAL&&>::type),
+			typeid(INTEGRAL&)
+	);
+	ASSERT_EQ(
+			typeid(prism::AddLValueReference<INTEGRAL&>::type),
+			typeid(INTEGRAL&)
+	);
+	ASSERT_EQ(
+			typeid(prism::AddLValueReference<VOID>::type),
+			typeid(VOID)
+	);
+	ASSERT_EQ(
+			typeid(prism::AddLValueReference<FUNCTION>::type),
+			typeid(FUNCTION&)
+	);
+}
 
 /**
  * Test: And<>
