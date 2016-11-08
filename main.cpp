@@ -60,6 +60,7 @@
 #include <prism/Version>
 #include <prism/PrismVersion>
 #include <prism/type_traits>
+#include <prism/UniquePointer>
 //#include <prism/h/Obj.h>
 
 using namespace prism;

@@ -86,6 +86,41 @@ get() const {
  *
  */
 template <typename T, typename D>
+const bool
+UniquePointer<T,D>::
+isNull() const {
+	return d->p == nullptr;
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
+typename UniquePointer<T,D>::pointer
+UniquePointer<T,D>::
+release() {
+	pointer p_tmp = d->p;
+	d->p = nullptr;
+	return p_tmp;
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
+void
+UniquePointer<T,D>::
+reset(typename UniquePointer<T,D>::pointer p) {
+	delete d->p;
+
+	if (p == nullptr) d->p = nullptr;
+	else d->p = p;
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
 typename UniquePointer<T,D>::element_type
 UniquePointer<T,D>::
 operator*() {
@@ -100,6 +135,15 @@ typename UniquePointer<T,D>::pointer
 UniquePointer<T,D>::
 operator->() {
 	return d->p;
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
+UniquePointer<T,D>::
+operator bool() const {
+	return (d->p == nullptr) ? false : true;
 }
 
 PRISM_END_NAMESPACE

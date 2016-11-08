@@ -19,41 +19,62 @@ namespace prism {
 template <class T>
 class SharedPointer {
 private:
-	T * d;
-	ReferenceCounter * m_ref;
+	T * 				d;
+	ReferenceCounter * 	m_ref;
 
 public:
-	SharedPointer();
-	SharedPointer(T * data);
-	SharedPointer(const SharedPointer<T> & copy);
-	~SharedPointer();
+						SharedPointer();
+						SharedPointer(T * data);
+						SharedPointer(const SharedPointer<T> & copy);
+						~SharedPointer();
 
-	void clear();
-	T * data() const;
-	const bool isNull() const;
-	const bool isUnique() const;
-	const int refCount() const;
+	void 				clear();
+	T * 				data() const;
+	const bool 			isNull() const;
+	const bool 			isUnique() const;
+	const int 			refCount() const;
 
-	T * operator->() const;
-	T & operator*() const;
-	operator bool() const;
-	const bool operator!() const;
-	SharedPointer & operator=(const SharedPointer & rhs);
+	T * 				operator->() const;
+	T & 				operator*() const;
+	operator 			bool() const;
+	const bool 			operator!() const;
+	SharedPointer & 	operator=(const SharedPointer & rhs);
 
 	// Related non-members
-	/* 	Note: friend functions of a template class cannot use the same template name given to the class - i.e. they cannot use T.
-		So the friend functions are given a different template name, U in this case, although it actually represents the same type as T. */
-	template <class U> friend const bool operator!=(const SharedPointer<U> & p1, const SharedPointer<U> & p2);
-	template <class U> friend const bool operator!=(const SharedPointer<U> & p1, const U * p2);
-	template <class U> friend const bool operator!=(const U * p1, const SharedPointer<U> & p2);
-	template <class U> friend const bool operator==(const SharedPointer<U> & p1, const SharedPointer<U> & p2);
-	template <class U> friend const bool operator==(const SharedPointer<U> & p1, const U * p2);
-	template <class U> friend const bool operator==(const U * p1, const SharedPointer<U> & p2);
+	/* 	Note: friend functions of a template class cannot use the same template name given to
+	 * the class - i.e. they cannot use T. So the friend functions are given a different
+	 * template name, U in this case, although it actually represents the same type as T.
+	 */
+	template <class U>
+	friend const bool
+	operator!=(const SharedPointer<U> & p1, const SharedPointer<U> & p2);
+
+	template <class U>
+	friend const bool
+	operator!=(const SharedPointer<U> & p1, const U * p2);
+
+	template <class U>
+	friend const bool
+	operator!=(const U * p1, const SharedPointer<U> & p2);
+
+	template <class U>
+	friend const bool
+	operator==(const SharedPointer<U> & p1, const SharedPointer<U> & p2);
+
+	template <class U>
+	friend const bool
+	operator==(const SharedPointer<U> & p1, const U * p2);
+
+	template <class U>
+	friend const bool
+	operator==(const U * p1, const SharedPointer<U> & p2);
 
 	friend std::ostream & operator<<(std::ostream & out, SharedPointer & p) {
 		if (p.isNull()) out << "SharedPointer &=" << &p << " (null)";
 		else {
-			out << "SharedPointer &=" << &p << " (ReferenceCounter &=" << p.m_ref << " count=" << p.m_ref->count << ")";
+			out << "SharedPointer &=" << &p <<
+					" (ReferenceCounter &=" << p.m_ref <<
+					" count=" << p.m_ref->count << ")";
 			out << ", (Pointer &=" << p.d << ")";
 			out << std::endl;
 		}

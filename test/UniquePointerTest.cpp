@@ -16,41 +16,82 @@ namespace test {
 class UniquePointerTest : public ::testing::Test {
 public:
 	struct D {};
-	UniquePointer<int,D> up;
+	UniquePointer<int,D> dup;
+	UniquePointer<int,D> iup;
+
+	UniquePointerTest()
+	: dup(), // default unique pointer
+	  iup(new int(20))
+	{}
 };
 
 /**
  * Test: UniquePointer()
  */
 TEST_F(UniquePointerTest, default_ctor) {
-	ASSERT_EQ(nullptr, up.get());
+	ASSERT_EQ(nullptr, dup.get());
 }
 
 /**
  * Test: UniquePointer(p)
  */
 TEST_F(UniquePointerTest, ctor_with_pointer) {
-	int * p = new int(20);
-	UniquePointer<int,D> up(p);
-
-	ASSERT_EQ(p, up.get());
-	ASSERT_EQ(20, *up.get());
+	ASSERT_EQ(20, *iup.get());
 }
 
 /**
  * Test: get()
  */
 TEST_F(UniquePointerTest, get) {
-	ASSERT_TRUE(up.get() == nullptr);
+	ASSERT_TRUE(dup.get() == nullptr);
+}
+
+/**
+ * Test: isNull()
+ */
+TEST_F(UniquePointerTest, isNull) {
+	ASSERT_TRUE(dup.isNull());
+	ASSERT_FALSE(iup.isNull());
+}
+
+/**
+ * Test: release()
+ */
+TEST_F(UniquePointerTest, release) {
+	UniquePointer<int,D>::pointer p = iup.release();
+
+	ASSERT_TRUE(iup.get() == nullptr);
+	ASSERT_FALSE(p == nullptr);
+	ASSERT_TRUE(*p == 20);
+
+	delete p;
+}
+
+/**
+ * Test: reset(p)
+ */
+TEST_F(UniquePointerTest, reset_with_replacement_pointer) {
+	int * p = new int(100);
+	iup.reset(p);
+
+	ASSERT_TRUE(iup.get() != nullptr);
+	ASSERT_TRUE(*iup == 100);
+}
+
+/**
+ * Test: reset()
+ */
+TEST_F(UniquePointerTest, reset_to_default) {
+	iup.reset();
+
+	ASSERT_TRUE(iup.get() == nullptr);
 }
 
 /**
  * Test: operator*()
  */
 TEST_F(UniquePointerTest, operator_deref) {
-	UniquePointer<int,D> up(new int(20));
-
-	ASSERT_EQ(20, *up);
+	ASSERT_EQ(20, *iup);
 }
 
 /**

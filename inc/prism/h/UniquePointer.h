@@ -33,11 +33,28 @@ public:
 	get() const;
 
 	///
+	const bool
+	isNull() const;
+
+	///
+	pointer
+	release();
+
+	///
+	void
+	reset(pointer p = nullptr);
+
+	///
 	element_type
 	operator*();
 
+	///
 	pointer
 	operator->();
+
+	///
+	explicit
+	operator bool() const;
 
 private:
 	struct UniquePointerData;
