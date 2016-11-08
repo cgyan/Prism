@@ -14,19 +14,39 @@ namespace test {
 
 class UniquePointerTest : public ::testing::Test {
 public:
-
+	struct D {};
+	UniquePointer<int*,D> up;
 };
 
 /**
  * Test: UniquePointer()
  */
 TEST_F(UniquePointerTest, UniquePointer) {
-	struct Deleter{};
-	UniquePointer<int*,Deleter> up;
-
 	ASSERT_TRUE(false);
+}
+
+/**
+ * Test: get()
+ */
+TEST_F(UniquePointerTest, get) {
+	ASSERT_TRUE(up.get() == nullptr);
 }
 
 } // end namespace test
 } // end namespace prism
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

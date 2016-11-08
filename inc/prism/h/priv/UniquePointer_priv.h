@@ -19,6 +19,13 @@ PRISM_BEGIN_NAMESPACE
 template <typename T, typename D>
 struct UniquePointer<T,D>::UniquePointerData {
 	T* p;
+
+	/*
+	 *
+	 */
+	UniquePointerData()
+	: p(nullptr)
+	{}
 };
 //============================================================================================
 // UniquePointer
@@ -39,6 +46,16 @@ template <typename T, typename D>
 UniquePointer<T,D>::
 ~UniquePointer() {
 	delete d;
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
+T*
+UniquePointer<T,D>::
+get() const {
+	return d->p;
 }
 
 PRISM_END_NAMESPACE
