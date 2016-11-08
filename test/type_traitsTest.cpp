@@ -71,6 +71,14 @@ public:
 };
 
 /**
+ * Test: AddLValueReference<>
+ */
+//TEST_F(type_traitsTest, AddLValueReference) {
+//	using Type = prism::AddLValueReference<int>::type;
+//	ASSERT_EQ(typeid(Type), typeid(int&));
+//}
+
+/**
  * Test: And<>
  */
 TEST_F(type_traitsTest, And) {
@@ -396,13 +404,6 @@ TEST_F(type_traitsTest, IsConst) {
  * Test: IsEnum<>
  */
 TEST_F(type_traitsTest, IsEnum) {
-	//================================================================
-	// todo this assertion should indeed be TRUE but currently fails as
-	// IsEnum<T> is not properly implemented and always returns false
-	//================================================================
-	ASSERT_TRUE(prism::IsEnum<ENUM>::value);
-	//================================================================
-
 	ASSERT_FALSE(prism::IsEnum<ARRAY>::value);
 	ASSERT_FALSE(prism::IsEnum<CLASS>::value);
 	ASSERT_FALSE(prism::IsEnum<UNION>::value);
@@ -415,6 +416,13 @@ TEST_F(type_traitsTest, IsEnum) {
 	ASSERT_FALSE(prism::IsEnum<RREF>::value);
 	ASSERT_FALSE(prism::IsEnum<POINTER_TO_T>::value);
 	ASSERT_FALSE(prism::IsEnum<VOID>::value);
+
+	//================================================================
+	// todo this assertion should indeed be TRUE but currently fails as
+	// IsEnum<T> is not properly implemented and always returns false
+	//================================================================
+	ASSERT_TRUE(prism::IsEnum<ENUM>::value);
+	//================================================================
 }
 
 /**
@@ -650,17 +658,42 @@ TEST_F(type_traitsTest, IsObject) {
 	ASSERT_TRUE(prism::IsObject<POINTER_TO_T>::value);
 	ASSERT_TRUE(prism::IsObject<std::nullptr_t>::value);
 
+	ASSERT_FALSE(prism::IsObject<FUNCTION>::value);
+	ASSERT_FALSE(prism::IsObject<LREF>::value);
+	ASSERT_FALSE(prism::IsObject<RREF>::value);
+	ASSERT_FALSE(prism::IsObject<VOID>::value);
+
 	//================================================================
 	// todo this assertion should indeed be TRUE but currently fails as
 	// IsEnum<T> is not properly implemented and always returns false
 	//================================================================
 	ASSERT_TRUE(prism::IsObject<ENUM>::value);
 	//================================================================
+}
 
-	ASSERT_FALSE(prism::IsObject<FUNCTION>::value);
-	ASSERT_FALSE(prism::IsObject<LREF>::value);
-	ASSERT_FALSE(prism::IsObject<RREF>::value);
-	ASSERT_FALSE(prism::IsObject<VOID>::value);
+/**
+ * Test: IsReferenceable<>
+ * -- an object or reference is referenceable
+ */
+TEST_F(type_traitsTest, IsReferenceable) {
+	ASSERT_TRUE(prism::IsReferenceable<ARRAY>::value);
+	ASSERT_TRUE(prism::IsReferenceable<CLASS>::value);
+	ASSERT_TRUE(prism::IsReferenceable<FLOATING_POINT>::value);
+	ASSERT_TRUE(prism::IsReferenceable<INTEGRAL>::value);
+	ASSERT_TRUE(prism::IsReferenceable<FUNCTION>::value);
+	ASSERT_TRUE(prism::IsReferenceable<MEMBER_FUNCTION_POINTER>::value);
+	ASSERT_TRUE(prism::IsReferenceable<MEMBER_OBJECT_POINTER>::value);
+	ASSERT_TRUE(prism::IsReferenceable<LREF>::value);
+	ASSERT_TRUE(prism::IsReferenceable<RREF>::value);
+
+	ASSERT_FALSE(prism::IsReferenceable<VOID>::value);
+
+	//================================================================
+	// todo this assertion should indeed be TRUE but currently fails as
+	// IsEnum<T> is not properly implemented and always returns false.
+	//================================================================
+	ASSERT_TRUE(prism::IsReferenceable<ENUM>::value);
+	//================================================================
 }
 
 /**
@@ -716,13 +749,6 @@ TEST_F(type_traitsTest, IsScalar) {
 	ASSERT_TRUE(prism::IsScalar<MEMBER_OBJECT_POINTER>::value);
 	ASSERT_TRUE(prism::IsScalar<POINTER_TO_T>::value);
 
-	//================================================================
-	// todo this assertion should indeed be TRUE but currently fails as
-	// IsEnum<T> is not properly implemented and always returns false
-	//================================================================
-	ASSERT_TRUE(prism::IsScalar<ENUM>::value);
-	//================================================================
-
 	ASSERT_FALSE(prism::IsScalar<ARRAY>::value);
 	ASSERT_FALSE(prism::IsScalar<CLASS>::value);
 	ASSERT_FALSE(prism::IsScalar<UNION>::value);
@@ -730,6 +756,13 @@ TEST_F(type_traitsTest, IsScalar) {
 	ASSERT_FALSE(prism::IsScalar<LREF>::value);
 	ASSERT_FALSE(prism::IsScalar<RREF>::value);
 	ASSERT_FALSE(prism::IsScalar<VOID>::value);
+
+	//================================================================
+	// todo this assertion should indeed be TRUE but currently fails as
+	// IsEnum<T> is not properly implemented and always returns false
+	//================================================================
+	ASSERT_TRUE(prism::IsScalar<ENUM>::value);
+	//================================================================
 }
 
 /**

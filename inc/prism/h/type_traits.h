@@ -449,6 +449,22 @@ using IsReference_t = typename prism::IsReference<T>::type;
 template <typename T>
 constexpr bool IsReference_v = prism::IsReference<T>::value;
 //============================================================================================
+// IsReferenceable
+//============================================================================================
+template <typename T>
+struct IsObject;
+template <typename T>
+struct IsFunction;
+
+template <typename T>
+struct IsReferenceable
+	: public prism::Or<
+	  	  prism::IsObject<T>,
+	  	  prism::IsReference<T>,
+	  	  prism::IsFunction<T>
+	  >::type
+{};
+//============================================================================================
 // IsArray
 //============================================================================================
 PRISM_BEGIN_PRIVATE_NAMESPACE
@@ -705,6 +721,25 @@ template <typename T>
 using IsObject_t = typename prism::IsObject<T>::type;
 template <typename T>
 constexpr bool IsObject_v = prism::IsObject<T>::value;
+//============================================================================================
+// AddLValueReference
+//============================================================================================
+//template <typename T>
+//struct AddLValueReference {
+//	typedef T& type;
+//};
+//template <typename T>
+//struct AddLValueReference<T&> {
+//	typedef T type;
+//};
+//template <typename T>
+//struct AddLValueReference<T&&> {
+//	typedef T& type;
+//};
+//template <typename T>
+//struct AddLValueReference<void> {
+//	typedef T type;
+//};
 
 
 PRISM_END_NAMESPACE
