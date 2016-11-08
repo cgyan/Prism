@@ -1,0 +1,30 @@
+\hypertarget{_unique_pointer_8h}{}\section{Unique\+Pointer.\+h File Reference}
+\label{_unique_pointer_8h}\index{Unique\+Pointer.\+h@{Unique\+Pointer.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_unique_pointer_deleter}{Unique\+Pointer\+Deleter$<$ T $>$}
+\item 
+class \hyperlink{class_unique_pointer}{Unique\+Pointer$<$ T, D $>$}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T , typename D $>$ }\\void \hyperlink{_unique_pointer_8h_a1f135a623128362cb3b74fb801f8922e}{swap} (\hyperlink{class_unique_pointer}{Unique\+Pointer}$<$ T, D $>$ \&up1, \hyperlink{class_unique_pointer}{Unique\+Pointer}$<$ T, D $>$ \&up2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Unique\+Pointer.\+h@{Unique\+Pointer.\+h}!swap@{swap}}
+\index{swap@{swap}!Unique\+Pointer.\+h@{Unique\+Pointer.\+h}}
+\subsubsection[{\texorpdfstring{swap(\+Unique\+Pointer$<$ T, D $>$ \&up1, Unique\+Pointer$<$ T, D $>$ \&up2)}{swap(UniquePointer< T, D > &up1, UniquePointer< T, D > &up2)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename D $>$ void swap (
+\begin{DoxyParamCaption}
+\item[{{\bf Unique\+Pointer}$<$ T, D $>$ \&}]{up1, }
+\item[{{\bf Unique\+Pointer}$<$ T, D $>$ \&}]{up2}
+\end{DoxyParamCaption}
+)}\hypertarget{_unique_pointer_8h_a1f135a623128362cb3b74fb801f8922e}{}\label{_unique_pointer_8h_a1f135a623128362cb3b74fb801f8922e}
+Swaps the contents of two Unique\+Pointers. After the swap, the first \hyperlink{class_unique_pointer}{Unique\+Pointer} will manage the pointer from the second \hyperlink{class_unique_pointer}{Unique\+Pointer} and vice versa.
+
+\begin{DoxySince}{Since}
+1.\+0.\+0 
+\end{DoxySince}
