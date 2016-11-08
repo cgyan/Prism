@@ -8,6 +8,7 @@
 
 #include <gtest/gtest.h>
 #include <prism/UniquePointer>
+#include <string>
 
 namespace prism {
 namespace test {
@@ -50,6 +51,15 @@ TEST_F(UniquePointerTest, operator_deref) {
 	UniquePointer<int,D> up(new int(20));
 
 	ASSERT_EQ(20, *up);
+}
+
+/**
+ * Test: operator->()
+ */
+TEST_F(UniquePointerTest, operator_deref_member) {
+	UniquePointer<std::string,D> up(new std::string("sample"));
+
+	ASSERT_EQ(6, up->size());
 }
 
 } // end namespace test

@@ -36,6 +36,9 @@ public:
 	element_type
 	operator*();
 
+	pointer
+	operator->();
+
 private:
 	struct UniquePointerData;
 	UniquePointerData * d;

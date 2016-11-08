@@ -92,6 +92,16 @@ operator*() {
 	return *d->p;
 }
 
+/*
+ *
+ */
+template <typename T, typename D>
+typename UniquePointer<T,D>::pointer
+UniquePointer<T,D>::
+operator->() {
+	return d->p;
+}
+
 PRISM_END_NAMESPACE
 
 
