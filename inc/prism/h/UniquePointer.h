@@ -8,13 +8,15 @@
 
 #include <prism/h/global.h>
 
-#ifndef PRISM_UNIQUEPOINTER_H_
-#define PRISM_UNIQUEPOINTER_H_
+#ifndef PRISM_UNIQUE_POINTER_H_
+#define PRISM_UNIQUE_POINTER_H_
 
 PRISM_BEGIN_NAMESPACE
 
 template <typename T, typename Deleter>
 class UniquePointer {
+public:
+	UniquePointer();
 private:
 	struct UniquePointerData;
 	UniquePointerData * d;
@@ -22,6 +24,6 @@ private:
 
 PRISM_END_NAMESPACE
 
+#include <prism/h/priv/UniquePointer_priv.h>
 
-
-#endif /* PRISM_UNIQUEPOINTER_H_ */
+#endif /* PRISM_UNIQUE_POINTER_H_ */
