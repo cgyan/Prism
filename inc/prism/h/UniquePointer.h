@@ -13,11 +13,17 @@
 
 PRISM_BEGIN_NAMESPACE
 
-template <typename T, typename Deleter>
+template <typename T>
+struct UniquePointerDeleter;
+//============================================================================================
+// UniquePointer
+//============================================================================================
+template <typename T, typename D = prism::UniquePointerDeleter<T>>
 class UniquePointer {
 public:
 	using pointer 		= T*;
 	using element_type 	= T;
+	using deleter_type	= D;
 
 	/// 						Creates a UniquePointer that will manage the lifetime of a
 	///							raw pointer (if supplied). If no pointer is supplied then the
@@ -57,6 +63,10 @@ public:
 	/// @since					1.0.0
 	pointer
 	data() const;
+
+	///
+	deleter_type
+	getDeleter() const;
 
 	///							Checks if a raw pointer is being managed or not
 	///

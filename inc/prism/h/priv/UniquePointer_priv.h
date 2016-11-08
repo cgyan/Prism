@@ -18,7 +18,7 @@ PRISM_BEGIN_NAMESPACE
 // UniquePointerData
 //============================================================================================
 template <typename T>
-struct UniqePointerDeleter {
+struct UniquePointerDeleter {
 	using pointer = T*;
 
 	static
@@ -33,6 +33,8 @@ struct UniqePointerDeleter {
 template <typename T, typename D>
 struct UniquePointer<T,D>::UniquePointerData {
 	using pointer = T*;
+	using deleter_type = D;
+
 	pointer p;
 
 	/*
@@ -53,7 +55,41 @@ struct UniquePointer<T,D>::UniquePointerData {
 	 *
 	 */
 	~UniquePointerData() {
-		delete p;
+		getDeleter().cleanup(p);
+	}
+
+	/*
+	 *
+	 */
+	deleter_type
+	getDeleter() const {
+		return deleter_type();
+	}
+
+	/*
+	 *
+	 */
+	pointer
+	releaseCurrentPointerOwnership() {
+		pointer tmp = p;
+		p = nullptr;
+		return tmp;
+	}
+
+	/*
+	 *
+	 */
+	void reset(pointer newPointer) {
+		pointer oldPointer = releaseCurrentPointerOwnership();
+		getDeleter().cleanup(oldPointer);
+		takeOwnershipOfNewPointer(newPointer);
+	}
+
+	/*
+	 *
+	 */
+	void takeOwnershipOfNewPointer(pointer newPointer) {
+		this->p = newPointer;
 	}
 };
 //============================================================================================
@@ -91,6 +127,16 @@ data() const {
  *
  */
 template <typename T, typename D>
+typename UniquePointer<T,D>::deleter_type
+UniquePointer<T,D>::
+getDeleter() const {
+	return d->getDeleter();
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
 const bool
 UniquePointer<T,D>::
 isNull() const {
@@ -104,9 +150,7 @@ template <typename T, typename D>
 typename UniquePointer<T,D>::pointer
 UniquePointer<T,D>::
 release() {
-	pointer p_tmp = d->p;
-	d->p = nullptr;
-	return p_tmp;
+	return d->releaseCurrentPointerOwnership();
 }
 
 /*
@@ -116,9 +160,7 @@ template <typename T, typename D>
 void
 UniquePointer<T,D>::
 reset(typename UniquePointer<T,D>::pointer p) {
-	pointer toDelete = release();
-	delete toDelete;
-	d->p = p;
+	d->reset(p);
 }
 
 /*

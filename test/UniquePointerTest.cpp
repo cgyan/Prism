@@ -15,11 +15,10 @@ namespace test {
 
 class UniquePointerTest : public ::testing::Test {
 public:
-	struct D;
-	using pointer = UniquePointer<int,D>::pointer;
+	using pointer = UniquePointer<int>::pointer;
 
-	UniquePointer<int,D> dup;
-	UniquePointer<int,D> iup;
+	UniquePointer<int> dup;
+	UniquePointer<int> iup;
 
 	UniquePointerTest()
 	: dup(), // default unique pointer
@@ -60,7 +59,7 @@ TEST_F(UniquePointerTest, isNull) {
  * Test: release()
  */
 TEST_F(UniquePointerTest, release) {
-	UniquePointer<int,D>::pointer p = iup.release();
+	UniquePointer<int>::pointer p = iup.release();
 
 	ASSERT_TRUE(iup.data() == nullptr);
 	ASSERT_FALSE(p == nullptr);
@@ -113,18 +112,18 @@ TEST_F(UniquePointerTest, operator_deref) {
  * Test: operator->()
  */
 TEST_F(UniquePointerTest, operator_deref_member) {
-	UniquePointer<std::string,D> up(new std::string("sample"));
+	UniquePointer<std::string> up(new std::string("sample"));
 
 	ASSERT_EQ(6, up->size());
 }
 
 /**
  * Test: swap()
- * -- the nonmember swap specialization for UniquePointers
+ * -- the non-member swap specialization for UniquePointers
  */
 TEST_F(UniquePointerTest, nonmember_swap) {
-	UniquePointer<int,D> up1(new int(10));
-	UniquePointer<int,D> up2(new int(20));
+	UniquePointer<int> up1(new int(10));
+	UniquePointer<int> up2(new int(20));
 
 	swap(up1, up2);
 
