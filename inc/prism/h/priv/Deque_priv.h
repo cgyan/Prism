@@ -269,20 +269,20 @@ struct DequeMemory {
 template <class T, class Alloc>
 struct DequeData : public SharedData {
 
-	typedef Alloc											TAllocator;
+	typedef Alloc												TAllocator;
 	typedef typename TAllocator::template rebind<T*>::other 	StorageAlloc;
-	typedef typename TAllocator::template rebind<T>::other 	BucketAlloc;
+	typedef typename TAllocator::template rebind<T>::other 		BucketAlloc;
 
 	typedef DequeMemory<T, TAllocator>							Memory;
-	typedef DequeIterator<T,false>							iterator;
-	typedef DequeIterator<T,true>							const_iterator;
-	typedef typename TAllocator::value_type					value_type;
+	typedef DequeIterator<T,false>								iterator;
+	typedef DequeIterator<T,true>								const_iterator;
+	typedef typename TAllocator::value_type						value_type;
 	typedef typename TAllocator::difference_type				difference_type;
 	typedef typename TAllocator::pointer						pointer;
 	typedef typename TAllocator::reference						reference;
 	typedef typename TAllocator::const_pointer					const_pointer;
 	typedef typename TAllocator::const_reference				const_reference;
-	typedef typename iterator::iterator_category 			iterator_category;
+	typedef typename iterator::iterator_category 				iterator_category;
 
 	Memory		storage;
 	iterator 	begin;

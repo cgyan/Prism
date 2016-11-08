@@ -124,8 +124,8 @@ template <bool condition, typename T1, typename T2>
 using ConditionalType_t = typename prism::ConditionalType<condition,T1,T2>::type;
 //============================================================================================
 // Or
-// -- The base class's 'value' member will resolve to true if either TraitClass1 or
-// -- TraitClass2's value is true and false otherwise
+// -- The base class's 'value' member will resolve to true if either MF1 or
+// -- MF2's value is true and false otherwise
 //============================================================================================
 template <typename...>
 struct Or;
@@ -150,8 +150,8 @@ template <typename ...MF_N>
 using Or_v = typename prism::Or<MF_N...>::value;
 //============================================================================================
 // And
-// -- The base class's 'value' member will resolve to true if both TraitClass1 and
-// -- TraitClass2's values are true and false otherwise
+// -- The base class's 'value' member will resolve to true if both MF1 and
+// -- MF2's values are true and false otherwise
 //============================================================================================
 template <typename...>
 struct And;
