@@ -161,7 +161,7 @@ public:
 	/*
 	 *
 	 */
-	T&
+	typename Base::element_type&
 	operator[](const int index) {
 		return Base::data()[index];
 	}
@@ -169,7 +169,7 @@ public:
 	/*
 	 *
 	 */
-	const T&
+	const typename Base::element_type&
 	operator[](const int index) const {
 		return Base::data()[index];
 	}
