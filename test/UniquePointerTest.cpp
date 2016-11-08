@@ -16,14 +16,14 @@ namespace test {
 class UniquePointerTest : public ::testing::Test {
 public:
 	struct D {};
-	UniquePointer<int,D> up1;
+	UniquePointer<int,D> up;
 };
 
 /**
  * Test: UniquePointer()
  */
 TEST_F(UniquePointerTest, default_ctor) {
-	ASSERT_TRUE(false);
+	ASSERT_EQ(nullptr, up.get());
 }
 
 /**
@@ -41,7 +41,7 @@ TEST_F(UniquePointerTest, ctor_with_pointer) {
  * Test: get()
  */
 TEST_F(UniquePointerTest, get) {
-	ASSERT_TRUE(up1.get() == nullptr);
+	ASSERT_TRUE(up.get() == nullptr);
 }
 
 /**
