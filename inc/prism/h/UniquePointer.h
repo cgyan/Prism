@@ -26,6 +26,10 @@ public:
 	explicit UniquePointer(pointer p);
 
 	///
+	UniquePointer&
+	operator=(const UniquePointer& rhs) = delete;
+
+	///
 	~UniquePointer();
 
 	///
