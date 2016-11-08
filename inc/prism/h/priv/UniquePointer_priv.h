@@ -32,6 +32,15 @@ UniquePointer()
 : d(new UniquePointerData)
 {}
 
+/*
+ *
+ */
+template <typename T, typename D>
+UniquePointer<T,D>::
+~UniquePointer() {
+	delete d;
+}
+
 PRISM_END_NAMESPACE
 
 

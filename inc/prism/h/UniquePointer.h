@@ -14,9 +14,10 @@
 PRISM_BEGIN_NAMESPACE
 
 template <typename T, typename Deleter>
-class UniquePointer {
+class UniquePointer final {
 public:
-	UniquePointer();
+	explicit UniquePointer();
+	~UniquePointer();
 private:
 	struct UniquePointerData;
 	UniquePointerData * d;
