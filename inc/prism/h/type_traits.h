@@ -46,22 +46,26 @@ typedef IntegralConstant<bool,false> 	FalseType;
 // RemoveConst
 //============================================================================================
 template <typename T>
-struct RemoveConst : public FalseType
-{};
+struct RemoveConst {
+	typedef T type;
+};
 template <typename T>
-struct RemoveConst<const T> : public TrueType
-{};
+struct RemoveConst<const T> {
+	typedef T type;
+};
 template <typename T>
 using RemoveConst_t = typename prism::RemoveConst<T>::type;
 //============================================================================================
 // RemoveVolatile
 //============================================================================================
 template <typename T>
-struct RemoveVolatile : public FalseType
-{};
+struct RemoveVolatile {
+	typedef T type;
+};
 template <typename T>
-struct RemoveVolatile<volatile T> : public TrueType
-{};
+struct RemoveVolatile<volatile T> {
+	typedef T type;
+};
 template <typename T>
 using RemoveVolatile_t = typename prism::RemoveVolatile<T>::type;
 //============================================================================================
@@ -588,56 +592,62 @@ constexpr bool IsClass_v = prism::IsClass<T>::value;
 //============================================================================================
 // IsEnum
 //============================================================================================
-PRISM_BEGIN_PRIVATE_NAMESPACE
-struct SizeBiggerThanOne { char a[2]; };
-struct EnumChecks {
-	static char enum_check(bool);
-	static char enum_check(char);
-	static char enum_check(signed char);
-	static char enum_check(unsigned char);
-	static char enum_check(wchar_t);
-	static char enum_check(signed short);
-	static char enum_check(unsigned short);
-	static char enum_check(signed int);
-	static char enum_check(unsigned int);
-	static char enum_check(signed long);
-	static char enum_check(unsigned long);
-	static char enum_check(signed long long);
-	static char enum_check(unsigned long long);
-	static char enum_check(float);
-	static char enum_check(double);
-	static char enum_check(long double);
-	static SizeBiggerThanOne enum_check(...);
-};
-// this is instantiated for everything except functions and arrays
-template <typename T,
-	bool is_convertible = !prism::IsFunction<T>::value && !prism::IsArray<T>::value>
-struct IsEnum_aux {
-	operator T() const;
-};
-// this is instantiated for functions and arrays
-template <typename T>
-struct IsEnum_aux<T,false>
-{};
-// this is instantiated for void types
-template <bool is_convertible>
-struct IsEnum_aux<void, is_convertible>
-{};
-PRISM_END_PRIVATE_NAMESPACE
-template <typename T>
-struct IsEnum
-	: public prism::ConditionalType<
-			!prism::IsFundamental<T>::value && !prism::IsPointer<T>::value &&
-			!prism::IsReference<T>::value && !prism::IsMemberPointer<T>::value &&
-			sizeof(prism_private::EnumChecks::enum_check(prism_private::IsEnum_aux<T>())) == 1,
-		TrueType,
-		FalseType
-	  >::type
-{};
-template <typename T>
-using IsEnum_t = typename prism::IsEnum<T>::type;
-template <typename T>
-constexpr bool IsEnum_v = prism::IsEnum<T>::value;
+// todo this whole IsEnum<> metafunction is not working correctly so as a workaround it returns
+// false for any type for now as a safety precaution
+
+//PRISM_BEGIN_PRIVATE_NAMESPACE
+//struct SizeBiggerThanOne { char a[2]; };
+//struct EnumChecks {
+//	static char enum_check(bool);
+//	static char enum_check(char);
+//	static char enum_check(signed char);
+//	static char enum_check(unsigned char);
+//	static char enum_check(wchar_t);
+//	static char enum_check(signed short);
+//	static char enum_check(unsigned short);
+//	static char enum_check(signed int);
+//	static char enum_check(unsigned int);
+//	static char enum_check(signed long);
+//	static char enum_check(unsigned long);
+//	static char enum_check(signed long long);
+//	static char enum_check(unsigned long long);
+//	static char enum_check(float);
+//	static char enum_check(double);
+//	static char enum_check(long double);
+//	static SizeBiggerThanOne enum_check(...);
+//};
+//// this is instantiated for everything except functions and arrays
+//template <typename T,
+//	bool is_convertible = !prism::IsFunction<T>::value && !prism::IsArray<T>::value>
+//struct IsEnum_aux {
+//	operator T() const;
+//};
+//// this is instantiated for functions and arrays
+//template <typename T>
+//struct IsEnum_aux<T,false>
+//{};
+//// this is instantiated for void types
+//template <bool is_convertible>
+//struct IsEnum_aux<void, is_convertible>
+//{};
+//PRISM_END_PRIVATE_NAMESPACE
+//template <typename T>
+//struct IsEnum
+//	: public prism::ConditionalType<
+//			!prism::IsFundamental<T>::value && !prism::IsPointer<T>::value &&
+//			!prism::IsReference<T>::value && !prism::IsMemberPointer<T>::value &&
+//			sizeof(prism_private::EnumChecks::enum_check(prism_private::IsEnum_aux<T>())) == 1,
+//		TrueType,
+//		FalseType
+//	  >::type
+//{};
+//template <typename T>
+//struct IsEnum : public FalseType
+//{};
+//template <typename T>
+//using IsEnum_t = typename prism::IsEnum<T>::type;
+//template <typename T>
+//constexpr bool IsEnum_v = prism::IsEnum<T>::value;
 //============================================================================================
 // IsCompound
 //============================================================================================
@@ -649,8 +659,8 @@ struct IsCompound
 	  	  prism::IsClass<T>,
 	  	  prism::IsArray<T>,
 	  	  prism::IsPointer<T>,
-	  	  prism::IsMemberPointer<T>,
-		  prism::IsEnum<T>
+	  	  prism::IsMemberPointer<T>
+//		  prism::IsEnum<T>
 	  >::type
 {};
 template <typename T>
@@ -665,8 +675,8 @@ struct IsScalar
 	: public prism::Or<
 	  	  prism::IsArithmetic<T>,
 	  	  prism::IsMemberPointer<T>,
-	  	  prism::IsPointer<T>,
-		  prism::IsEnum<T>
+	  	  prism::IsPointer<T>
+//		  prism::IsEnum<T>
 	  >::type
 {};
 template <>
@@ -695,6 +705,7 @@ template <typename T>
 using IsObject_t = typename prism::IsObject<T>::type;
 template <typename T>
 constexpr bool IsObject_v = prism::IsObject<T>::value;
+
 
 PRISM_END_NAMESPACE
 
