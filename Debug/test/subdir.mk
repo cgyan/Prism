@@ -15,6 +15,7 @@ CPP_SRCS += \
 ../test/StackTest.cpp \
 ../test/StringTest.cpp \
 ../test/TimeTest.cpp \
+../test/UniquePointerArrayTest.cpp \
 ../test/UniquePointerTest.cpp \
 ../test/VersionTest.cpp \
 ../test/algorithmTest.cpp \
@@ -33,6 +34,7 @@ OBJS += \
 ./test/StackTest.o \
 ./test/StringTest.o \
 ./test/TimeTest.o \
+./test/UniquePointerArrayTest.o \
 ./test/UniquePointerTest.o \
 ./test/VersionTest.o \
 ./test/algorithmTest.o \
@@ -51,6 +53,7 @@ CPP_DEPS += \
 ./test/StackTest.d \
 ./test/StringTest.d \
 ./test/TimeTest.d \
+./test/UniquePointerArrayTest.d \
 ./test/UniquePointerTest.d \
 ./test/VersionTest.d \
 ./test/algorithmTest.d \

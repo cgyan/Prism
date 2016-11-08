@@ -6,17 +6,16 @@
  *      Author: iainhemstock
  */
 
-#include <prism/h/global.h>
-
 #ifndef PRISM_UNIQUE_POINTER_H_
 #define PRISM_UNIQUE_POINTER_H_
+
+#include <prism/h/global.h>
+#include <ostream>
 
 PRISM_BEGIN_NAMESPACE
 
 template <typename T>
 struct UniquePointerDeleter;
-template <typename T>
-struct UniquePointerArrayDeleter;
 //============================================================================================
 // UniquePointer (non-array)
 //============================================================================================
@@ -55,7 +54,7 @@ public:
 	///							Destroys the UniquePointer and if it was managing a raw pointer
 	///							then that pointer is deallocated too.
 	/// @since					1.0.0
-	~UniquePointer();
+	virtual ~UniquePointer();
 
 	///							Access the underlying raw pointer
 	///
@@ -140,9 +139,40 @@ private:
 //============================================================================================
 // UniquePointer (array specialization)
 //============================================================================================
-template <typename T, typename D = prism::UniquePointerArrayDeleter<float>>
-class UniqueArrayPointer {
+template <typename T, typename D>
+class UniquePointer<T[],D> : public UniquePointer<T,D> {
+private:
+	using Base = UniquePointer<T,D>;
+public:
+	/**
+	 *
+	 */
+	UniquePointer()
+	: Base::UniquePointer()
+	{}
 
+	/**
+	 *
+	 */
+	UniquePointer(T* p)
+	: Base::UniquePointer(p)
+	{}
+
+	/*
+	 *
+	 */
+	T&
+	operator[](const int index) {
+		return Base::data()[index];
+	}
+
+	/*
+	 *
+	 */
+	const T&
+	operator[](const int index) const {
+		return Base::data()[index];
+	}
 };
 
 /// Swaps the contents of two UniquePointers. After the swap, the first UniquePointer will

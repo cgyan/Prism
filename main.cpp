@@ -72,11 +72,10 @@ struct A { void x() {}; };
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "*UniquePointerTest*";
+	::testing::GTEST_FLAG(filter) = "*UniquePointerArrayTest*";
 	::testing::InitGoogleTest(&argc, argv);
 
-
-
+//	prism::UniquePointer<int[]> p(new int[5]);
 
 
 	return RUN_ALL_TESTS();

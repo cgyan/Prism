@@ -15,7 +15,7 @@
 PRISM_BEGIN_NAMESPACE
 
 //============================================================================================
-// UniquePointerDeleter
+// UniquePointerDeleter (non-array)
 //============================================================================================
 template <typename T>
 struct UniquePointerDeleter {
@@ -23,18 +23,20 @@ struct UniquePointerDeleter {
 
 	void
 	operator()(pointer p) {
+//		std::cout << "Non-Array deleter\n";
 		delete p;
 	}
 };
 //============================================================================================
-// UniquePointerArrayDeleter
+// UniquePointerDeleter array specialization
 //============================================================================================
 template <typename T>
-struct UniquePointerArrayDeleter {
+struct UniquePointerDeleter<T[]> {
 	using pointer = T*;
 
 	void
 	operator()(pointer p) {
+//		std::cout << "Array deleter\n";
 		delete []p;
 	}
 };
