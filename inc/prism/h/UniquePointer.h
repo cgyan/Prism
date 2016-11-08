@@ -33,7 +33,7 @@ public:
 
 	///
 	pointer
-	get() const;
+	data() const;
 
 	///
 	const bool

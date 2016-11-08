@@ -70,7 +70,7 @@ UniquePointer<T,D>::
 template <typename T, typename D>
 typename UniquePointer<T,D>::pointer
 UniquePointer<T,D>::
-get() const {
+data() const {
 	return d->p;
 }
 
