@@ -118,6 +118,20 @@ TEST_F(UniquePointerTest, operator_deref_member) {
 	ASSERT_EQ(6, up->size());
 }
 
+/**
+ * Test: swap()
+ * -- the swap specialization for UniquePointers
+ */
+TEST_F(UniquePointerTest, nonmember_swap) {
+	UniquePointer<int,D> up1(new int(10));
+	UniquePointer<int,D> up2(new int(20));
+
+	swap(up1, up2);
+
+	ASSERT_TRUE(*up1 == 20);
+	ASSERT_TRUE(*up2 == 10);
+}
+
 } // end namespace test
 } // end namespace prism
 
