@@ -15,21 +15,32 @@ namespace test {
 class UniquePointerTest : public ::testing::Test {
 public:
 	struct D {};
-	UniquePointer<int*,D> up;
+	UniquePointer<int,D> up1;
 };
 
 /**
  * Test: UniquePointer()
  */
-TEST_F(UniquePointerTest, UniquePointer) {
+TEST_F(UniquePointerTest, default_ctor) {
 	ASSERT_TRUE(false);
+}
+
+/**
+ * Test: UniquePointer(p)
+ */
+TEST_F(UniquePointerTest, ctor_with_pointer) {
+	int * p = new int(20);
+	UniquePointer<int,D> up(p);
+
+	ASSERT_EQ(p, up.get());
+	ASSERT_EQ(20, *up.get());
 }
 
 /**
  * Test: get()
  */
 TEST_F(UniquePointerTest, get) {
-	ASSERT_TRUE(up.get() == nullptr);
+	ASSERT_TRUE(up1.get() == nullptr);
 }
 
 } // end namespace test
