@@ -15,8 +15,10 @@ PRISM_BEGIN_NAMESPACE
 
 template <typename T>
 struct UniquePointerDeleter;
+template <typename T>
+struct UniquePointerArrayDeleter;
 //============================================================================================
-// UniquePointer
+// UniquePointer (non-array)
 //============================================================================================
 template <typename T, typename D = prism::UniquePointerDeleter<T>>
 class UniquePointer {
@@ -133,6 +135,14 @@ public:
 private:
 	struct UniquePointerData;
 	UniquePointerData * d;
+};
+
+//============================================================================================
+// UniquePointer (array specialization)
+//============================================================================================
+template <typename T, typename D = prism::UniquePointerArrayDeleter<float>>
+class UniqueArrayPointer {
+
 };
 
 /// Swaps the contents of two UniquePointers. After the swap, the first UniquePointer will
