@@ -17,6 +17,19 @@ PRISM_BEGIN_NAMESPACE
 //============================================================================================
 // UniquePointerData
 //============================================================================================
+template <typename T>
+struct UniqePointerDeleter {
+	using pointer = T*;
+
+	static
+	void
+	cleanup(pointer p) {
+		delete p;
+	}
+};
+//============================================================================================
+// UniquePointerData
+//============================================================================================
 template <typename T, typename D>
 struct UniquePointer<T,D>::UniquePointerData {
 	using pointer = T*;

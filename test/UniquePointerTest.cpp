@@ -120,7 +120,7 @@ TEST_F(UniquePointerTest, operator_deref_member) {
 
 /**
  * Test: swap()
- * -- the swap specialization for UniquePointers
+ * -- the nonmember swap specialization for UniquePointers
  */
 TEST_F(UniquePointerTest, nonmember_swap) {
 	UniquePointer<int,D> up1(new int(10));
