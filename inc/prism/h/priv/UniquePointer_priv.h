@@ -103,10 +103,9 @@ template <typename T, typename D>
 void
 UniquePointer<T,D>::
 reset(typename UniquePointer<T,D>::pointer p) {
-	delete d->p;
-
-	if (p == nullptr) d->p = nullptr;
-	else d->p = p;
+	pointer toDelete = release();
+	delete toDelete;
+	d->p = p;
 }
 
 /*
