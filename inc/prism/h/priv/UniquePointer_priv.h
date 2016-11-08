@@ -21,9 +21,8 @@ template <typename T>
 struct UniquePointerDeleter {
 	using pointer = T*;
 
-	static
 	void
-	cleanup(pointer p) {
+	operator()(pointer p) {
 		delete p;
 	}
 };
@@ -55,7 +54,7 @@ struct UniquePointer<T,D>::UniquePointerData {
 	 *
 	 */
 	~UniquePointerData() {
-		getDeleter().cleanup(p);
+		getDeleter()(p);
 	}
 
 	/*
@@ -81,7 +80,7 @@ struct UniquePointer<T,D>::UniquePointerData {
 	 */
 	void reset(pointer newPointer) {
 		pointer oldPointer = releaseCurrentPointerOwnership();
-		getDeleter().cleanup(oldPointer);
+		getDeleter()(oldPointer);
 		takeOwnershipOfNewPointer(newPointer);
 	}
 

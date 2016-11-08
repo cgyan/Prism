@@ -13,6 +13,16 @@
 namespace prism {
 namespace test {
 
+template <typename T>
+struct CustomDeleter {
+	using pointer = T*;
+
+	void
+	operator()(pointer p) {
+		delete p;
+	}
+};
+
 class UniquePointerTest : public ::testing::Test {
 public:
 	using pointer = UniquePointer<int>::pointer;
@@ -41,10 +51,29 @@ TEST_F(UniquePointerTest, ctor_with_pointer) {
 }
 
 /**
- * Test: get()
+ * Test: supplying a custom deleter object instead of using the default
  */
-TEST_F(UniquePointerTest, get) {
+TEST_F(UniquePointerTest, custom_deleter) {
+	UniquePointer<int, CustomDeleter<int>> up;
+	ASSERT_TRUE(typeid(decltype(up.getDeleter()))
+			== typeid(CustomDeleter<int>));
+}
+
+/**
+ * Test: data()
+ */
+TEST_F(UniquePointerTest, data) {
 	ASSERT_TRUE(dup.data() == nullptr);
+}
+
+/**
+ * Test: getDeleter()
+ */
+TEST_F(UniquePointerTest, getDeleter) {
+	using DefaultDeleter = prism::UniquePointerDeleter<int>;
+	UniquePointer<int>::deleter_type dt = dup.getDeleter();
+
+	ASSERT_EQ(typeid(dt), typeid(DefaultDeleter));
 }
 
 /**

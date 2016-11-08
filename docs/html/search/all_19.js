@@ -29,6 +29,7 @@ var searchData=
   ['_7estack',['~Stack',['../classprism_1_1_stack.html#afd4f167bfe42d9b432d3d107a4fc1657',1,'prism::Stack']]],
   ['_7estring',['~String',['../classprism_1_1_string.html#a012aea4cb07bf119f7d3eca807e74e5c',1,'prism::String']]],
   ['_7etime',['~Time',['../classprism_1_1_time.html#a70238eb26c90283a833fefc38e994f70',1,'prism::Time']]],
+  ['_7euniquepointer',['~UniquePointer',['../class_unique_pointer.html#a34d23b09547c438f3c6c3a57abc50e15',1,'UniquePointer']]],
   ['_7evector',['~Vector',['../classprism_1_1_vector.html#a80f2790bb6011dd40739bff844fd3154',1,'prism::Vector']]],
   ['_7evector2',['~Vector2',['../classprism_1_1_vector2.html#aa45a4dd47779f3b4c7cbb1efdf067c0a',1,'prism::Vector2']]],
   ['_7evector3',['~Vector3',['../classprism_1_1_vector3.html#a2bbff2a24413343add18e58de51a4056',1,'prism::Vector3']]],

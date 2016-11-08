@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['truetype',['TrueType',['../namespaceprism.html#a7d28160dd23799e4294e2d705294f16f',1,'prism']]],
-  ['type',['type',['../structprism_1_1_integral_constant.html#a81f823c47213b220608c2d3475c0947b',1,'prism::IntegralConstant::type()'],['../structprism_1_1conditional__type.html#a838640ddffc26512ea189c38a23d0cb4',1,'prism::conditional_type::type()'],['../structprism_1_1conditional__type_3_01false_00_01_t1_00_01_t2_01_4.html#adaf651fbc69931e2ee47b6def8b508a5',1,'prism::conditional_type&lt; false, T1, T2 &gt;::type()']]]
+  ['truetype',['TrueType',['../type__traits_8h.html#a9080c3dc838a35a19de2fa1b3fd8a42f',1,'type_traits.h']]],
+  ['type',['type',['../struct_integral_constant.html#a7ba94a7b81411756fdb000c74badc6a1',1,'IntegralConstant::type()'],['../struct_remove_const_volatile.html#a53b416a12c266794cf8b33baf2ae0f45',1,'RemoveConstVolatile::type()'],['../struct_conditional_type.html#a40357908ab625ae9868cab516156c946',1,'ConditionalType::type()'],['../struct_conditional_type_3_01false_00_01_t1_00_01_t2_01_4.html#a45a9972b242655c66da3cb35a8180f76',1,'ConditionalType&lt; false, T1, T2 &gt;::type()']]]
 ];

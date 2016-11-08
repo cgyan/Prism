@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['second',['second',['../structprism_1_1pair.html#a283ff14678f78c074f5f270943727ef3',1,'prism::pair']]]
+  ['right',['right',['../structprism_1_1_b_s_t_node.html#a4d29a1dc9bcb5f6fb5b73e0bdfc1ace0',1,'prism::BSTNode']]]
 ];

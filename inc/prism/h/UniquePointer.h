@@ -64,7 +64,12 @@ public:
 	pointer
 	data() const;
 
+	///							Accesses the deleter object of the UniquePointer
 	///
+	/// @return					Returns the deleter_type object that was specified in the
+	///							template arguments (prism::UniquePointerDeleter by default).
+	///
+	/// @since 					1.0.0
 	deleter_type
 	getDeleter() const;
 
