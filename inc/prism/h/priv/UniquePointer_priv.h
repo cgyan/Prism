@@ -10,6 +10,7 @@
 #define PRISM_UNIQUE_POINTER_PRIV_H_
 
 #include <prism/h/global.h>
+#include <prism/h/algorithm.h>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -45,15 +46,6 @@ struct UniquePointer<T,D>::UniquePointerData {
 //============================================================================================
 // UniquePointer
 //============================================================================================
-/*
- *
- */
-template <typename T, typename D>
-UniquePointer<T,D>::
-UniquePointer()
-: d(new UniquePointerData)
-{}
-
 /*
  *
  */
@@ -121,6 +113,17 @@ reset(typename UniquePointer<T,D>::pointer p) {
  *
  */
 template <typename T, typename D>
+void
+UniquePointer<T,D>::
+swap(UniquePointer& other) {
+	using prism::swap;
+	swap(this->d, other.d);
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
 typename UniquePointer<T,D>::element_type
 UniquePointer<T,D>::
 operator*() {
@@ -144,6 +147,12 @@ template <typename T, typename D>
 UniquePointer<T,D>::
 operator bool() const {
 	return (d->p == nullptr) ? false : true;
+}
+
+template <typename T, typename D>
+void
+swap(UniquePointer<T,D>& up1, UniquePointer<T,D>& up2) {
+	up1.swap(up2);
 }
 
 PRISM_END_NAMESPACE

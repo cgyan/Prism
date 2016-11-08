@@ -15,7 +15,9 @@ namespace test {
 
 class UniquePointerTest : public ::testing::Test {
 public:
-	struct D {};
+	struct D;
+	using pointer = UniquePointer<int,D>::pointer;
+
 	UniquePointer<int,D> dup;
 	UniquePointer<int,D> iup;
 
@@ -85,6 +87,19 @@ TEST_F(UniquePointerTest, reset_to_default) {
 	iup.reset();
 
 	ASSERT_TRUE(iup.get() == nullptr);
+}
+
+/**
+ * Test: swap(other)
+ */
+TEST_F(UniquePointerTest, swap) {
+	pointer p_dup = dup.get();
+	pointer p_iup = iup.get();
+
+	dup.swap(iup);
+
+	ASSERT_TRUE(dup.get() == p_iup);
+	ASSERT_TRUE(iup.get() == p_dup);
 }
 
 /**

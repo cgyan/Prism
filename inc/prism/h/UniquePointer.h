@@ -14,17 +14,16 @@
 PRISM_BEGIN_NAMESPACE
 
 template <typename T, typename Deleter>
-class UniquePointer final {
+class UniquePointer {
 public:
 	using pointer 		= T*;
 	using element_type 	= T;
 
 	///
-	explicit UniquePointer();
+	explicit UniquePointer(pointer p = nullptr);
 
 	///
-	explicit UniquePointer(pointer p);
-
+	UniquePointer(const UniquePointer& copy) = delete;
 	///
 	UniquePointer&
 	operator=(const UniquePointer& rhs) = delete;
@@ -48,6 +47,9 @@ public:
 	void
 	reset(pointer p = nullptr);
 
+	void
+	swap(UniquePointer& other);
+
 	///
 	element_type
 	operator*();
@@ -64,6 +66,9 @@ private:
 	struct UniquePointerData;
 	UniquePointerData * d;
 };
+
+template <typename T, typename D>
+void swap(UniquePointer<T,D>& up1, UniquePointer<T,D>& up2);
 
 PRISM_END_NAMESPACE
 
