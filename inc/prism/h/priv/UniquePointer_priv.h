@@ -34,6 +34,13 @@ struct UniquePointer<T,D>::UniquePointerData {
 	UniquePointerData(pointer p)
 	: p(p)
 	{}
+
+	/*
+	 *
+	 */
+	~UniquePointerData() {
+		delete p;
+	}
 };
 //============================================================================================
 // UniquePointer
