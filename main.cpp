@@ -75,7 +75,6 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*UniquePointerArrayTest*";
 	::testing::InitGoogleTest(&argc, argv);
 
-//	prism::UniquePointer<int[]> p(new int[5]);
 
 
 	return RUN_ALL_TESTS();

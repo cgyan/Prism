@@ -36,7 +36,11 @@ struct UniquePointerDeleter<T[]> {
 
 	void
 	operator()(pointer p) {
-//		std::cout << "Array deleter\n";
+		if (p == nullptr) {
+//			std::cout << "Array deleter says p is null and nothing is to be deleted\n";
+		} else {
+//			std::cout << "Array deleter says p is not null and is being deleted\n";
+		}
 		delete []p;
 	}
 };

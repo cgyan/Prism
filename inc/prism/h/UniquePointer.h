@@ -171,6 +171,7 @@ public:
 	 */
 	const typename Base::element_type&
 	operator[](const int index) const {
+		std::cout << "const subscript\n";
 		return Base::data()[index];
 	}
 };
