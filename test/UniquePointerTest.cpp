@@ -43,6 +43,15 @@ TEST_F(UniquePointerTest, get) {
 	ASSERT_TRUE(up1.get() == nullptr);
 }
 
+/**
+ * Test: operator*()
+ */
+TEST_F(UniquePointerTest, operator_deref) {
+	UniquePointer<int,D> up(new int(20));
+
+	ASSERT_EQ(20, *up);
+}
+
 } // end namespace test
 } // end namespace prism
 

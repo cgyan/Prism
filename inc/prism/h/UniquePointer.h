@@ -32,6 +32,10 @@ public:
 	pointer
 	get() const;
 
+	///
+	element_type
+	operator*();
+
 private:
 	struct UniquePointerData;
 	UniquePointerData * d;

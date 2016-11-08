@@ -82,7 +82,37 @@ get() const {
 	return d->p;
 }
 
+/*
+ *
+ */
+template <typename T, typename D>
+typename UniquePointer<T,D>::element_type
+UniquePointer<T,D>::
+operator*() {
+	return *d->p;
+}
+
 PRISM_END_NAMESPACE
 
 
 #endif /* PRISM_UNIQUE_POINTER_PRIV_H_ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
