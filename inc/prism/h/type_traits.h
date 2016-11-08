@@ -592,9 +592,6 @@ constexpr bool IsClass_v = prism::IsClass<T>::value;
 //============================================================================================
 // IsEnum
 //============================================================================================
-// todo this whole IsEnum<> metafunction is not working correctly so as a workaround it returns
-// false for any type for now as a safety precaution
-
 //PRISM_BEGIN_PRIVATE_NAMESPACE
 //struct SizeBiggerThanOne { char a[2]; };
 //struct EnumChecks {
@@ -641,13 +638,16 @@ constexpr bool IsClass_v = prism::IsClass<T>::value;
 //		FalseType
 //	  >::type
 //{};
-//template <typename T>
-//struct IsEnum : public FalseType
-//{};
-//template <typename T>
-//using IsEnum_t = typename prism::IsEnum<T>::type;
-//template <typename T>
-//constexpr bool IsEnum_v = prism::IsEnum<T>::value;
+
+// todo this whole IsEnum<> metafunction is not working correctly so as a workaround it returns
+// false for any type for now as a safety precaution
+template <typename T>
+struct IsEnum : public FalseType
+{};
+template <typename T>
+using IsEnum_t = typename prism::IsEnum<T>::type;
+template <typename T>
+constexpr bool IsEnum_v = prism::IsEnum<T>::value;
 //============================================================================================
 // IsCompound
 //============================================================================================
@@ -659,8 +659,8 @@ struct IsCompound
 	  	  prism::IsClass<T>,
 	  	  prism::IsArray<T>,
 	  	  prism::IsPointer<T>,
-	  	  prism::IsMemberPointer<T>
-//		  prism::IsEnum<T>
+	  	  prism::IsMemberPointer<T>,
+		  prism::IsEnum<T>
 	  >::type
 {};
 template <typename T>
@@ -675,8 +675,8 @@ struct IsScalar
 	: public prism::Or<
 	  	  prism::IsArithmetic<T>,
 	  	  prism::IsMemberPointer<T>,
-	  	  prism::IsPointer<T>
-//		  prism::IsEnum<T>
+	  	  prism::IsPointer<T>,
+		  prism::IsEnum<T>
 	  >::type
 {};
 template <>
