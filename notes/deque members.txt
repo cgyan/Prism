@@ -1,7 +1,0 @@
-Deque
------
-
-Deque()
-Deque(const int size, const T& value = T())
-Deque(iterator first, iterator last)
-Deque(const Deque& copy)
