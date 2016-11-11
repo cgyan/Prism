@@ -6,11 +6,11 @@
 CC_SRCS += \
 ../external/gtest/gtest-all.cc 
 
-OBJS += \
-./external/gtest/gtest-all.o 
-
 CC_DEPS += \
 ./external/gtest/gtest-all.d 
+
+OBJS += \
+./external/gtest/gtest-all.o 
 
 
 # Each subdirectory must supply rules for building sources it contributes

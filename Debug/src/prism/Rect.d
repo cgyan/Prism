@@ -9,7 +9,8 @@ src/prism/Rect.d: ../src/prism/Rect.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/type_traits.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/type_traits
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Rect.h:
 
@@ -32,3 +33,5 @@ src/prism/Rect.d: ../src/prism/Rect.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/type_traits:

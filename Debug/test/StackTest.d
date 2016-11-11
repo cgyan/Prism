@@ -10,6 +10,7 @@ test/StackTest.d: ../test/StackTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/type_traits \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/SharedData.h \
@@ -44,6 +45,8 @@ test/StackTest.d: ../test/StackTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/type_traits:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/Vector.h:
 

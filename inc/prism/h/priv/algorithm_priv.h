@@ -12,6 +12,7 @@
 #include <prism/iterator>
 #include <iostream> // todo remove this
 #include <cmath>
+#include <prism/type_traits> // todo remove this
 
 
 namespace prism {
@@ -245,8 +246,8 @@ OutputIterator
 copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
 	while (first != last) {
 		*otherFirst = *first;
-		first++;
-		otherFirst++;
+		++first;
+		++otherFirst;
 	}
 	return otherFirst;
 }
@@ -347,7 +348,7 @@ void
 fill(ForwardIterator first, ForwardIterator last, const T& value) {
 	while (first != last) {
 		*first = value;
-		first++;
+		++first;
 	}
 }
 
@@ -673,16 +674,16 @@ sort(BidirectionalIterator first, BidirectionalIterator last) {
 	typedef typename prism::iterator_traits<BidirectionalIterator>::iterator_category it_cat;
 	priv::sort_quicksort(first, last, it_cat());
 }
-
+#include <iostream>
 /**
  *
  */
 template <class T>
 void
 swap(T& a, T& b) {
-	T temp = a;
-	a = b;
-	b = temp;
+	T temp = std::move(a);
+	a = std::move(b);
+	b = std::move(temp);
 }
 
 /**

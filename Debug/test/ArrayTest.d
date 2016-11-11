@@ -11,6 +11,7 @@ test/ArrayTest.d: ../test/ArrayTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/algorithm.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/iterator \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/type_traits \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/Exception.h
 
@@ -37,6 +38,8 @@ test/ArrayTest.d: ../test/ArrayTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/algorithm_priv.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/iterator:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/type_traits:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h:
 

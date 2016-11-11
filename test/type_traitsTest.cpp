@@ -8,7 +8,7 @@
  */
 
 #include <gtest/gtest.h>
-#include <prism/type_traits>
+#include <prism/h/type_traits.h>
 
 namespace prism {
 namespace test {
@@ -394,28 +394,28 @@ TEST_F(type_traitsTest, IsCompound) {
  * Test: IsConst<>
  */
 TEST_F(type_traitsTest, IsConst) {
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_INTEGRAL>);
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_VOLATILE_INTEGRAL>);
+	ASSERT_TRUE(	prism::IsConst<	CONST_INTEGRAL>::value);
+	ASSERT_TRUE(	prism::IsConst<	CONST_VOLATILE_INTEGRAL>::value);
 
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_POINTER_TO_T>);
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_POINTER_TO_CONST_T>);
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_FLOAT>);
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_MEMBER_OBJECT_POINTER>);
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_ENUM>);
-	ASSERT_TRUE(	prism::IsConst_v<	CONST_UNION>);
+	ASSERT_TRUE(	prism::IsConst<	CONST_POINTER_TO_T>::value);
+	ASSERT_TRUE(	prism::IsConst<	CONST_POINTER_TO_CONST_T>::value);
+	ASSERT_TRUE(	prism::IsConst<	CONST_FLOAT>::value);
+	ASSERT_TRUE(	prism::IsConst<	CONST_MEMBER_OBJECT_POINTER>::value);
+	ASSERT_TRUE(	prism::IsConst<	CONST_ENUM>::value);
+	ASSERT_TRUE(	prism::IsConst<	CONST_UNION>::value);
 
-	ASSERT_FALSE(	prism::IsConst_v<	INTEGRAL>);
-	ASSERT_FALSE(	prism::IsConst_v<	FLOAT>);
-	ASSERT_FALSE(	prism::IsConst_v<	MEMBER_OBJECT_POINTER>);
-	ASSERT_FALSE(	prism::IsConst_v<	MEMBER_FUNCTION_POINTER>);
-	ASSERT_FALSE(	prism::IsConst_v<	POINTER_TO_T>);
-	ASSERT_FALSE(	prism::IsConst_v<	POINTER_TO_CONST_T>);
-	ASSERT_FALSE(	prism::IsConst_v<	RREF>);
-	ASSERT_FALSE(	prism::IsConst_v<	LREF>);
-	ASSERT_FALSE(	prism::IsConst_v<	ENUM>);
-	ASSERT_FALSE(	prism::IsConst_v<	ARRAY>);
-	ASSERT_FALSE(	prism::IsConst_v<	UNION>);
-	ASSERT_FALSE(	prism::IsConst_v<	FUNCTION>);
+	ASSERT_FALSE(	prism::IsConst<	INTEGRAL>::value);
+	ASSERT_FALSE(	prism::IsConst<	FLOAT>::value);
+	ASSERT_FALSE(	prism::IsConst<	MEMBER_OBJECT_POINTER>::value);
+	ASSERT_FALSE(	prism::IsConst<	MEMBER_FUNCTION_POINTER>::value);
+	ASSERT_FALSE(	prism::IsConst<	POINTER_TO_T>::value);
+	ASSERT_FALSE(	prism::IsConst<	POINTER_TO_CONST_T>::value);
+	ASSERT_FALSE(	prism::IsConst<	RREF>::value);
+	ASSERT_FALSE(	prism::IsConst<	LREF>::value);
+	ASSERT_FALSE(	prism::IsConst<	ENUM>::value);
+	ASSERT_FALSE(	prism::IsConst<	ARRAY>::value);
+	ASSERT_FALSE(	prism::IsConst<	UNION>::value);
+	ASSERT_FALSE(	prism::IsConst<	FUNCTION>::value);
 }
 
 /**
@@ -848,28 +848,28 @@ TEST_F(type_traitsTest, IsVoid) {
  * Test: IsVolatile<>
  */
 TEST_F(type_traitsTest, IsVolatile) {
-	ASSERT_TRUE(	prism::IsVolatile_v<	VOLATILE_INTEGRAL>);
-	ASSERT_TRUE(	prism::IsVolatile_v<	CONST_VOLATILE_INTEGRAL>);
+	ASSERT_TRUE(	prism::IsVolatile<	VOLATILE_INTEGRAL>::value);
+	ASSERT_TRUE(	prism::IsVolatile<	CONST_VOLATILE_INTEGRAL>::value);
 
-	ASSERT_TRUE(	prism::IsVolatile_v<	VOLATILE_POINTER_TO_T>);
-	ASSERT_TRUE(	prism::IsVolatile_v<	VOLATILE_POINTER_TO_CONST_T>);
-	ASSERT_TRUE(	prism::IsVolatile_v<	VOLATILE_FLOAT>);
-	ASSERT_TRUE(	prism::IsVolatile_v<	VOLATILE_MEMBER_OBJECT_POINTER>);
-	ASSERT_TRUE(	prism::IsVolatile_v<	VOLATILE_ENUM>);
-	ASSERT_TRUE(	prism::IsVolatile_v<	VOLATILE_UNION>);
+	ASSERT_TRUE(	prism::IsVolatile<	VOLATILE_POINTER_TO_T>::value);
+	ASSERT_TRUE(	prism::IsVolatile<	VOLATILE_POINTER_TO_CONST_T>::value);
+	ASSERT_TRUE(	prism::IsVolatile<	VOLATILE_FLOAT>::value);
+	ASSERT_TRUE(	prism::IsVolatile<	VOLATILE_MEMBER_OBJECT_POINTER>::value);
+	ASSERT_TRUE(	prism::IsVolatile<	VOLATILE_ENUM>::value);
+	ASSERT_TRUE(	prism::IsVolatile<	VOLATILE_UNION>::value);
 
-	ASSERT_FALSE(	prism::IsVolatile_v<	INTEGRAL>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	FLOAT>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	MEMBER_OBJECT_POINTER>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	MEMBER_FUNCTION_POINTER>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	POINTER_TO_T>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	POINTER_TO_CONST_T>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	LREF>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	RREF>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	ENUM>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	ARRAY>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	UNION>);
-	ASSERT_FALSE(	prism::IsVolatile_v<	FUNCTION>);
+	ASSERT_FALSE(	prism::IsVolatile<	INTEGRAL>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	FLOAT>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	MEMBER_OBJECT_POINTER>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	MEMBER_FUNCTION_POINTER>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	POINTER_TO_T>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	POINTER_TO_CONST_T>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	LREF>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	RREF>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	ENUM>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	ARRAY>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	UNION>::value);
+	ASSERT_FALSE(	prism::IsVolatile<	FUNCTION>::value);
 }
 
 
@@ -989,6 +989,16 @@ TEST_F(type_traitsTest, RemoveVolatile) {
 
 } // end namespace test
 } // end namespace prism
+
+
+
+
+
+
+
+
+
+
 
 
 

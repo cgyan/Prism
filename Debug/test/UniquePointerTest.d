@@ -10,7 +10,8 @@ test/UniquePointerTest.d: ../test/UniquePointerTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/type_traits.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/type_traits
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -35,3 +36,5 @@ test/UniquePointerTest.d: ../test/UniquePointerTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/type_traits:

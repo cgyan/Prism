@@ -8,7 +8,8 @@ test/algorithmTest.d: ../test/algorithmTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/type_traits.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
-  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h
+  /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/type_traits
 
 /Users/iainhemstock/GitHub/Prism/external/gtest/gtest.h:
 
@@ -29,3 +30,5 @@ test/algorithmTest.d: ../test/algorithmTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/type_traits:

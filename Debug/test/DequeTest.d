@@ -14,6 +14,7 @@ test/DequeTest.d: ../test/DequeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/global.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/inc/prism/type_traits \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/List_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/Deque_priv.h \
   /Users/iainhemstock/GitHub/Prism/inc/prism/h/OutOfBoundsException.h \
@@ -48,6 +49,8 @@ test/DequeTest.d: ../test/DequeTest.cpp \
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/inc/prism/type_traits:
 
 /Users/iainhemstock/GitHub/Prism/inc/prism/h/priv/List_priv.h:
 

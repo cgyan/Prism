@@ -1,5 +1,6 @@
 #include <prism/h/Point.h>
 #include <math.h>
+#include <iostream>
 
 namespace prism {
 
@@ -21,6 +22,7 @@ Point::Point(const int x, const int y)
  *
  */
 Point::Point(const Point & copy) {
+	std::cout << "[Point::Point(copy)]\n";
 	m_x = copy.m_x;
 	m_y = copy.m_y;
 }
@@ -101,6 +103,7 @@ int & Point::ry() {
  *
  */
 Point & Point::operator=(const Point & p) {
+	std::cout << "[Point::operator=(other)]\n";
 	if (*this != p) {
 		m_x = p.m_x;
 		m_y = p.m_y;

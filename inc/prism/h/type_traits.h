@@ -13,6 +13,7 @@
 
 /*
 is_union
+is_enum
 
 is_abstract
 is_empty
@@ -53,8 +54,6 @@ template <typename T>
 struct RemoveConst<const T> {
 	typedef T type;
 };
-template <typename T>
-using RemoveConst_t = typename prism::RemoveConst<T>::type;
 //============================================================================================
 // RemoveVolatile
 //============================================================================================
@@ -66,8 +65,6 @@ template <typename T>
 struct RemoveVolatile<volatile T> {
 	typedef T type;
 };
-template <typename T>
-using RemoveVolatile_t = typename prism::RemoveVolatile<T>::type;
 //============================================================================================
 // RemoveConstVolatile
 //============================================================================================
@@ -77,8 +74,6 @@ struct RemoveConstVolatile {
 				typename prism::RemoveConst<T>::type
 			>::type type;
 };
-template <typename T>
-using RemoveConstVolatile_t = typename prism::RemoveConstVolatile<T>::type;
 //============================================================================================
 // IsConst
 //============================================================================================
@@ -88,10 +83,6 @@ struct IsConst : public FalseType
 template <typename T>
 struct IsConst<const T> : public TrueType
 {};
-template <typename T>
-using IsConst_t = typename prism::IsConst<T>::type;
-template <typename T>
-constexpr bool IsConst_v = prism::IsConst<T>::value;
 //============================================================================================
 // IsVolatile
 //============================================================================================
@@ -101,10 +92,6 @@ struct IsVolatile : public FalseType
 template <typename T>
 struct IsVolatile<volatile T> : public TrueType
 {};
-template <typename T>
-using IsVolatile_t = typename prism::IsVolatile<T>::type;
-template <typename T>
-constexpr bool IsVolatile_v = prism::IsVolatile<T>::value;
 //============================================================================================
 // ConditionalType
 //============================================================================================
@@ -123,9 +110,6 @@ template <typename T1, typename T2>
 struct ConditionalType<false, T1, T2> {
 	typedef T2 type;
 };
-
-template <bool condition, typename T1, typename T2>
-using ConditionalType_t = typename prism::ConditionalType<condition,T1,T2>::type;
 //============================================================================================
 // Or
 // -- The base class's 'value' member will resolve to true if either MF1 or
@@ -136,22 +120,18 @@ struct Or;
 template <>
 struct Or<> : public FalseType
 {};
-template <typename MetaFunction1>
-struct Or<MetaFunction1>
-	: public MetaFunction1
+template <typename MF1> // MetaFunction
+struct Or<MF1>
+	: public MF1
 {};
 template <typename MF1, typename MF2>
 struct Or<MF1, MF2>
-	: public prism::ConditionalType_t<MF1::value, MF1, MF2>
+	: public prism::ConditionalType<MF1::value, MF1, MF2>::type
 {};
 template <typename MF1, typename MF2, typename MF3, typename ...MF_N>
 struct Or<MF1,MF2,MF3,MF_N...>
 	: public prism::ConditionalType<MF1::value, MF1, prism::Or<MF2, MF3, MF_N...>>::type
 {};
-template <typename ...MF_N>
-using Or_t = typename prism::Or<MF_N...>::type;
-template <typename ...MF_N>
-using Or_v = typename prism::Or<MF_N...>::value;
 //============================================================================================
 // And
 // -- The base class's 'value' member will resolve to true if both MF1 and
@@ -162,22 +142,18 @@ struct And;
 template <>
 struct And<> : public FalseType
 {};
-template <typename MetaFunction1>
-struct And<MetaFunction1>
-	: public MetaFunction1
+template <typename MF1> // MetaFunction
+struct And<MF1>
+	: public MF1
 {};
 template <typename MF1, typename MF2>
 struct And<MF1,MF2>
-	: public prism::ConditionalType_t<MF1::value, MF2, MF1>
+	: public prism::ConditionalType<MF1::value, MF2, MF1>::type
 {};
 template <typename MF1, typename MF2, typename MF3, typename ...MF_N>
 struct And<MF1,MF2,MF3,MF_N...>
 	: public prism::ConditionalType<MF1::value, MF1, prism::And<MF2, MF3, MF_N...>>::type
 {};
-template <typename ...MF_N>
-using And_t = typename prism::And<MF_N...>::type;
-template <typename ...MF_N>
-using And_v = typename prism::And<MF_N...>::value;
 //============================================================================================
 // IsFloatingPoint
 //============================================================================================
@@ -201,10 +177,6 @@ struct IsFloatingPoint
 			typename prism::RemoveConstVolatile<T>::type
 			>::type
 {};
-template <typename T>
-using IsFloatingPoint_t = typename prism::IsFloatingPoint<T>::type;
-template <typename T>
-constexpr bool IsFloatingPoint_v = prism::IsFloatingPoint<T>::value;
 //============================================================================================
 // IsIntegral
 //============================================================================================
@@ -255,10 +227,6 @@ struct IsIntegral
 		  	  typename prism::RemoveConstVolatile<T>::type
 		  >::type
 {};
-template <typename T>
-using IsIntegral_t = typename prism::IsIntegral<T>::type;
-template <typename T>
-constexpr bool IsIntegral_v = prism::IsIntegral<T>::value;
 //============================================================================================
 // IsVoid
 //============================================================================================
@@ -276,10 +244,6 @@ struct IsVoid
 		  	  typename prism::RemoveConstVolatile<T>::type
 		  >::type
 {};
-template <typename T>
-using IsVoid_t = typename prism::IsVoid<T>::type;
-template <typename T>
-constexpr bool IsVoid_v = prism::IsVoid<T>::value;
 //============================================================================================
 // IsArithmetic
 // -- Arithmetic types are any type that are integral or floating point
@@ -291,10 +255,6 @@ struct IsArithmetic
 		  	  prism::IsFloatingPoint<T>
 		  >::type
 {};
-template <typename T>
-using IsArithmetic_t = typename prism::IsArithmetic<T>::type;
-template <typename T>
-constexpr bool IsArithmetic_v = prism::IsArithmetic<T>::value;
 //============================================================================================
 // FundamentalType
 // -- a fundamental type is an arithmetic or void type as well as a nullptr_t type
@@ -309,10 +269,6 @@ struct IsFundamental
 template <>
 struct IsFundamental<std::nullptr_t> : public TrueType
 {};
-template <typename T>
-using IsFundamental_t = typename prism::IsFundamental<T>::type;
-template <typename T>
-constexpr bool IsFundamental_v = prism::IsFundamental<T>::value;
 //============================================================================================
 // IsSigned
 //============================================================================================
@@ -328,10 +284,6 @@ template <typename T>
 struct IsSigned
 	: public prism_private::IsSigned_aux<T>::type
 {};
-template <typename T>
-using IsSigned_t = typename prism::IsSigned<T>::type;
-template <typename T>
-constexpr bool IsSigned_v = prism::IsSigned<T>::value;
 //============================================================================================
 // IsUnsigned
 //============================================================================================
@@ -348,10 +300,6 @@ template <typename T>
 struct IsUnsigned
 	: public prism_private::IsUnsigned_aux<T>::type
 {};
-template <typename T>
-using IsUnsigned_t = typename prism::IsUnsigned<T>::type;
-template <typename T>
-constexpr bool IsUnsigned_v = prism::IsUnsigned<T>::value;
 //============================================================================================
 // AreSame
 //============================================================================================
@@ -367,10 +315,6 @@ template <typename T, typename U>
 struct AreSame
 		: public prism_private::AreSame_aux<T,U>::type
 {};
-template <typename T, typename U>
-using AreSame_t = typename prism::AreSame<T,U>::type;
-template <typename T, typename U>
-constexpr bool AreSame_v = prism::AreSame<T,U>::value;
 //============================================================================================
 // IsPointer
 //============================================================================================
@@ -388,10 +332,6 @@ struct IsPointer
 		  	  typename prism::RemoveConstVolatile<T>::type
 		  >::type
 {};
-template <typename T>
-using IsPointer_t = typename prism::IsPointer<T>::type;
-template <typename T>
-constexpr bool IsPointer_v = prism::IsPointer<T>::value;
 //============================================================================================
 // IsLValueReference
 //============================================================================================
@@ -409,10 +349,6 @@ struct IsLValueReference
 		  	  typename prism::RemoveConstVolatile<T>::type
 		  >::type
 {};
-template <typename T>
-using IsLValueReference_t = typename prism::IsLValueReference<T>::type;
-template <typename T>
-constexpr bool IsLValueReference_v = prism::IsLValueReference<T>::value;
 //============================================================================================
 // IsRValueReference
 //============================================================================================
@@ -430,10 +366,6 @@ struct IsRValueReference
 	  	  typename prism::RemoveConstVolatile<T>::type
 	  >::type
 {};
-template <typename T>
-using IsRValueReference_t = typename prism::IsRValueReference<T>::type;
-template <typename T>
-constexpr bool IsRValueReference_v = prism::IsRValueReference<T>::value;
 //============================================================================================
 // IsReference
 //============================================================================================
@@ -444,10 +376,6 @@ struct IsReference
 	  	  prism::IsRValueReference<T>
 	  >::type
 {};
-template <typename T>
-using IsReference_t = typename prism::IsReference<T>::type;
-template <typename T>
-constexpr bool IsReference_v = prism::IsReference<T>::value;
 //============================================================================================
 // IsReferenceable
 //============================================================================================
@@ -484,10 +412,6 @@ struct IsArray
 	  	  typename prism::RemoveConstVolatile<T>::type
 	  >::type
 {};
-template <typename T>
-using IsArray_t = typename prism::IsArray<T>::type;
-template <typename T>
-constexpr bool IsArray_v = prism::IsArray<T>::value;
 //============================================================================================
 // IsFunction
 //============================================================================================
@@ -503,10 +427,6 @@ template <typename T>
 struct IsFunction
 	: public prism_private::IsFunction_aux<T>::type
 {};
-template <typename T>
-using IsFunction_t = typename prism::IsFunction<T>::type;
-template <typename T>
-constexpr bool IsFunction_v = prism::IsFunction<T>::value;
 //============================================================================================
 // IsMemberFunctionPointer
 //============================================================================================
@@ -525,10 +445,6 @@ struct IsMemberFunctionPointer
 	  	  typename prism::RemoveConstVolatile<T>::type
 	  >::type
 {};
-template <typename T>
-using IsMemberFunctionPointer_t = typename prism::IsMemberFunctionPointer<T>::type;
-template <typename T>
-constexpr bool IsMemberFunctionPointer_v = prism::IsMemberFunctionPointer<T>::value;
 //============================================================================================
 // IsMemberObjectPointer
 //============================================================================================
@@ -547,10 +463,6 @@ struct IsMemberObjectPointer
 	  	  typename prism::RemoveConstVolatile<T>::type
 	  >::type
 {};
-template <typename T>
-using IsMemberObjectPointer_t = typename prism::IsMemberObjectPointer<T>::type;
-template <typename T>
-constexpr bool IsMemberObjectPointer_v = prism::IsMemberObjectPointer<T>::value;
 //============================================================================================
 // IsMemberPointer
 //============================================================================================
@@ -569,10 +481,6 @@ struct IsMemberPointer
 	  	  	  	  prism::IsMemberObjectPointer<T>
 			 >::type
 {};
-template <typename T>
-using IsMemberPointer_t = typename prism::IsMemberPointer<T>::type;
-template <typename T>
-constexpr bool IsMemberPointer_v = prism::IsMemberPointer<T>::value;
 //============================================================================================
 // IsClass
 // todo currently IsClass returns true for unions when unions are not technically classes
@@ -595,16 +503,12 @@ struct IsClass_aux {
 PRISM_END_PRIVATE_NAMESPACE
 template <typename T>
 struct IsClass
-	: public prism::ConditionalType_t<
+	: public prism::ConditionalType<
 	  	  prism_private::IsClass_aux<T>::value,
 	  	  TrueType,
 	  	  FalseType
-	  >
+	  >::type
 {};
-template <typename T>
-using IsClass_t = typename prism::IsClass<T>::type;
-template <typename T>
-constexpr bool IsClass_v = prism::IsClass<T>::value;
 //============================================================================================
 // IsEnum
 //============================================================================================
@@ -660,10 +564,6 @@ constexpr bool IsClass_v = prism::IsClass<T>::value;
 template <typename T>
 struct IsEnum : public FalseType
 {};
-template <typename T>
-using IsEnum_t = typename prism::IsEnum<T>::type;
-template <typename T>
-constexpr bool IsEnum_v = prism::IsEnum<T>::value;
 //============================================================================================
 // IsCompound
 //============================================================================================
@@ -679,10 +579,6 @@ struct IsCompound
 		  prism::IsEnum<T>
 	  >::type
 {};
-template <typename T>
-using IsCompound_t = typename prism::IsCompound<T>::type;
-template <typename T>
-constexpr bool IsCompound_v = prism::IsCompound<T>::value;
 //============================================================================================
 // IsScalar
 //============================================================================================
@@ -698,10 +594,6 @@ struct IsScalar
 template <>
 struct IsScalar<std::nullptr_t> : public TrueType
 {};
-template <typename T>
-using IsScalar_t = typename prism::IsScalar<T>::type;
-template <typename T>
-constexpr bool IsScalar_v = prism::IsScalar<T>::value;
 //============================================================================================
 // IsObject
 //============================================================================================
@@ -717,10 +609,6 @@ struct IsObject
 template <>
 struct IsObject<std::nullptr_t> : public TrueType
 {};
-template <typename T>
-using IsObject_t = typename prism::IsObject<T>::type;
-template <typename T>
-constexpr bool IsObject_v = prism::IsObject<T>::value;
 //============================================================================================
 // AddLValueReference
 //============================================================================================
@@ -738,7 +626,127 @@ template <typename T>
 struct AddLValueReference
 	: public prism_private::AddLValueReference_aux<T>
 {};
-
+//============================================================================================
+// type aliases
+//============================================================================================
+template <typename T>
+using RemoveConst_t = typename prism::RemoveConst<T>::type;
+template <typename T>
+using RemoveVolatile_t = typename prism::RemoveVolatile<T>::type;
+template <typename T>
+using RemoveConstVolatile_t = typename prism::RemoveConstVolatile<T>::type;
+template <typename T>
+using IsConst_t = typename prism::IsConst<T>::type;
+template <typename T>
+using IsVolatile_t = typename prism::IsVolatile<T>::type;
+template <typename ...MF_N>
+using Or_t = typename prism::Or<MF_N...>::type;
+template <bool condition, typename T1, typename T2>
+using ConditionalType_t = typename prism::ConditionalType<condition,T1,T2>::type;
+template <typename ...MF_N>
+using And_t = typename prism::And<MF_N...>::type;
+template <typename T>
+using IsFloatingPoint_t = typename prism::IsFloatingPoint<T>::type;
+template <typename T>
+using IsIntegral_t = typename prism::IsIntegral<T>::type;
+template <typename T>
+using IsVoid_t = typename prism::IsVoid<T>::type;
+template <typename T>
+using IsArithmetic_t = typename prism::IsArithmetic<T>::type;
+template <typename T>
+using IsFundamental_t = typename prism::IsFundamental<T>::type;
+template <typename T>
+using IsSigned_t = typename prism::IsSigned<T>::type;
+template <typename T>
+using IsUnsigned_t = typename prism::IsUnsigned<T>::type;
+template <typename T, typename U>
+using AreSame_t = typename prism::AreSame<T,U>::type;
+template <typename T>
+using IsPointer_t = typename prism::IsPointer<T>::type;
+template <typename T>
+using IsLValueReference_t = typename prism::IsLValueReference<T>::type;
+template <typename T>
+using IsRValueReference_t = typename prism::IsRValueReference<T>::type;
+template <typename T>
+using IsReference_t = typename prism::IsReference<T>::type;
+template <typename T>
+using IsArray_t = typename prism::IsArray<T>::type;
+template <typename T>
+using IsFunction_t = typename prism::IsFunction<T>::type;
+template <typename T>
+using IsMemberFunctionPointer_t = typename prism::IsMemberFunctionPointer<T>::type;
+template <typename T>
+using IsMemberObjectPointer_t = typename prism::IsMemberObjectPointer<T>::type;
+template <typename T>
+using IsMemberPointer_t = typename prism::IsMemberPointer<T>::type;
+template <typename T>
+using IsClass_t = typename prism::IsClass<T>::type;
+template <typename T>
+using IsEnum_t = typename prism::IsEnum<T>::type;
+template <typename T>
+using IsCompound_t = typename prism::IsCompound<T>::type;
+template <typename T>
+using IsScalar_t = typename prism::IsScalar<T>::type;
+template <typename T>
+using IsObject_t = typename prism::IsObject<T>::type;
+//============================================================================================
+// value aliases
+// -- variable templates not supported until c++14
+//============================================================================================
+#if __cplusplus >= PRISM_CXX14
+template <typename T>
+constexpr bool IsConst_v = prism::IsConst<T>::value;
+template <typename T>
+constexpr bool IsVolatile_v = prism::IsVolatile<T>::value;
+template <typename ...MF_N>
+constexpr bool Or_v = prism::Or<MF_N...>::value;
+template <typename ...MF_N>
+constexpr bool And_v = prism::And<MF_N...>::value;
+template <typename T>
+constexpr bool IsFloatingPoint_v = prism::IsFloatingPoint<T>::value;
+template <typename T>
+constexpr bool IsIntegral_v = prism::IsIntegral<T>::value;
+template <typename T>
+constexpr bool IsVoid_v = prism::IsVoid<T>::value;
+template <typename T>
+constexpr bool IsArithmetic_v = prism::IsArithmetic<T>::value;
+template <typename T>
+constexpr bool IsFundamental_v = prism::IsFundamental<T>::value;
+template <typename T>
+constexpr bool IsSigned_v = prism::IsSigned<T>::value;
+template <typename T>
+constexpr bool IsUnsigned_v = prism::IsUnsigned<T>::value;
+template <typename T, typename U>
+constexpr bool AreSame_v = prism::AreSame<T,U>::value;
+template <typename T>
+constexpr bool IsPointer_v = prism::IsPointer<T>::value;
+template <typename T>
+constexpr bool IsLValueReference_v = prism::IsLValueReference<T>::value;
+template <typename T>
+constexpr bool IsRValueReference_v = prism::IsRValueReference<T>::value;
+template <typename T>
+constexpr bool IsReference_v = prism::IsReference<T>::value;
+template <typename T>
+constexpr bool IsArray_v = prism::IsArray<T>::value;
+template <typename T>
+constexpr bool IsFunction_v = prism::IsFunction<T>::value;
+template <typename T>
+constexpr bool IsMemberFunctionPointer_v = prism::IsMemberFunctionPointer<T>::value;
+template <typename T>
+constexpr bool IsMemberObjectPointer_v = prism::IsMemberObjectPointer<T>::value;
+template <typename T>
+constexpr bool IsMemberPointer_v = prism::IsMemberPointer<T>::value;
+template <typename T>
+constexpr bool IsClass_v = prism::IsClass<T>::value;
+template <typename T>
+constexpr bool IsEnum_v = prism::IsEnum<T>::value;
+template <typename T>
+constexpr bool IsCompound_v = prism::IsCompound<T>::value;
+template <typename T>
+constexpr bool IsScalar_v = prism::IsScalar<T>::value;
+template <typename T>
+constexpr bool IsObject_v = prism::IsObject<T>::value;
+#endif // __cplusplus >= 201103L
 
 PRISM_END_NAMESPACE
 
