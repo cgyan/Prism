@@ -181,7 +181,7 @@ sort_quicksort(BidirectionalIterator first, BidirectionalIterator last,
 		++first;
 	}
 
-	delete array;
+	delete[] array;
 }
 
 /**

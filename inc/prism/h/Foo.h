@@ -17,6 +17,28 @@
 using std::cout;
 using std::endl;
 
+/*
+ 	-fno-elide-constructors
+ 	By default the compiler is allowed to perform copy elision which optimizes away unnecessary
+ 	calls to constructors. To turn off this optimization use this flag in the g++ statement
+
+	Foo f("Harley");	// calls Foo(name)
+	Foo g(f);			// calls Foo ctor
+	Foo h = f;			// calls Foo ctor
+
+	// without optimization: calls Foo(name) then Foo move ctor
+	// with optimizatio: only calls Foo(name)
+	Foo i = Foo("Davidson");
+
+	// without optimization: calls Foo(name) then Foo move ctor
+	// with optimizatio: only calls Foo(name)
+	Foo j(Foo("Davidson"));
+
+	// without optimization: calls Foo(name) then Foo move ctor
+	// with optimization: same
+	Foo k(std::move(Foo("Davidson")));
+ */
+
 PRISM_BEGIN_NAMESPACE
 
 class Foo {
@@ -24,84 +46,85 @@ public:
 	using StringType = std::string;
 //	using StringType = prism::String;
 	StringType * name;
-	int age;
-	char var;
 public:
 	/*
 	 *
 	 */
 	Foo()
-	: name(new StringType),
-	  age(0),
-	  var(0)
+	: name(nullptr)
 	{}
 
 
 	/*
 	 *
 	 */
-	Foo(StringType const & name, int const age, const char var)
-	: name(new StringType(name)),
-	  age(age),
-	  var(var)
-	{ cout << toString() << endl; }
+	explicit Foo(StringType const & name)
+	: name(new StringType(name))
+	{cout << "Foo(name)\n";}
 
+	// =======================================================================================
+	// COPY SEMANTICS
+	// =======================================================================================
 	/*
 	 * This Foo doesn't exist yet so allocates new StringType and takes a copy of rhs's name
+	 * rhs.name will be a valid pointer to a StringType object but may be an empty string
 	 */
 	Foo(Foo const & rhs)
-	: name(new StringType(*rhs.name)),
-	  age(rhs.age),
-	  var(rhs.var)
-	{ cout << toString() << endl; }
+	: name(nullptr)
+	{
+		cout << "Foo() copy ctor\n";
+		if (rhs.name != nullptr)
+			name = new StringType(*rhs.name);
+	}
 
 	/*
 	 * This Foo already exists so need to free up its resources before assigning
 	 * rhs's resources to it
 	 */
-	Foo& operator=(const Foo& rhs) {
+	Foo& operator=(Foo const & rhs) {
+		cout << "Foo() copy assignment\n";
 		if (this != &rhs) {
 			delete name;
-			name = new StringType(*rhs.name);
-			age = rhs.age;
-			var = rhs.var;
+			name = nullptr;
+			if (rhs.name != nullptr)
+				name = new StringType(*rhs.name);
 		}
-		cout << toString() << endl;
 		return *this;
+	}
+	// =======================================================================================
+	// MOVE SEMANTICS
+	// =======================================================================================
+	/*
+	 * This Foo doesn't exist yet but will steal the resources from rhs instead of initializing
+	 * its own resources
+	 */
+	Foo(Foo&& rhs)
+	: name(nullptr)
+	{
+		cout << "Foo() move ctor\n";
+		prism::swap(this->name, rhs.name);
 	}
 
 	/*
-	 * This Foo doesn't exist yet but steals the resources from rhs
+	 * This Foo aready exists. this->name might be null or points to a StringType object
 	 */
-//	Foo(Foo&& rhs)
-//	: name(nullptr),
-//	  age(0)
-//	{
-//		cout << "move ctor" << *name << "\n";
-//		std::swap(name, rhs.name);
-//		std::swap(age, rhs.age);
-//	}
+	Foo& operator=(Foo&& rhs) {
+		cout << "Foo() move assignment\n";
+		prism::swap(this->name, rhs.name);
+		return *this;
+	}
 
 	/*
 	 *
 	 */
 	~Foo() {
-		cout << "dtor: deleting " << endl;
 		delete name;
 	}
 
-	int const 		getAge() const { return age; }
 	StringType 		getName() const { return *name; }
-	char			getVar() const { return var; }
-
-	StringType		toString() const {
-		std::stringstream ss;
-		ss << "Foo: name="<<*name<<" age="<<age<<" var="<<var;
-		return StringType(ss.str());
-	}
 
 	friend std::ostream& operator<<(std::ostream& out, Foo const & f) {
-		out << f.toString();
+		out << "Foo [" << &f << "] name=" << f.getName();
 		return out;
 	}
 };
