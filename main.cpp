@@ -79,10 +79,6 @@ int main(int argc, char * argv[]) {
 	::testing::GTEST_FLAG(filter) = "*type_traits*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	Foo f("Harley");
-
-	process(f);
-	process(prism::move(f));
 
 
 

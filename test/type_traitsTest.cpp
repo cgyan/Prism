@@ -68,6 +68,8 @@ public:
 	using VOID								= void;
 
 	using IntConstant						= prism::IntegralConstant<int,42>;
+
+	int getInt() { return 22; }
 };
 
 /**
@@ -278,6 +280,14 @@ TEST_F(type_traitsTest, conditional_type_arrays) {
 	// IntTypeArray holds 1 int so should be the size of 1 int
 	ASSERT_EQ(sizeof(CharArrayType), sizeof(char));
 	ASSERT_EQ(sizeof(IntArrayType), sizeof(int));
+}
+
+/**
+ * Test: forward()
+ */
+TEST_F(type_traitsTest, forward) {
+	// need to write some unit tests for forward
+	ASSERT_TRUE(false);
 }
 
 /**
