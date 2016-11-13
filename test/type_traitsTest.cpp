@@ -872,7 +872,18 @@ TEST_F(type_traitsTest, IsVolatile) {
 	ASSERT_FALSE(	prism::IsVolatile<	FUNCTION>::value);
 }
 
+/**
+ * Test: move()
+ */
+TEST_F(type_traitsTest, move) {
+	int x = 22;
+	const int cx = x;
+	const int& rx = x;
 
+	ASSERT_TRUE(typeid(int&&) == typeid(prism::move(x)));
+	ASSERT_TRUE(typeid(int&&) == typeid(prism::move(cx)));
+	ASSERT_TRUE(typeid(int&&) == typeid(prism::move(rx)));
+}
 
 /**
  * Test: Or<>

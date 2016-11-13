@@ -642,6 +642,16 @@ struct RemoveReference<T&&> {
 	typedef T type;
 };
 //============================================================================================
+// move
+//============================================================================================
+template <typename T>
+typename prism::RemoveReference<T>::type&&
+move(T&& param) noexcept {
+	using ReturnType = typename prism::RemoveReference<T>::type&&;
+	return static_cast<ReturnType>(param);
+}
+
+//============================================================================================
 // type aliases
 //============================================================================================
 template <typename T>

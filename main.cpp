@@ -66,13 +66,23 @@
 using namespace prism;
 using namespace std;
 
+void process(const Foo& f) {
+	cout << "processing lvalue foo\n";
+}
+void process(Foo&& f) {
+	cout << "processing rvalue foo\n";
+}
+
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
 	::testing::GTEST_FLAG(filter) = "*type_traits*";
 	::testing::InitGoogleTest(&argc, argv);
 
+	Foo f("Harley");
 
+	process(f);
+	process(prism::move(f));
 
 
 
