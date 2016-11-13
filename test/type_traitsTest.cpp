@@ -967,6 +967,23 @@ TEST_F(type_traitsTest, RemoveConstVolatile) {
 
 	using T5 = prism::RemoveConstVolatile<VOLATILE_INTEGRAL>::type;
 	ASSERT_TRUE(typeid(T5) == typeid(INTEGRAL));
+}
+
+/**
+ * Test: RemoveReference<>
+ */
+TEST_F(type_traitsTest, RemoveReference) {
+	using T1 = prism::RemoveReference<int>::type;
+	ASSERT_TRUE(typeid(T1) == typeid(int));
+
+	using T2 = prism::RemoveReference<int&>::type;
+	ASSERT_TRUE(typeid(T2) == typeid(int));
+
+	using T3 = prism::RemoveReference<int&&>::type;
+	ASSERT_TRUE(typeid(T3) == typeid(int));
+
+	using T4 = int&&; // rvalue int
+	ASSERT_TRUE(typeid(T4) == typeid(int));
 
 }
 

@@ -301,7 +301,7 @@ struct IsUnsigned
 	: public prism_private::IsUnsigned_aux<T>::type
 {};
 //============================================================================================
-// AreSame
+// IsSame
 //============================================================================================
 PRISM_BEGIN_PRIVATE_NAMESPACE
 template <typename T, typename U>
@@ -633,7 +633,14 @@ template <typename T>
 struct RemoveReference {
 	typedef T type;
 };
-
+template <typename T>
+struct RemoveReference<T&> {
+	typedef T type;
+};
+template <typename T>
+struct RemoveReference<T&&> {
+	typedef T type;
+};
 //============================================================================================
 // type aliases
 //============================================================================================
