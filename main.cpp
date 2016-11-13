@@ -66,36 +66,18 @@
 using namespace prism;
 using namespace std;
 
-struct Widget {};
-
-void process(const Widget & lvalueArg) {
-	cout << "processing lvalue Widget\n";
-}
-
-void process(Widget&& rvalueArg) {
-	cout << "processing rvalue Widget\n";
-}
-
-template <typename T>
-void logAndProcess(T&& param) {
-	process(std::forward<T>(param));
-}
-
-
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
 	::testing::GTEST_FLAG(filter) = "*type_traits*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	Widget w;
-	logAndProcess(w);
-	logAndProcess(std::move(w));
 
 
 
 
-//	return RUN_ALL_TESTS();
+
+	return RUN_ALL_TESTS();
 //	return 0;
 }
 

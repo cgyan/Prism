@@ -305,15 +305,15 @@ struct IsUnsigned
 //============================================================================================
 PRISM_BEGIN_PRIVATE_NAMESPACE
 template <typename T, typename U>
-struct AreSame_aux : public FalseType
+struct IsSame_aux : public FalseType
 {};
 template <typename T>
-struct AreSame_aux<T,T> : public TrueType
+struct IsSame_aux<T,T> : public TrueType
 {};
 PRISM_END_PRIVATE_NAMESPACE
 template <typename T, typename U>
-struct AreSame
-		: public prism_private::AreSame_aux<T,U>::type
+struct IsSame
+		: public prism_private::IsSame_aux<T,U>::type
 {};
 //============================================================================================
 // IsPointer
@@ -627,6 +627,14 @@ struct AddLValueReference
 	: public prism_private::AddLValueReference_aux<T>
 {};
 //============================================================================================
+// RemoveReference
+//============================================================================================
+template <typename T>
+struct RemoveReference {
+	typedef T type;
+};
+
+//============================================================================================
 // type aliases
 //============================================================================================
 template <typename T>
@@ -660,7 +668,7 @@ using IsSigned_t = typename prism::IsSigned<T>::type;
 template <typename T>
 using IsUnsigned_t = typename prism::IsUnsigned<T>::type;
 template <typename T, typename U>
-using AreSame_t = typename prism::AreSame<T,U>::type;
+using AreSame_t = typename prism::IsSame<T,U>::type;
 template <typename T>
 using IsPointer_t = typename prism::IsPointer<T>::type;
 template <typename T>

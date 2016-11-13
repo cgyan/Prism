@@ -160,12 +160,12 @@ TEST_F(type_traitsTest, And) {
 /**
  * Test: AreSame<>
  */
-TEST_F(type_traitsTest, AreSame) {
-	using BothSame = prism::AreSame<INTEGRAL,INTEGRAL>::type;
-	using Different1 = prism::AreSame<LREF,INTEGRAL>::type;
-	using Different2 = prism::AreSame<POINTER_TO_T,INTEGRAL>::type;
-	using Different3 = prism::AreSame<LREF,INTEGRAL>::type;
-	using Different4 = prism::AreSame<RREF,INTEGRAL>::type;
+TEST_F(type_traitsTest, IsSame) {
+	using BothSame = prism::IsSame<INTEGRAL,INTEGRAL>::type;
+	using Different1 = prism::IsSame<LREF,INTEGRAL>::type;
+	using Different2 = prism::IsSame<POINTER_TO_T,INTEGRAL>::type;
+	using Different3 = prism::IsSame<LREF,INTEGRAL>::type;
+	using Different4 = prism::IsSame<RREF,INTEGRAL>::type;
 
 	ASSERT_TRUE(BothSame::value);
 	ASSERT_FALSE(Different1::value);
