@@ -8,6 +8,7 @@
 
 #include <gtest/gtest.h>
 #include <prism/UniquePointer>
+#include <prism/h/type_traits.h>
 #include <string>
 
 namespace prism {
@@ -27,8 +28,8 @@ class UniquePointerTest : public ::testing::Test {
 public:
 	using pointer = UniquePointer<int>::pointer;
 
-	UniquePointer<int> dup;
-	UniquePointer<int> iup;
+	UniquePointer<int> dup; // default
+	UniquePointer<int> iup;	// initialised
 
 	UniquePointerTest()
 	: dup(), // default unique pointer
@@ -48,6 +49,21 @@ TEST_F(UniquePointerTest, default_ctor) {
  */
 TEST_F(UniquePointerTest, ctor_with_pointer) {
 	ASSERT_EQ(20, *iup.data());
+}
+
+/**
+ * Test: operator=(UniquePointer&&)
+ */
+TEST_F(UniquePointerTest, move_assignment) {
+	prism::UniquePointer<int> up;
+	int * p_up = up.data();
+	int * p_iup = iup.data();
+	up = prism::move(iup);
+
+	ASSERT_TRUE(up.data() == p_iup);
+	ASSERT_TRUE(iup.data() == p_up);
+	ASSERT_TRUE(*up == 20);
+	ASSERT_FALSE(iup.data());
 }
 
 /**
