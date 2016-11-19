@@ -55,6 +55,9 @@ public:
 	UniquePointer&
 	operator=(const UniquePointer& rhs) = delete;
 
+	///
+	UniquePointer&
+	operator=(UniquePointer&& rhs);
 
 	///							Destroys the UniquePointer and if it was managing a raw pointer
 	///							then that pointer is deallocated too.
