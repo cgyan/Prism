@@ -10,6 +10,7 @@
 #define PRISM_UNIQUE_POINTER_H_
 
 #include <prism/h/global.h>
+#include <prism/h/type_traits.h>
 #include <ostream>
 
 PRISM_BEGIN_NAMESPACE
@@ -42,7 +43,10 @@ public:
 	///							is allowable to be copyable
 	///
 	/// @since					1.0.0
-	UniquePointer(const UniquePointer& copy) = delete;
+	UniquePointer(const UniquePointer& rhs) = delete;
+
+	///
+	UniquePointer(UniquePointer&& rhs);
 
 	/// 						Explicitly disabled as a UniquePointer cannot be unique if it
 	///							is allowable to be assignable
@@ -50,6 +54,7 @@ public:
 	///							1.0.0
 	UniquePointer&
 	operator=(const UniquePointer& rhs) = delete;
+
 
 	///							Destroys the UniquePointer and if it was managing a raw pointer
 	///							then that pointer is deallocated too.
@@ -154,7 +159,7 @@ public:
 	/**
 	 *
 	 */
-	UniquePointer(T* p)
+	explicit UniquePointer(T* p)
 	: Base::UniquePointer(p)
 	{}
 
