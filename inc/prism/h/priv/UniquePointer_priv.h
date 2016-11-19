@@ -126,6 +126,30 @@ UniquePointer(typename UniquePointer<T,D>::pointer p)
  */
 template <typename T, typename D>
 UniquePointer<T,D>::
+UniquePointer(UniquePointer&& rhs)
+: d(nullptr)
+{
+	using prism::swap;
+	swap(this->d, rhs.d);
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
+UniquePointer<T,D>&
+UniquePointer<T,D>::
+operator=(UniquePointer&& rhs) {
+	using prism::swap;
+	swap(this->d, rhs.d);
+	return *this;
+}
+
+/*
+ *
+ */
+template <typename T, typename D>
+UniquePointer<T,D>::
 ~UniquePointer() {
 	delete d;
 }
