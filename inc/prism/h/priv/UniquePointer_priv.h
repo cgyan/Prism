@@ -11,6 +11,7 @@
 
 #include <prism/h/global.h>
 #include <prism/h/algorithm.h>
+#include <type_traits>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -23,7 +24,6 @@ struct UniquePointerDeleter {
 
 	void
 	operator()(pointer p) {
-//		std::cout << "Non-Array deleter\n";
 		delete p;
 	}
 };
@@ -36,11 +36,6 @@ struct UniquePointerDeleter<T[]> {
 
 	void
 	operator()(pointer p) {
-		if (p == nullptr) {
-//			std::cout << "Array deleter says p is null and nothing is to be deleted\n";
-		} else {
-//			std::cout << "Array deleter says p is not null and is being deleted\n";
-		}
 		delete []p;
 	}
 };
@@ -126,11 +121,12 @@ UniquePointer(typename UniquePointer<T,D>::pointer p)
  */
 template <typename T, typename D>
 UniquePointer<T,D>::
-UniquePointer(UniquePointer&& rhs)
+UniquePointer(UniquePointer&& rhs) noexcept
 : d(nullptr)
 {
-	using prism::swap;
-	swap(this->d, rhs.d);
+	this->d = rhs.d;
+	rhs.d = nullptr;
+	std::cout << "UniquePointer(UniquePointer&&)\n";
 }
 
 /*
@@ -139,9 +135,10 @@ UniquePointer(UniquePointer&& rhs)
 template <typename T, typename D>
 UniquePointer<T,D>&
 UniquePointer<T,D>::
-operator=(UniquePointer&& rhs) {
-	using prism::swap;
-	swap(this->d, rhs.d);
+operator=(UniquePointer&& rhs) noexcept {
+	std::cout << "operator=(UniquePointer&&)\n";
+	this->d = rhs.d;
+	rhs.d = nullptr;
 	return *this;
 }
 
@@ -219,7 +216,7 @@ swap(UniquePointer& other) {
  *
  */
 template <typename T, typename D>
-typename UniquePointer<T,D>::element_type
+typename prism::AddLValueReference<typename UniquePointer<T,D>::element_type>::type
 UniquePointer<T,D>::
 operator*() {
 	return *d->p;
@@ -244,10 +241,22 @@ operator bool() const {
 	return (d->p == nullptr) ? false : true;
 }
 
+/*
+ *
+ */
 template <typename T, typename D>
 void
 swap(UniquePointer<T,D>& up1, UniquePointer<T,D>& up2) {
 	up1.swap(up2);
+}
+
+/*
+ *
+ */
+template <typename T, typename ...Args>
+prism::UniquePointer<T>
+makeUnique(Args&&... args) {
+	return prism::UniquePointer<T>(new T(prism::forward<Args>(args)...));
 }
 
 PRISM_END_NAMESPACE

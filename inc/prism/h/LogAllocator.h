@@ -29,8 +29,8 @@ public:
 	typedef T 					value_type;
 	typedef value_type*	 		pointer;
 	typedef value_type&	 		reference;
-	typedef const pointer		const_pointer;
-	typedef const reference 	const_reference;
+	typedef const value_type *	const_pointer;
+	typedef const value_type & 	const_reference;
 	typedef size_t 				size_type;
 	typedef std::ptrdiff_t 		difference_type;
 

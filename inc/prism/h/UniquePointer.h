@@ -39,25 +39,16 @@ public:
 	/// @since					1.0.0
 	explicit UniquePointer(pointer p = nullptr);
 
-	/// 						Explicitly disabled as a UniquePointer cannot be unique if it
-	///							is allowable to be copyable
 	///
-	/// @since					1.0.0
-	UniquePointer(const UniquePointer& rhs) = delete;
+	///
+	///
+	UniquePointer(UniquePointer&& rhs) noexcept;
 
 	///
-	UniquePointer(UniquePointer&& rhs);
-
-	/// 						Explicitly disabled as a UniquePointer cannot be unique if it
-	///							is allowable to be assignable
 	///
-	///							1.0.0
-	UniquePointer&
-	operator=(const UniquePointer& rhs) = delete;
-
 	///
 	UniquePointer&
-	operator=(UniquePointer&& rhs);
+	operator=(UniquePointer&& rhs) noexcept;
 
 	///							Destroys the UniquePointer and if it was managing a raw pointer
 	///							then that pointer is deallocated too.
@@ -125,7 +116,7 @@ public:
 	///							Accesses the UniquePointer's managed object
 	///
 	/// @since					1.0.0
-	element_type
+	typename prism::AddLValueReference<element_type>::type
 	operator*();
 
 	///							Accesses the UniquePointer's managed object's members
@@ -138,6 +129,19 @@ public:
 	///							false otherwise. This is useful in 'if' statements.
 	explicit
 	operator bool() const;
+
+	/// 						Explicitly disabled as a UniquePointer cannot be unique if it
+	///							is allowable to be copyable
+	///
+	/// @since					1.0.0
+	UniquePointer(const UniquePointer& rhs) = delete;
+
+	/// 						Explicitly disabled as a UniquePointer cannot be unique if it
+	///							is allowable to be assignable
+	///
+	///							1.0.0
+	UniquePointer&
+	operator=(const UniquePointer& rhs) = delete;
 
 private:
 	struct UniquePointerData;
@@ -190,6 +194,13 @@ public:
 /// @since 1.0.0
 template <typename T, typename D>
 void swap(UniquePointer<T,D>& up1, UniquePointer<T,D>& up2);
+
+///
+///
+///
+template <typename T, typename ...Args>
+prism::UniquePointer<T>
+makeUnique(Args&&... args);
 
 PRISM_END_NAMESPACE
 

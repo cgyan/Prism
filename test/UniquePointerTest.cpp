@@ -52,6 +52,14 @@ TEST_F(UniquePointerTest, ctor_with_pointer) {
 }
 
 /**
+ * Test: UniquePointer(UniquePointer&&)
+ */
+TEST_F(UniquePointerTest, move_ctor) {
+	UniquePointer<int> p(prism::move(iup));
+	ASSERT_TRUE(*p == 20);
+}
+
+/**
  * Test: operator=(UniquePointer&&)
  */
 TEST_F(UniquePointerTest, move_assignment) {

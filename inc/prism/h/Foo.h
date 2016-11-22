@@ -72,7 +72,7 @@ public:
 	Foo(Foo const & rhs)
 	: name(nullptr)
 	{
-		cout << "Foo() copy ctor\n";
+		cout << "Foo::Foo(Foo const&)\n";
 		if (rhs.name != nullptr)
 			name = new StringType(*rhs.name);
 	}
@@ -82,7 +82,7 @@ public:
 	 * rhs's resources to it
 	 */
 	Foo& operator=(Foo const & rhs) {
-		cout << "Foo() copy assignment\n";
+		cout << "Foo::operator=(Foo const&)\n";
 		if (this != &rhs) {
 			delete name;
 			name = nullptr;
@@ -98,26 +98,29 @@ public:
 	 * This Foo doesn't exist yet but will steal the resources from rhs instead of initializing
 	 * its own resources
 	 */
-	Foo(Foo&& rhs)
+	Foo(Foo&& rhs) noexcept
 	: name(nullptr)
 	{
-		cout << "Foo() move ctor\n";
-		prism::swap(this->name, rhs.name);
+		cout << "Foo::Foo(Foo&&)\n";
+		this->name = rhs.name;
+		rhs.name = nullptr;
 	}
 
 	/*
 	 * This Foo aready exists. this->name might be null or points to a StringType object
 	 */
-	Foo& operator=(Foo&& rhs) {
-		cout << "Foo() move assignment\n";
-		prism::swap(this->name, rhs.name);
+	Foo& operator=(Foo&& rhs) noexcept {
+		cout << "Foo::operator=(Foo&&)\n";
+		this->name = rhs.name;
+		rhs.name = nullptr;
 		return *this;
 	}
 
 	/*
 	 *
 	 */
-	~Foo() {
+	~Foo() noexcept {
+		cout << "~Foo()\n";
 		delete name;
 	}
 
