@@ -46,7 +46,7 @@ public:
 	///						are not initialized.
 	///
 	/// @since 				1.0.0
-	explicit Array();
+	Array();
 
 	///
 	/// @brief 				Constructs an array to a size of the template argument @em size amd
@@ -67,7 +67,7 @@ public:
 	/// @param [in] copy	The array to make copy into this array
 	///
 	/// @since				1.0.0
-	explicit Array(const Array<T,Size> & copy);
+	Array(const Array<T,Size> & copy);
 
 	///
 	/// @brief				Move-constructs an array using the elements from @em other
@@ -75,7 +75,7 @@ public:
 	/// @param other		An array where the elements are moved into this array
 	///
 	/// @since 				1.0.0
-	explicit Array(Array<T,Size>&& other);
+	Array(Array<T,Size>&& other);
 
 	///
 	/// @brief				Assigns another array to this array

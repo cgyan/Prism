@@ -10,6 +10,7 @@ CPP_SRCS += \
 ../test/DequeTest.cpp \
 ../test/ListTest.cpp \
 ../test/PairTest.cpp \
+../test/ReverseIteratorTest.cpp \
 ../test/SharedDataPointerTest.cpp \
 ../test/SharedDataTest.cpp \
 ../test/StackTest.cpp \
@@ -17,6 +18,7 @@ CPP_SRCS += \
 ../test/TimeTest.cpp \
 ../test/UniquePointerArrayTest.cpp \
 ../test/UniquePointerTest.cpp \
+../test/VectorTest.cpp \
 ../test/VersionTest.cpp \
 ../test/algorithmTest.cpp \
 ../test/functorTest.cpp \
@@ -29,6 +31,7 @@ OBJS += \
 ./test/DequeTest.o \
 ./test/ListTest.o \
 ./test/PairTest.o \
+./test/ReverseIteratorTest.o \
 ./test/SharedDataPointerTest.o \
 ./test/SharedDataTest.o \
 ./test/StackTest.o \
@@ -36,6 +39,7 @@ OBJS += \
 ./test/TimeTest.o \
 ./test/UniquePointerArrayTest.o \
 ./test/UniquePointerTest.o \
+./test/VectorTest.o \
 ./test/VersionTest.o \
 ./test/algorithmTest.o \
 ./test/functorTest.o \
@@ -48,6 +52,7 @@ CPP_DEPS += \
 ./test/DequeTest.d \
 ./test/ListTest.d \
 ./test/PairTest.d \
+./test/ReverseIteratorTest.d \
 ./test/SharedDataPointerTest.d \
 ./test/SharedDataTest.d \
 ./test/StackTest.d \
@@ -55,6 +60,7 @@ CPP_DEPS += \
 ./test/TimeTest.d \
 ./test/UniquePointerArrayTest.d \
 ./test/UniquePointerTest.d \
+./test/VectorTest.d \
 ./test/VersionTest.d \
 ./test/algorithmTest.d \
 ./test/functorTest.d \

@@ -29,6 +29,7 @@
 #include <memory>
 #include <map>
 #include <array>
+#include <cstdio>
 #include <functional>
 #include <prism/Array>
 #include <prism/Stack>
@@ -76,49 +77,49 @@ void f(int&&) {
 	cout << "ha!\n";
 }
 
+template <typename T>
+struct HasPublicType_value_type {
+	typedef char 	yes[1];
+	typedef char 	no[2];
+
+	template <typename C>
+	static yes& 	test(typename C::value_type*);
+	template <typename>
+	static no& 		test(...);
+
+	static const bool value = sizeof(test<T>(0)) == 1;
+};
+
+template <typename T>
+struct Container {
+	typedef T key_type;
+	Container() noexcept(prism::IsFundamental<T>::value) {}
+//	Container() = delete;
+	void foo() {}
+};
+
+class Base{};
+class Derived : public Base{};
+
+template <typename T>
+void printValue(const T& value) {
+	cout << value << endl;
+}
+
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "*UniquePointerTest*";
+	::testing::GTEST_FLAG(filter) = "*ReverseIteratorTest*";
 	::testing::InitGoogleTest(&argc, argv);
 
-	UniquePointer<Foo> p = makeUnique<Foo>("Bonnie");
-	cout << *p << endl;
 
 
 
-
-
-
-//	return RUN_ALL_TESTS();
+	return RUN_ALL_TESTS();
 //	return 0;
 }
 
-//139   template<typename _Tp, typename _Alloc>
-//140     typename vector<_Tp, _Alloc>::iterator
-//141     vector<_Tp, _Alloc>::
-//142     _M_erase(iterator __position)
-//143     {
-//144       if (__position + 1 != end())
-//145         _GLIBCXX_MOVE3(__position + 1, end(), __position);
-//146       --this->_M_impl._M_finish;
-//147       _Alloc_traits::destroy(this->_M_impl, this->_M_impl._M_finish);
-//148       return __position;
-//149     }
-//150
-//151   template<typename _Tp, typename _Alloc>
-//152     typename vector<_Tp, _Alloc>::iterator
-//153     vector<_Tp, _Alloc>::
-//154     _M_erase(iterator __first, iterator __last)
-//155     {
-//156       if (__first != __last)
-//157         {
-//158           if (__last != end())
-//159             _GLIBCXX_MOVE3(__last, end(), __first);
-//160           _M_erase_at_end(__first.base() + (end() - __last));
-//161         }
-//162       return __first;
-//163     }
+
 
 
 
@@ -142,36 +143,3 @@ int main(int argc, char * argv[]) {
  -- const rvalue of the same type
 
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

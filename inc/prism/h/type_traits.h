@@ -29,6 +29,7 @@ is_trivially_copyable
 
 #include <cstddef> // for std::nullptr_t
 #include <prism/h/global.h>
+#include <prism/h/priv/type_traits_wrappers.h>
 
 PRISM_BEGIN_NAMESPACE
 //============================================================================================
@@ -489,14 +490,13 @@ struct IsMemberPointer
 PRISM_BEGIN_PRIVATE_NAMESPACE
 template <typename T>
 struct IsClass_aux {
-	typedef char One;
-	typedef struct { char a[2]; } Two;
+	typedef char One[1];
+	typedef char Two[2];
 
 	template <typename C>
-	static One test(int C::*);
-
+	static One& test(int C::*);
 	template <typename C>
-	static Two test(...);
+	static Two& test(...);
 
 	static constexpr bool value = sizeof(IsClass_aux<T>::template test<T>(nullptr)) == 1;
 };
@@ -561,9 +561,9 @@ struct IsClass
 
 // todo this whole IsEnum<> metafunction is not working correctly so as a workaround it returns
 // false for any type for now as a safety precaution
-template <typename T>
-struct IsEnum : public FalseType
-{};
+//template <typename T>
+//struct IsEnum : public FalseType
+//{};
 //============================================================================================
 // IsCompound
 //============================================================================================
@@ -610,6 +610,44 @@ template <>
 struct IsObject<std::nullptr_t> : public TrueType
 {};
 //============================================================================================
+// IsDefaultConstructible
+//============================================================================================
+template <typename T>
+struct RemoveAllExtents;
+
+PRISM_BEGIN_PRIVATE_NAMESPACE
+template <typename T>
+struct IsDefaultConstructible_impl {
+	template <typename C, typename = decltype(C())>
+	static prism::TrueType test(int);
+	template <typename>
+	static prism::FalseType test(...);
+
+	typedef decltype(test<T>(0)) type;
+	static constexpr bool value = type::value;
+};
+template <typename T, bool = IsArray<T>::value>
+struct IsDefaultConstructible_aux;
+template <typename T>
+struct IsDefaultConstructible_aux<T,true>
+	: public IsDefaultConstructible_impl<
+	  	  typename RemoveAllExtents<T>::type
+	>
+{};
+template <typename T>
+struct IsDefaultConstructible_aux<T,false>
+	: public IsDefaultConstructible_impl<T>
+{};
+PRISM_END_PRIVATE_NAMESPACE
+template <typename T>
+struct IsDefaultConstructible
+		: public prism_private::IsDefaultConstructible_aux<T>
+{};
+template<>
+struct IsDefaultConstructible<void>
+	: public FalseType
+{};
+//============================================================================================
 // AddLValueReference
 //============================================================================================
 PRISM_BEGIN_PRIVATE_NAMESPACE
@@ -640,6 +678,37 @@ struct RemoveReference<T&> {
 template <typename T>
 struct RemoveReference<T&&> {
 	typedef T type;
+};
+//============================================================================================
+// RemoveExtent
+//============================================================================================
+template <typename T>
+struct RemoveExtent {
+	typedef T type;
+};
+template <typename T>
+struct RemoveExtent<T[]> {
+	typedef T type;
+};
+template <typename T, std::size_t Size>
+struct RemoveExtent<T[Size]> {
+	typedef T type;
+	static void out() { puts(__PRETTY_FUNCTION__); }
+};
+//============================================================================================
+// RemoveAllExtent
+//============================================================================================
+template <typename T>
+struct RemoveAllExtents {
+	typedef T type;
+};
+template <typename T>
+struct RemoveAllExtents<T[]> {
+	typedef T type;
+};
+template <typename T, std::size_t Size>
+struct RemoveAllExtents<T[Size]> {
+	typedef typename RemoveAllExtents<T>::type type;
 };
 //============================================================================================
 // move

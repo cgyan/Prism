@@ -11,9 +11,10 @@
 
 #include <prism/h/type_traits.h> // for prism::ConditionalType
 #include <prism/h/pair.h>
+#include <prism/h/global.h>
 #include <cstddef> // for std::ptrdiff_t
 
-namespace prism {
+PRISM_BEGIN_NAMESPACE
 
 /**********************************************************************************************
  * Tags to describe what kind of iterator a particular iterator type is. They are used in the
@@ -40,7 +41,7 @@ struct iterator_traits  {
 	typedef typename Iterator::reference 			reference;
 };
 
-// specialization for arrays
+// specialization for pointers
 template<class T>
 struct iterator_traits<T*> {
     typedef T 										value_type;
@@ -50,7 +51,7 @@ struct iterator_traits<T*> {
     typedef T& 										reference;
 };
 
-// specialization for arrays
+// specialization for pointers to const
 template<class T>
 struct iterator_traits<const T*> {
     typedef T 										value_type;
@@ -154,19 +155,18 @@ previous(BidirectionalIterator it, int numSteps=1);
  * --- for containers that hold their elements in a continuous sequence of memory
  * --- like Vector, String etc
  *****************************************************************************/
-template <class T, bool isConst>
+template <class T, bool IsConst>
 struct SequenceIterator {
-	typedef T 							value_type;
-	typedef const T* 					const_pointer;
-	typedef const T&					const_reference;
-	typedef random_access_iterator_tag 	iterator_category;
-	typedef size_t 						size_type;
-	typedef std::ptrdiff_t 				difference_type;
-	typedef SequenceIterator<T, false>	iterator;
-	typedef SequenceIterator<T, true>	const_iterator;
-	typedef typename prism::ConditionalType_t<isConst, const T*, T*> 				pointer;
-	typedef typename prism::ConditionalType_t<isConst, const T&, T&>				reference;
-	typedef typename prism::ConditionalType_t<isConst, const_iterator, iterator> 	Self;
+private:
+	using iterator 				= prism::SequenceIterator<T,false>;
+	using const_iterator 		= prism::SequenceIterator<T,true>;
+	using Self					= ConditionalType_t<IsConst, const_iterator, iterator>;
+public:
+	using value_type 			= T;
+	using pointer 				= prism::ConditionalType_t<IsConst, const T*, T*>;
+	using reference				= prism::ConditionalType_t<IsConst, const T&, T&>;
+	using iterator_category 	= prism::random_access_iterator_tag;
+	using difference_type 		= std::ptrdiff_t;
 
 	pointer p;
 
@@ -211,19 +211,19 @@ struct SequenceIterator {
 	{ pointer tmp = p; p--; return tmp; }
 
 	Self&
-	operator+=(const int i)
+	operator+=(difference_type i)
 	{ p += i; return *this; }
 
 	Self&
-	operator-=(const int i)
+	operator-=(difference_type i)
 	{ return *this += -i; }
 
 	Self
-	operator+(const int i)
+	operator+(difference_type i)
 	{ Self tmp = *this; return tmp += i; }
 
 	Self
-	operator-(const int i)
+	operator-(difference_type i)
 	{ Self tmp = *this; return tmp += -i; }
 
 	difference_type
@@ -259,11 +259,10 @@ struct SequenceIterator {
 	{ return this->p >= rhs.p; }
 };
 
-//====================================================================================
-// AssociativeIterator
-// --- for associative containers such as Map and Set and
-// --- binary search and red-black trees
-//====================================================================================
+//=============================================================================================
+// AssociativeIterator helper functions
+//=============================================================================================
+PRISM_BEGIN_PRIVATE_NAMESPACE
 /**
  *
  */
@@ -285,39 +284,28 @@ maximumNodeInSubTree(NodePointer node) {
 		node = node->right;
 	return node;
 }
-
+PRISM_END_PRIVATE_NAMESPACE
+//=============================================================================================
+// AssociativeIterator
+// --- for associative containers such as Map and Set and
+// --- binary search and red-black trees
+//=============================================================================================
 template <	class Key,
 			class Value,
 			class Node,
-			bool isConst>
+			bool IsConst>
 struct AssociativeIterator {
-	typedef AssociativeIterator<Key,Value,Node,false>	iterator;
-	typedef AssociativeIterator<Key,Value,Node,true>	const_iterator;
-	typedef Node*										node_pointer;
-
-	typedef prism::pair<Key,Value>						value_type;
-	typedef const value_type							const_reference;
-	typedef const value_type*							const_pointer;
-	typedef size_t										size_type;
-	typedef std::ptrdiff_t								difference_type;
-	typedef prism::bidirectional_iterator_tag			iterator_category;
-
-	typedef typename prism::ConditionalType_t<isConst,
-											  const value_type*,
-											  value_type*
-											  > pointer;
-
-	typedef typename prism::ConditionalType_t<isConst,
-			                                  const value_type&,
-											  value_type&
-											  > reference;
-
-	typedef typename prism::ConditionalType_t<isConst,
-											  const_iterator,
-											  iterator
-											  > Self;
-
-	node_pointer np;
+private:
+	using iterator 				= AssociativeIterator<Key,Value,Node,false>;
+	using const_iterator 		= AssociativeIterator<Key,Value,Node,true>;
+	using Self 					= ConditionalType_t<IsConst, const_iterator, iterator>;
+	using node_pointer 			= Node*;
+public:
+	using value_type 			= prism::pair<Key,Value>;
+	using pointer 				= ConditionalType_t<IsConst, const value_type*, value_type*>;
+	using reference 			= ConditionalType_t<IsConst, const value_type&, value_type&>;
+	using difference_type 		= std::ptrdiff_t;
+	using iterator_category 	= prism::bidirectional_iterator_tag;
 
 	AssociativeIterator()
 	: np(nullptr)
@@ -346,7 +334,7 @@ struct AssociativeIterator {
 	Self&
 	operator++() {
 		if (np->right != nullptr) {
-			np = minimumNodeInSubTree(np->right);
+			np = prism_private::minimumNodeInSubTree(np->right);
 		}
 		else {
 			node_pointer parent = np->parent;
@@ -370,7 +358,7 @@ struct AssociativeIterator {
 	Self&
 	operator--() {
 		if (np->left != nullptr) {
-			np = maximumNodeInSubTree(np->left);
+			np = prism_private::maximumNodeInSubTree(np->left);
 		}
 		else {
 			node_pointer parent = np->parent;
@@ -404,10 +392,184 @@ struct AssociativeIterator {
 	const bool
 	operator!=(const Self& other)
 	{ return !(*this == other); }
+
+private:
+	node_pointer np;
+};
+//=============================================================================================
+// ReverseIterator
+//=============================================================================================
+template <typename BidirectionalIterator>
+struct ReverseIterator {
+private:
+	using iter_traits			= prism::iterator_traits<BidirectionalIterator>;
+	using Self					= ReverseIterator<BidirectionalIterator>;
+public:
+	using iterator_type			= BidirectionalIterator;
+	using value_type 			= typename iter_traits::value_type;
+	using difference_type 		= typename iter_traits::difference_type;
+	using reference 			= typename iter_traits::reference;
+	using pointer 				= typename iter_traits::pointer;
+	using iterator_category 	= typename iter_traits::iterator_category;
+
+	ReverseIterator()
+	: current()
+	{}
+
+	explicit
+	ReverseIterator(iterator_type it)
+	: current(it)
+	{}
+
+	ReverseIterator(const Self& rhs)
+	: current(rhs.current)
+	{}
+
+	iterator_type
+	base() const {
+		return current;
+	}
+
+	reference
+	operator*() const {
+		iterator_type it = current;
+		return *--it;
+	}
+
+	pointer
+	operator->() const {
+		return &(operator*());
+	}
+
+	Self
+	operator+(difference_type n) const {
+		Self tmp(current);
+		return tmp += n;
+	}
+
+	Self&
+	operator++() {
+		--current;
+		return *this;
+	}
+
+	Self
+	operator++(int junk) {
+		Self tmp(current);
+		--current;
+		return tmp;
+	}
+
+	Self&
+	operator+=(difference_type n) {
+		current = previous(current, n);
+		return *this;
+	}
+
+	Self
+	operator-(difference_type n) {
+		Self tmp(current);
+		return tmp += -n;
+	}
+
+	Self&
+	operator--() {
+		++current;
+		return *this;
+	}
+
+	Self
+	operator--(int junk) {
+		Self tmp(current);
+		++current;
+		return tmp;
+	}
+
+	Self&
+	operator-=(difference_type n) {
+		*this += -n;
+		return *this;
+	}
+
+	/*
+	 * Accesses the element at the offset to the iterator's current position
+	 */
+	reference
+	operator[](difference_type offset) const {
+		return *(*this+offset);
+	}
+
+private:
+	iterator_type current;
 };
 
-} // end namespace prism
+/*
+ *
+ */
+template <typename Iterator>
+const bool
+operator==(const ReverseIterator<Iterator>& a,
+		   const ReverseIterator<Iterator>& b)
+{ return a.base() == b.base(); }
+
+/*
+ *
+ */
+template <typename Iterator>
+const bool
+operator!=(const ReverseIterator<Iterator>& a,
+		   const ReverseIterator<Iterator>& b)
+{ return !(a==b); }
+
+/*
+ *
+ */
+template <typename Iterator>
+const bool
+operator<(const ReverseIterator<Iterator>& a,
+		  const ReverseIterator<Iterator>& b)
+{ return b.base() < a.base(); }
+
+/*
+ *
+ */
+template <typename Iterator>
+const bool
+operator<=(const ReverseIterator<Iterator>& a,
+		   const ReverseIterator<Iterator>& b)
+{ return b.base() <= a.base(); }
+
+/*
+ *
+ */
+template <typename Iterator>
+const bool
+operator>(const ReverseIterator<Iterator>& a,
+		  const ReverseIterator<Iterator>& b)
+{ return b.base() > a.base(); }
+
+/*
+ *
+ */
+template <typename Iterator>
+const bool
+operator>=(const ReverseIterator<Iterator>& a,
+		   const ReverseIterator<Iterator>& b)
+{ return b.base() >= a.base(); }
+
+PRISM_END_NAMESPACE
 
 #include <prism/h/priv/iterator_priv.h>
 
 #endif /* PRISM_ITERATOR_H_ */
+
+
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,7 @@ src/prism/Version.d: ../src/prism/Version.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/type_traits.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/global.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/type_traits_wrappers.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h
 
@@ -22,6 +23,8 @@ src/prism/Version.d: ../src/prism/Version.cpp \
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/type_traits.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/global.h:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/type_traits_wrappers.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h:
 

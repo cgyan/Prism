@@ -50,12 +50,12 @@ struct AllocatorTraits {
 	static
 	void
 	construct(Allocator& alloc, pointer p, Args&& ...args) {
-		alloc.construct(p, args...);
+		alloc.construct(p, std::forward<Args>(args)...);
 	}
 };
-//================================================================
+//=============================================================================================
 // Allocator
-//================================================================
+//=============================================================================================
 template <class T>
 class Allocator {
 public:
@@ -73,38 +73,6 @@ public:
 	 */
 	template <class U>
 	struct rebind { typedef Allocator<U> other; };
-
-	/*
-	 *
-	 */
-	Allocator()
-	{/* nothing to initialize */}
-
-	/**
-	 *
-	 */
-	Allocator(const Allocator<T>& copy)
-	{/* nothing to copy */}
-
-	/**
-	 *
-	 */
-	template <class U>
-	Allocator(const Allocator<U>& copy)
-	{/* nothing to copy */}
-
-	/**
-	 *
-	 */
-	template <class U>
-	Allocator(const Allocator<U>&& copy)
-	{/* nothing to move */}
-
-	/**
-	 *
-	 */
-	virtual ~Allocator()
-	{/* nothing to destruct */}
 
 	/**
 	 *
@@ -174,32 +142,6 @@ public:
 	const bool
 	operator!=(const Allocator<T2>& rhs)
 	{ return false; }
-
-	/**
-	 *
-	 */
-	void operator=(const Allocator<T>& rhs)
-	{/* nothing to copy*/}
-
-	/**
-	 *
-	 */
-	void operator=(const Allocator<T>&& rhs)
-	{/* nothing to move*/}
-
-	/**
-	 *
-	 */
-	template <class U>
-	void operator=(const Allocator<U>& rhs)
-	{/* nothing to assign */}
-
-	/**
-	 *
-	 */
-	template <class U>
-	void operator=(const Allocator<U>&& rhs)
-	{/* nothing to move */}
 };
 
 /**

@@ -50,7 +50,7 @@ public:
 	/*
 	 *
 	 */
-	Foo()
+	Foo() noexcept
 	: name(nullptr)
 	{}
 
@@ -124,7 +124,7 @@ public:
 		delete name;
 	}
 
-	StringType 		getName() const { return *name; }
+	StringType 		getName() const noexcept{ return *name; }
 
 	friend std::ostream& operator<<(std::ostream& out, Foo const & f) {
 		out << "Foo [" << &f << "] name=" << f.getName();
