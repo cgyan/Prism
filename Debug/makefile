@@ -40,19 +40,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: Prism
+all: libPrism.so
 
 # Tool invocations
-Prism: $(OBJS) $(USER_OBJS)
+libPrism.so: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MacOS X C++ Linker'
-	g++  -o "Prism" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -dynamiclib -o "libPrism.so" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(CPP_DEPS)$(C_DEPS) Prism
+	-$(RM) $(LIBRARIES)$(CC_DEPS)$(C++_DEPS)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(CPP_DEPS)$(C_DEPS) libPrism.so
 	-@echo ' '
 
 .PHONY: all clean dependents

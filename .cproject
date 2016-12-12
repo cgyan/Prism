@@ -3,7 +3,13 @@
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.macosx.exe.debug.55069339">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.macosx.exe.debug.55069339" moduleId="org.eclipse.cdt.core.settings" name="Debug">
-				<externalSettings/>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/Prism"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Prism/Debug"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="Prism" srcPrefixMapping="" srcRootPath=""/>
+					</externalSetting>
+				</externalSettings>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.MachO64" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -14,17 +20,23 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.macosx.exe.debug.55069339" name="Debug" parent="cdt.managedbuild.config.gnu.macosx.exe.debug" preannouncebuildStep="" prebuildStep="">
+				<configuration artifactExtension="so" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.macosx.exe.debug.55069339" name="Debug" parent="cdt.managedbuild.config.gnu.macosx.exe.debug" preannouncebuildStep="" prebuildStep="">
 					<folderInfo id="cdt.managedbuild.config.gnu.macosx.exe.debug.55069339." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.macosx.exe.debug.1967873246" name="MacOSX GCC" superClass="cdt.managedbuild.toolchain.gnu.macosx.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.macosx.exe.debug.1503688046" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.macosx.exe.debug"/>
 							<builder buildPath="${workspace_loc:/Prism}/Debug" id="cdt.managedbuild.target.gnu.builder.macosx.exe.debug.813074785" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.macosx.exe.debug"/>
-							<tool id="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug.1394850828" name="MacOS X C Linker" superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug"/>
+							<tool id="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug.1394850828" name="MacOS X C Linker" superClass="cdt.managedbuild.tool.macosx.c.linker.macosx.exe.debug">
+								<option defaultValue="true" id="macosx.c.link.option.nostart.880666899" name="Do not use standard start files (-nostartfiles)" superClass="macosx.c.link.option.nostart" valueType="boolean"/>
+								<option defaultValue="true" id="macosx.c.link.option.nodeflibs.26571537" name="Do not use default libraries (-nodefaultlibs)" superClass="macosx.c.link.option.nodeflibs" valueType="boolean"/>
+								<option defaultValue="true" id="macosx.c.link.option.shared.1411701360" name="Shared (-dynamiclib)" superClass="macosx.c.link.option.shared" valueType="boolean"/>
+							</tool>
 							<tool id="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug.1176237203" name="MacOS X C++ Linker" superClass="cdt.managedbuild.tool.macosx.cpp.linker.macosx.exe.debug">
+								<option defaultValue="true" id="macosx.cpp.link.option.shared.839413640" name="Shared (-dynamiclib)" superClass="macosx.cpp.link.option.shared" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.macosx.cpp.linker.input.24093063" superClass="cdt.managedbuild.tool.macosx.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
 								</inputType>
+								<outputType id="cdt.managedbuild.tool.macosx.cpp.linker.output.so.1055925132" outputPrefix="lib" superClass="cdt.managedbuild.tool.macosx.cpp.linker.output.so"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.macosx.exe.debug.40747984" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.macosx.exe.debug">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1747653308" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
@@ -126,10 +138,10 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Release">
+		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/Prism"/>
 		</configuration>
-		<configuration configurationName="Debug">
+		<configuration configurationName="Release">
 			<resource resourceType="PROJECT" workspacePath="/Prism"/>
 		</configuration>
 	</storageModule>

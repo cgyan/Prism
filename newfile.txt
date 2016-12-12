@@ -1,2 +1,0 @@
-echo "appending some more text! >> newfile.txt
-echo "adding some text" >> newfile.txt

@@ -73,50 +73,17 @@ void f(const int&);	// binds to lvalue, const lvalue, rvalue, const rvalue
 void f(int&&);		// binds to rvalue
 void f(const int&&);// binds to rvalue, const rvalue
 
-void f(int&&) {
-	cout << "ha!\n";
-}
-
-template <typename T>
-struct HasPublicType_value_type {
-	typedef char 	yes[1];
-	typedef char 	no[2];
-
-	template <typename C>
-	static yes& 	test(typename C::value_type*);
-	template <typename>
-	static no& 		test(...);
-
-	static const bool value = sizeof(test<T>(0)) == 1;
-};
-
-template <typename T>
-struct Container {
-	typedef T key_type;
-	Container() noexcept(prism::IsFundamental<T>::value) {}
-//	Container() = delete;
-	void foo() {}
-};
-
-class Base{};
-class Derived : public Base{};
-
-template <typename T>
-void printValue(const T& value) {
-	cout << value << endl;
-}
-
 int main(int argc, char * argv[]) {
 	// to run certain test cases use string with this format: "*Class1*:*Class2*:*ClassN*"
 	// to run a single test within a test case use: "*Class.test*" e.g. "*Stack.pop*"
-	::testing::GTEST_FLAG(filter) = "*ReverseIteratorTest*";
-	::testing::InitGoogleTest(&argc, argv);
+//	::testing::GTEST_FLAG(filter) = "*VectorTest*";
+//	::testing::InitGoogleTest(&argc, argv);
+
+	cout << "!" << endl;
 
 
-
-
-	return RUN_ALL_TESTS();
-//	return 0;
+//	return RUN_ALL_TESTS();
+	return 0;
 }
 
 

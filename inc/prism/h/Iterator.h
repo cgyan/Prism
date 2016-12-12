@@ -537,7 +537,7 @@ template <typename Iterator>
 const bool
 operator<=(const ReverseIterator<Iterator>& a,
 		   const ReverseIterator<Iterator>& b)
-{ return b.base() <= a.base(); }
+{ return !(b < a); }
 
 /*
  *
@@ -546,7 +546,7 @@ template <typename Iterator>
 const bool
 operator>(const ReverseIterator<Iterator>& a,
 		  const ReverseIterator<Iterator>& b)
-{ return b.base() > a.base(); }
+{ return b < a; }
 
 /*
  *
@@ -555,7 +555,7 @@ template <typename Iterator>
 const bool
 operator>=(const ReverseIterator<Iterator>& a,
 		   const ReverseIterator<Iterator>& b)
-{ return b.base() >= a.base(); }
+{ return !(a < b); }
 
 PRISM_END_NAMESPACE
 

@@ -8,7 +8,7 @@
  *  The tests in this file are broken up into nine categories:
  *  	Constructors/destructor/assignment
  *  	Iterators
- *  	Capaciy
+ *  	Capacity
  *  	Element Access
  *  	Modifiers
  *  	Queries
@@ -18,11 +18,25 @@
  */
 
 #include <gtest/gtest.h>
-#include <prism/h/development/Vector.h>
+//#include <prism/h/development/Vector.h>
+
+//todo: remove this
+#include <iostream>
+using namespace std;
+//using namespace prism::beta;
+// -------------------
+
+namespace prism {
+namespace test {
 
 class VectorTest : public ::testing::Test {
+public:
 
 };
+
+TEST_F(VectorTest, DefaultVectorIsEmpty) {
+	EXPECT_TRUE(false);
+}
 //=============================================================================================
 // Constructors/destructor/assignment
 //=============================================================================================
@@ -31,6 +45,7 @@ class VectorTest : public ::testing::Test {
  */
 TEST_F(VectorTest, default_ctor) {
   EXPECT_TRUE(false);
+
 }
 
 /*
@@ -727,6 +742,11 @@ TEST_F(VectorTest, operator_stream_vector_to_output) {
 TEST_F(VectorTest, swap_vectors) {
 	EXPECT_TRUE(false);
 }
+
+} // end namespace test
+} // end namespace prism
+
+
 
 
 

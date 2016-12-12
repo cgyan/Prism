@@ -9,8 +9,6 @@
 #include <gtest/gtest.h>
 #include <prism/Iterator>
 #include <prism/String>
-#include <string>
-#include <iostream>
 
 namespace prism {
 namespace test {
@@ -19,8 +17,6 @@ class ReverseIteratorTest : public ::testing::Test {
 public:
 	using reverse_iterator = ReverseIterator<String::iterator>;
 	String str;
-//	using reverse_iterator = std::reverse_iterator<std::string::iterator>;
-//	std::string str;
 	reverse_iterator rbit; // begin iter
 	reverse_iterator reit; // end iter
 public:
@@ -183,21 +179,37 @@ TEST_F(ReverseIteratorTest, iter_A_less_than_iter_B) {
  * Test: operator<=(rev_iter a, rev_iter b)
  */
 TEST_F(ReverseIteratorTest, iter_A_less_than_or_equal_to_iter_B) {
-	EXPECT_TRUE(false);
+	reverse_iterator it(str.end());
+	it += 4; // it == 'c'
+
+	EXPECT_TRUE(rbit <= reit);
+	EXPECT_TRUE(rbit <= it);
+	rbit += 4;
+	EXPECT_TRUE(rbit <= it); // rbit should be equal to it
+	++rbit;
+	EXPECT_FALSE(rbit <= it); // rbit should be one place after it
 }
 
 /**
  * Test: operator>(rev_iter a, rev_iter b)
  */
 TEST_F(ReverseIteratorTest, iter_A_greater_than_iter_B) {
-	EXPECT_TRUE(false);
+	EXPECT_TRUE(reit > rbit);
+	reit = rbit;
+	EXPECT_FALSE(reit > rbit);
 }
 
 /**
  * Test: operator>=(rev_iter a, rev_iter b)
  */
 TEST_F(ReverseIteratorTest, iter_A_greater_than_or_equal_to_iter_B) {
-	EXPECT_TRUE(false);
+	reverse_iterator it = reit - 5; // it == 'f'
+	EXPECT_TRUE(reit >= rbit);
+	EXPECT_TRUE(reit >= it);
+	reit -= 5;
+	EXPECT_TRUE(reit >= it);
+	--reit;
+	EXPECT_FALSE(reit >= it);
 }
 
 } // end namespace test

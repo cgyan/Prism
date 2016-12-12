@@ -541,7 +541,8 @@ struct DequeData : public SharedData {
 		end = begin + numElements;
 	}
 
-	const int numElementVacanciesAtFront() const {
+	const int
+	numElementVacanciesAtFront() const {
 		return (begin.buckets - storage.start) * prism_deque_bucket_size
 					+ begin.current - begin.start;
 	}
