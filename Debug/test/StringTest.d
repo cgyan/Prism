@@ -1,4 +1,4 @@
-test/StringTest.d: ../test/StringTest.cpp \
+test/StringTest.o: ../test/StringTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/String \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/String.h \

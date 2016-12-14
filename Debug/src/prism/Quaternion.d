@@ -1,4 +1,4 @@
-src/prism/Quaternion.d: ../src/prism/Quaternion.cpp \
+src/prism/Quaternion.o: ../src/prism/Quaternion.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Quaternion.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Vector3.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Vector4.h \

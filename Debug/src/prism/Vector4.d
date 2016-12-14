@@ -1,4 +1,4 @@
-src/prism/Vector4.d: ../src/prism/Vector4.cpp \
+src/prism/Vector4.o: ../src/prism/Vector4.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Vector4.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Vector2.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Vector3.h \

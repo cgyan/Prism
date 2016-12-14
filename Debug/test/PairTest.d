@@ -1,4 +1,4 @@
-test/PairTest.d: ../test/PairTest.cpp \
+test/PairTest.o: ../test/PairTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Pair \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h \

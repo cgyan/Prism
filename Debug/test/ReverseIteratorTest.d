@@ -1,4 +1,4 @@
-test/ReverseIteratorTest.d: ../test/ReverseIteratorTest.cpp \
+test/ReverseIteratorTest.o: ../test/ReverseIteratorTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Iterator \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/iterator.h \

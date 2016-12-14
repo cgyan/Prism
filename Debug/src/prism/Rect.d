@@ -1,4 +1,4 @@
-src/prism/Rect.d: ../src/prism/Rect.cpp \
+src/prism/Rect.o: ../src/prism/Rect.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Rect.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Size.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Point.h \

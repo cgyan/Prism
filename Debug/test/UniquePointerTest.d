@@ -1,4 +1,4 @@
-test/UniquePointerTest.d: ../test/UniquePointerTest.cpp \
+test/UniquePointerTest.o: ../test/UniquePointerTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/UniquePointer \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/UniquePointer.h \

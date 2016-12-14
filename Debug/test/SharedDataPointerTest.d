@@ -1,4 +1,4 @@
-test/SharedDataPointerTest.d: ../test/SharedDataPointerTest.cpp \
+test/SharedDataPointerTest.o: ../test/SharedDataPointerTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/SharedDataPointer \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedDataPointer.h \

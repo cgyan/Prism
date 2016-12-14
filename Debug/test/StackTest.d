@@ -1,4 +1,4 @@
-test/StackTest.d: ../test/StackTest.cpp \
+test/StackTest.o: ../test/StackTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Stack \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Stack.h \

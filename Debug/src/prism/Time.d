@@ -1,4 +1,4 @@
-src/prism/Time.d: ../src/prism/Time.cpp \
+src/prism/Time.o: ../src/prism/Time.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Time.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/String.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/iterator.h \

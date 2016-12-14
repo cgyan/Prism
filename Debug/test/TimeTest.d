@@ -1,4 +1,4 @@
-test/TimeTest.d: ../test/TimeTest.cpp \
+test/TimeTest.o: ../test/TimeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Time \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Time.h \

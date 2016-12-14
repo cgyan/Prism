@@ -1,4 +1,4 @@
-test/DequeTest.d: ../test/DequeTest.cpp \
+test/DequeTest.o: ../test/DequeTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Deque \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Deque.h \

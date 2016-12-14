@@ -1,4 +1,4 @@
-test/BitvectorTest.d: ../test/BitvectorTest.cpp \
+test/BitvectorTest.o: ../test/BitvectorTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Bitvector \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Bitvector.h \

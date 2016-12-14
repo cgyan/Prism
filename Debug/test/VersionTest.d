@@ -1,4 +1,4 @@
-test/VersionTest.d: ../test/VersionTest.cpp \
+test/VersionTest.o: ../test/VersionTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Version \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Version.h \

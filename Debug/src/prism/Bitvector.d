@@ -1,4 +1,4 @@
-src/prism/Bitvector.d: ../src/prism/Bitvector.cpp \
+src/prism/Bitvector.o: ../src/prism/Bitvector.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Bitvector.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/String.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/iterator.h \

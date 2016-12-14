@@ -1,4 +1,4 @@
-test/CircleTest.d: ../test/CircleTest.cpp \
+test/CircleTest.o: ../test/CircleTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Circle \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Circle.h \

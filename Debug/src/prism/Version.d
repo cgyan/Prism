@@ -1,4 +1,4 @@
-src/prism/Version.d: ../src/prism/Version.cpp \
+src/prism/Version.o: ../src/prism/Version.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Version.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedPointer.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/ReferenceCounter.h \

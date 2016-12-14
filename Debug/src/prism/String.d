@@ -1,4 +1,4 @@
-src/prism/String.d: ../src/prism/String.cpp \
+src/prism/String.o: ../src/prism/String.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/String.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/type_traits.h \

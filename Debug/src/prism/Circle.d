@@ -1,4 +1,4 @@
-src/prism/Circle.d: ../src/prism/Circle.cpp \
+src/prism/Circle.o: ../src/prism/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Circle.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Flags.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Pointf.h \

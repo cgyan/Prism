@@ -1,4 +1,4 @@
-test/algorithmTest.d: ../test/algorithmTest.cpp \
+test/algorithmTest.o: ../test/algorithmTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/algorithm \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/algorithm.h \

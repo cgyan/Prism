@@ -1,4 +1,4 @@
-test/ListTest.d: ../test/ListTest.cpp \
+test/ListTest.o: ../test/ListTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/List.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedData.h \

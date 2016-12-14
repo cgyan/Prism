@@ -1,4 +1,4 @@
-src/prism/SharedData.d: ../src/prism/SharedData.cpp \
+src/prism/SharedData.o: ../src/prism/SharedData.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedData.h
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedData.h:

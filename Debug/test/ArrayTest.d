@@ -1,4 +1,4 @@
-test/ArrayTest.d: ../test/ArrayTest.cpp \
+test/ArrayTest.o: ../test/ArrayTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/external/gtest/gtest.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Array \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Array.h \
