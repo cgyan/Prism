@@ -18,6 +18,8 @@
 #define PRISM_END_PRIVATE_NAMESPACE }
 #define PRISM_BEGIN_BETA_NAMESPACE namespace beta {
 #define PRISM_END_BETA_NAMESPACE }
+#define PRISM_BEGIN_TEST_NAMESPACE namespace test {
+#define PRISM_END_TEST_NAMESPACE }
 //============================================================================================
 // C++ versions
 //============================================================================================
