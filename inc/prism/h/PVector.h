@@ -19,11 +19,14 @@ class PVector {
 public:
 	int 	_M_size;
 	int		_M_capacity;
+	T		_M_data[5];
 public:
 	PVector();
-	void 		append(const T& value);
+	void 		add(const T& value);
+	T&			at(const int index);
 	const int	capacity();
 	const bool 	empty();
+	void		removeLast();
 	void		reserve(const int size);
 	void		resize(const int size);
 	const int	size();
@@ -45,8 +48,21 @@ PVector()
 template <typename T>
 void
 PVector<T>::
-append(const T& value) {
-	_M_size = 1;
+add(const T& value) {
+	_M_data[_M_size] = value;
+	++_M_size;
+}
+
+/*
+ *
+ */
+template <typename T>
+T&
+PVector<T>::
+at(const int index) {
+	if (index < 0 || index >= this->size())
+		throw prism::OutOfBoundsException(index);
+	return _M_data[index];
 }
 
 /*
@@ -67,6 +83,16 @@ const bool
 PVector<T>::
 empty() {
 	return _M_size == 0;
+}
+
+/*
+ *
+ */
+template <typename T>
+void
+PVector<T>::
+removeLast() {
+	--_M_size;
 }
 
 /*
