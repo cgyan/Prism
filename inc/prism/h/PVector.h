@@ -17,9 +17,9 @@ PRISM_BEGIN_NAMESPACE
 template <typename T>
 class PVector {
 public:
-	int 	_M_size;
-	int		_M_capacity;
-	T		_M_data[10];
+	int 	_m_size;
+	int		_m_capacity;
+	T		_m_data[10];
 public:
 	PVector();
 	void 		addAtEnd(const T& value);
@@ -31,10 +31,12 @@ public:
 	const bool 	empty();
 	const bool	endsWith(const T& value);
 	void		fill(const T& value);
+	const int	indexOf(const T& value);
 	void		removeLast();
 	void		reserve(const int size);
 	void		resize(const int size);
 	const int	size();
+	const bool	startsWith(const T& value);
 };
 
 /*
@@ -43,9 +45,9 @@ public:
 template <typename T>
 PVector<T>::
 PVector()
-: _M_size(0),
-  _M_capacity(0),
-  _M_data()
+: _m_size(0),
+  _m_capacity(0),
+  _m_data()
 {}
 
 /*
@@ -55,8 +57,8 @@ template <typename T>
 void
 PVector<T>::
 addAtEnd(const T& value) {
-	_M_data[_M_size] = value;
-	++_M_size;
+	_m_data[_m_size] = value;
+	++_m_size;
 }
 
 /*
@@ -68,7 +70,7 @@ PVector<T>::
 at(const int index) {
 	if (index < 0 || index >= this->size())
 		throw prism::OutOfBoundsException(index);
-	return _M_data[index];
+	return _m_data[index];
 }
 
 /*
@@ -78,7 +80,7 @@ template <typename T>
 const int
 PVector<T>::
 capacity() {
-	return _M_capacity;
+	return _m_capacity;
 }
 
 /*
@@ -88,7 +90,7 @@ template <typename T>
 void
 PVector<T>::
 clear() {
-	_M_size = 0;
+	_m_size = 0;
 }
 
 /*
@@ -99,8 +101,8 @@ const bool
 PVector<T>::
 contains(const T& value) {
 	int i = 0;
-	while (i < _M_size) {
-		if (_M_data[i] == value)
+	while (i < _m_size) {
+		if (_m_data[i] == value)
 			return true;
 		++i;
 	}
@@ -115,8 +117,8 @@ const int
 PVector<T>::
 count(const T& value) {
 	int c = 0;
-	for (int i=0; i<_M_size; i++)
-		if (_M_data[i] == value)
+	for (int i=0; i<_m_size; i++)
+		if (_m_data[i] == value)
 			++c;
 	return c;
 }
@@ -128,7 +130,7 @@ template <typename T>
 const bool
 PVector<T>::
 empty() {
-	return _M_size == 0;
+	return _m_size == 0;
 }
 
 /*
@@ -138,7 +140,7 @@ template <typename T>
 const bool
 PVector<T>::
 endsWith(const T& value) {
-	if (value == _M_data[_M_size-1])
+	if (value == _m_data[_m_size-1])
 		return true;
 	return false;
 }
@@ -150,8 +152,21 @@ template <typename T>
 void
 PVector<T>::
 fill(const T& value) {
-	for (int i=0; i<_M_size; i++)
-		_M_data[i] = value;
+	for (int i=0; i<_m_size; i++)
+		_m_data[i] = value;
+}
+
+/*
+ *
+ */
+template <typename T>
+const int
+PVector<T>::
+indexOf(const T& value) {
+	for (int i=0; i<_m_size; i++)
+		if (_m_data[i] == value)
+			return i;
+	return -1;
 }
 
 /*
@@ -161,7 +176,7 @@ template <typename T>
 void
 PVector<T>::
 removeLast() {
-	--_M_size;
+	--_m_size;
 }
 
 /*
@@ -173,7 +188,8 @@ PVector<T>::
 reserve(const int size) {
 	if (size < 0)
 		throw std::bad_alloc();
-	_M_capacity = size;
+	if (size > 0)
+		_m_capacity = size;
 }
 
 /*
@@ -185,7 +201,7 @@ PVector<T>::
 resize(const int size) {
 	if (size < 0)
 		throw prism::OutOfBoundsException(size);
-	_M_size = size;
+	_m_size = size;
 }
 
 /*
@@ -195,7 +211,19 @@ template <typename T>
 const int
 PVector<T>::
 size() {
-	return _M_size;
+	return _m_size;
+}
+
+/*
+ *
+ */
+template <typename T>
+const bool
+PVector<T>::
+startsWith(const T& value) {
+	if (_m_data[0] == value)
+		return true;
+	return false;
 }
 
 PRISM_END_NAMESPACE
