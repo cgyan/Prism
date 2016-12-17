@@ -26,7 +26,9 @@ public:
 	T&			at(const int index);
 	const int	capacity();
 	void		clear();
+	const bool	contains(const T& value);
 	const bool 	empty();
+	void		fill(const T& value);
 	void		removeLast();
 	void		reserve(const int size);
 	void		resize(const int size);
@@ -93,8 +95,35 @@ clear() {
 template <typename T>
 const bool
 PVector<T>::
+contains(const T& value) {
+	int i = 0;
+	while (i < _M_size) {
+		if (_M_data[i] == value)
+			return true;
+		++i;
+	}
+	return false;
+}
+
+/*
+ *
+ */
+template <typename T>
+const bool
+PVector<T>::
 empty() {
 	return _M_size == 0;
+}
+
+/*
+ *
+ */
+template <typename T>
+void
+PVector<T>::
+fill(const T& value) {
+	for (int i=0; i<_M_size; i++)
+		_M_data[i] = value;
 }
 
 /*
