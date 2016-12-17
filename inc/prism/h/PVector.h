@@ -29,6 +29,7 @@ public:
 	const bool	contains(const T& value);
 	const int	count(const T& value);
 	const bool 	empty();
+	const bool	endsWith(const T& value);
 	void		fill(const T& value);
 	void		removeLast();
 	void		reserve(const int size);
@@ -128,6 +129,18 @@ const bool
 PVector<T>::
 empty() {
 	return _M_size == 0;
+}
+
+/*
+ *
+ */
+template <typename T>
+const bool
+PVector<T>::
+endsWith(const T& value) {
+	if (value == _M_data[_M_size-1])
+		return true;
+	return false;
 }
 
 /*
