@@ -113,7 +113,11 @@ template <typename T>
 const int
 PVector<T>::
 count(const T& value) {
-	return 5;
+	int c = 0;
+	for (int i=0; i<_M_size; i++)
+		if (_M_data[i] == value)
+			++c;
+	return c;
 }
 
 /*
