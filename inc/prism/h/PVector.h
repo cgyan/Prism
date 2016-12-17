@@ -19,12 +19,13 @@ class PVector {
 public:
 	int 	_M_size;
 	int		_M_capacity;
-	T		_M_data[5];
+	T		_M_data[10];
 public:
 	PVector();
-	void 		add(const T& value);
+	void 		addAtEnd(const T& value);
 	T&			at(const int index);
 	const int	capacity();
+	void		clear();
 	const bool 	empty();
 	void		removeLast();
 	void		reserve(const int size);
@@ -39,7 +40,8 @@ template <typename T>
 PVector<T>::
 PVector()
 : _M_size(0),
-  _M_capacity(0)
+  _M_capacity(0),
+  _M_data()
 {}
 
 /*
@@ -48,7 +50,7 @@ PVector()
 template <typename T>
 void
 PVector<T>::
-add(const T& value) {
+addAtEnd(const T& value) {
 	_M_data[_M_size] = value;
 	++_M_size;
 }
@@ -73,6 +75,16 @@ const int
 PVector<T>::
 capacity() {
 	return _M_capacity;
+}
+
+/*
+ *
+ */
+template <typename T>
+void
+PVector<T>::
+clear() {
+	_M_size = 0;
 }
 
 /*
