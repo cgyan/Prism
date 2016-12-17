@@ -27,6 +27,7 @@ public:
 	const int	capacity();
 	void		clear();
 	const bool	contains(const T& value);
+	const int	count(const T& value);
 	const bool 	empty();
 	void		fill(const T& value);
 	void		removeLast();
@@ -103,6 +104,16 @@ contains(const T& value) {
 		++i;
 	}
 	return false;
+}
+
+/*
+ *
+ */
+template <typename T>
+const int
+PVector<T>::
+count(const T& value) {
+	return 5;
 }
 
 /*
