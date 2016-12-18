@@ -32,6 +32,7 @@ public:
 	const bool	endsWith(const T& value);
 	void		fill(const T& value);
 	const int	indexOf(const T& value);
+	const int	lastIndexOf(const T& value);
 	void		removeLast();
 	void		reserve(const int size);
 	void		resize(const int size);
@@ -166,6 +167,21 @@ indexOf(const T& value) {
 	for (int i=0; i<_m_size; i++)
 		if (_m_data[i] == value)
 			return i;
+	return -1;
+}
+
+/*
+ *
+ */
+template <typename T>
+const int
+PVector<T>::
+lastIndexOf(const T& value) {
+	int i = _m_size;
+	while (--i >= 0) {
+		if (_m_data[i] == value)
+			return i;
+	}
 	return -1;
 }
 
