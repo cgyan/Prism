@@ -179,12 +179,13 @@ template <typename T>
 const int
 PVector<T>::
 lastIndexOf(const T& value) {
-	int i = _m_size;
-	while (--i >= 0) {
-		if (_m_data[i] == value)
-			return i;
+	int indexNotFound = -1;
+	int index = _m_size;
+	while (--index >= 0) {
+		if (_m_data[index] == value)
+			return index;
 	}
-	return -1;
+	return indexNotFound;
 }
 
 /*
