@@ -32,32 +32,32 @@ public:
 	const bool	endsWith(const T& value);
 	void		fill(const T& value);
 	const int	indexOf(const T& value, const int from=0);
-	const int	lastIndexOf(const T& value);
-	void		removeLast();
-	void		reserve(const int size);
-	void		resize(const int size);
-	const int	size();
-	const bool	startsWith(const T& value);
+	const int 	lastIndexOf(const T& value, const int from = -1);
+	void 		removeLast();
+	void 		reserve(const int size);
+	void 		resize(const int size);
+	const int 	size();
+	const bool 	startsWith(const T& value);
+
+private:
+	const bool 	valueEqualsValueAtIndex(int index, const T& value);
+	bool 		indexToSearchFromIsNegative(int indexToStartSearchFrom);
+	int 		setStartIndexToLastIndex(int& indexToStartSearchFrom);
 };
 
 /*
  *
  */
-template <typename T>
-PVector<T>::
-PVector()
-: _m_size(0),
-  _m_capacity(0),
-  _m_data()
-{}
+template<typename T>
+PVector<T>::PVector() :
+		_m_size(0), _m_capacity(0), _m_data() {
+}
 
 /*
  *
  */
-template <typename T>
-void
-PVector<T>::
-addAtEnd(const T& value) {
+template<typename T>
+void PVector<T>::addAtEnd(const T& value) {
 	_m_data[_m_size] = value;
 	++_m_size;
 }
@@ -65,10 +65,9 @@ addAtEnd(const T& value) {
 /*
  *
  */
-template <typename T>
+template<typename T>
 T&
-PVector<T>::
-at(const int index) {
+PVector<T>::at(const int index) {
 	if (index < 0 || index >= this->size())
 		throw prism::OutOfBoundsException(index);
 	return _m_data[index];
@@ -77,30 +76,24 @@ at(const int index) {
 /*
  *
  */
-template <typename T>
-const int
-PVector<T>::
-capacity() {
+template<typename T>
+const int PVector<T>::capacity() {
 	return _m_capacity;
 }
 
 /*
  *
  */
-template <typename T>
-void
-PVector<T>::
-clear() {
+template<typename T>
+void PVector<T>::clear() {
 	_m_size = 0;
 }
 
 /*
  *
  */
-template <typename T>
-const bool
-PVector<T>::
-contains(const T& value) {
+template<typename T>
+const bool PVector<T>::contains(const T& value) {
 	int i = 0;
 	while (i < _m_size) {
 		if (_m_data[i] == value)
@@ -113,12 +106,10 @@ contains(const T& value) {
 /*
  *
  */
-template <typename T>
-const int
-PVector<T>::
-count(const T& value) {
+template<typename T>
+const int PVector<T>::count(const T& value) {
 	int c = 0;
-	for (int i=0; i<_m_size; i++)
+	for (int i = 0; i < _m_size; i++)
 		if (_m_data[i] == value)
 			++c;
 	return c;
@@ -127,21 +118,17 @@ count(const T& value) {
 /*
  *
  */
-template <typename T>
-const bool
-PVector<T>::
-empty() {
+template<typename T>
+const bool PVector<T>::empty() {
 	return _m_size == 0;
 }
 
 /*
  *
  */
-template <typename T>
-const bool
-PVector<T>::
-endsWith(const T& value) {
-	if (value == _m_data[_m_size-1])
+template<typename T>
+const bool PVector<T>::endsWith(const T& value) {
+	if (value == _m_data[_m_size - 1])
 		return true;
 	return false;
 }
@@ -149,23 +136,19 @@ endsWith(const T& value) {
 /*
  *
  */
-template <typename T>
-void
-PVector<T>::
-fill(const T& value) {
-	for (int i=0; i<_m_size; i++)
+template<typename T>
+void PVector<T>::fill(const T& value) {
+	for (int i = 0; i < _m_size; i++)
 		_m_data[i] = value;
 }
 
 /*
  *
  */
-template <typename T>
-const int
-PVector<T>::
-indexOf(const T& value, const int from) {
+template<typename T>
+const int PVector<T>::indexOf(const T& value, const int from) {
 	int indexNotFound = -1;
-	for (int index=from; index<_m_size; index++) {
+	for (int index = from; index < _m_size; index++) {
 		if (_m_data[index] == value)
 			return index;
 	}
@@ -175,13 +158,36 @@ indexOf(const T& value, const int from) {
 /*
  *
  */
+template<typename T>
+const bool PVector<T>::valueEqualsValueAtIndex(int index, const T& value) {
+	return _m_data[index] == value;
+}
+
+template<typename T>
+bool PVector<T>::indexToSearchFromIsNegative(int indexToStartSearchFrom) {
+	return indexToStartSearchFrom == -1;
+}
+
+template<typename T>
+int PVector<T>::setStartIndexToLastIndex(int& indexToStartSearchFrom) {
+	return indexToStartSearchFrom = _m_size - 1;
+}
+
+/*
+ *
+ */
 template <typename T>
 const int
 PVector<T>::
-lastIndexOf(const T& value) {
+lastIndexOf(const T& value, const int from) {
 	int indexNotFound = -1;
-	for (int index = _m_size-1; index >= 0; index--) {
-		if (_m_data[index] == value)
+	int indexToStartSearchFrom = from;
+
+	if (indexToSearchFromIsNegative(indexToStartSearchFrom))
+		setStartIndexToLastIndex(indexToStartSearchFrom);
+
+	for (int index = indexToStartSearchFrom; index >= 0; index--) {
+		if (valueEqualsValueAtIndex(index, value))
 			return index;
 	}
 	return indexNotFound;
