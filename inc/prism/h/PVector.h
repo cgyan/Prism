@@ -180,8 +180,7 @@ const int
 PVector<T>::
 lastIndexOf(const T& value) {
 	int indexNotFound = -1;
-	int index = _m_size;
-	while (--index >= 0) {
+	for (int index = _m_size-1; index >= 0; index--) {
 		if (_m_data[index] == value)
 			return index;
 	}
