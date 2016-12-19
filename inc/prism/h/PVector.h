@@ -31,7 +31,6 @@ public:
 	const bool 	empty();
 	const bool	endsWith(const T& value);
 	void		fill(const T& value);
-	const int	indexOf(const T& value, const int from=0);
 	const int 	lastIndexOf(const T& value, const int from = -1);
 	void 		removeLast();
 	void 		reserve(const int size);
@@ -40,16 +39,17 @@ public:
 	const bool 	startsWith(const T& value);
 
 private:
-	const bool 	valueEqualsValueAtIndex(int index, const T& value);
-	bool 		indexToSearchFromIsNegative(int indexToStartSearchFrom);
-	int 		setStartIndexToLastIndex(int& indexToStartSearchFrom);
+	const bool 	valueIsEqualToValueAtIndex(int index, const T& value);
+	const bool	indexToSearchFromIsNegative(int indexToStartSearchFrom);
+	const int	setStartIndexToLastIndex(int& indexToStartSearchFrom);
 };
 
 /*
  *
  */
 template<typename T>
-PVector<T>::PVector() :
+PVector<T>::
+PVector() :
 		_m_size(0), _m_capacity(0), _m_data() {
 }
 
@@ -57,7 +57,8 @@ PVector<T>::PVector() :
  *
  */
 template<typename T>
-void PVector<T>::addAtEnd(const T& value) {
+void PVector<T>::
+addAtEnd(const T& value) {
 	_m_data[_m_size] = value;
 	++_m_size;
 }
@@ -67,7 +68,8 @@ void PVector<T>::addAtEnd(const T& value) {
  */
 template<typename T>
 T&
-PVector<T>::at(const int index) {
+PVector<T>::
+at(const int index) {
 	if (index < 0 || index >= this->size())
 		throw prism::OutOfBoundsException(index);
 	return _m_data[index];
@@ -77,7 +79,8 @@ PVector<T>::at(const int index) {
  *
  */
 template<typename T>
-const int PVector<T>::capacity() {
+const int PVector<T>::
+capacity() {
 	return _m_capacity;
 }
 
@@ -85,7 +88,8 @@ const int PVector<T>::capacity() {
  *
  */
 template<typename T>
-void PVector<T>::clear() {
+void PVector<T>::
+clear() {
 	_m_size = 0;
 }
 
@@ -93,7 +97,8 @@ void PVector<T>::clear() {
  *
  */
 template<typename T>
-const bool PVector<T>::contains(const T& value) {
+const bool PVector<T>::
+contains(const T& value) {
 	int i = 0;
 	while (i < _m_size) {
 		if (_m_data[i] == value)
@@ -107,7 +112,8 @@ const bool PVector<T>::contains(const T& value) {
  *
  */
 template<typename T>
-const int PVector<T>::count(const T& value) {
+const int PVector<T>::
+count(const T& value) {
 	int c = 0;
 	for (int i = 0; i < _m_size; i++)
 		if (_m_data[i] == value)
@@ -119,7 +125,8 @@ const int PVector<T>::count(const T& value) {
  *
  */
 template<typename T>
-const bool PVector<T>::empty() {
+const bool PVector<T>::
+empty() {
 	return _m_size == 0;
 }
 
@@ -127,7 +134,8 @@ const bool PVector<T>::empty() {
  *
  */
 template<typename T>
-const bool PVector<T>::endsWith(const T& value) {
+const bool PVector<T>::
+endsWith(const T& value) {
 	if (value == _m_data[_m_size - 1])
 		return true;
 	return false;
@@ -137,7 +145,8 @@ const bool PVector<T>::endsWith(const T& value) {
  *
  */
 template<typename T>
-void PVector<T>::fill(const T& value) {
+void PVector<T>::
+fill(const T& value) {
 	for (int i = 0; i < _m_size; i++)
 		_m_data[i] = value;
 }
@@ -146,30 +155,23 @@ void PVector<T>::fill(const T& value) {
  *
  */
 template<typename T>
-const int PVector<T>::indexOf(const T& value, const int from) {
-	int indexNotFound = -1;
-	for (int index = from; index < _m_size; index++) {
-		if (_m_data[index] == value)
-			return index;
-	}
-	return indexNotFound;
-}
-
-/*
- *
- */
-template<typename T>
-const bool PVector<T>::valueEqualsValueAtIndex(int index, const T& value) {
+const bool
+PVector<T>::
+valueIsEqualToValueAtIndex(int index, const T& value) {
 	return _m_data[index] == value;
 }
 
 template<typename T>
-bool PVector<T>::indexToSearchFromIsNegative(int indexToStartSearchFrom) {
+const bool
+PVector<T>::
+indexToSearchFromIsNegative(int indexToStartSearchFrom) {
 	return indexToStartSearchFrom == -1;
 }
 
 template<typename T>
-int PVector<T>::setStartIndexToLastIndex(int& indexToStartSearchFrom) {
+const int
+PVector<T>::
+setStartIndexToLastIndex(int& indexToStartSearchFrom) {
 	return indexToStartSearchFrom = _m_size - 1;
 }
 
@@ -187,7 +189,7 @@ lastIndexOf(const T& value, const int from) {
 		setStartIndexToLastIndex(indexToStartSearchFrom);
 
 	for (int index = indexToStartSearchFrom; index >= 0; index--) {
-		if (valueEqualsValueAtIndex(index, value))
+		if (valueIsEqualToValueAtIndex(index, value))
 			return index;
 	}
 	return indexNotFound;
