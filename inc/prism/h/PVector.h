@@ -20,6 +20,8 @@ public:
 	int 	_m_size;
 	int		_m_capacity;
 	T		_m_data[10];
+
+	static const int IndexNotFound = -1;
 public:
 	PVector();
 	void 		addAtEnd(const T& value);
@@ -31,7 +33,7 @@ public:
 	const bool 	empty();
 	const bool	endsWith(const T& value);
 	void		fill(const T& value);
-	const int	indexOf(const T& value);
+	const int	indexOf(const T& value, const int from=0);
 	const int 	lastIndexOf(const T& value, const int from = -1);
 	void 		removeLast();
 	void 		reserve(const int size);
@@ -158,13 +160,12 @@ fill(const T& value) {
 template <typename T>
 const int
 PVector<T>::
-indexOf(const T& value) {
-	if (value == 1) return 0;
-	else if (value == 2) return 1;
-	else if (value == 3) return 2;
-	else if (value == 4) return 3;
-	else if (value == 5) return 4;
-	return -1;
+indexOf(const T& value, const int from) {
+	for (int index=from; index<_m_size; index++) {
+		if (valueIsEqualToValueAtIndex(index, value))
+			return index;
+	}
+	return IndexNotFound;
 }
 
 /*
