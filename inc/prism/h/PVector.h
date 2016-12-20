@@ -34,7 +34,7 @@ public:
 	const bool	endsWith(const T& value);
 	void		fill(const T& value);
 	const int	indexOf(const T& value, const int from=0);
-	const int 	lastIndexOf(const T& value, const int from = -1);
+	const int	lastIndexOf(const T& value, const int from=-1);
 	void 		removeLast();
 	void 		reserve(const int size);
 	void 		resize(const int size);
@@ -43,8 +43,6 @@ public:
 
 private:
 	const bool 	valueIsEqualToValueAtIndex(int index, const T& value);
-	const bool	indexToSearchFromIsNegative(int indexToStartSearchFrom);
-	const int	setStartIndexToLastIndex(int& indexToStartSearchFrom);
 };
 
 /*
@@ -171,45 +169,30 @@ indexOf(const T& value, const int from) {
 /*
  *
  */
-template<typename T>
-const bool
-PVector<T>::
-valueIsEqualToValueAtIndex(int index, const T& value) {
-	return _m_data[index] == value;
-}
-
-template<typename T>
-const bool
-PVector<T>::
-indexToSearchFromIsNegative(int indexToStartSearchFrom) {
-	return indexToStartSearchFrom == -1;
-}
-
-template<typename T>
+template <typename T>
 const int
 PVector<T>::
-setStartIndexToLastIndex(int& indexToStartSearchFrom) {
-	return indexToStartSearchFrom = _m_size - 1;
+lastIndexOf(const T& value, const int from) {
+	int startIndex = 0;
+	(from == -1)
+			? startIndex = _m_size - 1
+			: startIndex = from;
+
+	for (int index = startIndex; index >= 0; index--) {
+		if (valueIsEqualToValueAtIndex(index, value))
+			return index;
+	}
+	return IndexNotFound;
 }
 
 /*
  *
  */
-template <typename T>
-const int
+template<typename T>
+const bool
 PVector<T>::
-lastIndexOf(const T& value, const int from) {
-	int indexNotFound = -1;
-	int indexToStartSearchFrom = from;
-
-	if (indexToSearchFromIsNegative(indexToStartSearchFrom))
-		setStartIndexToLastIndex(indexToStartSearchFrom);
-
-	for (int index = indexToStartSearchFrom; index >= 0; index--) {
-		if (valueIsEqualToValueAtIndex(index, value))
-			return index;
-	}
-	return indexNotFound;
+valueIsEqualToValueAtIndex(int index, const T& value) {
+	return _m_data[index] == value;
 }
 
 /*
