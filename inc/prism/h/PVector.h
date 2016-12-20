@@ -23,7 +23,7 @@ public:
 
 	static const int IndexNotFound = -1;
 public:
-	PVector();
+				PVector();
 	void 		append(const T& value);
 	T&			at(const int index);
 	const int	capacity() const noexcept;
@@ -44,6 +44,18 @@ public:
 private:
 	const bool 	valueIsEqualToValueAtIndex(int index, const T& value) const noexcept;
 };
+
+template <typename T>
+const bool
+operator==(const PVector<T>& lhs, const PVector<T>& rhs);
+
+//template <typename T>
+//const bool
+//operator!=(const PVector<T>& lhs, const PVector<T>& rhs);
+
+
+// ************************************************
+// Will be moved to other file
 
 /*
  *
@@ -252,6 +264,25 @@ startsWith(const T& value) const noexcept {
 		return true;
 	return false;
 }
+
+//==========================================================================================
+// Non-member functions
+//==========================================================================================
+template <typename T>
+const bool
+operator==(const PVector<T>& lhs, const PVector<T>& rhs) {
+	for (int index = 0; index < lhs.size(); index++) {
+		if (lhs._m_data[index] != rhs._m_data[index])
+			return false;
+	}
+	return true;
+}
+
+//template <typename T>
+//const bool
+//operator!=(const PVector<T>& lhs, const PVector<T>& rhs) {
+//	return !(lhs==rhs);
+//}
 
 PRISM_END_NAMESPACE
 
