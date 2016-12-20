@@ -39,6 +39,7 @@ public:
 	void 		reserve(const int size);
 	void 		resize(const int size);
 	const int 	size() const noexcept;
+	void		squeeze();
 	const bool 	startsWith(const T& value) const noexcept;
 
 private:
@@ -256,6 +257,16 @@ size() const noexcept {
 /*
  *
  */
+template<typename T>
+void
+PVector<T>::
+squeeze() {
+	_m_capacity = _m_size;
+}
+
+/*
+ *
+ */
 template <typename T>
 const bool
 PVector<T>::
@@ -278,6 +289,9 @@ operator==(const PVector<T>& lhs, const PVector<T>& rhs) {
 	return true;
 }
 
+/*
+ *
+ */
 template <typename T>
 const bool
 operator!=(const PVector<T>& lhs, const PVector<T>& rhs) {
