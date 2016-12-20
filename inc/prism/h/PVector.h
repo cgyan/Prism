@@ -49,9 +49,9 @@ template <typename T>
 const bool
 operator==(const PVector<T>& lhs, const PVector<T>& rhs);
 
-//template <typename T>
-//const bool
-//operator!=(const PVector<T>& lhs, const PVector<T>& rhs);
+template <typename T>
+const bool
+operator!=(const PVector<T>& lhs, const PVector<T>& rhs);
 
 
 // ************************************************
@@ -278,11 +278,11 @@ operator==(const PVector<T>& lhs, const PVector<T>& rhs) {
 	return true;
 }
 
-//template <typename T>
-//const bool
-//operator!=(const PVector<T>& lhs, const PVector<T>& rhs) {
-//	return !(lhs==rhs);
-//}
+template <typename T>
+const bool
+operator!=(const PVector<T>& lhs, const PVector<T>& rhs) {
+	return !(lhs==rhs);
+}
 
 PRISM_END_NAMESPACE
 
