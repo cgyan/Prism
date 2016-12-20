@@ -24,25 +24,25 @@ public:
 	static const int IndexNotFound = -1;
 public:
 	PVector();
-	void 		addAtEnd(const T& value);
+	void 		append(const T& value);
 	T&			at(const int index);
-	const int	capacity();
-	void		clear();
-	const bool	contains(const T& value);
-	const int	count(const T& value);
-	const bool 	empty();
-	const bool	endsWith(const T& value);
+	const int	capacity() const noexcept;
+	void		clear() noexcept;
+	const bool	contains(const T& value) const noexcept;
+	const int	count(const T& value) const noexcept;
+	const bool 	empty() const noexcept;
+	const bool	endsWith(const T& value) const noexcept;
 	void		fill(const T& value);
-	const int	indexOf(const T& value, const int from=0);
-	const int	lastIndexOf(const T& value, const int from=-1);
+	const int	indexOf(const T& value, const int from=0) const noexcept;
+	const int	lastIndexOf(const T& value, const int from=-1) const noexcept;
 	void 		removeLast();
 	void 		reserve(const int size);
 	void 		resize(const int size);
-	const int 	size();
-	const bool 	startsWith(const T& value);
+	const int 	size() const noexcept;
+	const bool 	startsWith(const T& value) const noexcept;
 
 private:
-	const bool 	valueIsEqualToValueAtIndex(int index, const T& value);
+	const bool 	valueIsEqualToValueAtIndex(int index, const T& value) const noexcept;
 };
 
 /*
@@ -50,16 +50,18 @@ private:
  */
 template<typename T>
 PVector<T>::
-PVector() :
-		_m_size(0), _m_capacity(0), _m_data() {
-}
+PVector()
+: _m_size(0),
+  _m_capacity(0),
+  _m_data()
+{}
 
 /*
  *
  */
 template<typename T>
 void PVector<T>::
-addAtEnd(const T& value) {
+append(const T& value) {
 	_m_data[_m_size] = value;
 	++_m_size;
 }
@@ -81,7 +83,7 @@ at(const int index) {
  */
 template<typename T>
 const int PVector<T>::
-capacity() {
+capacity() const noexcept {
 	return _m_capacity;
 }
 
@@ -90,7 +92,7 @@ capacity() {
  */
 template<typename T>
 void PVector<T>::
-clear() {
+clear() noexcept {
 	_m_size = 0;
 }
 
@@ -99,7 +101,7 @@ clear() {
  */
 template<typename T>
 const bool PVector<T>::
-contains(const T& value) {
+contains(const T& value) const noexcept {
 	int i = 0;
 	while (i < _m_size) {
 		if (_m_data[i] == value)
@@ -114,7 +116,7 @@ contains(const T& value) {
  */
 template<typename T>
 const int PVector<T>::
-count(const T& value) {
+count(const T& value) const noexcept {
 	int c = 0;
 	for (int i = 0; i < _m_size; i++)
 		if (_m_data[i] == value)
@@ -127,7 +129,7 @@ count(const T& value) {
  */
 template<typename T>
 const bool PVector<T>::
-empty() {
+empty() const noexcept {
 	return _m_size == 0;
 }
 
@@ -136,8 +138,8 @@ empty() {
  */
 template<typename T>
 const bool PVector<T>::
-endsWith(const T& value) {
-	if (value == _m_data[_m_size - 1])
+endsWith(const T& value) const noexcept {
+	if (valueIsEqualToValueAtIndex(_m_size-1, value))
 		return true;
 	return false;
 }
@@ -158,7 +160,7 @@ fill(const T& value) {
 template <typename T>
 const int
 PVector<T>::
-indexOf(const T& value, const int from) {
+indexOf(const T& value, const int from) const noexcept {
 	for (int index=from; index<_m_size; index++) {
 		if (valueIsEqualToValueAtIndex(index, value))
 			return index;
@@ -172,11 +174,10 @@ indexOf(const T& value, const int from) {
 template <typename T>
 const int
 PVector<T>::
-lastIndexOf(const T& value, const int from) {
+lastIndexOf(const T& value, const int from) const noexcept {
 	int startIndex = 0;
-	(from == -1)
-			? startIndex = _m_size - 1
-			: startIndex = from;
+	(from == -1) ? startIndex = _m_size - 1
+					: startIndex = from;
 
 	for (int index = startIndex; index >= 0; index--) {
 		if (valueIsEqualToValueAtIndex(index, value))
@@ -191,7 +192,7 @@ lastIndexOf(const T& value, const int from) {
 template<typename T>
 const bool
 PVector<T>::
-valueIsEqualToValueAtIndex(int index, const T& value) {
+valueIsEqualToValueAtIndex(int index, const T& value) const noexcept {
 	return _m_data[index] == value;
 }
 
@@ -236,7 +237,7 @@ resize(const int size) {
 template <typename T>
 const int
 PVector<T>::
-size() {
+size() const noexcept {
 	return _m_size;
 }
 
@@ -246,7 +247,7 @@ size() {
 template <typename T>
 const bool
 PVector<T>::
-startsWith(const T& value) {
+startsWith(const T& value) const noexcept {
 	if (_m_data[0] == value)
 		return true;
 	return false;
