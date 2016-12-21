@@ -19,7 +19,7 @@ class PVector {
 public:
 	int 	_m_size;
 	int		_m_capacity;
-	T*		_m_data;
+	T		_m_data[10];
 
 	static const int IndexNotFound = -1;
 public:
@@ -46,6 +46,7 @@ public:
 	const bool 	startsWith(const T& value) const noexcept;
 
 private:
+//	const bool	boundsCheck(const int index);
 	const bool 	valueIsEqualToValueAtIndex(int index, const T& value) const noexcept;
 };
 
@@ -78,7 +79,7 @@ PVector()
 template <typename T>
 PVector<T>::
 ~PVector() {
-	delete _m_data;
+
 }
 
 /*
@@ -200,9 +201,11 @@ template <typename T>
 void
 PVector<T>::
 insert(const int index, const T& value) {
-	_m_data[0] = 500;
+	for (int i=_m_size; i>index; i--) {
+		_m_data[i] = _m_data[i-1];
+	}
+	_m_data[index] = value;
 	_m_size++;
-	_m_capacity++;
 }
 
 /*
