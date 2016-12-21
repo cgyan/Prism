@@ -36,6 +36,7 @@ public:
 	const int	indexOf(const T& value, const int from=0) const noexcept;
 	const int	lastIndexOf(const T& value, const int from=-1) const noexcept;
 	void 		removeLast();
+	void		replace(const int index, const T& value);
 	void 		reserve(const int size);
 	void 		resize(const int size);
 	const int 	size() const noexcept;
@@ -217,6 +218,16 @@ void
 PVector<T>::
 removeLast() {
 	--_m_size;
+}
+
+/*
+ *
+ */
+template <typename T>
+void
+PVector<T>::
+replace(const int index, const T& value) {
+	_m_data[index] = value;
 }
 
 /*
