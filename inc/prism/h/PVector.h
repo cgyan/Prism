@@ -19,11 +19,12 @@ class PVector {
 public:
 	int 	_m_size;
 	int		_m_capacity;
-	T		_m_data[10];
+	T*		_m_data;
 
 	static const int IndexNotFound = -1;
 public:
 				PVector();
+				~PVector();
 	void 		append(const T& value);
 	T&			at(const int index);
 	const int	capacity() const noexcept;
@@ -34,6 +35,7 @@ public:
 	const bool	endsWith(const T& value) const noexcept;
 	void		fill(const T& value);
 	const int	indexOf(const T& value, const int from=0) const noexcept;
+	void		insert(const int index, const T& value);
 	const int	lastIndexOf(const T& value, const int from=-1) const noexcept;
 	void 		removeLast();
 	void		replace(const int index, const T& value);
@@ -69,6 +71,15 @@ PVector()
   _m_capacity(0),
   _m_data()
 {}
+
+/*
+ *
+ */
+template <typename T>
+PVector<T>::
+~PVector() {
+	delete _m_data;
+}
 
 /*
  *
@@ -180,6 +191,18 @@ indexOf(const T& value, const int from) const noexcept {
 			return index;
 	}
 	return IndexNotFound;
+}
+
+/*
+ *
+ */
+template <typename T>
+void
+PVector<T>::
+insert(const int index, const T& value) {
+	_m_data[0] = 500;
+	_m_size++;
+	_m_capacity++;
 }
 
 /*
