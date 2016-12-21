@@ -46,8 +46,10 @@ public:
 	const bool 	startsWith(const T& value) const noexcept;
 
 private:
-//	const bool	boundsCheck(const int index);
+	const bool	indexIsWithinBounds(const int index) const;
+	void		shiftElementsUpAfterInsertionPoint(const int index);
 	const bool 	valueIsEqualToValueAtIndex(int index, const T& value) const noexcept;
+	bool indexIsNotValidInsertionPoint(const int index);
 };
 
 template <typename T>
@@ -99,9 +101,19 @@ template<typename T>
 T&
 PVector<T>::
 at(const int index) {
-	if (index < 0 || index >= this->size())
+	if (!indexIsWithinBounds(index))
 		throw prism::OutOfBoundsException(index);
 	return _m_data[index];
+}
+
+/*
+ *
+ */
+template <typename T>
+const bool
+PVector<T>::
+indexIsWithinBounds(const int index) const {
+	return index >= 0 && index < _m_size;
 }
 
 /*
@@ -180,6 +192,13 @@ fill(const T& value) {
 		_m_data[i] = value;
 }
 
+template<typename T>
+bool
+PVector<T>::
+indexIsNotValidInsertionPoint(const int index) {
+	return index < 0 || index > _m_size;
+}
+
 /*
  *
  */
@@ -201,10 +220,12 @@ template <typename T>
 void
 PVector<T>::
 insert(const int index, const T& value) {
-	for (int i=_m_size; i>index; i--) {
-		_m_data[i] = _m_data[i-1];
-	}
-	_m_data[index] = value;
+	if (indexIsNotValidInsertionPoint(index))
+		throw prism::OutOfBoundsException(index);
+
+	shiftElementsUpAfterInsertionPoint(index);
+
+	replace(index, value);
 	_m_size++;
 }
 
@@ -279,6 +300,18 @@ resize(const int size) {
 	if (size < 0)
 		throw prism::OutOfBoundsException(size);
 	_m_size = size;
+}
+
+/*
+ *
+ */
+template <typename T>
+void
+PVector<T>::
+shiftElementsUpAfterInsertionPoint(const int index) {
+	for (int i=_m_size; i>index; i--) {
+		_m_data[i] = _m_data[i-1];
+	}
 }
 
 /*
