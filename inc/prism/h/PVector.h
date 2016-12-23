@@ -24,7 +24,9 @@ public:
 	static const int IndexNotFound = -1;
 public:
 				PVector();
+				PVector(const int size, const T& value=T());
 				~PVector();
+
 	void 		append(const T& value);
 	T&			at(const int index);
 	const int	capacity() const noexcept;
@@ -49,7 +51,7 @@ private:
 	const bool	indexIsWithinBounds(const int index) const;
 	void		shiftElementsUpAfterInsertionPoint(const int index);
 	const bool 	valueIsEqualToValueAtIndex(int index, const T& value) const noexcept;
-	bool indexIsNotValidInsertionPoint(const int index);
+	bool 		indexIsNotValidInsertionPoint(const int index);
 };
 
 template <typename T>
@@ -74,6 +76,23 @@ PVector()
   _m_capacity(0),
   _m_data()
 {}
+
+/*
+ *
+ */
+template <typename T>
+PVector<T>::
+PVector(const int size, const T& value)
+: _m_size(0),
+  _m_capacity(0),
+  _m_data()
+{
+	for (int index = 0; index < size; index++)
+		_m_data[index] = value;
+
+	_m_size = size;
+	_m_capacity = _m_size;
+}
 
 /*
  *
