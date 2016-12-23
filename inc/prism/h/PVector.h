@@ -11,6 +11,7 @@
 
 #include <prism/h/global.h>
 #include <prism/h/OutOfBoundsException.h>
+#include <prism/h/algorithm.h>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -87,8 +88,7 @@ PVector(const int size, const T& value)
   _m_capacity(0),
   _m_data()
 {
-	for (int index = 0; index < size; index++)
-		_m_data[index] = value;
+	prism::fill(&_m_data[0], &_m_data[size], value);
 
 	_m_size = size;
 	_m_capacity = _m_size;
@@ -159,13 +159,8 @@ clear() noexcept {
 template<typename T>
 const bool PVector<T>::
 contains(const T& value) const noexcept {
-	int i = 0;
-	while (i < _m_size) {
-		if (_m_data[i] == value)
-			return true;
-		++i;
-	}
-	return false;
+	return (prism::find(&_m_data[0], &_m_data[_m_size], value) == &_m_data[_m_size])
+			? false : true;
 }
 
 /*
@@ -174,11 +169,7 @@ contains(const T& value) const noexcept {
 template<typename T>
 const int PVector<T>::
 count(const T& value) const noexcept {
-	int c = 0;
-	for (int i = 0; i < _m_size; i++)
-		if (_m_data[i] == value)
-			++c;
-	return c;
+	return prism::count(&_m_data[0], &_m_data[_m_size], value);
 }
 
 /*
@@ -207,8 +198,7 @@ endsWith(const T& value) const noexcept {
 template<typename T>
 void PVector<T>::
 fill(const T& value) {
-	for (int i = 0; i < _m_size; i++)
-		_m_data[i] = value;
+	prism::fill(&_m_data[0], &_m_data[_m_size], value);
 }
 
 template<typename T>
@@ -371,11 +361,7 @@ startsWith(const T& value) const noexcept {
 template <typename T>
 const bool
 operator==(const PVector<T>& lhs, const PVector<T>& rhs) {
-	for (int index = 0; index < lhs.size(); index++) {
-		if (lhs._m_data[index] != rhs._m_data[index])
-			return false;
-	}
-	return true;
+	return prism::equal(&lhs._m_data[0], &lhs._m_data[lhs._m_size], &rhs._m_data[0]);
 }
 
 /*
