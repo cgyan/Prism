@@ -39,6 +39,7 @@ public:
 	void		fill(const T& value);
 	const int	indexOf(const T& value, const int from=0) const noexcept;
 	void		insert(const int index, const T& value);
+	void		insert(const int index, const int count, const T& value);
 	const int	lastIndexOf(const T& value, const int from=-1) const noexcept;
 	void 		removeLast();
 	void		replace(const int index, const T& value);
@@ -201,6 +202,7 @@ fill(const T& value) {
 	prism::fill(&_m_data[0], &_m_data[_m_size], value);
 }
 
+
 template<typename T>
 bool
 PVector<T>::
@@ -236,6 +238,19 @@ insert(const int index, const T& value) {
 
 	replace(index, value);
 	_m_size++;
+}
+
+/*
+ *
+ */
+template<typename T>
+void
+PVector<T>::
+insert(const int index, const int count, const T& value) {
+	prism::copy_backward(&_m_data[index], &_m_data[_m_size], &_m_data[_m_size + count]);
+	prism::fill(&_m_data[index], &_m_data[index + count], value);
+
+	_m_size += count;
 }
 
 /*
