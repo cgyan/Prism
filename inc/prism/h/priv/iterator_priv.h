@@ -112,7 +112,7 @@ template <class InputIterator>
 typename prism::iterator_traits<InputIterator>::difference_type
 distance(InputIterator first, InputIterator last) {
 	typedef typename prism::iterator_traits<InputIterator>::iterator_category it_cat;
-	return distance_aux(first, last, it_cat());
+	return prism::priv::distance_aux(first, last, it_cat());
 }
 
 /*

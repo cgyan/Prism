@@ -41,7 +41,7 @@ struct iterator_traits  {
 	typedef typename Iterator::reference 			reference;
 };
 
-// specialization for pointers
+// Specialisation for pointers
 template<class T>
 struct iterator_traits<T*> {
     typedef T 										value_type;
@@ -51,7 +51,7 @@ struct iterator_traits<T*> {
     typedef T& 										reference;
 };
 
-// specialization for pointers to const
+// Specialisation for pointers to const
 template<class T>
 struct iterator_traits<const T*> {
     typedef T 										value_type;
