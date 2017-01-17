@@ -204,6 +204,11 @@ struct IsUnion : public std::is_union<T>{};
 //============================================================================================
 template <typename T>
 struct Rank : public std::rank<T>{};
+//============================================================================================
+// RemovePointer
+//============================================================================================
+template <typename T>
+struct RemovePointer : public std::remove_pointer<T>{};
 
 PRISM_END_NAMESPACE
 #endif /* PRISM_TYPE_TRAITS_WRAPPERS_H_ */

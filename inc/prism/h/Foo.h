@@ -108,6 +108,7 @@ public:
 
 	/*
 	 * This Foo aready exists. this->name might be null or points to a StringType object
+	 * Existing dynamic resources should be released prior to assignment
 	 */
 	Foo& operator=(Foo&& rhs) noexcept {
 		cout << "Foo::operator=(Foo&&)\n";

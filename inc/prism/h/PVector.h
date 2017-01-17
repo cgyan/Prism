@@ -27,6 +27,11 @@ struct Range {
 	T* last;
 	Range(T* first, T* last=nullptr)
 	: first(first), last(last) {}
+
+	const int
+	length() const {
+		return last - first;
+	}
 };
 
 template <typename T>
@@ -83,8 +88,33 @@ public:
 		_m_rangeInitialize(rhs.cbegin(), rhs.cend());
 	}
 
+	PVector(PVector<T>&& rhs)
+	: _m_start(rhs._m_start),
+	  _m_end(rhs._m_end),
+	  _m_finish(rhs._m_finish)
+	{
+		rhs._m_start = nullptr;
+		rhs._m_end = nullptr;
+		rhs._m_finish = nullptr;
+	}
+
 	~PVector() {
 		delete [] _m_start;
+	}
+
+	prism::Allocator<T>
+	allocator() {
+		return prism::Allocator<T>();
+	}
+
+	void
+	append(const T& value) {
+		insert(size(), 1, value);
+	}
+
+	void
+	append(T&& value) {
+		insert(size(), 1, prism::forward<T>(value));
 	}
 
 	T&
@@ -227,23 +257,57 @@ public:
 	const int
 	indexOf(const T& value, const int from=0) {
 		if (empty()) return IndexNotFound;
+		return _m_findFirstIndexOf(from, value);
+	}
 
-		Range<T> source(_m_start + from, _m_end);
-		iterator it = prism::find(source.first, source.last, value);
+	void
+	insert(const int index, const T& value) {
+		insert(index, 1, value);
+	}
 
-		if (it == end()) return IndexNotFound;
-		return prism::distance(begin(), it);
+	void
+	insert(const int index, T&& value) {
+		insert(index, 1, prism::forward<T>(value));
+	}
+
+	iterator
+	insert(const_iterator pos, const T& value) {
+		int index = prism::distance(cbegin(), pos);
+		insert(index, 1, value);
+		return begin() + index;
+	}
+
+	void
+	insert(const_iterator pos, const int count, const T& value) {
+		int index = prism::distance(cbegin(), pos);
+		insert(index, count, value);
+	}
+
+	void
+	insert(const_iterator pos, T&& value) {
+		int index = prism::distance(cbegin(), pos);
+		insert(index, 1, prism::forward<T>(value));
 	}
 
 	void
 	insert(const int index, const int count, const T& value) {
-		if (_m_isInvalidInsertionPoint(index))
-			throw prism::OutOfBoundsException(index);
+		_m_validateInsertionPoint(index);
+		_m_ensureSufficientStorage(count);
+		_m_insertAux(index, count, value);
+	}
 
-		if(_m_needsReallocation(size() + count))
-			reserve((capacity() == 0) ? count : (capacity() + count) * _m_growth);
+	void
+	insert(const_iterator pos, std::initializer_list<T> il) {
+		insert(pos, il.begin(), il.end());
+	}
 
-		_m_insert_aux(index, count, value);
+	template <typename ForwardIterator>
+	void
+	insert(const_iterator pos, ForwardIterator first, ForwardIterator last) {
+		int index = pos - cbegin();
+		_m_validateInsertionPoint(index);
+		_m_ensureSufficientStorage(last - first);
+		_m_insertRange(index, first, last);
 	}
 
 	T&
@@ -259,13 +323,7 @@ public:
 	const int
 	lastIndexOf(const T& value, const int from=-1) {
 		if (empty()) return IndexNotFound;
-
-		T* endRange = from == -1 ? _m_end : _m_start + from;
-		Range<T> source(_m_start, endRange);
-		iterator it = prism::find_last(source.first, source.last, value);
-
-		if (it == end()) return IndexNotFound;
-		return prism::distance(begin(), it);
+		return _m_findLastIndexOf(from, value);
 	}
 
 	prism::PVector<T>
@@ -275,6 +333,16 @@ public:
 		Range<T> source(first, last);
 
 		return prism::PVector<T>(source.first, source.last);
+	}
+
+	void
+	prepend(const T& value) {
+		insert(0, 1, value);
+	}
+
+	void
+	prepend(T&& value) {
+		insert(0, 1, prism::forward<T>(value));
 	}
 
 	reverse_iterator
@@ -297,6 +365,21 @@ public:
 		return const_reverse_iterator(_m_start);
 	}
 
+	iterator
+	remove(const_iterator pos) {
+		int index = pos-cbegin();
+		remove(index);
+		return begin() + index;
+	}
+
+	iterator
+	remove(const_iterator first, const_iterator last) {
+		int index = first-cbegin();
+		int rangeLength = last-first;
+		remove(index, rangeLength);
+		return begin() + index;
+	}
+
 	void
 	remove(const int index) {
 		remove(index, 1);
@@ -308,7 +391,8 @@ public:
 			throw prism::OutOfBoundsException(index);
 
 		// TODO
-		// removed values are overwritten, need to be destroyed properly
+		// removed values are overwritten, ok if fundamental types
+		// otherwise need to be destroyed properly
 		Range<T> source(_m_start+index+count, _m_end);
 		Range<T> destination(_m_start+index);
 		prism::copy(source.first, source.last, destination.first);
@@ -317,7 +401,7 @@ public:
 
 	void
 	removeAll(const T& value) {
-		Range<T> source(_m_start, _m_end);
+		Range<T> source = _m_occupiedRange();
 		_m_end = prism::remove(source.first, source.last, value);
 	}
 
@@ -329,7 +413,7 @@ public:
 	template <typename Predicate>
 	void
 	removeIf(Predicate pred) {
-		Range<T> source(_m_start, _m_end);
+		Range<T> source = _m_occupiedRange();
 		_m_end = prism::remove_if(source.first, source.last, pred);
 	}
 
@@ -426,6 +510,46 @@ public:
 		return *this;
 	}
 
+	PVector<T>&
+	operator=(PVector<T>&& rhs) {
+		// todo !! existing memory is not deleted !!
+		_m_start = rhs._m_start;
+		_m_end = rhs._m_end;
+		_m_finish = rhs._m_finish;
+		rhs._m_start = nullptr;
+		rhs._m_end = nullptr;
+		rhs._m_finish = nullptr;
+		return *this;
+	}
+
+	PVector<T>&
+	operator<<(const T& value) {
+		return *this += value;
+	}
+
+	PVector<int>&
+	operator+=(const T& value) {
+		append(value);
+		return *this;
+	}
+
+	PVector<T>
+	operator+(const PVector<T>& rhs) {
+		PVector<T> copy(*this);
+		return copy << rhs;
+	}
+
+	PVector<T>&
+	operator+=(const PVector<T>& rhs) {
+		return *this << rhs;
+	}
+
+	PVector<T>&
+	operator<<(const PVector<T>& rhs) {
+		insert(cend(), rhs.cbegin(), rhs.cend());
+		return *this;
+	}
+
 private:
 	T*
 	_m_allocate(int newCapacity) {
@@ -486,9 +610,10 @@ private:
 		return newSize > capacity();
 	}
 
-	void _m_insert_aux(const int index, const int count, const T& value) {
+	void
+	_m_insertAux(const int index, const int count, const T& value) {
 		_m_shiftElementsUp(begin()+index, count);
-		_m_fillInsert(begin()+index, count, value);
+		_m_fillInsert(begin() + index, count, value);
 		_m_increaseSizeBy(count);
 	}
 
@@ -523,7 +648,8 @@ private:
 		prism::fill(from, end(), paddingValue);
 	}
 
-	int _m_numNewElements(const int size) {
+	int
+	_m_numNewElements(const int size) {
 		return size - this->size();
 	}
 
@@ -566,6 +692,41 @@ private:
 	Range<T>
 	_m_occupiedRange() {
 		return Range<T>(_m_start, _m_end);
+	}
+
+	const int
+	_m_findFirstIndexOf(const int from, const T& value) {
+		Range<T> source(_m_start + from, _m_end);
+		iterator it = prism::find(source.first, source.last, value);
+		return (it == end()) ? IndexNotFound : prism::distance(begin(), it);
+	}
+
+	const int
+	_m_findLastIndexOf(const int from, const T& value) {
+		T* endRange = from == -1 ? _m_end : _m_start + from;
+		Range<T> source(_m_start, endRange);
+		iterator it = prism::find_last(source.first, source.last, value);
+		return (it == end()) ? IndexNotFound : prism::distance(begin(), it);
+	}
+
+	template <typename ForwardIterator>
+	void
+	_m_insertRange(const int index, ForwardIterator first, ForwardIterator last) {
+		_m_shiftElementsUp(begin()+index, last-first);
+		prism::copy(first, last, begin()+index);
+		_m_increaseSizeBy(last-first);
+	}
+
+	void
+	_m_validateInsertionPoint(const int index) {
+		if (_m_isInvalidInsertionPoint(index))
+			throw prism::OutOfBoundsException(index);
+	}
+
+	void
+	_m_ensureSufficientStorage(const int count) {
+		if (_m_needsReallocation(size() + count))
+			reserve((capacity() == 0) ? count : (capacity() + count) * _m_growth);
 	}
 };
 
