@@ -65,10 +65,11 @@ public:
 			for (int i=0; i<pointers.size(); i++)
 				std::cerr << "--- [" << i+1 << "] " << pointers.at(i) << "\n";
 		}
-		else
-			std::cerr << "---------------------------------------------------\n"
-						 "LogAllocator report: all memory freed successfully!\n"
-						 "---------------------------------------------------" << std::endl;
+		else {
+//			std::cerr << "---------------------------------------------------\n"
+//						 "LogAllocator report: all memory freed successfully!\n"
+//						 "---------------------------------------------------" << std::endl;
+		}
 	}
 
 	/* example usage (using an int allocator to create a String allocator):

@@ -34,9 +34,19 @@ struct Range {
 	}
 };
 
-template <typename T>
+template <typename T, typename Allocator = prism::Allocator<T>>
 class PVector {
+private:
+	using alloc_traits 				= prism::AllocatorTraits<Allocator>;
 public:
+	using allocator_type			= Allocator;
+	using value_type				= typename alloc_traits::value_type;
+	using reference					= typename alloc_traits::reference;
+	using const_reference			= typename alloc_traits::const_reference;
+	using pointer					= typename alloc_traits::pointer;
+	using const_pointer				= typename alloc_traits::const_pointer;
+	using difference_type			= typename alloc_traits::difference_type;
+	using size_type					= typename alloc_traits::size_type;
 	using iterator 					= prism::SequenceIterator<T, false>;
 	using const_iterator 			= prism::SequenceIterator<T, true>;
 	using reverse_iterator			= prism::ReverseIterator<iterator>;
@@ -102,19 +112,19 @@ public:
 		delete [] _m_start;
 	}
 
-	prism::Allocator<T>
+	allocator_type
 	allocator() {
-		return prism::Allocator<T>();
+		return allocator_type();
 	}
 
 	void
 	append(const T& value) {
-		insert(size(), 1, value);
+		insert(end(), 1, value);
 	}
 
 	void
 	append(T&& value) {
-		insert(size(), 1, prism::forward<T>(value));
+		insert(end(), 1, prism::forward<T>(value));
 	}
 
 	T&
@@ -445,11 +455,11 @@ public:
 		if (_m_isNegative(size))
 			throw prism::OutOfBoundsException(size);
 
-		if (_m_resizingGreater(size)) {
+		if (_m_isResizingGreater(size)) {
 			int numNewElements = size - this->size();
 			_m_resizeGreater(numNewElements, paddingValue);
 		}
-		else if(_m_resizingSmaller(size))
+		else if(_m_isResizingSmaller(size))
 			_m_resizeSmaller(size);
 	}
 
@@ -635,22 +645,21 @@ private:
 	void
 	_m_resizeGreater(int numNewElements, const T& paddingValue) {
 		int newSize = size() + numNewElements;
-		if (_m_needsReallocation(newSize))
-			_m_reallocateAndCopy(newSize);
+		_m_ensureSufficientStorage(newSize);
 
 		_m_increaseSizeBy(numNewElements);
 		iterator from = end() - numNewElements;
 		_m_padEndWithValue(from, paddingValue);
 	}
 
-	void
-	_m_padEndWithValue(iterator from, const T& paddingValue) {
-		prism::fill(from, end(), paddingValue);
-	}
-
 	int
 	_m_numNewElements(const int size) {
 		return size - this->size();
+	}
+
+	void
+	_m_padEndWithValue(iterator from, const T& paddingValue) {
+		prism::fill(from, end(), paddingValue);
 	}
 
 	template <typename ForwardIterator>
@@ -663,13 +672,13 @@ private:
 	}
 
 	const bool
-	_m_resizingGreater(const int size) {
+	_m_isResizingGreater(const int size) {
 		return size > this->size();
 	}
 
 	const bool
-	_m_resizingSmaller(const int size) {
-		return !_m_resizingGreater(size);
+	_m_isResizingSmaller(const int size) {
+		return !_m_isResizingGreater(size);
 	}
 
 	void
@@ -741,6 +750,12 @@ template <typename T>
 const bool
 operator!=(const PVector<T>& lhs, const PVector<T>& rhs) {
 	return !(lhs==rhs);
+}
+
+template <typename T>
+const bool
+operator<(const PVector<T>& lhs, const PVector<T>& rhs) {
+	return false;
 }
 
 PRISM_END_NAMESPACE
