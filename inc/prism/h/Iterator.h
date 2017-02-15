@@ -167,9 +167,9 @@ public:
 	using reference				= prism::ConditionalType_t<IsConst, const T&, T&>;
 	using iterator_category 	= prism::random_access_iterator_tag;
 	using difference_type 		= std::ptrdiff_t;
-
+public:
 	pointer p;
-
+public:
 	SequenceIterator()
 	: p(nullptr)
 	{}

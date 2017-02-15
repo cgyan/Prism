@@ -450,6 +450,14 @@ template <class ForwardIterator>
 const bool
 is_sorted(ForwardIterator first, ForwardIterator last);
 
+///
+///
+///
+template <typename ForwardIterator1, typename ForwardIterator2>
+const bool
+lexicographical_compare(ForwardIterator1 first1, ForwardIterator1 last1,
+						ForwardIterator2 first2, ForwardIterator2 last2);
+
 /// @brief					Rearranges a range into a heap order
 ///
 ///							todo WRITE A BETTER EXPLANATION OF WHAT A HEAP IS
@@ -500,6 +508,23 @@ max(const T& a, const T& b);
 template <class T>
 const T&
 min(const T& a, const T& b);
+
+///
+///
+///
+///
+template <typename InputIterator, typename OutputIterator>
+OutputIterator
+move(InputIterator first, InputIterator last, OutputIterator otherFirst);
+
+///
+///
+///
+///
+template <typename BidirectionalIterator1, typename BidirectionalIterator2>
+BidirectionalIterator2
+move_backward(BidirectionalIterator1 first, BidirectionalIterator1 last,
+				BidirectionalIterator2 otherLast);
 
 /// @brief 					Checks elements in a range to see if they don't match a condition
 ///
@@ -967,6 +992,22 @@ uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterato
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
 uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst);
+
+///
+///
+///
+template <typename BidirectionalIterator1, typename BidirectionalIterator2>
+BidirectionalIterator2
+uninitialized_move_backwards(BidirectionalIterator1 first,
+								BidirectionalIterator1 last,
+								BidirectionalIterator2 otherLast);
+
+///
+///
+///
+template <typename ForwardIterator1, typename ForwardIterator2>
+ForwardIterator2
+uninitialized_move(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst);
 
 } // end namespace prism
 

@@ -100,7 +100,6 @@ public:
 	/**
 	 *
 	 */
-//	template <class U, typename ...Args>
 	template <typename ...Args>
 	void
 	construct(pointer p, Args&& ...args)

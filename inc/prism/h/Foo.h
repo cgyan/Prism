@@ -52,7 +52,7 @@ public:
 	 */
 	Foo() noexcept
 	: name(nullptr)
-	{}
+	{cout << "Foo\n";}
 
 
 	/*
@@ -79,7 +79,8 @@ public:
 
 	/*
 	 * This Foo already exists so need to free up its resources before assigning
-	 * rhs's resources to it
+	 * rhs's resources to it.
+	 * After this routine rhs should be unmodified
 	 */
 	Foo& operator=(Foo const & rhs) {
 		cout << "Foo::operator=(Foo const&)\n";
@@ -97,6 +98,7 @@ public:
 	/*
 	 * This Foo doesn't exist yet but will steal the resources from rhs instead of initializing
 	 * its own resources
+	 * After this routine rhs will be left in a valid but unspecified state
 	 */
 	Foo(Foo&& rhs) noexcept
 	: name(nullptr)
@@ -108,7 +110,8 @@ public:
 
 	/*
 	 * This Foo aready exists. this->name might be null or points to a StringType object
-	 * Existing dynamic resources should be released prior to assignment
+	 * Existing dynamic resources should be released prior to assignment.
+	 * After this routine rhs is left in a valid but unspecified state
 	 */
 	Foo& operator=(Foo&& rhs) noexcept {
 		cout << "Foo::operator=(Foo&&)\n";
@@ -132,6 +135,16 @@ public:
 		return out;
 	}
 };
+
+const bool
+operator==(Foo const & a, Foo const & b) {
+	return a.getName() == b.getName();
+}
+
+const bool
+operator!=(Foo const & a, Foo const & b) {
+	return !(a == b);
+}
 
 
 

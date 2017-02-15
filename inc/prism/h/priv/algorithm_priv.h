@@ -413,7 +413,7 @@ Function
 for_each(InputIterator first, InputIterator last, Function func) {
 	while (first != last) {
 		func(*first);
-		first++;
+		++first;
 	}
 	return func;
 }
@@ -432,6 +432,22 @@ is_sorted(ForwardIterator first, ForwardIterator last) {
 		++first;
 	}
 	return true;
+}
+
+/**
+ *
+ */
+template <typename ForwardIterator1, typename ForwardIterator2>
+const bool
+lexicographical_compare(ForwardIterator1 first1, ForwardIterator1 last1,
+						ForwardIterator2 first2, ForwardIterator2 last2) {
+	while (first1 != last1) {
+		if (first2 == last2 || *first2 < *first1) return false;
+		else if (*first1 < *first2) return true;
+		++first1;
+		++first2;
+	}
+	return first2 != last2;
 }
 
 /**
@@ -474,6 +490,33 @@ min(const T& a, const T& b) {
 /**
  *
  */
+template <typename InputIterator, typename OutputIterator>
+OutputIterator
+move(InputIterator first, InputIterator last, OutputIterator otherFirst) {
+	while (first != last) {
+		*otherFirst = prism::move(*first);
+		++otherFirst; ++first;
+	}
+	return otherFirst;
+}
+
+/**
+ *
+ */
+template <typename BidirectionalIterator1, typename BidirectionalIterator2>
+BidirectionalIterator2
+move_backward(BidirectionalIterator1 first, BidirectionalIterator1 last,
+				BidirectionalIterator2 otherLast) {
+
+	while (last != first)
+		*(--otherLast) = prism::move(*(--last));
+
+	return otherLast;
+}
+
+/**
+ *
+ */
 template <class InputIterator, class Predicate>
 bool
 none_of(InputIterator first, InputIterator last, Predicate pred) {
@@ -490,16 +533,16 @@ none_of(InputIterator first, InputIterator last, Predicate pred) {
 template <class ForwardIterator, class T>
 ForwardIterator
 remove(ForwardIterator first, ForwardIterator last, const T& value) {
-	  ForwardIterator result = first;
-	  while (first!=last) {
-	    if (!(*first == value)) {
-	      *result = *first;
-	      ++result;
-	    }
-	    ++first;
-	  }
-	  return result;
+	ForwardIterator result = first;
+	while (first!=last) {
+		if (!(*first == value)) {
+			*result = *first;
+			++result;
+		}
+		++first;
 	}
+	return result;
+}
 
 /**
  *
@@ -508,22 +551,23 @@ template <class InputIterator, class OutputIterator, class T>
 OutputIterator
 remove_copy (InputIterator first, InputIterator last, OutputIterator otherFirst, const T& value)
 {
-  while (first!=last) {
-    if (!(*first == value)) {
-      *otherFirst = *first;
-      ++otherFirst;
-    }
-    ++first;
-  }
-  return otherFirst;
+	while (first!=last) {
+		if (!(*first == value)) {
+			*otherFirst = *first;
+			++otherFirst;
+		}
+		++first;
+	}
+	return otherFirst;
 }
 
 /**
  *
  */
-template <class InputIterator, class OutputIterator, class Predicate>
+template <class InputIterator, class OutputIterator, class UnaryPredicate>
 OutputIterator
-remove_copy_if (InputIterator first, InputIterator last, OutputIterator otherFirst, Predicate pred)
+remove_copy_if (InputIterator first, InputIterator last,
+					OutputIterator otherFirst, UnaryPredicate pred)
 {
   while (first!=last) {
     if (!pred(*first)) {
@@ -538,9 +582,9 @@ remove_copy_if (InputIterator first, InputIterator last, OutputIterator otherFir
 /**
  *
  */
-template <class ForwardIterator, class Predicate>
+template <class ForwardIterator, class UnaryPredicate>
 ForwardIterator
-remove_if(ForwardIterator first, ForwardIterator last, Predicate pred)
+remove_if(ForwardIterator first, ForwardIterator last, UnaryPredicate pred)
 {
 	ForwardIterator result = first;
 	while (first != last) {
@@ -746,6 +790,35 @@ uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 ot
 		++first;
 		++otherFirst;
 	}
+	return otherFirst;
+}
+
+/**
+ *
+ */
+template <typename BidirectionalIterator1, typename BidirectionalIterator2>
+BidirectionalIterator2
+uninitialized_move_backwards(BidirectionalIterator1 first,
+								BidirectionalIterator1 last,
+								BidirectionalIterator2 otherLast)
+{
+	using value_type = typename prism::iterator_traits<BidirectionalIterator1>::value_type;
+	while (last != first) {
+		new (static_cast<void*>(&*--otherLast)) value_type(prism::move(*--last));
+	}
+	return otherLast;
+}
+
+/**
+ *
+ */
+template <typename ForwardIterator1, typename ForwardIterator2>
+ForwardIterator2
+uninitialized_move(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
+	using value_type = typename prism::iterator_traits<ForwardIterator1>::value_type;
+		while (last != first) {
+			new (static_cast<void*>(&*otherFirst++)) value_type(prism::move(*first++));
+		}
 	return otherFirst;
 }
 
