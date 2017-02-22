@@ -18,7 +18,7 @@ namespace priv {
  */
 template <class InputIterator>
 void
-advance_aux(InputIterator& iterator, int numSteps, prism::forward_iterator_tag) {
+advance_aux(InputIterator& iterator, int numSteps, std::forward_iterator_tag) {
 	while (numSteps-- >= 0)
 		++iterator;
 }
@@ -29,7 +29,7 @@ advance_aux(InputIterator& iterator, int numSteps, prism::forward_iterator_tag) 
  */
 template <class BidirectionalIterator>
 void
-advance_aux(BidirectionalIterator& iterator, int numSteps, prism::bidirectional_iterator_tag) {
+advance_aux(BidirectionalIterator& iterator, int numSteps, std::bidirectional_iterator_tag) {
 	if (numSteps > 0) {
 		while (numSteps-- > 0)
 			++iterator;
@@ -41,19 +41,19 @@ advance_aux(BidirectionalIterator& iterator, int numSteps, prism::bidirectional_
 }
 
 /**
- * Advance function for random access iterators.
+ *
  */
 template <class RandomAccessIterator>
 void
-advance_aux(RandomAccessIterator& iterator, int numSteps, prism::random_access_iterator_tag)
+advance_aux(RandomAccessIterator& iterator, int numSteps, std::random_access_iterator_tag)
 { iterator += numSteps; }
 
 /**
- * Returns the distance between two ForwardIterators.
+ *
  */
-template <class ForwardIterator>
-typename prism::iterator_traits<ForwardIterator>::difference_type
-distance_aux(ForwardIterator first, ForwardIterator last, forward_iterator_tag) {
+template <class InputIterator>
+typename prism::iterator_traits<InputIterator>::difference_type
+distance_aux(InputIterator first, InputIterator last, std::input_iterator_tag) {
 	int count = 0;
 	while (first++ != last)
 		++count;
@@ -61,11 +61,11 @@ distance_aux(ForwardIterator first, ForwardIterator last, forward_iterator_tag) 
 }
 
 /**
- * Returns the distance between two RandomAccessIterators.
+ *
  */
 template <class RandomAccessIterator>
 typename prism::iterator_traits<RandomAccessIterator>::difference_type
-distance_aux(RandomAccessIterator first, RandomAccessIterator last, random_access_iterator_tag) {
+distance_aux(RandomAccessIterator first, RandomAccessIterator last, std::random_access_iterator_tag) {
 	return last - first;
 }
 
@@ -111,7 +111,7 @@ begin(T(&array)[Size])
 template <class InputIterator>
 typename prism::iterator_traits<InputIterator>::difference_type
 distance(InputIterator first, InputIterator last) {
-	typedef typename prism::iterator_traits<InputIterator>::iterator_category it_cat;
+	using it_cat =  typename prism::iterator_traits<InputIterator>::iterator_category;
 	return prism::priv::distance_aux(first, last, it_cat());
 }
 

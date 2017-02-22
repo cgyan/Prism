@@ -58,7 +58,7 @@ heapify(RandomAccessIterator node, RandomAccessIterator first, RandomAccessItera
 template <class RandomAccessIterator>
 void
 sort_bubble(RandomAccessIterator first, RandomAccessIterator last,
-		prism::random_access_iterator_tag)
+		std::random_access_iterator_tag)
 {
 	RandomAccessIterator thisElement = first;
 	RandomAccessIterator nextElement = thisElement+1;
@@ -90,7 +90,7 @@ sort_bubble(RandomAccessIterator first, RandomAccessIterator last,
 template <class BidirectionalIterator>
 void
 sort_bubble(BidirectionalIterator first, BidirectionalIterator last,
-		prism::bidirectional_iterator_tag)
+		std::bidirectional_iterator_tag)
 {
 	BidirectionalIterator thisElement = first;
 	BidirectionalIterator nextElement = ++first;
@@ -126,7 +126,7 @@ sort_bubble(BidirectionalIterator first, BidirectionalIterator last,
 template <class RandomAccessIterator>
 void
 sort_quicksort(RandomAccessIterator first, RandomAccessIterator last,
-		prism::random_access_iterator_tag it_cat)
+		std::random_access_iterator_tag it_cat)
 {
 	RandomAccessIterator wall = first;
 	RandomAccessIterator pivot = last - 1;
@@ -160,7 +160,7 @@ sort_quicksort(RandomAccessIterator first, RandomAccessIterator last,
 template <class BidirectionalIterator>
 void
 sort_quicksort(BidirectionalIterator first, BidirectionalIterator last,
-		prism::bidirectional_iterator_tag)
+		std::bidirectional_iterator_tag)
 {
 	int count = 0;
 	BidirectionalIterator it = first;
@@ -173,7 +173,7 @@ sort_quicksort(BidirectionalIterator first, BidirectionalIterator last,
 	T * array = new T[count];
 	prism::copy(first, last, array);
 
-	priv::sort_quicksort(array, array+count, prism::random_access_iterator_tag());
+	priv::sort_quicksort(array, array+count, std::random_access_iterator_tag());
 
 	count = 0;
 	while (first != last) {
@@ -244,11 +244,9 @@ any_of(InputIterator first, InputIterator last, Predicate pred) {
 template <class InputIterator, class OutputIterator>
 OutputIterator
 copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
-	while (first != last) {
-		*otherFirst = *first;
-		++first;
-		++otherFirst;
-	}
+	auto current = first;
+	for (; current != last; ++current, ++otherFirst)
+		*otherFirst = *current;
 	return otherFirst;
 }
 
@@ -260,9 +258,9 @@ BidirectionalIterator2
 copy_backward(BidirectionalIterator1 first,
 				BidirectionalIterator1 last,
 				BidirectionalIterator2 otherLast) {
-	while (last != first) {
-		*(--otherLast) = *(--last);
-	}
+	auto current = last;
+	while (current != first)
+		*(--otherLast) = *(--current);
 	return otherLast;
 }
 
@@ -493,10 +491,9 @@ min(const T& a, const T& b) {
 template <typename InputIterator, typename OutputIterator>
 OutputIterator
 move(InputIterator first, InputIterator last, OutputIterator otherFirst) {
-	while (first != last) {
-		*otherFirst = prism::move(*first);
-		++otherFirst; ++first;
-	}
+	auto current = first;
+	for (; current != last; ++current, ++otherFirst)
+		*otherFirst = std::move(*current);
 	return otherFirst;
 }
 
@@ -507,10 +504,9 @@ template <typename BidirectionalIterator1, typename BidirectionalIterator2>
 BidirectionalIterator2
 move_backward(BidirectionalIterator1 first, BidirectionalIterator1 last,
 				BidirectionalIterator2 otherLast) {
-
-	while (last != first)
-		*(--otherLast) = prism::move(*(--last));
-
+	auto current = last;
+	while (current != first)
+		*(--otherLast) = std::move(*--current);
 	return otherLast;
 }
 
@@ -750,7 +746,16 @@ swap_ranges(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 othe
 template <class ForwardIterator, class T>
 void
 uninitialized_fill(ForwardIterator first, ForwardIterator last, const T& value) {
-	uninitialized_fill_n(first, last-first, value);
+	auto current = first;
+	try {
+		for (; current != last; current++)
+			::new (static_cast<void*>(&*current)) T(value);
+	}
+	catch(...) {
+		for (auto it = first; it != current; it++)
+			(&*it)->~T();
+		throw;
+	}
 }
 
 /**
@@ -759,10 +764,7 @@ uninitialized_fill(ForwardIterator first, ForwardIterator last, const T& value) 
 template <class ForwardIterator, class T>
 void
 uninitialized_fill_n(ForwardIterator first, const int size, const T& value) {
-	for (int i=0; i<size; i++) {
-		new (static_cast<void*>(&*first)) T(value);
-		++first;
-	}
+	uninitialized_fill(first, first + size, value);
 }
 
 /**
@@ -771,7 +773,18 @@ uninitialized_fill_n(ForwardIterator first, const int size, const T& value) {
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
 uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
-	return uninitialized_copy_n(first, last-first, otherFirst);
+	using value_type = typename prism::iterator_traits<ForwardIterator1>::value_type;
+	auto current = first;
+	try {
+		for (; current != last; current++, otherFirst++)
+			::new (static_cast<void*>(&*otherFirst)) value_type(*current);
+	}
+	catch(...) {
+		for (auto it = first; it != current; it++)
+			(&*it)->~value_type();
+		throw;
+	}
+	return otherFirst;
 }
 
 /**
@@ -780,17 +793,7 @@ uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterato
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
 uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst) {
-	for (int i=0; i<size; i++) {
-
-		// the following simplified is:
-		//	new (otherFirst) T(first)
-
-		new (static_cast<void*>(&*otherFirst))
-				typename prism::iterator_traits<ForwardIterator1>::value_type(*first);
-		++first;
-		++otherFirst;
-	}
-	return otherFirst;
+	return uninitialized_copy(first, first + size, otherFirst);
 }
 
 /**
@@ -803,8 +806,16 @@ uninitialized_move_backwards(BidirectionalIterator1 first,
 								BidirectionalIterator2 otherLast)
 {
 	using value_type = typename prism::iterator_traits<BidirectionalIterator1>::value_type;
-	while (last != first) {
-		new (static_cast<void*>(&*--otherLast)) value_type(prism::move(*--last));
+	auto current = last;
+	try {
+		while (current != first)
+			::new (static_cast<void*>(&*--otherLast)) value_type(std::move(*--current));
+	}
+	catch(...) {
+		auto it = last;
+		while (it != current)
+			(&*--it)->~value_type();
+		throw;
 	}
 	return otherLast;
 }
@@ -816,9 +827,16 @@ template <typename ForwardIterator1, typename ForwardIterator2>
 ForwardIterator2
 uninitialized_move(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
 	using value_type = typename prism::iterator_traits<ForwardIterator1>::value_type;
-		while (last != first) {
-			new (static_cast<void*>(&*otherFirst++)) value_type(prism::move(*first++));
-		}
+	auto current = first;
+	try {
+		for (; current != last; current++, otherFirst++)
+			::new (static_cast<void*>(&*otherFirst)) value_type(std::move(*current));
+	}
+	catch(...) {
+		for (auto it = first; it != current; it++)
+			(&*it)->~value_type();
+		throw;
+	}
 	return otherFirst;
 }
 

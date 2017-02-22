@@ -46,7 +46,7 @@ template <class T, bool isConst>
 struct ListIterator {
 	typedef T 										value_type;
 	typedef std::ptrdiff_t 							difference_type;
-	typedef prism::bidirectional_iterator_tag 		iterator_category;
+	typedef std::bidirectional_iterator_tag 		iterator_category;
 	typedef ListNode<T>*							NodePtr;
 	typedef ListIterator<T, false> 					iterator;
 	typedef ListIterator<T, true> 					const_iterator;

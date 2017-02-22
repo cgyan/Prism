@@ -11,14 +11,15 @@
 
 
 #include <prism/h/Flags.h>
+#include <vector>
 #include <ostream>
 
 namespace prism {
 
 class Pointf;
 
-template <typename Pointf>
-class Vector;
+//template <typename Pointf>
+//class Vector;
 
 /// @class 	Circle prism/h/Circle.h prism/Circle
 ///
@@ -401,7 +402,7 @@ public:
 
 	Pointf				point(const float angle) const;
 
-	Vector<Pointf>		points(const int divisions) const;
+	std::vector<Pointf>	points(const int divisions) const;
 
 	const float 		radius() const;
 

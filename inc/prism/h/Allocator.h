@@ -36,14 +36,8 @@ struct AllocatorTraits {
 
 	static
 	void
-	deallocate(Allocator& alloc, pointer p) {
-		alloc.deallocate(p);
-	}
-
-	static
-	void
-	destroy(Allocator& alloc, pointer p) {
-		alloc.destroy(p);
+	deallocate(Allocator& alloc, pointer p, const size_type num=0) {
+		alloc.deallocate(p, num);
 	}
 
 	template <typename ...Args>
@@ -51,6 +45,12 @@ struct AllocatorTraits {
 	void
 	construct(Allocator& alloc, pointer p, Args&& ...args) {
 		alloc.construct(p, std::forward<Args>(args)...);
+	}
+
+	static
+	void
+	destroy(Allocator& alloc, pointer p) {
+		alloc.destroy(p);
 	}
 };
 //=============================================================================================

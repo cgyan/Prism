@@ -17,17 +17,6 @@
 PRISM_BEGIN_NAMESPACE
 
 /**********************************************************************************************
- * Tags to describe what kind of iterator a particular iterator type is. They are used in the
- * container algorithms to determine which is the best algorithm to use for that particular
- * type of iterator.
- *********************************************************************************************/
-struct input_iterator_tag {};
-struct output_iterator_tag {};
-struct forward_iterator_tag : public input_iterator_tag {};
-struct bidirectional_iterator_tag : public forward_iterator_tag {};
-struct random_access_iterator_tag : public bidirectional_iterator_tag {};
-
-/**********************************************************************************************
  * A useful way to extract types from an iterator
  * i.e. Stack<int> * p = iterator_traits<Stack<int> >::pointer;
  * i.e. Vector<float> * p = iterator_traits<RandomAccessIterator>::pointer;
@@ -46,7 +35,7 @@ template<class T>
 struct iterator_traits<T*> {
     typedef T 										value_type;
     typedef std::ptrdiff_t 							difference_type;
-    typedef prism::random_access_iterator_tag 		iterator_category;
+    typedef std::random_access_iterator_tag 		iterator_category;
     typedef T* 										pointer;
     typedef T& 										reference;
 };
@@ -56,7 +45,7 @@ template<class T>
 struct iterator_traits<const T*> {
     typedef T 										value_type;
     typedef std::ptrdiff_t 							difference_type;
-    typedef prism::random_access_iterator_tag 		iterator_category;
+    typedef std::random_access_iterator_tag 		iterator_category;
     typedef const T* 								pointer;
     typedef const T& 								reference;
 };
@@ -165,7 +154,7 @@ public:
 	using value_type 			= T;
 	using pointer 				= prism::ConditionalType_t<IsConst, const T*, T*>;
 	using reference				= prism::ConditionalType_t<IsConst, const T&, T&>;
-	using iterator_category 	= prism::random_access_iterator_tag;
+	using iterator_category 	= std::random_access_iterator_tag;
 	using difference_type 		= std::ptrdiff_t;
 public:
 	pointer p;
@@ -178,8 +167,8 @@ public:
 	: p(p)
 	{}
 
-	// only allow non-const iterator to be passed as arg.
-	SequenceIterator(const iterator& copy)
+	// only allow copying of non-const iterator
+	SequenceIterator(iterator copy)
 	: p(copy.p)
 	{}
 
@@ -258,7 +247,6 @@ public:
 	operator>=(const Self& rhs)
 	{ return this->p >= rhs.p; }
 };
-
 //=============================================================================================
 // AssociativeIterator helper functions
 //=============================================================================================
@@ -305,7 +293,7 @@ public:
 	using pointer 				= ConditionalType_t<IsConst, const value_type*, value_type*>;
 	using reference 			= ConditionalType_t<IsConst, const value_type&, value_type&>;
 	using difference_type 		= std::ptrdiff_t;
-	using iterator_category 	= prism::bidirectional_iterator_tag;
+	using iterator_category 	= std::bidirectional_iterator_tag;
 
 	AssociativeIterator()
 	: np(nullptr)

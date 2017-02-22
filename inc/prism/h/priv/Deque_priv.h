@@ -29,16 +29,16 @@ namespace prism {
 template <class T, bool isConst=true>
 class DequeIterator {
 public:
-	typedef DequeIterator<T, false>		iterator;
-	typedef DequeIterator<T, true>		const_iterator;
-	typedef T							value_type;
-	typedef std::ptrdiff_t 				difference_type;
-	typedef random_access_iterator_tag 	iterator_category;
-	typedef typename prism::ConditionalType_t<isConst, const T*, T*> 	pointer;
-	typedef typename prism::ConditionalType_t<isConst, const T&, T&> 	reference;
-	typedef typename prism::ConditionalType_t<true, const T*, T*> 		const_pointer;
-	typedef typename prism::ConditionalType_t<true, const T&, T&> 		const_reference;
-	typedef typename prism::ConditionalType_t<isConst, const_iterator, iterator> Self;
+	using iterator =  DequeIterator<T, false>;
+	using const_iterator = DequeIterator<T, true>;
+	using value_type = T;
+	using difference_type = std::ptrdiff_t;
+	using iterator_category = std::random_access_iterator_tag;
+	using pointer = typename prism::ConditionalType_t<isConst, const T*, T*>;
+	using reference = typename prism::ConditionalType_t<isConst, const T&, T&>;
+	using const_pointer = typename prism::ConditionalType_t<true, const T*, T*>;
+	using const_reference = typename prism::ConditionalType_t<true, const T&, T&>;
+	using Self = typename prism::ConditionalType_t<isConst, const_iterator, iterator>;
 public:
 	T** buckets; // (*buckets) is a pointer to one of the buckets i.e. T*
 	T* current;

@@ -14,13 +14,17 @@ src/prism/Circle.o: ../src/prism/Circle.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/type_traits \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Vector.h \
-  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/List.h \
-  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedData.h \
-  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedDataPointer.h \
-  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h \
-  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/List_priv.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/algorithm \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/OutOfBoundsException \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/OutOfBoundsException.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Exception.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/BadSizeException \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/BadSizeException.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/global \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Exception \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Iterator \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/Vector_priv.h
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Circle.h:
@@ -53,18 +57,26 @@ src/prism/Circle.o: ../src/prism/Circle.cpp \
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Vector.h:
 
-/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/List.h:
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/algorithm:
 
-/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedData.h:
-
-/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/SharedDataPointer.h:
-
-/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h:
-
-/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/List_priv.h:
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/OutOfBoundsException:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/OutOfBoundsException.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Exception.h:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/BadSizeException:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/BadSizeException.h:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/global:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Exception:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Iterator:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/Vector_priv.h:

@@ -601,9 +601,9 @@ Pointf Circle::point(const float angle) const {
  * @return A vector containing \em divisions amount of points.
  * \image html circle_points.png
  */
-prism::Vector<Pointf> Circle::points(const int divisions) const {
+std::vector<Pointf> Circle::points(const int divisions) const {
 
-	prism::Vector<Pointf> v;
+	std::vector<Pointf> v;
 	v.reserve(divisions);
 
     float increment = 360 / divisions;
