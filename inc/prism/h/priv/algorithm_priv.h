@@ -10,6 +10,7 @@
 #define PRISM_ALGORITHM_PRIV_H_
 
 #include <prism/iterator>
+#include <prism/Allocator>
 #include <iostream> // todo remove this
 #include <cmath>
 #include <prism/type_traits> // todo remove this
@@ -746,10 +747,32 @@ swap_ranges(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 othe
 template <class ForwardIterator, class T>
 void
 uninitialized_fill(ForwardIterator first, ForwardIterator last, const T& value) {
+	prism::Allocator<T> alloc;
+	uninitialized_fill_alloc(first, last, value, alloc);
+}
+
+/**
+ *
+ */
+template <class ForwardIterator, class T>
+void
+uninitialized_fill_n(ForwardIterator first, const int size, const T& value) {
+	prism::Allocator<T> alloc;
+	uninitialized_fill_alloc(first, first + size, value, alloc);
+}
+
+/**
+ *
+ */
+template <typename ForwardIterator, typename T, typename Allocator>
+void
+uninitialized_fill_alloc(ForwardIterator first, ForwardIterator last,
+		const T& value, Allocator& alloc) {
+	using alloc_traits = prism::AllocatorTraits<Allocator>;
 	auto current = first;
 	try {
 		for (; current != last; current++)
-			::new (static_cast<void*>(&*current)) T(value);
+			alloc_traits::construct(alloc, &*current, value);
 	}
 	catch(...) {
 		for (auto it = first; it != current; it++)
@@ -761,10 +784,12 @@ uninitialized_fill(ForwardIterator first, ForwardIterator last, const T& value) 
 /**
  *
  */
-template <class ForwardIterator, class T>
-void
-uninitialized_fill_n(ForwardIterator first, const int size, const T& value) {
-	uninitialized_fill(first, first + size, value);
+template <class ForwardIterator1, class ForwardIterator2>
+ForwardIterator2
+uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
+	using value_type = typename prism::iterator_traits<ForwardIterator1>::value_type;
+	prism::Allocator<value_type> alloc;
+	return uninitialized_copy_alloc(first, last, otherFirst, alloc);
 }
 
 /**
@@ -772,12 +797,23 @@ uninitialized_fill_n(ForwardIterator first, const int size, const T& value) {
  */
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
-uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
+uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst) {
+	return uninitialized_copy(first, first + size, otherFirst);
+}
+
+/**
+ *
+ */
+template <typename ForwardIterator1, typename ForwardIterator2, typename Allocator>
+ForwardIterator2
+uninitialized_copy_alloc(ForwardIterator1 first, ForwardIterator1 last,
+		ForwardIterator2 otherFirst, Allocator& alloc) {
+	using alloc_traits = prism::AllocatorTraits<Allocator>;
 	using value_type = typename prism::iterator_traits<ForwardIterator1>::value_type;
 	auto current = first;
 	try {
-		for (; current != last; current++, otherFirst++)
-			::new (static_cast<void*>(&*otherFirst)) value_type(*current);
+		for (; current != last; ++current, ++otherFirst)
+			alloc_traits::construct(alloc, &*otherFirst, value_type(*current));
 	}
 	catch(...) {
 		for (auto it = first; it != current; it++)
@@ -790,10 +826,21 @@ uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterato
 /**
  *
  */
-template <class ForwardIterator1, class ForwardIterator2>
+template <typename ForwardIterator1, typename ForwardIterator2>
 ForwardIterator2
-uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst) {
-	return uninitialized_copy(first, first + size, otherFirst);
+uninitialized_move(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
+	using value_type = typename prism::iterator_traits<ForwardIterator1>::value_type;
+	auto current = first;
+	try {
+		for (; current != last; current++, otherFirst++)
+			::new (static_cast<void*>(&*otherFirst)) value_type(std::move(*current));
+	}
+	catch(...) {
+		for (auto it = first; it != current; it++)
+			(&*it)->~value_type();
+		throw;
+	}
+	return otherFirst;
 }
 
 /**
@@ -818,26 +865,6 @@ uninitialized_move_backwards(BidirectionalIterator1 first,
 		throw;
 	}
 	return otherLast;
-}
-
-/**
- *
- */
-template <typename ForwardIterator1, typename ForwardIterator2>
-ForwardIterator2
-uninitialized_move(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst) {
-	using value_type = typename prism::iterator_traits<ForwardIterator1>::value_type;
-	auto current = first;
-	try {
-		for (; current != last; current++, otherFirst++)
-			::new (static_cast<void*>(&*otherFirst)) value_type(std::move(*current));
-	}
-	catch(...) {
-		for (auto it = first; it != current; it++)
-			(&*it)->~value_type();
-		throw;
-	}
-	return otherFirst;
 }
 
 } // end namespace prism

@@ -52,6 +52,12 @@ struct AllocatorTraits {
 	destroy(Allocator& alloc, pointer p) {
 		alloc.destroy(p);
 	}
+
+	static
+	pointer
+	address(const_reference value) {
+		return &value;
+	}
 };
 //=============================================================================================
 // Allocator

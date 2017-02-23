@@ -810,7 +810,7 @@ TEST_F(algorithmTest, uninitialized_copy) {
 	ASSERT_EQ(3, *(ptr+2));
 	ASSERT_EQ(4, *(ptr+3));
 	ASSERT_EQ(5, *(ptr+4));
-	ASSERT_EQ(end, it);
+	ASSERT_EQ(ptr + 5, it);
 
 	delete ptr;
 }

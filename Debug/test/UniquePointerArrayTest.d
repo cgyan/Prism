@@ -12,6 +12,8 @@ test/UniquePointerArrayTest.o: ../test/UniquePointerArrayTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/iterator.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/type_traits \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/algorithm
 
@@ -40,6 +42,10 @@ test/UniquePointerArrayTest.o: ../test/UniquePointerArrayTest.cpp \
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/type_traits:
 

@@ -15,8 +15,6 @@
 #include <prism/BadSizeException>
 #include <prism/Allocator>
 #include <prism/Iterator>
-#include <vector>
-#include <list>
 #include <ostream>
 
 PRISM_BEGIN_NAMESPACE
@@ -89,7 +87,7 @@ public:
 	}
 
 	allocator_type
-	allocator() noexcept {
+	allocator() const noexcept {
 		return allocator_type(impl.storage);
 	}
 
@@ -105,12 +103,12 @@ public:
 
 	void
 	prepend(const T& value) {
-		impl.insert(0, value);
+		impl.insert(cbegin(), value);
 	}
 
 	void
 	prepend(T&& value) {
-		impl.insert(0, std::move(value));
+		impl.insert(cbegin(), std::move(value));
 	}
 
 	void
@@ -131,19 +129,19 @@ public:
 	iterator
 	insert(const_iterator pos, const T& value) {
 		if (pos == cend()) return impl.insertAtEnd(value);
-		else return impl.insert(impl.index(pos), value);
+		else return impl.insert(pos, value);
 	}
 
 	iterator
 	insert(const_iterator pos, T&& value) {
 		if (pos == cend()) return impl.insertAtEnd(std::move(value));
-		else return impl.insert(impl.index(pos), std::move(value));
+		else return impl.insert(pos, std::move(value));
 	}
 
 	iterator
 	insert(const_iterator pos, const int count, const T& value) {
 		if (pos == cend()) return impl.fillAppend(count, value);
-		else return impl.fillInsert(impl.index(pos), count, value);
+		else return impl.fillInsert(pos, count, value);
 	}
 
 	iterator
@@ -155,7 +153,7 @@ public:
 	iterator
 	insert(const_iterator pos, ForwardIterator first, ForwardIterator last) {
 		if (pos == cend()) return impl.rangeAppend(first, last);
-		else return impl.rangeInsert(impl.index(pos), first, last);
+		else return impl.rangeInsert(pos, first, last);
 	}
 
 	const int
@@ -186,20 +184,20 @@ public:
 	iterator
 	remove(const_iterator pos) {
 		if (pos == --cend()) return impl.removeAtEnd();
-		else return impl.remove(impl.index(pos));
+		else return impl.remove(pos);
 	}
 
 	void
 	remove(const int index, const int count) {
 		const_iterator first = cbegin() + index;
 		const_iterator last = first + count;
-		remove(first, last);
+		remove(cbegin() + index, first + count);
 	}
 
 	iterator
 	remove(const_iterator first, const_iterator last) {
-		if (last == cend()) return impl.rangeRemoveAtEnd(impl.index(first));
-		else return impl.rangeRemove(impl.index(first), impl.index(last));
+		if (last == cend()) return impl.rangeRemoveAtEnd(first);
+		else return impl.rangeRemove(first, last);
 	}
 
 	void
@@ -303,28 +301,28 @@ public:
 
 	void
 	replace(const int index, const T& value) {
-		impl.replace(index, value);
+		impl.replace(cbegin() + index, value);
 	}
 
 	void
 	replace(const int index, T&& value) {
-		impl.replace(index, std::move(value));
+		impl.replace(cbegin() + index, std::move(value));
 	}
 
 	void
 	replace(const_iterator pos, const T& value) {
-		impl.replace(pos - cbegin(), value);
+		impl.replace(pos, value);
 	}
 
 	void
 	replace(const_iterator pos, T&& value) {
-		impl.replace(pos - cbegin(), std::move(value));
+		impl.replace(pos, std::move(value));
 	}
 
 	template <typename ForwardIterator>
 	void
 	replace(const_iterator pos, ForwardIterator first, ForwardIterator last) {
-		impl.rangeReplace(impl.index(pos), first, last);
+		impl.rangeReplace(pos, first, last);
 	}
 
 	void
@@ -351,13 +349,14 @@ public:
 	void
 	resize(const int size, const T& paddingValue = T()) {
 		const int newSize = size;
+		const int currentSize = this->size();
 		if (newSize < 0)
 			throw prism::BadSizeException(size);
 
 		reserve(newSize);
 
-		if (newSize > this->size()) impl.resizeGreater(newSize, paddingValue);
-		else impl.resizeSmaller(newSize);
+		if (newSize > currentSize) impl.fillAppend(newSize - currentSize, paddingValue);
+		else if (newSize < currentSize) impl.rangeRemoveAtEnd(cbegin() + newSize);
 	}
 
 	void

@@ -9,8 +9,6 @@
 #ifndef PRISM_PVECTOR_PRIV_H_
 #define PRISM_PVECTOR_PRIV_H_
 
-#include <iterator>
-
 PRISM_BEGIN_NAMESPACE
 
 template <typename T, typename Allocator>
@@ -62,15 +60,16 @@ public:
 template <typename T, typename Allocator>
 class VectorImpl {
 private:
-	using alloc_traits = prism::AllocatorTraits<Allocator>;
-	using iterator = prism::SequenceIterator<T, false>;
-	using const_iterator = prism::SequenceIterator<T, true>;
-	using ImplPointer = VectorImpl<T, Allocator>*;
-	using Storage = VectorStorage<T, Allocator>;
+	using alloc_traits 		= prism::AllocatorTraits<Allocator>;
+	using iterator 			= prism::SequenceIterator<T, false>;
+	using const_iterator 	= prism::SequenceIterator<T, true>;
+	using ImplPointer 		= VectorImpl<T, Allocator>*;
+	using Storage 			= VectorStorage<T, Allocator>;
+	using pointer			= typename alloc_traits::pointer;
 private:
-	VectorImpl(const VectorImpl& rhs) = delete;
-	VectorImpl& operator=(const VectorImpl& rhs) = delete;
-	VectorImpl& operator=(VectorImpl&& rhs) = delete;
+	VectorImpl(const VectorImpl& rhs) 				= delete;
+	VectorImpl& operator=(const VectorImpl& rhs) 	= delete;
+	VectorImpl& operator=(VectorImpl&& rhs) 		= delete;
 public:
 	Storage storage;
 	enum { IndexNotFound = -1 };
@@ -108,6 +107,19 @@ public:
 	}
 
 	void
+	fillInitialize(const int size, const T& value) {
+		fillConstruct(storage.start, storage.start + size, value);
+	}
+
+	template <typename ForwardIterator>
+	void
+	rangeInitialize(ForwardIterator first, ForwardIterator last) {
+		const int numElements = prism::distance(first, last);
+		prism::uninitialized_copy_alloc(first, last, storage.start, storage);
+		increaseSizeBy(numElements);
+	}
+
+	void
 	reallocate(int newCapacity) {
 		Storage newStorage(newCapacity);
 		newStorage.end = prism::uninitialized_move(storage.start, storage.end, newStorage.start);
@@ -117,33 +129,21 @@ public:
 
 	template <typename ElementType>
 	void
-	replace(const int index, ElementType&& value) {
-		validateIndex(index);
-		storage.start[index] = std::forward<ElementType>(value);
+	replace(const_iterator pos, ElementType&& value) {
+		const int offset = pos - cbegin();
+		validatePos(pos);
+		storage.start[offset] = std::forward<ElementType>(value);
 	}
 
 	template <typename ForwardIterator>
 	void
-	rangeReplace(const int index, ForwardIterator first, ForwardIterator last) {
-		validateIndex(index);
-		for (int i=index; first != last && i != storage.size(); i++, first++) {
-			storage.start[i] = *first;
+	rangeReplace(const_iterator pos, ForwardIterator first, ForwardIterator last) {
+		const int offset = pos - cbegin();
+		validatePos(pos);
+		auto current = storage.start + offset;
+		for (; first != last && current != storage.end; ++current, ++first) {
+			*current = *first;
 		}
-	}
-
-	void
-	resizeGreater(const int newSize, const T& paddingValue) {
-		prism::uninitialized_fill(
-				storage.start + storage.size(), storage.start + newSize, paddingValue);
-		const int numNewElements = newSize - storage.size();
-		increaseSizeBy(numNewElements);
-	}
-
-	void
-	resizeSmaller(const int newSize) {
-		destroyRange(storage.start + newSize, storage.end);
-		const int numRemovedElements = storage.size() - newSize;
-		decreaseSizeBy(numRemovedElements);
 	}
 
 	void
@@ -158,7 +158,7 @@ public:
 
 	const int
 	findFirstIndexOf(const int from, const T& value) const {
-		T* it = prism::find(storage.start + from, storage.end, value);
+		pointer it = prism::find(storage.start + from, storage.end, value);
 		return (it == storage.end)
 				? IndexNotFound
 				: prism::distance(storage.start, it);
@@ -166,8 +166,8 @@ public:
 
 	const int
 	findLastIndexOf(const int from, const T& value) const {
-		T* endIt = from == -1 ? storage.end : storage.start + from;
-		T* it = prism::find_last(storage.start, endIt, value);
+		pointer endIt = from == -1 ? storage.end : storage.start + from;
+		pointer it = prism::find_last(storage.start, endIt, value);
 		return (it == storage.end)
 				? IndexNotFound
 				: prism::distance(storage.start, it);
@@ -175,7 +175,7 @@ public:
 
 	T&
 	valueAtIndex(const int index) const {
-		validateIndex(index);
+		validatePos(cbegin() + index);
 		return storage.start[index];
 	}
 
@@ -184,44 +184,48 @@ public:
 	insertAtEnd(ElementType&& value) {
 		const int numNewElements = 1;
 		ensureSufficientStorage(numNewElements);
-		constructElement(storage.size(), std::forward<ElementType>(value));
+		constructElement(storage.end, std::forward<ElementType>(value));
 		increaseSizeBy(1);
 		return iterator{storage.end - 1};
 	}
 
 	template <typename ElementType>
 	iterator
-	insert(const int insertIndex, ElementType&& value) {
+	insert(const_iterator pos, ElementType&& value) {
+		const int offset = pos - cbegin();
+		validateInsertionPoint(pos);
 		const int numNewElements = 1;
-		validateInsertionPoint(insertIndex);
 		ensureSufficientStorage(numNewElements);
-		moveElementsFromIndexUpNumSpaces(insertIndex, numNewElements);
-		constructElement(insertIndex, std::forward<ElementType>(value));
+		prism::uninitialized_move_backwards(storage.start + offset, storage.end,
+				storage.end + numNewElements);
+		constructElement(storage.start + offset, std::forward<ElementType>(value));
 		increaseSizeBy(1);
-		return iterator(storage.start + insertIndex);
+		return iterator(storage.start + offset);
 	}
 
 	iterator
 	fillAppend(const int count, const T& value) {
 		ensureSufficientStorage(count);
-		return fillConstruct(storage.size(), count, value);
+		return fillConstruct(storage.end, storage.end + count, value);
 	}
 
 	iterator
-	fillConstruct(const int insertIndex, const int count, const T& value) {
-		for (int i=0; i<count; i++) {
-			constructElement(insertIndex + i, value);
-			increaseSizeBy(1);
-		}
-		return iterator(storage.start + insertIndex);
+	fillConstruct(pointer first, pointer last, const T& value) {
+		const int numElements = last - first;
+		prism::uninitialized_fill_alloc(first, last, value, storage);
+		increaseSizeBy(numElements);
+		return iterator(first);
 	}
 
 	iterator
-	fillInsert(const int insertIndex, const int count, const T& value) {
-		validateInsertionPoint(insertIndex);
+	fillInsert(const_iterator pos, const int count, const T& value) {
+		const int offset = pos - cbegin();
+		validateInsertionPoint(pos);
 		ensureSufficientStorage(count);
-		moveElementsFromIndexUpNumSpaces(insertIndex, count);
-		return fillConstruct(insertIndex, count, value);
+		prism::uninitialized_move_backwards(storage.start + offset, storage.end,
+				storage.end + count);
+		auto from = storage.start + offset;
+		return fillConstruct(from, from + count, value);
 	}
 
 	template <typename ForwardIterator>
@@ -229,40 +233,34 @@ public:
 	rangeAppend(ForwardIterator first, ForwardIterator last) {
 		const int numNewElements = prism::distance(first, last);
 		ensureSufficientStorage(numNewElements);
-		return rangeConstructElements(storage.size(), first, last);
+		return rangeConstruct(storage.end, first, last);
 	}
 
 	template <typename ForwardIterator>
 	iterator
-	rangeInsert(const int insertIndex, ForwardIterator first, ForwardIterator last) {
+	rangeInsert(const_iterator pos, ForwardIterator first, ForwardIterator last) {
+		const int offset = pos - cbegin();
 		const int numNewElements = prism::distance(first, last);
-		validateInsertionPoint(insertIndex);
+		validateInsertionPoint(pos);
 		ensureSufficientStorage(numNewElements);
-		moveElementsFromIndexUpNumSpaces(insertIndex, numNewElements);
-		return rangeConstructElements(insertIndex, first, last);
+		prism::uninitialized_move_backwards(storage.start + offset, storage.end,
+				storage.end + numNewElements);
+		return rangeConstruct(storage.start + offset, first, last);
 	}
 
 	template <typename ForwardIterator>
 	iterator
-	rangeConstructElements(const int insertIndex, ForwardIterator first, ForwardIterator last) {
-		int current = insertIndex;
-		const int numNewElements = prism::distance(first, last);
-		try {
-			while (first != last)
-				constructElement(current++, *first++);
-		}
-		catch(...) {
-			destroyRange(storage.start + insertIndex, storage.start + current);
-			throw;
-		}
-		increaseSizeBy(numNewElements);
-		return iterator(storage.start + insertIndex);
+	rangeConstruct(pointer pos, ForwardIterator first, ForwardIterator last) {
+		prism::uninitialized_copy_alloc(first, last, pos, storage);
+		const int numElements = prism::distance(first, last);
+		increaseSizeBy(numElements);
+		return iterator(pos);
 	}
 
 	template <typename ...Args>
 	void
-	constructElement(int insertIndex, Args... args) {
-		alloc_traits::construct(storage, storage.start + insertIndex, std::forward<Args>(args)...);
+	constructElement(pointer pos, Args... args) {
+		alloc_traits::construct(storage, pos, std::forward<Args>(args)...);
 	}
 
 	iterator
@@ -275,120 +273,68 @@ public:
 	}
 
 	iterator
-	remove(const int index) {
-		validateIndex(index);
-		T* from = storage.start + index + 1;
-		T* to = storage.end;
-		T* dest = from - 1;
-		prism::move(from, to, dest);
+	remove(const_iterator pos) {
+		const int offset = pos - cbegin();
+		validatePos(pos);
+		auto first = storage.start + offset + 1;
+		auto otherFirst = storage.start + offset;
+		prism::move(first, storage.end, otherFirst);
 
 		decreaseSizeBy(1);
 		alloc_traits::destroy(storage, storage.end);
-		return iterator{storage.start + index};
+		return iterator{storage.start + offset};
 	}
 
 	iterator
-	rangeRemoveAtEnd(const int fromIndex) noexcept {
-		validateIndex(fromIndex);
-		const int numElementsToRemove = storage.size() - fromIndex;
-		destroyRange(storage.start + fromIndex, storage.end);
+	rangeRemoveAtEnd(const_iterator from) noexcept {
+		const int offset = from - cbegin();
+		validatePos(from);
+		const int numElementsToRemove = cend() - from;
+		destroyRange(storage.start + offset, storage.end);
 		decreaseSizeBy(numElementsToRemove);
 		return iterator{storage.end};
 	}
 
 	iterator
-	rangeRemove(const int firstIndex, const int lastIndex) {
-		validateIndex(firstIndex);
-		validateIndex(lastIndex);
-		const int numElementsToRemove = lastIndex - firstIndex;
-		T* from = storage.start + firstIndex + numElementsToRemove;
-		T* to = storage.end;
-		T* dest = storage.start + firstIndex;
-		prism::move(from, to, dest);
+	rangeRemove(const_iterator first, const_iterator last) {
+		const int firstOffset = first - cbegin();
+		const int lastOffset = last - cbegin();
+		validatePos(first);
+		validatePos(last);
+		prism::uninitialized_move(storage.start + lastOffset, storage.end,
+				storage.start + firstOffset);
 
-		from = storage.start + firstIndex + (storage.size() - numElementsToRemove);
-		to = storage.end;
-		destroyRange(from, to);
-		decreaseSizeBy(numElementsToRemove);
-		return iterator{storage.start + firstIndex};
+		destroyRange(storage.start + lastOffset, storage.end);
+		decreaseSizeBy(last - first);
+		return iterator{storage.start + firstOffset};
 	}
 
 	void
 	removeAllOccurrencesOfValue(const T& value) {
-		storage.end = prism::remove(storage.start, storage.end, value);
+		pointer it = prism::remove(storage.start, storage.end, value);
+		destroyRange(it, storage.end);
+		storage.end = it;
 	}
 
 	template <typename UnaryPredicate>
 	void
 	removeElementsForWhichPredIsTrue(UnaryPredicate pred) {
-		storage.end = prism::remove_if(storage.start, storage.end, pred);
+		pointer it = prism::remove_if(storage.start, storage.end, pred);
+		destroyRange(it, storage.end);
+		storage.end = it;
 	}
 
 	void
 	clear()
 	noexcept {
-		const int numElements = storage.size();
 		destroyRange(storage.start, storage.end);
-		decreaseSizeBy(numElements);
-	}
-
-	const int
-	index(const_iterator pos) const {
-		return prism::distance(const_iterator(storage.start), pos);
+		decreaseSizeBy(storage.size());
 	}
 
 	void
-	moveElementsFromIndexUpNumSpaces(const int insertIndex, const int count) {
-		T* first = storage.start + insertIndex;
-		T* last = storage.end;
-		T* otherLast = storage.end + count;
-		prism::uninitialized_move_backwards(first, last, otherLast);
-	}
-
-	void
-	moveElementsFromIndexDownNumSpaces(const int index, const int count) {
-		prism::uninitialized_move(storage.start + index,
-									storage.end,
-									storage.start + index - count);
-	}
-
-	void
-	destroyRange(T* first, T* last) {
+	destroyRange(iterator first, iterator last) {
 		while (first != last)
-			alloc_traits::destroy(storage, first++);
-	}
-
-	void
-	fillInitialize(const int size, const T& value) {
-		int i=0;
-		try {
-			for(; i<size; i++) {
-				constructElement(i, value);
-				increaseSizeBy(1);
-			}
-		}
-		catch(...) {
-			destroyRange(storage.start, storage.start + i);
-			storage.start = storage.end = storage.finish = nullptr;
-			throw;
-		}
-	}
-
-	template <typename ForwardIterator>
-	void
-	rangeInitialize(ForwardIterator first, ForwardIterator last) {
-		int index = 0;
-		try {
-			for (; first != last; first++, index++) {
-				constructElement(index, *first);
-				increaseSizeBy(1);
-			}
-		}
-		catch(...) {
-			destroyRange(storage.start, storage.start + index);
-			storage.start = storage.end = storage.finish = nullptr;
-			throw;
-		}
+			alloc_traits::destroy(storage, &*first++);
 	}
 
 	void
@@ -412,15 +358,25 @@ public:
 	}
 
 	void
-	validateIndex(const int index) const {
-		if (index < 0 || index >= storage.size())
-			throw prism::OutOfBoundsException(index);
+	validatePos(const_iterator pos) const {
+		if (pos < cbegin() || pos >= cend())
+			throw prism::OutOfBoundsException(pos - cbegin());
 	}
 
 	void
-	validateInsertionPoint(const int index) const {
-		if (index < 0 || index > storage.size())
-			throw prism::OutOfBoundsException(index);
+	validateInsertionPoint(const_iterator pos) const {
+		if (pos < cbegin()|| pos > cend())
+			throw prism::OutOfBoundsException(pos - cbegin());
+	}
+
+	const_iterator
+	cbegin() const {
+		return storage.start;
+	}
+
+	const_iterator
+	cend() const {
+		return storage.end;
 	}
 };
 

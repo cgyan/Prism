@@ -9,6 +9,8 @@ src/prism/Fraction.o: ../src/prism/Fraction.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/type_traits_wrappers.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/type_traits
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Fraction.h:
@@ -30,5 +32,9 @@ src/prism/Fraction.o: ../src/prism/Fraction.cpp \
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/Allocator.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/type_traits:

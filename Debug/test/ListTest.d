@@ -13,6 +13,7 @@ test/ListTest.o: ../test/ListTest.cpp \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/type_traits_wrappers.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h \
+  /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/type_traits \
   /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/List_priv.h
 
@@ -43,6 +44,8 @@ test/ListTest.o: ../test/ListTest.cpp \
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/pair.h:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/h/priv/iterator_priv.h:
+
+/Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/Allocator:
 
 /Users/iainhemstock/GitHub/Prism/code/Prism/inc/prism/type_traits:
 
