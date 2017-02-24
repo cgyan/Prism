@@ -5,14 +5,15 @@
  *  Created on: Aug 7, 2016
  *      Author: iainhemstock
  */
-
+#ifndef PRISM_ALGORITHM_TEST_H_
+#define PRISM_ALGORITHM_TEST_H_
 
 #include <gtest/gtest.h>
 #include <prism/algorithm>
 #include <functional> // std::function<>
 
-namespace prism {
-namespace test {
+PRISM_BEGIN_NAMESPACE
+PRISM_BEGIN_TEST_NAMESPACE
 
 class algorithmTest : public ::testing::Test {
 
@@ -836,8 +837,10 @@ TEST_F(algorithmTest, uninitialized_copy_n) {
 	delete ptr;
 }
 
-} // end namespace test
-} // end namespace prism
+PRISM_END_TEST_NAMESPACE
+PRISM_END_NAMESPACE
+
+#endif
 
 
 

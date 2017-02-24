@@ -242,13 +242,41 @@ any_of(InputIterator first, InputIterator last, Predicate pred) {
 /**
  *
  */
+template <bool IsPod>
+struct Copy {
+	template <typename InputIterator, typename OutputIterator>
+	static OutputIterator
+	copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
+		using value_type = typename prism::iterator_traits<InputIterator>::value_type;
+		const int numElements = prism::distance(first, last);
+		const size_t numBytes = numElements * sizeof(value_type);
+		memmove(&*otherFirst, &*first, numBytes);
+		return otherFirst + numElements;
+	}
+};
+
+/**
+ *
+ */
+template <>
+struct Copy<false> {
+	template <typename InputIterator, typename OutputIterator>
+	static OutputIterator
+	copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
+		while (first != last)
+			*otherFirst++ = *first++;
+		return otherFirst;
+	}
+};
+
+/**
+ *
+ */
 template <class InputIterator, class OutputIterator>
 OutputIterator
 copy(InputIterator first, InputIterator last, OutputIterator otherFirst) {
-	auto current = first;
-	for (; current != last; ++current, ++otherFirst)
-		*otherFirst = *current;
-	return otherFirst;
+	using value_type = typename prism::iterator_traits<InputIterator>::value_type;
+	return Copy<std::is_pod<value_type>::value>::copy(first, last, otherFirst);
 }
 
 /**
@@ -740,6 +768,30 @@ swap_ranges(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 othe
 	}
 	return otherFirst;
 }
+
+/**
+ *
+ */
+template <typename ForwardIterator1, typename ForwardIterator2, typename Allocator>
+ForwardIterator2
+uninitialized_copy_alloc(ForwardIterator1 first, ForwardIterator1 last,
+		ForwardIterator2 otherFirst, Allocator& alloc);
+
+///
+///
+///
+template <typename BidirectionalIterator1, typename BidirectionalIterator2>
+BidirectionalIterator2
+uninitialized_move_backwards(BidirectionalIterator1 first,
+								BidirectionalIterator1 last,
+								BidirectionalIterator2 otherLast);
+
+///
+///
+///
+template <typename ForwardIterator1, typename ForwardIterator2>
+ForwardIterator2
+uninitialized_move(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst);
 
 /**
  *

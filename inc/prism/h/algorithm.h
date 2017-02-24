@@ -944,6 +944,14 @@ template <class ForwardIterator, class T>
 void
 uninitialized_fill_n(ForwardIterator first, const int size, const T& value);
 
+/**
+ *
+ */
+template <typename ForwardIterator, typename T, typename Allocator>
+void
+uninitialized_fill_alloc(ForwardIterator first, ForwardIterator last,
+		const T& value, Allocator& alloc);
+
 /// @brief 					Copies a range into an uninitialized range
 ///
 ///							The range [first,last] represents a block of memory that has been
@@ -992,22 +1000,6 @@ uninitialized_copy(ForwardIterator1 first, ForwardIterator1 last, ForwardIterato
 template <class ForwardIterator1, class ForwardIterator2>
 ForwardIterator2
 uninitialized_copy_n(ForwardIterator1 first, const int size, ForwardIterator2 otherFirst);
-
-///
-///
-///
-template <typename BidirectionalIterator1, typename BidirectionalIterator2>
-BidirectionalIterator2
-uninitialized_move_backwards(BidirectionalIterator1 first,
-								BidirectionalIterator1 last,
-								BidirectionalIterator2 otherLast);
-
-///
-///
-///
-template <typename ForwardIterator1, typename ForwardIterator2>
-ForwardIterator2
-uninitialized_move(ForwardIterator1 first, ForwardIterator1 last, ForwardIterator2 otherFirst);
 
 } // end namespace prism
 

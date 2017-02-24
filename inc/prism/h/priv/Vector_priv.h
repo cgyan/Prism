@@ -9,6 +9,7 @@
 #ifndef PRISM_PVECTOR_PRIV_H_
 #define PRISM_PVECTOR_PRIV_H_
 
+
 PRISM_BEGIN_NAMESPACE
 
 template <typename T, typename Allocator>
