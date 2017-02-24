@@ -33,7 +33,10 @@ public:
 		return size() == 0;
 	}
 
-
+	const int
+	size() const {
+		return 0;
+	}
 
 };
 
