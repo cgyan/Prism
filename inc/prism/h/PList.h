@@ -28,6 +28,11 @@ public:
 	using difference_type 	= typename vt_alloc_traits::difference_type;
 	using size_type 		= typename vt_alloc_traits::size_type;
 public:
+	const bool
+	empty() const {
+		return size() == 0;
+	}
+
 
 
 };
