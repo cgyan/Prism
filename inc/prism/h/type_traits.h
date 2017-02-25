@@ -665,6 +665,23 @@ struct AddLValueReference
 	: public prism_private::AddLValueReference_aux<T>
 {};
 //============================================================================================
+// AddRValueReference
+//============================================================================================
+PRISM_BEGIN_PRIVATE_NAMESPACE
+template <typename T, bool = prism::IsReferenceable<T>::value>
+struct AddRValueReference_aux {
+	typedef T type;
+};
+template <typename T>
+struct AddRValueReference_aux<T,true> {
+	typedef T&& type;
+};
+PRISM_END_PRIVATE_NAMESPACE
+template <typename T>
+struct AddRValueReference
+	: public prism_private::AddRValueReference_aux<T>
+{};
+//============================================================================================
 // RemoveReference
 //============================================================================================
 template <typename T>

@@ -14,6 +14,13 @@
 
 PRISM_BEGIN_NAMESPACE
 
+template <typename T>
+struct ListNode {
+	T value;
+	ListNode* next;
+	ListNode* previous;
+};
+
 template <typename T, typename Allocator = prism::Allocator<T>>
 class PList {
 private:
