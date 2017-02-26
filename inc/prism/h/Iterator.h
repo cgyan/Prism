@@ -550,10 +550,10 @@ operator>=(const ReverseIterator<Iterator>& a,
 template <typename Iterator>
 struct MoveIterator {
 	using iterator_type = Iterator;
+	using iterator_category = typename prism::iterator_traits<iterator_type>::iterator_category;
 	using BaseReference = typename prism::iterator_traits<iterator_type>::reference;
 	using value_type = typename prism::iterator_traits<iterator_type>::value_type;
 	using difference_type = typename prism::iterator_traits<iterator_type>::difference_type;
-	using iterator_category = typename prism::iterator_traits<iterator_type>::iterator_category;
 	using pointer = iterator_type;
 	using reference = typename prism::ConditionalType<
 							std::is_reference<BaseReference>::value,
@@ -647,45 +647,44 @@ struct MoveIterator {
 
 template <typename Iterator>
 const bool
-operator==(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
-	return lhs.base() == rhs.base();
-}
+operator==(const MoveIterator<Iterator>& lhs,
+		   const MoveIterator<Iterator>& rhs)
+{ return lhs.base() == rhs.base(); }
 
 template <typename Iterator>
 const bool
-operator!=(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
-	return !(lhs == rhs);
-}
+operator!=(const MoveIterator<Iterator>& lhs,
+		   const MoveIterator<Iterator>& rhs)
+{ return !(lhs == rhs); }
 
 template <typename Iterator>
 const bool
-operator<(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
-	return lhs.base() < rhs.base();
-}
+operator<(const MoveIterator<Iterator>& lhs,
+		  const MoveIterator<Iterator>& rhs)
+{ return lhs.base() < rhs.base(); }
 
 template <typename Iterator>
 const bool
-operator<=(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
-	return lhs.base() <= rhs.base();
-}
+operator<=(const MoveIterator<Iterator>& lhs,
+		   const MoveIterator<Iterator>& rhs)
+{ return lhs.base() <= rhs.base(); }
 
 template <typename Iterator>
 const bool
-operator>(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
-	return lhs.base() > rhs.base();
-}
+operator>(const MoveIterator<Iterator>& lhs,
+		  const MoveIterator<Iterator>& rhs)
+{ return lhs.base() > rhs.base(); }
 
 template <typename Iterator>
 const bool
-operator>=(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
-	return lhs.base() >= rhs.base();
-}
+operator>=(const MoveIterator<Iterator>& lhs,
+		   const MoveIterator<Iterator>& rhs)
+{ return lhs.base() >= rhs.base(); }
 
 template<typename Iterator>
 MoveIterator<Iterator>
-make_move_iterator(Iterator iter) {
-	return MoveIterator<Iterator>(iter);
-}
+make_move_iterator(Iterator iter)
+{ return MoveIterator<Iterator>(iter); }
 
 
 PRISM_END_NAMESPACE
