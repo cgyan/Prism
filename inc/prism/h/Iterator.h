@@ -176,11 +176,11 @@ public:
 	{}
 
 	reference
-	operator*()
+	operator*() const
 	{ return *p; }
 
 	pointer
-	operator->()
+	operator->() const
 	{ return p; }
 
 	Self&
@@ -208,15 +208,15 @@ public:
 	{ return *this += -i; }
 
 	Self
-	operator+(difference_type i)
+	operator+(difference_type i) const
 	{ Self tmp = *this; return tmp += i; }
 
 	Self
-	operator-(difference_type i)
+	operator-(difference_type i) const
 	{ Self tmp = *this; return tmp += -i; }
 
 	difference_type
-	operator-(const Self& rhs)
+	operator-(const Self& rhs) const
 	{ return static_cast<difference_type>(this->p - rhs.p); }
 
 	Self&
@@ -224,27 +224,27 @@ public:
 	{ if (it.p != this->p) this->p = it.p; return *this; }
 
 	const bool
-	operator==(const Self& rhs)
+	operator==(const Self& rhs) const
 	{ return this->p == rhs.p; }
 
 	const bool
-	operator!=(const Self& rhs)
+	operator!=(const Self& rhs) const
 	{ return !(*this == rhs); }
 
 	const bool
-	operator<(const Self& rhs)
+	operator<(const Self& rhs) const
 	{ return this->p < rhs.p; }
 
 	const bool
-	operator>(const Self& rhs)
+	operator>(const Self& rhs) const
 	{ return this->p > rhs.p; }
 
 	const bool
-	operator<=(const Self& rhs)
+	operator<=(const Self& rhs) const
 	{ return this->p <= rhs.p; }
 
 	const bool
-	operator>=(const Self& rhs)
+	operator>=(const Self& rhs) const
 	{ return this->p >= rhs.p; }
 };
 //=============================================================================================
@@ -374,11 +374,11 @@ public:
 	}
 
 	const bool
-	operator==(const Self& other)
+	operator==(const Self& other) const
 	{ return this->np == other.np; }
 
 	const bool
-	operator!=(const Self& other)
+	operator!=(const Self& other) const
 	{ return !(*this == other); }
 
 private:
@@ -455,7 +455,7 @@ public:
 	}
 
 	Self
-	operator-(difference_type n) {
+	operator-(difference_type n) const {
 		Self tmp(current);
 		return tmp += -n;
 	}
@@ -544,6 +544,149 @@ const bool
 operator>=(const ReverseIterator<Iterator>& a,
 		   const ReverseIterator<Iterator>& b)
 { return !(a < b); }
+//=============================================================================================
+// MoveIterator
+//=============================================================================================
+template <typename Iterator>
+struct MoveIterator {
+	using iterator_type = Iterator;
+	using BaseReference = typename prism::iterator_traits<iterator_type>::reference;
+	using value_type = typename prism::iterator_traits<iterator_type>::value_type;
+	using difference_type = typename prism::iterator_traits<iterator_type>::difference_type;
+	using iterator_category = typename prism::iterator_traits<iterator_type>::iterator_category;
+	using pointer = iterator_type;
+	using reference = typename prism::ConditionalType<
+							std::is_reference<BaseReference>::value,
+							typename std::add_rvalue_reference<
+								typename std::remove_reference<BaseReference>::type
+							>::type,
+							BaseReference
+						>::type;
+
+	MoveIterator()
+	: baseIter{}
+	{}
+
+	MoveIterator(iterator_type bi)
+	: baseIter{bi}
+	{}
+
+	MoveIterator(const MoveIterator& rhs)
+	: baseIter{rhs.baseIter}
+	{}
+
+	iterator_type
+	base() const {
+		return baseIter;
+	}
+
+	reference
+	operator*() const {
+		return std::move(*baseIter);
+	}
+
+	pointer
+	operator->() const {
+		return baseIter;
+	}
+
+	MoveIterator&
+	operator++() {
+		++baseIter;
+		return *this;
+	}
+
+	MoveIterator
+	operator++(int) {
+		MoveIterator tmp = *this;
+		++baseIter;
+		return tmp;
+	}
+
+	MoveIterator&
+	operator--() {
+		--baseIter;
+		return *this;
+	}
+
+	MoveIterator
+	operator--(int) {
+		MoveIterator tmp = *this;
+		--baseIter;
+		return tmp;
+	}
+
+	MoveIterator&
+	operator+=(difference_type offset) {
+		baseIter += offset;
+		return *this;
+	}
+
+	MoveIterator&
+	operator-=(difference_type offset) {
+		baseIter -= offset;
+		return *this;
+	}
+
+	MoveIterator
+	operator+(difference_type offset) {
+		MoveIterator tmp = *this;
+		tmp += offset;
+		return tmp;
+	}
+
+	MoveIterator
+	operator-(difference_type offset) {
+		MoveIterator tmp = *this;
+		tmp -= offset;
+		return tmp;
+	}
+
+	iterator_type baseIter;
+};
+
+template <typename Iterator>
+const bool
+operator==(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
+	return lhs.base() == rhs.base();
+}
+
+template <typename Iterator>
+const bool
+operator!=(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
+	return !(lhs == rhs);
+}
+
+template <typename Iterator>
+const bool
+operator<(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
+	return lhs.base() < rhs.base();
+}
+
+template <typename Iterator>
+const bool
+operator<=(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
+	return lhs.base() <= rhs.base();
+}
+
+template <typename Iterator>
+const bool
+operator>(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
+	return lhs.base() > rhs.base();
+}
+
+template <typename Iterator>
+const bool
+operator>=(const MoveIterator<Iterator>& lhs, const MoveIterator<Iterator>& rhs) {
+	return lhs.base() >= rhs.base();
+}
+
+template<typename Iterator>
+MoveIterator<Iterator>
+make_move_iterator(Iterator iter) {
+	return MoveIterator<Iterator>(iter);
+}
+
 
 PRISM_END_NAMESPACE
 
