@@ -401,26 +401,26 @@ public:
 	using iterator_category 	= typename iter_traits::iterator_category;
 
 	ReverseIterator()
-	: current()
+	: baseIter()
 	{}
 
 	explicit
 	ReverseIterator(iterator_type it)
-	: current(it)
+	: baseIter(it)
 	{}
 
 	ReverseIterator(const Self& rhs)
-	: current(rhs.current)
+	: baseIter(rhs.baseIter)
 	{}
 
 	iterator_type
 	base() const {
-		return current;
+		return baseIter;
 	}
 
 	reference
 	operator*() const {
-		iterator_type it = current;
+		iterator_type it = baseIter;
 		return *--it;
 	}
 
@@ -431,45 +431,45 @@ public:
 
 	Self
 	operator+(difference_type n) const {
-		Self tmp(current);
+		Self tmp(baseIter);
 		return tmp += n;
 	}
 
 	Self&
 	operator++() {
-		--current;
+		--baseIter;
 		return *this;
 	}
 
 	Self
 	operator++(int junk) {
-		Self tmp(current);
-		--current;
+		Self tmp(baseIter);
+		--baseIter;
 		return tmp;
 	}
 
 	Self&
 	operator+=(difference_type n) {
-		current = previous(current, n);
+		baseIter = previous(baseIter, n);
 		return *this;
 	}
 
 	Self
 	operator-(difference_type n) const {
-		Self tmp(current);
+		Self tmp(baseIter);
 		return tmp += -n;
 	}
 
 	Self&
 	operator--() {
-		++current;
+		++baseIter;
 		return *this;
 	}
 
 	Self
 	operator--(int junk) {
-		Self tmp(current);
-		++current;
+		Self tmp(baseIter);
+		++baseIter;
 		return tmp;
 	}
 
@@ -488,7 +488,7 @@ public:
 	}
 
 private:
-	iterator_type current;
+	iterator_type baseIter;
 };
 
 /*
