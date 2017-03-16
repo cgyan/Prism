@@ -6,82 +6,186 @@
  *      Author: iainhemstock
  */
 
+#include <prism/h/priv/TimeUtility.h>
 #include <prism/h/Time.h>
 #include <prism/h/String.h>
-#include <chrono>
 
 namespace prism {
+//=============================================================================================
+// TimeStringBuilder
+//=============================================================================================
+struct TimeStringBuilder {
+	String ret;
 
+	void
+	appendHours(const int h) {
+		if (h < 10) ret += String("0");
+		ret += String::number(h);
+		ret += String(":");
+	}
+
+	void
+	appendMins(const int m) {
+		if (m < 10) ret += String("0");
+		ret += String::number(m);
+		ret += String(":");
+	}
+
+	void
+	appendSecs(const int s) {
+		if (s < 10) ret += String("0");
+		ret += String::number(s);
+		ret += String(":");
+	}
+
+	void
+	appendMsecs(const int ms) {
+		if (ms < 100) ret += String("0");
+		if (ms < 10) ret += String("0");
+		ret += String::number(ms);
+	}
+
+	String
+	toString() {
+		return ret;
+	}
+};
+
+//=============================================================================================
+// ElapsedTimeMonitor
+//=============================================================================================
+struct ElapsedTimeMonitor : public IElapsedTimeMonitor {
+	unsigned long int ms{};
+
+	void
+	start() override {
+		ms = TimeUtility::msSinceMidnight();
+	}
+
+	const int
+	elapsed() const override {
+		const unsigned long int now = TimeUtility::msSinceMidnight();
+		int msElapsed = now - ms;
+		if (msElapsed < 0)
+			msElapsed += 86400000;
+		return msElapsed;
+	}
+};
+
+//=============================================================================================
+// TimeImpl
+//=============================================================================================
+struct Time::TimeImpl {
+	unsigned long int ms{}; // num of ms since midnight i.e. now-midnight
+	std::shared_ptr<IElapsedTimeMonitor> etm;
+
+	TimeImpl()
+	: ms{},
+	  etm{}
+	{}
+
+	TimeImpl(const int hour, const int min, const int sec, const int msec)
+	: ms(hour * MS_PER_HOUR +
+			min * MS_PER_MINUTE +
+			sec * MS_PER_SECOND +
+			msec),
+	  etm{}
+	{}
+
+	TimeImpl(const TimeImpl& rhs)
+	: ms{rhs.ms},
+	  etm{rhs.etm}
+	{}
+
+	void
+	setEtm(std::shared_ptr<IElapsedTimeMonitor> etm) {
+		this->etm = etm;
+	}
+};
+//=============================================================================================
+// Time
+//=============================================================================================
 /**
  * Constructs a Time object set to midnight i.e. hour=min=sec=msec=0.
  */
 Time::Time()
-	: m_ms(0)
+: impl{new TimeImpl}
 {
-
+	impl->setEtm(std::make_shared<ElapsedTimeMonitor>());
 }
 
 /**
  * Constructs a Time object set to \em hour, \em min, \em sec and \em msec.
  */
 Time::Time(const int hour, const int min, const int sec, const int msec)
-	: m_ms(hour*MS_PER_HOUR + min*MS_PER_MINUTE + sec*MS_PER_SECOND + msec)
+: impl{new TimeImpl(hour, min, sec, msec)}
 {
-
+	impl->setEtm(std::make_shared<ElapsedTimeMonitor>());
 }
+
+/**
+ *
+ */
+Time::Time(const Time& rhs)
+: impl{new TimeImpl(*rhs.impl.get())}
+{}
 
 /**
  * Destroys this Time object.
  */
-Time::~Time() {
+Time::~Time()
+{}
 
+/**
+ *
+ */
+Time& Time::operator=(const Time& rhs) {
+	impl.reset(new TimeImpl{rhs.hour(), rhs.min(), rhs.sec(), rhs.msec()});
+	return *this;
+}
+
+/**
+ *
+ */
+void Time::setEtm(ETM etm) {
+	impl->setEtm(etm);
 }
 
 /**
  * @return Returns a Time object set to the current time as read from the system clock.
  */
 Time Time::currentTime() {
-	using namespace std;
-	chrono::time_point<chrono::system_clock> now = chrono::system_clock::now();
-	time_t time = chrono::system_clock::to_time_t(now);
-
-	struct tm *midnight = localtime(&time);
-	midnight->tm_hour = 0;
-	midnight->tm_min = 0;
-	midnight->tm_sec = 0;
-
-	chrono::time_point<chrono::system_clock> md = chrono::system_clock::from_time_t(mktime(midnight));
-	chrono::system_clock::duration durationSinceMidnight = now-md;
-
-	chrono::milliseconds msSinceMidnight = chrono::duration_cast<chrono::milliseconds>(durationSinceMidnight);
-
-	Time ret;
-	ret.m_ms = msSinceMidnight.count();
-	return ret;
-}
-
-/**
- * Used in conjunction with start(), time can be measured by calling elapsed().
- * \code
- * Time t;
- * t.start();
- * doSomethingIntensive();
- * int ms = t.elapsed(); // number of milliseconds since t.start() was called
- * \endcode
- * @return Returns the number of milliseconds since start() was called.
- */
-const int Time::elapsed() const {
-	int ms = msecsTo(currentTime());
-	if (ms < 0)
-		ms += MS_PER_DAY;
-	return ms;
+	Time t;
+	t.set(TimeUtility::msSinceMidnight());
+	return t;
 }
 
 /**
  * @return Returns the hour part of the time (0-23).
  */
 const int Time::hour() const {
-	return m_ms / MS_PER_HOUR;
+	return impl->ms / MS_PER_HOUR;
+}
+
+/**
+ * @return Returns the minute part of the time (0-59).
+ */
+const int Time::min() const {
+	return (impl->ms % MS_PER_HOUR) / MS_PER_MINUTE;
+}
+
+/**
+ * @return Returns the second part of the time (0-59).
+ */
+const int Time::sec() const {
+	return (impl->ms / MS_PER_SECOND) % SECS_PER_MINUTE;
+}
+
+/**
+ * @return Returns the millisecond part of the time (0-999).
+ */
+const int Time::msec() const {
+	return impl->ms % 1000;
 }
 
 /**
@@ -92,67 +196,10 @@ Time Time::hours(const int nHours) {
 }
 
 /**
- * @return Returns the number of hours between \em time and this object's time.
- */
-const int Time::hoursTo(const Time & time) const {
-	return time.m_ms/MS_PER_HOUR - this->m_ms/MS_PER_HOUR;
-}
-
-/**
- * @return Returns the minute part of the time (0-59).
- */
-const int Time::min() const {
-	return (m_ms % MS_PER_HOUR) / MS_PER_MINUTE;
-}
-
-/**
  * Static function that creates a Time object set to \em nMins.
  */
 Time Time::mins(const int nMins) {
 	return Time(0,nMins);
-}
-
-/**
- * @return Returns the number of minutes between \em time and this object's time.
- */
-const int Time::minsTo(const Time & time) const {
-	return time.m_ms/MS_PER_MINUTE - this->m_ms/MS_PER_MINUTE;
-}
-
-/**
- * @return Returns the millisecond part of the time (0-999).
- */
-const int Time::msec() const {
-	return m_ms % 1000;
-}
-
-/**
- * Static function that creates a Time object set to \em nMsecs.
- */
-Time Time::msecs(const int nMsecs) {
-	return Time(0,0,0, nMsecs);
-}
-
-/**
- * @return Returns the number of milliseconds between \em time and this object's time.
- */
-const int Time::msecsTo(const Time & time) const {
-	return time.m_ms-this->m_ms;
-}
-
-/**
- * Resets the time back to midnight i.e. hour=min=sec=msec=0.
- */
-void Time::reset()
-{
-	m_ms = 0;
-}
-
-/**
- * @return Returns the second part of the time (0-59).
- */
-const int Time::sec() const {
-	return (m_ms / MS_PER_SECOND) % SECS_PER_MINUTE;
 }
 
 /**
@@ -163,17 +210,62 @@ Time Time::secs(const int nSecs) {
 }
 
 /**
+ * Static function that creates a Time object set to \em nMsecs.
+ */
+Time Time::msecs(const int nMsecs) {
+	return Time(0,0,0, nMsecs);
+}
+
+/**
+ * @return Returns the number of hours between \em time and this object's time.
+ */
+const int Time::hoursTo(const Time & time) const {
+	return time.impl->ms / MS_PER_HOUR - impl->ms / MS_PER_HOUR;
+}
+
+/**
+ * @return Returns the number of minutes between \em time and this object's time.
+ */
+const int Time::minsTo(const Time & time) const {
+	return time.impl->ms / MS_PER_MINUTE - impl->ms / MS_PER_MINUTE;
+}
+
+/**
  * @return Returns the number of seconds between \em time and this object's time.
  */
 const int Time::secsTo(const Time & time) const {
-	return time.m_ms/MS_PER_SECOND - this->m_ms/MS_PER_SECOND;
+	return time.impl->ms / MS_PER_SECOND - impl->ms / MS_PER_SECOND;
+}
+
+/**
+ * @return Returns the number of milliseconds between \em time and this object's time.
+ */
+const int Time::msecsTo(const Time & time) const {
+	return time.impl->ms - impl->ms;
+}
+
+/**
+ * Resets the time back to midnight i.e. hour=min=sec=msec=0.
+ */
+void Time::reset() {
+	impl->ms = 0;
+}
+
+/**
+ *
+ */
+void Time::set(const unsigned long int msec) {
+	impl->ms = msec;
 }
 
 /**
  * Sets this Time object to \em hour, \em min, \em sec and \em msec.
  */
 void Time::set(const int hour, const int min, const int sec, const int msec) {
-	m_ms = hour*MS_PER_HOUR + min*MS_PER_MINUTE + sec*MS_PER_SECOND + msec;
+	impl->ms = hour * MS_PER_HOUR +
+			min * MS_PER_MINUTE +
+			sec * MS_PER_SECOND +
+			msec;
 }
 
 /**
@@ -187,41 +279,40 @@ void Time::set(const int hour, const int min, const int sec, const int msec) {
  * \endcode
  */
 void Time::start() {
-	*this = currentTime();
+	impl->etm->start();
+}
+
+/**
+ * Used in conjunction with start(), time can be measured by calling elapsed().
+ * \code
+ * Time t;
+ * t.start();
+ * doSomethingIntensive();
+ * int ms = t.elapsed(); // number of milliseconds since t.start() was called
+ * \endcode
+ * @return Returns the number of milliseconds since start() was called.
+ */
+const int Time::elapsed() const {
+	return impl->etm->elapsed();
 }
 
 /**
  * @return Returns a string representation of the time in the form 00:00:00:000.
  */
 String Time::toString() const {
-	int h = hour();
-	int m = min();
-	int s = sec();
-	int ms = msec();
-	String ret;
-	ret.reserve(12);
-
-	if (h < 10) ret += String("0");
-	ret += String::number(h);
-	ret += String(":");
-	if (m < 10) ret += String("0");
-	ret += String::number(m);
-	ret += String(":");
-	if (s < 10) ret += String("0");
-	ret += String::number(s);
-	ret += String(":");
-	if (ms < 100) ret += String("0");
-	if (ms < 10) ret += String("0");
-	ret += String::number(ms);
-
-	return ret;
+	TimeStringBuilder sb;
+	sb.appendHours(hour());
+	sb.appendMins(min());
+	sb.appendSecs(sec());
+	sb.appendMsecs(msec());
+	return sb.toString();
 }
 
 /**
  * @return Returns true if this object and \em other have the same time, false otherwise.
  */
 const bool Time::operator ==(const Time &other) const {
-	return m_ms == other.m_ms;
+	return impl->ms == other.impl->ms;
 }
 
 /**
@@ -235,28 +326,28 @@ const bool Time::operator !=(const Time &other) const {
  * @return Returns true if this object's time is before \em other, false otherwise.
  */
 const bool Time::operator <(const Time &other) const {
-	return m_ms < other.m_ms;
+	return impl->ms < other.impl->ms;
 }
 
 /**
  * @return Returns true if this object's time is before or equal to \em other, false otherwise.
  */
 const bool Time::operator <=(const Time &other) const {
-	return m_ms <= other.m_ms;
+	return impl->ms <= other.impl->ms;
 }
 
 /**
  * @return Returns true if this object's time is after \em other, false otherwise.
  */
 const bool Time::operator >(const Time &other) const {
-	return m_ms > other.m_ms;
+	return impl->ms > other.impl->ms;
 }
 
 /**
  * @return Returns true if this object's time is after or equal to \em other, false otherwise.
  */
 const bool Time::operator >=(const Time &other) const {
-	return m_ms >= other.m_ms;
+	return impl->ms >= other.impl->ms;
 }
 
 /**
@@ -293,12 +384,12 @@ Time & Time::operator -=(const Time & other) {
  */
 Time operator +(const Time &t1, const Time &t2)
 {
-	int ms = t1.m_ms + t2.m_ms;
+	int ms = t1.impl->ms + t2.impl->ms;
 	while (ms >= Time::MS_PER_DAY)
 		ms %= Time::MS_PER_DAY;
 
 	Time t;
-	t.m_ms = ms;
+	t.set(ms);
 	return t;
 }
 
@@ -317,11 +408,11 @@ Time operator +(const Time &t1, const Time &t2)
  * \endcode
  */
 Time operator-(const Time &t1, const Time & t2) {
-	int ms = t1.m_ms - t2.m_ms;
+	int ms = t1.impl->ms - t2.impl->ms;
 	if (ms < 0) ms = Time::MS_PER_DAY + ms;
 
 	Time t;
-	t.m_ms = ms;
+	t.set(ms);
 	return t;
 }
 

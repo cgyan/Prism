@@ -9,10 +9,13 @@
 #ifndef PRISM_TIME_H_
 #define PRISM_TIME_H_
 
-//#include <prism/h/String.h>
-#include <ostream>
+#include <prism/global>
+#include <prism/h/IElapsedTimeMonitor.h>
+#include <memory>
+#include <iostream>
 
-namespace prism {
+PRISM_BEGIN_NAMESPACE
+
 class String;
 
 /*! This is the detailed description of Time.
@@ -20,8 +23,7 @@ class String;
  */
 class Time {
 private:
-	// num of ms since midnight i.e. now-midnight
-	unsigned int m_ms;
+	using ETM = std::shared_ptr<IElapsedTimeMonitor>;
 public:
 	enum Periods {
 		MS_PER_SECOND 	= 1000,
@@ -38,7 +40,11 @@ public:
 public:
 	Time();
 	Time(const int hour, const int min, const int sec=0, const int msec=0);
+	Time(const Time& rhs);
 	virtual ~Time();
+	Time& operator=(const Time& rhs);
+
+	void		setEtm(ETM etm);
 
 	const int	elapsed() const;
 	const int 	hour() const;
@@ -50,6 +56,7 @@ public:
 	void 		reset();
 	const int 	sec() const;
 	const int	secsTo(const Time & time) const;
+	void		set(const unsigned long int msec);
 	void		set(const int hour, const int min, const int sec=0, const int msec=0);
 	void		start();
 	String		toString() const;
@@ -69,12 +76,15 @@ public:
 	Time &		operator+=(const Time & other);
 	Time &		operator-=(const Time & other);
 
-	// related nonmembers
+	// related non-members
 	friend Time operator+(const Time &t1, const Time & t2);
 	friend Time operator-(const Time &t1, const Time & t2);
 	friend std::ostream & operator<<(std::ostream & out, const Time & t);
+private:
+	struct TimeImpl;
+	std::shared_ptr<TimeImpl> impl;
 };
 
-} /* namespace prism */
+PRISM_END_NAMESPACE
 
 #endif /* PRISM_TIME_H_ */
