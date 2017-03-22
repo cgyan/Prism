@@ -24,6 +24,7 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 external/gtest \
+inc/prism/h/priv/factories \
 . \
 src/prism \
 test \

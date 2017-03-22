@@ -6,8 +6,9 @@
  *      Author: iainhemstock
  */
 
-#include <prism/h/priv/TimeUtility.h>
 #include <prism/h/Time.h>
+#include <prism/h/priv/factories/ElapsedTimeMonitorFactory.h>
+#include <prism/h/priv/TimeUtility.h>
 #include <prism/h/String.h>
 
 namespace prism {
@@ -52,76 +53,48 @@ struct TimeStringBuilder {
 };
 
 //=============================================================================================
-// ElapsedTimeMonitor
-//=============================================================================================
-struct ElapsedTimeMonitor : public IElapsedTimeMonitor {
-	unsigned long int ms{};
-
-	void
-	start() override {
-		ms = TimeUtility::msSinceMidnight();
-	}
-
-	const int
-	elapsed() const override {
-		const unsigned long int now = TimeUtility::msSinceMidnight();
-		int msElapsed = now - ms;
-		if (msElapsed < 0)
-			msElapsed += 86400000;
-		return msElapsed;
-	}
-};
-
-//=============================================================================================
 // TimeImpl
 //=============================================================================================
 struct Time::TimeImpl {
 	unsigned long int ms{}; // num of ms since midnight i.e. now-midnight
 	std::shared_ptr<IElapsedTimeMonitor> etm;
 
-	TimeImpl()
-	: ms{},
-	  etm{}
-	{}
-
-	TimeImpl(const int hour, const int min, const int sec, const int msec)
-	: ms(hour * MS_PER_HOUR +
-			min * MS_PER_MINUTE +
-			sec * MS_PER_SECOND +
-			msec),
-	  etm{}
+	TimeImpl(TimeData td, std::shared_ptr<IElapsedTimeMonitor> etm)
+	: ms(td.hour * MS_PER_HOUR + td.min * MS_PER_MINUTE + td.sec * MS_PER_SECOND + td.msec),
+	  etm{etm}
 	{}
 
 	TimeImpl(const TimeImpl& rhs)
 	: ms{rhs.ms},
 	  etm{rhs.etm}
 	{}
-
-	void
-	setEtm(std::shared_ptr<IElapsedTimeMonitor> etm) {
-		this->etm = etm;
-	}
 };
+
 //=============================================================================================
 // Time
 //=============================================================================================
 /**
  * Constructs a Time object set to midnight i.e. hour=min=sec=msec=0.
  */
-Time::Time()
-: impl{new TimeImpl}
-{
-	impl->setEtm(std::make_shared<ElapsedTimeMonitor>());
+Time::Time() {
+	TimeData td = { 0, 0, 0, 0 };
+	*this = Time(td, ElapsedTimeMonitorFactory::create());
 }
 
 /**
- * Constructs a Time object set to \em hour, \em min, \em sec and \em msec.
+ *
  */
-Time::Time(const int hour, const int min, const int sec, const int msec)
-: impl{new TimeImpl(hour, min, sec, msec)}
-{
-	impl->setEtm(std::make_shared<ElapsedTimeMonitor>());
+Time::Time(const int hour, const int min, const int sec, const int msec) {
+	TimeData td = { hour, min, sec, msec };
+	*this = Time(td, ElapsedTimeMonitorFactory::create());
 }
+
+/**
+ *
+ */
+Time::Time(TimeData td, std::shared_ptr<IElapsedTimeMonitor> etm)
+: impl{new TimeImpl(td, etm)}
+{}
 
 /**
  *
@@ -140,15 +113,9 @@ Time::~Time()
  *
  */
 Time& Time::operator=(const Time& rhs) {
-	impl.reset(new TimeImpl{rhs.hour(), rhs.min(), rhs.sec(), rhs.msec()});
+	TimeData td = { rhs.hour(), rhs.min(), rhs.sec(), rhs.msec() };
+	impl.reset(new TimeImpl{td, rhs.impl->etm});
 	return *this;
-}
-
-/**
- *
- */
-void Time::setEtm(ETM etm) {
-	impl->setEtm(etm);
 }
 
 /**

@@ -16,14 +16,16 @@
 
 PRISM_BEGIN_NAMESPACE
 
+struct TimeData {
+	int hour, min, sec, msec;
+};
+
 class String;
 
 /*! This is the detailed description of Time.
  *
  */
 class Time {
-private:
-	using ETM = std::shared_ptr<IElapsedTimeMonitor>;
 public:
 	enum Periods {
 		MS_PER_SECOND 	= 1000,
@@ -37,14 +39,14 @@ public:
 		MINS_PER_DAY	= 1440,
 		HOURS_PER_DAY	= 24
 	};
+protected:
+	Time(TimeData ts, std::shared_ptr<IElapsedTimeMonitor> etm);
 public:
 	Time();
 	Time(const int hour, const int min, const int sec=0, const int msec=0);
 	Time(const Time& rhs);
 	virtual ~Time();
 	Time& operator=(const Time& rhs);
-
-	void		setEtm(ETM etm);
 
 	const int	elapsed() const;
 	const int 	hour() const;

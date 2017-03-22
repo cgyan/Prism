@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include test/subdir.mk
 -include src/prism/subdir.mk
+-include inc/prism/h/priv/factories/subdir.mk
 -include external/gtest/subdir.mk
 -include subdir.mk
 -include objects.mk
