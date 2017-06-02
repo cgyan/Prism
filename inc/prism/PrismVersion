@@ -1,1 +1,1 @@
-#include <prism/h/PrismVersion.h>
+#include <prism/core/PrismVersion.h>

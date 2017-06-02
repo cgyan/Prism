@@ -1,2 +1,1 @@
-#include <prism/h/Deque.h>
-
+#include <prism/core/Deque.h>

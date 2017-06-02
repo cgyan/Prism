@@ -1,1 +1,1 @@
-#include <prism/h/Allocator.h>
+#include <prism/core/Allocator.h>

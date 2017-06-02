@@ -1,1 +1,1 @@
-#include <prism/h/Bitvector.h>
+#include <prism/core/Bitvector.h>

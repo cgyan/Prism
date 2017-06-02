@@ -1,1 +1,1 @@
-#include <prism/h/Stack.h>
+#include <prism/core/Stack.h>

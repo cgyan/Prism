@@ -9,12 +9,10 @@
 #ifndef PRISM_LIST_H_
 #define PRISM_LIST_H_
 
-#include <prism/h/List.h>
+#include <prism/core/List.h>
 
 //#ifdef PRISM_DEBUG_
 //#include <prism/debug/List.h>
 //#endif
 
 #endif // PRISM_LIST_H_
-
-

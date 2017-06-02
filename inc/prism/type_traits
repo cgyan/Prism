@@ -1,1 +1,1 @@
-#include <prism/h/type_traits.h>
+#include <prism/core/type_traits.h>

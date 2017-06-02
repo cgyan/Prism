@@ -1,0 +1,4 @@
+build/core/SharedData.o: src/core/SharedData.cpp inc/prism/SharedData \
+ inc/prism/core/SharedData.h
+src/core/SharedData.cpp inc/prism/SharedData :
+ inc/prism/core/SharedData.h :

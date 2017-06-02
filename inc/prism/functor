@@ -1,1 +1,1 @@
-#include <prism/h/functor.h>
+#include <prism/core/functor.h>

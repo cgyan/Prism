@@ -1,1 +1,1 @@
-#include <prism/h/UnequalSizeException.h>
+#include <prism/core/UnequalSizeException.h>

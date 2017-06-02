@@ -1,0 +1,244 @@
+build/core/Pointf.o: src/core/Pointf.cpp inc/prism/Pointf \
+ inc/prism/core/Pointf.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ostream \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ios \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/iosfwd \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stringfwd.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/memoryfwd.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/postypes.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cwchar \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/wchar.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/exception \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/atomic_lockfree_defines.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/exception_ptr.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/exception_defines.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/nested_exception.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/move.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/concept_check.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/type_traits \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/char_traits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_algobase.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/functexcept.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/cpp_type_traits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/type_traits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/numeric_traits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_pair.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_iterator_base_types.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_iterator_base_funcs.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/debug/assertions.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_iterator.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ptr_traits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/debug/debug.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/predefined_ops.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cstdint \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/stdint.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stdint.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/stddef.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/localefwd.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/clocale \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/locale.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stdio.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cctype \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/ctype.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ios_base.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/atomicity.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/errno.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/process.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include-fixed/limits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include-fixed/syslimits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/limits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/signal.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread_signal.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sys/timeb.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_classes.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/string \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/allocator.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/new_allocator.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/new \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ostream_insert.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/cxxabi_forced.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_function.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/backward/binders.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/range_access.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/initializer_list \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_string.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/alloc_traits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/alloc_traits.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/string_conversions.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cstdlib \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/stdlib.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cstdio \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cerrno \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/functional_hash.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/hash_bytes.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_string.tcc \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_classes.tcc \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/system_error \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/stdexcept \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/streambuf \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/streambuf.tcc \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_ios.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_facets.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cwctype \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/wctype.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/streambuf_iterator.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_facets.tcc \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_ios.tcc \
+ C:/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ostream.tcc \
+ inc/prism/Point inc/prism/core/Point.h
+src/core/Pointf.cpp inc/prism/Pointf :
+ inc/prism/core/Pointf.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ostream :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ios :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/iosfwd :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/c++config.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stringfwd.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/memoryfwd.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/postypes.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cwchar :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/wchar.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/crtdefs.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/vadefs.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/swprintf.inl :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/exception :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/atomic_lockfree_defines.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/exception_ptr.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/exception_defines.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/nested_exception.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/move.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/concept_check.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/type_traits :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/char_traits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_algobase.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/functexcept.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/cpp_type_traits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/type_traits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/numeric_traits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_pair.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_iterator_base_types.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_iterator_base_funcs.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/debug/assertions.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_iterator.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ptr_traits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/debug/debug.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/predefined_ops.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cstdint :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/stdint.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stdint.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/stddef.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stddef.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/localefwd.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/clocale :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/locale.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stdio.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cctype :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/ctype.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ios_base.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/atomicity.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/gthr.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/errno.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sys/types.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/process.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include-fixed/limits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include-fixed/syslimits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/limits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/signal.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread_signal.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sys/timeb.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread_compat.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_classes.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/string :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/allocator.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/new_allocator.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/new :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ostream_insert.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/cxxabi_forced.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/stl_function.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/backward/binders.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/range_access.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/initializer_list :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_string.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/alloc_traits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/alloc_traits.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/ext/string_conversions.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cstdlib :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/stdlib.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/stdlib.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/malloc.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cstdio :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cerrno :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/functional_hash.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/hash_bytes.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_string.tcc :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_classes.tcc :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/system_error :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/stdexcept :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/streambuf :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/streambuf.tcc :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_ios.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_facets.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/cwctype :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/x86_64-w64-mingw32/include/wctype.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/streambuf_iterator.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/locale_facets.tcc :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/basic_ios.tcc :
+/Program_Files/mingw-w64/x86_64-6.3.0-posix-sjlj-rt_v5-rev2/mingw64/lib/gcc/x86_64-w64-mingw32/6.3.0/include/c++/bits/ostream.tcc :
+ inc/prism/Point inc/prism/core/Point.h :

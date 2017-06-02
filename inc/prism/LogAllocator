@@ -1,1 +1,1 @@
-#include <prism/h/LogAllocator.h>
+#include <prism/core/LogAllocator.h>

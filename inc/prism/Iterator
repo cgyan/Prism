@@ -1,1 +1,1 @@
-#include <prism/h/iterator.h>
+#include <prism/core/iterator.h>

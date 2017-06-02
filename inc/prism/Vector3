@@ -1,1 +1,1 @@
-#include <prism/h/Vector3.h>
+#include <prism/core/Vector3.h>

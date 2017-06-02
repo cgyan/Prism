@@ -1,1 +1,1 @@
-#include <prism/h/BadSizeException.h>
+#include <prism/core/BadSizeException.h>

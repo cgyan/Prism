@@ -1,1 +1,1 @@
-#include <prism/h/SharedData.h>
+#include <prism/core/SharedData.h>
