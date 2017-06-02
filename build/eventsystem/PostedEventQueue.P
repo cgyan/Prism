@@ -1,3 +1,0 @@
-build/eventsystem/PostedEventQueue.o: \
- src/eventsystem/PostedEventQueue.cpp
- src/eventsystem/PostedEventQueue.cpp :
