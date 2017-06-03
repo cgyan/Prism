@@ -979,7 +979,7 @@ const int String::toInt() const {
 	int ret = 0;
 	const_iterator bit = begin();
 
-	while (isdigit(*bit)) {
+	while (isdigit(*bit) && bit != end()) {
 		ret *= 10;
 		ret += (int)(*bit-'0');
 		++bit;

@@ -7,11 +7,12 @@ PROJDIR				:= $(shell pwd)
 SRCDIR 				:= src
 BUILDDIR			:= build
 BINDIR				:= bin
+TARGETEXT			:= dll
 TARGET				:= $(BINDIR)/prism
 SRCEXT 				:= cpp
 RECURSIVEWILDCARD 	= $(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call RECURSIVEWILDCARD,$d/,$2))
 ALLSRCS				:= $(call RECURSIVEWILDCARD,$(SRCDIR)/,*.$(SRCEXT))
-EXCLDSRCS			:= src/eventsystem/Win32EventQueue.cpp
+EXCLDSRCS			:=
 FILTSRCS			:= $(filter-out $(EXCLDSRCS),$(ALLSRCS))
 OBJS				:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(FILTSRCS:.$(SRCEXT)=.o))
 LIBDIR				:= -L. -L c:\libs
@@ -29,16 +30,18 @@ $(shell mkdir -p $(BINDIR))
 
 default : $(TARGET)
 
+# build an executable
 $(TARGET) : $(OBJS)
 	@echo Building target: $@
 	$(CC) $(OBJS) -o $(TARGET) $(LIBDIR) $(LIBS)
 	@echo Finished building target: $@
 	@echo ''
 
-dll : $(OBJS)
-	@echo Building DLL: $(TARGET).dll
-	$(CC) -shared -o $(TARGET).dll $(OBJS) $(LIBDIR) $(LIBS) $(DEFINES)
-	@echo Finished building DLL: $(TARGET).dll
+# build a dynamic library
+dylib : $(OBJS)
+	@echo Building $(TARGETEXT): $(TARGET).$(TARGETEXT)
+	$(CC) -shared -o $(TARGET).$(TARGETEXT) $(OBJS) $(LIBDIR) $(LIBS) $(DEFINES)
+	@echo Finished building $(TARGETEXT): $(TARGET).$(TARGETEXT)
 	@echo ''
 
 $(BUILDDIR)/%.o : $(SRCDIR)/%.cpp
@@ -60,6 +63,7 @@ dump :
 	@echo SRCDIR: 		$(SRCDIR)
 	@echo BUILDDIR: 	$(BUILDDIR)
 	@echo BINDIR:	 	$(BINDIR)
+	@echo TARGETEXT:	$(TARGETEXT)
 	@echo TARGET: 		$(TARGET)
 	@echo SRCEXT: 		$(SRCEXT)
 	@echo ALLSRCS: 		$(ALLSRCS)
