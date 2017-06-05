@@ -20,7 +20,7 @@ LIBS				:=
 CPPFLAGS			:= -Wall
 CFLAGS				:=
 CXXFLAGS			:= -std=c++11
-INC					:= -I inc -I c:\inc
+INCDIR				:= -I inc -I c:\inc
 DEFINES				:= # -D
 
 default : shared
@@ -39,17 +39,15 @@ $(TARGET) : $(OBJS)
 
 # build a shared library
 shared : $(OBJS)
-	@echo Building $(TARGETEXT): $(TARGET).$(TARGETEXT)
+	@echo Building library: $(TARGET).$(TARGETEXT)
 	$(CC) -shared -o $(TARGET).$(TARGETEXT) $(OBJS) $(LIBDIR) $(LIBS) $(DEFINES)
-	@echo Finished building $(TARGETEXT): $(TARGET).$(TARGETEXT)
+	@echo Finished building library: $(TARGET).$(TARGETEXT)
 	@echo ''
 
 $(BUILDDIR)/%.o : $(SRCDIR)/%.cpp
 	@echo Building file: $< into target: $@
 	@mkdir -p $(dir $@)
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(INC) $(DEFINES) -MMD -c $< -o $@
-	@cp $(BUILDDIR)/$*.d $(BUILDDIR)/$*.P
-	@rm -f $(BUILDDIR)/$*.d
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(INCDIR) $(DEFINES) -MMD -c $< -o $@
 	@echo Finished building file: $<
 	@echo ''
 
@@ -76,9 +74,10 @@ dump :
 	@echo LIBS:			$(LIBS)
 	@echo CPPFLAGS:		$(CPPFLAGS)
 	@echo CXXFLAGS: 	$(CXXFLAGS)
-	@echo INC: 			$(INC)
+	@echo INCDIR: 		$(INCDIR)
 
-# scans each subdirectory from $(BUILDDIR) downwards looking for all *.P files
-# then includes them in the makefile
-ALLPFILES := $(call RECURSIVEDIRSEARCH,$(BUILDDIR)/,*.P)
--include $(ALLPFILES)
+# scans each subdirectory from $(BUILDDIR) downwards looking for all generated
+# dependency files then includes those files in the makefile
+DEPENDEXT := d
+GENERATEDDEPENDENCIES := $(call RECURSIVEDIRSEARCH,$(BUILDDIR)/,*.$(DEPENDEXT))
+-include $(GENERATEDDEPENDENCIES)

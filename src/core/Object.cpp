@@ -1,27 +1,56 @@
 #include <prism/Object>
+#include <cassert>
 
 PRISM_BEGIN_NAMESPACE
 
+// ============================================================================================
+// ObjectImpl
+// ============================================================================================
+class ObjectImpl {
+public:
+    Object * m_parent;
+    Object::ObjectList m_children;
+public:
+    void setParent(Object * parent);
+    void addChild(Object * child);
+};
+
+void
+ObjectImpl::setParent(Object * parent) {
+    m_parent = parent;
+}
+
+void
+ObjectImpl::addChild(Object * child) {
+    m_children.push_back(child);
+}
+// ============================================================================================
+// Object
+// ============================================================================================
 Object::Object(Object * parent)
-:   m_parent{nullptr}
+:   impl{new ObjectImpl}
 {
-    if (parent) setParent(parent);
+    setParent(parent);
+}
+
+Object::~Object() {
+    //
 }
 
 Object *
 Object::parent() const {
-    return m_parent;
+    return impl->m_parent;
 }
 
 void
 Object::setParent(Object * parent) {
-    m_parent = parent;
-    parent->m_children.push_back(this);
+    impl->setParent(parent);
+    if (parent) parent->impl->addChild(this);
 }
 
-Object::ObjectList
+const Object::ObjectList &
 Object::children() const {
-    return m_children;
+    return impl->m_children;
 }
 
 PRISM_END_NAMESPACE
