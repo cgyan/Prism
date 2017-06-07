@@ -1,60 +1,54 @@
-/*
- * Size.h
- * v0.1
- *
- *  Created on: Jul 1, 2016
- *      Author: iainhemstock
- */
-
 #ifndef PRISM_SIZE_H_
 #define PRISM_SIZE_H_
 
-#include <ostream>
+#include <prism/global>
+#include <memory>
 
-namespace prism {
+PRISM_BEGIN_NAMESPACE
+
+struct SizeData;
 
 class Size {
 private:
-	int m_width;
-	int m_height;
-
+    using SizeDataPtr = std::shared_ptr<SizeData>;
+    SizeDataPtr d;
 public:
-	Size();
-	Size(const int width, const int height);
-	Size(const Size &copy);
-	virtual ~Size();
+    Size(const int width = 0, const int height = 0);
+    virtual ~Size();
 
-	const int 	height() const;
-	const bool 	isEmpty() const;
-	const bool 	isNull() const;
-	const bool 	isValid() const;
-	void 		setHeight(const int height);
-	void 		setWidth(const int width);
-	void 		scale(const int widthFactor, const int heightFactor);
-	void		scale(const Size &size);
-	Size 		scaled(const int widthFactor, const int heightFactor) const;
-	Size		scaled(const Size &size) const;
-	void		transpose();
-	Size		transposed() const;
-	const int 	width() const;
+    const int width() const;
+    const int height() const;
 
-	Size & operator+=(const Size &size);
-	Size & operator-=(const Size &size);
-	Size & operator*=(const Size &size);
-	Size & operator/=(const Size &size);
-	Size & operator=(const Size &size);
+    void setWidth(const int width);
+    void setHeight(const int height);
 
-	// related non-members
-	friend const bool operator==(const Size &s1, const Size &s2);
-	friend const bool operator!=(const Size &s1, const Size &s2);
-	friend Size operator+(const Size &s1, const Size &s2);
-	friend Size operator-(const Size &s1, const Size &s2);
-	friend Size operator*(const Size &size, const int factor);
-	friend Size operator*(const int factor, const Size &size);
-	friend Size operator/(const Size &size, const int factor);
-	friend std::ostream & operator<<(std::ostream & out, const Size & size);
+    void set(const int width, const int height);
+    void reset();
+    const bool isReset() const;
+    const bool isValid() const;
+
+    void transpose();
+    Size transposed() const;
+
+    void scale(const int widthFactor, const int heightFactor);
+    void scale(const Size& size);
+    Size scaled(const int widthFactor, const int heightFactor) const;
+    Size scaled(const Size& size) const;
+
+    Size& operator+=(const Size& rhs);
+    Size& operator-=(const Size& rhs);
+    Size& operator*=(const Size& rhs);
+    Size& operator/=(const Size& rhs);
 };
 
-} /* namespace prism */
+const bool operator==(const Size& lhs, const Size& rhs);
+const bool operator!=(const Size& lhs, const Size& rhs);
+Size operator+(const Size& lhs, const Size& rhs);
+Size operator-(const Size& lhs, const Size& rhs);
+Size operator*(const Size& size, const int factor);
+Size operator*(const int factor, const Size& size);
+Size operator/(const Size& size, const int factor);
 
-#endif /* PRISM_SIZE_H_ */
+PRISM_END_NAMESPACE
+
+#endif // PRISM_SIZE_H_
