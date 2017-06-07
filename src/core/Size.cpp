@@ -103,16 +103,16 @@ Size::operator-=(const Size& rhs) {
 }
 
 Size&
-Size::operator*=(const Size& rhs) {
-    set(width() * rhs.width(), height() * rhs.height());
+Size::operator*=(const int factor) {
+    set(width() * factor, height() * factor);
     return *this;
 }
 
 Size&
-Size::operator/=(const Size& rhs) {
-    if (rhs.width() == 0 || rhs.height() == 0)
+Size::operator/=(const int factor) {
+    if (factor == 0)
         throw DivideByZeroException();
-    set(width() / rhs.width(), height() / rhs.height());
+    set(width() / factor, height() / factor);
     return *this;
 }
 

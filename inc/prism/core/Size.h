@@ -37,8 +37,8 @@ public:
 
     Size& operator+=(const Size& rhs);
     Size& operator-=(const Size& rhs);
-    Size& operator*=(const Size& rhs);
-    Size& operator/=(const Size& rhs);
+    Size& operator*=(const int factor);
+    Size& operator/=(const int factor);
 };
 
 const bool operator==(const Size& lhs, const Size& rhs);
