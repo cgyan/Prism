@@ -34,9 +34,20 @@ public:
     void scale(const PSize& size);
     PSize scaled(const int widthFactor, const int heightFactor) const;
     PSize scaled(const PSize& size) const;
+
+    PSize& operator+=(const PSize& rhs);
+    PSize& operator-=(const PSize& rhs);
+    PSize& operator*=(const PSize& rhs);
+    PSize& operator/=(const PSize& rhs);
 };
 
 const bool operator==(const PSize& lhs, const PSize& rhs);
+const bool operator!=(const PSize& lhs, const PSize& rhs);
+PSize operator+(const PSize& lhs, const PSize& rhs);
+PSize operator-(const PSize& lhs, const PSize& rhs);
+PSize operator*(const PSize& size, const int factor);
+PSize operator*(const int factor, const PSize& size);
+PSize operator/(const PSize& size, const int factor);
 
 PRISM_END_NAMESPACE
 

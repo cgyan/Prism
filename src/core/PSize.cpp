@@ -1,4 +1,5 @@
 #include <prism/PSize>
+#include <prism/DivideByZeroException>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -89,9 +90,67 @@ PSize::scaled(const PSize& size) const {
     return PSize(width() * size.width(), height() * size.height());
 }
 
+PSize&
+PSize::operator+=(const PSize& rhs) {
+    set(width() + rhs.width(), height() + rhs.height());
+    return *this;
+}
+
+PSize&
+PSize::operator-=(const PSize& rhs) {
+    set(width() - rhs.width(), height() - rhs.height());
+    return *this;
+}
+
+PSize&
+PSize::operator*=(const PSize& rhs) {
+    set(width() * rhs.width(), height() * rhs.height());
+    return *this;
+}
+
+PSize&
+PSize::operator/=(const PSize& rhs) {
+    if (rhs.width() == 0 || rhs.height() == 0)
+        throw DivideByZeroException();
+    set(width() / rhs.width(), height() / rhs.height());
+    return *this;
+}
+
 const bool
 operator==(const PSize& lhs, const PSize& rhs) {
     return lhs.width() == rhs.width() && lhs.height() == rhs.height();
+}
+
+const bool
+operator!=(const PSize& lhs, const PSize& rhs) {
+    return !(lhs == rhs);
+}
+
+PSize
+operator+(const PSize& lhs, const PSize& rhs) {
+    return PSize(lhs.width() + rhs.width(), lhs.height() + rhs.height());
+}
+
+PSize
+operator-(const PSize& lhs, const PSize& rhs) {
+    return PSize(lhs.width() - rhs.width(), lhs.height() - rhs.height());
+}
+
+PSize
+operator*(const PSize& size, const int factor) {
+    return PSize(size.width() * factor, size.height() * factor);
+}
+
+PSize
+operator*(const int factor, const PSize& size) {
+    return size * factor;
+}
+
+PSize
+operator/(const PSize& size, const int factor) {
+    if (factor == 0)
+        throw DivideByZeroException();
+    return PSize(size.width() / factor, size.height() / factor);
 }
 
 PRISM_END_NAMESPACE

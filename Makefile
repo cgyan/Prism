@@ -15,7 +15,7 @@ ALLSRCS				:= $(call RECURSIVEDIRSEARCH,$(SRCDIR)/,*.$(SRCEXT))
 EXCLDSRCS			:=
 FILTSRCS			:= $(filter-out $(EXCLDSRCS),$(ALLSRCS))
 OBJS				:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(FILTSRCS:.$(SRCEXT)=.o))
-LIBDIR				:= -L. -L c:\libs
+LIBDIR				:=
 LIBS				:=
 CPPFLAGS			:= -Wall
 CFLAGS				:=
