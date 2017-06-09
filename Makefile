@@ -51,33 +51,13 @@ $(BUILDDIR)/%.o : $(SRCDIR)/%.cpp
 	@echo Finished building file: $<
 	@echo ''
 
+# scans each subdirectory from $(BUILDDIR) downwards looking for all generated
+# dependency files then includes those files in the makefile
+GENERATEDDEPENDENCIES := $(call RECURSIVEDIRSEARCH,$(BUILDDIR)/,*.d)
+-include $(GENERATEDDEPENDENCIES)
+
 clean :
 	rm -rf build bin/*
 
 cleaner : clean
 	rm -rf bin
-
-dump :
-	@echo CC: 			$(CC)
-	@echo PROJDIR:		$(PROJDIR)
-	@echo SRCDIR: 		$(SRCDIR)
-	@echo BUILDDIR: 	$(BUILDDIR)
-	@echo BINDIR:	 	$(BINDIR)
-	@echo TARGETEXT:	$(TARGETEXT)
-	@echo TARGET: 		$(TARGET)
-	@echo SRCEXT: 		$(SRCEXT)
-	@echo ALLSRCS: 		$(ALLSRCS)
-	@echo EXCLDSRCS:	$(EXCLDSRCS)
-	@echo FILTSRCS:		$(FILTSRCS)
-	@echo OBJS: 		$(OBJS)
-	@echo LIBDIR:		$(LIBDIR)
-	@echo LIBS:			$(LIBS)
-	@echo CPPFLAGS:		$(CPPFLAGS)
-	@echo CXXFLAGS: 	$(CXXFLAGS)
-	@echo INCDIR: 		$(INCDIR)
-
-# scans each subdirectory from $(BUILDDIR) downwards looking for all generated
-# dependency files then includes those files in the makefile
-DEPENDEXT := d
-GENERATEDDEPENDENCIES := $(call RECURSIVEDIRSEARCH,$(BUILDDIR)/,*.$(DEPENDEXT))
--include $(GENERATEDDEPENDENCIES)

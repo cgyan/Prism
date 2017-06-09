@@ -5,11 +5,13 @@
 
 template <typename Receiver, typename EventTp>
 class Win32EventQueue : public EventQueue<Receiver, EventTp> {
+private:
+    using EventPair = std::pair<Receiver *, EventTp *>;
 public:
-    virtual const bool                          hasPendingEvents() const override;
-    virtual void                                addEvent(Receiver * receiver, EventTp * event) override;
-    virtual std::pair<Receiver *, EventTp *>    getNextEvent() override;
-    virtual void                                refresh();
+    virtual const bool   hasPendingEvents() const override;
+    virtual void         addEvent(Receiver * receiver, EventTp * event) override;
+    virtual EventPair    getNextEvent() override;
+    virtual void         refresh();
 };
 
 // #include "../src/Win32EventQueue.cpp"
