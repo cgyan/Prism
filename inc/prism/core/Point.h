@@ -3,17 +3,20 @@
 
 #include <prism/global>
 #include <memory>
+#include <ostream>
 
 PRISM_BEGIN_NAMESPACE
 
-struct PointImpl;
+struct PointData;
 
 class Point {
 private:
-    using PointImplPtr = std::shared_ptr<PointImpl>;
-    PointImplPtr impl;
+    using PointDataPtr = std::shared_ptr<PointData>;
+    PointDataPtr impl;
 public:
-    Point(const int x=0, const int y=0);
+    explicit Point(const int x=0, const int y=0);
+    Point(const Point& copy);
+    Point& operator=(const Point& rhs);
 
     const int x() const;
     const int y() const;
@@ -41,6 +44,7 @@ Point operator-(const Point& lhs, const Point& rhs);
 Point operator*(const Point& p, const int factor);
 Point operator*(const int factor, const Point& p);
 Point operator/(const Point& p, const int divisor);
+std::ostream& operator<<(std::ostream& out, const Point& p);
 
 PRISM_END_NAMESPACE
 

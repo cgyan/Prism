@@ -3,16 +3,31 @@
 
 PRISM_BEGIN_NAMESPACE
 
-struct PointImpl {
+struct PointData {
     int x{0};
     int y{0};
 };
 
 Point::Point(const int x, const int y)
-:   impl{new PointImpl}
+:   impl{new PointData}
 {
     impl->x = x;
     impl->y = y;
+}
+
+Point::Point(const Point& copy)
+:   impl{new PointData}
+{
+    impl->x = copy.x();
+    impl->y = copy.y();
+}
+
+Point&
+Point::operator=(const Point& rhs) {
+    impl.reset(new PointData);
+    impl->x = rhs.x();
+    impl->y = rhs.y();
+    return *this;
 }
 
 const int
@@ -127,6 +142,12 @@ operator/(const Point& p, const int divisor) {
     if (divisor == 0)
         throw DivideByZeroException();
     return Point(p.x() / divisor, p.y() / divisor);
+}
+
+std::ostream&
+operator<<(std::ostream& out, const Point& p) {
+    out << "Point [" << &p << "] x: " << p.x() << " y: " << p.y();
+    return out;
 }
 
 PRISM_END_NAMESPACE
