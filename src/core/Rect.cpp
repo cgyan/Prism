@@ -1,7 +1,8 @@
 #include <prism/Rect>
 #include <prism/Point>
 #include <prism/Size>
-#include <cassert>
+#include <prism/algorithm>
+#include <ostream>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -50,6 +51,16 @@ Rect::operator=(const Rect& rhs) {
     return *this;
 }
 
+void
+Rect::set(const Point& topLeft, const Size& size) {
+    *this = Rect(topLeft, size);
+}
+
+void
+Rect::set(const int x, const int y, const int width, const int height) {
+    *this = Rect(x,y,width,height);
+}
+
 Point
 Rect::centre() const {
     const int x = left() + (width() / 2);
@@ -65,6 +76,16 @@ Rect::x() const {
 const int
 Rect::y() const {
     return d->topLeft.y();
+}
+
+void
+Rect::setX(const int x) {
+    moveLeft(x);
+}
+
+void
+Rect::setY(const int y) {
+    moveTop(y);
 }
 
 const int
@@ -108,6 +129,26 @@ Rect::bottomRight() const {
 }
 
 void
+Rect::setTop(const int y) {
+    d->topLeft.setY(y);
+}
+
+void
+Rect::setRight(const int x) {
+    d->bottomRight.setX(x);
+}
+
+void
+Rect::setBottom(const int y) {
+    d->bottomRight.setY(y);
+}
+
+void
+Rect::setLeft(const int x) {
+    d->topLeft.setX(x);
+}
+
+void
 Rect::setTopLeft(const Point& pos) {
     d->topLeft = pos;
 
@@ -146,6 +187,17 @@ Rect::adjusted(const int dx1, const int dy1, const int dx2, const int dy2) const
 }
 
 void
+Rect::moveCentre(const Point & pos) {
+    moveLeft(10);
+    moveTop(10);
+}
+
+void
+Rect::moveCentre(const int x, const int y) {
+    moveCentre(Point(x,y));
+}
+
+void
 Rect::moveTop(const int y) {
     d->topLeft.ry() += y;
     d->bottomRight.ry() += y;
@@ -169,7 +221,7 @@ void
 Rect::moveLeft(const int x) {
     const int offset = x - left();
     d->topLeft.rx() += offset;
-    d->bottomRight.ry() += offset;
+    d->bottomRight.rx() += offset;
 }
 
 void
@@ -207,6 +259,16 @@ Rect::height() const {
 }
 
 void
+Rect::setWidth(const int width) {
+    setSize(width, this->height());
+}
+
+void
+Rect::setHeight(const int height) {
+    setSize(this->width(), height);
+}
+
+void
 Rect::setSize(const int width, const int height) {
     d->bottomRight.rx() = left() + width;
     d->bottomRight.ry() = top() + height;
@@ -229,18 +291,104 @@ Rect::isValid() const {
 
 const bool
 Rect::contains(const Point& pos, const bool precise) const {
-    if (precise) {
-        return pos.x() > this->left() && pos.x() < this->right() &&
-            pos.y() > this->top() && pos.y() < this->bottom();
-    }
+    if (precise)
+        return this->adjusted(1,1,-1,-1).contains(pos);
+
     return pos.x() >= this->left() && pos.x() <= this->right() &&
         pos.y() >= this->top() && pos.y() <= this->bottom();
 }
 
 const bool
-Rect::contains(const int x, const int y) const {
-    return x >= this->left() && x <= this->right() &&
-        y >= this->top() && y <= this->bottom();
+Rect::contains(const int x, const int y, const bool precise) const {
+    return contains(Point(x,y), precise);
+}
+
+const bool
+Rect::contains(const Rect& rect, const bool precise) const {
+    return this->contains(rect.topLeft(), precise)
+        && this->contains(rect.bottomRight(), precise);
+}
+
+Rect
+Rect::transposed() const {
+    Rect r;
+    r.setSize(height(), width());
+    r.setTopLeft(this->topLeft());
+    return r;
+}
+
+Rect
+Rect::normalised() const {
+    Rect copy = *this;
+    if (copy.width() < 0)
+        copy.setWidth(width() * -1);
+    if (copy.height() < 0)
+        copy.setHeight(height() * -1);
+    return copy;
+}
+
+void
+Rect::translate(const int dx, const int dy) {
+    d->topLeft.rx() += dx;
+    d->topLeft.ry() += dy;
+    d->bottomRight.rx() += dx;
+    d->bottomRight.ry() += dy;
+}
+
+void
+Rect::translate(const Point& offset) {
+    translate(offset.x(), offset.y());
+}
+
+Rect
+Rect::translated(const int dx, const int dy) const {
+    Rect copy = *this;
+    copy.translate(dx,dy);
+    return copy;
+}
+
+Rect
+Rect::translated(const Point& offset) const {
+    Rect copy = *this;
+    copy.translate(offset);
+    return copy;
+}
+
+Rect
+Rect::united(const Rect& r1, const Rect& r2) {
+    if (r1.contains(r2)) return r1;
+    else if (r2.contains(r1)) return r2;
+
+    Rect r;
+    r.setLeft(prism::min(r1.left(), r2.left()));
+    r.setTop(prism::min(r1.top(), r2.top()));
+    r.setRight(prism::max(r1.right(), r2.right()));
+    r.setBottom(prism::max(r1.bottom(), r2.bottom()));
+    return r;
+}
+
+const bool
+Rect::intersects(const Rect& r) const {
+    if (this->left() < r.right() &&
+            this->right() > r.left() &&
+            this->top() < r.bottom() &&
+            this->bottom() > r.top()) {
+        return true;
+    }
+    return false;
+}
+
+Rect
+Rect::intersected(const Rect& r1, const Rect& r2) {
+    Rect ret;
+    if (r1.intersects(r2)) {
+		ret.setLeft(prism::max(r1.left(),r2.left()));
+		ret.setRight(prism::min(r1.right(),r2.right()));
+		ret.setBottom(prism::min(r1.bottom(),r2.bottom()));
+		ret.setTop(prism::max(r1.top(),r2.top()));
+        return ret;
+    }
+    return r1;
 }
 
 const bool

@@ -15,12 +15,12 @@ ALLSRCS				:= $(call RECURSIVEDIRSEARCH,$(SRCDIR)/,*.$(SRCEXT))
 EXCLDSRCS			:=
 FILTSRCS			:= $(filter-out $(EXCLDSRCS),$(ALLSRCS))
 OBJS				:= $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(FILTSRCS:.$(SRCEXT)=.o))
+INCDIR				:= -I inc -I c:\inc
 LIBDIR				:=
 LIBS				:=
-CPPFLAGS			:= -Wall
+CPPFLAGS			:= -Wall $(INCDIR)
 CFLAGS				:=
 CXXFLAGS			:= -std=c++11
-INCDIR				:= -I inc -I c:\inc
 DEFINES				:= # -D
 
 default : shared
@@ -47,7 +47,7 @@ shared : $(OBJS)
 $(BUILDDIR)/%.o : $(SRCDIR)/%.cpp
 	@echo Building file: $< into target: $@
 	@mkdir -p $(dir $@)
-	$(CC) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(INCDIR) $(DEFINES) -MMD -c $< -o $@
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(DEFINES) -MMD -c $< -o $@
 	@echo Finished building file: $<
 	@echo ''
 
