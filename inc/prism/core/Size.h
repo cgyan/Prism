@@ -9,9 +9,6 @@ PRISM_BEGIN_NAMESPACE
 struct SizeData;
 
 class Size {
-private:
-    using SizeDataPtr = std::shared_ptr<SizeData>;
-    SizeDataPtr d;
 public:
     Size(const int width = 0, const int height = 0);
     virtual ~Size();
@@ -39,6 +36,9 @@ public:
     Size& operator-=(const Size& rhs);
     Size& operator*=(const int factor);
     Size& operator/=(const int factor);
+private:
+    using SizeDataPtr = std::shared_ptr<SizeData>;
+    SizeDataPtr d;
 };
 
 const bool operator==(const Size& lhs, const Size& rhs);

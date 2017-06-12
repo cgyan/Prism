@@ -10,8 +10,6 @@ PRISM_BEGIN_NAMESPACE
 class ObjectImpl;
 
 class Object {
-private:
-    using ObjectImplPtr = std::shared_ptr<ObjectImpl>;
 public:
     using ObjectList = std::list<Object *>;
 public:
@@ -22,6 +20,7 @@ public:
     void setParent(Object * parent);
     const ObjectList& children() const;
 private:
+    using ObjectImplPtr = std::shared_ptr<ObjectImpl>;
     ObjectImplPtr impl;
 };
 
