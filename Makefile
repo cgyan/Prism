@@ -44,7 +44,7 @@ shared : $(OBJS)
 	@echo Finished building library: $(TARGET).$(TARGETEXT)
 	@echo ''
 
-$(BUILDDIR)/%.o : $(SRCDIR)/%.cpp
+$(BUILDDIR)/%.o : $(SRCDIR)/%.$(SRCEXT)
 	@echo Building file: $< into target: $@
 	@mkdir -p $(dir $@)
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(DEFINES) -MMD -c $< -o $@
