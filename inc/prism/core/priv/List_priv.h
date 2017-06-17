@@ -973,7 +973,7 @@ resize(const int newSize, const_reference value)
  *
  */
 template <class T, class TAllocator>
-const int
+const size_t
 List<T,TAllocator>::
 size() const
 { return d->nodeCount(); }

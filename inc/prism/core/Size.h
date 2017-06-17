@@ -7,6 +7,7 @@
 PRISM_BEGIN_NAMESPACE
 
 struct SizeData;
+class ostream;
 
 class Size {
 public:
@@ -48,6 +49,8 @@ Size operator-(const Size& lhs, const Size& rhs);
 Size operator*(const Size& size, const int factor);
 Size operator*(const int factor, const Size& size);
 Size operator/(const Size& size, const int factor);
+
+std::ostream& operator<<(std::ostream& out, const Size& s);
 
 PRISM_END_NAMESPACE
 

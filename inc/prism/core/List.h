@@ -351,7 +351,7 @@ public:
 	/**
 	 *
 	 */
-	const int
+	const size_t
 	size() const;
 
 	/**

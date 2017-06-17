@@ -10,9 +10,6 @@ PRISM_BEGIN_NAMESPACE
 struct PointData;
 
 class Point {
-private:
-    using PointDataPtr = std::shared_ptr<PointData>;
-    PointDataPtr impl;
 public:
     explicit Point(const int x=0, const int y=0);
     Point(const Point& copy);
@@ -35,6 +32,9 @@ public:
     Point& operator-=(const Point& rhs);
     Point& operator*=(const int factor);
     Point& operator/=(const int divisor);
+private:
+    using PointDataPtr = std::shared_ptr<PointData>;
+    PointDataPtr impl;
 };
 
 const bool operator==(const Point& lhs, const Point& rhs);

@@ -1,5 +1,6 @@
 #include <prism/Size>
 #include <prism/DivideByZeroException>
+#include <ostream>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -151,6 +152,14 @@ operator/(const Size& size, const int factor) {
     if (factor == 0)
         throw DivideByZeroException();
     return Size(size.width() / factor, size.height() / factor);
+}
+
+std::ostream&
+operator<<(std::ostream& out, const Size& s) {
+    out << "Size [" << &s << "] \n" <<
+        "\twidth: " << s.width() << "\n "<<
+        "\theight: " << s.height();
+    return out;
 }
 
 PRISM_END_NAMESPACE
