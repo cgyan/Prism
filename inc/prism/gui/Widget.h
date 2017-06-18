@@ -3,35 +3,61 @@
 
 #include <prism/global>
 #include <string>
+#include <memory>
 
 PRISM_BEGIN_NAMESPACE
 
 class Size;
 class Point;
+class NativeWidget;
 
-//==============================================================================
-// Widget
-//==============================================================================
 class Widget {
 public:
     Widget();
     ~Widget();
 
+    const int width() const;
+    const int height() const;
+    void setWidth(const int width);
+    void setHeight(const int height);
+
     Size size() const;
     void resize(const Size& size);
     void resize(const int width, const int height);
 
+    const int minimumWidth() const;
+    const int minimumHeight() const;
+    const int maximumWidth() const;
+    const int maximumHeight() const;
+    Size minimumSize() const;
+    Size maximumSize() const;
+
+    void setMinimumWidth(const int width);
+    void setMinimumHeight(const int height);
+    void setMaximumWidth(const int width);
+    void setMaximumHeight(const int height);
+    void setMinimumSize(const Size& size);
+    void setMaximumSize(const Size& size);
+
+    void setFixedWidth(const int width);
+    void setFixedHeight(const int height);
+    void setFixedSize(const Size& size);
+
     std::string title() const;
     void setTitle(const std::string& title);
 
-    Point pos() const;
-    void setPos(const Point& pos);
+    const bool isVisible() const;
+    const bool isMaximized() const;
+    const bool isMinimized() const;
+
+    void setVisible();
+    void setMaximized();
+    void setMinimized();
+
+    void setNativeWidget(NativeWidget * nw);
 private:
-    int m_width{600};
-    int m_height{400};
-    int m_x{0};
-    int m_y{0};
-    std::string m_title{"Default Window Title"};
+    struct WidgetImpl;
+    std::shared_ptr<WidgetImpl> impl;
 };
 
 PRISM_END_NAMESPACE
