@@ -3,6 +3,15 @@
 #include <prism/Point>
 
 PRISM_BEGIN_NAMESPACE
+//==============================================================================
+// Widget
+//==============================================================================
+Widget::Widget()
+{}
+
+Widget::~Widget() {
+    //
+}
 
 Size
 Widget::size() const {
@@ -10,23 +19,33 @@ Widget::size() const {
 }
 
 void
+Widget::resize(const Size& size) {
+    m_width = size.width();
+    m_height = size.height();
+}
+
+void
 Widget::resize(const int width, const int height) {
-    m_width = width;
-    m_height = height;
+    resize(Size(width, height));
 }
 
 std::string
 Widget::title() const {
-    return "Default Window Title";
-}
-
-Point
-Widget::position() const {
-    return Point(m_x,m_y);
+    return m_title;
 }
 
 void
-Widget::setPosition(const Point& pos) {
+Widget::setTitle(const std::string& title) {
+    m_title = title;
+}
+
+Point
+Widget::pos() const {
+    return Point(m_x, m_y);
+}
+
+void
+Widget::setPos(const Point& pos) {
     m_x = pos.x();
     m_y = pos.y();
 }
