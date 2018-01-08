@@ -211,4 +211,9 @@ Widget::setNativeWidget(NativeWidget * nw) {
     impl->native.reset(nw);
 }
 
+Layout *
+Widget::layout() const {
+    return nullptr;
+}
+
 PRISM_END_NAMESPACE

@@ -10,6 +10,7 @@ PRISM_BEGIN_NAMESPACE
 class Size;
 class Point;
 class NativeWidget;
+class Layout;
 
 class Widget {
 public:
@@ -25,23 +26,23 @@ public:
     void resize(const Size& size);
     void resize(const int width, const int height);
 
+    Size minimumSize() const;
+    Size maximumSize() const;
     const int minimumWidth() const;
     const int minimumHeight() const;
     const int maximumWidth() const;
     const int maximumHeight() const;
-    Size minimumSize() const;
-    Size maximumSize() const;
 
+    void setMinimumSize(const Size& size);
+    void setMaximumSize(const Size& size);
     void setMinimumWidth(const int width);
     void setMinimumHeight(const int height);
     void setMaximumWidth(const int width);
     void setMaximumHeight(const int height);
-    void setMinimumSize(const Size& size);
-    void setMaximumSize(const Size& size);
 
+    void setFixedSize(const Size& size);
     void setFixedWidth(const int width);
     void setFixedHeight(const int height);
-    void setFixedSize(const Size& size);
 
     std::string title() const;
     void setTitle(const std::string& title);
@@ -53,6 +54,8 @@ public:
     void setVisible();
     void setMaximized();
     void setMinimized();
+
+    Layout * layout() const;
 
     void setNativeWidget(NativeWidget * nw);
 private:
