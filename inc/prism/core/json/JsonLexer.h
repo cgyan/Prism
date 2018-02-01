@@ -1,3 +1,6 @@
+#ifndef PRISM_JSONLEXER_H_
+#define PRISM_JSONLEXER_H_
+
 #include <prism/global>
 #include <prism/JsonToken>
 #include <prism/EmptyException>
@@ -120,3 +123,5 @@ JsonLexer::tokenize(const std::string& input) {
 }
 
 PRISM_END_NAMESPACE
+
+#endif

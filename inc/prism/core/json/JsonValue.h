@@ -1,13 +1,14 @@
+#ifndef PRISM_JSONVALUE_H_
+#define PRISM_JSONVALUE_H_
+
 #include <prism/global>
 #include <string>
 #include <memory>
 
 PRISM_BEGIN_NAMESPACE
 
-// class JsonArray;
 class JsonObject;
-class JsonArray {};
-const bool operator==(const JsonArray& lhs, const JsonArray& rhs) { return true; }
+class JsonArray;
 
 class JsonValue {
 public:
@@ -45,5 +46,8 @@ private:
 
 const bool operator==(const JsonValue& lhs, const JsonValue& rhs);
 const bool operator!=(const JsonValue& lhs, const JsonValue& rhs);
+std::ostream& operator<<(std::ostream& out, const JsonValue& jv);
 
 PRISM_END_NAMESPACE
+
+#endif

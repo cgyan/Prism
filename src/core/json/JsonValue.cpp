@@ -1,10 +1,13 @@
 #include <prism/global>
 #include <prism/JsonValue>
 #include <prism/JsonObject>
+#include <prism/JsonArray>
 #include <prism/InvalidConversionException>
 
 PRISM_BEGIN_NAMESPACE
-
+//==============================================================================
+// JsonValueData
+//==============================================================================
 struct JsonValue::JsonValueData {
     Type m_type;
 
@@ -71,7 +74,9 @@ struct JsonValue::JsonValueData {
         m_type = type;
     }
 };
-
+//==============================================================================
+// JsonValue
+//==============================================================================
 JsonValue::JsonValue(JsonValue::Type type)
     : data{new JsonValueData}
 {
@@ -251,6 +256,20 @@ operator==(const JsonValue& lhs, const JsonValue& rhs) {
 const bool
 operator!=(const JsonValue& lhs, const JsonValue& rhs) {
     return !(lhs == rhs);
+}
+
+std::ostream&
+operator<<(std::ostream& out, const JsonValue& jv) {
+    using Type = JsonValue::Type;
+    switch(jv.type()) {
+        case Type::Null: out << "Null"; break;
+        case Type::Bool: out << jv.toBool(); break;
+        case Type::Double: out << jv.toDouble(); break;
+        case Type::String: out << jv.toString(); break;
+        case Type::Object: out << "Object"; break;
+        case Type::Array: out << "Array"; break;
+    }
+    return out;
 }
 
 PRISM_END_NAMESPACE

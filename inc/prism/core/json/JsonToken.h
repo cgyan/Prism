@@ -1,3 +1,6 @@
+#ifndef PRISM_JSONTOKEN_H_
+#define PRISM_JSONTOKEN_H_
+
 #include <prism/global>
 
 PRISM_BEGIN_NAMESPACE
@@ -39,3 +42,5 @@ operator<<(std::ostream& out, const JsonToken& tk) {
 }
 
 PRISM_END_NAMESPACE
+
+#endif
