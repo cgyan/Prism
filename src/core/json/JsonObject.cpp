@@ -14,10 +14,10 @@ private:
 public:
     JsonObjectData() = default;
 
-    JsonObjectData(std::initializer_list<Pair> il) {
-        for (auto it = il.begin(); it != il.end(); ++it) {
-            map[(*it).first] = (*it).second;
-        }
+    template <typename Iter>
+    JsonObjectData(Iter first, Iter last) {
+        for (auto it = first; it != last; ++it)
+            insertNewMember((*it).first, (*it).second);
     }
 
     const int
@@ -80,31 +80,41 @@ public:
 // JsonObject
 //==============================================================================
 JsonObject::JsonObject()
-    : m_data{new JsonObjectData}
+    : m_impl{new JsonObjectData}
 {}
 
 JsonObject::JsonObject(std::initializer_list<std::pair<std::string, JsonValue>> il)
-    : m_data{new JsonObjectData(il)}
+    : m_impl{new JsonObjectData(il.begin(), il.end())}
 {}
+
+JsonObject::JsonObject(const JsonObject& copy)
+: m_impl{new JsonObjectData(copy.begin(), copy.end())}
+{}
+
+JsonObject&
+JsonObject::operator=(const JsonObject& rhs) {
+    m_impl.reset(new JsonObjectData(rhs.begin(), rhs.end()));
+    return *this;
+}
 
 void
 JsonObject::insert(const std::string& key, const JsonValue& value) {
-    m_data->insertNewMember(key, value);
+    m_impl->insertNewMember(key, value);
 }
 
 void
 JsonObject::remove(const std::string& key) {
-    m_data->removeMember(key);
+    m_impl->removeMember(key);
 }
 
 void
 JsonObject::erase(JsonObject::iterator it) {
-    m_data->removeMember((*it).first);
+    m_impl->removeMember((*it).first);
 }
 
 const int
 JsonObject::size() const {
-    return m_data->numMembers();
+    return m_impl->numMembers();
 }
 
 const bool
@@ -115,57 +125,57 @@ JsonObject::empty() const {
 
 const bool
 JsonObject::contains(const std::string& key) const {
-    return m_data->containsKey(key);
+    return m_impl->containsKey(key);
 }
 
 JsonValue&
 JsonObject::operator[](const std::string& key) {
-    return m_data->value(key);
+    return m_impl->value(key);
 }
 
 std::list<std::string>
 JsonObject::keys() const {
-    return m_data->keys();
+    return m_impl->keys();
 }
 
 JsonObject::iterator
 JsonObject::find(const std::string& key) {
-    return m_data->findMember(key);
+    return m_impl->findMember(key);
 }
 
 JsonObject::iterator
 JsonObject::begin() {
-    return m_data->begin();
+    return m_impl->begin();
 }
 
 JsonObject::const_iterator
 JsonObject::begin() const {
-    return m_data->begin();
+    return m_impl->begin();
 }
 
 JsonObject::const_iterator
 JsonObject::cbegin() const {
-    return m_data->begin();
+    return m_impl->begin();
 }
 
 JsonObject::iterator
 JsonObject::end() {
-    return m_data->end();
+    return m_impl->end();
 }
 
 JsonObject::const_iterator
 JsonObject::end() const {
-    return m_data->end();
+    return m_impl->end();
 }
 
 JsonObject::const_iterator
 JsonObject::cend() const {
-    return m_data->end();
+    return m_impl->end();
 }
 
 const bool
 JsonObject::operator==(const JsonObject& rhs) {
-    return *(this->m_data.get()) == *(rhs.m_data.get());
+    return *this->m_impl == *rhs.m_impl;
 }
 
 std::ostream&
@@ -174,12 +184,12 @@ operator<<(std::ostream& out, const JsonObject& jo) {
     for (auto it = jo.begin(); it != jo.end(); ++it) {
         out << "\t" << (*it).first;
         JsonValue jv = (*it).second;
-        if (jv.type() == JsonValue::Type::Object) out << " Object \n";
-        else if (jv.type() == JsonValue::Type::Array) out << " Array \n";
-        else if (jv.type() == JsonValue::Type::Null) out << " Null \n";
+        if (jv.type() == JsonValue::Type::Null) out << " Null \n";
         else if (jv.type() == JsonValue::Type::Double) out << jv.toDouble() << " \n";
-        else if (jv.type() == JsonValue::Type::String) out << jv.toString() << " \n";
         else if (jv.type() == JsonValue::Type::Bool) out << jv.toBool() << " \n";
+        // else if (jv.type() == JsonValue::Type::String) out << "String" << " \n";
+        // else if (jv.type() == JsonValue::Type::Object) out << " Object \n";
+        // else if (jv.type() == JsonValue::Type::Array) out << " Array \n";
     }
     return out;
 }

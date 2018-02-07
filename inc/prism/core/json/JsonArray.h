@@ -2,7 +2,7 @@
 #define PRISM_JSONARRAY_H_
 
 #include <prism/global>
-#include <vector>
+#include <prism/Vector>
 #include <memory>
 
 PRISM_BEGIN_NAMESPACE
@@ -12,7 +12,8 @@ class ostream;
 
 class JsonArray {
 public:
-    using const_iterator = std::vector<JsonValue>::const_iterator;
+    using iterator = prism::Vector<JsonValue>::iterator;
+    using const_iterator = prism::Vector<JsonValue>::const_iterator;
 public:
     JsonArray();
     JsonArray(std::initializer_list<JsonValue> il);
@@ -20,23 +21,27 @@ public:
     JsonArray& operator=(const JsonArray& rhs);
 
     JsonValue& at(const int index);
-    const bool empty() const;
     const int size() const;
+    const bool empty() const;
+    void insert(const_iterator insertBefore, const JsonValue& value);
+    void insert(const int index, const JsonValue& value);
     void append(const JsonValue& value);
     void prepend(const JsonValue& value);
+    void remove(const_iterator pos);
     void removeAt(const int index);
-    void erase(const_iterator pos);
+    const bool contains(const JsonValue& value) const;
 
     const_iterator begin() const;
     const_iterator end() const;
 
     JsonValue& operator[](const int index);
-    friend const bool operator==(const JsonArray& lhs, const JsonArray& rhs);
+    const bool operator==(const JsonArray& rhs) const;
     friend std::ostream& operator<<(std::ostream& out, const JsonArray& js);
 private:
     class JsonArrayImpl;
     std::shared_ptr<JsonArrayImpl> m_impl;
 };
+
 
 
 PRISM_END_NAMESPACE

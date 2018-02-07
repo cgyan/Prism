@@ -2,6 +2,8 @@
 #define PRISM_JSONTOKEN_H_
 
 #include <prism/global>
+#include <string>
+#include <ostream>
 
 PRISM_BEGIN_NAMESPACE
 

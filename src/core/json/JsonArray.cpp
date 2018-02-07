@@ -1,6 +1,7 @@
 #include <prism/global>
 #include <prism/JsonArray>
 #include <prism/JsonValue>
+#include <prism/algorithm>
 #include <prism/OutOfBoundsException>
 #include <ostream>
 
@@ -10,14 +11,15 @@ PRISM_BEGIN_NAMESPACE
 //==============================================================================
 class JsonArray::JsonArrayImpl {
 public:
-    using const_iterator = std::vector<JsonValue>::const_iterator;
+    using iterator = JsonArray::iterator;
+    using const_iterator = JsonArray::const_iterator;
 public:
     JsonArrayImpl() = default;
 
     template <typename Iter>
     JsonArrayImpl(Iter first, Iter last) {
         while (first != last)
-            m_vec.push_back(*first++);
+            m_vec.append(*first++);
     }
 
     const int
@@ -26,23 +28,33 @@ public:
     }
 
     void
-    insertAtEnd(const JsonValue& value) {
-        m_vec.push_back(value);
-    }
-
-    void
     insert(const_iterator pos, const JsonValue& value) {
         m_vec.insert(pos, value);
     }
 
     void
-    erase(const_iterator pos) {
-        m_vec.erase(pos);
+    remove(const_iterator pos) {
+        m_vec.remove(pos);
     }
 
     JsonValue&
     elementAt(const int index) {
         return m_vec[index];
+    }
+
+    const bool
+    containsElements(const JsonValue& value) const {
+        return prism::count(m_vec.cbegin(), m_vec.cend(), value);
+    }
+
+    iterator
+    begin() {
+        return m_vec.begin();
+    }
+
+    iterator
+    end() {
+        return m_vec.end();
     }
 
     const_iterator
@@ -55,13 +67,18 @@ public:
         return m_vec.cend();
     }
 
+    void
+    swap(JsonArrayImpl& other) {
+        prism::swap(this->m_vec, other.m_vec);
+    }
+
     const bool
-    operator==(const JsonArrayImpl& rhs) {
+    operator==(const JsonArrayImpl& rhs) const {
         if (this->m_vec == rhs.m_vec) return true;
         return false;
     }
 private:
-    std::vector<JsonValue> m_vec{};
+    prism::Vector<JsonValue> m_vec{};
 };
 //==============================================================================
 // JsonArray
@@ -80,7 +97,8 @@ JsonArray::JsonArray(const JsonArray& copy)
 
 JsonArray&
 JsonArray::operator=(const JsonArray& rhs) {
-    m_impl.reset(new JsonArrayImpl(rhs.begin(), rhs.end()));
+    JsonArrayImpl * newImpl = new JsonArrayImpl(rhs.begin(), rhs.end());
+    m_impl.reset(newImpl);
     return *this;
 }
 
@@ -103,7 +121,7 @@ JsonArray::size() const {
 
 void
 JsonArray::append(const JsonValue& value) {
-    m_impl->insertAtEnd(value);
+    m_impl->insert(end(), value);
 }
 
 void
@@ -112,13 +130,28 @@ JsonArray::prepend(const JsonValue& value) {
 }
 
 void
-JsonArray::removeAt(const int index) {
-    m_impl->erase(this->begin() + index);
+JsonArray::insert(JsonArray::const_iterator insertBefore, const JsonValue& value) {
+    m_impl->insert(insertBefore, value);
 }
 
 void
-JsonArray::erase(JsonArray::const_iterator pos) {
-    m_impl->erase(pos);
+JsonArray::insert(const int index, const JsonValue& value) {
+    m_impl->insert(begin() + index, value);
+}
+
+void
+JsonArray::removeAt(const int index) {
+    m_impl->remove(this->begin() + index);
+}
+
+void
+JsonArray::remove(JsonArray::const_iterator pos) {
+    m_impl->remove(pos);
+}
+
+const bool
+JsonArray::contains(const JsonValue& value) const {
+    return m_impl->containsElements(value);
 }
 
 JsonArray::const_iterator
@@ -137,8 +170,8 @@ JsonArray::operator[](const int index) {
 }
 
 const bool
-operator==(const JsonArray& lhs, const JsonArray& rhs) {
-    if (*lhs.m_impl == *rhs.m_impl) return true;
+JsonArray::operator==(const JsonArray& rhs) const {
+    if (*this->m_impl == *rhs.m_impl) return true;
     return false;
 }
 

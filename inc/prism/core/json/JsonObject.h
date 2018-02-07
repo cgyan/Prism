@@ -18,11 +18,12 @@ public:
 public:
     JsonObject();
     JsonObject(std::initializer_list<std::pair<std::string, JsonValue>> il);
+    JsonObject(const JsonObject& copy);
+    JsonObject& operator=(const JsonObject& rhs);
 
     const int size() const;
     const bool empty() const;
     const bool contains(const std::string& key) const;
-    JsonValue& operator[](const std::string& key);
     std::list<std::string> keys() const;
     void insert(const std::string& key, const JsonValue& value);
     void remove(const std::string& key);
@@ -35,11 +36,12 @@ public:
     const_iterator end() const;
     const_iterator cend() const;
 
+    JsonValue& operator[](const std::string& key);
     const bool operator==(const JsonObject& rhs);
     // const bool operator!=(const JsonObject& rhs);
 private:
     class JsonObjectData;
-    std::shared_ptr<JsonObjectData> m_data;
+    std::shared_ptr<JsonObjectData> m_impl;
 };
 
 std::ostream& operator<<(std::ostream& out, const JsonObject& jo);

@@ -17,7 +17,6 @@ public:
     JsonValue(Type type = Type::Null);
     JsonValue(const double value);
     JsonValue(const bool value);
-    JsonValue(const char * cstr);
     JsonValue(const std::string& value);
     JsonValue(const JsonObject& value);
     JsonValue(const JsonArray& value);
@@ -34,14 +33,15 @@ public:
 
     bool toBool() const;
     double toDouble() const;
-    JsonArray toArray() const;
-    JsonObject toObject() const;
     std::string toString() const;
+    JsonObject toObject() const;
+    JsonArray toArray() const;
 
     Type type() const;
 private:
-    struct JsonValueData;
-    std::shared_ptr<JsonValueData> data;
+    class JsonValueImpl;
+    using Impl = std::shared_ptr<JsonValueImpl>;
+    Impl m_impl;
 };
 
 const bool operator==(const JsonValue& lhs, const JsonValue& rhs);
