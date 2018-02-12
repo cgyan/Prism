@@ -1,5 +1,5 @@
-#ifndef PRISM_JSONARRAY_H_
-#define PRISM_JSONARRAY_H_
+#ifndef PRISM_JSON_ARRAY_H_
+#define PRISM_JSON_ARRAY_H_
 
 #include <prism/global>
 #include <prism/Vector>

@@ -3,12 +3,21 @@
 #include <prism/EmptyException>
 #include <string>
 #include <regex>
-#include <ostream>
+#include <iostream>
 
 PRISM_BEGIN_NAMESPACE
 
 JsonLexer::JsonLexer(const std::string& input) {
-    tokenize(input);
+    try {
+        tokenize(input);
+    }
+    catch(const JsonLexerException& ex) {
+        throw ex;
+    }
+}
+
+JsonLexer::~JsonLexer() {
+    //
 }
 
 const bool
@@ -28,7 +37,7 @@ JsonLexer::next() {
 }
 
 void
-JsonLexer::addToken(JsonToken::LexemeType type, const std::string& value) {
+JsonLexer::addToken(JsonToken::Type type, const std::string& value) {
     JsonToken tk(type, value);
     tokens.push(tk);
 }
@@ -45,43 +54,43 @@ JsonLexer::tokenize(const std::string& input) {
             ++lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(","))) {
-            addToken(JsonToken::LexemeType::COMMA);
+            addToken(JsonToken::Type::Comma);
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\{)"))) {
-            addToken(JsonToken::LexemeType::LEFT_BRACE);
+            addToken(JsonToken::Type::LeftBrace);
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(:)"))) {
-            addToken(JsonToken::LexemeType::COLON);
+            addToken(JsonToken::Type::Colon);
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\})"))) {
-            addToken(JsonToken::LexemeType::RIGHT_BRACE);
+            addToken(JsonToken::Type::RightBrace);
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\[)"))) {
-            addToken(JsonToken::LexemeType::LEFT_BRACKET);
+            addToken(JsonToken::Type::LeftBracket);
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\])"))) {
-            addToken(JsonToken::LexemeType::RIGHT_BRACKET);
+            addToken(JsonToken::Type::RightBracket);
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("true"))) {
-            addToken(JsonToken::LexemeType::BOOL_LITERAL, "true");
+            addToken(JsonToken::Type::BoolLiteral, "true");
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("false"))) {
-            addToken(JsonToken::LexemeType::BOOL_LITERAL, "false");
+            addToken(JsonToken::Type::BoolLiteral, "false");
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("null"))) {
-            addToken(JsonToken::LexemeType::NULL_LITERAL);
+            addToken(JsonToken::Type::NullLiteral);
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"("[[:print:]]*")"))) {
-            addToken(JsonToken::LexemeType::STRING, std::string(lexemeBegin+1, lexemeEnd-1));
+            addToken(JsonToken::Type::String, std::string(lexemeBegin+1, lexemeEnd-1));
             lexemeBegin = lexemeEnd;
         }
         else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("-?[0-9]"))) {
@@ -94,12 +103,16 @@ JsonLexer::tokenize(const std::string& input) {
                 ++lexemeEnd;
             }
             std::string numLexeme = std::string(lexemeBegin, --lexemeEnd);
-            addToken(JsonToken::LexemeType::NUMBER, numLexeme);
+            addToken(JsonToken::Type::Number, numLexeme);
             lexemeBegin += numLexeme.size();
         }
         else {
             ++lexemeEnd;
         }
+    }
+    if (lexemeBegin != inputEnd) {
+        std::string msg = "Lexical error: unrecognized input";
+        throw prism::JsonLexerException(msg);
     }
 }
 

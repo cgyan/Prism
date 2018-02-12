@@ -1,5 +1,5 @@
-#ifndef PRISM_JSONVALUE_H_
-#define PRISM_JSONVALUE_H_
+#ifndef PRISM_JSON_VALUE_H_
+#define PRISM_JSON_VALUE_H_
 
 #include <prism/global>
 #include <string>

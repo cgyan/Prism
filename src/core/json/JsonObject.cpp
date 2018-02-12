@@ -174,7 +174,7 @@ JsonObject::cend() const {
 }
 
 const bool
-JsonObject::operator==(const JsonObject& rhs) {
+JsonObject::operator==(const JsonObject& rhs) const {
     return *this->m_impl == *rhs.m_impl;
 }
 

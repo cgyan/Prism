@@ -1,5 +1,5 @@
-#ifndef PRISM_JSONOBJECT_H_
-#define PRISM_JSONOBJECT_H_
+#ifndef PRISM_JSON_OBJECT_H_
+#define PRISM_JSON_OBJECT_H_
 
 #include <prism/global>
 #include <memory>
@@ -37,7 +37,7 @@ public:
     const_iterator cend() const;
 
     JsonValue& operator[](const std::string& key);
-    const bool operator==(const JsonObject& rhs);
+    const bool operator==(const JsonObject& rhs) const;
     // const bool operator!=(const JsonObject& rhs);
 private:
     class JsonObjectData;
