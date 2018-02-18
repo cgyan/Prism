@@ -2,11 +2,11 @@
 #define PRISM_JSON_VALUE_H_
 
 #include <prism/global>
-#include <string>
 #include <memory>
 
 PRISM_BEGIN_NAMESPACE
 
+class AbstractJsonValueImpl;
 class JsonObject;
 class JsonArray;
 
@@ -21,6 +21,7 @@ public:
     JsonValue(const JsonObject& value);
     JsonValue(const JsonArray& value);
     JsonValue(const JsonValue& copy);
+    JsonValue(AbstractJsonValueImpl* impl);
     JsonValue& operator=(const JsonValue& rhs);
     ~JsonValue();
 
@@ -39,9 +40,7 @@ public:
 
     Type type() const;
 private:
-    class JsonValueImpl;
-    using Impl = std::shared_ptr<JsonValueImpl>;
-    Impl m_impl;
+    std::shared_ptr<AbstractJsonValueImpl> m_impl;
 };
 
 const bool operator==(const JsonValue& lhs, const JsonValue& rhs);

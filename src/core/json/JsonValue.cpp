@@ -1,15 +1,17 @@
 #include <prism/global>
 #include <prism/JsonValue>
+#include <prism/AbstractJsonValueImpl>
 #include <prism/JsonObject>
 #include <prism/JsonArray>
 #include <prism/algorithm>
 #include <prism/InvalidConversionException>
+#include <string>
 
 PRISM_BEGIN_NAMESPACE
 //==============================================================================
 // JsonValueImpl
 //==============================================================================
-class JsonValue::JsonValueImpl {
+class JsonValueImpl : public AbstractJsonValueImpl {
 public:
     JsonValueImpl(JsonValue::Type type);
     JsonValueImpl(const double value);
@@ -20,14 +22,14 @@ public:
     JsonValueImpl(const JsonValueImpl& copy);
     ~JsonValueImpl();
 
-    double toDouble() const;
-    bool toBool() const;
-    std::string toString() const;
-    JsonObject toObject() const;
-    JsonArray toArray() const;
+    double toDouble() const override;
+    bool toBool() const override;
+    std::string toString() const override;
+    JsonObject toObject() const override;
+    JsonArray toArray() const override;
 
-    JsonValue::Type type() const;
-    void swap(JsonValueImpl& other);
+    JsonValue::Type type() const override;
+    void swap(AbstractJsonValueImpl * other) override;
 private:
     void constructString(const std::string& value);
     void constructObject(const JsonObject& value);
@@ -46,36 +48,36 @@ private:
     };
 };
 
-JsonValue::JsonValueImpl::JsonValueImpl(JsonValue::Type type) {
+JsonValueImpl::JsonValueImpl(JsonValue::Type type) {
     m_type = type;
 }
 
-JsonValue::JsonValueImpl::JsonValueImpl(const double value) {
+JsonValueImpl::JsonValueImpl(const double value) {
     m_type = JsonValue::Type::Double;
     m_doubleValue = value;
 }
 
-JsonValue::JsonValueImpl::JsonValueImpl(const bool value) {
+JsonValueImpl::JsonValueImpl(const bool value) {
     m_type = JsonValue::Type::Bool;
     m_boolValue = value;
 }
 
-JsonValue::JsonValueImpl::JsonValueImpl(const std::string& value) {
+JsonValueImpl::JsonValueImpl(const std::string& value) {
     m_type = JsonValue::Type::String;
     constructString(value);
 }
 
-JsonValue::JsonValueImpl::JsonValueImpl(const JsonObject& value) {
+JsonValueImpl::JsonValueImpl(const JsonObject& value) {
     m_type = JsonValue::Type::Object;
     constructObject(value);
 }
 
-JsonValue::JsonValueImpl::JsonValueImpl(const JsonArray& value) {
+JsonValueImpl::JsonValueImpl(const JsonArray& value) {
     m_type = JsonValue::Type::Array;
     constructArray(value);
 }
 
-JsonValue::JsonValueImpl::JsonValueImpl(const JsonValueImpl& copy) {
+JsonValueImpl::JsonValueImpl(const JsonValueImpl& copy) {
     switch (copy.type()) {
         case JsonValue::Type::Null:
             break;
@@ -98,7 +100,7 @@ JsonValue::JsonValueImpl::JsonValueImpl(const JsonValueImpl& copy) {
     m_type = copy.m_type;
 }
 
-JsonValue::JsonValueImpl::~JsonValueImpl() {
+JsonValueImpl::~JsonValueImpl() {
     using Type = JsonValue::Type;
     if (type() == Type::String) destroyString();
     else if (type() == Type::Object) destroyObject();
@@ -106,89 +108,90 @@ JsonValue::JsonValueImpl::~JsonValueImpl() {
 }
 
 void
-JsonValue::JsonValueImpl::constructString(const std::string& value) {
+JsonValueImpl::constructString(const std::string& value) {
     new (&m_stringValue) std::string(value);
 }
 
 void
-JsonValue::JsonValueImpl::constructObject(const JsonObject& value) {
+JsonValueImpl::constructObject(const JsonObject& value) {
     new (&m_objectValue) JsonObject(value);
 }
 
 void
-JsonValue::JsonValueImpl::constructArray(const JsonArray& value) {
+JsonValueImpl::constructArray(const JsonArray& value) {
     new (&m_arrayValue) JsonArray(value);
 }
 
 void
-JsonValue::JsonValueImpl::destroyString() {
+JsonValueImpl::destroyString() {
     using namespace std;
     m_stringValue.~string();
 }
 
 void
-JsonValue::JsonValueImpl::destroyObject() {
+JsonValueImpl::destroyObject() {
     m_objectValue.~JsonObject();
 }
 
 void
-JsonValue::JsonValueImpl::destroyArray() {
+JsonValueImpl::destroyArray() {
     m_arrayValue.~JsonArray();
 }
 
 double
-JsonValue::JsonValueImpl::toDouble() const {
+JsonValueImpl::toDouble() const {
     return m_doubleValue;
 }
 
 bool
-JsonValue::JsonValueImpl::toBool() const {
+JsonValueImpl::toBool() const {
     return m_boolValue;
 }
 
 std::string
-JsonValue::JsonValueImpl::toString() const {
+JsonValueImpl::toString() const {
     return m_stringValue;
 }
 
 JsonObject
-JsonValue::JsonValueImpl::toObject() const {
+JsonValueImpl::toObject() const {
     return m_objectValue;
 }
 
 JsonArray
-JsonValue::JsonValueImpl::toArray() const {
+JsonValueImpl::toArray() const {
     return m_arrayValue;
 }
 
 JsonValue::Type
-JsonValue::JsonValueImpl::type() const {
+JsonValueImpl::type() const {
     return m_type;
 }
 
 void
-JsonValue::JsonValueImpl::swap(JsonValueImpl& other) {
+JsonValueImpl::swap(AbstractJsonValueImpl * other) {
+    JsonValueImpl * otherImpl = dynamic_cast<JsonValueImpl*>(other);
     using Type = JsonValue::Type;
-    switch (other.type()) {
+    switch (other->type()) {
         case Type::Null:
             break;
         case Type::Bool:
-            prism::swap(m_boolValue, other.m_boolValue);
+            prism::swap(m_boolValue, otherImpl->m_boolValue);
             break;
         case Type::Double:
-            prism::swap(m_doubleValue, other.m_doubleValue);
+            prism::swap(m_doubleValue, otherImpl->m_doubleValue);
             break;
         case Type::String:
-            prism::swap(m_stringValue, other.m_stringValue);
+            prism::swap(m_stringValue, otherImpl->m_stringValue);
             break;
         case JsonValue::Type::Object:
-            prism::swap(m_objectValue, other.m_objectValue);
+            prism::swap(m_objectValue, otherImpl->m_objectValue);
             break;
         case JsonValue::Type::Array:
-            prism::swap(m_arrayValue, other.m_arrayValue);
+            prism::swap(m_arrayValue, otherImpl->m_arrayValue);
             break;
     }
-    prism::swap(m_type, other.m_type);
+    prism::swap(m_type, otherImpl->m_type);
 }
 //==============================================================================
 // JsonValue
@@ -228,10 +231,15 @@ JsonValue::JsonValue(const JsonValue& copy) {
     }
 }
 
+JsonValue::JsonValue(AbstractJsonValueImpl* impl)
+{
+    m_impl.reset(impl);
+}
+
 JsonValue&
 JsonValue::operator=(const JsonValue& rhs) {
-    JsonValueImpl copyImpl = *rhs.m_impl;
-    m_impl->swap(copyImpl);
+    std::shared_ptr<AbstractJsonValueImpl> copyRhsImpl = rhs.m_impl;
+    copyRhsImpl.swap(this->m_impl);
     return *this;
 }
 

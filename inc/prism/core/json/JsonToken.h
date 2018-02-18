@@ -20,11 +20,12 @@ public:
         BoolLiteral,
         NullLiteral
     };
-    Type type;
-    std::string val{};
 public:
     JsonToken() = default;
     JsonToken(JsonToken::Type type, const std::string val="");
+public:
+    Type type;
+    std::string val{};
 };
 
 const bool operator==(const JsonToken& lhs, const JsonToken& rhs);

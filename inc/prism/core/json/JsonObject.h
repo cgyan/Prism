@@ -10,6 +10,7 @@
 PRISM_BEGIN_NAMESPACE
 
 class JsonValue;
+class AbstractJsonObjectImpl;
 
 class JsonObject {
 public:
@@ -19,6 +20,7 @@ public:
     JsonObject();
     JsonObject(std::initializer_list<std::pair<std::string, JsonValue>> il);
     JsonObject(const JsonObject& copy);
+    JsonObject(AbstractJsonObjectImpl * impl);
     JsonObject& operator=(const JsonObject& rhs);
 
     const int size() const;
@@ -40,8 +42,7 @@ public:
     const bool operator==(const JsonObject& rhs) const;
     // const bool operator!=(const JsonObject& rhs);
 private:
-    class JsonObjectData;
-    std::shared_ptr<JsonObjectData> m_impl;
+    std::shared_ptr<AbstractJsonObjectImpl> m_impl;
 };
 
 std::ostream& operator<<(std::ostream& out, const JsonObject& jo);

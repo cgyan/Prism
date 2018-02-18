@@ -1,49 +1,40 @@
 #include <prism/global>
 #include <prism/JsonLexer>
+#include <prism/AbstractJsonLexerImpl>
+#include <prism/JsonToken>
 #include <prism/EmptyException>
+#include <prism/JsonLexerException>
 #include <string>
 #include <regex>
 #include <iostream>
 
 PRISM_BEGIN_NAMESPACE
+//==============================================================================
+// JsonLexerImpl
+//==============================================================================
+class JsonLexerImpl : public AbstractJsonLexerImpl {
+public:
+    JsonLexerImpl() = default;
+    std::queue<JsonToken>& tokens() override;
+    void addToken(JsonToken::Type type, const std::string& val="") override;
+    void tokenize(const std::string& input) override;
+private:
+    std::queue<JsonToken> m_tokens{};
+};
 
-JsonLexer::JsonLexer(const std::string& input) {
-    try {
-        tokenize(input);
-    }
-    catch(const JsonLexerException& ex) {
-        throw ex;
-    }
-}
-
-JsonLexer::~JsonLexer() {
-    //
-}
-
-const bool
-JsonLexer::hasNext() const {
-    if (tokens.size()) return true;
-    return false;
-}
-
-JsonToken
-JsonLexer::next() {
-    if (hasNext()) {
-        JsonToken ret = tokens.front();
-        tokens.pop();
-        return ret;
-    }
-    throw EmptyException();
+std::queue<JsonToken>&
+JsonLexerImpl::tokens() {
+    return m_tokens;
 }
 
 void
-JsonLexer::addToken(JsonToken::Type type, const std::string& value) {
+JsonLexerImpl::addToken(JsonToken::Type type, const std::string& value) {
     JsonToken tk(type, value);
-    tokens.push(tk);
+    m_tokens.push(tk);
 }
 
 void
-JsonLexer::tokenize(const std::string& input) {
+JsonLexerImpl::tokenize(const std::string& input) {
     std::string::const_iterator lexemeBegin = input.cbegin();
     std::string::const_iterator lexemeEnd = lexemeBegin;
     std::string::const_iterator inputEnd = input.cend();
@@ -114,6 +105,35 @@ JsonLexer::tokenize(const std::string& input) {
         std::string msg = "Lexical error: unrecognized input";
         throw prism::JsonLexerException(msg);
     }
+}
+//==============================================================================
+// JsonLexer
+//==============================================================================
+JsonLexer::JsonLexer(const std::string& input)
+: m_impl{new JsonLexerImpl}
+{
+    try {
+        m_impl->tokenize(input);
+    }
+    catch(const JsonLexerException& ex) {
+        throw ex;
+    }
+}
+
+const bool
+JsonLexer::hasNext() const {
+    if (m_impl->tokens().size()) return true;
+    return false;
+}
+
+JsonToken
+JsonLexer::next() {
+    if (hasNext()) {
+        JsonToken ret = m_impl->tokens().front();
+        m_impl->tokens().pop();
+        return ret;
+    }
+    throw EmptyException();
 }
 
 PRISM_END_NAMESPACE

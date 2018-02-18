@@ -1,15 +1,17 @@
 #include <prism/global>
 #include <prism/JsonArray>
+#include <prism/AbstractJsonArrayImpl>
 #include <prism/JsonValue>
 #include <prism/algorithm>
 #include <prism/OutOfBoundsException>
+#include <prism/Vector>
 #include <ostream>
 
 PRISM_BEGIN_NAMESPACE
 //==============================================================================
 // JsonArrayImpl
 //==============================================================================
-class JsonArray::JsonArrayImpl {
+class JsonArrayImpl : public AbstractJsonArrayImpl {
 public:
     using iterator = JsonArray::iterator;
     using const_iterator = JsonArray::const_iterator;
@@ -18,64 +20,39 @@ public:
 
     template <typename Iter>
     JsonArrayImpl(Iter first, Iter last) {
+        m_vec.reserve(last - first);
         while (first != last)
             m_vec.append(*first++);
     }
 
     const int
-    numElements() const {
+    numElements() const override {
         return m_vec.size();
     }
 
     void
-    insert(const_iterator pos, const JsonValue& value) {
+    insert(const_iterator pos, const JsonValue& value) override {
         m_vec.insert(pos, value);
     }
 
     void
-    remove(const_iterator pos) {
+    remove(const_iterator pos) override {
         m_vec.remove(pos);
     }
 
-    JsonValue&
-    elementAt(const int index) {
-        return m_vec[index];
-    }
-
     const bool
-    containsElements(const JsonValue& value) const {
+    containsElement(const JsonValue& value) const override {
         return prism::count(m_vec.cbegin(), m_vec.cend(), value);
     }
 
     iterator
-    begin() {
+    begin() override {
         return m_vec.begin();
     }
 
     iterator
-    end() {
+    end() override {
         return m_vec.end();
-    }
-
-    const_iterator
-    begin() const {
-        return m_vec.cbegin();
-    }
-
-    const_iterator
-    end() const {
-        return m_vec.cend();
-    }
-
-    void
-    swap(JsonArrayImpl& other) {
-        prism::swap(this->m_vec, other.m_vec);
-    }
-
-    const bool
-    operator==(const JsonArrayImpl& rhs) const {
-        if (this->m_vec == rhs.m_vec) return true;
-        return false;
     }
 private:
     prism::Vector<JsonValue> m_vec{};
@@ -84,21 +61,24 @@ private:
 // JsonArray
 //==============================================================================
 JsonArray::JsonArray()
-: m_impl{new JsonArray::JsonArrayImpl}
+: m_impl{new JsonArrayImpl}
 {}
 
 JsonArray::JsonArray(std::initializer_list<JsonValue> il)
-: m_impl{new JsonArray::JsonArrayImpl(il.begin(), il.end())}
+: m_impl{new JsonArrayImpl(il.begin(), il.end())}
 {}
 
 JsonArray::JsonArray(const JsonArray& copy)
-: m_impl{new JsonArray::JsonArrayImpl(copy.begin(), copy.end())}
+: m_impl{new JsonArrayImpl(copy.begin(), copy.end())}
+{}
+
+JsonArray::JsonArray(AbstractJsonArrayImpl * impl)
+: m_impl{impl}
 {}
 
 JsonArray&
 JsonArray::operator=(const JsonArray& rhs) {
-    JsonArrayImpl * newImpl = new JsonArrayImpl(rhs.begin(), rhs.end());
-    m_impl.reset(newImpl);
+    m_impl.reset(new JsonArrayImpl(rhs.begin(), rhs.end()));
     return *this;
 }
 
@@ -106,7 +86,7 @@ JsonValue&
 JsonArray::at(const int index) {
     if (index >= m_impl->numElements())
         throw prism::OutOfBoundsException(index);
-    return m_impl->elementAt(index);
+    return *(m_impl->begin() + index);
 }
 
 const bool
@@ -151,7 +131,12 @@ JsonArray::remove(JsonArray::const_iterator pos) {
 
 const bool
 JsonArray::contains(const JsonValue& value) const {
-    return m_impl->containsElements(value);
+    return m_impl->containsElement(value);
+}
+
+void
+JsonArray::swap(JsonArray& other) {
+    std::swap(this->m_impl, other.m_impl);
 }
 
 JsonArray::const_iterator
@@ -166,13 +151,12 @@ JsonArray::end() const {
 
 JsonValue&
 JsonArray::operator[](const int index) {
-    return m_impl->elementAt(index);
+    return *(m_impl->begin() + index);
 }
 
 const bool
 JsonArray::operator==(const JsonArray& rhs) const {
-    if (*this->m_impl == *rhs.m_impl) return true;
-    return false;
+    return prism::equal(this->begin(), this->end(), rhs.begin());
 }
 
 std::ostream&

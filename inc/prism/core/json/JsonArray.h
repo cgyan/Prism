@@ -8,6 +8,7 @@
 PRISM_BEGIN_NAMESPACE
 
 class JsonValue;
+class AbstractJsonArrayImpl;
 class ostream;
 
 class JsonArray {
@@ -18,6 +19,7 @@ public:
     JsonArray();
     JsonArray(std::initializer_list<JsonValue> il);
     JsonArray(const JsonArray& copy);
+    JsonArray(AbstractJsonArrayImpl * impl);
     JsonArray& operator=(const JsonArray& rhs);
 
     JsonValue& at(const int index);
@@ -30,6 +32,7 @@ public:
     void remove(const_iterator pos);
     void removeAt(const int index);
     const bool contains(const JsonValue& value) const;
+    void swap(JsonArray& other);
 
     const_iterator begin() const;
     const_iterator end() const;
@@ -38,11 +41,8 @@ public:
     const bool operator==(const JsonArray& rhs) const;
     friend std::ostream& operator<<(std::ostream& out, const JsonArray& js);
 private:
-    class JsonArrayImpl;
-    std::shared_ptr<JsonArrayImpl> m_impl;
+    std::shared_ptr<AbstractJsonArrayImpl> m_impl;
 };
-
-
 
 PRISM_END_NAMESPACE
 

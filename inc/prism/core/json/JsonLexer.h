@@ -2,36 +2,22 @@
 #define PRISM_JSON_LEXER_H_
 
 #include <prism/global>
-#include <prism/JsonToken>
-#include <prism/Exception>
-#include <string>
-#include <queue>
+#include <memory>
 
 PRISM_BEGIN_NAMESPACE
-//==============================================================================
-// JsonLexerException
-//==============================================================================
-class JsonLexerException : public Exception {
-public:
-    JsonLexerException(const std::string& errMsg)
-    : Exception{errMsg}
-    {}
-};
-//==============================================================================
-// JsonLexer
-//==============================================================================
+
+class AbstractJsonLexerImpl;
+class JsonToken;
+
 class JsonLexer {
 public:
     JsonLexer() = delete;
     JsonLexer(const std::string& input);
-    virtual ~JsonLexer();
-    virtual const bool hasNext() const;
-    virtual JsonToken next();
+
+    const bool hasNext() const;
+    JsonToken next();
 private:
-    void tokenize(const std::string& input);
-    void addToken(JsonToken::Type type, const std::string& val="");
-private:
-    std::queue<JsonToken> tokens;
+    std::shared_ptr<AbstractJsonLexerImpl> m_impl;
 };
 
 PRISM_END_NAMESPACE
