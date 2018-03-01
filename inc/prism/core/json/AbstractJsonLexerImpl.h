@@ -12,9 +12,8 @@ class JsonToken;
 class AbstractJsonLexerImpl {
 public:
     virtual ~AbstractJsonLexerImpl() {}
-    virtual std::queue<JsonToken>& tokens() = 0;
-    virtual void addToken(JsonToken::Type type, const std::string& val="") = 0;
-    virtual void tokenize(const std::string& input) = 0;
+    virtual JsonToken getNextToken() = 0;
+    virtual const bool stringIsStillBeingProcessed() const = 0;
 };
 
 PRISM_END_NAMESPACE

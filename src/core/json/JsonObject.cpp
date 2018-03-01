@@ -1,5 +1,4 @@
 #include <prism/JsonObject>
-#include <prism/JsonValue>
 #include <prism/AbstractJsonObjectImpl>
 #include <prism/algorithm>
 #include <map>
@@ -9,10 +8,6 @@ PRISM_BEGIN_NAMESPACE
 // JsonObjectData
 //==============================================================================
 class JsonObjectImpl : public AbstractJsonObjectImpl {
-private:
-    using Pair = std::pair<std::string, JsonValue>;
-    // TODO: use prism::Map when written instead of std::map
-    std::map<std::string, JsonValue> map;
 public:
     JsonObjectImpl() = default;
 
@@ -22,8 +17,13 @@ public:
             insertNewMember((*it).first, (*it).second);
     }
 
+    JsonObjectImpl*
+    clone() const override {
+        return new JsonObjectImpl(*this);
+    }
+
     const int
-    numMembers() const override{
+    numMembers() const override {
         return map.size();
     }
 
@@ -69,23 +69,28 @@ public:
     }
 
     const bool
-    operator==(const JsonObjectImpl& rhs) {
-        return this->map == rhs.map;
+    equals(AbstractJsonObjectImpl * rhs) const override {
+        JsonObjectImpl * rhsImpl = dynamic_cast<JsonObjectImpl*>(rhs);
+        return this->map == rhsImpl->map;
     }
+private:
+    using Pair = std::pair<std::string, JsonValue>;
+    // TODO: use prism::Map when written instead of std::map
+    std::map<std::string, JsonValue> map{};
 };
 //==============================================================================
 // JsonObject
 //==============================================================================
 JsonObject::JsonObject()
-    : m_impl{new JsonObjectImpl}
+: m_impl{new JsonObjectImpl}
 {}
 
 JsonObject::JsonObject(std::initializer_list<std::pair<std::string, JsonValue>> il)
-    : m_impl{new JsonObjectImpl(il.begin(), il.end())}
+: m_impl{new JsonObjectImpl(il.begin(), il.end())}
 {}
 
 JsonObject::JsonObject(const JsonObject& copy)
-: m_impl{new JsonObjectImpl(copy.begin(), copy.end())}
+: m_impl{copy.m_impl->clone()}
 {}
 
 JsonObject::JsonObject(AbstractJsonObjectImpl * impl)
@@ -94,7 +99,7 @@ JsonObject::JsonObject(AbstractJsonObjectImpl * impl)
 
 JsonObject&
 JsonObject::operator=(const JsonObject& rhs) {
-    m_impl.reset(new JsonObjectImpl(rhs.begin(), rhs.end()));
+    m_impl.reset(rhs.m_impl->clone());
     return *this;
 }
 
@@ -177,8 +182,7 @@ JsonObject::cend() const {
 
 const bool
 JsonObject::operator==(const JsonObject& rhs) const {
-    // return *this->m_impl == *rhs.m_impl;
-    return prism::equal(this->begin(), this->end(), rhs.begin());
+    return m_impl->equals(rhs.m_impl.get());
 }
 
 std::ostream&

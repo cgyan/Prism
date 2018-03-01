@@ -25,6 +25,11 @@ public:
             m_vec.append(*first++);
     }
 
+    JsonArrayImpl*
+    clone() const override {
+        return new JsonArrayImpl(*this);
+    }
+
     const int
     numElements() const override {
         return m_vec.size();
@@ -69,7 +74,7 @@ JsonArray::JsonArray(std::initializer_list<JsonValue> il)
 {}
 
 JsonArray::JsonArray(const JsonArray& copy)
-: m_impl{new JsonArrayImpl(copy.begin(), copy.end())}
+: m_impl{copy.m_impl->clone()}
 {}
 
 JsonArray::JsonArray(AbstractJsonArrayImpl * impl)
@@ -78,7 +83,7 @@ JsonArray::JsonArray(AbstractJsonArrayImpl * impl)
 
 JsonArray&
 JsonArray::operator=(const JsonArray& rhs) {
-    m_impl.reset(new JsonArrayImpl(rhs.begin(), rhs.end()));
+    m_impl.reset(rhs.m_impl->clone());
     return *this;
 }
 

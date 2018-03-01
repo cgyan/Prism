@@ -11,13 +11,13 @@ class AbstractJsonValueImpl {
 public:
     virtual ~AbstractJsonValueImpl() {}
 
-    virtual double toDouble() const { return double{}; };
-    virtual bool toBool() const { return bool{}; }
-    virtual std::string toString() const { return std::string{}; }
-    virtual JsonObject toObject() const {return JsonObject{};  }
-    virtual JsonArray toArray() const { return JsonArray{}; }
+    virtual double toDouble() const = 0;
+    virtual bool toBool() const = 0;
+    virtual std::string toString() const = 0;
+    virtual JsonObject toObject() const = 0;
+    virtual JsonArray toArray() const = 0;
 
-    virtual JsonValue::Type type() const { return JsonValue::Type::Null; }
+    virtual JsonValue::Type type() const = 0;
     virtual void swap(AbstractJsonValueImpl * other) {}
 };
 

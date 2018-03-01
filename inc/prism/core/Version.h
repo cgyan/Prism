@@ -40,8 +40,9 @@ public:
 	friend const bool 		operator>(const Version& lhs, const Version& rhs);
 	friend const bool 		operator>=(const Version& lhs, const Version& rhs);
 
-	friend std::ostream&	operator<<(std::ostream& out, const Version& v)
-	{ return out << v.string(); }
+	friend std::ostream&	operator<<(std::ostream& out, const Version& v)  {
+		return out << v.string();
+	}
 };
 
 } // end namespace prism

@@ -15,9 +15,11 @@ public:
     enum class Type { Null, Bool, Double, String, Object, Array };
 public:
     JsonValue(Type type = Type::Null);
+    JsonValue(const int value);
     JsonValue(const double value);
     JsonValue(const bool value);
     JsonValue(const std::string& value);
+    JsonValue(const char * value);
     JsonValue(const JsonObject& value);
     JsonValue(const JsonArray& value);
     JsonValue(const JsonValue& copy);

@@ -15,76 +15,166 @@ PRISM_BEGIN_NAMESPACE
 class JsonLexerImpl : public AbstractJsonLexerImpl {
 public:
     JsonLexerImpl() = default;
-    std::queue<JsonToken>& tokens() override;
-    void addToken(JsonToken::Type type, const std::string& val="") override;
-    void tokenize(const std::string& input) override;
+    JsonLexerImpl(const std::string& input);
+
+    JsonToken getNextToken() override;
+    const bool stringIsStillBeingProcessed() const override;
 private:
-    std::queue<JsonToken> m_tokens{};
+    const bool foundWhitespace() const;
+    const bool foundComma() const;
+    const bool foundColon() const;
+    const bool foundLeftCurlyBrace() const;
+    const bool foundRightCurlyBrace() const;
+    const bool foundLeftBracket() const;
+    const bool foundRightBracket() const;
+    const bool foundLiteralTrue() const;
+    const bool foundLiteralFalse() const;
+    const bool foundLiteralNull() const;
+    const bool foundString() const;
+    const bool foundNumber() const;
+    const bool foundInvalidSequenceOfChars() const;
+    void ignoreWhitespace();
+private:
+    std::string m_input;
+    std::string::const_iterator lexemeBegin;
+    std::string::const_iterator lexemeEnd;
+    std::string::const_iterator inputEnd;
 };
 
-std::queue<JsonToken>&
-JsonLexerImpl::tokens() {
-    return m_tokens;
+JsonLexerImpl::JsonLexerImpl(const std::string& input)
+: m_input{input}
+{
+    lexemeBegin = m_input.cbegin();
+    lexemeEnd = lexemeBegin;
+    inputEnd = m_input.end();
+}
+
+const bool
+JsonLexerImpl::stringIsStillBeingProcessed() const {
+    if (lexemeBegin != inputEnd && lexemeEnd <= inputEnd) return true;
+    return false;
+}
+
+const bool
+JsonLexerImpl::foundWhitespace() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex("[[:blank:]]"));
+}
+
+const bool
+JsonLexerImpl::foundComma() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex(","));
+}
+
+const bool
+JsonLexerImpl::foundLeftCurlyBrace() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\{)"));
+}
+
+const bool
+JsonLexerImpl::foundColon() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(:)"));
+}
+
+const bool
+JsonLexerImpl::foundRightCurlyBrace() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\})"));
+}
+
+const bool
+JsonLexerImpl::foundLeftBracket() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\[)"));
+}
+
+const bool
+JsonLexerImpl::foundRightBracket() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\])"));
+}
+
+const bool
+JsonLexerImpl::foundLiteralTrue() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex("true"));
+}
+
+const bool
+JsonLexerImpl::foundLiteralFalse() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex("false"));
+}
+
+const bool
+JsonLexerImpl::foundLiteralNull() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex("null"));
+}
+
+const bool
+JsonLexerImpl::foundString() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"("[[:print:]]*")"));
+}
+
+const bool
+JsonLexerImpl::foundNumber() const {
+    return std::regex_match(lexemeBegin, lexemeEnd, std::regex("-?[0-9]"));
+}
+
+
+const bool
+JsonLexerImpl::foundInvalidSequenceOfChars() const {
+    return lexemeBegin != inputEnd;
 }
 
 void
-JsonLexerImpl::addToken(JsonToken::Type type, const std::string& value) {
-    JsonToken tk(type, value);
-    m_tokens.push(tk);
+JsonLexerImpl::ignoreWhitespace() {
+    ++lexemeBegin;
+    ++lexemeEnd;
 }
 
-void
-JsonLexerImpl::tokenize(const std::string& input) {
-    std::string::const_iterator lexemeBegin = input.cbegin();
-    std::string::const_iterator lexemeEnd = lexemeBegin;
-    std::string::const_iterator inputEnd = input.cend();
-
-    while(lexemeBegin != inputEnd && lexemeEnd <= inputEnd) {
-        if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("[[:blank:]]"))) {
-            ++lexemeBegin;
-            ++lexemeEnd;
+JsonToken
+JsonLexerImpl::getNextToken() {
+    while (stringIsStillBeingProcessed()) {
+        if (foundWhitespace()) {
+            ignoreWhitespace();
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(","))) {
-            addToken(JsonToken::Type::Comma);
+        else if (foundComma()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::Comma);
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\{)"))) {
-            addToken(JsonToken::Type::LeftBrace);
+        else if (foundLeftCurlyBrace()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::LeftBrace);
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(:)"))) {
-            addToken(JsonToken::Type::Colon);
+        else if (foundColon()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::Colon);
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\})"))) {
-            addToken(JsonToken::Type::RightBrace);
+        else if (foundRightCurlyBrace()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::RightBrace);
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\[)"))) {
-            addToken(JsonToken::Type::LeftBracket);
+        else if (foundLeftBracket()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::LeftBracket);
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"(\])"))) {
-            addToken(JsonToken::Type::RightBracket);
+        else if (foundRightBracket()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::RightBracket);
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("true"))) {
-            addToken(JsonToken::Type::BoolLiteral, "true");
+        else if (foundLiteralTrue()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::BoolLiteral, "true");
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("false"))) {
-            addToken(JsonToken::Type::BoolLiteral, "false");
+        else if (foundLiteralFalse()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::BoolLiteral, "false");
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("null"))) {
-            addToken(JsonToken::Type::NullLiteral);
+        else if (foundLiteralNull()) {
             lexemeBegin = lexemeEnd;
+            return JsonToken(JsonToken::Type::NullLiteral);
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex(R"("[[:print:]]*")"))) {
-            addToken(JsonToken::Type::String, std::string(lexemeBegin+1, lexemeEnd-1));
+        else if (foundString()) {
+            JsonToken token(JsonToken::Type::String, std::string(lexemeBegin+1, lexemeEnd-1));
             lexemeBegin = lexemeEnd;
+            return token;
         }
-        else if (std::regex_match(lexemeBegin, lexemeEnd, std::regex("-?[0-9]"))) {
+        else if (foundNumber()) {
             std::string base = R"(-?(0|[1-9]+))";
             std::string optFraction = R"(\.?([0-9]+)?)";
             std::string optExponent = R"((e|E)?(-|\+)?([0-9]+)?)";
@@ -94,46 +184,38 @@ JsonLexerImpl::tokenize(const std::string& input) {
                 ++lexemeEnd;
             }
             std::string numLexeme = std::string(lexemeBegin, --lexemeEnd);
-            addToken(JsonToken::Type::Number, numLexeme);
             lexemeBegin += numLexeme.size();
+            return JsonToken(JsonToken::Type::Number, numLexeme);
         }
         else {
             ++lexemeEnd;
         }
-    }
-    if (lexemeBegin != inputEnd) {
+    } // end while loop
+
+    if (foundInvalidSequenceOfChars()) {
         std::string msg = "Lexical error: unrecognized input";
         throw prism::JsonLexerException(msg);
     }
+
+    // should never reach here as one of the conditionals above should return
+    // otherwise the exception will be thrown
+    return JsonToken();
 }
 //==============================================================================
 // JsonLexer
 //==============================================================================
 JsonLexer::JsonLexer(const std::string& input)
-: m_impl{new JsonLexerImpl}
-{
-    try {
-        m_impl->tokenize(input);
-    }
-    catch(const JsonLexerException& ex) {
-        throw ex;
-    }
-}
+: m_impl{new JsonLexerImpl{input}}
+{}
 
 const bool
-JsonLexer::hasNext() const {
-    if (m_impl->tokens().size()) return true;
-    return false;
+JsonLexer::hasMoreTokens() const {
+    return m_impl->stringIsStillBeingProcessed();
 }
 
 JsonToken
-JsonLexer::next() {
-    if (hasNext()) {
-        JsonToken ret = m_impl->tokens().front();
-        m_impl->tokens().pop();
-        return ret;
-    }
-    throw EmptyException();
+JsonLexer::getNextToken() {
+    return m_impl->getNextToken();
 }
 
 PRISM_END_NAMESPACE

@@ -10,12 +10,13 @@ class AbstractJsonArrayImpl {
 public:
     virtual ~AbstractJsonArrayImpl() {}
 
-    virtual const int numElements() const { return int{}; }
-    virtual void insert(JsonArray::const_iterator pos, const JsonValue& value) {}
-    virtual void remove(JsonArray::const_iterator pos) {}
-    virtual const bool containsElement(const JsonValue& value) const { return bool{}; }
-    virtual JsonArray::iterator begin() { return JsonArray::iterator{}; }
-    virtual JsonArray::iterator end() { return JsonArray::iterator{}; }
+    virtual AbstractJsonArrayImpl* clone() const = 0;
+    virtual const int numElements() const = 0;
+    virtual void insert(JsonArray::const_iterator pos, const JsonValue& value) = 0;
+    virtual void remove(JsonArray::const_iterator pos) = 0;
+    virtual const bool containsElement(const JsonValue& value) const = 0;
+    virtual JsonArray::iterator begin() = 0;
+    virtual JsonArray::iterator end() = 0;
 };
 
 PRISM_END_NAMESPACE

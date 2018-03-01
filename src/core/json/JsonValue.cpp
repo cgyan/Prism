@@ -200,6 +200,10 @@ JsonValue::JsonValue(JsonValue::Type type)
 : m_impl{new JsonValueImpl(type)}
 {}
 
+JsonValue::JsonValue(const int value)
+: m_impl{new JsonValueImpl(static_cast<double>(value))}
+{}
+
 JsonValue::JsonValue(const double value)
 : m_impl{new JsonValueImpl(value)}
 {}
@@ -210,6 +214,10 @@ JsonValue::JsonValue(const bool value)
 
 JsonValue::JsonValue(const std::string& value)
 : m_impl{new JsonValueImpl(value)}
+{}
+
+JsonValue::JsonValue(const char* value)
+: m_impl{new JsonValueImpl(std::string{value})}
 {}
 
 JsonValue::JsonValue(const JsonObject& value)

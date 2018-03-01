@@ -10,12 +10,13 @@ class AbstractJsonLexerImpl;
 class JsonToken;
 
 class JsonLexer {
-public:
+private:
     JsonLexer() = delete;
+public:
     JsonLexer(const std::string& input);
 
-    const bool hasNext() const;
-    JsonToken next();
+    const bool hasMoreTokens() const;
+    JsonToken getNextToken();
 private:
     std::shared_ptr<AbstractJsonLexerImpl> m_impl;
 };

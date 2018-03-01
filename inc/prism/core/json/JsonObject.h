@@ -2,6 +2,7 @@
 #define PRISM_JSON_OBJECT_H_
 
 #include <prism/global>
+#include <prism/JsonValue>
 #include <memory>
 #include <list>
 #include <map>
@@ -9,7 +10,7 @@
 
 PRISM_BEGIN_NAMESPACE
 
-class JsonValue;
+// class JsonValue;
 class AbstractJsonObjectImpl;
 
 class JsonObject {
