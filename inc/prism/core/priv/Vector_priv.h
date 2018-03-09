@@ -41,10 +41,9 @@ public:
 
 	void
 	swap(VectorStorage& otherStorage) {
-		using prism::swap;
-		swap(start, otherStorage.start);
-		swap(end, otherStorage.end);
-		swap(finish, otherStorage.finish);
+		prism::swap(start, otherStorage.start);
+		prism::swap(end, otherStorage.end);
+		prism::swap(finish, otherStorage.finish);
 	}
 
 	const int
@@ -384,17 +383,3 @@ public:
 PRISM_END_NAMESPACE
 
 #endif /* PRISM_PVECTOR_PRIV_H_ */
-
-
-
-
-
-
-
-
-
-
-
-
-
-

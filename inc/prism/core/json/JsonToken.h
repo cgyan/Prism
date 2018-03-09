@@ -22,13 +22,14 @@ public:
     };
 public:
     JsonToken() = default;
-    JsonToken(JsonToken::Type type, const std::string val="");
+    JsonToken(JsonToken::Type type, const std::string value="");
 public:
     Type type;
-    std::string val{};
+    std::string value{};
 };
 
 const bool operator==(const JsonToken& lhs, const JsonToken& rhs);
+std::ostream& operator<<(std::ostream& out, const JsonToken& token);
 
 PRISM_END_NAMESPACE
 

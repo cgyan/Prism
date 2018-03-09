@@ -135,27 +135,27 @@ JsonLexerImpl::getNextToken() {
         }
         else if (foundComma()) {
             lexemeBegin = lexemeEnd;
-            return JsonToken(JsonToken::Type::Comma);
+            return JsonToken(JsonToken::Type::Comma, ",");
         }
         else if (foundLeftCurlyBrace()) {
             lexemeBegin = lexemeEnd;
-            return JsonToken(JsonToken::Type::LeftBrace);
+            return JsonToken(JsonToken::Type::LeftBrace, "{");
         }
         else if (foundColon()) {
             lexemeBegin = lexemeEnd;
-            return JsonToken(JsonToken::Type::Colon);
+            return JsonToken(JsonToken::Type::Colon, ":");
         }
         else if (foundRightCurlyBrace()) {
             lexemeBegin = lexemeEnd;
-            return JsonToken(JsonToken::Type::RightBrace);
+            return JsonToken(JsonToken::Type::RightBrace, "}");
         }
         else if (foundLeftBracket()) {
             lexemeBegin = lexemeEnd;
-            return JsonToken(JsonToken::Type::LeftBracket);
+            return JsonToken(JsonToken::Type::LeftBracket, "[");
         }
         else if (foundRightBracket()) {
             lexemeBegin = lexemeEnd;
-            return JsonToken(JsonToken::Type::RightBracket);
+            return JsonToken(JsonToken::Type::RightBracket, "]");
         }
         else if (foundLiteralTrue()) {
             lexemeBegin = lexemeEnd;
@@ -167,7 +167,7 @@ JsonLexerImpl::getNextToken() {
         }
         else if (foundLiteralNull()) {
             lexemeBegin = lexemeEnd;
-            return JsonToken(JsonToken::Type::NullLiteral);
+            return JsonToken(JsonToken::Type::NullLiteral, "null");
         }
         else if (foundString()) {
             JsonToken token(JsonToken::Type::String, std::string(lexemeBegin+1, lexemeEnd-1));
@@ -193,7 +193,7 @@ JsonLexerImpl::getNextToken() {
     } // end while loop
 
     if (foundInvalidSequenceOfChars()) {
-        std::string msg = "Lexical error: unrecognized input";
+        std::string msg = "Error: Lexical error - unrecognized token";
         throw prism::JsonLexerException(msg);
     }
 

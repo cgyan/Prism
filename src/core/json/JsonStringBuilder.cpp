@@ -1,132 +1,93 @@
 #include <prism/global>
 #include <prism/JsonStringBuilder>
+#include <iterator>
 
 PRISM_BEGIN_NAMESPACE
 
-class JsonStringBuilderImpl {
-public:
-    void appendArray(const JsonArray& array) {
-        JsonArray::const_iterator citBegin = array.begin();
-        JsonArray::const_iterator citEnd = array.end();
-        m_ss << "[";
-        std::string seperator = ",";
-        for (; citBegin != citEnd; ++citBegin) {
-            if (citBegin + 1 == citEnd) seperator = "";
-            m_ss << *citBegin << seperator;
-        }
-        m_ss << "]";
-    }
-
-    void appendNull() {
-        m_ss << "null";
-    }
-
-    void appendDouble(const double d) {
-        m_ss << d;
-    }
-
-    void appendString(const std::string& s) {
-        m_ss << "\"" << s << "\"";
-    }
-
-    void appendBool(const bool b) {
-        if (b) m_ss << "true";
-        else m_ss << "false";
-    }
-
-    void appendKeyAndSeperator(const std::string& key) {
-        m_ss << "\"" << key << "\"";
-        m_ss << ":";
-    }
-
-    void appendObjectMember(const std::string& key, const JsonValue& value) {
-        m_ss << m_objectMemberSeperator;
-        appendKeyAndSeperator(key);
-        appendValue(value);
-        m_objectMemberSeperator = ",";
-    }
-
-    void appendObject(const JsonObject& object) {
-        m_ss << "{";
-        m_objectMemberSeperator = "";
-        for (auto keyValuePair : object) {
-            std::string key = keyValuePair.first;
-            JsonValue value = keyValuePair.second;
-            appendObjectMember(key, value);
-        }
-        m_objectMemberSeperator = "";
-        m_ss << "}";
-    }
-
-    void appendValue(const JsonValue& value) {
-        if (value.isObject()) appendObject(value.toObject());
-        else if (value.isArray()) appendArray(value.toArray());
-        else if (value.isNull()) appendNull();
-        else if (value.isDouble()) appendDouble(value.toDouble());
-        else if (value.isString()) appendString(value.toString());
-        else if (value.isBool()) appendBool(value.toBool());
-    }
-
-    const std::string toString() const {
-        return m_ss.str();
-    }
-private:
-    std::stringstream m_ss;
-    std::string m_objectMemberSeperator{""};
-};
-
-JsonStringBuilder::JsonStringBuilder()
-: m_impl{new JsonStringBuilderImpl}
-{}
-
-void
-JsonStringBuilder::appendArray(const JsonArray& array) {
-    m_impl->appendArray(array);
+const bool
+JsonStringBuilder::empty() const {
+    return m_sb.empty();
 }
 
-void
-JsonStringBuilder::appendNull() {
-    m_impl->appendNull();
-}
-
-void
-JsonStringBuilder::appendDouble(const double d) {
-    m_impl->appendDouble(d);
-}
-
-void
-JsonStringBuilder::appendString(const std::string& s) {
-    m_impl->appendString(s);
-}
-
-void
-JsonStringBuilder::appendBool(const bool b) {
-    m_impl->appendBool(b);
-}
-
-void
-JsonStringBuilder::appendKeyAndSeperator(const std::string& key) {
-    m_impl->appendKeyAndSeperator(key);
-}
-
-void
-JsonStringBuilder::appendValue(const JsonValue& value) {
-    m_impl->appendValue(value);
-}
-
-void
-JsonStringBuilder::appendObjectMember(const std::string& key, const JsonValue& value) {
-    m_impl->appendObjectMember(key, value);
-}
-
-void
-JsonStringBuilder::appendObject(const JsonObject& object) {
-    m_impl->appendObject(object);
+const int
+JsonStringBuilder::size() const {
+    return m_sb.size();
 }
 
 const std::string
 JsonStringBuilder::toString() const {
-    return m_impl->toString();
+    return m_sb.toString();
+}
+
+void
+JsonStringBuilder::append(const double d) {
+    m_sb.append(d);
+}
+
+void
+JsonStringBuilder::append(const char * string) {
+    m_sb.append('"');
+    m_sb.append(string);
+    m_sb.append('"');
+}
+
+void
+JsonStringBuilder::append(const std::string& string) {
+    m_sb.append('"');
+    m_sb.append(string);
+    m_sb.append('"');
+}
+
+void
+JsonStringBuilder::append(const bool b) {
+    m_sb.append(b);
+}
+
+void
+JsonStringBuilder::append(const int i) {
+    m_sb.append(i);
+}
+
+void
+JsonStringBuilder::append(const JsonObject& object) {
+    m_sb.append('{');
+    std::string memberSeperator = ",";
+    for (auto it = object.begin(); it != object.end(); ++it) {
+        if (std::next(it) == object.end()) {
+            std::prev(it);
+            memberSeperator = "";
+        }
+        std::string key = (*it).first;
+        JsonValue value = (*it).second;
+        append(key);
+        m_sb.append(':');
+        append(value);
+        m_sb.append(memberSeperator);
+    }
+    m_sb.append('}');
+}
+
+void
+JsonStringBuilder::append(const JsonArray& array) {
+    m_sb.append('[');
+    std::string elementSeperator = ",";
+    for (auto it = array.begin(); it != array.end(); ++it) {
+        if (it + 1 == array.end()) elementSeperator = "";
+        JsonValue value = *it;
+        append(value);
+        m_sb.append(elementSeperator);
+    }
+    m_sb.append(']');
+}
+
+void
+JsonStringBuilder::append(const JsonValue& value) {
+    if (value.isDouble()) m_sb.append(value.toDouble());
+    else if (value.isString()) append(value.toString());
+    else if (value.isBool()) (value.toBool()) ? m_sb.append(true) : m_sb.append(false);
+    else if (value.isNull()) m_sb.append("null");
+    else if (value.isObject()) append(value.toObject());
+    else if (value.isArray()) append(value.toArray());
 }
 
 PRISM_END_NAMESPACE

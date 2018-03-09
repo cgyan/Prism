@@ -1,185 +1,110 @@
-/*
- * Stack_priv.h
- * v1
- *
- *  Created on: Oct 13, 2016
- *      Author: iainhemstock
- */
+#include <prism/global>
+#include <prism/algorithm>
 
-#ifndef PRISM_STACK_PRIV_H_
-#define PRISM_STACK_PRIV_H_
+PRISM_BEGIN_NAMESPACE
 
-namespace prism {
+template <typename T, typename Container>
+Stack<T, Container>::Stack(const Vector<T>& vector) {
+    for (auto val : vector) {
+        this->push(val);
+    }
+}
 
-/**
- * Creates an empty stack.
- */
-template <class T>
-Stack<T>::Stack()
-	: d(new StackData<T>)
+template <typename T, typename Container>
+Stack<T, Container>::Stack(const Stack<T, Container>& rhs)
+: m_storage{rhs.m_storage}
 {}
 
-/**
- * Creates a new stack which is a copy of \em copy
- */
-template <class T>
-Stack<T>::Stack(const Stack<T> & copy)
-	: d(copy.d)
-{
+template <typename T, typename Container>
+Stack<T, Container>::Stack(Stack<T, Container>&& rhs) {
+    this->swap(rhs);
 }
 
-/**
- * Destroys this stack.
- */
-template <class T>
-Stack<T>::~Stack() {
-
+template <typename T, typename Container>
+Stack<T, Container>&
+Stack<T, Container>::operator=(const Stack<T, Container>& rhs) {
+    if (*this != rhs)
+        m_storage = rhs.m_storage;
+    return *this;
 }
 
-/**
- * @return Returns the capacity of this stack.
- */
-template <class T>
-const int Stack<T>::capacity() const {
-	return d->storage.finish - d->storage.start;
+template <typename T, typename Container>
+Stack<T, Container>&
+Stack<T, Container>::operator=(Stack<T, Container>&& rhs) {
+    m_storage = std::move(rhs.m_storage);
+    return *this;
 }
 
-/**
- * @return Returns true if this stack contains no elements, false otherwise.
- */
-template <class T>
-const bool Stack<T>::empty() const {
-	return d->storage.start == d->storage.end;
+template <typename T, typename Container>
+Stack<T, Container>
+Stack<T, Container>::fromVector(const Vector<T>& vector) {
+    return Stack<T, Container>(vector);
 }
 
-/**
- * Removes the last element from the stack.
- */
-template <class T>
-void Stack<T>::pop() {
-	d.detach();
-	--d->storage.end;
+template <typename T, typename Container>
+const bool
+Stack<T, Container>::empty() const {
+    return m_storage.empty();
 }
 
-/**
- * Appends \em value to the end (top) of the stack.
- */
-template <class T>
-void Stack<T>::push(const T& value) {
-	d.detach();
-	int s = size();
-	if (s + 1 > capacity())
-		d->storage.reserve((s+1)*d->storage.exponent);
-
-	*(d->storage.end) = value;
-	++d->storage.end;
+template <typename T, typename Container>
+const int
+Stack<T, Container>::size() const {
+    return m_storage.size();
 }
 
-/**
- * Reserves enough memory for the stack to contain \em newCapacity characters
- * i.e. newCapacity * sizeof(T). The capacity can only grow and will not
- * lessen. Only squeeze() can alter the capacity to a lower amount. If \em newCapacity
- * is less than or equal to the current capacity then nothing changes. Any existing
- * values in the stack are not affected by this function.
- */
-template <class T>
-void Stack<T>::reserve(const int newCapacity)
-{
-	if (newCapacity > d->storage.finish-d->storage.start)
-		d->storage.reserve(newCapacity);
+template <typename T, typename Container>
+void
+Stack<T, Container>::push(const T& value) {
+    m_storage.append(value);
 }
 
-/**
- * @return Returns the number of elements contained in the stack.
- */
-template <class T>
-const int Stack<T>::size() const {
-	return d->storage.end - d->storage.start;
+template <typename T, typename Container>
+void
+Stack<T, Container>::pop() {
+    m_storage.removeLast();
 }
 
-/**
- * Destroys any unused memory currently held by the stack. For example, if the stack has a capacity
- * of 10 and a size of 4, squeeze() will release the extra memory of the capacity resulting in a
- * capacity and size of 4. If size() and capacity() are already equal then nothing happens.
- */
-template <class T>
-void Stack<T>::squeeze()
-{
-	if (capacity() > size() && size() > 1)
-		d->storage.reserve(d->storage.end-d->storage.start);
+template <typename T, typename Container>
+T&
+Stack<T, Container>::top() {
+    return m_storage.back();
 }
 
-/**
- * @return Returns the last (top) value contained in the stack.
- */
-template <class T>
-const T& Stack<T>::top() const {
-	return *(d->storage.end-1);
+template <typename T, typename Container>
+const T&
+Stack<T, Container>::top() const {
+    return m_storage.back();
 }
 
-/**
- * @return Returns the last (top) value contained in the stack.
- */
-template <class T>
-T& Stack<T>::top() {
-	return *(d->storage.end-1);
+template <typename T, typename Container>
+void
+Stack<T, Container>::clear() {
+    m_storage.clear();
 }
 
-/**
- * @return Returns this stack as a List. The stack remains unaffected.
- */
-template <class T>
-List<T> Stack<T>::toList() const {
-	List<T> list;
-	T * it = d->storage.start;
-
-	while (it != d->storage.end)
-		list << *it++;
-
-	return list;
+template <typename T, typename Container>
+void
+Stack<T, Container>::swap(Stack<T, Container>& other) {
+    prism::swap(this->m_storage, other.m_storage);
 }
 
-/**
- * @return Returns this stack as a Vector. The stack remains unaffected.
- */
-template <class T>
-Vector<T> Stack<T>::toVector() const {
-	Vector<T> v;
-	v.resize(this->size());
-	prism::copy(d->storage.start, d->storage.end, v.data());
-
-	return v;
+template <typename U>
+const bool
+operator==(const Stack<U>& lhs, const Stack<U>& rhs) {
+    return lhs.m_storage == rhs.m_storage;
 }
 
-/**
- * Assigns \em other to this Stack.
- */
-template <class T>
-Stack<T> & Stack<T>::operator=(const Stack<T> & other) {
-	if (*this != other)
-		this->d = other.d;
-	return *this;
+template <typename U>
+const bool
+operator!=(const Stack<U>& lhs, const Stack<U>& rhs) {
+    return !(lhs == rhs);
 }
 
-/**
- * Appends \em value to the end (top) of the stack. Equivalent to push().
- */
-template <class T>
-void Stack<T>::operator+=(const T& value) {
-	d.detach();
-	push(value);
+template <typename T, typename Container>
+void
+swap(Stack<T, Container>& a, Stack<T, Container>& b) {
+    a.swap(b);
 }
 
-/**
- * Appends \em value to the end (top) of the stack. Equivalent to push().
- */
-template <class T>
-Stack<T> & Stack<T>::operator<<(const T& value) {
-	d.detach();
-	push(value);
-	return *this;
-}
-
-} // end namespace prism
-
-#endif /* PRISM_STACK_PRIV_H_ */
+PRISM_END_NAMESPACE
