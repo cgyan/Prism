@@ -18,7 +18,7 @@ template <	class Key,
 			class Value,
 			class AssociativeIterator,
 			class Compare = prism::less<Key>,
-			class Allocator = prism::Allocator<prism::pair<Key,Value>>>
+			class Allocator = prism::Allocator<std::pair<Key,Value>>>
 class AbstractTree {
 public:
 	typedef Key 					KeyType;

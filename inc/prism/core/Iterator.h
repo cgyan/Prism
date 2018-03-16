@@ -10,9 +10,10 @@
 #define PRISM_ITERATOR_H_
 
 #include <prism/type_traits> // for prism::ConditionalType
-#include <prism/pair>
+#include <utility>
 #include <prism/global>
 #include <cstddef> // for std::ptrdiff_t
+#include <iterator>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -289,7 +290,7 @@ private:
 	using Self 					= ConditionalType_t<IsConst, const_iterator, iterator>;
 	using node_pointer 			= Node*;
 public:
-	using value_type 			= prism::pair<Key,Value>;
+	using value_type 			= std::pair<Key,Value>;
 	using pointer 				= ConditionalType_t<IsConst, const value_type*, value_type*>;
 	using reference 			= ConditionalType_t<IsConst, const value_type&, value_type&>;
 	using difference_type 		= std::ptrdiff_t;

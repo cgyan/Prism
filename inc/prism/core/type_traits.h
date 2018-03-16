@@ -835,7 +835,7 @@ constexpr bool IsSigned_v = prism::IsSigned<T>::value;
 template <typename T>
 constexpr bool IsUnsigned_v = prism::IsUnsigned<T>::value;
 template <typename T, typename U>
-constexpr bool AreSame_v = prism::AreSame<T,U>::value;
+constexpr bool IsSame_v = prism::IsSame<T,U>::value;
 template <typename T>
 constexpr bool IsPointer_v = prism::IsPointer<T>::value;
 template <typename T>

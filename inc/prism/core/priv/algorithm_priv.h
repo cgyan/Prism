@@ -11,10 +11,9 @@
 
 #include <prism/iterator>
 #include <prism/Allocator>
-#include <iostream> // todo remove this
 #include <cmath>
 #include <prism/type_traits> // todo remove this
-
+#include <iostream> // todo remove this
 
 namespace prism {
 
@@ -923,12 +922,3 @@ uninitialized_move_backwards(BidirectionalIterator1 first,
 
 
 #endif // PRISM_ALGORITHM_PRIV_H_
-
-
-
-
-
-
-
-
-

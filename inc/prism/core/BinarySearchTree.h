@@ -11,7 +11,7 @@
 
 #include <prism/functor>
 #include <prism/Allocator>
-#include <prism/pair>
+#include <utility>
 #include <prism/iterator>
 #include <prism/AbstractTree>
 #include <ostream>
@@ -51,7 +51,7 @@ printTree(NodePointer p, int indent=0) {
 template <class Key, class Value>
 struct BSTNode {
 	typedef BSTNode*		node_pointer;
-	prism::pair<Key,Value>	value;
+	std::pair<Key,Value>	value;
 	node_pointer			parent;
 	node_pointer 			left;
 	node_pointer 			right;
@@ -64,7 +64,7 @@ struct BSTNode {
 	{}
 
 	BSTNode(const Key& key, const Value& value)
-	: value(prism::pair<Key,Value>(key,value)),
+	: value(std::pair<Key,Value>(key,value)),
 	  parent(nullptr),
 	  left(nullptr),
 	  right(nullptr)
@@ -364,7 +364,7 @@ public:
 template <	class Key,
 			class Value,
 			class Compare = prism::less<Key>,
-			class Allocator = prism::Allocator<prism::pair<Key,Value>>>
+			class Allocator = prism::Allocator<std::pair<Key,Value>>>
 class BinarySearchTree
 		: protected AbstractTree<	Key,
 		  	  	  	  	  	  	  	Value,

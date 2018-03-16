@@ -1,13 +1,18 @@
 #include <prism/JsonObject>
 #include <prism/AbstractJsonObjectImpl>
+#include <prism/Pair>
 #include <prism/algorithm>
 #include <map>
 
 PRISM_BEGIN_NAMESPACE
+
 //==============================================================================
 // JsonObjectData
 //==============================================================================
 class JsonObjectImpl : public AbstractJsonObjectImpl {
+public:
+    using iterator = JsonObject::iterator;
+    using const_iterator = JsonObject::const_iterator;
 public:
     JsonObjectImpl() = default;
 
@@ -24,59 +29,62 @@ public:
 
     const int
     numMembers() const override {
-        return map.size();
+        return m_map.size();
     }
 
     void
     insertNewMember(const std::string& key, const JsonValue& value) {
-        map[key] = value;
+        if (!m_memberOrder.contains(key)) {
+            m_memberOrder << key;
+        }
+        m_map[key] = value;
+        assert(m_memberOrder.size() == m_map.size());
     }
 
     void
     removeMember(const std::string& key) {
-        map.erase(key);
+        m_memberOrder.removeAll(key);
+        m_map.erase(key);
+        assert(m_memberOrder.size() == m_map.size());
     }
 
-    std::list<std::string>
+    prism::Vector<std::string>
     keys() const {
-        std::list<std::string> ret;
-        for (auto cit = map.cbegin(); cit != map.cend(); ++cit) {
-            ret.push_back((*cit).first);
-        }
-        return ret;
+        return m_memberOrder;
     }
 
     const bool
     containsKey(const std::string& key) {
-        JsonObject::iterator it = findMember(key);
-        if (it == end()) return false;
-        return true;
+        if (m_memberOrder.contains(key)) return true;
+        return false;
     }
 
     JsonObject::iterator
     findMember(const std::string& key) {
-        return map.find(key);
+        const int index = m_memberOrder.indexOf(key);
+        return iterator(&m_memberOrder, &m_map, index);
     }
 
     JsonObject::iterator
     begin() {
-        return map.begin();
+        return iterator(&m_memberOrder, &m_map, 0);
     }
 
     JsonObject::iterator
     end() {
-        return map.end();
+        return iterator(&m_memberOrder, &m_map, m_map.size());
     }
 
     const bool
     equals(AbstractJsonObjectImpl * rhs) const override {
         JsonObjectImpl * rhsImpl = dynamic_cast<JsonObjectImpl*>(rhs);
-        return this->map == rhsImpl->map;
+        return this->m_memberOrder == rhsImpl->m_memberOrder && this->m_map == rhsImpl->m_map;
     }
 private:
-    using Pair = std::pair<std::string, JsonValue>;
+    // using Pair = std::pair<std::string, JsonValue>;
     // TODO: use prism::Map when written instead of std::map
-    std::map<std::string, JsonValue> map{};
+    prism::Vector<std::string> m_memberOrder;
+    std::map<std::string, JsonValue> m_map{};
 };
 //==============================================================================
 // JsonObject
@@ -85,7 +93,7 @@ JsonObject::JsonObject()
 : m_impl{new JsonObjectImpl}
 {}
 
-JsonObject::JsonObject(std::initializer_list<std::pair<std::string, JsonValue>> il)
+JsonObject::JsonObject(std::initializer_list<prism::Pair<std::string, JsonValue>> il)
 : m_impl{new JsonObjectImpl(il.begin(), il.end())}
 {}
 
@@ -140,7 +148,7 @@ JsonObject::operator[](const std::string& key) {
     return (*it).second;
 }
 
-std::list<std::string>
+prism::Vector<std::string>
 JsonObject::keys() const {
     return m_impl->keys();
 }

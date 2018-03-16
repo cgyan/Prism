@@ -36,6 +36,10 @@ Stack<T, Container>::operator=(Stack<T, Container>&& rhs) {
 }
 
 template <typename T, typename Container>
+Stack<T, Container>::~Stack()
+{}
+
+template <typename T, typename Container>
 Stack<T, Container>
 Stack<T, Container>::fromVector(const Vector<T>& vector) {
     return Stack<T, Container>(vector);
@@ -87,6 +91,20 @@ template <typename T, typename Container>
 void
 Stack<T, Container>::swap(Stack<T, Container>& other) {
     prism::swap(this->m_storage, other.m_storage);
+}
+
+template <typename T, typename Container>
+Stack<T, Container>&
+Stack<T, Container>::operator<<(const T& value) {
+    push(value);
+    return *this;
+}
+
+template <typename T, typename Container>
+Stack<T, Container>&
+Stack<T, Container>::operator+=(const T& value) {
+    push(value);
+    return *this;
 }
 
 template <typename U>

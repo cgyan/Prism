@@ -1,5 +1,5 @@
 /*
- * SharedData.h
+ * SharedPointer.h
  * v0.1
  *
  *  Created on: Jul 8, 2013

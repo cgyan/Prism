@@ -28,7 +28,7 @@ void
 Win32EventQueue<Receiver, EventTp>::
 addEvent(Receiver * receiver, EventTp * event) {
     std::pair<Receiver *, EventTp *> epair;
-    epair = std::make_pair(receiver, event);
+    epair = std::pair<Receiver *, EventTp *>(receiver, event);
     this->m_q.push(epair);
 }
 

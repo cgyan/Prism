@@ -1,85 +1,94 @@
-/*
- * pair.h
- * v1
- *
- *  Created on: Aug 20, 2016
- *      Author: iainhemstock
- */
-
 #ifndef PRISM_PAIR_H_
 #define PRISM_PAIR_H_
 
-#include <ostream>
+#include <prism/global>
 
-namespace prism {
+PRISM_BEGIN_NAMESPACE
 
-template <class T1, class T2>
-struct pair
-{
-	typedef T1 first_type;
-	typedef T2 second_type;
+template <typename T1, typename T2>
+class Pair {
+public:
+    Pair() = default;
+    Pair(const T1& first, const T2& second);
+    Pair(const Pair<T1,T2>& rhs);
+    Pair(Pair<T1,T2>&& rhs);
+    Pair<T1,T2>& operator=(const Pair<T1,T2>& rhs);
+    Pair<T1,T2>& operator=(Pair<T1,T2>&& rhs);
 
-	T1 first;
-	T2 second;
+    void swap(Pair<T1,T2>& other);
 
-	pair() : first(T1()), second(T2()) {}
-
-	pair(const T1& val1, const T2& val2)
-	: first(val1), second(val2)
-	{}
-
-	virtual ~pair() {}
-
-	friend
-	const bool
-	operator==(const pair<T1,T2>& p1, const pair<T1,T2>& p2) {
-		return p1.first == p2.first && p1.second == p2.second;
-	}
-
-	friend
-	const bool
-	operator!=(const pair<T1,T2>& p1, const pair<T1,T2>& p2) {
-		return !(p1==p2);
-	}
-
-	pair<T1,T2>&
-	operator=(const pair& rhs) {
-		if (*this != rhs) {
-			first = rhs.first;
-			second = rhs.second;
-		}
-		return *this;
-	}
-
-	template <class T3, class T4>
-	pair<T1,T2>&
-	operator=(const pair<T3,T4>& rhs) {
-		if (*this != rhs) {
-			first = rhs.first;
-			second = rhs.second;
-		}
-		return *this;
-	}
-
-	friend
-	std::ostream & operator<<(std::ostream& out, const pair& p) {
-		out << "Pair [" << &p << "] first:" << p.first << " second:" << p.second;
-		return out;
-	}
+public:
+    T1 first{};
+    T2 second{};
 };
 
+template <typename T1, typename T2>
+const bool operator==(const Pair<T1,T2>& lhs, const Pair<T1,T2>& rhs);
+template <typename T1, typename T2>
+const bool operator!=(const Pair<T1,T2>& lhs, const Pair<T1,T2>& rhs);
 
+template <typename T1, typename T2>
+Pair<T1,T2>::Pair(const T1& first, const T2& second)
+: first{first}, second{second}
+{}
 
-} /* namespace prism */
+template <typename T1, typename T2>
+Pair<T1,T2>::Pair(const Pair<T1,T2>& rhs)
+: first{rhs.first}, second{rhs.second}
+{}
 
-#endif /* PRISM_PAIR_H_ */
+template <typename T1, typename T2>
+Pair<T1,T2>::Pair(Pair<T1,T2>&& rhs) {
+    *this = std::move(rhs);
+    Pair<T1,T2>().swap(rhs);
+}
 
+template <typename T1, typename T2>
+Pair<T1,T2>&
+Pair<T1,T2>::operator=(const Pair<T1,T2>& rhs) {
+    if (*this != rhs) {
+        first = rhs.first;
+        second = rhs.second;
+    }
+    return *this;
+}
 
+template <typename T1, typename T2>
+Pair<T1,T2>&
+Pair<T1,T2>::operator=(Pair<T1,T2>&& rhs) {
+    if (*this != rhs) {
+        first = std::move(rhs.first);
+        second = std::move(rhs.second);
+        rhs = Pair<T1,T2>();
+    }
+    return *this;
+}
 
+template <typename T1, typename T2>
+void
+Pair<T1,T2>::swap(Pair<T1,T2>& other) {
+    std::swap(this->first, other.first);
+    std::swap(this->second, other.second);
+}
 
+template <typename T1, typename T2>
+const bool
+operator==(const Pair<T1,T2>& lhs, const Pair<T1,T2>& rhs) {
+    return lhs.first == rhs.first && lhs.second == rhs.second;
+}
 
+template <typename T1, typename T2>
+const bool
+operator!=(const Pair<T1,T2>& lhs, const Pair<T1,T2>& rhs) {
+    return !(lhs == rhs);
+}
 
+template <typename T1, typename T2>
+Pair<T1,T2>
+make_pair(const T1& t=T1(), const T2& u=T2()) {
+    return prism::Pair<T1,T2>(t,u);
+}
 
+PRISM_END_NAMESPACE
 
-
-
+#endif

@@ -21,13 +21,13 @@ namespace prism {
 template <	class Key,
 			class T,
 			class Compare 	= prism::less<Key>,
-			class Allocator = prism::Allocator<prism::pair<Key,T>>,
+			class Allocator = prism::Allocator<std::pair<Key,T>>,
 			class Tree 		= prism::BinarySearchTree<Key,T,Compare,Allocator>>
 class Map {
 public:
 	typedef Key 						key_type;
 	typedef T 							mapped_type;
-	typedef prism::pair<Key,T>			value_type;
+	typedef std::pair<Key,T>			value_type;
 	typedef Compare						key_compare;
 private:
 	Tree tree;

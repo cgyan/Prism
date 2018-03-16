@@ -156,12 +156,12 @@ public:
 		else return impl.rangeInsert(pos, first, last);
 	}
 
-	const int
+	const unsigned int
 	capacity() const noexcept {
 		return impl.storage.capacity();
 	}
 
-	const int
+	const unsigned int
 	size() const noexcept {
 		return impl.storage.size();
 	}

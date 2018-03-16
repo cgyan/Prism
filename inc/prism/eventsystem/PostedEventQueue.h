@@ -25,7 +25,7 @@ void
 PostedEventQueue<Receiver, EventTp>::
 addEvent(Receiver * receiver, EventTp * event) {
     std::pair<Receiver *, EventTp *> pair;
-    pair = std::make_pair(receiver, event);
+    pair = std::pair<Receiver *, EventTp *>(receiver, event);
     this->m_q.push(pair);
 }
 

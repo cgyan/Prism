@@ -53,8 +53,7 @@ JsonStringBuilder::append(const JsonObject& object) {
     m_sb.append('{');
     std::string memberSeperator = ",";
     for (auto it = object.begin(); it != object.end(); ++it) {
-        if (std::next(it) == object.end()) {
-            std::prev(it);
+        if (it + 1 == object.end()) {
             memberSeperator = "";
         }
         std::string key = (*it).first;
