@@ -13,7 +13,7 @@ set(CORE_SOURCES ${CORE_SOURCES}
     src/core/Matrix4.cpp
     src/core/Object.cpp
     src/core/Point.cpp
-    src/core/Pointf.cpp
+    src/core/Pointf.cpp 
     src/core/Quaternion.cpp
     src/core/Rect.cpp
     src/core/SharedData.cpp
