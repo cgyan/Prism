@@ -25,5 +25,4 @@ find_library(
 
 include(sources.cmake)
 add_library(prism STATIC ${SOURCES})
-target_link_libraries(prism ${PRISM_BASE_LIB}
-)
+target_link_libraries(prism ${PRISM_BASE_LIB})
