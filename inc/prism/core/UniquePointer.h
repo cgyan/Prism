@@ -10,7 +10,6 @@
 #define PRISM_UNIQUE_POINTER_H_
 
 #include <prism/global>
-#include <prism/type_traits>
 #include <ostream>
 
 PRISM_BEGIN_NAMESPACE
@@ -116,7 +115,7 @@ public:
 	///							Accesses the UniquePointer's managed object
 	///
 	/// @since					1.0.0
-	typename prism::AddLValueReference<element_type>::type
+	typename std::add_lvalue_reference<element_type>::type
 	operator*();
 
 	///							Accesses the UniquePointer's managed object's members

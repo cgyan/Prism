@@ -4,7 +4,7 @@
 #include <prism/global>
 #include <prism/Vector>
 #include <prism/JsonValue>
-#include <prism/type_traits>
+#include <type_traits>
 #include <map>
 #include <string>
 
@@ -15,7 +15,7 @@ class JsonObjectIterator {
 public:
     using iterator = JsonObjectIterator<false>;
     using const_iterator = JsonObjectIterator<true>;
-    using Self = ConditionalType_t<IsConst, const_iterator, iterator>;
+    using Self = typename std::conditional<IsConst, const_iterator, iterator>::type;
     using value_type = JsonValue;
 private:
     using MemberOrderPtr = Vector<std::string>*;

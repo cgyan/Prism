@@ -9,6 +9,8 @@
 #ifndef PRISM_LIST_PRIV_H_
 #define PRISM_LIST_PRIV_H_
 
+#include <type_traits>
+
 namespace prism {
 
 //============================================================
@@ -51,11 +53,11 @@ struct ListIterator {
 	typedef ListIterator<T, false> 					iterator;
 	typedef ListIterator<T, true> 					const_iterator;
 
-	typedef typename prism::ConditionalType_t<isConst, const T*, T*> 	pointer;
-	typedef typename prism::ConditionalType_t<isConst, const T&, T&> 	reference;
-	typedef typename prism::ConditionalType_t<true, const T*, T*> 		const_pointer;
-	typedef typename prism::ConditionalType_t<true, const T&, T&> 		const_reference;
-	typedef typename prism::ConditionalType_t<isConst, const_iterator, iterator> Self;
+	typedef typename std::conditional<isConst, const T*, T*>::type 	pointer;
+	typedef typename std::conditional<isConst, const T&, T&>::type 	reference;
+	typedef typename std::conditional<true, const T*, T*>::type 	const_pointer;
+	typedef typename std::conditional<true, const T&, T&>::type 	const_reference;
+	typedef typename std::conditional<isConst, const_iterator, iterator>::type Self;
 
 	NodePtr np;
 

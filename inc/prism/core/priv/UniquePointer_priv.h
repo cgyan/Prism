@@ -216,7 +216,7 @@ swap(UniquePointer& other) {
  *
  */
 template <typename T, typename D>
-typename prism::AddLValueReference<typename UniquePointer<T,D>::element_type>::type
+typename std::add_lvalue_reference<typename UniquePointer<T,D>::element_type>::type
 UniquePointer<T,D>::
 operator*() {
 	return *d->p;
@@ -256,7 +256,7 @@ swap(UniquePointer<T,D>& up1, UniquePointer<T,D>& up2) {
 template <typename T, typename ...Args>
 prism::UniquePointer<T>
 makeUnique(Args&&... args) {
-	return prism::UniquePointer<T>(new T(prism::forward<Args>(args)...));
+	return prism::UniquePointer<T>(new T(std::forward<Args>(args)...));
 }
 
 PRISM_END_NAMESPACE
