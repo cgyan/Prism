@@ -9,9 +9,9 @@
 #ifndef PRISM_ITERATOR_H_
 #define PRISM_ITERATOR_H_
 
-#include <prism/type_traits> // for prism::ConditionalType
-#include <utility>
 #include <prism/global>
+#include <type_traits>
+#include <utility>
 #include <cstddef> // for std::ptrdiff_t
 #include <iterator>
 
@@ -150,11 +150,11 @@ struct SequenceIterator {
 private:
 	using iterator 				= prism::SequenceIterator<T,false>;
 	using const_iterator 		= prism::SequenceIterator<T,true>;
-	using Self					= ConditionalType_t<IsConst, const_iterator, iterator>;
+	using Self 					= typename std::conditional<IsConst, const_iterator, iterator>::type;
 public:
 	using value_type 			= T;
-	using pointer 				= prism::ConditionalType_t<IsConst, const T*, T*>;
-	using reference				= prism::ConditionalType_t<IsConst, const T&, T&>;
+	using pointer 				= typename std::conditional<IsConst, const T*, T*>::type;
+	using reference				= typename std::conditional<IsConst, const T&, T&>::type;
 	using iterator_category 	= std::random_access_iterator_tag;
 	using difference_type 		= std::ptrdiff_t;
 public:
@@ -287,12 +287,12 @@ struct AssociativeIterator {
 private:
 	using iterator 				= AssociativeIterator<Key,Value,Node,false>;
 	using const_iterator 		= AssociativeIterator<Key,Value,Node,true>;
-	using Self 					= ConditionalType_t<IsConst, const_iterator, iterator>;
+	using Self 					= typename std::conditional<IsConst, const_iterator, iterator>::type;
 	using node_pointer 			= Node*;
 public:
 	using value_type 			= std::pair<Key,Value>;
-	using pointer 				= ConditionalType_t<IsConst, const value_type*, value_type*>;
-	using reference 			= ConditionalType_t<IsConst, const value_type&, value_type&>;
+	using pointer 				= typename std::conditional<IsConst, const value_type*, value_type*>::type;
+	using reference 			= typename std::conditional<IsConst, const value_type&, value_type&>::type;
 	using difference_type 		= std::ptrdiff_t;
 	using iterator_category 	= std::bidirectional_iterator_tag;
 
@@ -556,7 +556,7 @@ struct MoveIterator {
 	using value_type = typename prism::iterator_traits<iterator_type>::value_type;
 	using difference_type = typename prism::iterator_traits<iterator_type>::difference_type;
 	using pointer = iterator_type;
-	using reference = typename prism::ConditionalType<
+	using reference = typename std::conditional<
 							std::is_reference<BaseReference>::value,
 							typename std::add_rvalue_reference<
 								typename std::remove_reference<BaseReference>::type
