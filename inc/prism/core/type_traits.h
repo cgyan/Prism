@@ -42,8 +42,8 @@ struct IntegralConstant {
 	static constexpr value_type 	value = v;
 	typedef IntegralConstant<T,v>	type;
 };
-typedef IntegralConstant<bool,true> 	TrueType;
-typedef IntegralConstant<bool,false> 	FalseType;
+using TrueType = IntegralConstant<bool,true>;
+using FalseType = IntegralConstant<bool,false>;
 //============================================================================================
 // RemoveConst
 //============================================================================================
