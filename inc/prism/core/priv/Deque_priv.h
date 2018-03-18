@@ -11,7 +11,7 @@
 
 #include <prism/SharedData>
 #include <prism/SharedDataPointer>
-#include <prism/type_traits> // for prism::ConditionalType
+#include <type_traits>
 #include <prism/algorithm>
 #include <prism/OutOfBoundsException>
 #include <prism/Allocator>
@@ -34,11 +34,11 @@ public:
 	using value_type = T;
 	using difference_type = std::ptrdiff_t;
 	using iterator_category = std::random_access_iterator_tag;
-	using pointer = typename prism::ConditionalType_t<isConst, const T*, T*>;
-	using reference = typename prism::ConditionalType_t<isConst, const T&, T&>;
-	using const_pointer = typename prism::ConditionalType_t<true, const T*, T*>;
-	using const_reference = typename prism::ConditionalType_t<true, const T&, T&>;
-	using Self = typename prism::ConditionalType_t<isConst, const_iterator, iterator>;
+	using pointer = typename std::conditional<isConst, const T*, T*>::type;
+	using reference = typename std::conditional<isConst, const T&, T&>::type;
+	using const_pointer = typename std::conditional<true, const T*, T*>::type;
+	using const_reference = typename std::conditional<true, const T&, T&>::type;
+	using Self = typename std::conditional<isConst, const_iterator, iterator>::type;
 public:
 	T** buckets; // (*buckets) is a pointer to one of the buckets i.e. T*
 	T* current;
