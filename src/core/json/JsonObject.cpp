@@ -34,7 +34,7 @@ public:
     }
 
     void
-    insertNewMember(const std::string& key, const JsonValue& value) {
+    insertNewMember(const std::string& key, const JsonValue& value) override {
         if (!m_memberOrder.contains(key)) {
             m_memberOrder << key;
         }
@@ -43,36 +43,36 @@ public:
     }
 
     void
-    removeMember(const std::string& key) {
+    removeMember(const std::string& key) override {
         m_memberOrder.removeAll(key);
         m_map.erase(key);
         assert(m_memberOrder.size() == m_map.size());
     }
 
     prism::Vector<std::string>
-    keys() const {
+    keys() const override {
         return m_memberOrder;
     }
 
     const bool
-    containsKey(const std::string& key) {
+    containsKey(const std::string& key) override {
         if (m_memberOrder.contains(key)) return true;
         return false;
     }
 
     JsonObject::iterator
-    findMember(const std::string& key) {
+    findMember(const std::string& key) override {
         const int index = m_memberOrder.indexOf(key);
         return iterator(&m_memberOrder, &m_map, index);
     }
 
     JsonObject::iterator
-    begin() {
+    begin() override {
         return iterator(&m_memberOrder, &m_map, 0);
     }
 
     JsonObject::iterator
-    end() {
+    end() override {
         return iterator(&m_memberOrder, &m_map, m_map.size());
     }
 
