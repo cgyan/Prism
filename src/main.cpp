@@ -65,7 +65,7 @@
 // #include <prism/h/Foo.h>
 
 // using namespace prism;
-using namespace std;
+// using namespace std;
 
 
 // void f(int&);		// binds to lvalue
