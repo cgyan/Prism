@@ -14,7 +14,7 @@
 #include <prism/OutOfBoundsException>
 #include <prism/BadSizeException>
 #include <prism/Allocator>
-#include <prism/Iterator>
+#include <prism/iterator>
 #include <ostream>
 
 PRISM_BEGIN_NAMESPACE
