@@ -10,6 +10,12 @@ if (WIN32)
     set(PRISM_BASE_INC_PATH C:/Users/Iain/GitHub/PrismBase/inc)
     set(PRISM_BASE_LIB_PATH C:/Users/Iain/GitHub/PrismBase/build)
 
+elseif(APPLE)
+
+    set(PRISM_BASE_LIB_NAME prismbase)
+    set(PRISM_BASE_INC_PATH /Users/iainhemstock/GitHub/PrismBase/inc)
+    set(PRISM_BASE_LIB_PATH /Users/iainhemstock/GitHub/PrismBase/build)
+
 endif()
 
 include_directories(
