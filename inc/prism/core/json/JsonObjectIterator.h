@@ -16,6 +16,7 @@ public:
     using iterator = JsonObjectIterator<false>;
     using const_iterator = JsonObjectIterator<true>;
     using Self = ConditionalType_t<IsConst, const_iterator, iterator>;
+    using value_type = JsonValue;
 private:
     using MemberOrderPtr = Vector<std::string>*;
     using MapPtr = std::map<std::string, JsonValue>*;
