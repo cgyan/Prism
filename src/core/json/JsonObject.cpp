@@ -3,6 +3,7 @@
 #include <prism/Pair>
 #include <prism/algorithm>
 #include <map>
+#include <cassert>
 
 PRISM_BEGIN_NAMESPACE
 
