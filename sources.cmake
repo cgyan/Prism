@@ -35,19 +35,7 @@ set(CORE_SOURCES ${CORE_SOURCES}
     src/core/json/JsonParserException.cpp
 )
 
-set(EVENT_SOURCES ${EVENT_SOURCES}
-    src/eventsystem/PostedEventQueue.cpp
-    src/eventsystem/RunLoop.cpp
-    src/eventsystem/Win32EventQueue.cpp
-)
-
-set(GUI_SOURCES ${GUI_SOURCES}
-    src/gui/Widget.cpp
-)
-
 set(SOURCES
     ${MAIN_SOURCE}
     ${CORE_SOURCES}
-    # ${EVENT_SOURCES}
-    # ${GUI_SOURCES}
 )
