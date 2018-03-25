@@ -3,6 +3,8 @@
 #ifdef _WIN32
 #       include <windows.h>
 #       include <io.h>
+#elif defined __APPLE__
+#       include <unistd.h>
 #endif
 
 PRISM_BEGIN_NAMESPACE
