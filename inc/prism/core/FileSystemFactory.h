@@ -26,7 +26,7 @@ public:
                 m_func = func;
         }
 
-        AbstractFileSystem * createFileSystem()
+        AbstractFileSystem * getFileSystem()
         {
                 return m_func();
         }
