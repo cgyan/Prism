@@ -26,4 +26,11 @@ FileInfo::exists() const
         return fileSystem->exists(m_filename);
 }
 
+const unsigned int
+FileInfo::size() const {
+        if (strcmp(m_filename, "") == 0)
+                return 0;
+        return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename);
+}
+
 PRISM_END_NAMESPACE

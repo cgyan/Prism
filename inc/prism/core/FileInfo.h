@@ -12,6 +12,7 @@ public:
 
         void setFile(const char * filename);
         const bool exists() const;
+        const unsigned int size() const;
 private:
         const char * m_filename{""};
 };

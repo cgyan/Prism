@@ -11,6 +11,7 @@ public:
         static AbstractFileSystem * create();
         void createFile(const char * filename) override;
         const bool exists(const char * filename) const override;
+        const unsigned int fileSizeInBytes(const char * filename) const override;
 };
 
 PRISM_END_NAMESPACE
