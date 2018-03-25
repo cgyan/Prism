@@ -22,7 +22,7 @@ FileInfo::exists() const
 {
         if (strcmp(m_filename, "") == 0)
                 return false;
-        AbstractFileSystem * fileSystem = FileSystemFactory::get()->createFileSystem();
+        AbstractFileSystem * fileSystem = FileSystemFactory::get()->getFileSystem();
         return fileSystem->exists(m_filename);
 }
 
