@@ -19,26 +19,24 @@ FileSystem::create()
 }
 
 void
-FileSystem::createFile(const char * filename)
-{
-
-}
+FileSystem::createFile(const std::string& filename)
+{}
 
 const bool
-FileSystem::exists(const char * filename) const
+FileSystem::exists(const std::string& filename) const
 {
         #ifdef _WIN32
         #       define access _access_s
         #endif
 
-        return access(filename, 0) == 0;
+        return access(filename.c_str(), 0) == 0;
 }
 
 const unsigned int
-FileSystem::fileSizeInBytes(const char * filename) const
+FileSystem::fileSizeInBytes(const std::string& filename) const
 {
         unsigned int i = 0;
-        std::ifstream is(filename, std::ifstream::binary);
+        std::ifstream is(filename.c_str(), std::ifstream::binary);
         if (is) {
                 is.seekg(0, is.end);
                 i = is.tellg();
