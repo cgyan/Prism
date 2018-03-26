@@ -2,19 +2,20 @@
 #define PRISM_FILE_INFO_H_
 
 #include <prism/global>
+#include <string>
 
 PRISM_BEGIN_NAMESPACE
 
 class FileInfo {
 public:
         FileInfo() = default;
-        FileInfo(const char * filename);
+        FileInfo(const std::string& filename);
 
-        void setFile(const char * filename);
+        void setFile(const std::string& filename);
         const bool exists() const;
         const unsigned int size() const;
 private:
-        const char * m_filename{""};
+        std::string m_filename{""};
 };
 
 PRISM_END_NAMESPACE
