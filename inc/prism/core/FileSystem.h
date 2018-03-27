@@ -13,10 +13,10 @@ public:
                 static FileSystem instance;
                 return &instance;
         }
-        
+
         void createFile(const std::string& filename) override;
         const bool exists(const std::string& filename) const override;
-        const unsigned int fileSizeInBytes(const std::string& filename) const override;
+        const int fileSizeInBytes(const std::string& filename) const override;
 };
 
 PRISM_END_NAMESPACE

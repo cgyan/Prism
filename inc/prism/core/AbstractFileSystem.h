@@ -11,7 +11,7 @@ public:
         virtual ~AbstractFileSystem() {}
         virtual void createFile(const std::string& filename) = 0;
         virtual const bool exists(const std::string& filename) const = 0;
-        virtual const unsigned int fileSizeInBytes(const std::string& filename) const = 0;
+        virtual const int fileSizeInBytes(const std::string& filename) const = 0;
 };
 
 PRISM_END_NAMESPACE
