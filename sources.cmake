@@ -8,7 +8,7 @@ set(CORE_SOURCES ${CORE_SOURCES}
     src/core/Circle.cpp
     src/core/ElapsedTimeMonitorFactory.cpp
     src/core/FileInfo.cpp
-    src/core/FileSystem.mm
+    src/core/FileSystem.cpp
     src/core/Fraction.cpp
     src/core/InvalidConversionException.cpp
     src/core/Mathf.cpp
