@@ -43,10 +43,9 @@ FileInfo::exists() const
 const unsigned int
 FileInfo::size() const
 {
+        const int errorSize = -1;
         if (m_filename == "")
-        {
-                return 0;
-        }
+                return errorSize;
         return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
 }
 
