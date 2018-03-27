@@ -1,12 +1,8 @@
 #include <prism/global>
 #include <prism/FileSystem>
 #include <fstream>
-#ifdef _WIN32
-#       include <shlwapi.h>
-#elif defined __APPLE__
-#       include <unistd.h>
-#       include <Cocoa/Cocoa.h>
-#endif
+#include <unistd.h>
+#include <Cocoa/Cocoa.h>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -24,12 +20,8 @@ FileSystem::createFile(const std::string& filename)
 const bool
 FileSystem::exists(const std::string& filename) const
 {
-        #ifdef _WIN32
-                return PathFileExists(filename.c_str());
-        #elif defined __APPLE__
-                // return access(filename.c_str(), 0) == 0;
-                return [[NSFileManager defaultManager] fileExistsAtPath: [NSString stringWithUTF8String:filename.c_str()]];
-        #endif
+
+        return [[NSFileManager defaultManager] fileExistsAtPath: [NSString stringWithUTF8String:filename.c_str()]];
 }
 
 const unsigned int
