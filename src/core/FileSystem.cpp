@@ -3,6 +3,7 @@
 #ifdef _WIN32
 #       include <windows.h>
 #       include <io.h>
+#       include <shlwapi.h>
 #elif defined __APPLE__
 #       include <unistd.h>
 #endif
@@ -26,7 +27,7 @@ const bool
 FileSystem::exists(const std::string& filename) const
 {
         #ifdef _WIN32
-        #       define access _access_s
+                return PathFileExists(filename.c_str());
         #endif
 
         return access(filename.c_str(), 0) == 0;
