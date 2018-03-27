@@ -43,10 +43,12 @@ FileInfo::exists() const
 const unsigned int
 FileInfo::size() const
 {
+        if (exists())
+                return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
+
         const int errorSize = -1;
-        if (m_filename == "")
-                return errorSize;
-        return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
+        return errorSize;
+
 }
 
 const std::string
