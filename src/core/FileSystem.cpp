@@ -1,6 +1,6 @@
 #include <prism/global>
 #include <prism/FileSystem>
-#include <prism/core/priv/FileSystem_common.h
+#include <prism/core/priv/FileSystem_common.h>
 #include <fstream>
 #include <shlwapi.h>
 
