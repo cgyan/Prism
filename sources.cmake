@@ -1,3 +1,9 @@
+if(WIN32)
+        set(SRC_EXT cpp)
+elseif(APPLE)
+        set(SRC_EXT mm)
+endif()
+
 set(MAIN_SOURCE ${MAIN_SOURCE}
     src/main.cpp
 )
@@ -8,7 +14,7 @@ set(CORE_SOURCES ${CORE_SOURCES}
     src/core/Circle.cpp
     src/core/ElapsedTimeMonitorFactory.cpp
     src/core/FileInfo.cpp
-    src/core/FileSystem.cpp
+    src/core/FileSystem.${SRC_EXT}
     src/core/Fraction.cpp
     src/core/InvalidConversionException.cpp
     src/core/Mathf.cpp
