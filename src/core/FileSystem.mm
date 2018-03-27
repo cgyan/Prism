@@ -1,6 +1,5 @@
 #include <prism/global>
 #include <prism/FileSystem>
-#include <prism/core/priv/FileSystem_common.h>
 #include <fstream>
 #include <unistd.h>
 #include <Cocoa/Cocoa.h>
@@ -22,10 +21,10 @@ const int
 FileSystem::fileSizeInBytes(const std::string& filename) const
 {
         if (exists(filename))
-        {
                 return [[[NSFileManager defaultManager] attributesOfItemAtPath:[NSString stringWithUTF8String:filename.c_str()] error:nil] fileSize];
-        }
-        return 0;
+
+        const int errorSize = -1;
+        return errorSize;
 }
 
 PRISM_END_NAMESPACE
