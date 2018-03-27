@@ -1,14 +1,11 @@
 #include <prism/global>
 #include <prism/FileSystem>
+#include <fstream>
 #ifdef _WIN32
-#       include <windows.h>
-#       include <io.h>
 #       include <shlwapi.h>
 #elif defined __APPLE__
 #       include <unistd.h>
 #endif
-#include <iostream>
-#include <fstream>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -28,9 +25,9 @@ FileSystem::exists(const std::string& filename) const
 {
         #ifdef _WIN32
                 return PathFileExists(filename.c_str());
+        #elif defined __APPLE__
+                return access(filename.c_str(), 0) == 0;
         #endif
-
-        return access(filename.c_str(), 0) == 0;
 }
 
 const unsigned int
