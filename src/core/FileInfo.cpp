@@ -28,9 +28,7 @@ FileInfo::setFile(const std::string& filename)
 void
 FileInfo::init(const std::string& filename)
 {
-        std::string s = filename;
-        s = prism::convertToUnixSeparators(s);
-        m_filename = s;
+        m_filename = prism::convertToUnixSeparators(std::string(filename));
 }
 
 const bool
