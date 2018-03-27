@@ -17,16 +17,14 @@ FileSystem::exists(const std::string& filename) const
         return [[NSFileManager defaultManager] fileExistsAtPath: [NSString stringWithUTF8String:filename.c_str()]];
 }
 
-const unsigned int
+const int
 FileSystem::fileSizeInBytes(const std::string& filename) const
 {
-        unsigned int i = 0;
-        std::ifstream is(filename.c_str(), std::ifstream::binary);
-        if (is) {
-                is.seekg(0, is.end);
-                i = is.tellg();
+        if (exists(filename))
+        {
+                return [[[NSFileManager defaultManager] attributesOfItemAtPath:[NSString stringWithUTF8String:filename.c_str()] error:nil] fileSize];
         }
-        return i;
+        return 0;
 }
 
 PRISM_END_NAMESPACE
