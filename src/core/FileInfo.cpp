@@ -25,8 +25,6 @@ FileInfo::init(const std::string& filename)
 const bool
 FileInfo::exists() const
 {
-        if (m_filename == "")
-                return false;
         AbstractFileSystem * fileSystem = FileSystemFactory::get()->getFileSystem();
         return fileSystem->exists(m_filename.c_str());
 }
@@ -35,7 +33,9 @@ const unsigned int
 FileInfo::size() const
 {
         if (m_filename == "")
+        {
                 return 0;
+        }
         return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
 }
 
