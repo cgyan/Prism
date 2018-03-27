@@ -14,6 +14,9 @@ public:
         void setFile(const std::string& filename);
         const bool exists() const;
         const unsigned int size() const;
+        const std::string filename() const;
+private:
+        void init(const std::string& filename);
 private:
         std::string m_filename{""};
 };

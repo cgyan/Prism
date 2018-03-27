@@ -1,5 +1,6 @@
 #include <prism/global>
 #include <prism/FileSystem>
+#include <prism/core/priv/FileSystem_common.h>
 #include <fstream>
 #include <unistd.h>
 #include <Cocoa/Cocoa.h>

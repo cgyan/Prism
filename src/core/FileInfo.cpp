@@ -6,13 +6,20 @@
 PRISM_BEGIN_NAMESPACE
 
 FileInfo::FileInfo(const std::string& filename)
-: m_filename{filename}
-{}
+{
+        init(filename);
+}
 
 void
 FileInfo::setFile(const std::string& filename)
 {
-        m_filename = filename;
+        init(filename);
+}
+
+void
+FileInfo::init(const std::string& filename)
+{
+        m_filename = FileSystemFactory::get()->getFileSystem()->convertToUnixSeparators(filename);
 }
 
 const bool
@@ -25,10 +32,21 @@ FileInfo::exists() const
 }
 
 const unsigned int
-FileInfo::size() const {
+FileInfo::size() const
+{
         if (m_filename == "")
                 return 0;
         return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
+}
+
+const std::string
+FileInfo::filename() const
+{
+        size_t pos = m_filename.find_last_of("/");
+        if (pos != std::string::npos)
+                return m_filename.substr(pos+1);
+
+        return m_filename;
 }
 
 PRISM_END_NAMESPACE
