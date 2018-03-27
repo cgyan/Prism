@@ -20,4 +20,4 @@ include_directories(
 )
 
 include(sources.cmake)
-add_library(prism STATIC ${SOURCES})
+add_library(${CMAKE_PROJECT_NAME} STATIC ${SOURCES})
