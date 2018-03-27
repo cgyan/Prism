@@ -5,13 +5,6 @@
 
 PRISM_BEGIN_NAMESPACE
 
-AbstractFileSystem *
-FileSystem::create()
-{
-        static FileSystem instance;
-        return &instance;
-}
-
 void
 FileSystem::createFile(const std::string& filename)
 {}
