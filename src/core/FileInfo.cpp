@@ -1,9 +1,18 @@
 #include <prism/global>
 #include <prism/FileInfo>
 #include <prism/FileSystemFactory>
+#include <prism/AbstractFileSystem>
+#include <prism/algorithm>
 #include <iostream>
 
 PRISM_BEGIN_NAMESPACE
+
+const std::string
+convertToUnixSeparators(const std::string& path) {
+        std::string ret = path;
+        prism::replace(ret.begin(), ret.end(), '\\', '/');
+        return ret;
+}
 
 FileInfo::FileInfo(const std::string& filename)
 {
@@ -19,7 +28,9 @@ FileInfo::setFile(const std::string& filename)
 void
 FileInfo::init(const std::string& filename)
 {
-        m_filename = FileSystemFactory::get()->getFileSystem()->convertToUnixSeparators(filename);
+        std::string s = filename;
+        s = prism::convertToUnixSeparators(s);
+        m_filename = s;
 }
 
 const bool

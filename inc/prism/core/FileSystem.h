@@ -17,7 +17,10 @@ public:
         void createFile(const std::string& filename) override;
         const bool exists(const std::string& filename) const override;
         const int fileSizeInBytes(const std::string& filename) const override;
-        const std::string convertToUnixSeparators(const std::string& path) const override;
+private:
+        FileSystem() = default;
+        FileSystem(const FileSystem& other) = default;
+        FileSystem& operator=(const FileSystem& rhs) = default;
 };
 
 PRISM_END_NAMESPACE
