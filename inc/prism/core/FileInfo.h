@@ -15,6 +15,7 @@ public:
         const bool exists() const;
         const unsigned int size() const;
         const std::string filename() const;
+        const std::string basename() const;
 private:
         void init(const std::string& filename);
 private:

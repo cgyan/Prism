@@ -59,4 +59,10 @@ FileInfo::filename() const
         return m_filename;
 }
 
+const std::string
+FileInfo::basename() const
+{
+        return "file";
+}
+
 PRISM_END_NAMESPACE
