@@ -53,10 +53,7 @@ const std::string
 FileInfo::filename() const
 {
         size_t pos = m_filename.find_last_of("/");
-        if (pos != std::string::npos)
-                return m_filename.substr(pos+1);
-
-        return m_filename;
+        return m_filename.substr(pos+1);
 }
 
 const std::string
