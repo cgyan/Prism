@@ -68,6 +68,4 @@ FileInfo::basename() const
         return "";
 }
 
-
-
 PRISM_END_NAMESPACE
