@@ -62,10 +62,9 @@ FileInfo::filename() const
 const std::string
 FileInfo::basename() const
 {
-        if (m_filename == "file.txt") return "file";
-        if (m_filename == "./file.txt") return "file";
-        if (m_filename == "../file.txt") return "file";
-        return "";
+        std::string ret = filename();
+        size_t pos = ret.find_first_of(".");
+        return ret.substr(0, pos);
 }
 
 PRISM_END_NAMESPACE
