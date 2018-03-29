@@ -13,7 +13,7 @@ public:
 
         void setFile(const std::string& filename);
         const bool exists() const;
-        const unsigned int size() const;
+        const int size() const;
         const std::string filename() const;
         const std::string basename() const;
 private:

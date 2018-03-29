@@ -38,7 +38,7 @@ FileInfo::exists() const
         return fileSystem->exists(m_filename.c_str());
 }
 
-const unsigned int
+const int
 FileInfo::size() const
 {
         if (exists())
