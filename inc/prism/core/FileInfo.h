@@ -20,8 +20,6 @@ public:
         const std::string entireSuffix() const;
         const std::string entireBasename() const;
 private:
-        void init(const std::string& filename);
-private:
         std::string m_filename{""};
 };
 

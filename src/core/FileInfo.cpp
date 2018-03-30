@@ -8,7 +8,7 @@
 PRISM_BEGIN_NAMESPACE
 
 const std::string
-convertToUnixSeparators(const std::string& path) {
+convertPathToUnixSeparators(const std::string& path) {
         std::string ret = path;
         prism::replace(ret.begin(), ret.end(), '\\', '/');
         return ret;
@@ -16,19 +16,13 @@ convertToUnixSeparators(const std::string& path) {
 
 FileInfo::FileInfo(const std::string& filename)
 {
-        init(filename);
+        m_filename = prism::convertPathToUnixSeparators(std::string(filename));
 }
 
 void
 FileInfo::setFile(const std::string& filename)
 {
-        init(filename);
-}
-
-void
-FileInfo::init(const std::string& filename)
-{
-        m_filename = prism::convertToUnixSeparators(std::string(filename));
+        m_filename = prism::convertPathToUnixSeparators(std::string(filename));
 }
 
 const bool
