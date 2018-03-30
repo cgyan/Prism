@@ -18,6 +18,7 @@ public:
         const std::string basename() const;
         const std::string suffix() const;
         const std::string entireSuffix() const;
+        const std::string entireBasename() const;
 private:
         void init(const std::string& filename);
 private:

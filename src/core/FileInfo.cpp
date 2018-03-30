@@ -81,4 +81,12 @@ FileInfo::entireSuffix() const
         return ret.substr(pos+1);
 }
 
+const std::string
+FileInfo::entireBasename() const
+{
+        std::string ret = filename();
+        const size_t pos = ret.find_last_of(".");
+        return ret.substr(0, pos);
+}
+
 PRISM_END_NAMESPACE
