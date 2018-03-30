@@ -16,13 +16,13 @@ convertPathToUnixSeparators(const std::string& path) {
 
 FileInfo::FileInfo(const std::string& filename)
 {
-        m_filename = prism::convertPathToUnixSeparators(std::string(filename));
+        m_filename = prism::convertPathToUnixSeparators(filename);
 }
 
 void
 FileInfo::setFile(const std::string& filename)
 {
-        m_filename = prism::convertPathToUnixSeparators(std::string(filename));
+        m_filename = prism::convertPathToUnixSeparators(filename);
 }
 
 const bool
