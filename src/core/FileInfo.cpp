@@ -35,11 +35,7 @@ FileInfo::exists() const
 const int
 FileInfo::size() const
 {
-        if (exists())
-                return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
-
-        const int errorSize = -1;
-        return errorSize;
+        return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
 
 }
 
