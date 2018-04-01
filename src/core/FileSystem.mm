@@ -3,6 +3,7 @@
 #include <fstream>
 #include <unistd.h>
 #include <Cocoa/Cocoa.h>
+#include <unistd.h> // for getwd()
 
 PRISM_BEGIN_NAMESPACE
 
@@ -25,6 +26,17 @@ FileSystem::fileSizeInBytes(const std::string& filename) const
 
         const int errorSize = -1;
         return errorSize;
+}
+
+const std::string
+FileSystem::absolutePath(const std::string& filename) const
+{
+        if (exists(filename)) {
+                char currentWorkingDirectory[4096];
+                if (getwd(currentWorkingDirectory))
+                        return std::string{currentWorkingDirectory};
+        }
+        return std::string{};
 }
 
 PRISM_END_NAMESPACE

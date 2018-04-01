@@ -19,6 +19,7 @@ public:
         const std::string suffix() const;
         const std::string entireSuffix() const;
         const std::string entireBasename() const;
+        const std::string absolutePath() const;
 private:
         std::string m_filename{""};
 };

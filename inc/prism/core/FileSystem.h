@@ -14,9 +14,10 @@ public:
                 return &instance;
         }
 
-        void createFile(const std::string& filename) override;
-        const bool exists(const std::string& filename) const override;
-        const int fileSizeInBytes(const std::string& filename) const override;
+        void createFile(const std::string&) override;
+        const bool exists(const std::string&) const override;
+        const int fileSizeInBytes(const std::string&) const override;
+        const std::string absolutePath(const std::string&) const override;
 private:
         FileSystem() = default;
         FileSystem(const FileSystem& other) = default;

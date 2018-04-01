@@ -79,4 +79,11 @@ FileInfo::entireBasename() const
         return ret.substr(0, pos);
 }
 
+const std::string
+FileInfo::absolutePath() const
+{
+        if (m_filename == "") return std::string{};
+        return FileSystemFactory::get()->getFileSystem()->absolutePath(m_filename);
+}
+
 PRISM_END_NAMESPACE
