@@ -32,4 +32,17 @@ FileSystem::fileSizeInBytes(const std::string& filename) const
         return errorSize;
 }
 
+const std::string
+FileSystem::absolutePath(const std::string& filename) const
+{
+        if (exists(filename)) {
+                char absPathAndFilename[4096];
+                if (GetFullPathName(filename.c_str(), 4096, absPathAndFilename, NULL)) {
+                        std::string s = std::string(absPathAndFilename);
+                        return s.substr(0, s.find_last_of("\\"));
+                }
+        }
+        return std::string{};
+}
+
 PRISM_END_NAMESPACE
