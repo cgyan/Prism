@@ -14,7 +14,6 @@ public:
                 return &instance;
         }
 
-        void createFile(const std::string&) override;
         const bool exists(const std::string&) const override;
         const int fileSizeInBytes(const std::string&) const override;
         const std::string absolutePath(const std::string&) const override;

@@ -7,10 +7,6 @@
 
 PRISM_BEGIN_NAMESPACE
 
-void
-FileSystem::createFile(const std::string& filename)
-{}
-
 const bool
 FileSystem::exists(const std::string& filename) const
 {
