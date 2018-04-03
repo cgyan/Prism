@@ -2,6 +2,8 @@
 #define PRISM_FILE_INFO_H_
 
 #include <prism/global>
+#include <prism/Vector>
+#include <prism/Stack>
 #include <string>
 
 PRISM_BEGIN_NAMESPACE
@@ -20,6 +22,11 @@ public:
         const std::string entireSuffix() const;
         const std::string entireBasename() const;
         const std::string absolutePath() const;
+        const std::string canonicalFilePath() const;
+private:
+        Vector<std::string> split(const std::string& filePath, const char delim) const;
+        Stack<std::string> removeDotAndDoubleDotComponents(Vector<std::string> * tokens) const;
+        const std::string buildCanonicalString(Stack<std::string>& stack) const;
 private:
         std::string m_filename{""};
 };

@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.10.2 FATAL_ERROR)
 project(prism)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
 
 if (WIN32)
 

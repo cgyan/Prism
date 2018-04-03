@@ -3,6 +3,8 @@
 #include <prism/FileSystemFactory>
 #include <prism/AbstractFileSystem>
 #include <prism/algorithm>
+#include <prism/Vector>
+#include <sstream>
 #include <iostream>
 
 PRISM_BEGIN_NAMESPACE
@@ -84,6 +86,56 @@ FileInfo::absolutePath() const
 {
         if (m_filename == "") return std::string{};
         return FileSystemFactory::get()->getFileSystem()->absolutePath(m_filename);
+}
+
+Vector<std::string>
+FileInfo::split(const std::string& filePath, const char delim) const
+{
+        Vector<std::string> tokens;
+        std::stringstream ss(filePath);
+        std::string token;
+        while(std::getline(ss, token, delim))
+                tokens.append(token);
+        return tokens;
+}
+
+Stack<std::string>
+FileInfo::removeDotAndDoubleDotComponents(Vector<std::string> * tokens) const
+{
+        Stack<std::string> stack;
+        for (auto i = 0; i < tokens->size(); ++i)
+        {
+                std::string token = tokens->at(i);
+                if (token != "." && token != "..") stack.push(token);
+                if (token == "..") stack.pop();
+        }
+        return stack;
+}
+
+const std::string
+FileInfo::buildCanonicalString(Stack<std::string>& stack) const
+{
+        std::string ret;
+        std::string separator = "";
+        while (!stack.empty())
+        {
+                std::string token = stack.top();
+                stack.pop();
+                token.append(separator);
+                ret.insert(0, token);
+                separator = "/";
+        }
+        return ret;
+}
+
+const std::string
+FileInfo::canonicalFilePath() const
+{
+        Vector<std::string> tokens = split(m_filename, '/');
+        Stack<std::string> stack = removeDotAndDoubleDotComponents(&tokens);
+        const std::string ret = buildCanonicalString(stack);
+
+        return ret;
 }
 
 PRISM_END_NAMESPACE
