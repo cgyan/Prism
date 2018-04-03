@@ -133,9 +133,7 @@ FileInfo::canonicalFilePath() const
 {
         Vector<std::string> tokens = split(m_filename, '/');
         Stack<std::string> stack = removeDotAndDoubleDotComponents(&tokens);
-        const std::string ret = buildCanonicalString(stack);
-
-        return ret;
+        return buildCanonicalString(stack);
 }
 
 PRISM_END_NAMESPACE
