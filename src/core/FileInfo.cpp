@@ -5,6 +5,7 @@
 #include <prism/Vector>
 #include <prism/Stack>
 #include <prism/algorithm>
+#include <string>
 #include <sstream>
 #include <iostream>
 

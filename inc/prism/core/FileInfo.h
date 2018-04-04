@@ -2,13 +2,13 @@
 #define PRISM_FILE_INFO_H_
 
 #include <prism/global>
-#include <string>
 #include <memory>
 
 PRISM_BEGIN_NAMESPACE
 
 class FileInfoInternal;
 class AbstractFileSystem;
+class string;
 
 class FileInfo {
 public:
