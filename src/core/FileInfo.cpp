@@ -29,6 +29,9 @@ public:
         const std::string buildCanonicalString(Stack<std::string>& stack) const;
         std::shared_ptr<AbstractFileSystem> fileSystem() const;
         const std::string filename() const;
+        const bool fileExists() const;
+        const int fileSize() const;
+        const std::string absolutePath() const;
 private:
         std::shared_ptr<AbstractFileSystem> m_fileSystem{nullptr};
         std::string m_filename{""};
@@ -90,6 +93,24 @@ FileInfoInternal::filename() const
 {
         return m_filename;
 }
+
+const bool
+FileInfoInternal::fileExists() const
+{
+        return m_fileSystem->exists(m_filename.c_str());
+}
+
+const int
+FileInfoInternal::fileSize() const
+{
+        return m_fileSystem->fileSizeInBytes(m_filename.c_str());
+}
+
+const std::string
+FileInfoInternal::absolutePath() const
+{
+        return m_fileSystem->absolutePath(m_filename.c_str());
+}
 //======================================================================================================================
 //
 //======================================================================================================================
@@ -116,13 +137,13 @@ FileInfo::setFile(const std::string& filename)
 const bool
 FileInfo::exists() const
 {
-        return m_impl->fileSystem()->exists(m_impl->filename().c_str());
+        return m_impl->fileExists();
 }
 
 const int
 FileInfo::size() const
 {
-        return m_impl->fileSystem()->fileSizeInBytes(m_impl->filename().c_str());
+        return m_impl->fileSize();
 }
 
 const std::string
@@ -169,7 +190,7 @@ const std::string
 FileInfo::absolutePath() const
 {
         if (m_impl->filename() == "") return std::string{};
-        return m_impl->fileSystem()->absolutePath(m_impl->filename());
+        return m_impl->absolutePath();
 }
 
 const std::string
