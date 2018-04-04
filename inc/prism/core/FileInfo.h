@@ -2,12 +2,12 @@
 #define PRISM_FILE_INFO_H_
 
 #include <prism/global>
-#include <prism/Vector>
-#include <prism/Stack>
 #include <string>
+#include <memory>
 
 PRISM_BEGIN_NAMESPACE
 
+class FileInfoInternal;
 class AbstractFileSystem;
 
 class FileInfo {
@@ -15,11 +15,13 @@ public:
         FileInfo();
         FileInfo(const std::string& filename);
 
-        FileInfo(const std::string& filename, AbstractFileSystem * fileSystem);
+        // internal
+        FileInfo(const std::string& filename, std::shared_ptr<AbstractFileSystem> fileSystem);
 
         void setFile(const std::string& filename);
         const bool exists() const;
         const int size() const;
+
         const std::string filename() const;
         const std::string basename() const;
         const std::string suffix() const;
@@ -28,12 +30,7 @@ public:
         const std::string absolutePath() const;
         const std::string canonicalFilePath() const;
 private:
-        Vector<std::string> split(const std::string& filePath, const char delim) const;
-        Stack<std::string> removeDotAndDoubleDotComponents(Vector<std::string> * tokens) const;
-        const std::string buildCanonicalString(Stack<std::string>& stack) const;
-private:
-        std::string m_filename{""};
-        AbstractFileSystem * m_fileSystem{nullptr};
+        std::shared_ptr<FileInfoInternal> m_impl{nullptr};
 };
 
 PRISM_END_NAMESPACE
