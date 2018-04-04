@@ -13,12 +13,12 @@ class AbstractFileSystem;
 class FileInfo {
 public:
         FileInfo();
-        FileInfo(const std::string& filename);
+        FileInfo(const std::string& file);
 
         // internal
-        FileInfo(const std::string& filename, std::shared_ptr<AbstractFileSystem> fileSystem);
+        FileInfo(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem);
 
-        void setFile(const std::string& filename);
+        void setFile(const std::string& file);
         const bool exists() const;
         const int size() const;
 
