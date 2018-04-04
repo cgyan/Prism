@@ -27,10 +27,7 @@ public:
 public:
         FileInfoInternal(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem);
 
-        Vector<std::string> split(const std::string& filePath, const char delim) const;
-        Stack<std::string> removeDotAndDoubleDotComponents(Vector<std::string> * tokens) const;
-        const std::string buildCanonicalString(Stack<std::string>& stack) const;
-        std::shared_ptr<AbstractFileSystem> fileSystem() const;
+        void setFile(const std::string& file);
         const std::string file() const;
         const bool fileExists() const;
         const int fileSize() const;
@@ -43,6 +40,9 @@ private:
         const std::string entireSuffix() const;
         const std::string entireBasename() const;
         const std::string canonicalFilePath() const;
+        Vector<std::string> split(const std::string& filePath, const char delim) const;
+        Stack<std::string> removeDotAndDoubleDotComponents(Vector<std::string> * tokens) const;
+        const std::string buildCanonicalString(Stack<std::string>& stack) const;
 
 private:
         std::shared_ptr<AbstractFileSystem> m_fileSystem{nullptr};
@@ -109,10 +109,10 @@ FileInfoInternal::buildCanonicalString(Stack<std::string>& stack) const
         return ret;
 }
 
-std::shared_ptr<AbstractFileSystem>
-FileInfoInternal::fileSystem() const
+void
+FileInfoInternal::setFile(const std::string& file)
 {
-        return m_fileSystem;
+        m_file = convertPathToUnixSeparators(file);
 }
 
 const std::string
@@ -206,7 +206,8 @@ FileInfo::FileInfo(const std::string& file, std::shared_ptr<AbstractFileSystem> 
 void
 FileInfo::setFile(const std::string& file)
 {
-        *this = FileInfo(file, m_impl->fileSystem());
+        // *this = FileInfo(file, m_impl->fileSystem());
+        m_impl->setFile(file);
 }
 
 const bool
