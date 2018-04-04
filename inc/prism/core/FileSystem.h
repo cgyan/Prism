@@ -9,18 +9,9 @@ PRISM_BEGIN_NAMESPACE
 
 class FileSystem : public AbstractFileSystem {
 public:
-        static AbstractFileSystem * create() {
-                static FileSystem instance;
-                return &instance;
-        }
-
         const bool exists(const std::string&) const override;
         const int fileSizeInBytes(const std::string&) const override;
         const std::string absolutePath(const std::string&) const override;
-private:
-        FileSystem() = default;
-        FileSystem(const FileSystem& other) = default;
-        FileSystem& operator=(const FileSystem& rhs) = default;
 };
 
 PRISM_END_NAMESPACE

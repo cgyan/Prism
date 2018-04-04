@@ -18,7 +18,7 @@ public:
 
         FileSystemFactory()
         {
-                setFileSystem(&FileSystem::create);
+                // setFileSystem(&FileSystem::create);
         }
 
         void setFileSystem(AbstractFileSystemFn func)

@@ -1,9 +1,8 @@
 #include <prism/global>
 #include <prism/FileInfo>
-#include <prism/FileSystemFactory>
 #include <prism/AbstractFileSystem>
+#include <prism/FileSystem>
 #include <prism/algorithm>
-#include <prism/Vector>
 #include <sstream>
 #include <iostream>
 
@@ -16,7 +15,18 @@ convertPathToUnixSeparators(const std::string& path) {
         return ret;
 }
 
+FileInfo::FileInfo()
+{
+        *this = FileInfo("");
+}
+
 FileInfo::FileInfo(const std::string& filename)
+{
+        *this = FileInfo(filename, new FileSystem);
+}
+
+FileInfo::FileInfo(const std::string& filename, AbstractFileSystem * fileSystem)
+: m_fileSystem{fileSystem}
 {
         m_filename = prism::convertPathToUnixSeparators(filename);
 }
@@ -30,15 +40,13 @@ FileInfo::setFile(const std::string& filename)
 const bool
 FileInfo::exists() const
 {
-        AbstractFileSystem * fileSystem = FileSystemFactory::get()->getFileSystem();
-        return fileSystem->exists(m_filename.c_str());
+        return m_fileSystem->exists(m_filename.c_str());
 }
 
 const int
 FileInfo::size() const
 {
-        return FileSystemFactory::get()->getFileSystem()->fileSizeInBytes(m_filename.c_str());
-
+        return m_fileSystem->fileSizeInBytes(m_filename.c_str());
 }
 
 const std::string
@@ -85,7 +93,7 @@ const std::string
 FileInfo::absolutePath() const
 {
         if (m_filename == "") return std::string{};
-        return FileSystemFactory::get()->getFileSystem()->absolutePath(m_filename);
+        return m_fileSystem->absolutePath(m_filename);
 }
 
 Vector<std::string>

@@ -8,10 +8,14 @@
 
 PRISM_BEGIN_NAMESPACE
 
+class AbstractFileSystem;
+
 class FileInfo {
 public:
-        FileInfo() = default;
+        FileInfo();
         FileInfo(const std::string& filename);
+
+        FileInfo(const std::string& filename, AbstractFileSystem * fileSystem);
 
         void setFile(const std::string& filename);
         const bool exists() const;
@@ -29,6 +33,7 @@ private:
         const std::string buildCanonicalString(Stack<std::string>& stack) const;
 private:
         std::string m_filename{""};
+        AbstractFileSystem * m_fileSystem{nullptr};
 };
 
 PRISM_END_NAMESPACE
