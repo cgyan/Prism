@@ -14,6 +14,8 @@ class FileInfo {
 public:
         FileInfo();
         FileInfo(const std::string& file);
+        FileInfo(const FileInfo& copy);
+        FileInfo& operator=(const FileInfo& rhs);
 
         // internal
         FileInfo(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem);
@@ -22,6 +24,7 @@ public:
         const bool exists() const;
         const int size() const;
 
+        const std::string filePath() const;
         const std::string filename() const;
         const std::string basename() const;
         const std::string suffix() const;

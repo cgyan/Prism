@@ -139,6 +139,7 @@ class FileInfoInternal
 {
 public:
         FileInfoInternal(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem);
+        FileInfoInternal(const FileInfoInternal& copy);
 
         void setFile(const std::string& file);
         const std::string file() const;
@@ -169,6 +170,12 @@ FileInfoInternal::FileInfoInternal(const std::string& file, std::shared_ptr<Abst
 : m_file{convertPathToUnixSeparators(file)},
   m_fileSystem{fileSystem}
 {}
+
+FileInfoInternal::FileInfoInternal(const FileInfoInternal& copy)
+{
+        m_file = copy.m_file;
+        m_fileSystem = copy.m_fileSystem;
+}
 
 void
 FileInfoInternal::setFile(const std::string& file)
@@ -206,9 +213,23 @@ FileInfo::FileInfo(const std::string& file)
         *this = FileInfo(file, std::make_shared<FileSystem>());
 }
 
+FileInfo::FileInfo(const FileInfo& copy)
+{
+        std::shared_ptr<FileInfoInternal> copyImpl(new FileInfoInternal(*copy.m_impl));
+        prism::swap(this->m_impl, copyImpl);
+}
+
 FileInfo::FileInfo(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem)
 : m_impl{new FileInfoInternal(file, fileSystem)}
 {}
+
+FileInfo&
+FileInfo::operator=(const FileInfo& rhs)
+{
+        std::shared_ptr<FileInfoInternal> copyImpl(new FileInfoInternal(*rhs.m_impl));
+        prism::swap(this->m_impl, copyImpl);
+        return *this;
+}
 
 void
 FileInfo::setFile(const std::string& file)
@@ -226,6 +247,12 @@ const int
 FileInfo::size() const
 {
         return m_impl->fileSize();
+}
+
+const std::string
+FileInfo::filePath() const
+{
+        return m_impl->file();
 }
 
 const std::string
