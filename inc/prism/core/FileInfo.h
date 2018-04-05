@@ -24,7 +24,7 @@ public:
         const bool exists() const;
         const int size() const;
 
-        const std::string filePath() const;
+        const std::string file() const;
         const std::string filename() const;
         const std::string basename() const;
         const std::string suffix() const;

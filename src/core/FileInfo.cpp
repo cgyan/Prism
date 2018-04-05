@@ -250,7 +250,7 @@ FileInfo::size() const
 }
 
 const std::string
-FileInfo::filePath() const
+FileInfo::file() const
 {
         return m_impl->file();
 }
