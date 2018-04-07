@@ -31,7 +31,10 @@ public:
         const std::string entireSuffix() const;
         const std::string entireBasename() const;
         const std::string absolutePath() const;
+        const std::string absolutePathWithFilename() const;
         const std::string canonicalFilePath() const;
+
+        static const std::string toNormalizedSeparators(const std::string& path);
 private:
         std::shared_ptr<FileInfoInternal> m_impl{nullptr};
 };

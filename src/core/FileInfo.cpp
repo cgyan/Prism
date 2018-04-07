@@ -12,7 +12,7 @@
 PRISM_BEGIN_NAMESPACE
 
 const std::string
-convertPathToUnixSeparators(const std::string& path) {
+FileInfo::toNormalizedSeparators(const std::string& path) {
         std::string ret = path;
         prism::replace(ret.begin(), ret.end(), '\\', '/');
         return ret;
@@ -167,9 +167,10 @@ FileInfoInternal::fileProperty(FileProperty::Property property) const
 }
 
 FileInfoInternal::FileInfoInternal(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem)
-: m_file{convertPathToUnixSeparators(file)},
-  m_fileSystem{fileSystem}
-{}
+: m_fileSystem{fileSystem}
+{
+        setFile(file);
+}
 
 FileInfoInternal::FileInfoInternal(const FileInfoInternal& copy)
 {
@@ -180,7 +181,7 @@ FileInfoInternal::FileInfoInternal(const FileInfoInternal& copy)
 void
 FileInfoInternal::setFile(const std::string& file)
 {
-        m_file = convertPathToUnixSeparators(file);
+        m_file = FileInfo::toNormalizedSeparators(file);
 }
 
 const std::string
@@ -289,6 +290,17 @@ const std::string
 FileInfo::absolutePath() const
 {
         return m_impl->fileProperty(FileProperty::Property::AbsolutePath);
+}
+
+const std::string
+FileInfo::absolutePathWithFilename() const
+{
+        std::string ret{};
+        if (exists())
+        {
+                ret = absolutePath() + std::string("/") + filename();
+        }
+        return toNormalizedSeparators(ret);
 }
 
 const std::string

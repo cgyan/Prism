@@ -5,6 +5,10 @@ project(prism)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
 
+# turn off optimizations
+# seems to be causing a problem with gdb when turned on
+SET(CMAKE_CXX_FLAGS "-O0")
+
 if (WIN32)
 
     set(PRISM_BASE_INC_PATH C:/Users/Iain/GitHub/PrismBase/inc)
