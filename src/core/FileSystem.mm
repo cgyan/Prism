@@ -3,7 +3,7 @@
 #include <fstream>
 #include <unistd.h>
 #include <Cocoa/Cocoa.h>
-#include <unistd.h> // for getwd()
+#include <stdlib.h> // for realpath()
 
 PRISM_BEGIN_NAMESPACE
 
@@ -27,10 +27,14 @@ FileSystem::fileSizeInBytes(const std::string& filename) const
 const std::string
 FileSystem::absolutePath(const std::string& filename) const
 {
-        if (exists(filename)) {
-                char currentWorkingDirectory[4096];
-                if (getwd(currentWorkingDirectory))
-                        return std::string{currentWorkingDirectory};
+        if (exists(filename))
+        {
+                char buff[PATH_MAX];
+                if (realpath(filename.c_str(), buff) != NULL)
+                {
+                        size_t pos = std::string(buff).find_last_of("/");
+                        return std::string(buff).substr(0, pos);
+                }
         }
         return std::string{};
 }
