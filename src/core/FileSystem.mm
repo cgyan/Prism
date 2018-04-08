@@ -32,8 +32,9 @@ FileSystem::absolutePath(const std::string& filename) const
                 char buff[PATH_MAX];
                 if (realpath(filename.c_str(), buff) != NULL)
                 {
-                        size_t pos = std::string(buff).find_last_of("/");
-                        return std::string(buff).substr(0, pos);
+                        std::string s(buff);
+                        size_t pos = s.find_last_of("/");
+                        return s.substr(0, pos);
                 }
         }
         return std::string{};
