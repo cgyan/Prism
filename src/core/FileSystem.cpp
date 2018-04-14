@@ -45,9 +45,9 @@ const std::string
 FileSystem::creationDate(const std::string& filename) const
 {
         if (filename == "") return std::string{};
-        
+
         HANDLE hFile;
-        hFile = CreateFile(filename.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
+        hFile = CreateFile(filename.c_str(), 0, 0, NULL, OPEN_EXISTING, 0, NULL);
         TCHAR buff[MAX_PATH];
         FILETIME ft;
         GetFileTime(hFile, &ft, NULL, NULL);
