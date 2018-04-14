@@ -146,7 +146,21 @@ FileProperty::filename(const std::string& file)
 const std::string
 FileProperty::creationDate(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem)
 {
-        return fileSystem->creationDate(file);
+        std::string date = fileSystem->creationDate(file);
+
+        const char delim = '-';
+        Vector<std::string> tokens = FileProperty::split(date, delim);
+        std::string year = tokens[0];
+        std::string month = tokens[1];
+        std::string day = tokens[2];
+
+        if (month.length() == 1)
+                month = std::string("0").append(month);
+
+        if (day.length() == 1)
+                day = std::string("0").append(day);
+
+        return year + "-" + month + "-" + day;
 }
 //======================================================================================================================
 //
@@ -329,6 +343,7 @@ FileInfo::canonicalFilePath() const
 const std::string
 FileInfo::creationDate() const
 {
+        if (!exists() || m_impl->file() == "") return "";
         return m_impl->fileProperty(FileProperty::Property::CreationDate);
 }
 

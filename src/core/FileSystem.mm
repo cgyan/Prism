@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <Cocoa/Cocoa.h>
 #include <stdlib.h> // for realpath()
+#include <iostream>
 
 PRISM_BEGIN_NAMESPACE
 
@@ -43,11 +44,10 @@ FileSystem::absolutePath(const std::string& filename) const
 const std::string
 FileSystem::creationDate(const std::string& filename) const
 {
-        if (filename == "") return std::string{};
         NSDictionary * dict = [[NSFileManager defaultManager] attributesOfItemAtPath: [NSString stringWithUTF8String: filename.c_str()] error: nil];
         NSDate * date = [dict objectForKey: NSFileCreationDate];
-        const char * cret = [[date description] UTF8String];
-        return std::string{cret, cret + 10};
+        const char * s = [[date description] UTF8String];
+        return std::string{s, s + 10};
 }
 
 PRISM_END_NAMESPACE
