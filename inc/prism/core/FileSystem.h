@@ -12,6 +12,7 @@ public:
         const bool exists(const std::string&) const override;
         const int fileSizeInBytes(const std::string&) const override;
         const std::string absolutePath(const std::string&) const override;
+        const std::string creationDate(const std::string&) const override;
 };
 
 PRISM_END_NAMESPACE

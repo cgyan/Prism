@@ -23,7 +23,16 @@ FileInfo::toNormalizedSeparators(const std::string& path) {
 class FileProperty
 {
 public:
-        enum class Property { Filename, Basename, Suffix, EntireSuffix, EntireBasename, AbsolutePath, CanonicalFilePath };
+        enum class Property {
+                Filename,
+                Basename,
+                Suffix,
+                EntireSuffix,
+                EntireBasename,
+                AbsolutePath,
+                CanonicalFilePath,
+                CreationDate
+        };
 public:
         static const std::string absolutePath(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem);
         static const std::string canonicalFilePath(const std::string& file);
@@ -32,6 +41,7 @@ public:
         static const std::string entireSuffix(const std::string& file);
         static const std::string basename(const std::string& file);
         static const std::string filename(const std::string& file);
+        static const std::string creationDate(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem);
 private:
         static Vector<std::string> split(const std::string& file, const char delim);
         static Stack<std::string> removeDotAndDoubleDotComponents(Vector<std::string> * tokens);
@@ -132,6 +142,12 @@ FileProperty::filename(const std::string& file)
         size_t pos = file.find_last_of("/");
         return file.substr(pos+1);
 }
+
+const std::string
+FileProperty::creationDate(const std::string& file, std::shared_ptr<AbstractFileSystem> fileSystem)
+{
+        return fileSystem->creationDate(file);
+}
 //======================================================================================================================
 //
 //======================================================================================================================
@@ -156,13 +172,14 @@ FileInfoInternal::fileProperty(FileProperty::Property property) const
 {
         switch (property)
         {
-                case FileProperty::Property::Filename: return FileProperty::filename(m_file); break;
-                case FileProperty::Property::Basename: return FileProperty::basename(m_file); break;
-                case FileProperty::Property::EntireSuffix: return FileProperty::entireSuffix(m_file); break;
-                case FileProperty::Property::Suffix: return FileProperty::suffix(m_file); break;
-                case FileProperty::Property::EntireBasename: return FileProperty::entireBasename(m_file); break;
-                case FileProperty::Property::AbsolutePath: return FileProperty::absolutePath(m_file, m_fileSystem); break;
-                case FileProperty::Property::CanonicalFilePath: return FileProperty::canonicalFilePath(m_file); break;
+                case FileProperty::Property::Filename:                  return FileProperty::filename(m_file); break;
+                case FileProperty::Property::Basename:                  return FileProperty::basename(m_file); break;
+                case FileProperty::Property::EntireSuffix:              return FileProperty::entireSuffix(m_file); break;
+                case FileProperty::Property::Suffix:                    return FileProperty::suffix(m_file); break;
+                case FileProperty::Property::EntireBasename:            return FileProperty::entireBasename(m_file); break;
+                case FileProperty::Property::AbsolutePath:              return FileProperty::absolutePath(m_file, m_fileSystem); break;
+                case FileProperty::Property::CanonicalFilePath:         return FileProperty::canonicalFilePath(m_file); break;
+                case FileProperty::Property::CreationDate:              return FileProperty::creationDate(m_file, m_fileSystem); break;
         }
 }
 
@@ -206,7 +223,7 @@ FileInfoInternal::fileSize() const
 //======================================================================================================================
 FileInfo::FileInfo()
 {
-        *this = FileInfo("");
+        *this = FileInfo(std::string{});
 }
 
 FileInfo::FileInfo(const std::string& file)
@@ -307,6 +324,12 @@ const std::string
 FileInfo::canonicalFilePath() const
 {
         return m_impl->fileProperty(FileProperty::Property::CanonicalFilePath);
+}
+
+const std::string
+FileInfo::creationDate() const
+{
+        return m_impl->fileProperty(FileProperty::Property::CreationDate);
 }
 
 PRISM_END_NAMESPACE

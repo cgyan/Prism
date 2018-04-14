@@ -9,10 +9,11 @@ PRISM_BEGIN_NAMESPACE
 class AbstractFileSystem {
 public:
         virtual ~AbstractFileSystem() {}
-        
+
         virtual const bool exists(const std::string&) const = 0;
         virtual const int fileSizeInBytes(const std::string&) const = 0;
         virtual const std::string absolutePath(const std::string&) const = 0;
+        virtual const std::string creationDate(const std::string&) const = 0;
 };
 
 PRISM_END_NAMESPACE
