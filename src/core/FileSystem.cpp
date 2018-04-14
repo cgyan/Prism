@@ -41,4 +41,33 @@ FileSystem::absolutePath(const std::string& filename) const
         return std::string{};
 }
 
+const std::string
+FileSystem::creationDate(const std::string& filename) const
+{
+        if (filename == "") return std::string{};
+        
+        HANDLE hFile;
+        hFile = CreateFile(filename.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
+        TCHAR buff[MAX_PATH];
+        FILETIME ft;
+        GetFileTime(hFile, &ft, NULL, NULL);
+        SYSTEMTIME st;
+        FileTimeToSystemTime(&ft, &st);
+        CloseHandle(hFile);
+
+        std::string ret;
+        std::string year = std::to_string(st.wYear);
+        ret.append(year);
+        ret.append("-");
+        std::string month = std::to_string(st.wMonth);
+        if (month.length() == 1)
+                ret.append("0");
+        ret.append(month);
+        ret.append("-");
+        std::string day = std::to_string(st.wDay);
+        ret.append(day);
+
+        return ret;
+}
+
 PRISM_END_NAMESPACE
